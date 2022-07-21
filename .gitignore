@@ -1,0 +1,11 @@
+openvino
+_build
+.venv
+api/ie_python_api/_autosummary
+*.pyc
+api/groups
+notebooks
+openvino_notebooks
+open_model_zoo
+models
+demos
