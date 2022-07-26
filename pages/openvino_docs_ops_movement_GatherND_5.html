@@ -635,6 +635,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_ops_image_GridSample_9.html">
+     GridSample-9
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="openvino_docs_ops_normalization_GRN_1.html">
      GRN-1
     </a>
@@ -1421,10 +1426,7 @@
 <li><p><em>batch_dims</em></p>
 <ul>
 <li><p><strong>Description</strong> : <em>batch_dims</em> (denoted as <code class="docutils literal notranslate"><span class="pre">b</span></code>) is a leading number of dimensions of <code class="docutils literal notranslate"><span class="pre">data</span></code> tensor and <code class="docutils literal notranslate"><span class="pre">indices</span></code> representing the batches, and <em>GatherND</em> starts to gather from the <code class="docutils literal notranslate"><span class="pre">b+1</span></code> dimension. It requires the first <code class="docutils literal notranslate"><span class="pre">b</span></code> dimensions in <code class="docutils literal notranslate"><span class="pre">data</span></code> and <code class="docutils literal notranslate"><span class="pre">indices</span></code> tensors to be equal. In case of non-default value for <em>batch_dims</em>, the output shape is calculated as <code class="docutils literal notranslate"><span class="pre">(multiplication</span> <span class="pre">of</span> <span class="pre">indices.shape[:b])</span> <span class="pre">+</span> <span class="pre">indices.shape[b:-1]</span> <span class="pre">+</span> <span class="pre">data.shape[(indices.shape[-1]</span> <span class="pre">+</span> <span class="pre">b):]</span></code>.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="err">\</span><span class="o">*</span><span class="err">\</span><span class="o">*</span><span class="nl">NOTE</span><span class="p">:</span><span class="err">\</span><span class="o">*</span><span class="err">\</span><span class="o">*</span> <span class="n">The</span> <span class="n">calculation</span> <span class="n">of</span> <span class="n">output</span> <span class="n">shape</span> <span class="n">is</span> <span class="n">incorrect</span> <span class="k">for</span> <span class="n">non</span><span class="o">-</span><span class="k">default</span> <span class="err">\</span><span class="o">*</span><span class="n">batch_dims</span><span class="err">\</span><span class="o">*</span> <span class="n">value</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">one</span><span class="p">.</span>
-<span class="n">For</span> <span class="n">correct</span> <span class="n">calculations</span> <span class="n">use</span> <span class="p">[</span><span class="n">GatherND_8</span><span class="p">](</span><span class="err">@</span><span class="n">ref</span> <span class="n">openvino_docs_ops_movement_GatherND_8</span><span class="p">)</span> <span class="n">operation</span><span class="err">\</span><span class="o">*</span><span class="err">\</span><span class="o">*</span>
-</pre></div>
-</div>
+<p><strong>NOTE:</strong> The calculation of output shape is incorrect for non-default <em>batch_dims</em> value greater than one. For correct calculations use <a class="reference internal" href="openvino_docs_ops_movement_GatherND_8.html#doxid-openvino-docs-ops-movement-gather-n-d-8"><span class="std std-ref">GatherND_8</span></a> operation**</p>
 </li>
 <li><p><strong>Range of values</strong> : integer number and belongs to <code class="docutils literal notranslate"><span class="pre">[0;</span> <span class="pre">min(data.rank,</span> <span class="pre">indices.rank))</span></code></p></li>
 <li><p><strong>Type</strong> : int</p></li>

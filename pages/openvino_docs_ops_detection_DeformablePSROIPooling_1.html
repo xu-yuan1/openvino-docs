@@ -635,6 +635,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_ops_image_GridSample_9.html">
+     GridSample-9
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="openvino_docs_ops_normalization_GRN_1.html">
      GRN-1
     </a>
@@ -1399,7 +1404,7 @@
 <p><strong>Short description</strong> : <em>DeformablePSROIPooling</em> computes deformable position-sensitive pooling of regions of interest specified by input.</p>
 <p><strong>Detailed description</strong> : <a class="reference external" href="https://arxiv.org/abs/1703.06211">Reference</a>.</p>
 <p><em>DeformablePSROIPooling</em> operation takes two or three input tensors: with position score maps, with regions of interests (ROI, box coordinates) and an optional tensor with transformation values (normalized offsets for ROI bins coordinates). If only two inputs are provided, position sensitive pooling with regular ROI bins position is calculated (non-deformable). If third input is provided, each bin position is transformed by adding corresponding offset to the bin left top corner coordinates. Third input values are usually calculated by regular position sensitive pooling layer, so non-deformable mode (DeformablePSROIPooling with two inputs). The ROI coordinates are specified as five element tuples: <code class="docutils literal notranslate"><span class="pre">[batch_id,</span> <span class="pre">x_1,</span> <span class="pre">y_1,</span> <span class="pre">x_2,</span> <span class="pre">y_2]</span></code> in absolute values.</p>
-<p>This operation is compatible with <a class="reference external" href="https://mxnet.apache.org/versions/1.7.0/api/python/docs/api/contrib/symbol/index.html#mxnet.contrib.symbol.DeformablePSROIPooling">MXNet DeformablePSROIPooling</a> cases where <code class="docutils literal notranslate"><span class="pre">group_size</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">pooled_size</span></code>.</p>
+<p>This operation is compatible with <a class="reference external" href="https://mxnet.apache.org/versions/1.7.0/api/python/docs/api/contrib/symbol/index.html#mxnet.contrib.symbol.DeformablePSROIPooling">Apache MXNet DeformablePSROIPooling</a> cases where <code class="docutils literal notranslate"><span class="pre">group_size</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">pooled_size</span></code>.</p>
 <p><strong>Attributes</strong></p>
 <ul class="simple">
 <li><p><em>output_dim</em></p>

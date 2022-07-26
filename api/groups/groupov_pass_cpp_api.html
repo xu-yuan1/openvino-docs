@@ -11042,7 +11042,9 @@
 
 <span class="c1">// global functions</span>
 
-OPENVINO_API<span></span> <span class="kt">void</span> <a class="reference internal" href="#doxid-group-ov-pass-cpp-api-1ga39583fbe9bf1dc98c7d203bdaa7b4275"><span class="std std-ref">ov::pass::disable_constant_folding</span></a><span></span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">node</span><span class="p">);</span></pre></div></div></section>
+OPENVINO_API<span></span> <span class="kt">void</span> <a class="reference internal" href="#doxid-group-ov-pass-cpp-api-1ga39583fbe9bf1dc98c7d203bdaa7b4275"><span class="std std-ref">ov::pass::disable_constant_folding</span></a><span></span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">node</span><span class="p">);</span>
+OPENVINO_API<span></span> <span class="kt">bool</span> <a class="reference internal" href="#doxid-group-ov-pass-cpp-api-1ga9440404651306f3c88d52ae50ae63d08"><span class="std std-ref">ov::pass::constant_folding_is_disabled</span></a><span></span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">node</span><span class="p">);</span>
+OPENVINO_API<span></span> <span class="kt">bool</span> <a class="reference internal" href="#doxid-group-ov-pass-cpp-api-1gabf9f3e51e41b8b42f990f9c2a1d6e198"><span class="std std-ref">ov::pass::constant_folding_is_disabled</span></a><span></span><span class="p">(</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a><span></span> <span class="err">\</span><span class="o">*</span><span class="k">const</span> <span class="n">node</span><span class="p">);</span></pre></div></div></section>
 <section id="detailed-documentation">
 <span id="details-group-ov-pass-cpp-api"></span><h2>Detailed Documentation<a class="headerlink" href="#detailed-documentation" title="Permalink to this headline">¶</a></h2>
 <p>OpenVINO C++ API to work with OpenVINO transformations</p>
@@ -11053,6 +11055,36 @@ OPENVINO_API<span></span> <span class="kt">void</span> <a class="reference inter
 <li><p>If for sub-graph like ShapeOf-&gt;ShapeOf we disable cf for first ShapeOf node, it doesn’t spread to the second ShapeOf, so the entire sub-graph will be folded. (In case if first ShapeOf has exactly one consumer)</p></li>
 <li><p>If node with disable_constant_folding was replaced with another node, the attribute will be lost because it is not copyable.</p></li>
 </ol>
+<span class="target" id="doxid-group-ov-pass-cpp-api-1ga9440404651306f3c88d52ae50ae63d08"></span><div class="highlight doxyrest-title-code-block"><div class="highlight"><pre>OPENVINO_API<span></span> <span class="kt">bool</span> <span class="n">ov</span><span class="o">::</span><span class="n">pass</span><span class="o">::</span><span class="n">constant_folding_is_disabled</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">node</span><span class="p">)</span></pre></div></div><p>Check if constant folding is disabled on <a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a>.</p>
+<p class="rubric">Parameters:</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>node</p></td>
+<td><p>Smart pointer to the node.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Returns:</p>
+<p>true if attribute constant folding set otherwise false.</p>
+<span class="target" id="doxid-group-ov-pass-cpp-api-1gabf9f3e51e41b8b42f990f9c2a1d6e198"></span><div class="highlight doxyrest-title-code-block"><div class="highlight"><pre>OPENVINO_API<span></span> <span class="kt">bool</span> <span class="n">ov</span><span class="o">::</span><span class="n">pass</span><span class="o">::</span><span class="n">constant_folding_is_disabled</span><span class="p">(</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a><span></span> <span class="err">\</span><span class="o">*</span><span class="k">const</span> <span class="n">node</span><span class="p">)</span></pre></div></div><p>Check if constant folding is disabled on <a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a>.</p>
+<p class="rubric">Parameters:</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>node</p></td>
+<td><p>Pointer to the node.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Returns:</p>
+<p>true if attribute constant folding set otherwise false.</p>
 </section>
 </section>
 </section>

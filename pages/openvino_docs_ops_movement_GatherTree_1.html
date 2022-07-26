@@ -635,6 +635,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_ops_image_GridSample_9.html">
+     GridSample-9
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="openvino_docs_ops_normalization_GRN_1.html">
      GRN-1
     </a>
@@ -1401,15 +1406,15 @@
 <p><em>GatherTree</em> operation reorders token IDs of a given input tensor <code class="docutils literal notranslate"><span class="pre">step_id</span></code> representing IDs per each step of beam search, based on input tensor <code class="docutils literal notranslate"><span class="pre">parent_ids</span></code> representing the parent beam IDs. For a given beam, past the time step containing the first decoded <code class="docutils literal notranslate"><span class="pre">end_token</span></code> all values are filled in with end_token.</p>
 <p>The algorithm in pseudocode is as follows:</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">final_ids</span><span class="p">[</span> <span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span> <span class="o">=</span> <span class="n">end_token</span>
-<span class="k">for</span> <span class="n">batch</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="n">BATCH_SIZE</span><span class="p">)</span><span class="o">:</span>
-    <span class="k">for</span> <span class="n">beam</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="n">BEAM_WIDTH</span><span class="p">)</span><span class="o">:</span>
-        <span class="n">max_sequence_in_beam</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">MAX_TIME</span><span class="p">,</span> <span class="n">max_seq_len</span><span class="p">[</span><span class="n">batch</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">batch</span> <span class="n">in</span> <a class="reference internal" href="../api/groups/namespacengraph_1_1runtime_1_1reference.html#doxid-namespacengraph-1-1runtime-1-1reference-1ad38dec78131946cded583cc1154a406d"><span class="std std-ref">range</span></a><span></span><span class="p">(</span><span class="n">BATCH_SIZE</span><span class="p">)</span><span class="o">:</span>
+    <span class="k">for</span> <span class="n">beam</span> <span class="n">in</span> <a class="reference internal" href="../api/groups/namespacengraph_1_1runtime_1_1reference.html#doxid-namespacengraph-1-1runtime-1-1reference-1ad38dec78131946cded583cc1154a406d"><span class="std std-ref">range</span></a><span></span><span class="p">(</span><span class="n">BEAM_WIDTH</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">max_sequence_in_beam</span> <span class="o">=</span> <a class="reference internal" href="../api/groups/namespacengraph_1_1runtime_1_1reference.html#doxid-namespacengraph-1-1runtime-1-1reference-1abc42885cb896b121ab5ac214cbf60935"><span class="std std-ref">min</span></a><span></span><span class="p">(</span><span class="n">MAX_TIME</span><span class="p">,</span> <span class="n">max_seq_len</span><span class="p">[</span><span class="n">batch</span><span class="p">])</span>
 
         <span class="n">parent</span> <span class="o">=</span> <span class="n">parent_ids</span><span class="p">[</span><span class="n">max_sequence_in_beam</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">beam</span><span class="p">]</span>
 
         <span class="n">final_ids</span><span class="p">[</span><span class="n">max_sequence_in_beam</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">beam</span><span class="p">]</span> <span class="o">=</span> <span class="n">step_ids</span><span class="p">[</span><span class="n">max_sequence_in_beam</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">beam</span><span class="p">]</span>
 
-        <span class="k">for</span> <span class="n">level</span> <span class="n">in</span> <span class="n">reversed</span><span class="p">(</span><span class="n">range</span><span class="p">(</span><span class="n">max_sequence_in_beam</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">:</span>
+        <span class="k">for</span> <span class="n">level</span> <span class="n">in</span> <span class="n">reversed</span><span class="p">(</span><a class="reference internal" href="../api/groups/namespacengraph_1_1runtime_1_1reference.html#doxid-namespacengraph-1-1runtime-1-1reference-1ad38dec78131946cded583cc1154a406d"><span class="std std-ref">range</span></a><span></span><span class="p">(</span><span class="n">max_sequence_in_beam</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">:</span>
             <span class="n">final_ids</span><span class="p">[</span><span class="n">level</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">beam</span><span class="p">]</span> <span class="o">=</span> <span class="n">step_ids</span><span class="p">[</span><span class="n">level</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">parent</span><span class="p">]</span>
 
             <span class="n">parent</span> <span class="o">=</span> <span class="n">parent_ids</span><span class="p">[</span><span class="n">level</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">parent</span><span class="p">]</span>
@@ -1417,7 +1422,7 @@
         <span class="cp"># For a given beam, past the time step containing the first decoded end_token</span>
         <span class="cp"># all values are filled in with end_token.</span>
         <span class="n">finished</span> <span class="o">=</span> <span class="n">False</span>
-        <span class="k">for</span> <span class="n">time</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="n">max_sequence_in_beam</span><span class="p">)</span><span class="o">:</span>
+        <span class="k">for</span> <span class="n">time</span> <span class="n">in</span> <a class="reference internal" href="../api/groups/namespacengraph_1_1runtime_1_1reference.html#doxid-namespacengraph-1-1runtime-1-1reference-1ad38dec78131946cded583cc1154a406d"><span class="std std-ref">range</span></a><span></span><span class="p">(</span><span class="n">max_sequence_in_beam</span><span class="p">)</span><span class="o">:</span>
             <span class="k">if</span><span class="p">(</span><span class="n">finished</span><span class="p">)</span><span class="o">:</span>
                 <span class="n">final_ids</span><span class="p">[</span><span class="n">time</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">beam</span><span class="p">]</span> <span class="o">=</span> <span class="n">end_token</span>
             <span class="n">elif</span><span class="p">(</span><span class="n">final_ids</span><span class="p">[</span><span class="n">time</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">beam</span><span class="p">]</span> <span class="o">==</span> <span class="n">end_token</span><span class="p">)</span><span class="o">:</span>

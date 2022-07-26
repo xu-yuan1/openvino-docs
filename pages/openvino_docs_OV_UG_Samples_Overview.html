@@ -75,8 +75,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Image Classification Async C++ Sample" href="openvino_inference_engine_samples_classification_sample_async_README.html" />
-    <link rel="prev" title="Get Started with Sample and Demo Applications" href="openvino_docs_get_started_get_started_demos.html" />
+    <link rel="next" title="Basic OpenVINO™ Workflow" href="openvino_docs_get_started_get_started_demos.html" />
+    <link rel="prev" title="Issues &amp; Solutions for OpenVINO™ Installation &amp; Configuration" href="openvino_docs_get_started_guide_troubleshooting_issues.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -226,18 +226,13 @@
   <div class="bd-toc-item active">
     <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Install OpenVINO
+  Install &amp; Config
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="openvino_docs_install_guides_overview.html">
-   Overview
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="openvino_docs_install_guides_install_runtime.html">
-   Install OpenVINO Runtime
+  <a class="reference internal" href="openvino_docs_install_guides_overview.html">
+   Installing OpenVINO
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -246,8 +241,8 @@
   </label>
   <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_linux_header.html">
-     Install on Linux
+    <a class="reference internal" href="openvino_docs_install_guides_install_runtime.html">
+     OpenVINO Runtime
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
@@ -255,162 +250,201 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_linux.html">
-       Using Installer
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_linux_header.html">
+       Linux
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_linux.html">
+         Using Installer
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_pip.html">
+         From PyPI
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_apt.html">
+         From APT
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_yum.html">
+         From YUM
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_conda.html">
+         From Anaconda Cloud
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_docker_linux.html">
+         Using Docker
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_windows_header.html">
+       Windows
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_windows.html">
+         Using Installer
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_pip.html">
+         From PyPI
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_conda.html">
+         From Anaconda Cloud
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_docker_windows.html">
+         Using Docker
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_macos_header.html">
+       macOS
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_macos.html">
+         Using Installer
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_pip.html">
+         From PyPI
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_conda.html">
+         From Anaconda Cloud
+        </a>
+       </li>
+      </ul>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_pip.html">
-       From PyPI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_apt.html">
-       From APT
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_yum.html">
-       From YUM
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_conda.html">
-       From Anaconda Cloud
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_docker_linux.html">
-       Using Docker
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_windows_header.html">
-     Install on Windows
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_windows.html">
-       Using Installer
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_pip.html">
-       From PyPI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_conda.html">
-       From Anaconda Cloud
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_docker_windows.html">
-       Using Docker
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_macos_header.html">
-     Install on macOS
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_macos.html">
-       Using Installer
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_pip.html">
-       From PyPI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_conda.html">
-       From Anaconda Cloud
+      <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_raspbian.html">
+       Raspbian OS
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_raspbian.html">
-     Install on Raspbian OS
+    <a class="reference internal" href="openvino_docs_install_guides_install_dev_tools.html">
+     OpenVINO Development Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/openvinotoolkit/openvino/wiki/BuildingCode">
+     Build from Source
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_yocto.html">
+     Creating a Yocto Image
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="openvino_docs_install_guides_install_dev_tools.html">
-   Install OpenVINO Development Tools
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="openvino_docs_install_guides_configurations_header.html">
+   Additional Configurations
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/openvinotoolkit/openvino/wiki/BuildingCode">
-   Build from Source
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_yocto.html">
-   Create a Yocto Image
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_install_guides_configurations_for_intel_gpu.html">
+     For GPU
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_install_guides_configurations_for_ncs2.html">
+     For NCS2
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_ivad_vpu.html">
+     For VPU
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_install_guides_movidius_setup_guide.html">
+       IEI Mustang-V100-MX8-R10 Card
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_install_guides_configurations_for_intel_gna.html">
+     For GNA
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="openvino_docs_install_guides_uninstalling_openvino.html">
    Uninstalling
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Additional Configurations
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="openvino_docs_install_guides_configurations_for_intel_gpu.html">
-   Configurations for GPU
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="openvino_docs_install_guides_configurations_for_ncs2.html">
-   Configurations for NCS2
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="openvino_docs_install_guides_installing_openvino_ivad_vpu.html">
-   Configurations for VPU
+  <a class="reference internal" href="openvino_docs_get_started_guide_troubleshooting.html">
+   Troubleshooting
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_install_guides_movidius_setup_guide.html">
-     Configurations for IEI Mustang-V100-MX8-R10 card
+    <a class="reference internal" href="openvino_docs_get_started_guide_troubleshooting_steps.html">
+     Troubleshooting Steps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_get_started_guide_troubleshooting_issues.html">
+     Issues &amp; Solutions
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="openvino_docs_install_guides_configurations_for_intel_gna.html">
-   Configurations for GNA
-  </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -418,29 +452,22 @@
   Get Started Guides
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="openvino_docs_get_started_get_started_demos.html">
-   Get Started with Step-by-step Demo
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  OpenVINO Code Samples
- </span>
-</p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   OpenVINO Samples
+   Samples
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_get_started_get_started_demos.html">
+     Basic OpenVINO Workflow
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="openvino_inference_engine_samples_classification_sample_async_README.html">
      Image Classification Async C++ Sample
@@ -527,18 +554,6 @@
     </a>
    </li>
   </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Troubleshooting
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="openvino_docs_get_started_guide_troubleshooting.html">
-   Installation &amp; Configuration Issues
-  </a>
  </li>
 </ul>
 
@@ -756,13 +771,11 @@
 </div>
 <ol class="arabic">
 <li><p>Navigate to a directory that you have write access to and create a samples build directory. This example uses a directory named <code class="docutils literal notranslate"><span class="pre">build</span></code> :</p>
-<div class="highlight"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build</span></pre></div></div></li>
-</ol>
-<div class="admonition note">
+<div class="highlight"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build</span></pre></div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you run the Image Classification verification script during the installation, the C++ samples build directory is created in your home directory: <code class="docutils literal notranslate"><span class="pre">~/inference_engine_cpp_samples_build/</span></code></p>
 </div>
-<ol class="arabic">
+</li>
 <li><p>Go to the created directory:</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">build</span></pre></div></div></li>
 <li><p>Run CMake to generate the Make files for release or debug configuration. For example, for C++ samples:</p>
@@ -776,7 +789,7 @@
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">make</span></code> to build the samples:</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">make</span></pre></div></div></li>
 </ol>
-<p>For the release configuration, the sample application binaries are in <code class="docutils literal notranslate"><span class="pre">&lt;path_to_build_directory&gt;/intel64/Release/</span></code>; for the debug configuration — in <code class="docutils literal notranslate"><span class="pre">&lt;path_to_build_directory&gt;/intel64/Debug/</span></code>.</p>
+<p>For the release configuration, the sample application binaries are in <code class="docutils literal notranslate"><span class="pre">&lt;path_to_build_directory&gt;/intel64/Release/</span></code>; for the debug configuration — in  <code class="docutils literal notranslate"><span class="pre">&lt;path_to_build_directory&gt;/intel64/Debug/</span></code>.</p>
 </section>
 <section id="build-the-sample-applications-on-microsoft-windows">
 <span id="build-samples-windows"></span><h3>Build the Sample Applications on Microsoft Windows<a class="headerlink" href="#build-the-sample-applications-on-microsoft-windows" title="Permalink to this headline">¶</a></h3>
@@ -788,7 +801,7 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you want to use Microsoft Visual Studio 2019, you are required to install CMake 3.14 or higher.</p>
+<p> If you want to use Microsoft Visual Studio 2019, you are required to install CMake 3.14 or higher.</p>
 </div>
 <p>To build the C or C++ sample applications on Windows, go to the <code class="docutils literal notranslate"><span class="pre">&lt;INSTALL_DIR&gt;\samples\c</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;INSTALL_DIR&gt;\samples\cpp</span></code> directory, respectively, and run the <code class="docutils literal notranslate"><span class="pre">build_samples_msvc.bat</span></code> batch file:</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">build_samples_msvc</span><span class="p">.</span><span class="n">bat</span></pre></div></div><p>By default, the script automatically detects the highest Microsoft Visual Studio version installed on the machine and uses it to create and build a solution for a sample code</p>
@@ -829,13 +842,11 @@
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">INSTALL_DIR</span><span class="o">&gt;/</span>
 <span class="n">source</span> <span class="n">setupvars</span><span class="p">.</span><span class="n">sh</span></pre></div></div><ol class="arabic">
 <li><p>Navigate to a directory that you have write access to and create a samples build directory. This example uses a directory named <code class="docutils literal notranslate"><span class="pre">build</span></code> :</p>
-<div class="highlight"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build</span></pre></div></div></li>
-</ol>
-<div class="admonition note">
+<div class="highlight"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build</span></pre></div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you ran the Image Classification verification script during the installation, the C++ samples build directory was already created in your home directory: <code class="docutils literal notranslate"><span class="pre">~/inference_engine_cpp_samples_build/</span></code></p>
 </div>
-<ol class="arabic">
+</li>
 <li><p>Go to the created directory:</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">build</span></pre></div></div></li>
 <li><p>Run CMake to generate the Make files for release or debug configuration. For example, for C++ samples:</p>
@@ -849,7 +860,7 @@
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">make</span></code> to build the samples:</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">make</span></pre></div></div></li>
 </ol>
-<p>For the release configuration, the sample application binaries are in <code class="docutils literal notranslate"><span class="pre">&lt;path_to_build_directory&gt;/intel64/Release/</span></code>; for the debug configuration — in <code class="docutils literal notranslate"><span class="pre">&lt;path_to_build_directory&gt;/intel64/Debug/</span></code>.</p>
+<p>For the release configuration, the sample application binaries are in <code class="docutils literal notranslate"><span class="pre">&lt;path_to_build_directory&gt;/intel64/Release/</span></code>; for the debug configuration — in  <code class="docutils literal notranslate"><span class="pre">&lt;path_to_build_directory&gt;/intel64/Debug/</span></code>.</p>
 </section>
 </section>
 <section id="get-ready-for-running-the-sample-applications">
@@ -890,8 +901,8 @@
             
                 <div class='prev-next-bottom'>
                   
-    <a class='button bttn-sec button-size-l' id="prev-link" href="openvino_docs_get_started_get_started_demos.html" title="previous page">Prev</a>
-    <a class='button bttn-sec button-size-l' id="next-link" href="openvino_inference_engine_samples_classification_sample_async_README.html" title="next page">Next</a>
+    <a class='button bttn-sec button-size-l' id="prev-link" href="openvino_docs_get_started_guide_troubleshooting_issues.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="next-link" href="openvino_docs_get_started_get_started_demos.html" title="next page">Next</a>
 
                 </div>
             

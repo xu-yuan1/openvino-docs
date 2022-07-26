@@ -75,7 +75,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="OpenVINO™ Python API exclusives" href="openvino_docs_OV_UG_Python_API_exclusives.html" />
+    <link rel="next" title="OpenVINO™ Python API Exclusives" href="openvino_docs_OV_UG_Python_API_exclusives.html" />
     <link rel="prev" title="Model Representation in OpenVINO™ Runtime" href="openvino_docs_OV_UG_Model_Representation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -226,448 +226,16 @@
   <div class="bd-toc-item active">
     <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Converting and Preparing Models
+  API 2.0
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html">
-   Convert model with Model Optimizer
+  <a class="reference internal" href="openvino_2_0_transition_guide.html">
+   OpenVINO™ API 2.0 Transition Guide
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Converting_Model.html">
-     Setting Input Shapes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Cutting_Model.html">
-     Cutting Off Parts of a Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_Additional_Optimization_Use_Cases.html">
-     Embedding Preprocessing Computation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_FP16_Compression.html">
-     Compression of a Model to FP16
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow.html">
-     Converting a TensorFlow Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_ONNX.html">
-     Converting an ONNX Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_PyTorch.html">
-     Converting a PyTorch* Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Paddle.html">
-     Converting a PaddlePaddle* Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_MxNet.html">
-     Converting an MXNet* Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Caffe.html">
-     Converting a Caffe* Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Kaldi.html">
-     Converting a Kaldi* Model
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tutorials.html">
-     Model Conversion Tutorials
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_AttentionOCR_From_Tensorflow.html">
-       Convert TensorFlow Attention OCR Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_BERT_From_Tensorflow.html">
-       Convert TensorFlow BERT Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_CRNN_From_Tensorflow.html">
-       Convert TensorFlow CRNN Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_DeepSpeech_From_Tensorflow.html">
-       Convert TensorFlow DeepSpeech Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_EfficientDet_Models.html">
-       Convert TensorFlow EfficientDet Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_FaceNet_From_Tensorflow.html">
-       Convert TensorFlow FaceNet Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_GNMT_From_Tensorflow.html">
-       Convert TensorFlow GNMT Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_lm_1b_From_Tensorflow.html">
-       Convert TensorFlow Language Model on One Billion Word Benchmark
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_NCF_From_Tensorflow.html">
-       Convert TensorFlow Neural Collaborative Filtering Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_Object_Detection_API_Models.html">
-       Convert TensorFlow Object Detection API Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_RetinaNet_From_Tensorflow.html">
-       Converting TensorFlow RetinaNet Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_Slim_Library_Models.html">
-       Convert TensorFlow Slim Image Classification Model Library Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_WideAndDeep_Family_Models.html">
-       Convert TensorFlow Wide and Deep Family Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_XLNet_From_Tensorflow.html">
-       Convert TensorFlow XLNet Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_YOLO_From_Tensorflow.html">
-       Convert TensorFlow YOLO Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_Faster_RCNN.html">
-       Convert ONNX* Faster R-CNN Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_GPT2.html">
-       Convert ONNX* GPT-2 Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_Mask_RCNN.html">
-       Convert ONNX* Mask R-CNN Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Bert_ner.html">
-       Convert PyTorch* BERT-NER Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Cascade_RCNN_res101.html">
-       Convert PyTorch Cascade RCNN R-101 Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_F3Net.html">
-       Convert PyTorch* F3Net Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_QuartzNet.html">
-       Convert PyTorch* QuartzNet Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_RCAN.html">
-       Convert PyTorch* RCAN Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_RNNT.html">
-       Convert PyTorch* RNN-T Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_YOLACT.html">
-       Convert PyTorch* YOLACT Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_GluonCV_Models.html">
-       Convert MXNet GluonCV* Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_Style_Transfer_From_MXNet.html">
-       Convert MXNet Style Transfer Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_kaldi_specific_Aspire_Tdnn_Model.html">
-       Convert Kaldi* ASpIRE Chain Time Delay Neural Network (TDNN) Model
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_Model_Optimizer_FAQ.html">
-     Model Optimizer Frequently Asked Questions
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Deploying Inference
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="openvino_docs_OV_UG_OV_Runtime_User_Guide.html">
-   Performing inference with OpenVINO Runtime
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="openvino_docs_OV_UG_Integrate_OV_with_your_application.html">
-     Integrate OpenVINO™ with Your Application
-    </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_Model_Representation.html">
-       Model Representation in OpenVINO™ Runtime
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       OpenVINO™ Inference Request
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_Python_API_exclusives.html">
-       OpenVINO™ Python API exclusives
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_ShapeInference.html">
-     Changing input shapes
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_OV_UG_Working_with_devices.html">
-     Working with devices
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_query_api.html">
-       Query device properties, configuration
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_CPU.html">
-       CPU device
-      </a>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GPU.html">
-       GPU device
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-      <label for="toctree-checkbox-6">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GPU_RemoteTensor_API.html">
-         Remote Tensor API of GPU Plugin
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_VPU.html">
-       VPU devices
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-      <label for="toctree-checkbox-7">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_MYRIAD.html">
-         MYRIAD device
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_HDDL.html">
-         HDDL device
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GNA.html">
-       GNA device
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_ARM_CPU.html">
-       Arm® CPU device
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_OV_UG_Preprocessing_Overview.html">
-     Optimize Preprocessing
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-    <label for="toctree-checkbox-8">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_Preprocessing_Details.html">
-       Preprocessing API - details
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_Layout_Overview.html">
-       Layout API overview
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_Preprocess_Usecase_save.html">
-       Use Case - Integrate and Save Preprocessing Steps Into IR
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_OV_UG_DynamicShapes.html">
-     Dynamic Shapes
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-    <label for="toctree-checkbox-9">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_NoDynamicShapes.html">
-       When Dynamic Shapes API is Not Applicable
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_AUTO.html">
-     Automatic device selection
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_AUTO_debugging.html">
-       Debugging Auto-Device Plugin
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_Running_on_multiple_devices.html">
-     Running on multiple devices simultaneously
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_Hetero_execution.html">
-     Heterogeneous execution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_Performance_Hints.html">
-     High-level Performance Hints
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_Automatic_Batching.html">
-     Automatic Batching
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_network_state_intro.html">
-     Stateful models
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="openvino_2_0_transition_guide.html">
-   Transition to OpenVINO™ API 2.0
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -694,42 +262,256 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="openvino_2_0_model_creation.html">
-     Model Creation in Runtime
+     Model Creation in OpenVINO™ Runtime
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="openvino_deployment_guide.html">
-   Deploy with OpenVINO
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Converting and Preparing Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvino_docs_model_processing_introduction.html">
+   Introduction to Model Processing
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html">
+   Converting Models with Model Optimizer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_install_guides_deployment_manager_tool.html">
-     Deployment Manager
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Converting_Model.html">
+     Setting Input Shapes
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_deploy_local_distribution.html">
-     Local distribution
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_Model_Optimization_Techniques.html">
+     Model Optimization Techniques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Cutting_Model.html">
+     Cutting Off Parts of a Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_Additional_Optimization_Use_Cases.html">
+     Embedding Preprocessing Computation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_FP16_Compression.html">
+     Compressing a Model to FP16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow.html">
+     Converting a TensorFlow Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_ONNX.html">
+     Converting an ONNX Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_PyTorch.html">
+     Converting a PyTorch Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Paddle.html">
+     Converting a PaddlePaddle Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_MxNet.html">
+     Converting an MXNet Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Caffe.html">
+     Converting a Caffe Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Kaldi.html">
+     Converting a Kaldi Model
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tutorials.html">
+     Model Conversion Tutorials
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_AttentionOCR_From_Tensorflow.html">
+       Converting a TensorFlow Attention OCR Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_BERT_From_Tensorflow.html">
+       Converting a TensorFlow BERT Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_CRNN_From_Tensorflow.html">
+       Converting a TensorFlow CRNN Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_DeepSpeech_From_Tensorflow.html">
+       Converting a TensorFlow DeepSpeech Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_EfficientDet_Models.html">
+       Converting TensorFlow EfficientDet Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_FaceNet_From_Tensorflow.html">
+       Converting TensorFlow FaceNet Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_GNMT_From_Tensorflow.html">
+       Converting a TensorFlow GNMT Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_lm_1b_From_Tensorflow.html">
+       Converting a TensorFlow Language Model on One Billion Word Benchmark
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_NCF_From_Tensorflow.html">
+       Converting a TensorFlow Neural Collaborative Filtering Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_Object_Detection_API_Models.html">
+       Converting TensorFlow Object Detection API Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_RetinaNet_From_Tensorflow.html">
+       Converting a TensorFlow RetinaNet Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_Slim_Library_Models.html">
+       Converting TensorFlow Slim Image Classification Model Library Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_WideAndDeep_Family_Models.html">
+       Converting TensorFlow Wide and Deep Family Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_XLNet_From_Tensorflow.html">
+       Converting a TensorFlow XLNet Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_YOLO_From_Tensorflow.html">
+       Converting TensorFlow YOLO Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_Faster_RCNN.html">
+       Converting an ONNX Faster R-CNN Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_GPT2.html">
+       Converting an ONNX GPT-2 Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_Mask_RCNN.html">
+       Converting an ONNX Mask R-CNN Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Bert_ner.html">
+       Converting a PyTorch BERT-NER Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Cascade_RCNN_res101.html">
+       Converting a PyTorch Cascade RCNN R-101 Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_F3Net.html">
+       Converting a PyTorch F3Net Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_QuartzNet.html">
+       Converting a PyTorch QuartzNet Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_RCAN.html">
+       Converting a PyTorch RCAN Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_RNNT.html">
+       Converting a PyTorch RNN-T Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_YOLACT.html">
+       Converting a PyTorch YOLACT Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_GluonCV_Models.html">
+       Converting MXNet GluonCV Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_Style_Transfer_From_MXNet.html">
+       Converting an MXNet Style Transfer Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_kaldi_specific_Aspire_Tdnn_Model.html">
+       Converting a Kaldi ASpIRE Chain Time Delay Neural Network (TDNN) Model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_Model_Optimizer_FAQ.html">
+     Model Optimizer Frequently Asked Questions
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="openvino_inference_engine_tools_compile_tool_README.html">
-   Compile Tool
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Tuning for Performance
+  Optimization and Performance
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -747,8 +529,8 @@
   <a class="reference internal" href="openvino_docs_model_optimization_guide.html">
    Model Optimization Guide
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -757,8 +539,8 @@
     <a class="reference internal" href="pot_introduction.html">
      Optimizing models post-training
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-    <label for="toctree-checkbox-14">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -767,8 +549,8 @@
       <a class="reference internal" href="pot_default_quantization_usage.html">
        Quantizing Model
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-      <label for="toctree-checkbox-15">
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -784,8 +566,8 @@
       <a class="reference internal" href="pot_accuracyaware_usage.html">
        Quantizing Model with Accuracy Control
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-      <label for="toctree-checkbox-16">
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -801,8 +583,8 @@
       <a class="reference internal" href="pot_docs_BestPractices.html">
        Quantization Best Practices
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-      <label for="toctree-checkbox-17">
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -823,8 +605,8 @@
       <a class="reference internal" href="pot_compression_cli_README.html">
        Command-line Interface
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-      <label for="toctree-checkbox-18">
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -845,8 +627,8 @@
       <a class="reference internal" href="pot_examples_description.html">
        Examples
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-      <label for="toctree-checkbox-19">
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -855,8 +637,8 @@
         <a class="reference internal" href="pot_example_README.html">
          API Examples
         </a>
-        <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-        <label for="toctree-checkbox-20">
+        <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+        <label for="toctree-checkbox-11">
          <i class="fas fa-chevron-down">
          </i>
         </label>
@@ -913,7 +695,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="pot_ranger_README.html">
+    <a class="reference internal" href="pot_range_supervision_README.html">
      (Experimental) Protecting Model
     </a>
    </li>
@@ -923,8 +705,8 @@
   <a class="reference internal" href="openvino_docs_deployment_optimization_guide_dldt_optimization_guide.html">
    Runtime Inference Optimizations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-  <label for="toctree-checkbox-21">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -938,8 +720,8 @@
     <a class="reference internal" href="openvino_docs_deployment_optimization_guide_latency.html">
      Optimizing for the Latency
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-    <label for="toctree-checkbox-22">
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -972,8 +754,8 @@
   <a class="reference internal" href="openvino_docs_tuning_utilities.html">
    Tuning Utilities
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-  <label for="toctree-checkbox-23">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -989,8 +771,8 @@
   <a class="reference internal" href="openvino_docs_performance_benchmarks.html">
    Performance Benchmarks
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-  <label for="toctree-checkbox-24">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -999,8 +781,8 @@
     <a class="reference internal" href="openvino_docs_performance_benchmarks_openvino.html">
      Intel® Distribution of OpenVINO™ toolkit Benchmark Results
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-    <label for="toctree-checkbox-25">
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1012,7 +794,7 @@
      </li>
      <li class="toctree-l3">
       <a class="reference external" href="https://docs.openvino.ai/downloads/benchmark_files/OV-2022.1-Download-Excel.xlsx">
-       Download Performance Data Spreadsheet in MS Excel* Format
+       Download Performance Data Spreadsheet in MS Excel Format
       </a>
      </li>
      <li class="toctree-l3">
@@ -1032,18 +814,258 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Graphical Web Interface for OpenVINO™ toolkit
+  Deploying Inference
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvino_docs_deployment_guide_introduction.html">
+   Introduction to OpenVINO™ Deployment
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="openvino_docs_OV_UG_OV_Runtime_User_Guide.html">
+   Performing Inference with OpenVINO Runtime
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="openvino_docs_OV_UG_Integrate_OV_with_your_application.html">
+     Integrate OpenVINO™ with Your Application
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_Model_Representation.html">
+       Model Representation in OpenVINO™ Runtime
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       OpenVINO™ Inference Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_Python_API_exclusives.html">
+       OpenVINO™ Python API Exclusives
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_ShapeInference.html">
+     Changing Input Shapes
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="openvino_docs_OV_UG_Working_with_devices.html">
+     Working with devices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_query_api.html">
+       Query Device Properties - Configuration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_CPU.html">
+       CPU Device
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GPU.html">
+       GPU Device
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+      <label for="toctree-checkbox-20">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GPU_RemoteTensor_API.html">
+         Remote Tensor API of GPU Plugin
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_VPU.html">
+       VPU Devices
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_MYRIAD.html">
+         MYRIAD Device
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_HDDL.html">
+         HDDL Device
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GNA.html">
+       GNA Device
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_ARM_CPU.html">
+       Arm® CPU Device
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="openvino_docs_OV_UG_Preprocessing_Overview.html">
+     Optimize Preprocessing
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_Preprocessing_Details.html">
+       Preprocessing API - details
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_Layout_Overview.html">
+       Layout API Overview
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_Preprocess_Usecase_save.html">
+       Use Case - Integrate and Save Preprocessing Steps Into IR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="openvino_docs_OV_UG_DynamicShapes.html">
+     Dynamic Shapes
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_NoDynamicShapes.html">
+       When Dynamic Shapes API is Not Applicable
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_AUTO.html">
+     Automatic Device Selection
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_AUTO_debugging.html">
+       Debugging Auto-Device Plugin
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_Running_on_multiple_devices.html">
+     Running on Multiple Devices Simultaneously
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_Hetero_execution.html">
+     Heterogeneous execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_Performance_Hints.html">
+     High-level Performance Hints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_Automatic_Batching.html">
+     Automatic Batching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_network_state_intro.html">
+     Stateful models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="openvino_deployment_guide.html">
+   Deploying Your Applications with OpenVINO™
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+  <label for="toctree-checkbox-25">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_install_guides_deployment_manager_tool.html">
+     Deploying Your Application with Deployment Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_deploy_local_distribution.html">
+     Libraries for Local Distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvino_inference_engine_tools_compile_tool_README.html">
+   Compile Tool
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  THE Ecosystem
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_Introduction.html">
-   OpenVINO™ Deep Learning Workbench Overview
+  <a class="reference internal" href="ovsa_get_started.html">
+   OpenVINO™ Security Add-on
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_Install.html">
-   Installation
+  <a class="reference internal" href="workbench_docs_Workbench_DG_Introduction.html">
+   OpenVINO™ Deep Learning Workbench Overview
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
   <label for="toctree-checkbox-26">
@@ -1051,14 +1073,9 @@
    </i>
   </label>
   <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Prerequisites.html">
-     Prerequisites
-    </a>
-   </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Locally.html">
-     Run the DL Workbench Locally
+    <a class="reference internal" href="workbench_docs_Workbench_DG_Install.html">
+     Installation
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
     <label for="toctree-checkbox-27">
@@ -1067,47 +1084,42 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Advanced_Configurations.html">
-       Advanced DL Workbench Configurations
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Prerequisites.html">
+       Prerequisites
       </a>
      </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Locally.html">
+       Run the DL Workbench Locally
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+      <label for="toctree-checkbox-28">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Advanced_Configurations.html">
+         Advanced DL Workbench Configurations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Docker_Container.html">
+         Work with Docker Container
+        </a>
+       </li>
+      </ul>
+     </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Docker_Container.html">
-       Work with Docker Container
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Start_DL_Workbench_in_DevCloud.html">
+       Run the DL Workbench in the Intel® DevCloud for the Edge
       </a>
      </li>
     </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Start_DL_Workbench_in_DevCloud.html">
-     Run the DL Workbench in the Intel® DevCloud for the Edge
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_Work_with_Models_and_Sample_Datasets.html">
-   Get Started
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-  <label for="toctree-checkbox-28">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Model.html">
-     Import Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_Create_Project.html">
-     Create Project
-    </a>
-   </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Additional_Resources.html">
-     Educational Resources about DL Workbench
+    <a class="reference internal" href="workbench_docs_Workbench_DG_Work_with_Models_and_Sample_Datasets.html">
+     Get Started
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
     <label for="toctree-checkbox-29">
@@ -1116,79 +1128,89 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Key_Concepts.html">
-       DL Workbench Key Concepts
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Model.html">
+       Import Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_Create_Project.html">
+       Create Project
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Additional_Resources.html">
+       Educational Resources about DL Workbench
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Key_Concepts.html">
+         DL Workbench Key Concepts
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorials.html">
+     Tutorials
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Import_YOLO.html">
+       Object Detection Model (YOLOv4)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy_Object_detection.html">
+       Object Detection Model (SSD_mobilenet)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Classification.html">
+       Classification Model (mobilenet)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy_Classification.html">
+       Classification Model (squeezenet)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Instance_Segmentation.html">
+       Instance Segmentation Model (mask R-cnn)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Semantic_Segmentation.html">
+       Semantic Segmentation Model (deeplab)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Style_Transfer.html">
+       Style Transfer Model (fast-nst-onnx)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_NLP.html">
+       NLP Model (BERT)
       </a>
      </li>
     </ul>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorials.html">
-   Tutorials
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
-  <label for="toctree-checkbox-30">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Import_YOLO.html">
-     Object Detection Model (YOLOv4)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy_Object_detection.html">
-     Object Detection Model (SSD_mobilenet)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Classification.html">
-     Classification Model (mobilenet)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy_Classification.html">
-     Classification Model (squeezenet)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Instance_Segmentation.html">
-     Instance Segmentation Model (mask R-cnn)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Semantic_Segmentation.html">
-     Semantic Segmentation Model (deeplab)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Style_Transfer.html">
-     Style Transfer Model (fast-nst-onnx)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_NLP.html">
-     NLP Model (BERT)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_User_Guide.html">
-   User Guide
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-  <label for="toctree-checkbox-31">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Models.html">
-     Obtain Models
+    <a class="reference internal" href="workbench_docs_Workbench_DG_User_Guide.html">
+     User Guide
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
     <label for="toctree-checkbox-32">
@@ -1196,14 +1218,9 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_OMZ_Models.html">
-       Import Open Model Zoo Models
-      </a>
-     </li>
      <li class="toctree-l3 has-children">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Original_Model_Import.html">
-       Import Original Model
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Models.html">
+       Obtain Models
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
       <label for="toctree-checkbox-33">
@@ -1212,27 +1229,32 @@
       </label>
       <ul>
        <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Import_Original.html">
-         Import Original Model Recommendations
+        <a class="reference internal" href="workbench_docs_Workbench_DG_OMZ_Models.html">
+         Import Open Model Zoo Models
         </a>
+       </li>
+       <li class="toctree-l4 has-children">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Original_Model_Import.html">
+         Import Original Model
+        </a>
+        <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+        <label for="toctree-checkbox-34">
+         <i class="fas fa-chevron-down">
+         </i>
+        </label>
+        <ul>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Import_Original.html">
+           Import Original Model Recommendations
+          </a>
+         </li>
+        </ul>
        </li>
       </ul>
      </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Generate_Datasets.html">
-     Obtain Datasets
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-    <label for="toctree-checkbox-34">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
      <li class="toctree-l3 has-children">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Dataset_Types.html">
-       Dataset Types
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Generate_Datasets.html">
+       Obtain Datasets
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
       <label for="toctree-checkbox-35">
@@ -1240,28 +1262,28 @@
        </i>
       </label>
       <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Download_and_Cut_Datasets.html">
-         Cut Datasets
+       <li class="toctree-l4 has-children">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Dataset_Types.html">
+         Dataset Types
         </a>
+        <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+        <label for="toctree-checkbox-36">
+         <i class="fas fa-chevron-down">
+         </i>
+        </label>
+        <ul>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Download_and_Cut_Datasets.html">
+           Cut Datasets
+          </a>
+         </li>
+        </ul>
        </li>
       </ul>
      </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Environment.html">
-     Select Environment
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-    <label for="toctree-checkbox-36">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
      <li class="toctree-l3 has-children">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Profiling.html">
-       Work with Remote Targets
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Environment.html">
+       Select Environment
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
       <label for="toctree-checkbox-37">
@@ -1269,181 +1291,193 @@
        </i>
       </label>
       <ul>
+       <li class="toctree-l4 has-children">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Profiling.html">
+         Work with Remote Targets
+        </a>
+        <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+        <label for="toctree-checkbox-38">
+         <i class="fas fa-chevron-down">
+         </i>
+        </label>
+        <ul>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Profile_on_Remote_Machine.html">
+           Profile on Remote Machine
+          </a>
+         </li>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Setup_Remote_Target.html">
+           Set Up Remote Target
+          </a>
+         </li>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Add_Remote_Target.html">
+           Register Remote Target in DL Workbench
+          </a>
+         </li>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Machines.html">
+           Manipulate Remote Machines
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Int_8_Quantization.html">
+       Optimize Model Performance
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Inference.html">
+       Explore Inference Configurations
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Profile_on_Remote_Machine.html">
-         Profile on Remote Machine
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Single_Inference.html">
+         Run Inference
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Setup_Remote_Target.html">
-         Set Up Remote Target
+        <a class="reference internal" href="workbench_docs_Workbench_DG_View_Inference_Results.html">
+         View Inference Results
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Add_Remote_Target.html">
-         Register Remote Target in DL Workbench
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Compare_Performance_between_Two_Versions_of_Models.html">
+         Compare Performance between Two Versions of a Model
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Machines.html">
-         Manipulate Remote Machines
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Model.html">
+         Visualize Model
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Accuracy.html">
+       Visualize Model Output
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy.html">
+       Create Accuracy Report
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Accuracy_Configuration.html">
+         Accuracy Configuration
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Configure_Accuracy_Settings.html">
+         Set Accuracy Configuration
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Accuracy_Report_Results.html">
+         Interpret Accuracy Report Results
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Deployment_Package.html">
+       Create Deployment Package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Deploy_and_Integrate_Performance_Criteria_into_Application.html">
+         Deploy and Integrate Performance Criteria into Application
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Export_Project.html">
+       Export Project
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Jupyter_Notebooks_CLI.html">
+       Learn OpenVINO in DL Workbench
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Jupyter_Notebooks.html">
+         Learn Model Inference with OpenVINO™ API in JupyterLab* Environment
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Persist_Database.html">
+       Restore DL Workbench State
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_security_Workbench.html">
+       Run DL Workbench Securely
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Authentication.html">
+         Enable Authentication in DL Workbench
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Configure_TLS.html">
+         Configure Transport Layer Security (TLS)
         </a>
        </li>
       </ul>
      </li>
     </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Int_8_Quantization.html">
-     Optimize Model Performance
-    </a>
-   </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Inference.html">
-     Explore Inference Configurations
+    <a class="reference internal" href="workbench_docs_Workbench_DG_Troubleshooting.html">
+     Troubleshooting
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-    <label for="toctree-checkbox-38">
+    <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+    <label for="toctree-checkbox-44">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Single_Inference.html">
-       Run Inference
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_View_Inference_Results.html">
-       View Inference Results
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Compare_Performance_between_Two_Versions_of_Models.html">
-       Compare Performance between Two Versions of a Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Model.html">
-       Visualize Model
+      <a class="reference internal" href="workbench_docs_Workbench_DG_DC_Troubleshooting.html">
+       Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge
       </a>
      </li>
     </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Accuracy.html">
-     Visualize Model Output
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy.html">
-     Create Accuracy Report
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-    <label for="toctree-checkbox-39">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Accuracy_Configuration.html">
-       Accuracy Configuration
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Configure_Accuracy_Settings.html">
-       Set Accuracy Configuration
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Accuracy_Report_Results.html">
-       Interpret Accuracy Report Results
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Deployment_Package.html">
-     Create Deployment Package
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-    <label for="toctree-checkbox-40">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Deploy_and_Integrate_Performance_Criteria_into_Application.html">
-       Deploy and Integrate Performance Criteria into Application
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Export_Project.html">
-     Export Project
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Jupyter_Notebooks_CLI.html">
-     Learn OpenVINO in DL Workbench
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-    <label for="toctree-checkbox-41">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Jupyter_Notebooks.html">
-       Learn Model Inference with OpenVINO™ API in JupyterLab* Environment
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Persist_Database.html">
-     Restore DL Workbench State
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_security_Workbench.html">
-     Run DL Workbench Securely
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-    <label for="toctree-checkbox-42">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Authentication.html">
-       Enable Authentication in DL Workbench
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Configure_TLS.html">
-       Configure Transport Layer Security (TLS)
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_Troubleshooting.html">
-   Troubleshooting
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-  <label for="toctree-checkbox-43">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_DC_Troubleshooting.html">
-     Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge
-    </a>
    </li>
   </ul>
  </li>
@@ -1463,8 +1497,8 @@
   <a class="reference internal" href="openvino_docs_gapi_gapi_intro.html">
    Introduction to OpenCV Graph API (G-API)
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-  <label for="toctree-checkbox-44">
+  <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+  <label for="toctree-checkbox-45">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1499,18 +1533,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Add-Ons
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="ovsa_get_started.html">
-   OpenVINO™ Security Add-on
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   OpenVINO Extensibility
  </span>
 </p>
@@ -1519,8 +1541,8 @@
   <a class="reference internal" href="openvino_docs_Extensibility_UG_Intro.html">
    OpenVINO Extensibility Mechanism
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-  <label for="toctree-checkbox-45">
+  <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+  <label for="toctree-checkbox-46">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1541,7 +1563,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_IE_DG_Extensibility_DG_VPU_Kernel.html">
+    <a class="reference internal" href="openvino_docs_Extensibility_UG_VPU_Kernel.html">
      How to Implement Custom Layers for VPU (Intel® Neural Compute Stick 2)
     </a>
    </li>
@@ -1549,15 +1571,15 @@
     <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Customize_Model_Optimizer.html">
      Model Optimizer Extensibility
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-    <label for="toctree-checkbox-46">
+    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+    <label for="toctree-checkbox-47">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Extending_Model_Optimizer_With_Caffe_Python_Layers.html">
-       Extending Model Optimizer with Caffe* Python Layers
+       Extending Model Optimizer with Caffe Python Layers
       </a>
      </li>
     </ul>
@@ -1568,8 +1590,8 @@
   <a class="reference internal" href="openvino_docs_transformations.html">
    Overview of Transformations API
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-  <label for="toctree-checkbox-47">
+  <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+  <label for="toctree-checkbox-48">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1595,8 +1617,8 @@
   <a class="reference internal" href="openvino_docs_ie_plugin_dg_overview.html">
    OpenVINO Plugin Developer Guide
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-  <label for="toctree-checkbox-48">
+  <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+  <label for="toctree-checkbox-49">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1635,8 +1657,8 @@
     <a class="reference internal" href="openvino_docs_ie_plugin_detailed_guides.html">
      Advanced Topics
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-    <label for="toctree-checkbox-49">
+    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+    <label for="toctree-checkbox-50">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1650,8 +1672,8 @@
       <a class="reference internal" href="openvino_docs_OV_UG_lpt.html">
        OpenVINO™ Low Precision Transformations
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-      <label for="toctree-checkbox-50">
+      <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+      <label for="toctree-checkbox-51">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1660,8 +1682,8 @@
         <a class="reference internal" href="openvino_docs_OV_UG_lpt_attributes.html">
          Attributes
         </a>
-        <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-        <label for="toctree-checkbox-51">
+        <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+        <label for="toctree-checkbox-52">
          <i class="fas fa-chevron-down">
          </i>
         </label>
@@ -1726,8 +1748,8 @@
     <a class="reference internal" href="openvino_docs_ie_plugin_api_references.html">
      Plugin API Reference
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1755,7 +1777,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="openvino_docs_OV_UG_protecting_model_guide.html">
-   Using Encrypted Models with OpenVINO™
+   Using Encrypted Models with OpenVINO
   </a>
  </li>
  <li class="toctree-l1">
@@ -1790,17 +1812,17 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#run-inference">
-   Run inference
+   Run Inference
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#synchronous-mode">
-     Synchronous mode
+     Synchronous Mode
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#asynchronous-mode">
-     Asynchronous mode
+     Asynchronous Mode
     </a>
    </li>
   </ul>
@@ -1812,17 +1834,17 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cascade-of-models">
-     Cascade of models
+     Cascade of Models
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-of-roi-tensors">
-     Using of ROI tensors
+     Using of ROI Tensors
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-of-remote-tensors">
-     Using of remote tensors
+    <a class="reference internal nav-link" href="#using-remote-tensors">
+     Using Remote Tensors
     </a>
    </li>
   </ul>
@@ -1868,35 +1890,35 @@
                   
   <section id="openvino-inference-request">
 <span id="doxid-openvino-docs-o-v-u-g-infer-request"></span><span id="index-0"></span><h1>OpenVINO™ Inference Request<a class="headerlink" href="#openvino-inference-request" title="Permalink to this headline">¶</a></h1>
-<p><span class="target" id="doxid-openvino-docs-o-v-u-g-infer-request-1md-openvino-docs-ov-runtime-ug-ov-infer-request"></span> OpenVINO™ Runtime uses Infer Request mechanism which allows to run models on different devices in asynchronous or synchronous manners. <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a></code> class is used for this purpose inside the OpenVINO™ Runtime. This class allows to set and get data for model inputs, outputs and run inference for the model.</p>
+<p><span class="target" id="doxid-openvino-docs-o-v-u-g-infer-request-1md-openvino-docs-ov-runtime-ug-ov-infer-request"></span> OpenVINO™ Runtime uses Infer Request mechanism which allows running models on different devices in asynchronous or synchronous manners. The <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a></code> class is used for this purpose inside the OpenVINO™ Runtime. This class allows you to set and get data for model inputs, outputs and run inference for the model.</p>
 <section id="creating-infer-request">
 <h2>Creating Infer Request<a class="headerlink" href="#creating-infer-request" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a></code> can be created from the <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1CompiledModel.html#doxid-classov-1-1-compiled-model"><span class="std std-ref"><span class="pre">ov::CompiledModel</span></span></a></code> :</p>
-<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">infer_request</span> <span class="o">=</span> <span class="n">compiled_model</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1CompiledModel.html#doxid-classov-1-1-compiled-model-1ae3633c0eb5173ed776446fba32b95953"><span class="std std-ref">create_infer_request</span></a><span></span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span> <span class="o">=</span> <span class="n">compiled_model</span><span class="p">.</span><span class="n">create_infer_request</span><span class="p">()</span></pre></div></div></div></div></section>
+<p>The <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a></code> can be created from the <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1CompiledModel.html#doxid-classov-1-1-compiled-model"><span class="std std-ref"><span class="pre">ov::CompiledModel</span></span></a></code> :</p>
+<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">infer_request</span> <span class="o">=</span> <span class="n">compiled_model</span><span class="p">.</span><span class="n">create_infer_request</span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span> <span class="o">=</span> <span class="n">compiled_model</span><span class="p">.</span><span class="n">create_infer_request</span><span class="p">()</span></pre></div></div></div></div></section>
 <section id="run-inference">
-<h2>Run inference<a class="headerlink" href="#run-inference" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a></code> supports synchronous and asynchronous modes for inference.</p>
+<h2>Run Inference<a class="headerlink" href="#run-inference" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a></code> supports synchronous and asynchronous modes for inference.</p>
 <section id="synchronous-mode">
-<h3>Synchronous mode<a class="headerlink" href="#synchronous-mode" title="Permalink to this headline">¶</a></h3>
-<p>You can use <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1abcb7facc9f7c4b9226a1fd343e56958d"><span class="std std-ref"><span class="pre">ov::InferRequest::infer</span></span></a></code>, which blocks the application execution, to infer model in the synchronous mode:</p>
-<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1abcb7facc9f7c4b9226a1fd343e56958d"><span class="std std-ref">infer</span></a><span></span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">infer</span><span class="p">()</span></pre></div></div></div></div></section>
+<h3>Synchronous Mode<a class="headerlink" href="#synchronous-mode" title="Permalink to this headline">¶</a></h3>
+<p>You can use <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1abcb7facc9f7c4b9226a1fd343e56958d"><span class="std std-ref"><span class="pre">ov::InferRequest::infer</span></span></a></code>, which blocks the application execution, to infer a model in the synchronous mode:</p>
+<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">infer</span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">infer</span><span class="p">()</span></pre></div></div></div></div></section>
 <section id="asynchronous-mode">
-<h3>Asynchronous mode<a class="headerlink" href="#asynchronous-mode" title="Permalink to this headline">¶</a></h3>
-<p>Asynchronous mode can improve application’s overall frame-rate, because rather than wait for inference to complete, the app can keep working on the host, while the accelerator is busy. You can use <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5a05ae4352f804c865e11f5d68b983d5"><span class="std std-ref"><span class="pre">ov::InferRequest::start_async</span></span></a></code> to infer model in the asynchronous mode:</p>
-<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5a05ae4352f804c865e11f5d68b983d5"><span class="std std-ref">start_async</span></a><span></span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">start_async</span><span class="p">()</span></pre></div></div></div></div><p>Asynchronous mode supports two ways the application waits for inference results:</p>
+<h3>Asynchronous Mode<a class="headerlink" href="#asynchronous-mode" title="Permalink to this headline">¶</a></h3>
+<p>The asynchronous mode can improve application’s overall frame-rate, by making it work on the host while the accelerator is busy, instead of waiting for inference to complete. To infer a model in the asynchronous mode, use <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5a05ae4352f804c865e11f5d68b983d5"><span class="std std-ref"><span class="pre">ov::InferRequest::start_async</span></span></a></code> :</p>
+<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">start_async</span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">start_async</span><span class="p">()</span></pre></div></div></div></div><p>Asynchronous mode supports two ways the application waits for inference results:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a94d6d52e03d2ad20310a1e0fdd807e9e"><span class="std std-ref"><span class="pre">ov::InferRequest::wait_for</span></span></a></code> - specifies the maximum duration in milliseconds to block the method. The method is blocked until the specified time has passed, or the result becomes available, whichever comes first.</p>
-<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a94d6d52e03d2ad20310a1e0fdd807e9e"><span class="std std-ref">wait_for</span></a><span></span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">wait_for</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span></pre></div></div></div></div></li>
+<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">wait_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">wait_for</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span></pre></div></div></div></div></li>
 <li><p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1ab0e0739da45789d816f8b5584a0b5691"><span class="std std-ref"><span class="pre">ov::InferRequest::wait</span></span></a></code> - waits until inference result becomes available</p>
-<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1ab0e0739da45789d816f8b5584a0b5691"><span class="std std-ref">wait</span></a><span></span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">wait</span><span class="p">()</span></pre></div></div></div></div><p>Both methods are thread-safe.</p>
+<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">wait</span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">wait</span><span class="p">()</span></pre></div></div></div></div><p>Both methods are thread-safe.</p>
 </li>
 </ul>
-<p>When you are running several inference requests in parallel, a device can process them simultaneously, with no garauntees on the completion order. This may complicate a possible logic based on the <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1ab0e0739da45789d816f8b5584a0b5691"><span class="std std-ref"><span class="pre">ov::InferRequest::wait</span></span></a></code> (unless your code needs to wait for the <em>all</em> requests). For multi-request scenarios, consider using the <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1afba2a10162ab356728ec8901973e8f02"><span class="std std-ref"><span class="pre">ov::InferRequest::set_callback</span></span></a></code> method to set a callback which is called upon completion of the request:</p>
-<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1afba2a10162ab356728ec8901973e8f02"><span class="std std-ref">set_callback</span></a><span></span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="n">std</span><span class="o">::</span><span class="n">exception_ptr</span> <span class="n">ex_ptr</span><span class="p">)</span> <span class="p">{</span>
+<p>When you are running several inference requests in parallel, a device can process them simultaneously, with no guarantees on the completion order. This may complicate a possible logic based on the <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1ab0e0739da45789d816f8b5584a0b5691"><span class="std std-ref"><span class="pre">ov::InferRequest::wait</span></span></a></code> (unless your code needs to wait for the <em>all</em> requests). For multi-request scenarios, consider using the <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1afba2a10162ab356728ec8901973e8f02"><span class="std std-ref"><span class="pre">ov::InferRequest::set_callback</span></span></a></code> method to set a callback which is called upon completion of the request:</p>
+<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="n">std</span><span class="o">::</span><span class="n">exception_ptr</span> <span class="n">ex_ptr</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ex_ptr</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// all done. Output data can be processed.</span>
         <span class="c1">// You can fill the input data and run inference one more time:</span>
-        <span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5a05ae4352f804c865e11f5d68b983d5"><span class="std std-ref">start_async</span></a><span></span><span class="p">();</span>
+        <span class="n">infer_request</span><span class="p">.</span><span class="n">start_async</span><span class="p">();</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="c1">// Something wrong, you can analyze exception_ptr</span>
     <span class="p">}</span>
@@ -1907,48 +1929,50 @@
 <p class="admonition-title">Note</p>
 <p>Use weak reference of infer_request (<code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a><span class="pre">\*</span></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">std::weal_ptr&lt;</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a><span class="pre">&gt;</span></code>, etc.) in the callback. It is necessary to avoid cyclic references.</p>
 </div>
-<p>For more details, check <a class="reference internal" href="openvino_inference_engine_samples_classification_sample_async_README.html#doxid-openvino-inference-engine-samples-classification-sample-async-r-e-a-d-m-e"><span class="std std-ref">Classification Sample Async</span></a>.</p>
+<p>For more details, see the <a class="reference internal" href="openvino_inference_engine_samples_classification_sample_async_README.html#doxid-openvino-inference-engine-samples-classification-sample-async-r-e-a-d-m-e"><span class="std std-ref">Classification Async Sample</span></a>.</p>
 <p>You can use the <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1aa100b080271f057ab5f98d1832af414d"><span class="std std-ref"><span class="pre">ov::InferRequest::cancel</span></span></a></code> method if you want to abort execution of the current inference request:</p>
-<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1aa100b080271f057ab5f98d1832af414d"><span class="std std-ref">cancel</span></a><span></span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">cancel</span><span class="p">()</span></pre></div></div></div></div></section>
+<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">cancel</span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">infer_request</span><span class="p">.</span><span class="n">cancel</span><span class="p">()</span></pre></div></div></div></div><p><span class="target" id="doxid-openvino-docs-o-v-u-g-infer-request-1in-out-tensors"></span></p>
+</section>
 </section>
 <section id="working-with-input-and-output-tensors">
 <h2>Working with Input and Output tensors<a class="headerlink" href="#working-with-input-and-output-tensors" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a></code> allows to get input/output tensors by tensor name, index, port and without any arguments in case if model has only one input or output.</p>
+<p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a></code> allows you to get input/output tensors by tensor name, index, port, and without any arguments, if a model has only one input or output.</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5f0bc1ab40de6a7a12136b4a4e6a8b54"><span class="std std-ref"><span class="pre">ov::InferRequest::get_input_tensor</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5ddca7af7faffa2c90fd600a3f84aa6e"><span class="std std-ref"><span class="pre">ov::InferRequest::set_input_tensor</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a350159a8d967022db46633eed50d073a"><span class="std std-ref"><span class="pre">ov::InferRequest::get_output_tensor</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a3e93efd003301c4de6b0181163e7d14d"><span class="std std-ref"><span class="pre">ov::InferRequest::set_output_tensor</span></span></a></code> methods without arguments can be used to get or set input/output tensor for model with only one input/output:</p>
-<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">input_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5f0bc1ab40de6a7a12136b4a4e6a8b54"><span class="std std-ref">get_input_tensor</span></a><span></span><span class="p">();</span>
-<span class="k">auto</span> <span class="n">output_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a350159a8d967022db46633eed50d073a"><span class="std std-ref">get_output_tensor</span></a><span></span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">input_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_input_tensor</span><span class="p">()</span>
+<li><p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5f0bc1ab40de6a7a12136b4a4e6a8b54"><span class="std std-ref"><span class="pre">ov::InferRequest::get_input_tensor</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5ddca7af7faffa2c90fd600a3f84aa6e"><span class="std std-ref"><span class="pre">ov::InferRequest::set_input_tensor</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a350159a8d967022db46633eed50d073a"><span class="std std-ref"><span class="pre">ov::InferRequest::get_output_tensor</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a3e93efd003301c4de6b0181163e7d14d"><span class="std std-ref"><span class="pre">ov::InferRequest::set_output_tensor</span></span></a></code> methods without arguments can be used to get or set input/output tensor for a model with only one input/output:</p>
+<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">input_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_input_tensor</span><span class="p">();</span>
+<span class="k">auto</span> <span class="n">output_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_output_tensor</span><span class="p">();</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">input_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_input_tensor</span><span class="p">()</span>
 <span class="n">output_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_output_tensor</span><span class="p">()</span></pre></div></div></div></div></li>
 <li><p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5f0bc1ab40de6a7a12136b4a4e6a8b54"><span class="std std-ref"><span class="pre">ov::InferRequest::get_input_tensor</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5ddca7af7faffa2c90fd600a3f84aa6e"><span class="std std-ref"><span class="pre">ov::InferRequest::set_input_tensor</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a350159a8d967022db46633eed50d073a"><span class="std std-ref"><span class="pre">ov::InferRequest::get_output_tensor</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a3e93efd003301c4de6b0181163e7d14d"><span class="std std-ref"><span class="pre">ov::InferRequest::set_output_tensor</span></span></a></code> methods with argument can be used to get or set input/output tensor by input/output index:</p>
-<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">input_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a5f0bc1ab40de6a7a12136b4a4e6a8b54"><span class="std std-ref">get_input_tensor</span></a><span></span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="k">auto</span> <span class="n">output_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a350159a8d967022db46633eed50d073a"><span class="std std-ref">get_output_tensor</span></a><span></span><span class="p">(</span><span class="mi">1</span><span class="p">);</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">input_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_input_tensor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">input_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_input_tensor</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">output_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_output_tensor</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">input_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_input_tensor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">output_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_output_tensor</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></pre></div></div></div></div></li>
 <li><p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a75b8da7c6b00686bede600dddceaffc4"><span class="std std-ref"><span class="pre">ov::InferRequest::get_tensor</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1af54f126e7fb3b3a0343841dda8bcc368"><span class="std std-ref"><span class="pre">ov::InferRequest::set_tensor</span></span></a></code> methods can be used to get or set input/output tensor by tensor name:</p>
-<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">tensor1</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a75b8da7c6b00686bede600dddceaffc4"><span class="std std-ref">get_tensor</span></a><span></span><span class="p">(</span><span class="s">&quot;tensor_name1&quot;</span><span class="p">);</span>
+<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">tensor1</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_tensor</span><span class="p">(</span><span class="s">&quot;tensor_name1&quot;</span><span class="p">);</span>
 <a class="reference internal" href="../api/groups/classov_1_1Tensor.html#doxid-classov-1-1-tensor"><span class="std std-ref">ov::Tensor</span></a><span></span> <span class="n">tensor2</span><span class="p">;</span>
-<span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1af54f126e7fb3b3a0343841dda8bcc368"><span class="std std-ref">set_tensor</span></a><span></span><span class="p">(</span><span class="s">&quot;tensor_name2&quot;</span><span class="p">,</span> <span class="n">tensor2</span><span class="p">);</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">tensor1</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_tensor</span><span class="p">(</span><span class="s">&quot;tensor_name1&quot;</span><span class="p">)</span>
+<span class="n">infer_request</span><span class="p">.</span><span class="n">set_tensor</span><span class="p">(</span><span class="s">&quot;tensor_name2&quot;</span><span class="p">,</span> <span class="n">tensor2</span><span class="p">);</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">tensor1</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_tensor</span><span class="p">(</span><span class="s">&quot;tensor_name1&quot;</span><span class="p">)</span>
 <span class="n">tensor2</span> <span class="o">=</span> <a class="reference internal" href="../api/groups/classov_1_1Tensor.html#doxid-classov-1-1-tensor"><span class="std std-ref">ov.Tensor</span></a><span></span><span class="p">()</span>
 <span class="n">infer_request</span><span class="p">.</span><span class="n">set_tensor</span><span class="p">(</span><span class="s">&quot;tensor_name2&quot;</span><span class="p">,</span> <span class="n">tensor2</span><span class="p">)</span></pre></div></div></div></div></li>
 <li><p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a75b8da7c6b00686bede600dddceaffc4"><span class="std std-ref"><span class="pre">ov::InferRequest::get_tensor</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1af54f126e7fb3b3a0343841dda8bcc368"><span class="std std-ref"><span class="pre">ov::InferRequest::set_tensor</span></span></a></code> methods can be used to get or set input/output tensor by port:</p>
 <div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">input_port</span> <span class="o">=</span> <a class="reference internal" href="../api/groups/groupov_runtime_cpp_prop_api.html#doxid-group-ov-runtime-cpp-prop-api-1ga461856fdfb6d7533dc53355aec9e9fad"><span class="std std-ref">model</span></a><span></span><span class="o">-&gt;</span><span class="n">input</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="k">auto</span> <span class="n">output_port</span> <span class="o">=</span> <a class="reference internal" href="../api/groups/groupov_runtime_cpp_prop_api.html#doxid-group-ov-runtime-cpp-prop-api-1ga461856fdfb6d7533dc53355aec9e9fad"><span class="std std-ref">model</span></a><span></span><span class="o">-&gt;</span><span class="n">output</span><span class="p">(</span><span class="s">&quot;tensor_name&quot;</span><span class="p">);</span>
 <a class="reference internal" href="../api/groups/classov_1_1Tensor.html#doxid-classov-1-1-tensor"><span class="std std-ref">ov::Tensor</span></a><span></span> <span class="n">input_tensor</span><span class="p">;</span>
-<span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1af54f126e7fb3b3a0343841dda8bcc368"><span class="std std-ref">set_tensor</span></a><span></span><span class="p">(</span><span class="n">input_port</span><span class="p">,</span> <span class="n">input_tensor</span><span class="p">);</span>
-<span class="k">auto</span> <span class="n">output_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a75b8da7c6b00686bede600dddceaffc4"><span class="std std-ref">get_tensor</span></a><span></span><span class="p">(</span><span class="n">output_port</span><span class="p">);</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">input_port</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">input</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">infer_request</span><span class="p">.</span><span class="n">set_tensor</span><span class="p">(</span><span class="n">input_port</span><span class="p">,</span> <span class="n">input_tensor</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">output_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_tensor</span><span class="p">(</span><span class="n">output_port</span><span class="p">);</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">input_port</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">input</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">output_port</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">input</span><span class="p">(</span><span class="s">&quot;tensor_name&quot;</span><span class="p">)</span>
 <span class="n">input_tensor</span> <span class="o">=</span> <a class="reference internal" href="../api/groups/classov_1_1Tensor.html#doxid-classov-1-1-tensor"><span class="std std-ref">ov.Tensor</span></a><span></span><span class="p">()</span>
 <span class="n">infer_request</span><span class="p">.</span><span class="n">set_tensor</span><span class="p">(</span><span class="n">input_port</span><span class="p">,</span> <span class="n">input_tensor</span><span class="p">)</span>
 <span class="n">output_tensor</span> <span class="o">=</span> <span class="n">infer_request</span><span class="p">.</span><span class="n">get_tensor</span><span class="p">(</span><span class="n">output_port</span><span class="p">)</span></pre></div></div></div></div></li>
 </ul>
+<p>Presented below are examples of what the Infer Request can be used for.</p>
 <section id="cascade-of-models">
-<h3>Cascade of models<a class="headerlink" href="#cascade-of-models" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a></code> can be used to organize cascade of models. You need to have infer requests for each model. In this case you can get output tensor from the first request using <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a75b8da7c6b00686bede600dddceaffc4"><span class="std std-ref"><span class="pre">ov::InferRequest::get_tensor</span></span></a></code> and set it as input for the second request using <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1af54f126e7fb3b3a0343841dda8bcc368"><span class="std std-ref"><span class="pre">ov::InferRequest::set_tensor</span></span></a></code>. But be careful, shared tensors across compiled models can be rewritten by the first model if the first infer request is run once again, while the second model has not started yet.</p>
+<h3>Cascade of Models<a class="headerlink" href="#cascade-of-models" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request"><span class="std std-ref"><span class="pre">ov::InferRequest</span></span></a></code> can be used to organize a cascade of models. Infer Requests are required for each model. In this case, you can get the output tensor from the first request, using <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1a75b8da7c6b00686bede600dddceaffc4"><span class="std std-ref"><span class="pre">ov::InferRequest::get_tensor</span></span></a></code> and set it as input for the second request, using <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1af54f126e7fb3b3a0343841dda8bcc368"><span class="std std-ref"><span class="pre">ov::InferRequest::set_tensor</span></span></a></code>. Keep in mind that tensors shared across compiled models can be rewritten by the first model if the first infer request is run once again, while the second model has not started yet.</p>
 <div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">output</span> <span class="o">=</span> <span class="n">infer_request1</span><span class="p">.</span><span class="n">get_output_tensor</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="n">infer_request2</span><span class="p">.</span><span class="n">set_input_tensor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">output</span><span class="p">);</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">infer_request1</span><span class="p">.</span><span class="n">get_output_tensor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">infer_request2</span><span class="p">.</span><span class="n">set_input_tensor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span></pre></div></div></div></div></section>
 <section id="using-of-roi-tensors">
-<h3>Using of ROI tensors<a class="headerlink" href="#using-of-roi-tensors" title="Permalink to this headline">¶</a></h3>
-<p>It is possible to re-use shared input by several models. You do not need to allocate separate input tensor for a model if it processes a ROI object located inside of already allocated input of a previous model. For instance, when the first model detects objects in a video frame (stored as input tensor) and the second model accepts detected bounding boxes (ROI inside of the frame) as input. In this case, it is allowed to re-use pre-allocated input tensor (used by the first model) by the second model and just crop ROI without allocation of new memory using <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1Tensor.html#doxid-classov-1-1-tensor"><span class="std std-ref"><span class="pre">ov::Tensor</span></span></a></code> with passing of <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1Tensor.html#doxid-classov-1-1-tensor"><span class="std std-ref"><span class="pre">ov::Tensor</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1Coordinate.html#doxid-classov-1-1-coordinate"><span class="std std-ref"><span class="pre">ov::Coordinate</span></span></a></code> as parameters.</p>
+<h3>Using of ROI Tensors<a class="headerlink" href="#using-of-roi-tensors" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to re-use shared input in several models. You do not need to allocate a separate input tensor for a model if it processes a ROI object located inside of an already allocated input of a previous model. For instance, when the first model detects objects in a video frame (stored as an input tensor) and the second model accepts detected bounding boxes (ROI inside of the frame) as input. In this case, it is allowed to re-use a pre-allocated input tensor (used by the first model) by the second model and just crop ROI without allocation of new memory, using <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1Tensor.html#doxid-classov-1-1-tensor"><span class="std std-ref"><span class="pre">ov::Tensor</span></span></a></code> with passing <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1Tensor.html#doxid-classov-1-1-tensor"><span class="std std-ref"><span class="pre">ov::Tensor</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1Coordinate.html#doxid-classov-1-1-coordinate"><span class="std std-ref"><span class="pre">ov::Coordinate</span></span></a></code> as parameters.</p>
 <div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><span></span><span class="o">/</span><span class="err">\</span><span class="o">*</span><span class="err">\</span><span class="o">*</span> <span class="n">input_tensor</span> <span class="n">points</span> <span class="n">to</span> <span class="n">input</span> <span class="n">of</span> <span class="n">a</span> <span class="n">previous</span> <span class="n">network</span> <span class="n">and</span>
     <span class="n">cropROI</span> <span class="n">contains</span> <span class="n">coordinates</span> <span class="n">of</span> <span class="n">output</span> <span class="n">bounding</span> <span class="n">box</span> <span class="err">\</span><span class="o">*</span><span class="err">\*/</span>
 <a class="reference internal" href="../api/groups/classov_1_1Tensor.html#doxid-classov-1-1-tensor"><span class="std std-ref">ov::Tensor</span></a><span></span> <span class="n">input_tensor</span><span class="p">(</span><a class="reference internal" href="../api/groups/groupov_element_cpp_api.html#doxid-group-ov-element-cpp-api-1gadc8a5dda3244028a5c0b024897215d43"><span class="std std-ref">ov::element::f32</span></a><span></span><span class="p">,</span> <a class="reference internal" href="../api/groups/classov_1_1Shape.html#doxid-classov-1-1-shape"><span class="std std-ref">ov::Shape</span></a><span></span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">}));</span>
@@ -1970,13 +1994,13 @@
 <span class="cp"># according to its coordinates \*\*/</span>
 <span class="n">roi_tensor</span> <span class="o">=</span> <a class="reference internal" href="../api/groups/classov_1_1Tensor.html#doxid-classov-1-1-tensor"><span class="std std-ref">ov.Tensor</span></a><span></span><span class="p">(</span><span class="n">input_tensor</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
 <span class="n">infer_request2</span><span class="p">.</span><span class="n">set_tensor</span><span class="p">(</span><span class="s">&quot;input_name&quot;</span><span class="p">,</span> <span class="n">roi_tensor</span><span class="p">)</span></pre></div></div></div></div></section>
-<section id="using-of-remote-tensors">
-<h3>Using of remote tensors<a class="headerlink" href="#using-of-remote-tensors" title="Permalink to this headline">¶</a></h3>
-<p>You can create a remote tensor to work with remote device memory. <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1RemoteContext.html#doxid-classov-1-1-remote-context"><span class="std std-ref"><span class="pre">ov::RemoteContext</span></span></a></code> allows to create remote tensor.</p>
-<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><a class="reference internal" href="../api/groups/classov_1_1RemoteContext.html#doxid-classov-1-1-remote-context"><span class="std std-ref">ov::RemoteContext</span></a><span></span> <span class="n">context</span> <span class="o">=</span> <span class="n">core</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1Core.html#doxid-classov-1-1-core-1a0ae465fb50e92fa63054c2d0acfd25ae"><span class="std std-ref">get_default_context</span></a><span></span><span class="p">(</span><span class="s">&quot;GPU&quot;</span><span class="p">);</span>
-<span class="k">auto</span> <span class="n">input_port</span> <span class="o">=</span> <span class="n">compiled_model</span><span class="p">.</span>input<span></span><span class="p">(</span><span class="s">&quot;tensor_name&quot;</span><span class="p">);</span>
+<section id="using-remote-tensors">
+<h3>Using Remote Tensors<a class="headerlink" href="#using-remote-tensors" title="Permalink to this headline">¶</a></h3>
+<p>By using <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/classov_1_1RemoteContext.html#doxid-classov-1-1-remote-context"><span class="std std-ref"><span class="pre">ov::RemoteContext</span></span></a></code> you can create a remote tensor to work with remote device memory.</p>
+<div class='sphinxtabset'><div class="sphinxtab" data-sphinxtab-value="C++"><div class="highlight"><div class="highlight"><pre><a class="reference internal" href="../api/groups/classov_1_1RemoteContext.html#doxid-classov-1-1-remote-context"><span class="std std-ref">ov::RemoteContext</span></a><span></span> <span class="n">context</span> <span class="o">=</span> <span class="n">core</span><span class="p">.</span><span class="n">get_default_context</span><span class="p">(</span><span class="s">&quot;GPU&quot;</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">input_port</span> <span class="o">=</span> <span class="n">compiled_model</span><span class="p">.</span><span class="n">input</span><span class="p">(</span><span class="s">&quot;tensor_name&quot;</span><span class="p">);</span>
 <a class="reference internal" href="../api/groups/classov_1_1RemoteTensor.html#doxid-classov-1-1-remote-tensor"><span class="std std-ref">ov::RemoteTensor</span></a><span></span> <span class="n">remote_tensor</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1RemoteContext.html#doxid-classov-1-1-remote-context-1ac1735cf031cfde65e2ced782b21cc256"><span class="std std-ref">create_tensor</span></a><span></span><span class="p">(</span><span class="n">input_port</span><span class="p">.</span><span class="n">get_element_type</span><span class="p">(),</span> <span class="n">input_port</span><span class="p">.</span><span class="n">get_shape</span><span class="p">());</span>
-<span class="n">infer_request</span><span class="p">.</span><a class="reference internal" href="../api/groups/classov_1_1InferRequest.html#doxid-classov-1-1-infer-request-1af54f126e7fb3b3a0343841dda8bcc368"><span class="std std-ref">set_tensor</span></a><span></span><span class="p">(</span><span class="n">input_port</span><span class="p">,</span> <span class="n">remote_tensor</span><span class="p">);</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="cp"># NOT SUPPORTED</span></pre></div></div></div></div></section>
+<span class="n">infer_request</span><span class="p">.</span><span class="n">set_tensor</span><span class="p">(</span><span class="n">input_port</span><span class="p">,</span> <span class="n">remote_tensor</span><span class="p">);</span></pre></div></div></div><div class="sphinxtab" data-sphinxtab-value="Python"><div class="highlight"><div class="highlight"><pre><span></span><span class="cp"># NOT SUPPORTED</span></pre></div></div></div></div></section>
 </section>
 </section>
 

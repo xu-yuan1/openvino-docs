@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Automatic device selection &#8212; OpenVINO™  documentation</title>
+    <title>Automatic Device Selection &#8212; OpenVINO™  documentation</title>
     
     
   <link href="../_static/css/theme.css" rel="stylesheet">
@@ -226,448 +226,16 @@
   <div class="bd-toc-item active">
     <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Converting and Preparing Models
+  API 2.0
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html">
-   Convert model with Model Optimizer
+  <a class="reference internal" href="openvino_2_0_transition_guide.html">
+   OpenVINO™ API 2.0 Transition Guide
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Converting_Model.html">
-     Setting Input Shapes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Cutting_Model.html">
-     Cutting Off Parts of a Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_Additional_Optimization_Use_Cases.html">
-     Embedding Preprocessing Computation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_FP16_Compression.html">
-     Compression of a Model to FP16
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow.html">
-     Converting a TensorFlow Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_ONNX.html">
-     Converting an ONNX Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_PyTorch.html">
-     Converting a PyTorch* Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Paddle.html">
-     Converting a PaddlePaddle* Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_MxNet.html">
-     Converting an MXNet* Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Caffe.html">
-     Converting a Caffe* Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Kaldi.html">
-     Converting a Kaldi* Model
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tutorials.html">
-     Model Conversion Tutorials
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_AttentionOCR_From_Tensorflow.html">
-       Convert TensorFlow Attention OCR Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_BERT_From_Tensorflow.html">
-       Convert TensorFlow BERT Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_CRNN_From_Tensorflow.html">
-       Convert TensorFlow CRNN Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_DeepSpeech_From_Tensorflow.html">
-       Convert TensorFlow DeepSpeech Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_EfficientDet_Models.html">
-       Convert TensorFlow EfficientDet Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_FaceNet_From_Tensorflow.html">
-       Convert TensorFlow FaceNet Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_GNMT_From_Tensorflow.html">
-       Convert TensorFlow GNMT Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_lm_1b_From_Tensorflow.html">
-       Convert TensorFlow Language Model on One Billion Word Benchmark
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_NCF_From_Tensorflow.html">
-       Convert TensorFlow Neural Collaborative Filtering Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_Object_Detection_API_Models.html">
-       Convert TensorFlow Object Detection API Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_RetinaNet_From_Tensorflow.html">
-       Converting TensorFlow RetinaNet Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_Slim_Library_Models.html">
-       Convert TensorFlow Slim Image Classification Model Library Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_WideAndDeep_Family_Models.html">
-       Convert TensorFlow Wide and Deep Family Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_XLNet_From_Tensorflow.html">
-       Convert TensorFlow XLNet Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_YOLO_From_Tensorflow.html">
-       Convert TensorFlow YOLO Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_Faster_RCNN.html">
-       Convert ONNX* Faster R-CNN Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_GPT2.html">
-       Convert ONNX* GPT-2 Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_Mask_RCNN.html">
-       Convert ONNX* Mask R-CNN Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Bert_ner.html">
-       Convert PyTorch* BERT-NER Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Cascade_RCNN_res101.html">
-       Convert PyTorch Cascade RCNN R-101 Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_F3Net.html">
-       Convert PyTorch* F3Net Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_QuartzNet.html">
-       Convert PyTorch* QuartzNet Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_RCAN.html">
-       Convert PyTorch* RCAN Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_RNNT.html">
-       Convert PyTorch* RNN-T Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_YOLACT.html">
-       Convert PyTorch* YOLACT Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_GluonCV_Models.html">
-       Convert MXNet GluonCV* Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_Style_Transfer_From_MXNet.html">
-       Convert MXNet Style Transfer Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_kaldi_specific_Aspire_Tdnn_Model.html">
-       Convert Kaldi* ASpIRE Chain Time Delay Neural Network (TDNN) Model
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_Model_Optimizer_FAQ.html">
-     Model Optimizer Frequently Asked Questions
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Deploying Inference
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="openvino_docs_OV_UG_OV_Runtime_User_Guide.html">
-   Performing inference with OpenVINO Runtime
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_OV_UG_Integrate_OV_with_your_application.html">
-     Integrate OpenVINO™ with Your Application
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_Model_Representation.html">
-       Model Representation in OpenVINO™ Runtime
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_Infer_request.html">
-       OpenVINO™ Inference Request
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_Python_API_exclusives.html">
-       OpenVINO™ Python API exclusives
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_ShapeInference.html">
-     Changing input shapes
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_OV_UG_Working_with_devices.html">
-     Working with devices
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_query_api.html">
-       Query device properties, configuration
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_CPU.html">
-       CPU device
-      </a>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GPU.html">
-       GPU device
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-      <label for="toctree-checkbox-6">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GPU_RemoteTensor_API.html">
-         Remote Tensor API of GPU Plugin
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_VPU.html">
-       VPU devices
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-      <label for="toctree-checkbox-7">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_MYRIAD.html">
-         MYRIAD device
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_HDDL.html">
-         HDDL device
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GNA.html">
-       GNA device
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_ARM_CPU.html">
-       Arm® CPU device
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_OV_UG_Preprocessing_Overview.html">
-     Optimize Preprocessing
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-    <label for="toctree-checkbox-8">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_Preprocessing_Details.html">
-       Preprocessing API - details
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_Layout_Overview.html">
-       Layout API overview
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_Preprocess_Usecase_save.html">
-       Use Case - Integrate and Save Preprocessing Steps Into IR
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="openvino_docs_OV_UG_DynamicShapes.html">
-     Dynamic Shapes
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-    <label for="toctree-checkbox-9">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_NoDynamicShapes.html">
-       When Dynamic Shapes API is Not Applicable
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="current reference internal" href="#">
-     Automatic device selection
-    </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_AUTO_debugging.html">
-       Debugging Auto-Device Plugin
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_Running_on_multiple_devices.html">
-     Running on multiple devices simultaneously
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_Hetero_execution.html">
-     Heterogeneous execution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_Performance_Hints.html">
-     High-level Performance Hints
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_Automatic_Batching.html">
-     Automatic Batching
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_OV_UG_network_state_intro.html">
-     Stateful models
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="openvino_2_0_transition_guide.html">
-   Transition to OpenVINO™ API 2.0
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -694,42 +262,256 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="openvino_2_0_model_creation.html">
-     Model Creation in Runtime
+     Model Creation in OpenVINO™ Runtime
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="openvino_deployment_guide.html">
-   Deploy with OpenVINO
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Converting and Preparing Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvino_docs_model_processing_introduction.html">
+   Introduction to Model Processing
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html">
+   Converting Models with Model Optimizer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_install_guides_deployment_manager_tool.html">
-     Deployment Manager
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Converting_Model.html">
+     Setting Input Shapes
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_deploy_local_distribution.html">
-     Local distribution
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_Model_Optimization_Techniques.html">
+     Model Optimization Techniques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Cutting_Model.html">
+     Cutting Off Parts of a Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_Additional_Optimization_Use_Cases.html">
+     Embedding Preprocessing Computation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_FP16_Compression.html">
+     Compressing a Model to FP16
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow.html">
+     Converting a TensorFlow Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_ONNX.html">
+     Converting an ONNX Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_PyTorch.html">
+     Converting a PyTorch Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Paddle.html">
+     Converting a PaddlePaddle Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_MxNet.html">
+     Converting an MXNet Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Caffe.html">
+     Converting a Caffe Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Kaldi.html">
+     Converting a Kaldi Model
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tutorials.html">
+     Model Conversion Tutorials
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_AttentionOCR_From_Tensorflow.html">
+       Converting a TensorFlow Attention OCR Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_BERT_From_Tensorflow.html">
+       Converting a TensorFlow BERT Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_CRNN_From_Tensorflow.html">
+       Converting a TensorFlow CRNN Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_DeepSpeech_From_Tensorflow.html">
+       Converting a TensorFlow DeepSpeech Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_EfficientDet_Models.html">
+       Converting TensorFlow EfficientDet Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_FaceNet_From_Tensorflow.html">
+       Converting TensorFlow FaceNet Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_GNMT_From_Tensorflow.html">
+       Converting a TensorFlow GNMT Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_lm_1b_From_Tensorflow.html">
+       Converting a TensorFlow Language Model on One Billion Word Benchmark
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_NCF_From_Tensorflow.html">
+       Converting a TensorFlow Neural Collaborative Filtering Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_Object_Detection_API_Models.html">
+       Converting TensorFlow Object Detection API Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_RetinaNet_From_Tensorflow.html">
+       Converting a TensorFlow RetinaNet Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_Slim_Library_Models.html">
+       Converting TensorFlow Slim Image Classification Model Library Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_WideAndDeep_Family_Models.html">
+       Converting TensorFlow Wide and Deep Family Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_XLNet_From_Tensorflow.html">
+       Converting a TensorFlow XLNet Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_YOLO_From_Tensorflow.html">
+       Converting TensorFlow YOLO Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_Faster_RCNN.html">
+       Converting an ONNX Faster R-CNN Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_GPT2.html">
+       Converting an ONNX GPT-2 Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_Mask_RCNN.html">
+       Converting an ONNX Mask R-CNN Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Bert_ner.html">
+       Converting a PyTorch BERT-NER Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Cascade_RCNN_res101.html">
+       Converting a PyTorch Cascade RCNN R-101 Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_F3Net.html">
+       Converting a PyTorch F3Net Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_QuartzNet.html">
+       Converting a PyTorch QuartzNet Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_RCAN.html">
+       Converting a PyTorch RCAN Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_RNNT.html">
+       Converting a PyTorch RNN-T Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_YOLACT.html">
+       Converting a PyTorch YOLACT Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_GluonCV_Models.html">
+       Converting MXNet GluonCV Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_Style_Transfer_From_MXNet.html">
+       Converting an MXNet Style Transfer Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_convert_model_kaldi_specific_Aspire_Tdnn_Model.html">
+       Converting a Kaldi ASpIRE Chain Time Delay Neural Network (TDNN) Model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_Model_Optimizer_FAQ.html">
+     Model Optimizer Frequently Asked Questions
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="openvino_inference_engine_tools_compile_tool_README.html">
-   Compile Tool
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Tuning for Performance
+  Optimization and Performance
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -747,8 +529,8 @@
   <a class="reference internal" href="openvino_docs_model_optimization_guide.html">
    Model Optimization Guide
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -757,8 +539,8 @@
     <a class="reference internal" href="pot_introduction.html">
      Optimizing models post-training
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-    <label for="toctree-checkbox-14">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -767,8 +549,8 @@
       <a class="reference internal" href="pot_default_quantization_usage.html">
        Quantizing Model
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-      <label for="toctree-checkbox-15">
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -784,8 +566,8 @@
       <a class="reference internal" href="pot_accuracyaware_usage.html">
        Quantizing Model with Accuracy Control
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-      <label for="toctree-checkbox-16">
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -801,8 +583,8 @@
       <a class="reference internal" href="pot_docs_BestPractices.html">
        Quantization Best Practices
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-      <label for="toctree-checkbox-17">
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -823,8 +605,8 @@
       <a class="reference internal" href="pot_compression_cli_README.html">
        Command-line Interface
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-      <label for="toctree-checkbox-18">
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -845,8 +627,8 @@
       <a class="reference internal" href="pot_examples_description.html">
        Examples
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-      <label for="toctree-checkbox-19">
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -855,8 +637,8 @@
         <a class="reference internal" href="pot_example_README.html">
          API Examples
         </a>
-        <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-        <label for="toctree-checkbox-20">
+        <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+        <label for="toctree-checkbox-11">
          <i class="fas fa-chevron-down">
          </i>
         </label>
@@ -913,7 +695,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="pot_ranger_README.html">
+    <a class="reference internal" href="pot_range_supervision_README.html">
      (Experimental) Protecting Model
     </a>
    </li>
@@ -923,8 +705,8 @@
   <a class="reference internal" href="openvino_docs_deployment_optimization_guide_dldt_optimization_guide.html">
    Runtime Inference Optimizations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-  <label for="toctree-checkbox-21">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -938,8 +720,8 @@
     <a class="reference internal" href="openvino_docs_deployment_optimization_guide_latency.html">
      Optimizing for the Latency
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-    <label for="toctree-checkbox-22">
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -972,8 +754,8 @@
   <a class="reference internal" href="openvino_docs_tuning_utilities.html">
    Tuning Utilities
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-  <label for="toctree-checkbox-23">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -989,8 +771,8 @@
   <a class="reference internal" href="openvino_docs_performance_benchmarks.html">
    Performance Benchmarks
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-  <label for="toctree-checkbox-24">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -999,8 +781,8 @@
     <a class="reference internal" href="openvino_docs_performance_benchmarks_openvino.html">
      Intel® Distribution of OpenVINO™ toolkit Benchmark Results
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-    <label for="toctree-checkbox-25">
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1012,7 +794,7 @@
      </li>
      <li class="toctree-l3">
       <a class="reference external" href="https://docs.openvino.ai/downloads/benchmark_files/OV-2022.1-Download-Excel.xlsx">
-       Download Performance Data Spreadsheet in MS Excel* Format
+       Download Performance Data Spreadsheet in MS Excel Format
       </a>
      </li>
      <li class="toctree-l3">
@@ -1032,18 +814,258 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Graphical Web Interface for OpenVINO™ toolkit
+  Deploying Inference
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvino_docs_deployment_guide_introduction.html">
+   Introduction to OpenVINO™ Deployment
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="openvino_docs_OV_UG_OV_Runtime_User_Guide.html">
+   Performing Inference with OpenVINO Runtime
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="openvino_docs_OV_UG_Integrate_OV_with_your_application.html">
+     Integrate OpenVINO™ with Your Application
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_Model_Representation.html">
+       Model Representation in OpenVINO™ Runtime
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_Infer_request.html">
+       OpenVINO™ Inference Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_Python_API_exclusives.html">
+       OpenVINO™ Python API Exclusives
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_ShapeInference.html">
+     Changing Input Shapes
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="openvino_docs_OV_UG_Working_with_devices.html">
+     Working with devices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_query_api.html">
+       Query Device Properties - Configuration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_CPU.html">
+       CPU Device
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GPU.html">
+       GPU Device
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+      <label for="toctree-checkbox-20">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GPU_RemoteTensor_API.html">
+         Remote Tensor API of GPU Plugin
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_VPU.html">
+       VPU Devices
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_MYRIAD.html">
+         MYRIAD Device
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_HDDL.html">
+         HDDL Device
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_GNA.html">
+       GNA Device
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_ARM_CPU.html">
+       Arm® CPU Device
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="openvino_docs_OV_UG_Preprocessing_Overview.html">
+     Optimize Preprocessing
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_Preprocessing_Details.html">
+       Preprocessing API - details
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_Layout_Overview.html">
+       Layout API Overview
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_Preprocess_Usecase_save.html">
+       Use Case - Integrate and Save Preprocessing Steps Into IR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="openvino_docs_OV_UG_DynamicShapes.html">
+     Dynamic Shapes
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_NoDynamicShapes.html">
+       When Dynamic Shapes API is Not Applicable
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     Automatic Device Selection
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_AUTO_debugging.html">
+       Debugging Auto-Device Plugin
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_Running_on_multiple_devices.html">
+     Running on Multiple Devices Simultaneously
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_Hetero_execution.html">
+     Heterogeneous execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_Performance_Hints.html">
+     High-level Performance Hints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_Automatic_Batching.html">
+     Automatic Batching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_OV_UG_network_state_intro.html">
+     Stateful models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="openvino_deployment_guide.html">
+   Deploying Your Applications with OpenVINO™
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+  <label for="toctree-checkbox-25">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_install_guides_deployment_manager_tool.html">
+     Deploying Your Application with Deployment Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_deploy_local_distribution.html">
+     Libraries for Local Distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvino_inference_engine_tools_compile_tool_README.html">
+   Compile Tool
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  THE Ecosystem
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_Introduction.html">
-   OpenVINO™ Deep Learning Workbench Overview
+  <a class="reference internal" href="ovsa_get_started.html">
+   OpenVINO™ Security Add-on
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_Install.html">
-   Installation
+  <a class="reference internal" href="workbench_docs_Workbench_DG_Introduction.html">
+   OpenVINO™ Deep Learning Workbench Overview
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
   <label for="toctree-checkbox-26">
@@ -1051,14 +1073,9 @@
    </i>
   </label>
   <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Prerequisites.html">
-     Prerequisites
-    </a>
-   </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Locally.html">
-     Run the DL Workbench Locally
+    <a class="reference internal" href="workbench_docs_Workbench_DG_Install.html">
+     Installation
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
     <label for="toctree-checkbox-27">
@@ -1067,47 +1084,42 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Advanced_Configurations.html">
-       Advanced DL Workbench Configurations
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Prerequisites.html">
+       Prerequisites
       </a>
      </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Locally.html">
+       Run the DL Workbench Locally
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+      <label for="toctree-checkbox-28">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Advanced_Configurations.html">
+         Advanced DL Workbench Configurations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Docker_Container.html">
+         Work with Docker Container
+        </a>
+       </li>
+      </ul>
+     </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Docker_Container.html">
-       Work with Docker Container
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Start_DL_Workbench_in_DevCloud.html">
+       Run the DL Workbench in the Intel® DevCloud for the Edge
       </a>
      </li>
     </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Start_DL_Workbench_in_DevCloud.html">
-     Run the DL Workbench in the Intel® DevCloud for the Edge
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_Work_with_Models_and_Sample_Datasets.html">
-   Get Started
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-  <label for="toctree-checkbox-28">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Model.html">
-     Import Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_Create_Project.html">
-     Create Project
-    </a>
-   </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Additional_Resources.html">
-     Educational Resources about DL Workbench
+    <a class="reference internal" href="workbench_docs_Workbench_DG_Work_with_Models_and_Sample_Datasets.html">
+     Get Started
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
     <label for="toctree-checkbox-29">
@@ -1116,79 +1128,89 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Key_Concepts.html">
-       DL Workbench Key Concepts
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Model.html">
+       Import Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_Create_Project.html">
+       Create Project
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Additional_Resources.html">
+       Educational Resources about DL Workbench
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Key_Concepts.html">
+         DL Workbench Key Concepts
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorials.html">
+     Tutorials
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Import_YOLO.html">
+       Object Detection Model (YOLOv4)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy_Object_detection.html">
+       Object Detection Model (SSD_mobilenet)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Classification.html">
+       Classification Model (mobilenet)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy_Classification.html">
+       Classification Model (squeezenet)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Instance_Segmentation.html">
+       Instance Segmentation Model (mask R-cnn)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Semantic_Segmentation.html">
+       Semantic Segmentation Model (deeplab)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Style_Transfer.html">
+       Style Transfer Model (fast-nst-onnx)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_NLP.html">
+       NLP Model (BERT)
       </a>
      </li>
     </ul>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorials.html">
-   Tutorials
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
-  <label for="toctree-checkbox-30">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Import_YOLO.html">
-     Object Detection Model (YOLOv4)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy_Object_detection.html">
-     Object Detection Model (SSD_mobilenet)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Classification.html">
-     Classification Model (mobilenet)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy_Classification.html">
-     Classification Model (squeezenet)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Instance_Segmentation.html">
-     Instance Segmentation Model (mask R-cnn)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Semantic_Segmentation.html">
-     Semantic Segmentation Model (deeplab)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Style_Transfer.html">
-     Style Transfer Model (fast-nst-onnx)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_NLP.html">
-     NLP Model (BERT)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_User_Guide.html">
-   User Guide
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-  <label for="toctree-checkbox-31">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Models.html">
-     Obtain Models
+    <a class="reference internal" href="workbench_docs_Workbench_DG_User_Guide.html">
+     User Guide
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
     <label for="toctree-checkbox-32">
@@ -1196,14 +1218,9 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_OMZ_Models.html">
-       Import Open Model Zoo Models
-      </a>
-     </li>
      <li class="toctree-l3 has-children">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Original_Model_Import.html">
-       Import Original Model
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Models.html">
+       Obtain Models
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
       <label for="toctree-checkbox-33">
@@ -1212,27 +1229,32 @@
       </label>
       <ul>
        <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Import_Original.html">
-         Import Original Model Recommendations
+        <a class="reference internal" href="workbench_docs_Workbench_DG_OMZ_Models.html">
+         Import Open Model Zoo Models
         </a>
+       </li>
+       <li class="toctree-l4 has-children">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Original_Model_Import.html">
+         Import Original Model
+        </a>
+        <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+        <label for="toctree-checkbox-34">
+         <i class="fas fa-chevron-down">
+         </i>
+        </label>
+        <ul>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Tutorial_Import_Original.html">
+           Import Original Model Recommendations
+          </a>
+         </li>
+        </ul>
        </li>
       </ul>
      </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Generate_Datasets.html">
-     Obtain Datasets
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-    <label for="toctree-checkbox-34">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
      <li class="toctree-l3 has-children">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Dataset_Types.html">
-       Dataset Types
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Generate_Datasets.html">
+       Obtain Datasets
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
       <label for="toctree-checkbox-35">
@@ -1240,28 +1262,28 @@
        </i>
       </label>
       <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Download_and_Cut_Datasets.html">
-         Cut Datasets
+       <li class="toctree-l4 has-children">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Dataset_Types.html">
+         Dataset Types
         </a>
+        <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+        <label for="toctree-checkbox-36">
+         <i class="fas fa-chevron-down">
+         </i>
+        </label>
+        <ul>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Download_and_Cut_Datasets.html">
+           Cut Datasets
+          </a>
+         </li>
+        </ul>
        </li>
       </ul>
      </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Environment.html">
-     Select Environment
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-    <label for="toctree-checkbox-36">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
      <li class="toctree-l3 has-children">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Profiling.html">
-       Work with Remote Targets
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Select_Environment.html">
+       Select Environment
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
       <label for="toctree-checkbox-37">
@@ -1269,181 +1291,193 @@
        </i>
       </label>
       <ul>
+       <li class="toctree-l4 has-children">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Profiling.html">
+         Work with Remote Targets
+        </a>
+        <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+        <label for="toctree-checkbox-38">
+         <i class="fas fa-chevron-down">
+         </i>
+        </label>
+        <ul>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Profile_on_Remote_Machine.html">
+           Profile on Remote Machine
+          </a>
+         </li>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Setup_Remote_Target.html">
+           Set Up Remote Target
+          </a>
+         </li>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Add_Remote_Target.html">
+           Register Remote Target in DL Workbench
+          </a>
+         </li>
+         <li class="toctree-l5">
+          <a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Machines.html">
+           Manipulate Remote Machines
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Int_8_Quantization.html">
+       Optimize Model Performance
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Inference.html">
+       Explore Inference Configurations
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
        <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Profile_on_Remote_Machine.html">
-         Profile on Remote Machine
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Single_Inference.html">
+         Run Inference
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Setup_Remote_Target.html">
-         Set Up Remote Target
+        <a class="reference internal" href="workbench_docs_Workbench_DG_View_Inference_Results.html">
+         View Inference Results
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Add_Remote_Target.html">
-         Register Remote Target in DL Workbench
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Compare_Performance_between_Two_Versions_of_Models.html">
+         Compare Performance between Two Versions of a Model
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Machines.html">
-         Manipulate Remote Machines
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Model.html">
+         Visualize Model
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Accuracy.html">
+       Visualize Model Output
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy.html">
+       Create Accuracy Report
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Accuracy_Configuration.html">
+         Accuracy Configuration
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Configure_Accuracy_Settings.html">
+         Set Accuracy Configuration
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Accuracy_Report_Results.html">
+         Interpret Accuracy Report Results
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Deployment_Package.html">
+       Create Deployment Package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Deploy_and_Integrate_Performance_Criteria_into_Application.html">
+         Deploy and Integrate Performance Criteria into Application
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Export_Project.html">
+       Export Project
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Jupyter_Notebooks_CLI.html">
+       Learn OpenVINO in DL Workbench
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Jupyter_Notebooks.html">
+         Learn Model Inference with OpenVINO™ API in JupyterLab* Environment
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="workbench_docs_Workbench_DG_Persist_Database.html">
+       Restore DL Workbench State
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="workbench_docs_security_Workbench.html">
+       Run DL Workbench Securely
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Authentication.html">
+         Enable Authentication in DL Workbench
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="workbench_docs_Workbench_DG_Configure_TLS.html">
+         Configure Transport Layer Security (TLS)
         </a>
        </li>
       </ul>
      </li>
     </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Int_8_Quantization.html">
-     Optimize Model Performance
-    </a>
-   </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Inference.html">
-     Explore Inference Configurations
+    <a class="reference internal" href="workbench_docs_Workbench_DG_Troubleshooting.html">
+     Troubleshooting
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-    <label for="toctree-checkbox-38">
+    <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+    <label for="toctree-checkbox-44">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Run_Single_Inference.html">
-       Run Inference
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_View_Inference_Results.html">
-       View Inference Results
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Compare_Performance_between_Two_Versions_of_Models.html">
-       Compare Performance between Two Versions of a Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Model.html">
-       Visualize Model
+      <a class="reference internal" href="workbench_docs_Workbench_DG_DC_Troubleshooting.html">
+       Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge
       </a>
      </li>
     </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Accuracy.html">
-     Visualize Model Output
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Measure_Accuracy.html">
-     Create Accuracy Report
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-    <label for="toctree-checkbox-39">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Accuracy_Configuration.html">
-       Accuracy Configuration
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Configure_Accuracy_Settings.html">
-       Set Accuracy Configuration
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Accuracy_Report_Results.html">
-       Interpret Accuracy Report Results
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Deployment_Package.html">
-     Create Deployment Package
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-    <label for="toctree-checkbox-40">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Deploy_and_Integrate_Performance_Criteria_into_Application.html">
-       Deploy and Integrate Performance Criteria into Application
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Export_Project.html">
-     Export Project
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Jupyter_Notebooks_CLI.html">
-     Learn OpenVINO in DL Workbench
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-    <label for="toctree-checkbox-41">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Jupyter_Notebooks.html">
-       Learn Model Inference with OpenVINO™ API in JupyterLab* Environment
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_Persist_Database.html">
-     Restore DL Workbench State
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="workbench_docs_security_Workbench.html">
-     Run DL Workbench Securely
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-    <label for="toctree-checkbox-42">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Authentication.html">
-       Enable Authentication in DL Workbench
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="workbench_docs_Workbench_DG_Configure_TLS.html">
-       Configure Transport Layer Security (TLS)
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="workbench_docs_Workbench_DG_Troubleshooting.html">
-   Troubleshooting
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-  <label for="toctree-checkbox-43">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="workbench_docs_Workbench_DG_DC_Troubleshooting.html">
-     Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge
-    </a>
    </li>
   </ul>
  </li>
@@ -1463,8 +1497,8 @@
   <a class="reference internal" href="openvino_docs_gapi_gapi_intro.html">
    Introduction to OpenCV Graph API (G-API)
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-  <label for="toctree-checkbox-44">
+  <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+  <label for="toctree-checkbox-45">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1499,18 +1533,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Add-Ons
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="ovsa_get_started.html">
-   OpenVINO™ Security Add-on
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   OpenVINO Extensibility
  </span>
 </p>
@@ -1519,8 +1541,8 @@
   <a class="reference internal" href="openvino_docs_Extensibility_UG_Intro.html">
    OpenVINO Extensibility Mechanism
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-  <label for="toctree-checkbox-45">
+  <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+  <label for="toctree-checkbox-46">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1541,7 +1563,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="openvino_docs_IE_DG_Extensibility_DG_VPU_Kernel.html">
+    <a class="reference internal" href="openvino_docs_Extensibility_UG_VPU_Kernel.html">
      How to Implement Custom Layers for VPU (Intel® Neural Compute Stick 2)
     </a>
    </li>
@@ -1549,15 +1571,15 @@
     <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Customize_Model_Optimizer.html">
      Model Optimizer Extensibility
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-    <label for="toctree-checkbox-46">
+    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+    <label for="toctree-checkbox-47">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Extending_Model_Optimizer_With_Caffe_Python_Layers.html">
-       Extending Model Optimizer with Caffe* Python Layers
+       Extending Model Optimizer with Caffe Python Layers
       </a>
      </li>
     </ul>
@@ -1568,8 +1590,8 @@
   <a class="reference internal" href="openvino_docs_transformations.html">
    Overview of Transformations API
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-  <label for="toctree-checkbox-47">
+  <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+  <label for="toctree-checkbox-48">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1595,8 +1617,8 @@
   <a class="reference internal" href="openvino_docs_ie_plugin_dg_overview.html">
    OpenVINO Plugin Developer Guide
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-  <label for="toctree-checkbox-48">
+  <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+  <label for="toctree-checkbox-49">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1635,8 +1657,8 @@
     <a class="reference internal" href="openvino_docs_ie_plugin_detailed_guides.html">
      Advanced Topics
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-    <label for="toctree-checkbox-49">
+    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+    <label for="toctree-checkbox-50">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1650,8 +1672,8 @@
       <a class="reference internal" href="openvino_docs_OV_UG_lpt.html">
        OpenVINO™ Low Precision Transformations
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-      <label for="toctree-checkbox-50">
+      <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+      <label for="toctree-checkbox-51">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1660,8 +1682,8 @@
         <a class="reference internal" href="openvino_docs_OV_UG_lpt_attributes.html">
          Attributes
         </a>
-        <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-        <label for="toctree-checkbox-51">
+        <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+        <label for="toctree-checkbox-52">
          <i class="fas fa-chevron-down">
          </i>
         </label>
@@ -1726,8 +1748,8 @@
     <a class="reference internal" href="openvino_docs_ie_plugin_api_references.html">
      Plugin API Reference
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1755,7 +1777,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="openvino_docs_OV_UG_protecting_model_guide.html">
-   Using Encrypted Models with OpenVINO™
+   Using Encrypted Models with OpenVINO
   </a>
  </li>
  <li class="toctree-l1">
@@ -1784,31 +1806,63 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-auto-device-plugin">
-   Using the Auto-Device Plugin
+  <a class="reference internal nav-link" href="#how-auto-works">
+   How AUTO Works
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-auto">
+   Using AUTO
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#device-candidate-list">
-     Device candidate list
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#performance-hints">
-     Performance Hints
+    <a class="reference internal nav-link" href="#device-candidates-and-priority">
+     Device Candidates and Priority
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ov-hint-performancemode-throughput">
-       ov::hint::PerformanceMode::THROUGHPUT
+      <a class="reference internal nav-link" href="#checking-available-devices">
+       Checking Available Devices
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ov-hint-performancemode-latency">
-       ov::hint::PerformanceMode::LATENCY
+      <a class="reference internal nav-link" href="#excluding-devices-from-device-candidate-list">
+       Excluding Devices from Device Candidate List
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#performance-hints-for-auto">
+     Performance Hints for AUTO
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#throughput">
+       THROUGHPUT
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#latency">
+       LATENCY
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cumulative-throughput">
+       CUMULATIVE_THROUGHPUT
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-examples">
+       Code Examples
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuring-model-priority">
+     Configuring Model Priority
+    </a>
    </li>
   </ul>
  </li>
@@ -1818,8 +1872,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-auto-with-openvino-samples-and-the-benchmark-app">
-   Using AUTO with OpenVINO™ Samples and the Benchmark App
+  <a class="reference internal nav-link" href="#using-auto-with-openvino-samples-and-benchmark-app">
+   Using AUTO with OpenVINO Samples and Benchmark app
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#see-also">
+   See Also
   </a>
  </li>
 </ul>
@@ -1862,10 +1921,13 @@
                 <div>
                   
   <section id="automatic-device-selection">
-<span id="doxid-openvino-docs-o-v-u-g-supported-plugins-a-u-t-o"></span><span id="index-0"></span><h1>Automatic device selection<a class="headerlink" href="#automatic-device-selection" title="Permalink to this headline">¶</a></h1>
+<span id="doxid-openvino-docs-o-v-u-g-supported-plugins-a-u-t-o"></span><span id="index-0"></span><h1>Automatic Device Selection<a class="headerlink" href="#automatic-device-selection" title="Permalink to this headline">¶</a></h1>
 <p><span class="target" id="doxid-openvino-docs-o-v-u-g-supported-plugins-a-u-t-o-1md-openvino-docs-ov-runtime-ug-auto-device-selection"></span></p>
 <div class="toctree-wrapper compound">
 </div>
+<p>This article introduces how Automatic Device Selection works and how to use it for inference.</p>
+<section id="how-auto-works">
+<h2>How AUTO Works<a class="headerlink" href="#how-auto-works" title="Permalink to this headline">¶</a></h2>
 <p>The Automatic Device Selection mode, or AUTO for short, uses a “virtual” or a “proxy” device, which does not bind to a specific type of hardware, but rather selects the processing unit for inference automatically. It detects available devices, picks the one best-suited for the task, and configures its optimization settings. This way, you can write the application once and deploy it anywhere.</p>
 <p>The selection also depends on your performance requirements, defined by the “hints” configuration API, as well as device priority list limitations, if you choose to exclude some hardware from the process.</p>
 <p>The logic behind the choice is as follows:</p>
@@ -1875,175 +1937,317 @@
 <li><p>Select the highest-priority device capable of supporting the given model, as listed in the table below.</p></li>
 <li><p>If model’s precision is FP32 but there is no device capable of supporting it, offload the model to a device supporting FP16.</p></li>
 </ol>
-<p>+——- +————————————————— +———————————- + | Device || Supported || Supported | | Priority || Device || model precision | +==========+======================================================+=====================================+ | 1 || dGPU | FP32, FP16, INT8, BIN | | || (e.g. Intel® Iris® Xe MAX) | | +——- +————————————————— +———————————- + | 2 || iGPU | FP32, FP16, BIN | | || (e.g. Intel® UHD Graphics 620 (iGPU)) | | +——- +————————————————— +———————————- + | 3 || Intel® Movidius™ Myriad™ X VPU | FP16 | | || (e.g. Intel® Neural Compute Stick 2 (Intel® NCS2)) | | +——- +————————————————— +———————————- + | 4 || Intel® CPU | FP32, FP16, INT8, BIN | | || (e.g. Intel® Core™ i7-1165G7) | | +——- +————————————————— +———————————- +</p>
-<p>To put it simply, when loading the model to the first device on the list fails, AUTO will try to load it to the next device in line, until one of them succeeds. What is important, <strong>AUTO always starts inference with the CPU</strong>, as it provides very low latency and can start inference with no additional delays. While the CPU is performing inference, AUTO continues to load the model to the device best suited for the purpose and transfers the task to it when ready. This way, the devices which are much slower in compiling models, GPU being the best example, do not impede inference at its initial stages. For example, if you use a CPU and a GPU, first-inference latency of AUTO will be better than GPU itself.</p>
-<p>Note that if you choose to exclude the CPU from the priority list, it will also be unable to support the initial model compilation stage.</p>
-<img alt="../_images/autoplugin_accelerate.png" src="../_images/autoplugin_accelerate.png" />
-<p>This mechanism can be easily observed in our Benchmark Application sample (<a class="reference external" href="#BenchmarkAppInfo">see here</a>), showing how the first-inference latency (the time it takes to compile the model and perform the first inference) is reduced when using AUTO. For example:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./benchmark_app -m ../public/alexnet/FP32/alexnet.xml -d GPU -niter <span class="m">128</span>
-</pre></div>
-</div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./benchmark_app -m ../public/alexnet/FP32/alexnet.xml -d AUTO -niter <span class="m">128</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The longer the process runs, the closer realtime performance will be to that of the best-suited device.</p>
-</div>
-<section id="using-the-auto-device-plugin">
-<h2>Using the Auto-Device Plugin<a class="headerlink" href="#using-the-auto-device-plugin" title="Permalink to this headline">¶</a></h2>
-<p>Following the OpenVINO™ naming convention, the Automatic Device Selection mode is assigned the label of “AUTO.” It may be defined with no additional parameters, resulting in defaults being used, or configured further with the following setup options:</p>
 <table class="table">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 35%" />
-<col style="width: 44%" />
+<col style="width: 10%" />
+<col style="width: 53%" />
+<col style="width: 37%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Property</p></th>
-<th class="head"><p>Property values</p></th>
-<th class="head"><p>Description</p></th>
+<tr class="row-odd"><th class="head"><p>Device
+Priority</p></th>
+<th class="head"><div class="line-block">
+<div class="line">Supported</div>
+<div class="line">Device</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Supported</div>
+<div class="line">model precision</div>
+</div>
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>&lt;device candidate list&gt;</p></td>
+<tr class="row-even"><td><p>1</p></td>
 <td><div class="line-block">
-<div class="line">AUTO: &lt;device names&gt;</div>
-<div class="line">comma-separated, no spaces</div>
+<div class="line">dGPU</div>
+<div class="line">(e.g. Intel® Iris® Xe MAX)</div>
+</div>
+</td>
+<td><p>FP32, FP16, INT8, BIN</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><div class="line-block">
+<div class="line">iGPU</div>
+<div class="line">(e.g. Intel® UHD Graphics 620 (iGPU))</div>
+</div>
+</td>
+<td><p>FP32, FP16, BIN</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><div class="line-block">
+<div class="line">Intel® Movidius™ Myriad™ X VPU</div>
+<div class="line">(e.g. Intel® Neural Compute Stick 2 (Intel® NCS2))</div>
+</div>
+</td>
+<td><p>FP16</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><div class="line-block">
+<div class="line">Intel® CPU</div>
+<div class="line">(e.g. Intel® Core™ i7-1165G7)</div>
+</div>
+</td>
+<td><p>FP32, FP16, INT8, BIN</p></td>
+</tr>
+</tbody>
+</table>
+<p>To put it simply, when loading the model to the first device on the list fails, AUTO will try to load it to the next device in line, until one of them succeeds. What is important, <strong>AUTO always starts inference with the CPU of the system</strong>, as it provides very low latency and can start inference with no additional delays. While the CPU is performing inference, AUTO continues to load the model to the device best suited for the purpose and transfers the task to it when ready. This way, the devices which are much slower in compiling models, GPU being the best example, do not impede inference at its initial stages. For example, if you use a CPU and a GPU, the first-inference latency of AUTO will be better than that of using GPU alone.</p>
+<p>Note that if you choose to exclude CPU from the priority list, it will be unable to support the initial model compilation stage.</p>
+<img alt="../_images/autoplugin_accelerate.png" src="../_images/autoplugin_accelerate.png" />
+<p>This mechanism can be easily observed in the <a class="reference external" href="#using-auto-with-openvino-samples-and-benchmark-app">Using AUTO with Benchmark app sample</a> section, showing how the first-inference latency (the time it takes to compile the model and perform the first inference) is reduced when using AUTO. For example:</p>
+<div class="highlight"><div class="highlight"><pre><span></span><span class="n">benchmark_app</span> <span class="o">-</span><span class="n">m</span> <span class="p">..</span><span class="o">/</span><span class="k">public</span><span class="o">/</span><span class="n">alexnet</span><span class="o">/</span><span class="n">FP32</span><span class="o">/</span><span class="n">alexnet</span><span class="p">.</span><span class="n">xml</span> <span class="o">-</span><span class="n">d</span> <span class="n">GPU</span> <span class="o">-</span><span class="n">niter</span> <span class="mi">128</span></pre></div></div><div class="highlight"><div class="highlight"><pre><span></span><span class="n">benchmark_app</span> <span class="o">-</span><span class="n">m</span> <span class="p">..</span><span class="o">/</span><span class="k">public</span><span class="o">/</span><span class="n">alexnet</span><span class="o">/</span><span class="n">FP32</span><span class="o">/</span><span class="n">alexnet</span><span class="p">.</span><span class="n">xml</span> <span class="o">-</span><span class="n">d</span> <span class="n">AUTO</span> <span class="o">-</span><span class="n">niter</span> <span class="mi">128</span></pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The longer the process runs, the closer realtime performance will be to that of the best-suited device.</p>
+</div>
+</section>
+<section id="using-auto">
+<h2>Using AUTO<a class="headerlink" href="#using-auto" title="Permalink to this headline">¶</a></h2>
+<p>Following the OpenVINO™ naming convention, the Automatic Device Selection mode is assigned the label of “AUTO.” It may be defined with no additional parameters, resulting in defaults being used, or configured further with the following setup options:</p>
+<table class="table">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">Property</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Values and Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">&lt;device candidate list&gt;</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
 </td>
 <td><div class="line-block">
+<div class="line"><strong>Values</strong>:</div>
+<div class="line-block">
+<div class="line">empty</div>
+<div class="line"><cite>AUTO</cite></div>
+<div class="line"><cite>AUTO: &lt;device names&gt;</cite> (comma-separated, no spaces)</div>
+<div class="line"><br /></div>
+</div>
 <div class="line">Lists the devices available for selection.</div>
-<div class="line">The device sequence will be taken as priority</div>
-<div class="line">from high to low.</div>
-<div class="line">If not specified, “AUTO” will be used as default</div>
-<div class="line">and all devices will be included.</div>
+<div class="line">The device sequence will be taken as priority from high to low.</div>
+<div class="line">If not specified, <cite>AUTO</cite> will be used as default,</div>
+<div class="line">and all devices will be “viewed” as candidates.</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>ov::device:priorities</p></td>
-<td><div class="line-block">
-<div class="line">device names</div>
-<div class="line">comma-separated, no spaces</div>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><cite>ov::device:priorities</cite></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">Specifies the devices for Auto-Device plugin to select.</div>
-<div class="line">The device sequence will be taken as priority</div>
-<div class="line">from high to low.</div>
+<div class="line"><strong>Values</strong>:</div>
+<div class="line-block">
+<div class="line"><cite>&lt;device names&gt;</cite> (comma-separated, no spaces)</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">Specifies the devices for AUTO to select.</div>
+<div class="line">The device sequence will be taken as priority from high to low.</div>
 <div class="line">This configuration is optional.</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>ov::hint::performance_mode</p></td>
-<td><div class="line-block">
-<div class="line">ov::hint::PerformanceMode::LATENCY</div>
-<div class="line">ov::hint::PerformanceMode::THROUGHPUT</div>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><cite>ov::hint::performance_mode</cite></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">Specifies the performance mode preferred</div>
-<div class="line">by the application.</div>
+<div class="line"><strong>Values</strong>:</div>
+<div class="line-block">
+<div class="line"><cite>ov::hint::PerformanceMode::LATENCY</cite></div>
+<div class="line"><cite>ov::hint::PerformanceMode::THROUGHPUT</cite></div>
+<div class="line"><cite>ov::hint::PerformanceMode::CUMULATIVE_THROUGHPUT</cite></div>
+<div class="line"><br /></div>
+</div>
+<div class="line">Specifies the performance option preferred by the application.</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>ov::hint::model_priority</p></td>
-<td><div class="line-block">
-<div class="line">ov::hint::Priority::HIGH</div>
-<div class="line">ov::hint::Priority::MEDIUM</div>
-<div class="line">ov::hint::Priority::LOW</div>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><cite>ov::hint::model_priority</cite></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
 </td>
 <td><div class="line-block">
+<div class="line"><strong>Values</strong>:</div>
+<div class="line-block">
+<div class="line"><cite>ov::hint::Priority::HIGH</cite></div>
+<div class="line"><cite>ov::hint::Priority::MEDIUM</cite></div>
+<div class="line"><cite>ov::hint::Priority::LOW</cite></div>
+<div class="line"><br /></div>
+</div>
 <div class="line">Indicates the priority for a model.</div>
-<div class="line">Importantly!</div>
-<div class="line">This property is still not fully supported</div>
+<div class="line">IMPORTANT: This property is not fully supported yet.</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <p>Inference with AUTO is configured similarly to when device plugins are used: you compile the model on the plugin with configuration and execute inference.</p>
-<section id="device-candidate-list">
-<h3>Device candidate list<a class="headerlink" href="#device-candidate-list" title="Permalink to this headline">¶</a></h3>
-<p>The device candidate list allows users to customize the priority and limit the choice of devices available to the AUTO plugin. If not specified, the plugin assumes all the devices present in the system can be used. Note, that OpenVINO™ Runtime lets you use “GPU” as an alias for “GPU.0” in function calls. The following commands are accepted by the API:</p>
+<section id="device-candidates-and-priority">
+<h3>Device Candidates and Priority<a class="headerlink" href="#device-candidates-and-priority" title="Permalink to this headline">¶</a></h3>
+<p>The device candidate list enables you to customize the priority and limit the choice of devices available to AUTO.</p>
+<ul class="simple">
+<li><p>If &lt;device candidate list&gt; is not specified, AUTO assumes all the devices present in the system can be used.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">AUTO</span></code> without any device names is specified, AUTO assumes all the devices present in the system can be used, and will load the network to all devices and run inference based on their default priorities, from high to low.</p></li>
+</ul>
+<p>To specify the priority of devices, enter the device names in the priority order (from high to low) in <code class="docutils literal notranslate"><span class="pre">AUTO:</span> <span class="pre">&lt;device</span> <span class="pre">names&gt;</span></code>, or use the <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/namespaceov_1_1device.html#doxid-namespaceov-1-1device"><span class="std std-ref"><span class="pre">ov::device</span></span></a><span class="pre">:priorities</span></code> property.</p>
+<p>See the following code for using AUTO and specifying devices:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">C++</label><div class="tab-content docutils">
 </div>
 <input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Python</label><div class="tab-content docutils">
 </div>
 </div>
-<p>To check what devices are present in the system, you can use Device API. For information on how to do it, check <a class="reference internal" href="openvino_docs_OV_UG_query_api.html#doxid-openvino-docs-o-v-u-g-query-api"><span class="std std-ref">Query device properties and configuration</span></a></p>
-<p>For C++</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ov::runtime::Core::get_available_devices<span class="o">()</span> <span class="o">(</span>see Hello Query Device C++ Sample<span class="o">)</span>
-</pre></div>
-</div>
-<p>For Python</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>openvino.runtime.Core.available_devices <span class="o">(</span>see Hello Query Device Python Sample<span class="o">)</span>
-</pre></div>
-</div>
-</section>
-<section id="performance-hints">
-<h3>Performance Hints<a class="headerlink" href="#performance-hints" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/groupov_runtime_cpp_prop_api.html#doxid-group-ov-runtime-cpp-prop-api-1ga2691fe27acc8aa1d1700ad40b6da3ba2"><span class="std std-ref"><span class="pre">ov::hint::performance_mode</span></span></a></code> property enables you to specify a performance mode for the plugin to be more efficient for particular use cases.</p>
-<section id="ov-hint-performancemode-throughput">
-<h4>ov::hint::PerformanceMode::THROUGHPUT<a class="headerlink" href="#ov-hint-performancemode-throughput" title="Permalink to this headline">¶</a></h4>
-<p>This mode prioritizes high throughput, balancing between latency and power. It is best suited for tasks involving multiple jobs, like inference of video feeds or large numbers of images.</p>
-</section>
-<section id="ov-hint-performancemode-latency">
-<h4>ov::hint::PerformanceMode::LATENCY<a class="headerlink" href="#ov-hint-performancemode-latency" title="Permalink to this headline">¶</a></h4>
-<p>This mode prioritizes low latency, providing short response time for each inference job. It performs best for tasks where inference is required for a single input image, like a medical analysis of an ultrasound scan image. It also fits the tasks of real-time or nearly real-time applications, such as an industrial robot’s response to actions in its environment or obstacle avoidance for autonomous vehicles. Note that currently the <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/namespaceov_1_1hint.html#doxid-namespaceov-1-1hint"><span class="std std-ref"><span class="pre">ov::hint</span></span></a></code> property is supported by CPU and GPU devices only.</p>
-<p>To enable performance hints for your application, use the following code:</p>
+<p>Note that OpenVINO Runtime lets you use “GPU” as an alias for “GPU.0” in function calls. More details on enumerating devices can be found in <a class="reference internal" href="openvino_docs_OV_UG_Working_with_devices.html#doxid-openvino-docs-o-v-u-g-working-with-devices"><span class="std std-ref">Working with devices</span></a>.</p>
+<section id="checking-available-devices">
+<h4>Checking Available Devices<a class="headerlink" href="#checking-available-devices" title="Permalink to this headline">¶</a></h4>
+<p>To check what devices are present in the system, you can use Device API, as listed below. For information on how to use it, see <a class="reference internal" href="openvino_docs_OV_UG_query_api.html#doxid-openvino-docs-o-v-u-g-query-api"><span class="std std-ref">Query device properties and configuration</span></a>.</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">C++</label><div class="tab-content docutils">
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ov::runtime::Core::get_available_devices<span class="o">()</span>
+</pre></div>
+</div>
+<p>See the Hello Query Device C++ Sample for reference.</p>
 </div>
 <input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Python</label><div class="tab-content docutils">
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>openvino.runtime.Core.available_devices
+</pre></div>
+</div>
+<p>See the Hello Query Device Python Sample for reference.</p>
 </div>
 </div>
-<p>The property enables you to control the priorities of models in the Auto-Device plugin. A high-priority model will be loaded to a supported high-priority device. A lower-priority model will not be loaded to a device that is occupied by a higher-priority model.</p>
+</section>
+<section id="excluding-devices-from-device-candidate-list">
+<h4>Excluding Devices from Device Candidate List<a class="headerlink" href="#excluding-devices-from-device-candidate-list" title="Permalink to this headline">¶</a></h4>
+<p>You can also exclude hardware devices from AUTO, for example, to reserve CPU for other jobs. AUTO will not use the device for inference then. To do that, add a minus sign (-) before CPU in <code class="docutils literal notranslate"><span class="pre">AUTO:</span> <span class="pre">&lt;device</span> <span class="pre">names&gt;</span></code>, as in the following example:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">C++</label><div class="tab-content docutils">
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ov::CompiledModel <span class="nv">compiled_model</span> <span class="o">=</span> core.compile_model<span class="o">(</span>model, <span class="s2">&quot;AUTO:-CPU&quot;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
 </div>
 <input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Python</label><div class="tab-content docutils">
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">compiled_model</span> <span class="o">=</span> core.compile_model<span class="o">(</span><span class="nv">model</span><span class="o">=</span>model, <span class="nv">device_name</span><span class="o">=</span><span class="s2">&quot;AUTO:-CPU&quot;</span><span class="o">)</span>
+</pre></div>
 </div>
 </div>
+</div>
+<p>AUTO will then query all available devices and remove CPU from the candidate list.</p>
+<p>Note that if you choose to exclude CPU from device candidate list, CPU will not be able to support the initial model compilation stage. See more information in <a class="reference external" href="#how-auto-works">How AUTO Works</a>.</p>
 </section>
 </section>
+<section id="performance-hints-for-auto">
+<h3>Performance Hints for AUTO<a class="headerlink" href="#performance-hints-for-auto" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/groupov_runtime_cpp_prop_api.html#doxid-group-ov-runtime-cpp-prop-api-1ga2691fe27acc8aa1d1700ad40b6da3ba2"><span class="std std-ref"><span class="pre">ov::hint::performance_mode</span></span></a></code> property enables you to specify a performance option for AUTO to be more efficient for particular use cases.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, the <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/namespaceov_1_1hint.html#doxid-namespaceov-1-1hint"><span class="std std-ref"><span class="pre">ov::hint</span></span></a></code> property is supported by CPU and GPU devices only.</p>
+</div>
+<section id="throughput">
+<h4>THROUGHPUT<a class="headerlink" href="#throughput" title="Permalink to this headline">¶</a></h4>
+<p>This option prioritizes high throughput, balancing between latency and power. It is best suited for tasks involving multiple jobs, such as inference of video feeds or large numbers of images.</p>
 </section>
-<section id="configuring-individual-devices-and-creating-the-auto-device-plugin-on-top">
-<h2>Configuring Individual Devices and Creating the Auto-Device plugin on Top<a class="headerlink" href="#configuring-individual-devices-and-creating-the-auto-device-plugin-on-top" title="Permalink to this headline">¶</a></h2>
-<p>Although the methods described above are currently the preferred way to execute inference with AUTO, the following steps can be also used as an alternative. It is currently available as a legacy feature and used if the device candidate list includes Myriad devices, uncapable of utilizing the Performance Hints option.</p>
+<section id="latency">
+<h4>LATENCY<a class="headerlink" href="#latency" title="Permalink to this headline">¶</a></h4>
+<p>This option prioritizes low latency, providing short response time for each inference job. It performs best for tasks where inference is required for a single input image, e.g. a medical analysis of an ultrasound scan image. It also fits the tasks of real-time or nearly real-time applications, such as an industrial robot’s response to actions in its environment or obstacle avoidance for autonomous vehicles.</p>
+</section>
+<section id="cumulative-throughput">
+<span id="id1"></span><h4>CUMULATIVE_THROUGHPUT<a class="headerlink" href="#cumulative-throughput" title="Permalink to this headline">¶</a></h4>
+<p>While <code class="docutils literal notranslate"><span class="pre">LATENCY</span></code> and <code class="docutils literal notranslate"><span class="pre">THROUGHPUT</span></code> can select one target device with your preferred performance option, the <code class="docutils literal notranslate"><span class="pre">CUMULATIVE_THROUGHPUT</span></code> option enables running inference on multiple devices for higher throughput. With <code class="docutils literal notranslate"><span class="pre">CUMULATIVE_THROUGHPUT</span></code>, AUTO loads the network model to all available devices in the candidate list, and then runs inference on them based on the default or specified priority.</p>
+<p>CUMULATIVE_THROUGHPUT has similar behavior as <a class="reference internal" href="openvino_docs_OV_UG_Running_on_multiple_devices.html#doxid-openvino-docs-o-v-u-g-running-on-multiple-devices"><span class="std std-ref">the Multi-Device execution mode (MULTI)</span></a>. The only difference is that CUMULATIVE_THROUGHPUT uses the devices specified by AUTO, which means that it’s not mandatory to add devices manually, while with MULTI, you need to specify the devices before inference.</p>
+<p>With the CUMULATIVE_THROUGHPUT option:</p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">AUTO</span></code> without any device names is specified, and the system has more than one GPU devices, AUTO will remove CPU from the device candidate list to keep GPU running at full capacity.</p></li>
+<li><p>If device priority is specified, AUTO will run inference requests on devices based on the priority. In the following example, AUTO will always try to use GPU first, and then use CPU if GPU is busy:</p>
+<div class="highlight"><div class="highlight"><pre><span></span><span class="n">ov</span><span class="o">::</span><span class="n">CompiledModel</span> <span class="n">compiled_model</span> <span class="o">=</span> <span class="n">core</span><span class="p">.</span><span class="n">compile_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s">&quot;AUTO:GPU,CPU&quot;</span><span class="p">,</span> <span class="n">ov</span><span class="o">::</span><span class="n">hint</span><span class="o">::</span><span class="n">performance_mode</span><span class="p">(</span><span class="n">ov</span><span class="o">::</span><span class="n">hint</span><span class="o">::</span><span class="n">PerformanceMode</span><span class="o">::</span><span class="n">CUMULATIVE_THROUGHPUT</span><span class="p">));</span></pre></div></div></li>
+</ul>
+</section>
+<section id="code-examples">
+<h4>Code Examples<a class="headerlink" href="#code-examples" title="Permalink to this headline">¶</a></h4>
+<p>To enable performance hints for your application, use the following code:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">C++</label><div class="tab-content docutils">
 </div>
 <input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Python</label><div class="tab-content docutils">
 </div>
 </div>
-<p><span class="target" id="doxid-openvino-docs-o-v-u-g-supported-plugins-a-u-t-o-1benchmark-app-info"></span></p>
 </section>
-<section id="using-auto-with-openvino-samples-and-the-benchmark-app">
-<h2>Using AUTO with OpenVINO™ Samples and the Benchmark App<a class="headerlink" href="#using-auto-with-openvino-samples-and-the-benchmark-app" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="configuring-model-priority">
+<h3>Configuring Model Priority<a class="headerlink" href="#configuring-model-priority" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><a class="reference internal" href="../api/groups/groupov_runtime_cpp_prop_api.html#doxid-group-ov-runtime-cpp-prop-api-1ga3663a3976ff7c4bdc3ccdb9ce44945ce"><span class="std std-ref"><span class="pre">ov::hint::model_priority</span></span></a></code> property enables you to control the priorities of models in the Auto-Device plugin. A high-priority model will be loaded to a supported high-priority device. A lower-priority model will not be loaded to a device that is occupied by a higher-priority model.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">C++</label><div class="tab-content docutils">
+</div>
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Python</label><div class="tab-content docutils">
+</div>
+</div>
+</section>
+</section>
+<section id="configuring-individual-devices-and-creating-the-auto-device-plugin-on-top">
+<h2>Configuring Individual Devices and Creating the Auto-Device plugin on Top<a class="headerlink" href="#configuring-individual-devices-and-creating-the-auto-device-plugin-on-top" title="Permalink to this headline">¶</a></h2>
+<p>Although the methods described above are currently the preferred way to execute inference with AUTO, the following steps can be also used as an alternative. It is currently available as a legacy feature and used if the device candidate list includes Myriad devices, uncapable of utilizing the Performance Hints option.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">C++</label><div class="tab-content docutils">
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Python</label><div class="tab-content docutils">
+</div>
+</div>
+</section>
+<section id="using-auto-with-openvino-samples-and-benchmark-app">
+<h2>Using AUTO with OpenVINO Samples and Benchmark app<a class="headerlink" href="#using-auto-with-openvino-samples-and-benchmark-app" title="Permalink to this headline">¶</a></h2>
 <p>To see how the Auto-Device plugin is used in practice and test its performance, take a look at OpenVINO™ samples. All samples supporting the “-d” command-line option (which stands for “device”) will accept the plugin out-of-the-box. The Benchmark Application will be a perfect place to start – it presents the optimal performance of the plugin without the need for additional settings, like the number of requests or CPU threads. To evaluate the AUTO performance, you can use the following commands:</p>
 <p>For unlimited device choice:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>benchmark_app –d AUTO –m &lt;model&gt; -i &lt;input&gt; -niter <span class="m">1000</span>
-</pre></div>
-</div>
-<p>For limited device choice:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>benchmark_app –d AUTO:CPU,GPU,MYRIAD –m &lt;model&gt; -i &lt;input&gt; -niter <span class="m">1000</span>
-</pre></div>
-</div>
-<p>For more information, refer to the <a class="reference internal" href="openvino_inference_engine_samples_benchmark_app_README.html#doxid-openvino-inference-engine-samples-benchmark-app-r-e-a-d-m-e"><span class="std std-ref">C++</span></a> or <a class="reference internal" href="openvino_inference_engine_tools_benchmark_tool_README.html#doxid-openvino-inference-engine-tools-benchmark-tool-r-e-a-d-m-e"><span class="std std-ref">Python</span></a> version instructions.</p>
+<div class="highlight"><div class="highlight"><pre><span></span><span class="n">benchmark_app</span> <span class="err">–</span><span class="n">d</span> <span class="n">AUTO</span> <span class="err">–</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">model</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">input</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">niter</span> <span class="mi">1000</span></pre></div></div><p>For limited device choice:</p>
+<div class="highlight"><div class="highlight"><pre><span></span><span class="n">benchmark_app</span> <span class="err">–</span><span class="n">d</span> <span class="nl">AUTO</span><span class="p">:</span><span class="n">CPU</span><span class="p">,</span><span class="n">GPU</span><span class="p">,</span><span class="n">MYRIAD</span> <span class="err">–</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">model</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">input</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">niter</span> <span class="mi">1000</span></pre></div></div><p>For more information, refer to the <a class="reference internal" href="openvino_inference_engine_samples_benchmark_app_README.html#doxid-openvino-inference-engine-samples-benchmark-app-r-e-a-d-m-e"><span class="std std-ref">C++</span></a> or <a class="reference internal" href="openvino_inference_engine_tools_benchmark_tool_README.html#doxid-openvino-inference-engine-tools-benchmark-tool-r-e-a-d-m-e"><span class="std std-ref">Python</span></a> version instructions.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The default CPU stream is 1 if using “-d AUTO”.</p>
 <p>You can use the FP16 IR to work with auto-device.</p>
 <p>No demos are yet fully optimized for AUTO, by means of selecting the most suitable device, using the GPU streams/throttling, and so on.</p>
 </div>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_AUTO_debugging.html#doxid-openvino-docs-o-v-u-g-supported-plugins-a-u-t-o-debugging"><span class="std std-ref">Debugging AUTO</span></a></p></li>
+<li><p><a class="reference internal" href="openvino_docs_OV_UG_Running_on_multiple_devices.html#doxid-openvino-docs-o-v-u-g-running-on-multiple-devices"><span class="std std-ref">Running on Multiple Devices Simultaneously</span></a></p></li>
+<li><p><a class="reference internal" href="openvino_docs_OV_UG_supported_plugins_Supported_Devices.html#doxid-openvino-docs-o-v-u-g-supported-plugins-supported-devices"><span class="std std-ref">Supported Devices</span></a></p></li>
+</ul>
 </section>
 </section>
 

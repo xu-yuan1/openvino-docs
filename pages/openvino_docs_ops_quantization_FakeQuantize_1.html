@@ -635,6 +635,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="openvino_docs_ops_image_GridSample_9.html">
+     GridSample-9
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="openvino_docs_ops_normalization_GRN_1.html">
      GRN-1
     </a>
@@ -1400,13 +1405,13 @@
 <p><strong>Detailed description</strong> : Input and output ranges as well as the number of levels of quantization are specified by dedicated inputs and attributes. There can be different limits for each element or groups of elements (channels) of the input tensors. Otherwise, one limit applies to all elements. It depends on shape of inputs that specify limits and regular broadcasting rules applied for input tensors. The output of the operator is a floating-point number of the same type as the input tensor. In general, there are four values that specify quantization for each element: <em>input_low</em>, <em>input_high</em>, <em>output_low</em>, <em>output_high</em>. <em>input_low</em> and <em>input_high</em> attributes specify the input range of quantization. All input values that are outside this range are clipped to the range before actual quantization. <em>output_low</em> and <em>output_high</em> specify minimum and maximum quantized values at the output.</p>
 <p><em>Fake</em> in <em>FakeQuantize</em> means the output tensor is of the same floating point type as an input tensor, not integer type.</p>
 <p>Each element of the output is defined as the result of the following expression:</p>
-<div class="highlight"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">min</span><span class="p">(</span><span class="n">input_low</span><span class="p">,</span> <span class="n">input_high</span><span class="p">)</span><span class="o">:</span>
+<div class="highlight"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <a class="reference internal" href="../api/groups/namespacengraph_1_1runtime_1_1reference.html#doxid-namespacengraph-1-1runtime-1-1reference-1abc42885cb896b121ab5ac214cbf60935"><span class="std std-ref">min</span></a><span></span><span class="p">(</span><span class="n">input_low</span><span class="p">,</span> <span class="n">input_high</span><span class="p">)</span><span class="o">:</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">output_low</span>
-<span class="n">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">(</span><span class="n">input_low</span><span class="p">,</span> <span class="n">input_high</span><span class="p">)</span><span class="o">:</span>
+<span class="n">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <a class="reference internal" href="../api/groups/namespacengraph_1_1runtime_1_1reference.html#doxid-namespacengraph-1-1runtime-1-1reference-1a92cfabd79e866544fb35d44884e7adfd"><span class="std std-ref">max</span></a><span></span><span class="p">(</span><span class="n">input_low</span><span class="p">,</span> <span class="n">input_high</span><span class="p">)</span><span class="o">:</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">output_high</span>
 <span class="k">else</span><span class="o">:</span>
     <span class="cp"># input_low &lt; x &lt;= input_high</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">round</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">input_low</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">input_high</span> <span class="o">-</span> <span class="n">input_low</span><span class="p">)</span> <span class="err">\</span><span class="o">*</span> <span class="p">(</span><span class="n">levels</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">levels</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="err">\</span><span class="o">*</span> <span class="p">(</span><span class="n">output_high</span> <span class="o">-</span> <span class="n">output_low</span><span class="p">)</span> <span class="o">+</span> <span class="n">output_low</span></pre></div></div><p><strong>Attributes</strong></p>
+    <span class="n">output</span> <span class="o">=</span> <a class="reference internal" href="../api/groups/namespacengraph_1_1runtime_1_1reference.html#doxid-namespacengraph-1-1runtime-1-1reference-1a8ea383ca6ce01d26eabe1c27a0e1bd37"><span class="std std-ref">round</span></a><span></span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">input_low</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">input_high</span> <span class="o">-</span> <span class="n">input_low</span><span class="p">)</span> <span class="err">\</span><span class="o">*</span> <span class="p">(</span><span class="n">levels</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">levels</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="err">\</span><span class="o">*</span> <span class="p">(</span><span class="n">output_high</span> <span class="o">-</span> <span class="n">output_low</span><span class="p">)</span> <span class="o">+</span> <span class="n">output_low</span></pre></div></div><p><strong>Attributes</strong></p>
 <ul class="simple">
 <li><p><em>levels</em></p>
 <ul>
