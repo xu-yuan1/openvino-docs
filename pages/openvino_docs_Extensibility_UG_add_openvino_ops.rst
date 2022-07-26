@@ -47,8 +47,6 @@ OpenVINO™ operation contains two constructors:
 	    constructor_validate_and_infer_types();
 	}
 
-
-
 .. rubric::
 
 ``:ref:`ov::Node::validate_and_infer_types <doxid-classov_1_1_node_1ac5224b5be848ec670d2078d9816d12e7>``` method validates operation attributes and calculates output shapes using attributes of the operation.
@@ -60,11 +58,9 @@ OpenVINO™ operation contains two constructors:
 	    set_output_type(0, get_input_element_type(0), get_input_partial_shape(0));
 	}
 
-
-
 .. rubric::
 
-``:ref:`ov::Node::clone_with_new_inputs <doxid-classov_1_1_node_1a177d1a61e81d506d190ee18818ff851f>``` method creates a copy of the operation with new inputs.
+``:ref:`ov::Node::clone_with_new_inputs <doxid-classov_1_1_node_1a04cb103fa069c3b7944ab7c44d94f5ff>``` method creates a copy of the operation with new inputs.
 
 .. ref-code-block:: cpp
 
@@ -73,8 +69,6 @@ OpenVINO™ operation contains two constructors:
 	
 	    return std::make_shared<Identity>(new_args.at(0));
 	}
-
-
 
 .. rubric::
 
@@ -85,8 +79,6 @@ OpenVINO™ operation contains two constructors:
 	bool Identity::visit_attributes(:ref:`ov::AttributeVisitor <doxid-classov_1_1_attribute_visitor>`& visitor) {
 	    return true;
 	}
-
-
 
 evaluate() and has_evaluate()
 -----------------------------

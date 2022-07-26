@@ -1,14 +1,16 @@
-.. index:: pair: page; Model Creation in Runtime
+.. index:: pair: page; Model Creation in OpenVINO™ Runtime
 .. _doxid-openvino_2_0_model_creation:
 
 
-Model Creation in Runtime
-=========================
+Model Creation in OpenVINO™ Runtime
+=====================================
 
-:target:`doxid-openvino_2_0_model_creation_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_graph_construction` OpenVINO™ Runtime API 2.0 includes the nGraph engine as a common part. The ``ngraph`` namespace has been changed to ``ov``, but all other parts of the ngraph API have been preserved. The code snippets below show how to change application code for migration to OpenVINO™ Runtime API 2.0.
+:target:`doxid-openvino_2_0_model_creation_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_graph_construction` OpenVINO™ Runtime with API 2.0 includes the nGraph engine as a common part. The ``ngraph`` namespace has been changed to ``ov``, but all other parts of the ngraph API have been preserved.
+
+The code snippets below show how to change the application code for migration to API 2.0.
 
 nGraph API
-----------
+~~~~~~~~~~
 
 .. raw:: html
 
@@ -50,10 +52,10 @@ nGraph API
 	//        |    Result   |
 	//        |    result   |
 	//        |_____________|
-	auto data1 = std::make_shared<ngraph::opset8::Parameter>(:ref:`ngraph::element::i64 <doxid-group__ov__element__cpp__api_1ga6c86a9a54d44fc205ad9cbf28ca556a6>`, :ref:`ngraph::Shape <doxid-classov_1_1_shape>`{1, 3, 2, 2});
+	auto data1 = std::make_shared<ngraph::opset8::Parameter>(ngraph::element::i64, :ref:`ngraph::Shape <doxid-classov_1_1_shape>`{1, 3, 2, 2});
 	data1->set_friendly_name("data1");        // operation name
 	data1->output(0).set_names({"data1_t"});  // tensor names
-	auto data2 = std::make_shared<ngraph::opset8::Parameter>(:ref:`ngraph::element::i64 <doxid-group__ov__element__cpp__api_1ga6c86a9a54d44fc205ad9cbf28ca556a6>`, :ref:`ngraph::Shape <doxid-classov_1_1_shape>`{1, 2, 2, 2});
+	auto data2 = std::make_shared<ngraph::opset8::Parameter>(ngraph::element::i64, :ref:`ngraph::Shape <doxid-classov_1_1_shape>`{1, 2, 2, 2});
 	data2->set_friendly_name("data2");        // operation name
 	data2->output(0).set_names({"data2_t"});  // tensor names
 
@@ -152,8 +154,8 @@ nGraph API
 
 
 
-OpenVINO™ Runtime API 2.0:
-----------------------------
+API 2.0
+~~~~~~~
 
 .. raw:: html
 
@@ -295,7 +297,10 @@ OpenVINO™ Runtime API 2.0:
 
 
 
-**See also:**
+
+
+Additional Resources
+~~~~~~~~~~~~~~~~~~~~
 
 * :ref:`Hello Model Creation C++ Sample <doxid-openvino_inference_engine_samples_model_creation_sample__r_e_a_d_m_e>`
 

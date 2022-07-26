@@ -142,8 +142,8 @@ Accuracy Validation of Full-Precision Model in IR Format
    	          - name: accuracy@top5
    	            type: accuracy
    	            top_k: 5
-
-where ``data_source: ./ImageNet`` is the dataset and ``annotation_file: ./ImageNet/val.txt`` is the annotation file prepared on the previous step. For more information about the Accuracy Checker configuration file refer to Accuracy Checker Tool documentation.
+   
+   where ``data_source: ./ImageNet`` is the dataset and ``annotation_file: ./ImageNet/val.txt`` is the annotation file prepared on the previous step. For more information about the Accuracy Checker configuration file refer to Accuracy Checker Tool documentation.
 
 #. Evaluate the accuracy of the full-precision model in the IR format by executing the following command in ``<EXAMPLE_DIR>`` :
    
@@ -185,8 +185,8 @@ Model Quantization
    	        ]
    	    }
    	}
-
-where ``"model": "./public/mobilenet-v2-pytorch/FP32/mobilenet-v2-pytorch.xml"`` and ``"weights": "./public/mobilenet-v2-pytorch/FP32/mobilenet-v2-pytorch.bin"`` specify the full-precision model in the IR format, ``"config": "./mobilenet_v2_pytorch.yaml"`` is the Accuracy Checker configuration file, and ``"name": "DefaultQuantization"`` is the algorithm name.
+   
+   where ``"model": "./public/mobilenet-v2-pytorch/FP32/mobilenet-v2-pytorch.xml"`` and ``"weights": "./public/mobilenet-v2-pytorch/FP32/mobilenet-v2-pytorch.bin"`` specify the full-precision model in the IR format, ``"config": "./mobilenet_v2_pytorch.yaml"`` is the Accuracy Checker configuration file, and ``"name": "DefaultQuantization"`` is the algorithm name.
 
 #. Perform model quantization by executing the following command in ``<EXAMPLE_DIR>`` :
    

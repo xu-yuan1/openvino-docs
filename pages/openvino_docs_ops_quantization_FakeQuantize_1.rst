@@ -19,13 +19,13 @@ Each element of the output is defined as the result of the following expression:
 
 .. ref-code-block:: cpp
 
-	if x <= min(input_low, input_high):
+	if x <= :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(input_low, input_high):
 	    output = output_low
-	elif x > max(input_low, input_high):
+	elif x > :ref:`max <doxid-namespacengraph_1_1runtime_1_1reference_1a92cfabd79e866544fb35d44884e7adfd>`(input_low, input_high):
 	    output = output_high
 	else:
 	    # input_low < x <= input_high
-	    output = round((x - input_low) / (input_high - input_low) \* (levels-1)) / (levels-1) \* (output_high - output_low) + output_low
+	    output = :ref:`round <doxid-namespacengraph_1_1runtime_1_1reference_1a8ea383ca6ce01d26eabe1c27a0e1bd37>`((x - input_low) / (input_high - input_low) \* (levels-1)) / (levels-1) \* (output_high - output_low) + output_low
 
 **Attributes**
 

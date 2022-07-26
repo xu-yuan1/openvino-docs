@@ -13,27 +13,25 @@ Documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: API 2.0
+   :hidden:
+
+   openvino_2_0_transition_guide
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Converting and Preparing Models
    :hidden:
 
+   openvino_docs_model_processing_introduction
    openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide
    omz_tools_downloader
 
 
 .. toctree::
    :maxdepth: 1
-   :caption: Deploying Inference
-   :hidden:
-
-   openvino_docs_OV_UG_OV_Runtime_User_Guide
-   openvino_2_0_transition_guide
-   openvino_deployment_guide
-   openvino_inference_engine_tools_compile_tool_README
-
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Tuning for Performance
+   :caption: Optimization and Performance
    :hidden:
 
    openvino_docs_optimization_guide_dldt_optimization_guide
@@ -46,15 +44,27 @@ Documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Graphical Web Interface for OpenVINO™ toolkit  
+   :caption: Deploying Inference
    :hidden:
 
+   openvino_docs_deployment_guide_introduction
+   openvino_docs_OV_UG_OV_Runtime_User_Guide
+   openvino_deployment_guide
+   openvino_inference_engine_tools_compile_tool_README
+
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: THE Ecosystem
+
+   openvino_ecosystem
+   ovms_what_is_openvino_model_server
+   ovsa_get_started
+   ovtf_integration
+   ote_documentation
    workbench_docs_Workbench_DG_Introduction
-   workbench_docs_Workbench_DG_Install
-   workbench_docs_Workbench_DG_Work_with_Models_and_Sample_Datasets
-   Tutorials <workbench_docs_Workbench_DG_Tutorials>
-   User Guide <workbench_docs_Workbench_DG_User_Guide>
-   workbench_docs_Workbench_DG_Troubleshooting
+
 
 .. toctree::
    :maxdepth: 1
@@ -66,14 +76,6 @@ Documentation
    OpenCV* Developer Guide <https://docs.opencv.org/master/>
    OpenCL™ Developer Guide <https://software.intel.com/en-us/openclsdk-devguide>   
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Add-Ons
-   :hidden:
-
-   ovms_what_is_openvino_model_server
-   ote_documentation
-   ovsa_get_started
 
 .. toctree::
    :maxdepth: 1
@@ -94,27 +96,27 @@ Documentation
    openvino_docs_OV_UG_protecting_model_guide
    ovsa_get_started
 
-This section provides reference documents that guide you through developing your own deep learning applications with the OpenVINO™ toolkit. These documents will most helpful if you have first gone through the :ref:`Get Started <doxid-get_started>` guide.
+This section provides reference documents that guide you through the OpenVINO toolkit workflow, from obtaining models, optimizing them, to deploying them in your own deep learning applications.
 
 Converting and Preparing Models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-With the Model Downloader and :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>` guides, you will learn to download pre-trained models and convert them for use with the OpenVINO™ toolkit. You can provide your own model or choose a public or Intel model from a broad selection provided in the :ref:`Open Model Zoo <doxid-model_zoo>`.
+With Model Downloader and :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>` guides, you will learn to download pre-trained models and convert them for use with OpenVINO™. You can use your own models or choose some from a broad selection provided in the :ref:`Open Model Zoo <doxid-model_zoo>`.
+
+Optimization and Performance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this section you will find resources on :ref:`how to test inference performance <doxid-openvino_docs__m_o__d_g__getting__performance__numbers>` and :ref:`how to increase it <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`. It can be achieved by :ref:`optimizing the model <doxid-openvino_docs_model_optimization_guide>` or :ref:`optimizing inference at runtime <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`.
 
 Deploying Inference
 ~~~~~~~~~~~~~~~~~~~
 
-The :ref:`OpenVINO™ Runtime User Guide <doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide>` explains the process of creating your own application that runs inference with the OpenVINO™ toolkit. The `API Reference <./api_references.html>`__ defines the OpenVINO Runtime API for Python, C++, and C. The OpenVINO Runtime API is what you'll use to create an OpenVINO™ inference application, use enhanced operations sets and other features. After writing your application, you can use the :ref:`Deployment with OpenVINO <doxid-openvino_deployment_guide>` for deploying to target devices.
+This section explains the process of creating your own inference application using :ref:`OpenVINO™ Runtime <doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide>` and documents the `OpenVINO Runtime API <./api_references.html>`__ for both Python and C++. It also provides a :ref:`guide on deploying applications with OpenVINO <doxid-openvino_deployment_guide>` and directs you to other sources on this topic.
 
-Tuning for Performance
-~~~~~~~~~~~~~~~~~~~~~~
+OpenVINO Ecosystem
+~~~~~~~~~~~~~~~~~~
 
-The toolkit provides a :ref:`Performance Optimization Guide <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>` and utilities for squeezing the best performance out of your application, including Accuracy Checker, :ref:`Post-Training Optimization Tool <doxid-pot_introduction>`, and other tools for measuring accuracy, benchmarking performance, and tuning your application.
-
-Graphical Web Interface for OpenVINO™ Toolkit
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can choose to use the OpenVINO™ Deep Learning Workbench, a web-based tool that guides you through the process of converting, measuring, optimizing, and deploying models. This tool also serves as a low-effort introduction to the toolkit and provides a variety of useful interactive charts for understanding performance.
+Apart from the core components, OpenVINO offers tools, plugins, and expansions revolving around it, even if not constituting necessary parts of its workflow. This section will give you an overview of :ref:`what makes up OpenVINO Toolkit <doxid-openvino_ecosystem>`.
 
 Media Processing and Computer Vision Libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

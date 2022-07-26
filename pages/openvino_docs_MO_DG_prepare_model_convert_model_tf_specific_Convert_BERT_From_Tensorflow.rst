@@ -1,18 +1,18 @@
-.. index:: pair: page; Convert TensorFlow BERT Model
+.. index:: pair: page; Converting a TensorFlow BERT Model
 .. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__b_e_r_t__from__tensorflow:
 
 
-Convert TensorFlow BERT Model
-=============================
+Converting a TensorFlow BERT Model
+==================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__b_e_r_t__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_bert_from_tensorflow` Pre-trained models for BERT (Bidirectional Encoder Representations from Transformers) are `publicly available <https://github.com/google-research/bert>`__.
+:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__b_e_r_t__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_bert_from_tensorflow` Pretrained models for BERT (Bidirectional Encoder Representations from Transformers) are `publicly available <https://github.com/google-research/bert>`__.
 
 .. _supported_models:
 
 Supported Models
 ~~~~~~~~~~~~~~~~
 
-Currently, the following models from the `pre-trained BERT model list <https://github.com/google-research/bert#pre-trained-models>`__ are supported:
+The following models from the pretrained `BERT model list <https://github.com/google-research/bert#pre-trained-models>`__ are currently supported:
 
 * ``BERT-Base, Cased``
 
@@ -28,8 +28,8 @@ Currently, the following models from the `pre-trained BERT model list <https://g
 
 * ``BERT-Large, Uncased``
 
-Download the Pre-Trained BERT Model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Downloading the Pretrained BERT Model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download and unzip an archive with the `BERT-Base, Multilingual Uncased Model <https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip>`__.
 
@@ -45,12 +45,12 @@ After the archive is unzipped, the directory ``uncased_L-12_H-768_A-12`` is crea
 
 * ``vocab.txt``
 
-Pre-trained model meta-graph files are ``bert_model.ckpt.\*``.
+Pretrained model meta-graph files are ``bert_model.ckpt.\*``.
 
-Convert TensorFlow BERT Model to IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Converting a TensorFlow BERT Model to IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To generate the BERT Intermediate Representation (IR) of the model, run the Model Optimizer with the following parameters:
+To generate the BERT Intermediate Representation (IR) of the model, run Model Optimizer with the following parameters:
 
 .. ref-code-block:: cpp
 
@@ -59,14 +59,14 @@ To generate the BERT Intermediate Representation (IR) of the model, run the Mode
 	--output bert/pooler/dense/Tanh                                 \
 	--input Placeholder{i32},Placeholder_1{i32},Placeholder_2{i32}
 
-Pre-trained models are not suitable for batch reshaping out-of-the-box because of multiple hardcoded shapes in the model.
+Pretrained models are not suitable for batch reshaping out-of-the-box because of multiple hardcoded shapes in the model.
 
-Convert Reshape-able TensorFlow\* BERT Model to the Intermediate Representation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Converting a Reshapable TensorFlow BERT Model to OpenVINO IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow these steps to make pre-trained TensorFlow BERT model reshape-able over batch dimension:
+Follow these steps to make a pretrained TensorFlow BERT model reshapable over batch dimension:
 
-#. Download pre-trained BERT model you would like to use from the `Supported Models list <#supported_models>`__
+#. Download a pretrained BERT model you want to use from the `Supported Models list <#supported_models>`__
 
 #. Clone google-research/bert git repository:
    
@@ -92,18 +92,15 @@ Follow these steps to make pre-trained TensorFlow BERT model reshape-able over b
 
 #. Download script to load GLUE data:
    
-   * For UNIX\*-like systems, run the following command:
+   * For UNIX-like systems, run the following command:
      
      .. ref-code-block:: cpp
      
      	wget https://gist.githubusercontent.com/W4ngatang/60c2bdb54d156a41194446737ce03e2e/raw/17b8dd0d724281ed7c3b2aeeda662b92809aadd5/download_glue_data.py
+   
+   * For Windows systems:
      
-     
-     
-     .. code-block:: cpp
-     
-     	\* For Windows\* systems:<br>
-     	    Download the [Python script](https://gist.githubusercontent.com/W4ngatang/60c2bdb54d156a41194446737ce03e2e/raw/17b8dd0d724281ed7c3b2aeeda662b92809aadd5/download_glue_data.py) to the current working directory.
+     Download the `Python script <https://gist.githubusercontent.com/W4ngatang/60c2bdb54d156a41194446737ce03e2e/raw/17b8dd0d724281ed7c3b2aeeda662b92809aadd5/download_glue_data.py>`__ to the current working directory.
 
 #. Download GLUE data by running:
    
@@ -134,14 +131,14 @@ Follow these steps to make pre-trained TensorFlow BERT model reshape-able over b
    	    graph_io.write_graph(frozen, './', 'inference_graph.pb', as_text=False)
    	print('BERT frozen model path {}'.format(os.path.join(os.path.dirname(__file__), 'inference_graph.pb')))
    	sys.exit(0)
-
-Lines before the inserted code should look like this:
-
-.. ref-code-block:: cpp
-
-	(total_loss, per_example_loss, logits, probabilities) = create_model(
-	    bert_config, is_training, input_ids, input_mask, segment_ids, label_ids,
-	    num_labels, use_one_hot_embeddings)
+   
+   Lines before the inserted code should look like this:
+   
+   .. ref-code-block:: cpp
+   
+   	(total_loss, per_example_loss, logits, probabilities) = create_model(
+   	    bert_config, is_training, input_ids, input_mask, segment_ids, label_ids,
+   	    num_labels, use_one_hot_embeddings)
 
 #. Set environment variables ``BERT_BASE_DIR``, ``BERT_REPO_DIR`` and run the script ``run_classifier.py`` to create ``inference_graph.pb`` file in the root of the cloned BERT repository.
    
@@ -159,7 +156,7 @@ Lines before the inserted code should look like this:
    	    --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
    	    --output_dir=./
 
-Run the Model Optimizer with the following command line parameters to generate reshape-able BERT Intermediate Representation (IR):
+Run Model Optimizer with the following command line parameters to generate reshape-able BERT Intermediate Representation (IR):
 
 .. ref-code-block:: cpp
 
@@ -167,7 +164,7 @@ Run the Model Optimizer with the following command line parameters to generate r
 	--input_model inference_graph.pb \
 	--input "IteratorGetNext:0{i32}[1 128],IteratorGetNext:1{i32}[1 128],IteratorGetNext:4{i32}[1 128]"
 
-For other applicable parameters, refer to :ref:`Convert Model from TensorFlow <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>`.
+For other applicable parameters, refer to the :ref:`Convert Model from TensorFlow <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>` guide.
 
-For more information about reshape abilities, refer to :ref:`Using Shape Inference <doxid-openvino_docs__o_v__u_g__shape_inference>`.
+For more information about reshape abilities, refer to the :ref:`Using Shape Inference <doxid-openvino_docs__o_v__u_g__shape_inference>` guide.
 

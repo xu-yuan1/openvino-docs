@@ -27,6 +27,10 @@ Validation of the model is always performed against specific data combined into 
 
 .. note:: You can use `Datumaro <https://openvinotoolkit.github.io/datumaro/docs/>`__ to make the process of creating your dataset easier. Datumaro is a free framework and CLI tool for building, transforming, and analyzing datasets and annotations.
 
+
+
+
+
 Image Dataset
 ~~~~~~~~~~~~~
 

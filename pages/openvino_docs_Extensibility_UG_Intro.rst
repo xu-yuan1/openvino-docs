@@ -18,10 +18,10 @@ OpenVINO Extensibility Mechanism
    openvino_docs_Extensibility_UG_add_openvino_ops
    openvino_docs_Extensibility_UG_Frontend_Extensions
    openvino_docs_Extensibility_UG_GPU
-   openvino_docs_IE_DG_Extensibility_DG_VPU_Kernel
+   openvino_docs_Extensibility_UG_VPU_Kernel
    openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Customize_Model_Optimizer
 
-The Intel® Distribution of OpenVINO™ toolkit supports neural network models trained with various frameworks, including TensorFlow, PyTorch, ONNX, PaddlePaddle, MXNet, Caffe, and Kaldi. The list of supported operations is different for each of the supported frameworks. To see the operations supported by your framework, refer to :ref:`Supported Framework Operations <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>`.
+The Intel® Distribution of OpenVINO™ toolkit supports neural network models trained with various frameworks, including TensorFlow, PyTorch, ONNX, PaddlePaddle, Apache MXNet, Caffe, and Kaldi. The list of supported operations is different for each of the supported frameworks. To see the operations supported by your framework, refer to :ref:`Supported Framework Operations <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>`.
 
 Custom operations, that is those not included in the list, are not recognized by OpenVINO™ out-of-the-box. The need for a custom operation may appear in two main cases:
 
@@ -33,7 +33,7 @@ Importing models with such operations requires additional steps. This guide illu
 
 Defining a new custom operation basically consist of two parts:
 
-#. Definition of operation semantics in OpenVINO, the code that describes how this operation should be inferred consuming input tensor(s) and producing output tensor(s). How to implement execution kernels for :ref:`GPU <doxid-openvino_docs__extensibility__u_g__g_p_u>` and :ref:`VPU <doxid-openvino_docs__i_e__d_g__extensibility__d_g__v_p_u__kernel>` is described in separate guides.
+#. Definition of operation semantics in OpenVINO, the code that describes how this operation should be inferred consuming input tensor(s) and producing output tensor(s). How to implement execution kernels for :ref:`GPU <doxid-openvino_docs__extensibility__u_g__g_p_u>` and :ref:`VPU <doxid-openvino_docs__extensibility__u_g__v_p_u__kernel>` is described in separate guides.
 
 #. Mapping rule that facilitates conversion of framework operation representation to OpenVINO defined operation semantics.
 
@@ -57,7 +57,7 @@ Depending on model format used for import, mapping of custom operation is implem
 
 #. If model is represented in TensorFlow, Caffe, Kaldi or MXNet formats, then :ref:`Model Optimizer Extensions <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` should be used. This approach is available for model conversion in Model Optimizer only.
 
-Existing of two approaches simultaneously is explained by two different types of frontends used for model conversion in OpenVINO: new frontends (ONNX, PaddlePaddle) and legacy frontends (TensorFlow, Caffe, Kaldi and MXNet). Model Optimizer can use both front-ends in contrast to the direct import of model with ``read_model`` method which can use new frontends only. Follow one of the appropriate guides referenced above to implement mappings depending on framework frontend.
+Existing of two approaches simultaneously is explained by two different types of frontends used for model conversion in OpenVINO: new frontends (ONNX, PaddlePaddle) and legacy frontends (TensorFlow, Caffe, Kaldi and Apache MXNet). Model Optimizer can use both front-ends in contrast to the direct import of model with ``read_model`` method which can use new frontends only. Follow one of the appropriate guides referenced above to implement mappings depending on framework frontend.
 
 If you are implementing extensions for ONNX or PaddlePaddle new frontends and plan to use Model Optimizer ``--extension`` option for model conversion, then the extensions should be
 
@@ -75,6 +75,8 @@ Registering Extensions
 A custom operation class and a new mapping frontend extension class object should be registered to be usable in OpenVINO runtime.
 
 .. note:: This documentation is written based on the `Template extension <https://github.com/openvinotoolkit/openvino/tree/master/docs/template_extension/new>`__, which demonstrates extension development details based on minimalistic ``Identity`` operation that is a placeholder for your real custom operation. You can review the complete code, which is fully compliable, to see how it works.
+
+
 
 To load the extensions to the ``:ref:`ov::Core <doxid-classov_1_1_core>``` object, use the ``:ref:`ov::Core::add_extension <doxid-classov_1_1_core_1a68d0dea1cbcd42a67bea32780e32acea>``` method, this method allows to load library with extensions or extensions from the code.
 
@@ -111,10 +113,6 @@ Extensions can be loaded from code with ``:ref:`ov::Core::add_extension <doxid-c
 	// or you can add operation extension object which is equivalent form
 	core.:ref:`add_extension <doxid-classov_1_1_core_1a68d0dea1cbcd42a67bea32780e32acea>`(:ref:`ov::OpExtension\<TemplateExtension::Identity> <doxid-classov_1_1_op_extension>`());
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -136,10 +134,6 @@ Extensions can be loaded from code with ``:ref:`ov::Core::add_extension <doxid-c
 .. ref-code-block:: cpp
 
 	# Not implemented
-
-
-
-
 
 .. raw:: html
 
@@ -257,10 +251,6 @@ After the build you can use path to your extension library to load your extensio
 	// Load extensions library to ov::Core
 	core.:ref:`add_extension <doxid-classov_1_1_core_1a68d0dea1cbcd42a67bea32780e32acea>`("openvino_template_extension.so");
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -284,10 +274,6 @@ After the build you can use path to your extension library to load your extensio
 	core = :ref:`ov.Core <doxid-classov_1_1_core>`()
 	# Load extensions library to ov.Core
 	core.add_extension("openvino_template_extension.so")
-
-
-
-
 
 .. raw:: html
 

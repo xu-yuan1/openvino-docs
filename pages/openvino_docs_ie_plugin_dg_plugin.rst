@@ -75,8 +75,6 @@ Inference Engine Plugin API provides the helper :ref:`InferenceEngine::IInferenc
 	
 	}  // namespace TemplatePlugin
 
-
-
 Class Fields
 ++++++++++++
 
@@ -110,7 +108,7 @@ The provided plugin class also has several fields:
 	    int deviceId = 0;
 	    bool perfCount = true;
 	    :ref:`InferenceEngine::IStreamsExecutor::Config <doxid-struct_inference_engine_1_1_i_streams_executor_1_1_config>` _streamsExecutorConfig;
-	    :ref:`ov::hint::PerformanceMode <doxid-group__ov__runtime__cpp__prop__api_1ga032aa530efa40760b79af14913d48d73>` :ref:`performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>` = ov::hint::PerformanceMode::UNDEFINED;
+	    :ref:`ov::hint::PerformanceMode <doxid-group__ov__runtime__cpp__prop__api_1ga032aa530efa40760b79af14913d48d73>` :ref:`performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>` = :ref:`ov::hint::PerformanceMode::UNDEFINED <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a0db45d2a4141101bdfe48e3314cfbca3>`;
 	};
 
 As an example, a plugin configuration has three value parameters:
@@ -141,11 +139,9 @@ A plugin must define a device name enabled via the ``_pluginName`` field of a ba
 	    _waitExecutor = :ref:`executorManager <doxid-namespace_inference_engine_1adf3c09213f17002e0abafbf7377aec5c>`()->getIdleCPUStreamsExecutor({"TemplateWaitExecutor"});
 	}
 
-
-
 .. rubric::
 
-**Implementation details:** The base :ref:`InferenceEngine::IInferencePlugin <doxid-class_inference_engine_1_1_i_inference_plugin>` class provides a common implementation of the public :ref:`InferenceEngine::IInferencePlugin::LoadNetwork <doxid-class_inference_engine_1_1_i_inference_plugin_1a07baadb21491baef977c424e59ec466b>` method that calls plugin-specific ``LoadExeNetworkImpl``, which is defined in a derived class.
+**Implementation details:** The base :ref:`InferenceEngine::IInferencePlugin <doxid-class_inference_engine_1_1_i_inference_plugin>` class provides a common implementation of the public :ref:`InferenceEngine::IInferencePlugin::LoadNetwork <doxid-class_inference_engine_1_1_i_inference_plugin_1addf67bb7bae8f00cad65545d5a5a0d51>` method that calls plugin-specific ``LoadExeNetworkImpl``, which is defined in a derived class.
 
 This is the most important function of the ``Plugin`` class and creates an instance of compiled ``ExecutableNetwork``, which holds a backend-dependent compiled graph in an internal representation:
 
@@ -159,7 +155,7 @@ This is the most important function of the ``Plugin`` class and creates an insta
 	    :ref:`InferenceEngine::OutputsDataMap <doxid-namespace_inference_engine_1a76ce999f68455cf962a473718deb500c>` networkOutputs = network.:ref:`getOutputsInfo <doxid-class_inference_engine_1_1_c_n_n_network_1af8a6200f549b15a895e2cfefd304a9c2>`();
 	
 	    auto fullConfig = Configuration{config, _cfg};
-	    return std::make_shared<ExecutableNetwork>(network.:ref:`getFunction <doxid-class_inference_engine_1_1_c_n_n_network_1a7246c6936dfc1ebfa2c776e97972f539>`(),
+	    return std::make_shared<ExecutableNetwork>(network.:ref:`getFunction <doxid-class_inference_engine_1_1_c_n_n_network_1a7053e8341ddf7fc03466fd623558bdf3>`(),
 	                                               networkInputs,
 	                                               networkOutputs,
 	                                               fullConfig,
@@ -173,6 +169,10 @@ The very important part before creation of ``ExecutableNetwork`` instance is to 
 Actual graph compilation is done in the ``ExecutableNetwork`` constructor. Refer to the :ref:`ExecutableNetwork Implementation Guide <doxid-openvino_docs_ie_plugin_dg_executable_network>` for details.
 
 .. note:: Actual configuration map used in ``ExecutableNetwork`` is constructed as a base plugin configuration set via ``Plugin::SetConfig``, where some values are overwritten with ``config`` passed to ``Plugin::LoadExeNetworkImpl``. Therefore, the config of ``Plugin::LoadExeNetworkImpl`` has a higher priority.
+
+
+
+
 
 .. rubric::
 
@@ -193,19 +193,19 @@ The function accepts a const shared pointer to ``:ref:`ov::Model <doxid-classov_
 	                                                   const :ref:`InferenceEngine::InputsDataMap <doxid-namespace_inference_engine_1a08270747275eb79985154365aa782a2a>`& inputInfoMap,
 	                                                   const :ref:`InferenceEngine::OutputsDataMap <doxid-namespace_inference_engine_1a76ce999f68455cf962a473718deb500c>`& outputsInfoMap) {
 	    // 1. Copy ngraph::Function first to apply some transformations which modify original ngraph::Function
-	    auto transformedNetwork = :ref:`ngraph::clone_function <doxid-namespacengraph_1a5f75e639342db986514594f167340d69>`(\*function);
+	    auto transformedNetwork = :ref:`ngraph::clone_function <doxid-namespacengraph_1ab7cf74a6277946f0fe664967633075ca>`(\*function);
 	
 	    // 2. Perform common optimizations and device-specific transformations
 	    :ref:`ngraph::pass::Manager <doxid-classov_1_1pass_1_1_manager>` passManager;
 	    // Example: register transformation to convert preprocessing information to graph nodes
-	    passManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<ngraph::pass::AddPreprocessing>(inputInfoMap);
+	    passManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<ngraph::pass::AddPreprocessing>(inputInfoMap);
 	    // TODO: add post-processing based on outputsInfoMap
 	    // Example: register CommonOptimizations transformation from transformations library
-	    passManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ngraph::pass::CommonOptimizations <doxid-classngraph_1_1pass_1_1_common_optimizations>`>();
+	    passManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<:ref:`ngraph::pass::CommonOptimizations <doxid-classngraph_1_1pass_1_1_common_optimizations>`>();
 	    // G-API supports only FP32 networks for pre-processing
 	    bool needF16toF32 = false;
 	    for (const auto& param : :ref:`function <doxid-namespacengraph_1_1runtime_1_1reference_1a4bbb4f04db61c605971a3eb4c1553b6e>`->get_parameters()) {
-	        if (param->get_element_type() == :ref:`ngraph::element::f16 <doxid-group__ov__element__cpp__api_1ga2a30b8bad0c8cb5c76a4947c9d5074d1>` &&
+	        if (param->get_element_type() == ngraph::element::f16 &&
 	            inputInfoMap.at(param->get_friendly_name())->getTensorDesc().getPrecision() !=
 	                :ref:`InferenceEngine::Precision::FP16 <doxid-class_inference_engine_1_1_precision_1ade75bd7073b4aa966c0dda4025bcd0f5a084e737560206865337ee681e1ab3f5a>`) {
 	            needF16toF32 = true;
@@ -213,12 +213,12 @@ The function accepts a const shared pointer to ``:ref:`ov::Model <doxid-classov_
 	        }
 	    }
 	    if (needF16toF32) {
-	        passManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ngraph::pass::ConvertPrecision <doxid-classngraph_1_1pass_1_1_convert_precision>`>(
-	            :ref:`precisions_array <doxid-convert__precision_8hpp_1a4a87a7ac5af13aa6efaf3f00dadea5e1>`{{:ref:`ngraph::element::f16 <doxid-group__ov__element__cpp__api_1ga2a30b8bad0c8cb5c76a4947c9d5074d1>`, :ref:`ngraph::element::f32 <doxid-group__ov__element__cpp__api_1gadc8a5dda3244028a5c0b024897215d43>`}});
+	        passManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<:ref:`ngraph::pass::ConvertPrecision <doxid-classngraph_1_1pass_1_1_convert_precision>`>(
+	            :ref:`precisions_array <doxid-convert__precision_8hpp_1a4a87a7ac5af13aa6efaf3f00dadea5e1>`{{ngraph::element::f16, ngraph::element::f32}});
 	    }
 	    // Example: register plugin specific transformation
-	    passManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<ov::pass::DecomposeDivideMatcher>();
-	    passManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<ov::pass::ReluReluFusionMatcher>();
+	    passManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<ov::pass::DecomposeDivideMatcher>();
+	    passManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<ov::pass::ReluReluFusionMatcher>();
 	    // Register any other transformations
 	    // ..
 	
@@ -229,13 +229,15 @@ The function accepts a const shared pointer to ``:ref:`ov::Model <doxid-classov_
 	    return transformedNetwork;
 	}
 
-
-
 .. note:: After all these transformations, a ``:ref:`ov::Model <doxid-classov_1_1_model>``` object contains operations which can be perfectly mapped to backend kernels. E.g. if backend has kernel computing ``A + B`` operations at once, the ``TransformNetwork`` function should contain a pass which fuses operations ``A`` and ``B`` into a single custom operation ``A + B`` which fits backend kernels set.
+
+
+
+
 
 .. rubric::
 
-Use the method with the ``HETERO`` mode, which allows to distribute network execution between different devices based on the ``:ref:`ov::Node::get_rt_info() <doxid-classov_1_1_node_1a5c73794fbc47e510198261d61682fe79>``` map, which can contain the ``"affinity"`` key. The ``QueryNetwork`` method analyzes operations of provided ``network`` and returns a list of supported operations via the :ref:`InferenceEngine::QueryNetworkResult <doxid-struct_inference_engine_1_1_query_network_result>` structure. The ``QueryNetwork`` firstly applies ``TransformNetwork`` passes to input ``:ref:`ov::Model <doxid-classov_1_1_model>``` argument. After this, the transformed network in ideal case contains only operations are 1:1 mapped to kernels in computational backend. In this case, it's very easy to analyze which operations is supposed (``_backend`` has a kernel for such operation or extensions for the operation is provided) and not supported (kernel is missed in ``_backend``):
+Use the method with the ``HETERO`` mode, which allows to distribute network execution between different devices based on the ``:ref:`ov::Node::get_rt_info() <doxid-classov_1_1_node_1a6941c753af92828d842297b74df1c45a>``` map, which can contain the ``"affinity"`` key. The ``QueryNetwork`` method analyzes operations of provided ``network`` and returns a list of supported operations via the :ref:`InferenceEngine::QueryNetworkResult <doxid-struct_inference_engine_1_1_query_network_result>` structure. The ``QueryNetwork`` firstly applies ``TransformNetwork`` passes to input ``:ref:`ov::Model <doxid-classov_1_1_model>``` argument. After this, the transformed network in ideal case contains only operations are 1:1 mapped to kernels in computational backend. In this case, it's very easy to analyze which operations is supposed (``_backend`` has a kernel for such operation or extensions for the operation is provided) and not supported (kernel is missed in ``_backend``):
 
 #. Store original names of all operations in input ``:ref:`ov::Model <doxid-classov_1_1_model>```
 
@@ -252,7 +254,7 @@ Use the method with the ``HETERO`` mode, which allows to distribute network exec
 	    :ref:`OV_ITT_SCOPED_TASK <doxid-group__ie__dev__profiling_1gac1e4b5bdc6097e2afd26b75d05dfe1ef>`(itt::domains::TemplatePlugin, "Plugin::QueryNetwork");
 	
 	    Configuration fullConfig{config, _cfg, false};
-	    auto function = network.:ref:`getFunction <doxid-class_inference_engine_1_1_c_n_n_network_1a7246c6936dfc1ebfa2c776e97972f539>`();
+	    auto function = network.:ref:`getFunction <doxid-class_inference_engine_1_1_c_n_n_network_1a7053e8341ddf7fc03466fd623558bdf3>`();
 	
 	    // 1. First of all we should store initial input operation set
 	    std::unordered_set<std::string> originalOps;
@@ -282,7 +284,7 @@ Use the method with the ``HETERO`` mode, which allows to distribute network exec
 	#undef _OPENVINO_OP_REG
 	    for (auto&& node : transformedFunction->get_ops()) {
 	        // Extract transformation history from transformed node as list of nodes
-	        for (auto&& fusedLayerName : :ref:`ngraph::getFusedNamesVector <doxid-group__ie__runtime__attr__api_1ga927345dceac1f145e05e7b7af4600946>`(node)) {
+	        for (auto&& fusedLayerName : :ref:`ngraph::getFusedNamesVector <doxid-group__ie__runtime__attr__api_1gad13529e55f67f2d316178f1dd0080d76>`(node)) {
 	            // Filter just nodes from original operation set
 	            // TODO: fill with actual decision rules based on whether kernel is supported by backend
 	            if (:ref:`InferenceEngine::details::contains <doxid-namespaceov_1_1util_1aa63ec0c8f3eb1d9ca97ca24f11d6cd9a>`(originalOps, fusedLayerName)) {
@@ -342,8 +344,6 @@ Use the method with the ``HETERO`` mode, which allows to distribute network exec
 	    return res;
 	}
 
-
-
 .. rubric::
 
 Adds an extension of the :ref:`InferenceEngine::IExtensionPtr <doxid-namespace_inference_engine_1a7a4456ae150afbff5140be2d92680fa4>` type to a plugin. If a plugin does not support extensions, the method must throw an exception:
@@ -354,8 +354,6 @@ Adds an extension of the :ref:`InferenceEngine::IExtensionPtr <doxid-namespace_i
 	    // TODO: add extensions if plugin supports extensions
 	    :ref:`IE_THROW <doxid-ie__common_8h_1a643ef2aa5e1c6b7523e55cc4396e3e02>`(NotImplemented);
 	}
-
-
 
 .. rubric::
 
@@ -370,6 +368,10 @@ Sets new values for plugin configuration keys:
 In the snippet above, the ``Configuration`` class overrides previous configuration values with the new ones. All these values are used during backend specific graph compilation and execution of inference requests.
 
 .. note:: The function must throw an exception if it receives an unsupported configuration key.
+
+
+
+
 
 .. rubric::
 
@@ -386,6 +388,10 @@ Returns a current value for a specified configuration key:
 The function is implemented with the ``Configuration::Get`` method, which wraps an actual configuration key value to the :ref:`InferenceEngine::Parameter <doxid-namespace_inference_engine_1aff2231f886c9f8fc9c226fd343026789>` and returns it.
 
 .. note:: The function must throw an exception if it receives an unsupported configuration key.
+
+
+
+
 
 .. rubric::
 
@@ -433,7 +439,7 @@ The snippet below provides an example of the implementation for ``GetMetric`` :
 	                                               :ref:`CONFIG_KEY <doxid-ie__plugin__config_8hpp_1aad09cfba062e8ec9fb7ab9383f656ec7>`(PERF_COUNT),
 	                                               :ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>`.name(),
 	                                               TEMPLATE_CONFIG_KEY(THROUGHPUT_STREAMS)};
-	        auto streamExecutorConfigKeys = :ref:`InferenceEngine::IStreamsExecutor::Config <doxid-struct_inference_engine_1_1_i_streams_executor_1_1_config>`{}.:ref:`SupportedKeys <doxid-struct_inference_engine_1_1_i_streams_executor_1_1_config_1af5194c42f86951299ba6a9ef334627ef>`();
+	        auto streamExecutorConfigKeys = :ref:`InferenceEngine::IStreamsExecutor::Config <doxid-struct_inference_engine_1_1_i_streams_executor_1_1_config>`{}.:ref:`SupportedKeys <doxid-struct_inference_engine_1_1_i_streams_executor_1_1_config_1ae159a5dc9d9007cb1cbf8e48362d1f94>`();
 	        for (auto&& configKey : streamExecutorConfigKeys) {
 	            if (configKey != :ref:`InferenceEngine::PluginConfigParams::KEY_CPU_THROUGHPUT_STREAMS <doxid-namespace_inference_engine_1_1_plugin_config_params_1ae04df28b5ac394e398297e432f3c7b6e>`) {
 	                configKeys.emplace_back(configKey);
@@ -466,9 +472,11 @@ The snippet below provides an example of the implementation for ``GetMetric`` :
 	    }
 	}
 
-
-
 .. note:: If an unsupported metric key is passed to the function, it must throw an exception.
+
+
+
+
 
 .. rubric::
 
@@ -498,8 +506,6 @@ During export of backend specific graph using ``ExecutableNetwork::Export``, a p
 	    :ref:`SetExeNetworkInfo <doxid-namespace_inference_engine_1a31ef38523e4aec9bc04b8fe8c2fa0a70>`(exec, exec->_function);
 	    return exec;
 	}
-
-
 
 Create Instance of Plugin Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

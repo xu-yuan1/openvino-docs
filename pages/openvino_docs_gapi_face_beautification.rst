@@ -191,7 +191,7 @@ A face detector output is converted to an array of faces with the following kern
 	        for (int i = 0; i < numOfDetections; i++)
 	        {
 	            const float faceId         = data[i \* kObjectSize + 0];
-	            if (faceId < 0.:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`)  // indicates the end of detections
+	            if (faceId < 0.f)  // indicates the end of detections
 	            {
 	                break;
 	            }

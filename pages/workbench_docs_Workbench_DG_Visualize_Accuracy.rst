@@ -38,6 +38,8 @@ Model Predictions
 
 * Image-Inpainting
 
+
+
 Select an image on your system or drag and drop an image directly. Click **Test**, and the model predictions appear on the right.
 
 Classification Models
@@ -108,6 +110,8 @@ Model Predictions with Importance Map
 
 .. note:: The feature is available for models trained for the Classification use case
 
+
+
 Although deep neural models are widely used to automate data processing, their decision-making process is mostly unknown and difficult to explain. Explainable AI helps you understand and interpret model predictions.
 
 Randomized Input Sampling for Explanation (RIZE) algorithm can explain why a black-box model makes classification decisions by generating a pixel importance map for each class. The algorithm tests the model with randomly masked versions of the input image and obtains the corresponding outputs to evaluate the importance.
@@ -131,11 +135,15 @@ Compare Optimized and Parent Model Predictions
 
 .. note:: The feature is available for optimized models
 
+
+
 You can compare Optimized model predictions with Parent model predictions used as optimal references. Find out on which validation dataset images the predictions of the model became different after optimization. Learn more at the :ref:`Create Accuracy Report page <doxid-workbench_docs__workbench__d_g__measure__accuracy>`.
 
 .. image:: visualize_parent_od.png
 
 *All images were taken from ImageNet, Pascal Visual Object Classes, and Common Objects in Context datasets for demonstration purposes only.*
+
+
 
 See Also
 ~~~~~~~~

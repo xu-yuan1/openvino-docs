@@ -62,6 +62,10 @@ Once the commands above are executed, the Inference Engine Developer Package is 
 
 .. note:: it's enough just to run ``cmake --build . --target ie_dev_targets`` command to build only targets from the Inference Engine Developer package.
 
+
+
+
+
 Build Plugin using Inference Engine Developer Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -112,13 +116,7 @@ To build a plugin and its tests, run the following CMake scripts:
 
 
 
-
-
-.. code-block:: cpp
-
-	```bash
-	$ cmake -DENABLE_FUNCTIONAL_TESTS=OFF -DInferenceEngineDeveloperPackage_DIR=../dldt-release-build ../template-plugin
-	```
+```bash $ cmake -DENABLE_FUNCTIONAL_TESTS=OFF -DInferenceEngineDeveloperPackage_DIR=../dldt-release-build ../template-plugin ```
 
 * ``src/CMakeLists.txt`` to build a plugin shared library from sources:
 
@@ -161,9 +159,11 @@ To build a plugin and its tests, run the following CMake scripts:
 	    ov_register_plugins(MAIN_TARGET ${TARGET_NAME})
 	endif()
 
-
-
 .. note:: ``IE::inference_engine`` target is imported from the Inference Engine Developer Package.
+
+
+
+
 
 * ``tests/functional/CMakeLists.txt`` to build a set of functional plugin tests:
 
@@ -199,8 +199,6 @@ To build a plugin and its tests, run the following CMake scripts:
 	else()
 	    message("-- Reference preprocessing: OpenCV tests are disabled")
 	endif()
-
-
 
 .. note:: The ``IE::funcSharedTests`` static library with common functional Inference Engine Plugin tests is imported via the Inference Engine Developer Package.
 

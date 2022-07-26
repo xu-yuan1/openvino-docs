@@ -11,6 +11,10 @@ This API is applicable for new frontends only, which exist for ONNX and PaddlePa
 
 .. note:: This documentation is written based on the `Template extension <https://github.com/openvinotoolkit/openvino/tree/master/docs/template_extension/new>`__, which demonstrates extension development details based on minimalistic ``Identity`` operation that is a placeholder for your real custom operation. You can review the complete code, which is fully compliable, to see how it works.
 
+
+
+
+
 Single Operation Mapping with OpExtension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -27,6 +31,8 @@ This section covers the case when a single operation in framework representation
 #. Each attribute in OpenVINO operation can be initialized from one of the attributes of original operation or by some predefined constant value. Value of copied attributes cannot contain expressions, value is accepted as-is, so type of a value should be compatible.
 
 .. note:: ``OpExtension`` class is currently available for ONNX frontend only. PaddlePaddle frontend has named inputs and outputs for operation (not indexed) therefore OpExtension mapping is not applicable for this case.
+
+
 
 The next example maps ONNX operation with type `“Identity” <https://github.com/onnx/onnx/blob/main/docs/Operators.md#Identity>`__ to OpenVINO template extension ``Identity`` class.
 
@@ -52,7 +58,7 @@ Extension objects, like just constructed ``extension`` can be used to add to the
 	:ref:`ov::Core <doxid-classov_1_1_core>` core;
 	// Add arbitrary number of extensions before calling read_model method
 	core.:ref:`add_extension <doxid-classov_1_1_core_1a68d0dea1cbcd42a67bea32780e32acea>`(:ref:`ov::frontend::OpExtension\<TemplateExtension::Identity> <doxid-classov_1_1frontend_1_1_op_extension_base>`());
-	core.:ref:`read_model <doxid-classov_1_1_core_1a3cca31e2bb5d569330daa8041e01f6f1>`("/path/to/model.onnx");
+	core.:ref:`read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>`("/path/to/model.onnx");
 
 Or extensions can be constructed in a separately compiled shared library. Separately compiled library can be used in Model Optimizer or ``benchmark_app``. Read about how to build and load such library in chapter “Create library with extensions” in :ref:`Introduction to OpenVINO Extension <doxid-openvino_docs__extensibility__u_g__intro>`.
 
@@ -146,6 +152,10 @@ The next example illustrates using ``ConversionExtension`` for conversion of “
 
 .. note:: ``ThresholdedRelu`` is one of the standard ONNX operators which is supported by ONNX frontend natively out-of-the-box. Here we are re-implementing it to illustrate how you can add a similar support for your custom operation instead of ``ThresholdedRelu``.
 
+
+
+
+
 .. ref-code-block:: cpp
 
 	#include <openvino/opsets/opset8.hpp>
@@ -158,10 +168,10 @@ The next example illustrates using ``ConversionExtension`` for conversion of “
 	    "ThresholdedReLU",
 	    [](const :ref:`ov::frontend::NodeContext <doxid-classov_1_1frontend_1_1_node_context>`& node) {
 	        auto :ref:`greater <doxid-namespacengraph_1_1runtime_1_1reference_1a57392ae82f5b22607d69470afd59139a>` = std::make_shared<ov::opset8::Greater>(
-	            node.:ref:`get_input <doxid-classov_1_1frontend_1_1_node_context_1aefd6066f0f721dee2e1cb68a41f8adfa>`(0),
+	            node.:ref:`get_input <doxid-classov_1_1frontend_1_1_node_context_1aa462a9e6948f3fe1f66f65a0e945916e>`(0),
 	            ov::opset8::Constant::create(:ref:`ov::element::f32 <doxid-group__ov__element__cpp__api_1gadc8a5dda3244028a5c0b024897215d43>`, {}, {node.get_attribute<float>("alpha")}));
 	        auto casted = std::make_shared<ov::opset8::Convert>(:ref:`greater <doxid-namespacengraph_1_1runtime_1_1reference_1a57392ae82f5b22607d69470afd59139a>`, :ref:`ov::element::f32 <doxid-group__ov__element__cpp__api_1gadc8a5dda3244028a5c0b024897215d43>`);
-	        return :ref:`ov::OutputVector <doxid-namespaceov_1a0a3841455b82c164b1b04b61a9c7c560>`{ std::make_shared<ov::opset8::Multiply>(node.:ref:`get_input <doxid-classov_1_1frontend_1_1_node_context_1aefd6066f0f721dee2e1cb68a41f8adfa>`(0), casted) };
+	        return :ref:`ov::OutputVector <doxid-namespaceov_1a0a3841455b82c164b1b04b61a9c7c560>`{ std::make_shared<ov::opset8::Multiply>(node.:ref:`get_input <doxid-classov_1_1frontend_1_1_node_context_1aa462a9e6948f3fe1f66f65a0e945916e>`(0), casted) };
 	    }));
 
 To access original framework operation attribute value and connect to inputs, ``node`` object of type ``NodeContext`` is used. It has two main methods:

@@ -24,6 +24,10 @@ Your target system must meet the following requirements:
 
 .. note:: The provided combination of dependencies versions is recommended. Other combinations are not validated.
 
+
+
+
+
 .. list-table::
     :header-rows: 1
 
@@ -46,6 +50,10 @@ Run the commands below to install the dependencies:
 
 .. note:: The command below installs the highest versions of the packages. To specify a package version, add ``=<version>`` after the name of a package.
 
+
+
+
+
 .. ref-code-block:: cpp
 
 	sudo apt-get install -y --no-install-recommends \
@@ -59,6 +67,8 @@ Run the commands below to install the dependencies:
 	gcc \
 	libgtk-3-0 \
 	ffmpeg
+
+
 
 .. ref-code-block:: cpp
 
@@ -87,6 +97,8 @@ Configure SSH Connection from Linux or macOS\* to Linux
 	sudo apt update
 	sudo apt install openssh-server
 
+
+
 **Step 1** : Generate an SSH key pair with the command below:
 
 .. ref-code-block:: cpp
@@ -101,6 +113,8 @@ Save keys to default files and **do not use a passphrase**.
 
 	ssh-copy-id USERNAME@HOSTNAME
 
+
+
 .. note:: On macOS, install ``ssh-copy-id`` first. Use the command below:
 
 .. ref-code-block:: cpp
@@ -108,6 +122,8 @@ Save keys to default files and **do not use a passphrase**.
 	brew install ssh-copy-id
 
 See `Ssh-copy-id on Mac <https://www.ssh.com/ssh/copy-id#ssh-copy-id-on-mac>`__ for other options.
+
+
 
 **Step 3** : Verify that you can connect to your target machine without a password by running the command below. Replace ``USERNAME`` with your username on the *target* machine, and ``HOSTNAME`` with the hostname or IPv4 of the *target* machine.
 
@@ -125,6 +141,8 @@ Configure SSH Connection from Windows to Linux Using OpenSSH
 ------------------------------------------------------------
 
 .. note:: If you do not have OpenSSH on your *host* machine, follow the `OpenSSH installation guide <https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse>`__.
+
+
 
 **Step 1** : In a Windows PowerShell\* terminal, generate an SSH key pair with the command below:
 
@@ -198,6 +216,8 @@ If you are not asked for a sudo password during the execution of the command abo
 Follow the command-line instructions to exit and save the changes.
 
 .. note:: Be careful when editing the ``sudoers`` file and apply only the required changes.
+
+
 
 **Step 5** : Check sudo permissions using the following command:
 

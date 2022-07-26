@@ -23,7 +23,18 @@ To use the Simplified mode, prepare the data and place it in a separate folder. 
   
   ``pot -q default -m <path_to_xml> -w <path_to_bin> --engine simplified --data-source <path_to_data>``
 
-* To provide more options, use the corresponding ``"engine"`` section in the POT configuration file as follows: ```json "engine": { "type": "simplified", "layout": "NCHW", // Layout of input data. Supported ["NCHW", // "NHWC", "CHW", "CWH"] layout "data_source": "PATH_TO_SOURCE" // You can specify path to the directory with images // Also you can specify template for file names to filter images to load. // Templates are unix style (this option is valid only in Simplified mode) } ```
+* To provide more options, use the corresponding ``"engine"`` section in the POT configuration file as follows:
+  
+  .. ref-code-block:: cpp
+  
+  	"engine": {
+  	    "type": "simplified",
+  	    "layout": "NCHW",               // Layout of input data. Supported ["NCHW",
+  	                                    // "NHWC", "CHW", "CWH"] layout
+  	    "data_source": "PATH_TO_SOURCE" // You can specify path to the directory with images 
+  	                                    // Also you can specify template for file names to filter images to load.
+  	                                    // Templates are unix style (this option is valid only in Simplified mode)
+  	}
 
 A template of configuration file for 8-bit quantization using Simplified mode can be found `at the following link <https://github.com/openvinotoolkit/openvino/blob/master/tools/pot/configs/simplified_mode_template.json>`__.
 

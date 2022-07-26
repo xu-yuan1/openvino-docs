@@ -5,7 +5,7 @@
 Configurations for Intel® Processor Graphics (GPU) with Intel® Distribution of OpenVINO™ toolkit
 ====================================================================================================
 
-:target:`doxid-openvino_docs_install_guides_configurations_for_intel_gpu_1md_openvino_docs_install_guides_configurations-for-intel-gpu`
+:target:`doxid-openvino_docs_install_guides_configurations_for_intel_gpu_1md_openvino_docs_install_guides_configurations_for_intel_gpu`
 
 .. _gpu guide:
 
@@ -14,7 +14,7 @@ This page introduces additional configurations for Intel® Processor Graphics (G
 Linux
 ~~~~~
 
-Once you have your OpenVINO installed, follow the steps to be able to work on GPU:
+If you have installed OpenVINO Runtime via the installer, APT, or YUM, follow these steps to work with GPU:
 
 #. Go to the install_dependencies directory:
    
@@ -22,29 +22,35 @@ Once you have your OpenVINO installed, follow the steps to be able to work on GP
    
    	cd <INSTALL_DIR>/install_dependencies/
 
-#. Install the **Intel® Graphics Compute Runtime for OpenCL™** driver components required to use the GPU plugin and write custom layers for Intel® Integrated Graphics. The drivers are not included in the package. To install, run this script:
+#. Install the **Intel® Graphics Compute Runtime for OpenCL™** driver components required to use the GPU plugin and write custom layers for Intel® Integrated Graphics. The drivers are not included in the package. To install it, run this script:
    
    .. ref-code-block:: cpp
    
    	sudo -E ./install_NEO_OCL_driver.sh
-
-.. note:: To use the **Intel® Iris® Xe MAX Graphics**, see the `Intel® Iris® Xe MAX Graphics with Linux\* <https://dgpu-docs.intel.com/devices/iris-xe-max-graphics/index.html>`__ page for driver installation instructions.
-
-The script compares the driver version on the system to the current version. If the driver version on the system is higher or equal to the current version, the script does not install a new driver. If the version of the driver is lower than the current version, the script uninstalls the lower version and installs the current version with your permission:
-
-.. image:: NEO_check_agreement.png
-
-Higher hardware versions require a higher driver version, namely 20.35 instead of 19.41. If the script fails to uninstall the driver, uninstall it manually. During the script execution, you may see the following command line output:
-
-
-
-.. ref-code-block:: cpp
-
-	Add OpenCL user to video group
-
-Ignore this suggestion and continue.
-
-You can also find the most recent version of the driver, installation procedure and other information on the `Intel® software for general purpose GPU capabilities <https://dgpu-docs.intel.com/index.html>`__ site.
+   
+   
+   
+   .. note:: To use the **Intel® Iris® Xe MAX Graphics**, see the `Intel® Iris® Xe MAX Graphics with Linux\* <https://dgpu-docs.intel.com/devices/iris-xe-max-graphics/index.html>`__ page for driver installation instructions.
+   
+   
+   
+   
+   
+   The script compares the driver version on the system to the current version. If the driver version on the system is higher or equal to the current version, the script does not install a new driver. If the version of the driver is lower than the current version, the script uninstalls the lower version and installs the current version with your permission:
+   
+   .. image:: NEO_check_agreement.png
+   
+   Higher hardware versions require a higher driver version, namely 20.35 instead of 19.41. If the script fails to uninstall the driver, uninstall it manually. During the script execution, you may see the following command line output:
+   
+   
+   
+   .. ref-code-block:: cpp
+   
+   	Add OpenCL user to video group
+   
+   Ignore this suggestion and continue.
+   
+   You can also find the most recent version of the driver, installation procedure and other information on the `Intel® software for general purpose GPU capabilities <https://dgpu-docs.intel.com/index.html>`__ site.
 
 #. **Optional:** Install header files to allow compilation of new code. You can find the header files at `Khronos OpenCL™ API Headers <https://github.com/KhronosGroup/OpenCL-Headers.git>`__.
 

@@ -5,9 +5,13 @@
 Install and Configure Intel® Distribution of OpenVINO™ Toolkit for Linux
 ===========================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_linux_1md_openvino_docs_install_guides_installing-openvino-linux`
+:target:`doxid-openvino_docs_install_guides_installing_openvino_linux_1md_openvino_docs_install_guides_installing_openvino_linux`
 
 .. note:: Since the OpenVINO™ 2022.1 release, the following development tools: Model Optimizer, Post-Training Optimization Tool, Model Downloader and other Open Model Zoo tools, Accuracy Checker, and Annotation Converter are not part of the installer. These tools are now only available on `pypi.org <https://pypi.org/project/openvino-dev/>`__.
+
+
+
+
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
@@ -97,6 +101,8 @@ Step 1: Install the Intel® Distribution of OpenVINO™ Toolkit
    
    	./l_openvino_toolkit_p_<version>.sh
    
+   
+   
    You should see the following dialog box open up:
    
    .. image:: _static/images/openvino-install.png
@@ -108,24 +114,26 @@ Step 1: Install the Intel® Distribution of OpenVINO™ Toolkit
    .. ref-code-block:: cpp
    
    	./l_openvino_toolkit_p_<version>.sh -a --cli
-
-.. note:: To get additional information on all parameters that can be used, use the help option: ``--help``. Among others, you can find there ``-s`` option which offers silent mode, which together with ``--eula approve`` allows you to run whole installation with default values without any user inference.
+   
+   
+   
+   .. note:: To get additional information on all parameters that can be used, use the help option: ``--help``. Among others, you can find there ``-s`` option which offers silent mode, which together with ``--eula approve`` allows you to run whole installation with default values without any user inference.
 
 #. Follow the instructions on your screen. During the installation you will be asked to accept the license agreement. Your acceptance is required to continue. Check the installation process on the image below:
-   
-   .. image:: openvino-install-linux-run-boostrapper-script.gif
-   
-   Click on the image to see the details.
-   
-   
-   
-   By default, the Intel® Distribution of OpenVINO™ is installed to the following directory, referred to as ``<INSTALL_DIR>`` elsewhere in the documentation:
-   
-   * For root or administrator: ``/opt/intel/openvino_<version>/``
-   
-   * For regular users: ``/home/<USER>/intel/openvino_<version>/``
-   
-   For simplicity, a symbolic link to the latest installation is also created: ``/opt/intel/openvino_2022/`` or ``/home/<USER>/intel/openvino_2022/``.
+
+.. image:: openvino-install-linux-run-boostrapper-script.gif
+
+Click on the image to see the details.
+
+
+
+By default, the Intel® Distribution of OpenVINO™ is installed to the following directory, referred to as ``<INSTALL_DIR>`` elsewhere in the documentation:
+
+* For root or administrator: ``/opt/intel/openvino_<version>/``
+
+* For regular users: ``/home/<USER>/intel/openvino_<version>/``
+
+For simplicity, a symbolic link to the latest installation is also created: ``/opt/intel/openvino_2022/`` or ``/home/<USER>/intel/openvino_2022/``.
 
 To check **Release Notes** please visit: `Release Notes <https://software.intel.com/en-us/articles/OpenVINO-RelNotes>`__.
 
@@ -167,6 +175,8 @@ If you have more than one OpenVINO™ version on your machine, you can easily sw
 
 .. note:: You can also run this script every time when you start new terminal session. Open ``~/.bashrc`` in your favorite editor, and add ``source <INSTALL_DIR>/setupvars.sh``. Next time when you open a terminal, you will see ``[setupvars.sh] OpenVINO™ environment initialized``. Changing ``.bashrc`` is not recommended when you have many OpenVINO™ versions on your machine and want to switch among them, as each may require different setup.
 
+
+
 The environment variables are set. Next, you can download some additional tools.
 
 .. _model-optimizer:
@@ -175,6 +185,14 @@ Step 4 (Optional): Download Additional Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: Since the OpenVINO™ 2022.1 release, the following development tools: Model Optimizer, Post-Training Optimization Tool, Model Downloader and other Open Model Zoo tools, Accuracy Checker, and Annotation Converter are not part of the installer. The OpenVINO™ Development Tools can only be installed via PyPI now. See :ref:`Install OpenVINO™ Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>` for detailed steps.
+
+
+
+
+
+
+
+
 
 .. dropdown:: OpenCV
 
@@ -241,32 +259,15 @@ Uninstalling the Intel® Distribution of OpenVINO™ Toolkit
 
 To uninstall the toolkit, follow the steps on the :ref:`Uninstalling page <doxid-openvino_docs_install_guides_uninstalling_openvino>`.
 
-.. dropdown:: Troubleshooting
+Additional Resources
+~~~~~~~~~~~~~~~~~~~~
 
-   PRC developers might encounter pip errors during Intel® Distribution of OpenVINO™ installation. To resolve the issues, try one of the following options:
+* :ref:`Troubleshooting Guide for OpenVINO Installation & Configuration <troubleshooting guide for install>`
+* Converting models for use with OpenVINO™: :ref:`Model Optimizer User Guide <deep learning model optimizer>`
+* Writing your own OpenVINO™ applications: :ref:`OpenVINO™ Runtime User Guide <deep learning openvino runtime>`
+* Sample applications: :ref:`OpenVINO™ Toolkit Samples Overview <code samples>`
+* Pre-trained deep learning models: :ref:`Overview of OpenVINO™ Toolkit Pre-Trained Models <model zoo>`
+* IoT libraries and code samples in the GitHUB repository: `Intel® IoT Developer Kit`_ 
 
-   * Add the download source using the ``-i`` parameter with the Python ``pip`` command. For example: 
-
-   .. code-block:: sh
-
-      pip install openvino-dev -i https://mirrors.aliyun.com/pypi/simple/
-
-   Use the ``--trusted-host`` parameter if the URL above is ``http`` instead of ``https``.
-
-   * If you run into incompatibility issues between components after installing new Intel® Distribution of OpenVINO™ version, try running ``requirements.txt`` with the following command:
-
-   .. code-block:: sh
-
-      pip install -r <INSTALL_DIR>/tools/requirements.txt
-
-.. dropdown:: Additional Resources
-
-   * Converting models for use with OpenVINO™: :ref:`Model Optimizer Developer Guide <deep learning model optimizer>`
-   * Writing your own OpenVINO™ applications: :ref:`OpenVINO™ Runtime User Guide <deep learning openvino runtime>`
-   * Sample applications: :ref:`OpenVINO™ Toolkit Samples Overview <code samples>`
-   * Pre-trained deep learning models: :ref:`Overview of OpenVINO™ Toolkit Pre-Trained Models <model zoo>`
-   * IoT libraries and code samples in the GitHUB repository: `Intel® IoT Developer Kit`_ 
-
-
-   .. _Intel® IoT Developer Kit: https://github.com/intel-iot-devkit
+.. _Intel® IoT Developer Kit: https://github.com/intel-iot-devkit
 

@@ -17,11 +17,19 @@ Work with Docker Container
 
 Refer to the sections below to see instructions for each scenario.
 
+.. _pause:
+
 .. note:: To learn about the commands, see :ref:`Advanced Configurations <doxid-workbench_docs__workbench__d_g__advanced__configurations>`.
+
+
+
+
 
 .. note:: In the snippets below, replace ``workbench`` with the name of your container if you renamed it.
 
-.. _pause:
+
+
+
 
 Pause and Resume Docker Container
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,6 +150,10 @@ Enter Docker Container with DL Workbench
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: For this step, the container must be running.
+
+
+
+
 
 1. Enter Container
 ------------------

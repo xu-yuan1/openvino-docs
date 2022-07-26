@@ -29,7 +29,7 @@ The following C++ API is used in the application:
       - ``:ref:`ov::InferRequest::get_input_tensor <doxid-classov_1_1_infer_request_1a5f0bc1ab40de6a7a12136b4a4e6a8b54>```
       - Get an input tensor.
     * - Tensor Operations
-      - ``:ref:`ov::shape_size <doxid-group__ov__model__cpp__api_1gafe8cdd6477ae9810c2bf368602d35883>``` , ``:ref:`ov::Tensor::data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>```
+      - ``:ref:`ov::shape_size <doxid-group__ov__model__cpp__api_1gafe8cdd6477ae9810c2bf368602d35883>``` , ``:ref:`ov::Tensor::data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>```
       - Get a tensor shape size and its data.
 
 Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>`.
@@ -105,6 +105,8 @@ To run the sample, you need specify a model and image:
 * Before running the sample with a trained model, make sure the model is converted to the intermediate representation (IR) format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
 
 * The sample accepts models in ONNX format (.onnx) that do not require preprocessing.
+
+
 
 Example
 -------

@@ -1,8 +1,8 @@
-.. index:: pair: page; GPU device
+.. index:: pair: page; GPU Device
 .. _doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u:
 
 
-GPU device
+GPU Device
 ==========
 
 :target:`doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u_1md_openvino_docs_ov_runtime_ug_supported_plugins_gpu`
@@ -25,22 +25,22 @@ The GPU plugin is an OpenCL based plugin for inference of deep neural networks o
 
 * `Accelerate Deep Learning Inference with Intel® Processor Graphics <https://software.intel.com/en-us/articles/accelerating-deep-learning-inference-with-intel-processor-graphics>`__.
 
-It is a part of the Intel® Distribution of OpenVINO™ toolkit. For more information on how to configure a system to use it, see :ref:`GPU configuration page <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`.
+The GPU plugin is a part of the Intel® Distribution of OpenVINO™ toolkit. For more information on how to configure a system to use it, see the :ref:`GPU configuration <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`.
 
 Device Naming Convention
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Devices are enumerated as ``"GPU.X"`` where ``X={0, 1, 2,...}``. Only Intel® GPU devices are considered.
+* Devices are enumerated as ``GPU.X``, where ``X={0, 1, 2,...}`` (only Intel® GPU devices are considered).
 
-* If the system has an integrated GPU, its 'id' is always '0' (``"GPU.0"``).
+* If the system has an integrated GPU, its ``id`` is always 0 (``GPU.0``).
 
-* Other GPUs' order is not predefined and depends on the GPU driver.
+* The order of other GPUs is not predefined and depends on the GPU driver.
 
-* ``"GPU"`` is an alias for ``"GPU.0"``
+* The ``GPU`` is an alias for ``GPU.0``.
 
-* If the system doesn't have an integrated GPU, devices are enumerated starting from 0.
+* If the system does not have an integrated GPU, devices are enumerated, starting from 0.
 
-* For GPUs with multi-tile architecture (multiple sub-devices in OpenCL terms) a specific tile may be addressed as ``"GPU.X.Y"`` where ``X,Y={0, 1, 2,...}``, ``X`` - id of the GPU device, ``Y`` - id of the tile within device ``X``
+* For GPUs with multi-tile architecture (multiple sub-devices in OpenCL terms), a specific tile may be addressed as ``GPU.X.Y``, where ``X,Y={0, 1, 2,...}``, ``X`` - id of the GPU device, ``Y`` - id of the tile within device ``X``
 
 For demonstration purposes, see the :ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>` that can print out the list of available devices with associated indices. Below is an example output (truncated to the device names only):
 
@@ -56,7 +56,7 @@ For demonstration purposes, see the :ref:`Hello Query Device C++ Sample <doxid-o
 	...
 	    Device: HDDL
 
-Then device name can be passed to ``:ref:`ov::Core::compile_model() <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` method:
+Then, device name can be passed to the ``:ref:`ov::Core::compile_model() <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` method:
 
 .. raw:: html
 
@@ -99,7 +99,7 @@ Then device name can be passed to ``:ref:`ov::Core::compile_model() <doxid-class
 .. ref-code-block:: cpp
 
 	:ref:`ov::Core <doxid-classov_1_1_core>` core;
-	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1a3cca31e2bb5d569330daa8041e01f6f1>`("model.xml");
+	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>`("model.xml");
 	auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "GPU");
 
 
@@ -195,7 +195,7 @@ Then device name can be passed to ``:ref:`ov::Core::compile_model() <doxid-class
 .. ref-code-block:: cpp
 
 	:ref:`ov::Core <doxid-classov_1_1_core>` core;
-	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1a3cca31e2bb5d569330daa8041e01f6f1>`("model.xml");
+	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>`("model.xml");
 	auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "GPU.1");
 
 
@@ -291,7 +291,7 @@ Then device name can be passed to ``:ref:`ov::Core::compile_model() <doxid-class
 .. ref-code-block:: cpp
 
 	:ref:`ov::Core <doxid-classov_1_1_core>` core;
-	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1a3cca31e2bb5d569330daa8041e01f6f1>`("model.xml");
+	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>`("model.xml");
 	auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "GPU.1.0");
 
 
@@ -364,7 +364,7 @@ Then device name can be passed to ``:ref:`ov::Core::compile_model() <doxid-class
 
 
 
-Supported inference data types
+Supported Inference Data Types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The GPU plugin supports the following data types as inference precision of internal primitives:
@@ -383,21 +383,25 @@ The GPU plugin supports the following data types as inference precision of inter
   
   * u1
 
-Selected precision of each primitive depends on the operation precision in IR, quantization primitives, and available hardware capabilities. u1/u8/i8 data types are used for quantized operations only, i.e. those are not selected automatically for non-quantized operations. For more details on how to get a quantized model, refer to :ref:`Model Optimization <doxid-openvino_docs_model_optimization_guide>` document.
+Selected precision of each primitive depends on the operation precision in IR, quantization primitives, and available hardware capabilities. The ``u1`` / ``u8`` / ``i8`` data types are used for quantized operations only, which means that they are not selected automatically for non-quantized operations. For more details on how to get a quantized model, refer to the :ref:`Model Optimization guide <doxid-openvino_docs_model_optimization_guide>`.
 
-Floating-point precision of a GPU primitive is selected based on operation precision in IR except :ref:`compressed f16 IR form <doxid-openvino_docs__m_o__d_g__f_p16__compression>` which is executed in the f16 precision.
+Floating-point precision of a GPU primitive is selected based on operation precision in the OpenVINO IR, except for the :ref:`compressed f16 OpenVINO IR form <doxid-openvino_docs__m_o__d_g__f_p16__compression>`, which is executed in the ``f16`` precision.
 
-.. note:: Hardware acceleration for i8/u8 precision may be unavailable on some platforms. In that case a model is executed in the floating-point precision taken from IR. Hardware support of u8/i8 acceleration can be queried via the ``:ref:`ov::device::capabilities <doxid-group__ov__runtime__cpp__prop__api_1gadb13d62787fc4485733329f044987294>``` property.
+.. note:: Hardware acceleration for ``i8`` / ``u8`` precision may be unavailable on some platforms. In such cases, a model is executed in the floating-point precision taken from IR. Hardware support of ``u8`` / ``i8`` acceleration can be queried via the ``:ref:`ov::device::capabilities <doxid-group__ov__runtime__cpp__prop__api_1gadb13d62787fc4485733329f044987294>``` property.
+
+
 
 :ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>` can be used to print out the supported data types for all detected devices.
 
-Supported features
+Supported Features
 ~~~~~~~~~~~~~~~~~~
 
-Multi-device execution
+The GPU plugin supports the following features:
+
+Multi-device Execution
 ----------------------
 
-If a system has multiple GPUs (for example, an integrated and a discrete Intel GPU), then any supported model can be executed on all GPUs simultaneously. It is done by specifying ``"MULTI:GPU.1,GPU.0"`` as a target device.
+If a system has multiple GPUs (for example, an integrated and a discrete Intel GPU), then any supported model can be executed on all GPUs simultaneously. It is done by specifying ``MULTI:GPU.1,GPU.0`` as a target device.
 
 .. raw:: html
 
@@ -420,7 +424,7 @@ If a system has multiple GPUs (for example, an integrated and a discrete Intel G
 .. ref-code-block:: cpp
 
 	:ref:`ov::Core <doxid-classov_1_1_core>` core;
-	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1a3cca31e2bb5d569330daa8041e01f6f1>`("model.xml");
+	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>`("model.xml");
 	auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "MULTI:GPU.1,GPU.0");
 
 
@@ -471,12 +475,12 @@ If a system has multiple GPUs (for example, an integrated and a discrete Intel G
 
 
 
-See :ref:`Multi-device execution page <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` for more details.
+For more details, see the :ref:`Multi-device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`.
 
-Automatic batching
+Automatic Batching
 ------------------
 
-The GPU plugin is capable of reporting ``:ref:`ov::max_batch_size <doxid-group__ov__runtime__cpp__prop__api_1ga5dbd8ab0c8a177234cade9a54c96249c>``` and ``:ref:`ov::optimal_batch_size <doxid-group__ov__runtime__cpp__prop__api_1ga129bad2da2fc2a40a7d746d86fc9c68d>``` metrics with respect to the current hardware platform and model. Thus, automatic batching is enabled by default when ``:ref:`ov::optimal_batch_size <doxid-group__ov__runtime__cpp__prop__api_1ga129bad2da2fc2a40a7d746d86fc9c68d>``` is > 1 and ``ov::hint::performance_mode(ov::hint::PerformanceMode::THROUGHPUT)`` is set. Alternatively, it can be enabled explicitly via the device notion, e.g. ``"BATCH:GPU"``.
+The GPU plugin is capable of reporting ``:ref:`ov::max_batch_size <doxid-group__ov__runtime__cpp__prop__api_1ga5dbd8ab0c8a177234cade9a54c96249c>``` and ``:ref:`ov::optimal_batch_size <doxid-group__ov__runtime__cpp__prop__api_1ga129bad2da2fc2a40a7d746d86fc9c68d>``` metrics with respect to the current hardware platform and model. Therefore, automatic batching is enabled by default when ``:ref:`ov::optimal_batch_size <doxid-group__ov__runtime__cpp__prop__api_1ga129bad2da2fc2a40a7d746d86fc9c68d>``` is ``> 1`` and ``ov::hint::performance_mode(ov::hint::PerformanceMode::THROUGHPUT)`` is set. Alternatively, it can be enabled explicitly via the device notion, for example ``BATCH:GPU``.
 
 .. raw:: html
 
@@ -519,7 +523,7 @@ The GPU plugin is capable of reporting ``:ref:`ov::max_batch_size <doxid-group__
 .. ref-code-block:: cpp
 
 	:ref:`ov::Core <doxid-classov_1_1_core>` core;
-	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1a3cca31e2bb5d569330daa8041e01f6f1>`("model.xml");
+	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>`("model.xml");
 	auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "BATCH:GPU");
 
 
@@ -615,8 +619,8 @@ The GPU plugin is capable of reporting ``:ref:`ov::max_batch_size <doxid-group__
 .. ref-code-block:: cpp
 
 	:ref:`ov::Core <doxid-classov_1_1_core>` core;
-	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1a3cca31e2bb5d569330daa8041e01f6f1>`("model.xml");
-	auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "GPU", :ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>`(:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-namespace_inference_engine_1_1_plugin_config_params_1a0902fd7a7ca168b6a188daf4b75db92f>`));
+	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>`("model.xml");
+	auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "GPU", :ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>`(:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>`));
 
 
 
@@ -686,25 +690,29 @@ The GPU plugin is capable of reporting ``:ref:`ov::max_batch_size <doxid-group__
 
 
 
-See :ref:`Automatic batching page <doxid-openvino_docs__o_v__u_g__automatic__batching>` for more details.
+For more details, see the :ref:`Automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>`.
 
-Multi-stream execution
+Multi-stream Execution
 ----------------------
 
-If either ``ov::num_streams(n_streams)`` with ``n_streams > 1`` or ``ov::hint::performance_mode(ov::hint::PerformanceMode::THROUGHPUT)`` property is set for the GPU plugin, multiple streams are created for the model. In the case of GPU plugin each stream has its own host thread and an associated OpenCL queue which means that the incoming infer requests can be processed simultaneously.
+If either the ``ov::num_streams(n_streams)`` with ``n_streams > 1`` or the ``ov::hint::performance_mode(ov::hint::PerformanceMode::THROUGHPUT)`` property is set for the GPU plugin, multiple streams are created for the model. In the case of GPU plugin each stream has its own host thread and an associated OpenCL queue which means that the incoming infer requests can be processed simultaneously.
 
-.. note:: Simultaneous scheduling of kernels to different queues doesn't mean that the kernels are actually executed in parallel on the GPU device. The actual behavior depends on the hardware architecture and in some cases the execution may be serialized inside the GPU driver.
+.. note:: Simultaneous scheduling of kernels to different queues does not mean that the kernels are actually executed in parallel on the GPU device. The actual behavior depends on the hardware architecture and in some cases the execution may be serialized inside the GPU driver.
 
-When multiple inferences of the same model need to be executed in parallel, the multi-stream feature is preferred to multiple instances of the model or application. That's because implementation of streams in the GPU plugin supports weight memory sharing across streams, thus, memory consumption may be lower, compared to the other approaches.
 
-See :ref:`optimization guide <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>` for more details.
 
-Dynamic shapes
+When multiple inferences of the same model need to be executed in parallel, the multi-stream feature is preferred to multiple instances of the model or application. The reason for this is that the implementation of streams in the GPU plugin supports weight memory sharing across streams, thus, memory consumption may be lower, compared to the other approaches.
+
+For more details, see the :ref:`optimization guide <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`.
+
+Dynamic Shapes
 --------------
 
-The GPU plugin supports dynamic shapes for batch dimension only (specified as 'N' in the :ref:`layouts terms <doxid-openvino_docs__o_v__u_g__layout__overview>`) with a fixed upper bound. Any other dynamic dimensions are unsupported. Internally, GPU plugin creates ``log2(N)`` (``N`` - is an upper bound for batch dimension here) low-level execution graphs for batch sizes equal to powers of 2 to emulate dynamic behavior, so that incoming infer request with a specific batch size is executed via a minimal combination of internal networks. For example, batch size 33 may be executed via 2 internal networks with batch size 32 and 1.
+The GPU plugin supports dynamic shapes for batch dimension only (specified as ``N`` in the :ref:`layouts terms <doxid-openvino_docs__o_v__u_g__layout__overview>`) with a fixed upper bound. Any other dynamic dimensions are unsupported. Internally, GPU plugin creates ``log2(N)`` (``N`` - is an upper bound for batch dimension here) low-level execution graphs for batch sizes equal to powers of 2 to emulate dynamic behavior, so that incoming infer request with a specific batch size is executed via a minimal combination of internal networks. For example, batch size 33 may be executed via 2 internal networks with batch size 32 and 1.
 
 .. note:: Such approach requires much more memory and the overall model compilation time is significantly longer, compared to the static batch scenario.
+
+
 
 The code snippet below demonstrates how to use dynamic batching in simple scenarios:
 
@@ -731,7 +739,7 @@ The code snippet below demonstrates how to use dynamic batching in simple scenar
 	
 	// Read model
 	:ref:`ov::Core <doxid-classov_1_1_core>` core;
-	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1a3cca31e2bb5d569330daa8041e01f6f1>`("model.xml");
+	auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>`("model.xml");
 	
 	:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`->reshape({{:ref:`ov::Dimension <doxid-classov_1_1_dimension>`(1, 10), :ref:`ov::Dimension <doxid-classov_1_1_dimension>`(:ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`), :ref:`ov::Dimension <doxid-classov_1_1_dimension>`(:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`), :ref:`ov::Dimension <doxid-classov_1_1_dimension>`(:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`)}});  // {1..10, C, H, W}
 	
@@ -747,8 +755,8 @@ The code snippet below demonstrates how to use dynamic batching in simple scenar
 	
 	// ...
 	
-	infer_request.:ref:`set_tensor <doxid-classov_1_1_infer_request_1af54f126e7fb3b3a0343841dda8bcc368>`(input, input_tensor);
-	infer_request.:ref:`infer <doxid-classov_1_1_infer_request_1abcb7facc9f7c4b9226a1fd343e56958d>`();
+	infer_request.set_tensor(input, input_tensor);
+	infer_request.infer();
 
 
 
@@ -814,14 +822,14 @@ The code snippet below demonstrates how to use dynamic batching in simple scenar
 
 
 
-See :ref:`dynamic shapes guide <doxid-openvino_docs__o_v__u_g__dynamic_shapes>` for more details.
+For more details, see the :ref:`dynamic shapes guide <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
 
-Preprocessing acceleration
+Preprocessing Acceleration
 --------------------------
 
 The GPU plugin has the following additional preprocessing options:
 
-* ``:ref:`ov::intel_gpu::memory_type::surface <doxid-group__ov__runtime__ocl__gpu__prop__cpp__api_1gaec0856a3b996876371138961269b742d>``` and ``ov::intel_gpu::memory_type::buffer`` values for ``:ref:`ov::preprocess::InputTensorInfo::set_memory_type() <doxid-classov_1_1preprocess_1_1_input_tensor_info_1ae170f7c198591f9de58279692012a065>``` preprocessing method. These values are intended to be used to provide a hint for the plugin on the type of input Tensors that will be set in runtime to generate proper kernels.
+* The ``:ref:`ov::intel_gpu::memory_type::surface <doxid-group__ov__runtime__ocl__gpu__prop__cpp__api_1gaec0856a3b996876371138961269b742d>``` and ``ov::intel_gpu::memory_type::buffer`` values for the ``:ref:`ov::preprocess::InputTensorInfo::set_memory_type() <doxid-classov_1_1preprocess_1_1_input_tensor_info_1ad838f8c41ba0ab450b72fec5e2ebf808>``` preprocessing method. These values are intended to be used to provide a hint for the plugin on the type of input Tensors that will be set in runtime to generate proper kernels.
 
 .. raw:: html
 
@@ -844,11 +852,11 @@ The GPU plugin has the following additional preprocessing options:
 .. ref-code-block:: cpp
 
 	using namespace :ref:`ov::preprocess <doxid-namespaceov_1_1preprocess>`;
-	auto p = :ref:`PrePostProcessor <doxid-classov_1_1preprocess_1_1_pre_post_processor>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`);
+	auto p = PrePostProcessor(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`);
 	p.input().tensor().set_element_type(:ref:`ov::element::u8 <doxid-group__ov__element__cpp__api_1gaaf60c536d3e295285f6a899eb3d29e2f>`)
-	                  .set_color_format(ov::preprocess::ColorFormat::NV12_TWO_PLANES, {"y", "uv"})
+	                  .set_color_format(:ref:`ov::preprocess::ColorFormat::NV12_TWO_PLANES <doxid-namespaceov_1_1preprocess_1ab027f26e58038e454e1b50a5243f1707a54f60c652650de96e9d118187b3ba25f>`, {"y", "uv"})
 	                  .set_memory_type(:ref:`ov::intel_gpu::memory_type::surface <doxid-group__ov__runtime__ocl__gpu__prop__cpp__api_1gaec0856a3b996876371138961269b742d>`);
-	p.input().preprocess().convert_color(:ref:`ov::preprocess::ColorFormat::BGR <doxid-namespace_inference_engine_1a5ee5ca7708cc67a9a0becc2593d0558aa0fb221afef06def7c25b82d6fa9efc1b>`);
+	p.input().preprocess().convert_color(:ref:`ov::preprocess::ColorFormat::BGR <doxid-namespaceov_1_1preprocess_1ab027f26e58038e454e1b50a5243f1707a2ad5640ebdec72fc79531d1778c6c2dc>`);
 	p.input().model().set_layout("NCHW");
 	auto model_with_preproc = p.build();
 
@@ -910,30 +918,30 @@ The GPU plugin has the following additional preprocessing options:
 
 
 
-With such preprocessing GPU plugin will expect ``:ref:`ov::intel_gpu::ocl::ClImage2DTensor <doxid-classov_1_1intel__gpu_1_1ocl_1_1_cl_image2_d_tensor>``` (or derived) to be passed for each NV12 plane via ``:ref:`ov::InferRequest::set_tensor() <doxid-classov_1_1_infer_request_1af54f126e7fb3b3a0343841dda8bcc368>``` or ``:ref:`ov::InferRequest::set_tensors() <doxid-classov_1_1_infer_request_1a935a952c07cc7130a64614d0952db997>``` methods.
+With such preprocessing, GPU plugin will expect ``:ref:`ov::intel_gpu::ocl::ClImage2DTensor <doxid-classov_1_1intel__gpu_1_1ocl_1_1_cl_image2_d_tensor>``` (or derived) to be passed for each NV12 plane via ``:ref:`ov::InferRequest::set_tensor() <doxid-classov_1_1_infer_request_1af54f126e7fb3b3a0343841dda8bcc368>``` or ``:ref:`ov::InferRequest::set_tensors() <doxid-classov_1_1_infer_request_1a935a952c07cc7130a64614d0952db997>``` methods.
 
-Refer to :ref:`RemoteTensor API <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>` for usage examples.
+For usage examples, refer to the :ref:`RemoteTensor API <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>`.
 
-See :ref:`preprocessing API guide <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` for more details.
+For more details, see the :ref:`preprocessing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
 
-Model caching
+Model Caching
 -------------
 
 Cache for the GPU plugin may be enabled via the common OpenVINO ``:ref:`ov::cache_dir <doxid-group__ov__runtime__cpp__prop__api_1ga3276fc4ed7cc7d0bbdcf0ae12063728d>``` property. GPU plugin implementation supports only caching of compiled kernels, so all plugin-specific model transformations are executed on each ``:ref:`ov::Core::compile_model() <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` call regardless of the ``cache_dir`` option. Still, since kernel compilation is a bottleneck in the model loading process, a significant load time reduction can be achieved with the ``:ref:`ov::cache_dir <doxid-group__ov__runtime__cpp__prop__api_1ga3276fc4ed7cc7d0bbdcf0ae12063728d>``` property enabled.
 
-See :ref:`Model caching overview page <doxid-openvino_docs__o_v__u_g__model_caching_overview>` for more details.
+For more details, see the :ref:`Model caching overview <doxid-openvino_docs__o_v__u_g__model_caching_overview>`.
 
 Extensibility
 -------------
 
-See :ref:`GPU Extensibility <doxid-openvino_docs__extensibility__u_g__g_p_u>` page.
+For information on this subject, see the :ref:`GPU Extensibility <doxid-openvino_docs__extensibility__u_g__g_p_u>`.
 
-GPU context and memory sharing via RemoteTensor API
+GPU Context and Memory Sharing via RemoteTensor API
 ---------------------------------------------------
 
-See :ref:`RemoteTensor API of GPU Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>`.
+For information on this subject, see the :ref:`RemoteTensor API of GPU Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>`.
 
-Supported properties
+Supported Properties
 ~~~~~~~~~~~~~~~~~~~~
 
 The plugin supports the properties listed below.
@@ -941,7 +949,7 @@ The plugin supports the properties listed below.
 Read-write properties
 ---------------------
 
-All parameters must be set before calling ``:ref:`ov::Core::compile_model() <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` in order to take effect or passed as additional argument to ``:ref:`ov::Core::compile_model() <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>```
+All parameters must be set before calling ``:ref:`ov::Core::compile_model() <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` in order to take effect or passed as additional argument to ``:ref:`ov::Core::compile_model() <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>```.
 
 * :ref:`ov::cache_dir <doxid-group__ov__runtime__cpp__prop__api_1ga3276fc4ed7cc7d0bbdcf0ae12063728d>`
 
@@ -967,7 +975,7 @@ All parameters must be set before calling ``:ref:`ov::Core::compile_model() <dox
 
 * :ref:`ov::intel_gpu::enable_loop_unrolling <doxid-group__ov__runtime__ocl__gpu__prop__cpp__api_1ga2d18d0f9e29ddde42b95d523405ae322>`
 
-Read-only properties
+Read-only Properties
 --------------------
 
 * :ref:`ov::supported_properties <doxid-group__ov__runtime__cpp__prop__api_1ga097f1274f26f3f4e1aa4fc3928748592>`
@@ -1001,7 +1009,7 @@ Read-only properties
 Limitations
 ~~~~~~~~~~~
 
-In some cases, the GPU plugin may implicitly execute several primitives on CPU using internal implementations which may lead to increase of CPU utilization. Below is a list of such operations:
+In some cases, the GPU plugin may implicitly execute several primitives on CPU using internal implementations, which may lead to an increase in CPU utilization. Below is a list of such operations:
 
 * Proposal
 
@@ -1018,20 +1026,20 @@ GPU Performance Checklist: Summary
 
 Since OpenVINO relies on the OpenCL kernels for the GPU implementation, many general OpenCL tips apply:
 
-* Prefer ``FP16`` inference precision over ``FP32``, as Model Optimizer can generate both variants and the ``FP32`` is the default. Also, consider using the `Post-training Optimization Tool <https://docs.openvino.ai/latest/pot_introduction.html>`__.
+* Prefer ``FP16`` inference precision over ``FP32``, as Model Optimizer can generate both variants, and the ``FP32`` is the default. Also, consider using the `Post-training Optimization Tool <https://docs.openvino.ai/latest/pot_introduction.html>`__.
 
 * Try to group individual infer jobs by using :ref:`automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>`.
 
 * Consider :ref:`caching <doxid-openvino_docs__o_v__u_g__model_caching_overview>` to minimize model load time.
 
-* If your application performs inference on the CPU alongside the GPU, or otherwise loads the host heavily, make sure that the OpenCL driver threads do not starve. You can use :ref:`CPU configuration options <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>` to limit the number of inference threads for the CPU plugin.
+* If your application performs inference on the CPU alongside the GPU, or otherwise loads the host heavily, make sure that the OpenCL driver threads do not starve. :ref:`CPU configuration options <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>` can be used to limit the number of inference threads for the CPU plugin.
 
-* Even in the GPU-only scenario, a GPU driver might occupy a CPU core with spin-looped polling for completion. If CPU load is a concern, consider the dedicated ``queue_throttle`` property mentioned previously. Notice that this option may increase inference latency, so consider combining with multiple GPU streams or :ref:`throughput performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>`.
+* Even in the GPU-only scenario, a GPU driver might occupy a CPU core with spin-loop polling for completion. If CPU load is a concern, consider the dedicated ``queue_throttle`` property mentioned previously. Note that this option may increase inference latency, so consider combining it with multiple GPU streams or :ref:`throughput performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>`.
 
-* When operating media inputs consider :ref:`remote tensors API of the GPU Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>`.
+* When operating media inputs, consider :ref:`remote tensors API of the GPU Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>`.
 
-See Also
-~~~~~~~~
+Additional Resources
+~~~~~~~~~~~~~~~~~~~~
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 

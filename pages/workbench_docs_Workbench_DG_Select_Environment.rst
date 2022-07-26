@@ -30,10 +30,10 @@ Select a target. This can be your local workstation or a remote target. If you u
 * **Platform View**
   
   Use this view when the list with targets is long. Determine the base platform based on Intel® processors: Core™, Xeon™, or Atom™. Within a platform, choose a combination and an accelerator. To group targets based on a platform, switch to the platform view and select a platform in the **Base Platform** drop-down list:
-  
-  .. image:: platform_view.png
-  
-  Targets with higher processor numbers within one platform go first. To sort from lowest to highest, click the arrow next to the **Processor Numbers** heading.
+
+.. image:: platform_view.png
+
+Targets with higher processor numbers within one platform go first. To sort from lowest to highest, click the arrow next to the **Processor Numbers** heading.
 
 Targets supported in the DL Workbench:
 

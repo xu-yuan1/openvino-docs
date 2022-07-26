@@ -35,6 +35,14 @@ Cut ImageNet Dataset
 
 .. note:: Replace ``<user>`` with your username. Run the following command in a terminal for Linux, macOS and in the Windows PowerShell\* for Windows.
 
+
+
+
+
+
+
+
+
 .. tab:: Linux, macOS
 
   .. code-block:: 
@@ -97,6 +105,14 @@ Cut Pascal VOC Dataset
 
 .. note:: Replace ``<user>`` with your username. Run the following command in a terminal for Linux, macOS and in the Windows PowerShell\* for Windows.
 
+
+
+
+
+
+
+
+
 .. tab:: Linux, macOS
 
   .. code-block:: 
@@ -149,15 +165,27 @@ Cut COCO Dataset
 
 #. Save `the script to cut datatsets <https://raw.githubusercontent.com/aalborov/cut_dataset/38c6dd3948ce4084a52c66e2e83c63eb3fa883e9/cut_dataset.py>`__ to the following directory:
    
-   * Linux\*, macOS\*: ``/home/<user>/Work``. Replace ``<user>`` with your username. > **NOTE** : Replace ``<user>`` with your username.
-   
-   * Windows\* : ``C:\Work``
+   * Linux\*, macOS\*: ``/home/<user>/Work``. Replace ``<user>`` with your username.
+     
+     .. note:: Replace ``<user>`` with your username.
+     
+     
+     
+     \* Windows\* : ``C:\Work``
 
 #. Put the :ref:`downloaded archives <doxid-workbench_docs__workbench__d_g__dataset__types>` in the same directory.
 
 #. Follow instructions for your operating system.
 
 .. note:: Replace ``<user>`` with your username. Run the following command in a terminal for Linux, macOS and in the Windows PowerShell\* for Windows.
+
+
+
+
+
+
+
+
 
 .. tab:: Linux, macOS
 

@@ -22,7 +22,7 @@ The following C++ API is used in the application:
       - ``:ref:`ov::InferRequest::set_tensor <doxid-classov_1_1_infer_request_1af54f126e7fb3b3a0343841dda8bcc368>``` , ``:ref:`ov::InferRequest::get_tensor <doxid-classov_1_1_infer_request_1a75b8da7c6b00686bede600dddceaffc4>```
       - Operate with tensors
     * - Preprocessing
-      - ``:ref:`ov::preprocess::InputTensorInfo::set_color_format <doxid-classov_1_1preprocess_1_1_input_tensor_info_1a32df813b541b01ac7df6ae93d7f1f163>``` , ``:ref:`ov::preprocess::PreProcessSteps::convert_element_type <doxid-classov_1_1preprocess_1_1_pre_process_steps_1ab9e7979668e7403a72b07786f76ec0e0>``` , ``:ref:`ov::preprocess::PreProcessSteps::convert_color <doxid-classov_1_1preprocess_1_1_pre_process_steps_1a1cc7cc3fc7afb5992c1920c483ce3332>```
+      - ``:ref:`ov::preprocess::InputTensorInfo::set_color_format <doxid-classov_1_1preprocess_1_1_input_tensor_info_1a3201ba0fab221038f87a5bca455e39d7>``` , ``:ref:`ov::preprocess::PreProcessSteps::convert_element_type <doxid-classov_1_1preprocess_1_1_pre_process_steps_1aac6316155a1690609eb320637c193d50>``` , ``:ref:`ov::preprocess::PreProcessSteps::convert_color <doxid-classov_1_1preprocess_1_1_pre_process_steps_1a4f062246cc0082822346c97917903983>```
       - Change the color format of the input data
 
 Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>`.
@@ -83,6 +83,8 @@ The sample accepts an uncompressed image in the NV12 color format. To run the sa
 * Before running the sample with a trained model, make sure the model is converted to the intermediate representation (IR) format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
 
 * The sample accepts models in ONNX format (.onnx) that do not require preprocessing.
+
+
 
 Example
 -------

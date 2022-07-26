@@ -5,7 +5,7 @@
 Install OpenVINO™ toolkit for Raspbian OS
 ===========================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_raspbian_1md_openvino_docs_install_guides_installing-openvino-raspbian`
+:target:`doxid-openvino_docs_install_guides_installing_openvino_raspbian_1md_openvino_docs_install_guides_installing_openvino_raspbian`
 
 
 
@@ -107,6 +107,8 @@ You must update several environment variables before you can compile and run Ope
 If you have more than one OpenVINO™ version on your machine, you can easily switch its version by sourcing ``setupvars.sh`` of your choice.
 
 .. note:: You can also run this script every time when you start new terminal session. Open ``~/.bashrc`` in your favorite editor, and add ``source /opt/intel/openvino_2022/bin/setupvars.sh``. Next time when you open a terminal, you will see ``[setupvars.sh] OpenVINO™ environment initialized``. Changing ``.bashrc`` is not recommended when you have many OpenVINO™ versions on your machine and want to switch among them, as each may require different setup.
+
+
 
 The environment variables are set. Next, you can download some additional tools.
 

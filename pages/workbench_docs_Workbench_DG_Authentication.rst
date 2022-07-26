@@ -88,7 +88,7 @@ Open the `http://127.0.0.1:5665 <http://127.0.0.1:5665>`__ link without the URL 
 
 
 
-```bash docker cp workbench:/home/workbench/.workbench/token.txt token.txt ```	If you do not want to save the token inside a Docker container, use ``SAVE_TOKEN_TO_FILE=0`` when you start the DL Workbench with the ``docker run`` command or ``--disable-token-saving`` with the ``openvino-workbench`` script.
+```bash docker cp workbench:/home/workbench/.workbench/token.txt token.txt `` ``<blockquote>If you do not want to save the token inside a Docker container, use`` SAVE_TOKEN_TO_FILE=0 ``when you start the DL Workbench with the`` docker run ``command or`` disable-token-saving ``with the`` openvino-workbench` script.
 
 Press **Start**. The **Start Page** appears, and you can move on to :ref:`work with models and sample datasets <doxid-workbench_docs__workbench__d_g__work_with__models_and__sample__datasets>` by clicking **Create Project**.
 

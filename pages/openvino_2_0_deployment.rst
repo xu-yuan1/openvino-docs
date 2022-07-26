@@ -5,7 +5,7 @@
 Installation & Deployment
 =========================
 
-:target:`doxid-openvino_2_0_deployment_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_deployment_migration` One of the main concepts for OpenVINO™ API 2.0 is being \*"easy to use"\*, which includes:
+:target:`doxid-openvino_2_0_deployment_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_deployment_migration` One of the main concepts for OpenVINO™ API 2.0 is being "easy to use", which includes:
 
 * Simplification of migration from different frameworks to OpenVINO.
 

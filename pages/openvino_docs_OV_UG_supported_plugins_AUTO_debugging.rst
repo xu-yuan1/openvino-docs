@@ -5,7 +5,7 @@
 Debugging Auto-Device Plugin
 ============================
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o_debugging_1md_openvino_docs_ov_runtime_ug_supported_plugins_autoplugin_debugging`
+:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o_debugging_1md_openvino_docs_ov_runtime_ug_autoplugin_debugging`
 
 Using Debug Log
 ~~~~~~~~~~~~~~~
@@ -14,17 +14,17 @@ In case of execution problems, just like all other plugins, Auto-Device provides
 
 There are six levels of logs, which can be called explicitly or set via the ``OPENVINO_LOG_LEVEL`` environment variable (can be overwritten by ``compile_model()`` or ``set_property()``):
 
-0 - ov::log::Level::NO
+0 - :ref:`ov::log::Level::NO <doxid-group__ov__runtime__cpp__prop__api_1gga9868e1ed6b0286d17cdb0ab85b2cc66bac2f3f489a00553e7a01d369c103c7251>`
 
-1 - ov::log::Level::ERR
+1 - :ref:`ov::log::Level::ERR <doxid-group__ov__runtime__cpp__prop__api_1gga9868e1ed6b0286d17cdb0ab85b2cc66bacd22bad976363fdd1bfbf6759fede482>`
 
-2 - ov::log::Level::WARNING
+2 - :ref:`ov::log::Level::WARNING <doxid-group__ov__runtime__cpp__prop__api_1gga9868e1ed6b0286d17cdb0ab85b2cc66ba059e9861e0400dfbe05c98a841f3f96b>`
 
-3 - ov::log::Level::INFO
+3 - :ref:`ov::log::Level::INFO <doxid-group__ov__runtime__cpp__prop__api_1gga9868e1ed6b0286d17cdb0ab85b2cc66ba551b723eafd6a31d444fcb2f5920fbd3>`
 
-4 - ov::log::Level::DEBUG
+4 - :ref:`ov::log::Level::DEBUG <doxid-group__ov__runtime__cpp__prop__api_1gga9868e1ed6b0286d17cdb0ab85b2cc66badc30ec20708ef7b0f641ef78b7880a15>`
 
-5 - :ref:`ov::log::Level::TRACE <doxid-group__ov__runtime__cpp__prop__api_1gga9868e1ed6b0286d17cdb0ab85b2cc66bac2f3f489a00553e7a01d369c103c7251>`
+5 - :ref:`ov::log::Level::TRACE <doxid-group__ov__runtime__cpp__prop__api_1gga9868e1ed6b0286d17cdb0ab85b2cc66ba2d3e4144aa384b18849ab9a8abad74d6>`
 
 .. tab:: C++
 

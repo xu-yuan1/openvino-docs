@@ -5,7 +5,7 @@
 Configurations for Intel® Neural Compute Stick 2
 =================================================
 
-:target:`doxid-openvino_docs_install_guides_configurations_for_ncs2_1md_openvino_docs_install_guides_configurations-for-ncs2`
+:target:`doxid-openvino_docs_install_guides_configurations_for_ncs2_1md_openvino_docs_install_guides_configurations_for_ncs2`
 
 
 
@@ -76,28 +76,30 @@ Raspbian OS
    .. ref-code-block:: cpp
    
    	cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-march=armv7-a" /opt/intel/openvino_2022/samples/cpp
-
-.. ref-code-block:: cpp
-
-	make -j2 hello_classification
-
-c. Download the pre-trained squeezenet1.1 image classification model with the Model Downloader or copy it from the host machine:
-
-.. ref-code-block:: cpp
-
-	git clone --depth 1 https://github.com/openvinotoolkit/open_model_zoo
-	cd open_model_zoo/tools/model_tools
-	python3 -m pip install --upgrade pip
-	python3 -m pip install -r requirements.in
-	python3 downloader.py --name squeezenet1.1
-
-d. Run the sample specifying the model, a path to the input image, and the VPU required to run with the Raspbian OS:
-
-.. ref-code-block:: cpp
-
-	./armv7l/Release/hello_classification <path_to_model>/squeezenet1.1.xml <path_to_image> MYRIAD
-
-The application outputs to console window top 10 classification results.
+   
+   
+   
+   .. ref-code-block:: cpp
+   
+   	make -j2 hello_classification
+   
+   c. Download the pre-trained squeezenet1.1 image classification model with the Model Downloader or copy it from the host machine:
+   
+   .. ref-code-block:: cpp
+   
+   	git clone --depth 1 https://github.com/openvinotoolkit/open_model_zoo
+   	cd open_model_zoo/tools/model_tools
+   	python3 -m pip install --upgrade pip
+   	python3 -m pip install -r requirements.in
+   	python3 downloader.py --name squeezenet1.1
+   
+   d. Run the sample specifying the model, a path to the input image, and the VPU required to run with the Raspbian OS:
+   
+   .. ref-code-block:: cpp
+   
+   	./armv7l/Release/hello_classification <path_to_model>/squeezenet1.1.xml <path_to_image> MYRIAD
+   
+   The application outputs to console window top 10 classification results.
 
 .. _ncs guide macos:
 

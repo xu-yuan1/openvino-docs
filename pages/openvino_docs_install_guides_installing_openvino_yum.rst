@@ -5,11 +5,19 @@
 Install Intel® Distribution of OpenVINO™ Toolkit for Linux Using YUM Repository
 ==================================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_yum_1md_openvino_docs_install_guides_installing-openvino-yum` This guide provides installation steps for Intel® Distribution of OpenVINO™ toolkit for Linux distributed through the YUM repository.
+:target:`doxid-openvino_docs_install_guides_installing_openvino_yum_1md_openvino_docs_install_guides_installing_openvino_yum` This guide provides installation steps for Intel® Distribution of OpenVINO™ toolkit for Linux distributed through the YUM repository.
 
 .. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI. If you want to develop or optimize your models with OpenVINO, see :ref:`Install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>` for detailed steps.
 
+
+
+
+
 .. warning:: By downloading and using this container and the included software, you agree to the terms and conditions of the `software license agreements <https://software.intel.com/content/dam/develop/external/us/en/documents/intel-openvino-license-agreements.pdf>`__. Please review the content inside the ``<INSTALL_DIR>/licensing`` folder for more details.
+
+
+
+
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
@@ -60,17 +68,13 @@ Step 1: Set Up the Repository
    
    	yum repolist | grep -i openvino
    
-   
-   
-   .. code-block:: cpp
-   
-   	You will see the available list of packages.
+   You will see the available list of packages.
 
 To list available OpenVINO packages, use the following command:
 
-.. ref-code-block:: cpp
+.. code-block:: sh
 
-	yum list 'openvino\*'
+      yum list 'openvino*'
 
 Step 2: Install OpenVINO Runtime Using the YUM Package Manager
 --------------------------------------------------------------
@@ -110,9 +114,9 @@ To Check for Installed Packages and Version
 
 Run the following command:
 
-.. ref-code-block:: cpp
+.. code-block:: sh
 
-	yum list installed 'openvino\*'
+      yum list installed 'openvino*'
 
 To Uninstall the Latest Version
 +++++++++++++++++++++++++++++++

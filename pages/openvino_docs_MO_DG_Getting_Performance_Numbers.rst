@@ -5,34 +5,38 @@
 Getting Performance Numbers
 ===========================
 
-:target:`doxid-openvino_docs__m_o__d_g__getting__performance__numbers_1md_openvino_docs_mo_dg_prepare_model_getting_performance_numbers`
+:target:`doxid-openvino_docs__m_o__d_g__getting__performance__numbers_1md_openvino_docs_mo_dg_prepare_model_getting_performance_numbers` This guide introduces things to notice and how to use the benchmark_app to get performance numbers. It also explains how the performance numbers are reflected through internal inference performance counters and execution graphs. In the last section, it includes information on using ITT and Intel® VTune™ Profiler to get performance insights.
 
-Tip 1. Measure the Proper Set of Operations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tip 1: Select Proper Set of Operations to Measure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When evaluating performance of your model with the OpenVINO Runtime, you must measure the proper set of operations. To do so, consider the following tips:
+When evaluating the performance of a model with OpenVINO Runtime, it is required to measure proper set of operations. Remember the following tips:
 
-* Avoid including one-time costs like model loading.
+* Avoid including one-time costs such as model loading.
 
-* Track separately the operations that happen outside the OpenVINO Runtime, like video decoding.
+* Track operations that occur outside OpenVINO Runtime (such as video decoding) separately.
 
-.. note:: Some image pre-processing can be baked into the IR and accelerated accordingly. For more information, refer to :ref:`Embedding the Preprocessing <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`. Also consider `Runtime Optimizations of the Preprocessing <../../optimization_guide/dldt_deployment_optimization_common>`__.
+.. note:: Some image pre-processing can be baked into OpenVINO IR and accelerated accordingly. For more information, refer to :ref:`Embedding the Pre-processing <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>` and `General Runtime Optimizations <../../optimization_guide/dldt_deployment_optimization_common>`__.
 
-Tip 2. Getting Credible Performance Numbers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You need to build your performance conclusions on reproducible data. Do the performance measurements with a large number of invocations of the same routine. Since the first iteration is almost always significantly slower than the subsequent ones, you can use an aggregated value for the execution time for final projections:
+
+
+
+Tip 2: Try to Get Credible Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Performance conclusions should be build upon reproducible data. As for the performance measurements, they should be done with a large number of invocations of the same routine. Since the first iteration is almost always significantly slower than the subsequent ones, an aggregated value can be used for the execution time for final projections:
 
 * If the warm-up run does not help or execution time still varies, you can try running a large number of iterations and then average or find a mean of the results.
 
-* For time values that range too much, consider geomean.
+* If the time values range too much, consider geomean.
 
-* Beware of the throttling and other power oddities. A device can exist in one of several different power states. When optimizing your model, for better performance data reproducibility consider fixing the device frequency. However the end to end (application) benchmarking should be also performed under real operational conditions.
+* Be aware of the throttling and other power oddities. A device can exist in one of several different power states. When optimizing your model, consider fixing the device frequency for better performance data reproducibility. However, the end-to-end (application) benchmarking should also be performed under real operational conditions.
 
-Tip 3. Measure Reference Performance Numbers with OpenVINO's benchmark_app
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using benchmark_app to Measure Reference Performance Numbers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To get performance numbers, use the dedicated :ref:`Benchmark App <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` sample which is the best way to produce the performance reference. It has a lot of device-specific knobs, but the primary usage is as simple as:
+To get performance numbers, use the dedicated :ref:`OpenVINO Benchmark app <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` sample, which is the most-recommended solution to produce performance reference. It includes a lot of device-specific knobs, but the primary usage is as simple as in the following command to measure the performance of the model on GPU:
 
 .. ref-code-block:: cpp
 
@@ -46,37 +50,37 @@ to measure the performance of the model on the GPU. Or
 
 to execute on the CPU instead.
 
-Each of the :ref:`OpenVINO supported devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` offers performance settings that have command-line equivalents in the :ref:`Benchmark App <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`. While these settings provide really low-level control and allow to leverage the optimal model performance on the *specific* device, we suggest always starting the performance evaluation with the :ref:`OpenVINO High-Level Performance Hints <doxid-openvino_docs__o_v__u_g__performance__hints>` first:
+Each of the :ref:`OpenVINO supported devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` offers performance settings that contain command-line equivalents in the :ref:`Benchmark app <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`. While these settings provide really low-level control and allow leveraging the optimal model performance on the *specific* device, it is recommended to always start the performance evaluation with the :ref:`OpenVINO High-Level Performance Hints <doxid-openvino_docs__o_v__u_g__performance__hints>` first:
 
 * benchmark_app **-hint tput** -d 'device' -m 'path to your model'
 
 * benchmark_app **-hint latency** -d 'device' -m 'path to your model'
 
-Comparing Performance with Native/Framework Code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Notes for Comparing Performance with Native/Framework Code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When comparing the OpenVINO Runtime performance with the framework or another reference code, make sure that both versions are as similar as possible:
 
-* Wrap exactly the inference execution (refer to the :ref:`Benchmark App <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` for examples).
+* Wrap the exact inference execution (refer to the :ref:`Benchmark app <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` for examples).
 
 * Do not include model loading time.
 
-* Ensure the inputs are identical for the OpenVINO Runtime and the framework. For example, beware of random values that can be used to populate the inputs.
+* Ensure that the inputs are identical for OpenVINO Runtime and the framework. For example, watch out for random values that can be used to populate the inputs.
 
-* Consider :ref:`Image Pre-processing and Conversion <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`, while any user-side pre-processing should be tracked separately.
+* In situations when any user-side pre-processing should be tracked separately, consider :ref:`image pre-processing and conversion <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
 
-* When applicable, leverage the :ref:`Dynamic Shapes support <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`
+* When applicable, leverage the :ref:`Dynamic Shapes support <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
 
 * If possible, demand the same accuracy. For example, TensorFlow allows ``FP16`` execution, so when comparing to that, make sure to test the OpenVINO Runtime with the ``FP16`` as well.
 
 .. _performance-counters:
 
-Internal Inference Performance Counters and Execution Graphs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data from Internal Inference Performance Counters and Execution Graphs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Further, finer-grained insights into inference performance breakdown can be achieved with device-specific performance counters and/or execution graphs. Both :ref:`C++ <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` and :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` versions of the ``benchmark_app`` supports a ``-pc`` command-line parameter that outputs internal execution breakdown.
+More detailed insights into inference performance breakdown can be achieved with device-specific performance counters and/or execution graphs. Both :ref:`C++ <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` and :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` versions of the ``benchmark_app`` support a ``-pc`` command-line parameter that outputs internal execution breakdown.
 
-For example, below is the part of performance counters for quantized `TensorFlow\* implementation of ResNet-50 <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/resnet-50-tf>`__ model inference on :ref:`CPU Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`. Notice that since the device is CPU, the layers wall clock ``realTime`` and the ``cpu`` time are the same. Information about layer precision is also stored in the performance counters.
+For example, the table shown below is the part of performance counters for quantized `TensorFlow implementation of ResNet-50 <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/resnet-50-tf>`__ model inference on :ref:`CPU Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`. Keep in mind that since the device is CPU, the ``realTime`` wall clock and the ``cpu`` time layers are the same. Information about layer precision is also stored in the performance counters.
 
 .. list-table::
     :header-rows: 1
@@ -136,25 +140,28 @@ For example, below is the part of performance counters for quantized `TensorFlow
       - 0
       - 0
 
-The ``exeStatus`` column of the table includes possible values:
+The ``exeStatus`` column of the table includes the following possible values:
 
-* ``EXECUTED`` - layer was executed by standalone primitive,
+* ``EXECUTED`` - the layer was executed by standalone primitive.
 
-* ``NOT_RUN`` - layer was not executed by standalone primitive or was fused with another operation and executed in another layer primitive.
+* ``NOT_RUN`` - the layer was not executed by standalone primitive or was fused with another operation and executed in another layer primitive.
 
-The ``execType`` column of the table includes inference primitives with specific suffixes. The layers have the following marks:
+The ``execType`` column of the table includes inference primitives with specific suffixes. The layers could have the following marks:
 
-* Suffix ``I8`` for layers that had 8-bit data type input and were computed in 8-bit precision
+* The ``I8`` suffix is for layers that had 8-bit data type input and were computed in 8-bit precision.
 
-* Suffix ``FP32`` for layers computed in 32-bit precision
+* The ``FP32`` suffix is for layers computed in 32-bit precision.
 
-All ``Convolution`` layers are executed in int8 precision. Rest layers are fused into Convolutions using post operations optimization technique, which is described in :ref:`Internal CPU Plugin Optimizations <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`. This contains layers name (as seen in IR), layers type and execution statistics.
+All ``Convolution`` layers are executed in ``int8`` precision. The rest of the layers are fused into Convolutions using post-operation optimization, as described in :ref:`CPU Device <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`. This contains layer names (as seen in OpenVINO IR), type of the layer, and execution statistics.
 
-Both benchmark_app versions also support "exec_graph_path" command-line option governing the OpenVINO to output the same per-layer execution statistics, but in the form of the plugin-specific `Netron-viewable <https://netron.app/>`__ graph to the specified file.
+Both ``benchmark_app`` versions also support the ``exec_graph_path`` command-line option. It requires OpenVINO to output the same execution statistics per layer, but in the form of plugin-specific `Netron-viewable <https://netron.app/>`__ graph to the specified file.
 
-Notice that on some devices, the execution graphs/counters may be pretty intrusive overhead-wise. Also, especially when performance-debugging the :ref:`latency case <doxid-openvino_docs_deployment_optimization_guide_latency>` notice that the counters do not reflect the time spent in the plugin/device/driver/etc queues. If the sum of the counters is too different from the latency of an inference request, consider testing with less inference requests. For example running single :ref:`OpenVINO stream <doxid-openvino_docs_deployment_optimization_guide_tput>` with multiple requests would produce nearly identical counters as running single inference request, yet the actual latency can be quite different.
+Especially when performance-debugging the :ref:`latency <doxid-openvino_docs_deployment_optimization_guide_latency>`, note that the counters do not reflect the time spent in the ``plugin/device/driver/etc`` queues. If the sum of the counters is too different from the latency of an inference request, consider testing with less inference requests. For example, running single :ref:`OpenVINO stream <doxid-openvino_docs_deployment_optimization_guide_tput>` with multiple requests would produce nearly identical counters as running a single inference request, while the actual latency can be quite different.
 
-Finally, the performance statistics with both performance counters and execution graphs is averaged, so such a data for the :ref:`dynamically-shaped inputs <doxid-openvino_docs__o_v__u_g__dynamic_shapes>` should be measured carefully (ideally by isolating the specific shape and executing multiple times in a loop, to gather the reliable data).
+Lastly, the performance statistics with both performance counters and execution graphs are averaged, so such data for the :ref:`inputs of dynamic shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>` should be measured carefully, preferably by isolating the specific shape and executing multiple times in a loop, to gather the reliable data.
 
-OpenVINO in general and individual plugins are heavily instrumented with Intel® instrumentation and tracing technology (ITT), so another option is to compile the OpenVINO from the source code with the ITT enabled and using tools like `Intel® VTune™ Profiler <https://software.intel.com/en-us/vtune>`__ to get detailed inference performance breakdown and additional insights in the application-level performance on the timeline view.
+Using ITT to Get Performance Insights
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In general, OpenVINO and its individual plugins are heavily instrumented with Intel® Instrumentation and Tracing Technology (ITT). Therefore, you can also compile OpenVINO from the source code with ITT enabled and use tools like `Intel® VTune™ Profiler <https://software.intel.com/en-us/vtune>`__ to get detailed inference performance breakdown and additional insights in the application-level performance on the timeline view.
 

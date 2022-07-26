@@ -56,6 +56,8 @@ Go to the model page and check the performance of the imported and optimized mod
 
 **NOTE:** Throughput is the number of images processed in a given amount of time. It is measured in frames per second (FPS). Higher throughput value means better performance.
 
+
+
 .. image:: compare-classification.png
 
 You can observe that ``mobilenet_v2`` model has become 1.2x times faster on CPU device after optimization.
@@ -84,6 +86,8 @@ Each line of the table contains a specific class that the model predicted for th
 If the classes do not match, the Optimized model might be incorrect. To assess the difference between the classes, check the **Rank of Class Defined in Parent Model Predictions**. You can also compare optimized **Model Confidence in Class Predicted by Optimized Model** with **Optimized Model Confidence in Class Predicted by Parent Model**.
 
 .. tip:: To sort the numbers from lowest to highest, click on the parameter name in the table.
+
+
 
 Click **Visualize** button under the **Actions** column to compare the predictions and annotations for a particular image.
 

@@ -11,6 +11,8 @@ The OpenVINO Runtime can infer models in different formats with various input an
 
 .. note:: With OpenVINO™ 2020.4 release, Intel® Movidius™ Neural Compute Stick is no longer supported.
 
+
+
 The OpenVINO Runtime provides unique capabilities to infer deep learning models on the following device types with corresponding plugins:
 
 .. list-table::

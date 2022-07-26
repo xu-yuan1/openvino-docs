@@ -117,6 +117,8 @@ For example, if you would like to infer a model with ``Convolution`` operation i
 
 There are several supported quantization approaches on activations and on weights. All supported approaches are described in `Quantization approaches <#quantization-approaches>`__ section below. In demonstrated model `FakeQuantize operation quantization <#fakequantize-operation>`__ approach is used.
 
+
+
 Low precision tools
 -------------------
 
@@ -376,14 +378,14 @@ This step is optional for LPT but typically is presented in OpenVINO™ plugins.
 	    useLpt ? :ref:`ngraph::pass::low_precision::precision_set::int8_support <doxid-namespacengraph_1_1pass_1_1low__precision_1_1precision__set_1aadf8375a12f123670991b043f50a94e5>` : std::vector<ov::element::Type>{};
 	if (useLpt) {
 	    // disable constant folding on constant subgraph to use the subgraph for LPT
-	    manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ngraph::pass::DisableConvertConstantFoldingOnConstPath <doxid-classngraph_1_1pass_1_1_disable_convert_constant_folding_on_const_path>`>(defaultPrecisions);
+	    manager.register_pass<:ref:`ngraph::pass::DisableConvertConstantFoldingOnConstPath <doxid-classngraph_1_1pass_1_1_disable_convert_constant_folding_on_const_path>`>(defaultPrecisions);
 	}
 	
 	// nGraph common transformations happen here
 	
 	if (useLpt) {
 	    // convert subtract constant to INT8 to prevent unnecessary FP16 to FP32 conversion
-	    manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ngraph::pass::low_precision::ConvertSubtractConstant <doxid-classngraph_1_1pass_1_1low__precision_1_1_convert_subtract_constant>`>(defaultPrecisions);
+	    manager.register_pass<:ref:`ngraph::pass::low_precision::ConvertSubtractConstant <doxid-classngraph_1_1pass_1_1low__precision_1_1_convert_subtract_constant>`>(defaultPrecisions);
 	}
 	
 	// nGraph common transformations happen here
@@ -400,9 +402,7 @@ This step is optional for LPT but typically is presented in OpenVINO™ plugins.
 	    });
 	}
 	
-	manager.:ref:`run_passes <doxid-classov_1_1pass_1_1_manager_1a8b155191130f2c15e294cfd259d4ca0d>`(nGraphFunc);
-
-
+	manager.run_passes(nGraphFunc);
 
 Step 2. Low precision transformations execution
 -----------------------------------------------
@@ -416,20 +416,20 @@ This step is mandatory. It configures and runs LPT transformations.
 	    // Low precision transformations plugin specific configuration: restrictions definition
 	    auto supportedPrecisions = std::vector<PrecisionsRestriction>({
 	        PrecisionsRestriction::create<ngraph::opset1::Convolution>({
-	            {0, {:ref:`ngraph::element::u8 <doxid-group__ov__element__cpp__api_1gaaf60c536d3e295285f6a899eb3d29e2f>`}},
-	            {1, {:ref:`ngraph::element::i8 <doxid-group__ov__element__cpp__api_1gaae12d14b28baf46d3c6f76c55b05fb42>`}},
+	            {0, {ngraph::element::u8}},
+	            {1, {ngraph::element::i8}},
 	        }),
 	        PrecisionsRestriction::create<ngraph::opset1::ConvolutionBackpropData>({
-	            {0, {:ref:`ngraph::element::u8 <doxid-group__ov__element__cpp__api_1gaaf60c536d3e295285f6a899eb3d29e2f>`, :ref:`ngraph::element::i8 <doxid-group__ov__element__cpp__api_1gaae12d14b28baf46d3c6f76c55b05fb42>`}},
-	            {1, {:ref:`ngraph::element::i8 <doxid-group__ov__element__cpp__api_1gaae12d14b28baf46d3c6f76c55b05fb42>`}}
+	            {0, {ngraph::element::u8, ngraph::element::i8}},
+	            {1, {ngraph::element::i8}}
 	        }),
 	        PrecisionsRestriction::create<ngraph::opset1::GroupConvolution>({
-	            {0, {:ref:`ngraph::element::u8 <doxid-group__ov__element__cpp__api_1gaaf60c536d3e295285f6a899eb3d29e2f>`}},
-	            {1, {:ref:`ngraph::element::i8 <doxid-group__ov__element__cpp__api_1gaae12d14b28baf46d3c6f76c55b05fb42>`}}
+	            {0, {ngraph::element::u8}},
+	            {1, {ngraph::element::i8}}
 	        }),
 	        PrecisionsRestriction::create<ngraph::opset1::Multiply>({
-	            {0, {:ref:`ngraph::element::u8 <doxid-group__ov__element__cpp__api_1gaaf60c536d3e295285f6a899eb3d29e2f>`}},
-	            {1, {:ref:`ngraph::element::i8 <doxid-group__ov__element__cpp__api_1gaae12d14b28baf46d3c6f76c55b05fb42>`}},
+	            {0, {ngraph::element::u8}},
+	            {1, {ngraph::element::i8}},
 	        }),
 	    });
 	
@@ -441,27 +441,25 @@ This step is mandatory. It configures and runs LPT transformations.
 	
 	    // Low precision transformations instantiation and registration in pass manager
 	    :ref:`ngraph::pass::Manager <doxid-classov_1_1pass_1_1_manager>` lptManager;
-	    lptManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ngraph::pass::low_precision::LowPrecision <doxid-classngraph_1_1pass_1_1low__precision_1_1_low_precision>`>(supportedPrecisions, perTensorQuantization);
+	    lptManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<:ref:`ngraph::pass::low_precision::LowPrecision <doxid-classngraph_1_1pass_1_1low__precision_1_1_low_precision>`>(supportedPrecisions, perTensorQuantization);
 	
 	    // Low precision transformations plugin specific configuration: transformation callbacks definition
-	    lptManager.:ref:`get_pass_config <doxid-classov_1_1pass_1_1_pass_base_1a4902f6ed9322e0fd38810d701f4409df>`()->set_callback<:ref:`MarkupPrecisions <doxid-classngraph_1_1pass_1_1low__precision_1_1_markup_precisions>`>([](const std::shared_ptr<const ngraph::Node>& node) -> bool {
+	    lptManager.:ref:`get_pass_config <doxid-classov_1_1pass_1_1_pass_base_1a384e9a459cf0d8f1633241594fad2775>`()->set_callback<:ref:`MarkupPrecisions <doxid-namespacengraph_1_1pass_1_1low__precision_1a3ad0998fffa609dfbb131b7cf9f23309>`>([](const std::shared_ptr<const ngraph::Node>& node) -> bool {
 	        if (const auto :ref:`multiply <doxid-namespacengraph_1_1runtime_1_1reference_1a00292cb933b4e80075ebb7c6fcd77719>` = std::dynamic_pointer_cast<const ngraph::opset1::Multiply>(node)) {
-	            return !:ref:`MultiplyToGroupConvolutionTransformation::canBeTransformedToGroupConvolution <doxid-classngraph_1_1pass_1_1low__precision_1_1_multiply_to_group_convolution_transformation_1a0a5b80d6d2721ab4dac0714fa31367ec>`(:ref:`multiply <doxid-namespacengraph_1_1runtime_1_1reference_1a00292cb933b4e80075ebb7c6fcd77719>`);
+	            return !MultiplyToGroupConvolutionTransformation::canBeTransformedToGroupConvolution(:ref:`multiply <doxid-namespacengraph_1_1runtime_1_1reference_1a00292cb933b4e80075ebb7c6fcd77719>`);
 	        }
 	        return false;
 	    });
-	    lptManager.:ref:`get_pass_config <doxid-classov_1_1pass_1_1_pass_base_1a4902f6ed9322e0fd38810d701f4409df>`()->set_callback<:ref:`ConvolutionBackpropDataTransformation <doxid-classngraph_1_1pass_1_1low__precision_1_1_convolution_backprop_data_transformation>`>([&defaultPrecisions](const std::shared_ptr<const ngraph::Node>& node) -> bool {
-	        return :ref:`LayerTransformation::isAsymmetricQuantization <doxid-classngraph_1_1pass_1_1low__precision_1_1_layer_transformation_1a23155a77026a48988edbd0abec14b0d7>`(node, defaultPrecisions) || :ref:`WeightableLayerTransformation::isAsymmetricOnWeights <doxid-classngraph_1_1pass_1_1low__precision_1_1_weightable_layer_transformation_1aa3cdd67fafb1c8e13678696707777912>`(node);
+	    lptManager.get_pass_config()->set_callback<ConvolutionBackpropDataTransformation>([&defaultPrecisions](const std::shared_ptr<const ngraph::Node>& node) -> bool {
+	        return LayerTransformation::isAsymmetricQuantization(node, defaultPrecisions) || WeightableLayerTransformation::isAsymmetricOnWeights(node);
 	    });
-	    lptManager.:ref:`get_pass_config <doxid-classov_1_1pass_1_1_pass_base_1a4902f6ed9322e0fd38810d701f4409df>`()->set_callback<:ref:`MultiplyToGroupConvolutionTransformation <doxid-classngraph_1_1pass_1_1low__precision_1_1_multiply_to_group_convolution_transformation>`>([](const std::shared_ptr<const ngraph::Node>& node) -> bool {
-	        return :ref:`MultiplyToGroupConvolutionTransformation::isDynamicOrScalar <doxid-classngraph_1_1pass_1_1low__precision_1_1_multiply_to_group_convolution_transformation_1a1d72f3597ecdad823d4eba0570c479cd>`(node);
+	    lptManager.get_pass_config()->set_callback<MultiplyToGroupConvolutionTransformation>([](const std::shared_ptr<const ngraph::Node>& node) -> bool {
+	        return MultiplyToGroupConvolutionTransformation::isDynamicOrScalar(node);
 	    });
 	
 	    // Low precision transformations execution
 	    lptManager.run_passes(nGraphFunc);
 	}
-
-
 
 Step 3. Plugin-specific transformations
 ---------------------------------------
@@ -471,10 +469,8 @@ This step is optional. It modifies the nGraph function to a device-specific oper
 .. ref-code-block:: cpp
 
 	:ref:`ngraph::pass::Manager <doxid-classov_1_1pass_1_1_manager>` deviceSpecificManager;
-	deviceSpecificManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<ngraph::pass::device::ConvertOpSet1ToDeviceSpecific>();
+	deviceSpecificManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<ngraph::pass::device::ConvertOpSet1ToDeviceSpecific>();
 	deviceSpecificManager.:ref:`run_passes <doxid-classov_1_1pass_1_1_manager_1a8b155191130f2c15e294cfd259d4ca0d>`(nGraphFunc);
-
-
 
 Result model overview
 ~~~~~~~~~~~~~~~~~~~~~
@@ -612,13 +608,13 @@ This option defines precisions which allowed for the operation input ports. The 
 
 	auto supportedPrecisions = std::vector<PrecisionsRestriction>({
 	    PrecisionsRestriction::create<ngraph::opset1::Convolution>({
-	        {0, {:ref:`ngraph::element::u8 <doxid-group__ov__element__cpp__api_1gaaf60c536d3e295285f6a899eb3d29e2f>`}},
-	        {1, {:ref:`ngraph::element::i8 <doxid-group__ov__element__cpp__api_1gaae12d14b28baf46d3c6f76c55b05fb42>`}},
+	        {0, {ngraph::element::u8}},
+	        {1, {ngraph::element::i8}},
 	    }),
 	});
 	
 	:ref:`ngraph::pass::Manager <doxid-classov_1_1pass_1_1_manager>` lptManager;
-	lptManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ngraph::pass::low_precision::LowPrecision <doxid-classngraph_1_1pass_1_1low__precision_1_1_low_precision>`>(supportedPrecisions);
+	lptManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<:ref:`ngraph::pass::low_precision::LowPrecision <doxid-classngraph_1_1pass_1_1low__precision_1_1_low_precision>`>(supportedPrecisions);
 	lptManager.run_passes(nGraphFunc);
 
 In provided example in result model ``Convolution`` operation inputs must have specific precisions: ``u8`` (unsigned int8) precision on input 0 (on activations) and ``i8`` (signed int8) precision on input 1 (on weights).
@@ -639,7 +635,7 @@ This option defines if operation supports per-tensor quantization only. The opti
 	});
 	
 	:ref:`ngraph::pass::Manager <doxid-classov_1_1pass_1_1_manager>` lptManager;
-	lptManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ngraph::pass::low_precision::LowPrecision <doxid-classngraph_1_1pass_1_1low__precision_1_1_low_precision>`>(emptyRestrictions, perTensorQuantization);
+	lptManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<:ref:`ngraph::pass::low_precision::LowPrecision <doxid-classngraph_1_1pass_1_1low__precision_1_1_low_precision>`>(emptyRestrictions, perTensorQuantization);
 	lptManager.run_passes(nGraphFunc);
 
 In provided example in result model ``Convolution`` operations must have per-tensor quantization on input 0 (on activations).
@@ -659,9 +655,9 @@ Plugin specific customization can be implemented via nGraph transformation callb
 	using namespace :ref:`ngraph::pass::low_precision <doxid-namespacengraph_1_1pass_1_1low__precision>`;
 	:ref:`ngraph::pass::Manager <doxid-classov_1_1pass_1_1_manager>` lptManager;
 	
-	lptManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ngraph::pass::low_precision::LowPrecision <doxid-classngraph_1_1pass_1_1low__precision_1_1_low_precision>`>();
-	lptManager.:ref:`get_pass_config <doxid-classov_1_1pass_1_1_manager_1a79d596fda6b8726043751c4de7b30885>`()->set_callback<:ref:`ConvolutionBackpropDataTransformation <doxid-classngraph_1_1pass_1_1low__precision_1_1_convolution_backprop_data_transformation>`>([&defaultPrecisions](const std::shared_ptr<const ngraph::Node>& node) -> bool {
-	    return :ref:`LayerTransformation::isAsymmetricQuantization <doxid-classngraph_1_1pass_1_1low__precision_1_1_layer_transformation_1a23155a77026a48988edbd0abec14b0d7>`(node, defaultPrecisions) || :ref:`WeightableLayerTransformation::isAsymmetricOnWeights <doxid-classngraph_1_1pass_1_1low__precision_1_1_weightable_layer_transformation_1aa3cdd67fafb1c8e13678696707777912>`(node);
+	lptManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<:ref:`ngraph::pass::low_precision::LowPrecision <doxid-classngraph_1_1pass_1_1low__precision_1_1_low_precision>`>();
+	lptManager.:ref:`get_pass_config <doxid-classov_1_1pass_1_1_manager_1aec3ebf86305f68866b84412084917cb9>`()->set_callback<ConvolutionBackpropDataTransformation>([&defaultPrecisions](const std::shared_ptr<const ngraph::Node>& node) -> bool {
+	    return LayerTransformation::isAsymmetricQuantization(node, defaultPrecisions) || WeightableLayerTransformation::isAsymmetricOnWeights(node);
 	});
 	lptManager.:ref:`run_passes <doxid-classov_1_1pass_1_1_manager_1a8b155191130f2c15e294cfd259d4ca0d>`(nGraphFunc);
 

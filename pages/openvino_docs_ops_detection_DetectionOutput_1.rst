@@ -149,9 +149,9 @@ At each feature map cell, *DetectionOutput* predicts the offsets relative to the
   
   * **Range of values** :
     
-    * false - perform NMS like in Caffe\*.
+    * false - perform NMS like in Caffe.
     
-    * true - perform NMS like in MxNet\*.
+    * true - perform NMS like in Apache MxNet.
   
   * **Type** : boolean
   

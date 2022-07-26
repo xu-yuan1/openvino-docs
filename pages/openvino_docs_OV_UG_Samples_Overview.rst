@@ -17,6 +17,7 @@ OpenVINO Samples
    :maxdepth: 1
    :hidden:
 
+   Basic OpenVINO Workflow <openvino_docs_get_started_get_started_demos>
    openvino_inference_engine_samples_classification_sample_async_README
    openvino_inference_engine_ie_bridges_python_sample_classification_sample_async_README
    openvino_inference_engine_samples_hello_classification_README
@@ -99,6 +100,10 @@ The applications include:
 
 .. note:: All C++ samples support input paths containing only ASCII characters, except for the Hello Classification Sample, that supports Unicode.
 
+
+
+
+
 Media Files Available for Samples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -127,6 +132,8 @@ The officially supported Linux\* build environment is the following:
 
 .. note:: For building samples from the open-source version of OpenVINO™ toolkit, see the `build instructions on GitHub <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>`__.
 
+
+
 To build the C or C++ sample applications for Linux, go to the ``<INSTALL_DIR>/samples/c`` or ``<INSTALL_DIR>/samples/cpp`` directory, respectively, and run the ``build_samples.sh`` script:
 
 .. ref-code-block:: cpp
@@ -143,13 +150,19 @@ You can also build the sample applications manually:
 
 .. note:: If you have installed the product as a root user, switch to root mode before you continue: ``sudo -i``
 
+
+
+
+
 #. Navigate to a directory that you have write access to and create a samples build directory. This example uses a directory named ``build`` :
    
    .. ref-code-block:: cpp
    
    	mkdir build
-
-.. note:: If you run the Image Classification verification script during the installation, the C++ samples build directory is created in your home directory: ``~/inference_engine_cpp_samples_build/``
+   
+   
+   
+   .. note:: If you run the Image Classification verification script during the installation, the C++ samples build directory is created in your home directory: ``~/inference_engine_cpp_samples_build/``
 
 #. Go to the created directory:
    
@@ -177,7 +190,7 @@ You can also build the sample applications manually:
    
    	make
 
-For the release configuration, the sample application binaries are in ``<path_to_build_directory>/intel64/Release/``; for the debug configuration — in ``<path_to_build_directory>/intel64/Debug/``.
+For the release configuration, the sample application binaries are in ``<path_to_build_directory>/intel64/Release/``; for the debug configuration — in  ``<path_to_build_directory>/intel64/Debug/``.
 
 .. _build_samples_windows:
 
@@ -192,7 +205,9 @@ The recommended Windows build environment is the following:
 
 * CMake version 3.10 or higher
 
-.. note:: If you want to use Microsoft Visual Studio 2019, you are required to install CMake 3.14 or higher.
+.. note::  If you want to use Microsoft Visual Studio 2019, you are required to install CMake 3.14 or higher.
+
+
 
 To build the C or C++ sample applications on Windows, go to the ``<INSTALL_DIR>\samples\c`` or ``<INSTALL_DIR>\samples\cpp`` directory, respectively, and run the ``build_samples_msvc.bat`` batch file:
 
@@ -225,6 +240,8 @@ The officially supported macOS\* build environment is the following:
 
 .. note:: For building samples from the open-source version of OpenVINO™ toolkit, see the `build instructions on GitHub <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>`__.
 
+
+
 To build the C or C++ sample applications for macOS, go to the ``<INSTALL_DIR>/samples/c`` or ``<INSTALL_DIR>/samples/cpp`` directory, respectively, and run the ``build_samples.sh`` script:
 
 .. ref-code-block:: cpp
@@ -240,6 +257,10 @@ Once the build is completed, you can find sample binaries in the following folde
 You can also build the sample applications manually:
 
 .. note:: If you have installed the product as a root user, switch to root mode before you continue: ``sudo -i``
+
+
+
+
 
 .. note:: Before proceeding, make sure you have OpenVINO™ environment set correctly. This can be done manually by
 
@@ -257,8 +278,10 @@ You can also build the sample applications manually:
    .. ref-code-block:: cpp
    
    	mkdir build
-
-.. note:: If you ran the Image Classification verification script during the installation, the C++ samples build directory was already created in your home directory: ``~/inference_engine_cpp_samples_build/``
+   
+   
+   
+   .. note:: If you ran the Image Classification verification script during the installation, the C++ samples build directory was already created in your home directory: ``~/inference_engine_cpp_samples_build/``
 
 #. Go to the created directory:
    
@@ -286,7 +309,7 @@ You can also build the sample applications manually:
    
    	make
 
-For the release configuration, the sample application binaries are in ``<path_to_build_directory>/intel64/Release/``; for the debug configuration — in ``<path_to_build_directory>/intel64/Debug/``.
+For the release configuration, the sample application binaries are in ``<path_to_build_directory>/intel64/Release/``; for the debug configuration — in  ``<path_to_build_directory>/intel64/Debug/``.
 
 Get Ready for Running the Sample Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

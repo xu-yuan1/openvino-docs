@@ -55,20 +55,20 @@ This notebook is created for educational purposes and does not guarantee the imm
 #. Build the executable
    
    Compile ``main.cpp`` into an executable file:
-   
-   .. image:: maincpp.png
+
+.. image:: maincpp.png
 
 #. Execute the application
    
    Copy the path to the model, project device, and batch and stream numbers from the DL Workbench and paste them in the corresponding cell:
-   
-   .. image:: execute_app.png
+
+.. image:: execute_app.png
 
 #. Explore the application
    
    Inspect and change the main.cpp file with an application that uses the IE asynchronous C++ API. The file is located in the same directory as the notebook.
-   
-   .. image:: main_file.png
+
+.. image:: main_file.png
 
 #. Experiment with OpenVINO™ Runtime C++ API
    

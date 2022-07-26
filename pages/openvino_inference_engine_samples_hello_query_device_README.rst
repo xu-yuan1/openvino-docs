@@ -16,7 +16,7 @@ The following C++ API is used in the application:
       - API
       - Description
     * - Available Devices
-      - ``:ref:`ov::Core::get_available_devices <doxid-classov_1_1_core_1ac4efa134a1f874cffa38c7f48f222e3a>``` , ``:ref:`ov::Core::get_property <doxid-classov_1_1_core_1a4fb9fc7375d04f744a27a9588cbcff1a>```
+      - ``:ref:`ov::Core::get_available_devices <doxid-classov_1_1_core_1aabd82bca4826ee53893f7b5fc9bce813>``` , ``:ref:`ov::Core::get_property <doxid-classov_1_1_core_1a4fb9fc7375d04f744a27a9588cbcff1a>```
       - Get available devices information and configuration for inference
 
 Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>`.

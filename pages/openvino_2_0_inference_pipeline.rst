@@ -7,30 +7,32 @@ Inference Pipeline
 
 :target:`doxid-openvino_2_0_inference_pipeline_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_common_inference_pipeline` To infer models with OpenVINO™ Runtime, you usually need to perform the following steps in the application pipeline:
 
-* 1. Create a Core object.
-  
-  * 1.1. (Optional) Load extensions.
+#. `Create a Core object. <#create-core>`__
+   
+   * 1.1. `(Optional) Load extensions. <#load-extensions>`__
 
-* 2. Read a model from a drive.
-  
-  * 2.1. (Optional) Perform model preprocessing.
+#. `Read a model from a drive. <#read-model>`__
+   
+   * 2.1. `(Optional) Perform model preprocessing. <#perform-preprocessing>`__
 
-* 3. Load the model to the device.
+#. `Load the model to the device. <#load-model-to-device>`__
 
-* 4. Create an inference request.
+#. `Create an inference request. <#create-inference-request>`__
 
-* 5. Fill input tensors with data.
+#. `Fill input tensors with data. <#fill-tensor>`__
 
-* 6. Start inference.
+#. `Start inference. <#start-inference>`__
 
-* 7. Process the inference results.
+#. `Process the inference results. <#process-results>`__
 
-The following code explains how to change the application code for migration to OpenVINO™ Runtime 2.0.
+Based on the steps, the following code demostrates how to change the application code to migrate to API 2.0.
 
-1. Create Core
-~~~~~~~~~~~~~~
+.. _create-core:
 
-Inference Engine API:
+1. Create a Core Object
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**Inference Engine API**
 
 .. raw:: html
 
@@ -102,7 +104,9 @@ Inference Engine API:
 
 
 
-OpenVINO™ Runtime API 2.0:
+**API 2.0**
+
+.. _load-extensions:
 
 .. raw:: html
 
@@ -180,7 +184,7 @@ OpenVINO™ Runtime API 2.0:
 
 To load a model with custom operations, you need to add extensions for these operations. It is highly recommended to use :ref:`OpenVINO Extensibility API <doxid-openvino_docs__extensibility__u_g__intro>` to write extensions. However, you can also load the old extensions to the new OpenVINO™ Runtime:
 
-Inference Engine API:
+**Inference Engine API**
 
 .. raw:: html
 
@@ -202,7 +206,7 @@ Inference Engine API:
 
 .. ref-code-block:: cpp
 
-	core.AddExtension(std::make_shared<InferenceEngine::Extension>("path_to_extension_library.so"));
+	core.:ref:`AddExtension <doxid-class_inference_engine_1_1_core_1aac8284a60791abd6e50ddab0c695e38f>`(std::make_shared<InferenceEngine::Extension>("path_to_extension_library.so"));
 
 
 
@@ -250,7 +254,9 @@ Inference Engine API:
 
 
 
-OpenVINO™ Runtime API 2.0:
+**API 2.0**
+
+.. _read-model:
 
 .. raw:: html
 
@@ -272,7 +278,7 @@ OpenVINO™ Runtime API 2.0:
 
 .. ref-code-block:: cpp
 
-	core.:ref:`add_extension <doxid-classov_1_1_core_1a68d0dea1cbcd42a67bea32780e32acea>`(std::make_shared<InferenceEngine::Extension>("path_to_extension_library.so"));
+	core.add_extension(std::make_shared<InferenceEngine::Extension>("path_to_extension_library.so"));
 
 
 
@@ -325,7 +331,7 @@ OpenVINO™ Runtime API 2.0:
 2. Read a Model from a Drive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Inference Engine API:
+**Inference Engine API**
 
 .. raw:: html
 
@@ -347,7 +353,7 @@ Inference Engine API:
 
 .. ref-code-block:: cpp
 
-	:ref:`InferenceEngine::CNNNetwork <doxid-class_inference_engine_1_1_c_n_n_network>` network = core.ReadNetwork("model.xml");
+	:ref:`InferenceEngine::CNNNetwork <doxid-class_inference_engine_1_1_c_n_n_network>` network = core.:ref:`ReadNetwork <doxid-class_inference_engine_1_1_core_1ac716dda382aefd09264b60ea40def3ef>`("model.xml");
 
 
 
@@ -395,7 +401,7 @@ Inference Engine API:
 
 
 
-OpenVINO™ Runtime API 2.0:
+**API 2.0**
 
 .. raw:: html
 
@@ -417,7 +423,7 @@ OpenVINO™ Runtime API 2.0:
 
 .. ref-code-block:: cpp
 
-	std::shared_ptr<ov::Model> :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1a3cca31e2bb5d569330daa8041e01f6f1>`("model.xml");
+	std::shared_ptr<ov::Model> :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.read_model("model.xml");
 
 
 
@@ -465,19 +471,23 @@ OpenVINO™ Runtime API 2.0:
 
 
 
-Read model has the same structure as the example from :ref:`Model Creation <doxid-openvino_2_0_model_creation>` migration guide.
+Reading a model has the same structure as the example in the :ref:`model creation migration guide <doxid-openvino_2_0_model_creation>`.
 
-You can combine read and compile model stages into a single call ``ov::Core::compile_model(filename, devicename)``.
+You can combine reading and compiling a model into a single call ``ov::Core::compile_model(filename, devicename)``.
+
+.. _perform-preprocessing:
 
 2.1 (Optional) Perform Model Preprocessing
 ------------------------------------------
 
-When application input data does not perfectly match the model input format, preprocessing may be necessary. See the detailed guide on :ref:`how to migrate preprocessing in OpenVINO Runtime API 2.0 <doxid-openvino_2_0_preprocessing>`
+When the application input data does not perfectly match the model input format, preprocessing may be necessary. See :ref:`preprocessing in API 2.0 <doxid-openvino_2_0_preprocessing>` for more details.
+
+.. _load-model-to-device:
 
 3. Load the Model to the Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Inference Engine API:
+**Inference Engine API**
 
 .. raw:: html
 
@@ -499,7 +509,7 @@ Inference Engine API:
 
 .. ref-code-block:: cpp
 
-	:ref:`InferenceEngine::ExecutableNetwork <doxid-class_inference_engine_1_1_executable_network>` exec_network = core.LoadNetwork(network, "CPU");
+	:ref:`InferenceEngine::ExecutableNetwork <doxid-class_inference_engine_1_1_executable_network>` exec_network = core.:ref:`LoadNetwork <doxid-class_inference_engine_1_1_core_1a7b0b5ab0009abc572762422105b5c666>`(network, "CPU");
 
 
 
@@ -548,7 +558,7 @@ Inference Engine API:
 
 
 
-OpenVINO™ Runtime API 2.0:
+**API 2.0**
 
 .. raw:: html
 
@@ -570,7 +580,7 @@ OpenVINO™ Runtime API 2.0:
 
 .. ref-code-block:: cpp
 
-	:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>` compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "CPU");
+	:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>` compiled_model = core.compile_model(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "CPU");
 
 
 
@@ -618,12 +628,14 @@ OpenVINO™ Runtime API 2.0:
 
 
 
-If you need to configure OpenVINO Runtime devices with additional parameters, refer to the :ref:`Configure devices <doxid-openvino_2_0_configure_devices>` guide.
+If you need to configure devices with additional parameters for OpenVINO Runtime, refer to :ref:`Configuring Devices <doxid-openvino_2_0_configure_devices>`.
+
+.. _create-inference-request:
 
 4. Create an Inference Request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Inference Engine API:
+**Inference Engine API**
 
 .. raw:: html
 
@@ -693,7 +705,9 @@ Inference Engine API:
 
 
 
-OpenVINO™ Runtime API 2.0:
+**API 2.0**
+
+.. _fill-tensor:
 
 .. raw:: html
 
@@ -765,10 +779,12 @@ OpenVINO™ Runtime API 2.0:
 
 
 
-5. Fill Input Tensors
-~~~~~~~~~~~~~~~~~~~~~
+5. Fill Input Tensors with Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Inference Engine API fills inputs as ``I32`` precision (**not** aligned with the original model):
+**Inference Engine API**
+
+The Inference Engine API fills inputs with data of the ``I32`` precision (**not** aligned with the original model):
 
 .. raw:: html
 
@@ -1266,7 +1282,11 @@ The Inference Engine API fills inputs as ``I32`` precision (**not** aligned with
 
 
 
-OpenVINO™ Runtime API 2.0 fills inputs as ``I64`` precision (aligned with the original model):
+**API 2.0**
+
+API 2.0 fills inputs with data of the ``I64`` precision (aligned with the original model):
+
+.. _start-inference:
 
 .. raw:: html
 
@@ -1311,13 +1331,13 @@ OpenVINO™ Runtime API 2.0 fills inputs as ``I64`` precision (aligned with the 
 	// Get input tensor by index
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` input_tensor1 = infer_request.:ref:`get_input_tensor <doxid-classov_1_1_infer_request_1a5f0bc1ab40de6a7a12136b4a4e6a8b54>`(0);
 	// IR v10 works with converted precisions (i64 -> i32)
-	auto data1 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int32_t>();
+	auto data1 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int32_t>();
 	// Fill first data ...
 
 	// Get input tensor by tensor name
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` input_tensor2 = infer_request.:ref:`get_tensor <doxid-classov_1_1_infer_request_1a75b8da7c6b00686bede600dddceaffc4>`("data2_t");
 	// IR v10 works with converted precisions (i64 -> i32)
-	auto data2 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int32_t>();
+	auto data2 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int32_t>();
 	// Fill first data ...
 
 
@@ -1423,13 +1443,13 @@ OpenVINO™ Runtime API 2.0 fills inputs as ``I64`` precision (aligned with the 
 	// Get input tensor by index
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` input_tensor1 = infer_request.:ref:`get_input_tensor <doxid-classov_1_1_infer_request_1a5f0bc1ab40de6a7a12136b4a4e6a8b54>`(0);
 	// Element types, names and layouts are aligned with framework
-	auto data1 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int64_t>();
+	auto data1 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int64_t>();
 	// Fill first data ...
 
 	// Get input tensor by tensor name
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` input_tensor2 = infer_request.:ref:`get_tensor <doxid-classov_1_1_infer_request_1a75b8da7c6b00686bede600dddceaffc4>`("data2_t");
 	// Element types, names and layouts are aligned with framework
-	auto data2 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int64_t>();
+	auto data2 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int64_t>();
 	// Fill first data ...
 
 
@@ -1534,13 +1554,13 @@ OpenVINO™ Runtime API 2.0 fills inputs as ``I64`` precision (aligned with the 
 	// Get input tensor by index
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` input_tensor1 = infer_request.:ref:`get_input_tensor <doxid-classov_1_1_infer_request_1a5f0bc1ab40de6a7a12136b4a4e6a8b54>`(0);
 	// Element types, names and layouts are aligned with framework
-	auto data1 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int64_t>();
+	auto data1 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int64_t>();
 	// Fill first data ...
 
 	// Get input tensor by tensor name
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` input_tensor2 = infer_request.:ref:`get_tensor <doxid-classov_1_1_infer_request_1a75b8da7c6b00686bede600dddceaffc4>`("data2_t");
 	// Element types, names and layouts are aligned with framework
-	auto data2 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int64_t>();
+	auto data2 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int64_t>();
 	// Fill first data ...
 
 
@@ -1645,13 +1665,13 @@ OpenVINO™ Runtime API 2.0 fills inputs as ``I64`` precision (aligned with the 
 	// Get input tensor by index
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` input_tensor1 = infer_request.:ref:`get_input_tensor <doxid-classov_1_1_infer_request_1a5f0bc1ab40de6a7a12136b4a4e6a8b54>`(0);
 	// Element types, names and layouts are aligned with framework
-	auto data1 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int64_t>();
+	auto data1 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int64_t>();
 	// Fill first data ...
 
 	// Get input tensor by tensor name
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` input_tensor2 = infer_request.:ref:`get_tensor <doxid-classov_1_1_infer_request_1a75b8da7c6b00686bede600dddceaffc4>`("data2_t");
 	// Element types, names and layouts are aligned with framework
-	auto data2 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int64_t>();
+	auto data2 = input_tensor1.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int64_t>();
 	// Fill first data ...
 
 
@@ -1734,7 +1754,7 @@ OpenVINO™ Runtime API 2.0 fills inputs as ``I64`` precision (aligned with the 
 6. Start Inference
 ~~~~~~~~~~~~~~~~~~
 
-Inference Engine API:
+**Inference Engine API**
 
 .. raw:: html
 
@@ -1942,7 +1962,7 @@ Inference Engine API:
 	
 	# Async pipline is managed by ExecutableNetwork
 	total_frames = 100
-	for _ in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1a6e7a7da51225b5333900d059a6f386d3>`(total_frames):
+	for _ in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(total_frames):
 	    # Wait for at least one free request
 	    exec_network.wait(num_request=1)
 	    # Get idle id
@@ -1992,7 +2012,9 @@ Inference Engine API:
 
 
 
-OpenVINO™ Runtime API 2.0:
+**API 2.0**
+
+.. _process-results:
 
 .. raw:: html
 
@@ -2199,7 +2221,7 @@ OpenVINO™ Runtime API 2.0:
 	infer_queue.set_callback(callback)
 	
 	total_frames = 100
-	for i in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1a6e7a7da51225b5333900d059a6f386d3>`(total_frames):
+	for i in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(total_frames):
 	    # Wait for at least one available infer request and start asynchronous inference
 	    infer_queue.start_async(next(input_data), userdata=i)
 	# Wait for all requests to complete
@@ -2250,7 +2272,9 @@ OpenVINO™ Runtime API 2.0:
 7. Process the Inference Results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Inference Engine API processes outputs as ``I32`` precision (**not** aligned with the original model):
+**Inference Engine API**
+
+The Inference Engine API processes outputs as they are of the ``I32`` precision (**not** aligned with the original model):
 
 .. raw:: html
 
@@ -2696,11 +2720,13 @@ The Inference Engine API processes outputs as ``I32`` precision (**not** aligned
 
 
 
-OpenVINO™ Runtime API 2.0 processes outputs:
+**API 2.0**
 
-* For IR v10 as ``I32`` precision (**not** aligned with the original model) to match the **old** behavior.
+API 2.0 processes outputs:
 
-* For IR v11, ONNX, :ref:`ov::Model <doxid-classov_1_1_model>`, Paddle as ``I64`` precision (aligned with the original model) to match the **new** behavior.
+* as they are of the ``I32`` precision (**not** aligned with the original model) for OpenVINO IR v10 models, to match the `old behavior <openvino_2_0_transition_guide#differences-api20-ie>`__.
+
+* as they are of the ``I64`` precision (aligned with the original model) for OpenVINO IR v11, ONNX, :ref:`ov::Model <doxid-classov_1_1_model>` and PaddlePaddle models, to match the `new behavior <openvino_2_0_transition_guide#differences-api20-ie>`__.
 
 .. raw:: html
 
@@ -2745,7 +2771,7 @@ OpenVINO™ Runtime API 2.0 processes outputs:
 	// model has only one output
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` output_tensor = infer_request.:ref:`get_output_tensor <doxid-classov_1_1_infer_request_1a350159a8d967022db46633eed50d073a>`();
 	// IR v10 works with converted precisions (i64 -> i32)
-	auto out_data = output_tensor.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int32_t>();
+	auto out_data = output_tensor.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int32_t>();
 	// process output data
 
 
@@ -2845,7 +2871,7 @@ OpenVINO™ Runtime API 2.0 processes outputs:
 	// model has only one output
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` output_tensor = infer_request.:ref:`get_output_tensor <doxid-classov_1_1_infer_request_1a350159a8d967022db46633eed50d073a>`();
 	// Element types, names and layouts are aligned with framework
-	auto out_data = output_tensor.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int64_t>();
+	auto out_data = output_tensor.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int64_t>();
 	// process output data
 
 
@@ -2945,7 +2971,7 @@ OpenVINO™ Runtime API 2.0 processes outputs:
 	// model has only one output
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` output_tensor = infer_request.:ref:`get_output_tensor <doxid-classov_1_1_infer_request_1a350159a8d967022db46633eed50d073a>`();
 	// Element types, names and layouts are aligned with framework
-	auto out_data = output_tensor.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int64_t>();
+	auto out_data = output_tensor.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int64_t>();
 	// process output data
 
 
@@ -3045,7 +3071,7 @@ OpenVINO™ Runtime API 2.0 processes outputs:
 	// model has only one output
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` output_tensor = infer_request.:ref:`get_output_tensor <doxid-classov_1_1_infer_request_1a350159a8d967022db46633eed50d073a>`();
 	// Element types, names and layouts are aligned with framework
-	auto out_data = output_tensor.:ref:`data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>`<int64_t>();
+	auto out_data = output_tensor.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<int64_t>();
 	// process output data
 
 

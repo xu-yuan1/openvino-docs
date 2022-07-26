@@ -1,11 +1,11 @@
-.. index:: pair: page; Extending Model Optimizer with Caffe\* Python Layers
+.. index:: pair: page; Extending Model Optimizer with Caffe Python Layers
 .. _doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__extending__model__optimizer__with__caffe__python__layers:
 
 
-Extending Model Optimizer with Caffe\* Python Layers
-====================================================
+Extending Model Optimizer with Caffe Python Layers
+==================================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__extending__model__optimizer__with__caffe__python__layers_1md_openvino_docs_mo_dg_prepare_model_customize_model_optimizer_extending_model_optimizer_with_caffe_python_layers` This section provides instruction on how to support a custom Caffe operation written only in Python. For example, the `Faster-R-CNN model <http://dl.dropboxusercontent.com/s/o6ii098bu51d139/faster_rcnn_models.tgz?dl=0>`__ implemented in Caffe contains a custom proposal layer written in Python. The layer is described in the `Faster-R-CNN prototxt <https://raw.githubusercontent.com/rbgirshick/py-faster-rcnn/master/models/pascal_voc/VGG16/faster_rcnn_end2end/test.prototxt>`__ in the following way:
+:target:`doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__extending__model__optimizer__with__caffe__python__layers_1md_openvino_docs_mo_dg_prepare_model_customize_model_optimizer_extending_model_optimizer_with_caffe_python_layers` This article provides instructions on how to support a custom Caffe operation written only in Python. For example, the `Faster-R-CNN model <http://dl.dropboxusercontent.com/s/o6ii098-bu51d139/faster_rcnn_models.tgz?dl=0>`__ implemented in Caffe contains a custom proposal layer written in Python. The layer is described in the `Faster-R-CNN prototxt <https://raw.githubusercontent.com/rbgirshick/py-faster-rcnn/master/models/pascal_voc/VGG16/faster_rcnn_end2end/test.prototxt>`__ in the following way:
 
 .. ref-code-block:: cpp
 
@@ -23,14 +23,16 @@ Extending Model Optimizer with Caffe\* Python Layers
 	  }
 	}
 
-This section describes only a procedure on how to extract operator attributes in the Model Optimizer. The rest of the operation enabling pipeline and documentation on how to support other Caffe operations (written in C++) is described in the main document :ref:`Customize_Model_Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`.
+This article describes only a procedure on how to extract operator attributes in Model Optimizer. The rest of the operation enabling pipeline and information on how to support other Caffe operations (written in C++) is described in the :ref:`Customize_Model_Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
 
 Writing Extractor for Caffe Python Layer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Custom Caffe Python layers have an attribute ``type`` (defining the type of the operation) equal to ``Python`` and two mandatory attributes ``module`` and ``layer`` in the ``python_param`` dictionary. The ``module`` defines the Python module name with the layer implementation, while ``layer`` value is an operation type defined by an user. In order to extract attributes for such an operation it is necessary to implement extractor class inherited from the ``CaffePythonFrontExtractorOp`` class instead of ``FrontExtractorOp`` class used for standard framework layers. The ``op`` class attribute value should be set to the ``module + "." + layer`` value so the extractor is triggered for this kind of operation.
+Custom Caffe Python layers have an attribute ``type`` (defining the type of the operation) equal to ``Python`` and two mandatory attributes ``module`` and ``layer`` in the ``python_param`` dictionary. The ``module`` defines the Python module name with the layer implementation, while ``layer`` value is an operation type defined by a user. In order to extract attributes for such an operation it is necessary to implement extractor class inherited from the ``CaffePythonFrontExtractorOp`` class instead of ``FrontExtractorOp`` class, used for standard framework layers. The ``op`` class attribute value should be set to the ``module + "." + layer`` value so the extractor is triggered for this kind of operation.
 
-Here is a simplified example of the extractor for the custom operation Proposal from Faster-R-CNN model mentioned above. The full code with additional checks is provided in the `https://github.com/openvinotoolkit/openvino/blob/releases/2022/1/tools/mo/openvino/tools/mo/front/caffe/proposal_python_ext.py <https://github.com/openvinotoolkit/openvino/blob/releases/2022/1/tools/mo/openvino/tools/mo/front/caffe/proposal_python_ext.py>`__ file. The sample code uses operation ``ProposalOp`` which corresponds to ``Proposal`` operation described in the :ref:`Available Operations Sets <doxid-openvino_docs_ops_opset>` document. Refer to the source code below for a detailed explanation of the extractor.
+Below is a simplified example of the extractor for the custom operation Proposal from the mentioned Faster-R-CNN model. The full code with additional checks can be found `here <https://github.com/openvinotoolkit/openvino/blob/releases/2022/1/tools/mo/openvino/tools/mo/front/caffe/proposal_python_ext.py>`__.
+
+The sample code uses operation ``ProposalOp`` which corresponds to ``Proposal`` operation described in the :ref:`Available Operations Sets <doxid-openvino_docs_ops_opset>` page. For a detailed explanation of the extractor, refer to the source code below.
 
 .. ref-code-block:: cpp
 

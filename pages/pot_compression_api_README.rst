@@ -134,14 +134,14 @@ All subclasses should override the following methods:
     	        'metric_name': metric_value
     	    }
     	)
-  
-  Otherwise, a dictionary of overall metrics.
-  
-  
-  
-  .. ref-code-block:: cpp
-  
-  	{ 'metric_name': metric_value }
+    
+    Otherwise, a dictionary of overall metrics.
+    
+    
+    
+    .. ref-code-block:: cpp
+    
+    	{ 'metric_name': metric_value }
 
 * a dictionary of collected statistics
   

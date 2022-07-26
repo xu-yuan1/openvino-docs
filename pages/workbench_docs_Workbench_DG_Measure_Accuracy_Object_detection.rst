@@ -25,6 +25,8 @@ Refer to the :ref:`Get Started with DL Workbench <doxid-workbench_docs__workbenc
 
 .. tip:: If you have optimized the model using :ref:`INT8 Calibration <doxid-workbench_docs__workbench__d_g__int_8__quantization>`, you can use a Not Annotated dataset to compare original and optimized model predictions.
 
+
+
 Once you select a model and a dataset and run a baseline inference, the **Projects** page appears. Go to the **Perform** tab and select **Create Accuracy Report** :
 
 .. image:: create_report.png
@@ -42,6 +44,8 @@ After you click **Create Accuracy Report**, you will be redirected to the **Anal
 
 **NOTE:** Accuracy measurements are performed on each dataset image. Creating an Accuracy Report may take some time if the dataset is considerably big.
 
+
+
 Interpret Report Results
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -52,6 +56,8 @@ To assess the difference between model detections and dataset annotations, check
 .. image:: od_val_dataset_result.png
 
 .. tip:: To sort the numbers from lowest to highest, click on the parameter name in the table.
+
+
 
 Click **Visualize** button under the **Actions** column to compare the predictions and annotations for a particular image.
 
@@ -64,6 +70,8 @@ In our case, the ``ssd_mobilenet_v2_coco`` model detected 2 objects of class 23 
 Let's consider another example image. The model detected 3 objects of class 1 (person). The annotations indicate that the image contains 4 objects of this class. 2 matches show that only 2 of the 3 detected objects coincide with annotations. In the image, you can see that the model detected 3 people. While one person in the distance is detected precisely, the other bounding boxes are noticeably different from the annotation. Two other people are not detected by the model.
 
 .. tip:: You can enhance your model performance while ensuring that the model accuracy has not decreased dramatically. For that, :ref:`optimize your model <doxid-workbench_docs__workbench__d_g__int_8__quantization>` and create an Accuracy Report that allows you to visualize and :ref:`compare Optimized and Parent model predictions <doxid-workbench_docs__workbench__d_g__tutorial__import__y_o_l_o>`.
+
+
 
 *All images were taken from ImageNet, Pascal Visual Object Classes, and Common Objects in Context datasets for demonstration purposes only.*
 

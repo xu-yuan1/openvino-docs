@@ -29,6 +29,10 @@ The idea behind G-API is that if an algorithm can be expressed in a special embe
 
 .. note:: Graph API (G-API) was introduced in the most recent major OpenCV 4.0 release and now is being actively developed. The API is volatile at the moment and there may be minor but compatibility-breaking changes in the future.
 
+
+
+
+
 G-API Concepts
 ~~~~~~~~~~~~~~
 

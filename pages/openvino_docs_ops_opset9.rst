@@ -138,6 +138,8 @@ Table of Contents
 
 * :ref:`GreaterEqual <doxid-openvino_docs_ops_comparison__greater_equal_1>`
 
+* :ref:`GridSample <doxid-openvino_docs_ops_image__grid_sample_9>`
+
 * :ref:`GRN <doxid-openvino_docs_ops_normalization__g_r_n_1>`
 
 * :ref:`GroupConvolution <doxid-openvino_docs_ops_convolution__group_convolution_1>`

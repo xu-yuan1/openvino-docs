@@ -73,9 +73,13 @@ Inference Time
 
 .. image:: compare_performances_005.png
 
+.. _kernel-level-performance:
+
 .. note:: The colors used in the **Inference Time** chart correspond to the colors of the points A and B.
 
-.. _kernel-level-performance:
+
+
+
 
 Kernel-Level Performance
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,6 +105,8 @@ The **Kernel-Level Performance** tab
 .. image:: layers_table_06.png
 
 .. note:: Make sure you select points on both graphs.
+
+
 
 Each row of a table represents a layer of executed graphs of different model versions. The table displays execution time and runtime precision. If a layer was executed in both versions, the table shows the difference between the execution time values of different model versions layers.
 

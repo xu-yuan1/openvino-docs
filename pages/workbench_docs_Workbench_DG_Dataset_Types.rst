@@ -132,9 +132,13 @@ The annotation file is organized as follows:
 	...
 	n.jpg <label ID>
 
+.. _voc:
+
 .. note:: The dataset is considerably big in size. If you want to save your time when loading it into the DL Workbench, follow the instructions to :ref:`cut the dataset <doxid-workbench_docs__workbench__d_g__download_and__cut__datasets>`.
 
-.. _voc:
+
+
+
 
 Pascal Visual Object Classes (Pascal VOC)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,6 +173,10 @@ To download test data from `Pascal VOC <http://host.robots.ox.ac.uk/pascal/VOC/>
 #. Download the *training/validation_data* file.
 
 .. note:: The dataset is considerably big in size. If you want to save your time when loading it into the DL Workbench, follow the instructions to :ref:`cut the dataset <doxid-workbench_docs__workbench__d_g__download_and__cut__datasets>`.
+
+
+
+
 
 Pascal VOC Structure
 --------------------
@@ -251,6 +259,10 @@ To use a dataset from the `COCO <http://cocodataset.org>`__ website, download an
 * `2017 Val images <http://images.cocodataset.org/zips/val2017.zip>`__ and `2017 Train/Val annotations <http://images.cocodataset.org/annotations/annotations_trainval2017.zip>`__
 
 .. note:: The dataset is considerably big in size. If you want to save your time when loading it into the DL Workbench, follow the instructions to :ref:`cut the dataset <doxid-workbench_docs__workbench__d_g__download_and__cut__datasets>`.
+
+
+
+
 
 COCO Structure
 --------------
@@ -397,33 +409,33 @@ An LFW dataset archive consists of folders with images and annotations. The **Im
   * Lines with incorrect pairs: two images of two different persons.
   
   Blocks of lines with correct and incorrect pairs alternate to represent different sets. Below is an example of an annotation beginning. The numbers of sets and images in them come first, followed by the lines for the first set.
-
-.. ref-code-block:: cpp
-
-	10 300
-	Person_1 2   4
-	Person_2 3   6
-	Person_2 4   5
-	...
-	Person_N 2   3
-	Person_1    1     Person_15    1
-	Person_1    2     Person_43    1
-	Person_2    1     Person_89    2
-	...
-	Person_300    1     Person_21    1
-
-Then the lines for the second set begin:
-
-.. ref-code-block:: cpp
-
-	Person_301   2   4
-	Person_302   3   6
-	...
-	Person_600   2   3
-	Person_301    1     Person_334    1
-	Person_302    1     Person_570    2
-	...
-	Person_600    1     Person_416    1
+  
+  .. ref-code-block:: cpp
+  
+  	10 300
+  	Person_1 2   4
+  	Person_2 3   6
+  	Person_2 4   5
+  	...
+  	Person_N 2   3
+  	Person_1    1     Person_15    1
+  	Person_1    2     Person_43    1
+  	Person_2    1     Person_89    2
+  	...
+  	Person_300    1     Person_21    1
+  
+  Then the lines for the second set begin:
+  
+  .. ref-code-block:: cpp
+  
+  	Person_301   2   4
+  	Person_302   3   6
+  	...
+  	Person_600   2   3
+  	Person_301    1     Person_334    1
+  	Person_302    1     Person_570    2
+  	...
+  	Person_600    1     Person_416    1
 
 * The ``landmarks.txt`` file contains coordinates of five facial landmarks found in an image:
   
@@ -447,9 +459,13 @@ Then the lines for the second set begin:
   	...
   	Person_N/Person_N_0002.jpg   102 114 146 105 127 133 113 159 152 153
 
+.. _vgg:
+
 .. note:: There is no requirements for image and folder names. However, the names that you use for images and folders must match the names that you put in annotations.
 
-.. _vgg:
+
+
+
 
 Visual Geometry Group Face 2 (VGGFace2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -505,21 +521,29 @@ A VGGFace2 dataset archive consists of folders with images and annotations. The 
   * Right mouth corner
   
   Each line consists of the relative path to an image and two coordinates in pixels of each landmark in the same order as in the list above:
+  
+  .. ref-code-block:: cpp
+  
+  	NAME_ID           P1X    P1Y P2X P2Y P3X P3Y P4X P4Y P5X P5Y
+  	0001/0001_01.jpg 75  110 103 104 90  133 85  149 114 144
+  	0001/0002_01.jpg 195 212 279 206 237 273 208 318 283 312
+  	0001/0002_01.jpg 289 232 400 233 345 322 289 373 394 378
+  	...
+  	NNNN/nnnn_01.jpg 83  90  111 87  103 111 86  129 111 126
 
-.. ref-code-block:: cpp
-
-	NAME_ID           P1X    P1Y P2X P2Y P3X P3Y P4X P4Y P5X P5Y
-	0001/0001_01.jpg 75  110 103 104 90  133 85  149 114 144
-	0001/0002_01.jpg 195 212 279 206 237 273 208 318 283 312
-	0001/0002_01.jpg 289 232 400 233 345 322 289 373 394 378
-	...
-	NNNN/nnnn_01.jpg 83  90  111 87  103 111 86  129 111 126
+.. _wider:
 
 .. note:: When you download an original dataset, it includes ``loose_bb_train.csv`` and ``loose_landmarks_train.csv`` files. Remove these files before importing the dataset into the DL Workbench.
 
+
+
+
+
 .. note:: There is no requirements for image and folder names. However, the names that you use for images and folders must match the names that you put in annotations.
 
-.. _wider:
+
+
+
 
 Wider Face
 ~~~~~~~~~~
@@ -585,14 +609,14 @@ Download Open Images
 #. There are several options to download Open Images dataset. On the `download page <https://storage.googleapis.com/openimages/web/download.html>`__, select *Manually downloading the images and raw annotation files* option. Follow the instructions to download the full set of validation images from CVDF.
    
    For example, you can use the following commands to download the full set of validation images:
-
-.. ref-code-block:: cpp
-
-	pip install aws-shell
-
-.. ref-code-block:: cpp
-
-	aws s3 --no-sign-request sync s3://open-images-dataset/validation [target_dir/validation]
+   
+   .. ref-code-block:: cpp
+   
+   	pip install aws-shell
+   
+   .. ref-code-block:: cpp
+   
+   	aws s3 --no-sign-request sync s3://open-images-dataset/validation [target_dir/validation]
 
 #. Download ``Validation`` annotations in the *Boxes* and ``Class Names`` from *Metadata*. Place them in the **Open Images** folder.
    
@@ -628,13 +652,15 @@ Learn more about bounding boxes structure and attributes at the `Open Images sit
 
 ``class-descriptions-boxable.csv`` contains the class names and their short descriptions:
 
+.. _cityscapes:
+
 .. ref-code-block:: cpp
 
 	/m/012n7d   Ambulance
 	/m/012w5l   Ladder
 	/m/012xff   Toothbrush
 
-.. _cityscapes:
+
 
 Cityscapes
 ~~~~~~~~~~

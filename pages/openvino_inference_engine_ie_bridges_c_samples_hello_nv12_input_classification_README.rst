@@ -34,7 +34,7 @@ Basic Inference Engine API is covered by :ref:`Hello Classification C sample <do
     * - Model Format
       - Inference Engine Intermediate Representation (\*.xml + \*.bin), ONNX (\*.onnx)
     * - Validated images
-      - An uncompressed image in the NV12 color format - \*.yuv
+      - An uncompressed image in the NV12 color format - \*.yuv
     * - Supported devices
       - :ref:`All <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
     * - Other language realization
@@ -76,6 +76,8 @@ The sample accepts an uncompressed image in the NV12 color format. To run the sa
 * Before running the sample with a trained model, make sure the model is converted to the Inference Engine format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
 
 * The sample accepts models in ONNX format (.onnx) that do not require preprocessing.
+
+
 
 Example
 -------

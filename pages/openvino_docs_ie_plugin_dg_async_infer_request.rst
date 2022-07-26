@@ -34,8 +34,6 @@ OpenVINO Runtime Plugin API provides the base :ref:`InferenceEngine::AsyncInferR
 	    :ref:`InferenceEngine::ITaskExecutor::Ptr <doxid-class_inference_engine_1_1_i_task_executor_1a8ba60f739a36331eb8ed3492ffc55eb5>` _waitExecutor;
 	};
 
-
-
 Class Fields
 ++++++++++++
 
@@ -44,6 +42,10 @@ Class Fields
 * ``_waitExecutor`` - a task executor that waits for a response from a device about device tasks completion
 
 .. note:: If a plugin can work with several instances of a device, ``_waitExecutor`` must be device-specific. Otherwise, having a single task executor for several devices does not allow them to work in parallel.
+
+
+
+
 
 .. rubric::
 
@@ -102,6 +104,8 @@ The stages are distributed among two task executors in the following way:
 * ``waitPipeline`` is sent to ``_waitExecutor``, which works with the device.
 
 .. note:: ``callbackExecutor`` is also passed to the constructor and it is used in the base :ref:`InferenceEngine::AsyncInferRequestThreadSafeDefault <doxid-class_inference_engine_1_1_async_infer_request_thread_safe_default>` class, which adds a pair of ``callbackExecutor`` and a callback function set by the user to the end of the pipeline.
+
+
 
 Inference request stages are also profiled using IE_PROFILING_AUTO_SCOPE, which shows how pipelines of multiple asynchronous inference requests are run in parallel via the `Intel® VTune™ Profiler <https://software.intel.com/en-us/vtune>`__ tool.
 

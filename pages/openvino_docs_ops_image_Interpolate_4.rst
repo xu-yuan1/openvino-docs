@@ -183,11 +183,11 @@ Interpolate
 	        if x_original == int(x_original) + 0.5:
 	            return int(math.floor(x_original))
 	        else:
-	            return int(round(x_original))
+	            return int(:ref:`round <doxid-namespacengraph_1_1runtime_1_1reference_1a8ea383ca6ce01d26eabe1c27a0e1bd37>`(x_original))
 	
 	    @staticmethod
 	    def prefer_ceil_func(x_original, is_downsample):
-	        return int(round(x_original))
+	        return int(:ref:`round <doxid-namespacengraph_1_1runtime_1_1reference_1a8ea383ca6ce01d26eabe1c27a0e1bd37>`(x_original))
 	
 	    @staticmethod
 	    def floor_func(x_original, is_downsample):
@@ -240,7 +240,7 @@ Interpolate
 	
 	
 	def get_cubic_coeff(s, a):
-	    abs_s = abs(s)
+	    abs_s = :ref:`abs <doxid-namespacengraph_1_1runtime_1_1reference_1af17e259120922e6ffb66ac8961a74256>`(s)
 	    coeff = np.zeros(4)
 	    coeff[0] = a \* (abs_s - 1.0) \* (abs_s - 1.0) \* abs_s
 	    coeff[1] = ((a + 2.0) \* abs_s - (a + 3.0)) \* abs_s \* abs_s + 1.0
@@ -289,7 +289,7 @@ Interpolate
 	    def get_coordinate_transformation_mode(self):
 	        return GetOriginalCoordinate(self.coordinate_transformation_mode)
 	
-	    def shape_infer(self, input_data, sizes, scales):
+	    def :ref:`shape_infer <doxid-namespaceov_1_1op_1_1v3_1a39314e1c3b31ea2b0012eeb30c1c36a8>`(self, input_data, sizes, scales):
 	        result = input_data.shape + self.pads_begin + self.pads_end
 	
 	        if self.shape_calculation_mode == ShapeCalculationMode.SIZES:
@@ -338,13 +338,13 @@ Interpolate
 	        return self.func(padded_data)
 	
 	    def clip_coord(self, coord, axis):
-	        return max(0, min(coord, self.input_shape[axis] - 1))
+	        return :ref:`max <doxid-namespacengraph_1_1runtime_1_1reference_1a92cfabd79e866544fb35d44884e7adfd>`(0, :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(coord, self.input_shape[axis] - 1))
 	
 	    def cubic_interpolation(self, input_data):
 	        rank = len(self.input_shape)
 	        result = np.zeros(self.output_shape)
 	        num_of_axes = len(self.axes)
-	        indices = [ind for ind in np.ndindex(tuple(4 for _ in range(num_of_axes)))]
+	        indices = [ind for ind in np.ndindex(tuple(4 for _ in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(num_of_axes)))]
 	        for coordinates in np.ndindex(tuple(self.output_shape)):
 	            input_coords = np.array(coordinates, dtype=np.int64)
 	            cubic_coeffs = np.zeros((rank, 4))
@@ -392,7 +392,7 @@ Interpolate
 	            for i, axis in enumerate(self.axes):
 	                in_coord = self.get_original_coordinate(coordinates[axis], self.scales[i], self.output_shape[axis], self.input_shape[axis])
 	                icoords[axis] = in_coord
-	                icoords_r[axis] = round(in_coord)
+	                icoords_r[axis] = :ref:`round <doxid-namespacengraph_1_1runtime_1_1reference_1a8ea383ca6ce01d26eabe1c27a0e1bd37>`(in_coord)
 	
 	            summa = 0.0
 	            wsum = 0.0
@@ -471,50 +471,50 @@ Interpolate
 	        dx1 = np.zeros(output_width).astype(np.float)
 	        dx2 = np.zeros(output_width).astype(np.float)
 	
-	        for z in range(0, output_depth):
+	        for z in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, output_depth):
 	            in_z = self.get_original_coordinate(z, depth_scale, output_depth, input_depth)
 	            z_original[z] = in_z
-	            in_z = max(0, min(in_z, input_depth - 1))
-	            in_z1[z] = max(0, min(int(in_z), input_depth - 1))
-	            in_z2[z] = min(in_z1[z] + 1, input_depth - 1)
-	            dz1[z] = abs(in_z - in_z1[z])
-	            dz2[z] = abs(in_z - in_z2[z])
+	            in_z = :ref:`max <doxid-namespacengraph_1_1runtime_1_1reference_1a92cfabd79e866544fb35d44884e7adfd>`(0, :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_z, input_depth - 1))
+	            in_z1[z] = :ref:`max <doxid-namespacengraph_1_1runtime_1_1reference_1a92cfabd79e866544fb35d44884e7adfd>`(0, :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(int(in_z), input_depth - 1))
+	            in_z2[z] = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_z1[z] + 1, input_depth - 1)
+	            dz1[z] = :ref:`abs <doxid-namespacengraph_1_1runtime_1_1reference_1af17e259120922e6ffb66ac8961a74256>`(in_z - in_z1[z])
+	            dz2[z] = :ref:`abs <doxid-namespacengraph_1_1runtime_1_1reference_1af17e259120922e6ffb66ac8961a74256>`(in_z - in_z2[z])
 	
 	            if in_z1[z] == in_z2[z]:
 	                dz1[z] = 0.5
 	                dz2[z] = 0.5
 	
-	        for y in range(0, output_height):
+	        for y in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, output_height):
 	            in_y = self.get_original_coordinate(y, height_scale, output_height, input_height)
 	            y_original[y] = in_y
-	            in_y = max(0, min(in_y, input_height - 1))
-	            in_y1[y] = max(0, min(int(in_y), input_height - 1))
-	            in_y2[y] = min(in_y1[y] + 1, input_height - 1)
-	            dy1[y] = abs(in_y - in_y1[y])
-	            dy2[y] = abs(in_y - in_y2[y])
+	            in_y = :ref:`max <doxid-namespacengraph_1_1runtime_1_1reference_1a92cfabd79e866544fb35d44884e7adfd>`(0, :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_y, input_height - 1))
+	            in_y1[y] = :ref:`max <doxid-namespacengraph_1_1runtime_1_1reference_1a92cfabd79e866544fb35d44884e7adfd>`(0, :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(int(in_y), input_height - 1))
+	            in_y2[y] = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_y1[y] + 1, input_height - 1)
+	            dy1[y] = :ref:`abs <doxid-namespacengraph_1_1runtime_1_1reference_1af17e259120922e6ffb66ac8961a74256>`(in_y - in_y1[y])
+	            dy2[y] = :ref:`abs <doxid-namespacengraph_1_1runtime_1_1reference_1af17e259120922e6ffb66ac8961a74256>`(in_y - in_y2[y])
 	
 	            if in_y1[y] == in_y2[y]:
 	                dy1[y] = 0.5
 	                dy2[y] = 0.5
 	
-	        for x in range(0, output_width):
+	        for x in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, output_width):
 	            in_x = self.get_original_coordinate(x, width_scale, output_width, input_width);
 	            x_original[x] = in_x
-	            in_x = max(0.0, min(in_x, input_width - 1));
+	            in_x = :ref:`max <doxid-namespacengraph_1_1runtime_1_1reference_1a92cfabd79e866544fb35d44884e7adfd>`(0.0, :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_x, input_width - 1));
 	
-	            in_x1[x] = min(in_x, input_width - 1);
-	            in_x2[x] = min(in_x1[x] + 1, input_width - 1);
+	            in_x1[x] = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_x, input_width - 1);
+	            in_x2[x] = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_x1[x] + 1, input_width - 1);
 	
-	            dx1[x] = abs(in_x - in_x1[x]);
-	            dx2[x] = abs(in_x - in_x2[x]);
+	            dx1[x] = :ref:`abs <doxid-namespacengraph_1_1runtime_1_1reference_1af17e259120922e6ffb66ac8961a74256>`(in_x - in_x1[x]);
+	            dx2[x] = :ref:`abs <doxid-namespacengraph_1_1runtime_1_1reference_1af17e259120922e6ffb66ac8961a74256>`(in_x - in_x2[x]);
 	            if in_x1[x] == in_x2[x]:
 	                dx1[x] = 0.5
 	                dx2[x] = 0.5
-	        for n in range(0, batch_size):
-	            for c in range(0, num_channels):
-	                for z in range(0, output_depth):
-	                    for y in range(0, output_height):
-	                        for x in range(0, output_width):
+	        for n in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, batch_size):
+	            for c in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, num_channels):
+	                for z in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, output_depth):
+	                    for y in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, output_height):
+	                        for x in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, output_width):
 	                            x111 = reshaped_data[n, c, in_z1[z], in_y1[y], in_x1[x]]
 	                            x211 = reshaped_data[n, c, in_z1[z], in_y1[y], in_x2[x]]
 	                            x121 = reshaped_data[n, c, in_z1[z], in_y2[y], in_x1[x]]
@@ -573,37 +573,37 @@ Interpolate
 	        dx1 = np.zeros(output_width).astype(np.float)
 	        dx2 = np.zeros(output_width).astype(np.float)
 	
-	        for y in range(0, output_height):
+	        for y in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, output_height):
 	            in_y = self.get_original_coordinate(y, height_scale, output_height, input_height)
 	            y_original[y] = in_y
-	            in_y = max(0, min(in_y, input_height - 1))
-	            in_y1[y] = max(0, min(int(in_y), input_height - 1))
-	            in_y2[y] = min(in_y1[y] + 1, input_height - 1)
-	            dy1[y] = abs(in_y - in_y1[y])
-	            dy2[y] = abs(in_y - in_y2[y])
+	            in_y = :ref:`max <doxid-namespacengraph_1_1runtime_1_1reference_1a92cfabd79e866544fb35d44884e7adfd>`(0, :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_y, input_height - 1))
+	            in_y1[y] = :ref:`max <doxid-namespacengraph_1_1runtime_1_1reference_1a92cfabd79e866544fb35d44884e7adfd>`(0, :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(int(in_y), input_height - 1))
+	            in_y2[y] = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_y1[y] + 1, input_height - 1)
+	            dy1[y] = :ref:`abs <doxid-namespacengraph_1_1runtime_1_1reference_1af17e259120922e6ffb66ac8961a74256>`(in_y - in_y1[y])
+	            dy2[y] = :ref:`abs <doxid-namespacengraph_1_1runtime_1_1reference_1af17e259120922e6ffb66ac8961a74256>`(in_y - in_y2[y])
 	
 	            if in_y1[y] == in_y2[y]:
 	                dy1[y] = 0.5
 	                dy2[y] = 0.5
 	
-	        for x in range(0, output_width):
+	        for x in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, output_width):
 	            in_x = self.get_original_coordinate(x, width_scale, output_width, input_width);
 	            x_original[x] = in_x
-	            in_x = max(0.0, min(in_x, input_width - 1));
+	            in_x = :ref:`max <doxid-namespacengraph_1_1runtime_1_1reference_1a92cfabd79e866544fb35d44884e7adfd>`(0.0, :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_x, input_width - 1));
 	
-	            in_x1[x] = min(in_x, input_width - 1);
-	            in_x2[x] = min(in_x1[x] + 1, input_width - 1);
+	            in_x1[x] = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_x, input_width - 1);
+	            in_x2[x] = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(in_x1[x] + 1, input_width - 1);
 	
-	            dx1[x] = abs(in_x - in_x1[x]);
-	            dx2[x] = abs(in_x - in_x2[x]);
+	            dx1[x] = :ref:`abs <doxid-namespacengraph_1_1runtime_1_1reference_1af17e259120922e6ffb66ac8961a74256>`(in_x - in_x1[x]);
+	            dx2[x] = :ref:`abs <doxid-namespacengraph_1_1runtime_1_1reference_1af17e259120922e6ffb66ac8961a74256>`(in_x - in_x2[x]);
 	            if in_x1[x] == in_x2[x]:
 	                dx1[x] = 0.5
 	                dx2[x] = 0.5
 	
-	        for n in range(0, batch_size):
-	            for c in range(0, num_channels):
-	                for y in range(0, output_height):
-	                    for x in range(0, output_width):
+	        for n in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, batch_size):
+	            for c in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, num_channels):
+	                for y in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, output_height):
+	                    for x in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(0, output_width):
 	                        x11 = reshaped_data[n, c, in_y1[y], in_x1[x]]
 	                        x21 = reshaped_data[n, c, in_y1[y], in_x2[x]]
 	                        x12 = reshaped_data[n, c, in_y2[y], in_x1[x]]
@@ -631,7 +631,7 @@ Interpolate
 	            for axis, scale in enumerate(self.all_scales):
 	                in_coord = self.get_original_coordinate(coordinates[axis], scale, self.output_shape[axis], self.input_shape[axis])
 	                nearest_pixel = self.get_nearest_pixel(in_coord, scale < 1)
-	                input_coords[axis] = max(0, min(nearest_pixel, self.input_shape[axis] - 1))
+	                input_coords[axis] = :ref:`max <doxid-namespacengraph_1_1runtime_1_1reference_1a92cfabd79e866544fb35d44884e7adfd>`(0, :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(nearest_pixel, self.input_shape[axis] - 1))
 	            result[coordinates] = input_data[tuple(input_coords)]
 	
 	        return result

@@ -1,11 +1,26 @@
-.. index:: pair: page; Overview
+.. index:: pair: page; Installing Intel® Distribution of OpenVINO™ Toolkit
 .. _doxid-openvino_docs_install_guides_overview:
 
 
-Overview
-========
+Installing Intel® Distribution of OpenVINO™ Toolkit
+======================================================
 
-:target:`doxid-openvino_docs_install_guides_overview_1md_openvino_docs_install_guides_installing-openvino-overview` Intel® Distribution of OpenVINO™ toolkit is a comprehensive toolkit for developing applications and solutions based on deep learning tasks, such as: emulation of human vision, automatic speech recognition, natural language processing, recommendation systems, etc. It provides high-performance and rich deployment options, from edge to cloud. Some of its advantages are:
+:target:`doxid-openvino_docs_install_guides_overview_1md_openvino_docs_install_guides_installing_openvino_overview`
+
+
+
+
+
+.. toctree::
+   :maxdepth: 3
+   :hidden:
+
+   OpenVINO Runtime <openvino_docs_install_guides_install_runtime>
+   OpenVINO Development Tools <openvino_docs_install_guides_install_dev_tools>
+   Build from Source <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>
+   Creating a Yocto Image <openvino_docs_install_guides_installing_openvino_yocto>
+
+Intel® Distribution of OpenVINO™ toolkit is a comprehensive toolkit for developing applications and solutions based on deep learning tasks, such as: emulation of human vision, automatic speech recognition, natural language processing, recommendation systems, etc. It provides high-performance and rich deployment options, from edge to cloud. Some of its advantages are:
 
 * Enabling CNN-based deep learning inference on the edge.
 
@@ -21,7 +36,7 @@ Since the 2022.1 release, the OpenVINO installation package has been distributed
 Decide What to Install
 ----------------------
 
-If you have already finished your model development and want to deploy your applications on various devices, :ref:`install OpenVINO Runtime <doxid-openvino_docs_install_guides_install_runtime>`, which contains a set of libraries for easy inference integration with your products.
+If you have already finished developing your models and converting them to the OpenVINO model format, you can :ref:`install OpenVINO Runtime <doxid-openvino_docs_install_guides_install_runtime>` to deploy your applications on various devices. OpenVINO Runtime contains a set of libraries for easy inference integration with your products.
 
 If you want to download models from :ref:`Open Model Zoo <doxid-model_zoo>`, :ref:`convert your own models to OpenVINO IR <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`, or :ref:`optimize and tune pre-trained deep learning models <doxid-openvino_docs_model_optimization_guide>`, :ref:`install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`, which provides the following tools:
 
@@ -38,7 +53,7 @@ If you want to download models from :ref:`Open Model Zoo <doxid-model_zoo>`, :re
 Choose Your Installation Method
 -------------------------------
 
-For Python developers, you can :ref:`install OpenVINO from PyPI <doxid-openvino_docs_install_guides_installing_openvino_pip>`, which contains both OpenVINO Runtime and Development Tools, while requiring fewer steps.
+For Python developers, the easiest way is to :ref:`install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`, which will install both OpenVINO Runtime and OpenVINO Development Tools with a few steps. If you want to install OpenVINO Runtime only, see :ref:`Install OpenVINO Runtime from PyPI <doxid-openvino_docs_install_guides_installing_openvino_pip>`.
 
 For C++ developers, you may choose one of the following installation options for OpenVINO Runtime on your specific operating system:
 
@@ -55,4 +70,15 @@ For C++ developers, you may choose one of the following installation options for
 
 
 Source files are also available in the `OpenVINO toolkit GitHub repository <https://github.com/openvinotoolkit/openvino/>`__, so you can build your own package for the supported platforms, as described in `OpenVINO Build Instructions <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>`__.
+
+Next Steps
+~~~~~~~~~~
+
+* :ref:`Install OpenVINO Runtime <doxid-openvino_docs_install_guides_install_runtime>`
+
+* :ref:`Install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`
+
+* `Build from Source <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>`__
+
+* :ref:`Create a Yocto Image <doxid-openvino_docs_install_guides_installing_openvino_yocto>`
 

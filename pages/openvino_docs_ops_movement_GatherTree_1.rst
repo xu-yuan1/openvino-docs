@@ -20,15 +20,15 @@ The algorithm in pseudocode is as follows:
 .. ref-code-block:: cpp
 
 	final_ids[ :, :, :] = end_token
-	for batch in range(BATCH_SIZE):
-	    for beam in range(BEAM_WIDTH):
-	        max_sequence_in_beam = min(MAX_TIME, max_seq_len[batch])
+	for batch in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(BATCH_SIZE):
+	    for beam in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(BEAM_WIDTH):
+	        max_sequence_in_beam = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(MAX_TIME, max_seq_len[batch])
 	
 	        parent = parent_ids[max_sequence_in_beam - 1, batch, beam]
 	
 	        final_ids[max_sequence_in_beam - 1, batch, beam] = step_ids[max_sequence_in_beam - 1, batch, beam]
 	
-	        for level in reversed(range(max_sequence_in_beam - 1)):
+	        for level in reversed(:ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(max_sequence_in_beam - 1)):
 	            final_ids[level, batch, beam] = step_ids[level, batch, parent]
 	
 	            parent = parent_ids[level, batch, parent]
@@ -36,7 +36,7 @@ The algorithm in pseudocode is as follows:
 	        # For a given beam, past the time step containing the first decoded end_token
 	        # all values are filled in with end_token.
 	        finished = False
-	        for time in range(max_sequence_in_beam):
+	        for time in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(max_sequence_in_beam):
 	            if(finished):
 	                final_ids[time, batch, beam] = end_token
 	            elif(final_ids[time, batch, beam] == end_token):

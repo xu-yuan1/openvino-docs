@@ -1,52 +1,61 @@
-.. index:: pair: page; Get Started with Sample and Demo Applications
+.. index:: pair: page; Basic OpenVINO™ Workflow
 .. _doxid-openvino_docs_get_started_get_started_demos:
 
 
-Get Started with Sample and Demo Applications
-=============================================
+Basic OpenVINO™ Workflow
+==========================
 
-:target:`doxid-openvino_docs_get_started_get_started_demos_1md_openvino_docs_get_started_get_started_demos`
+:target:`doxid-openvino_docs_get_started_get_started_demos_1md_openvino_docs_get_started_get_started_demos` This guide will walk you through a basic workflow for Intel® Distribution of OpenVINO™ toolkit, including how to use code samples.
 
-Introduction
-~~~~~~~~~~~~
+This guide assumes you have completed all the installation and preparation steps. If you have not, check out the `Prerequisites <prerequisites>`__ section to install OpenVINO Runtime, install OpenVINO Development Tools, or build samples and demos.
 
-This section guides you through a simplified workflow for the Intel® Distribution of OpenVINO™ toolkit using code samples and demo applications. You will perform the following steps:
+After that, you will perform the following steps:
 
-#. `Use the Model Downloader to download suitable models. <#download-models>`__
+#. `Use Model Downloader to download a suitable model. <#download-models>`__
 
-#. `Convert the models with the Model Optimizer. <#convert-models-to-intermediate-representation>`__
+#. `Convert the model with Model Optimizer. <#convert-models-to-intermediate-representation>`__
 
-#. `Download media files to run inference on. <#download-media>`__
+#. `Download media files to run inference. <#download-media>`__
 
-#. `Run inference on the sample and see the results: <#run-image-classification>`__
+#. `Run inference on a sample and see the results. <#run-image-classification>`__ The following code sample is used as an example:
    
    * `Image Classification Code Sample <#run-image-classification>`__
 
-This guide assumes you completed all installation and configuration steps. If you have not yet installed and configured the toolkit:
+.. _prerequisites:
+
+Prerequisites
+~~~~~~~~~~~~~
+
+Install OpenVINO Runtime
+------------------------
+
+If you have not yet installed and configured the toolkit, see the following guides:
 
 .. tab:: Linux
 
-   See :doc:`Install Intel® Distribution of OpenVINO™ toolkit for Linux* <openvino_docs_install_guides_installing_openvino_linux>`
+   See :doc:`Install Intel® Distribution of OpenVINO™ toolkit for Linux <openvino_docs_install_guides_installing_openvino_linux>`
 
 .. tab:: Windows
 
-   See :doc:`Install Intel® Distribution of OpenVINO™ toolkit for Windows* <openvino_docs_install_guides_installing_openvino_windows>`
+   See :doc:`Install Intel® Distribution of OpenVINO™ toolkit for Windows <openvino_docs_install_guides_installing_openvino_windows>`
 
 .. tab:: macOS
 
-   See :doc:`Install Intel® Distribution of OpenVINO™ toolkit for macOS* <openvino_docs_install_guides_installing_openvino_macos>`
+   See :doc:`Install Intel® Distribution of OpenVINO™ toolkit for macOS <openvino_docs_install_guides_installing_openvino_macos>`
 
 Install OpenVINO Development Tools
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
-To install OpenVINO Development Tools for working with Caffe\* models, use the following command:
+To install OpenVINO Development Tools for working with Caffe models, use the following command:
 
 .. ref-code-block:: cpp
 
 	pip install openvino-dev[caffe]
 
+For more detailed steps, see :ref:`Install OpenVINO™ Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`
+
 Build Samples and Demos
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 If you have already built the demos and samples, you can skip this section. The build will take about 5-10 minutes, depending on your system.
 
@@ -54,32 +63,29 @@ To build OpenVINO samples:
 
 .. tab:: Linux
 
-   Go to the :doc:`OpenVINO Samples page <openvino_docs_OV_UG_Samples_Overview>` and see the "Build the Sample Applications on Linux*" section.
+   Go to :doc:`OpenVINO Samples page <openvino_docs_OV_UG_Samples_Overview>` and see the "Build the Sample Applications on Linux" section.
 
 .. tab:: Windows
 
-   Go to the :doc:`OpenVINO Samples page <openvino_docs_OV_UG_Samples_Overview>` and see the "Build the Sample Applications on Microsoft Windows* OS" section.
+   Go to :doc:`OpenVINO Samples page <openvino_docs_OV_UG_Samples_Overview>` and see the "Build the Sample Applications on Microsoft Windows OS" section.
 
 .. tab:: macOS
 
-   Go to the :doc:`OpenVINO Samples page <openvino_docs_OV_UG_Samples_Overview>` and see the "Build the Sample Applications on macOS*" section.
+   Go to :doc:`OpenVINO Samples page <openvino_docs_OV_UG_Samples_Overview>` and see the "Build the Sample Applications on macOS" section.
 
 To build OpenVINO demos:
 
-
-
-
 .. tab:: Linux
 
-   Go to the :doc:`Open Model Zoo Demos page <omz_demos>` and see the "Build the Demo Applications on Linux*" section.
+   Go to :doc:`Open Model Zoo Demos page <omz_demos>` and see the "Build the Demo Applications on Linux" section.
 
 .. tab:: Windows
 
-   Go to the :doc:`Open Model Zoo Demos page <omz_demos>` and see the "Build the Demo Applications on Microsoft Windows* OS" section.
+   Go to :doc:`Open Model Zoo Demos page <omz_demos>` and see the "Build the Demo Applications on Microsoft Windows OS" section.
 
 .. tab:: macOS
 
-   Go to the :doc:`Open Model Zoo Demos page <omz_demos>` and see the "Build the Demo Applications on Linux*" section. You can use the requirements from "To build OpenVINO samples" above and adapt the Linux build steps for macOS*.
+   Go to :doc:`Open Model Zoo Demos page <omz_demos>` and see the "Build the Demo Applications on Linux*" section. You can use the requirements from "To build OpenVINO samples" above and adapt the Linux build steps for macOS.
 
 .. _download-models:
 
@@ -138,7 +144,7 @@ This guide uses the OpenVINO™ Model Downloader to get pre-trained models. You 
 
    <div class="collapsible-section" data-title="Click for an example of downloading the GoogleNet v1 Caffe* model">
 
-To download the GoogleNet v1 Caffe\* model to the ``models`` folder:
+To download the GoogleNet v1 Caffe model to the ``models`` folder:
 
 .. tab:: Linux
 
@@ -278,8 +284,8 @@ The command with most placeholders filled in and FP16 precision:
 
 .. _download-media:
 
-Step 3: Download a Video or Still Photo as Media
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 3: Download a Video or a Photo as Media
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Many sources are available from which you can download video media to use the code samples and demo applications. Possibilities include:
 
@@ -295,8 +301,8 @@ As an alternative, the Intel® Distribution of OpenVINO™ toolkit includes seve
 
 .. _run-image-classification:
 
-Step 4: Run Inference on the Sample
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 4: Run Inference on a Sample
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Run the Image Classification Code Sample
 ----------------------------------------
@@ -404,6 +410,13 @@ The following commands run the Image Classification Code Sample using the `dog.b
 
 .. note:: Running inference on Intel® Processor Graphics (GPU) requires :ref:`additional hardware configuration steps <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`, as described earlier on this page. Running on GPU is not compatible with macOS\*.
 
+
+
+
+
+
+
+
 .. tab:: Linux
 
    .. code-block:: sh
@@ -419,6 +432,13 @@ The following commands run the Image Classification Code Sample using the `dog.b
 **MYRIAD:**
 
 .. note:: Running inference on VPU devices (Intel® Movidius™ Neural Compute Stick or Intel® Neural Compute Stick 2) with the MYRIAD plugin requires :ref:`additional hardware configuration steps <doxid-openvino_docs_install_guides_configurations_for_ncs2>`, as described earlier on this page.
+
+
+
+
+
+
+
 
 .. tab:: Linux
 

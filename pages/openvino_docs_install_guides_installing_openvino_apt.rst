@@ -5,11 +5,19 @@
 Install Intel® Distribution of OpenVINO™ Toolkit for Linux Using APT Repository
 ==================================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_apt_1md_openvino_docs_install_guides_installing-openvino-apt` This guide provides installation steps for Intel® Distribution of OpenVINO™ toolkit for Linux distributed through the APT repository.
+:target:`doxid-openvino_docs_install_guides_installing_openvino_apt_1md_openvino_docs_install_guides_installing_openvino_apt` This guide provides installation steps for Intel® Distribution of OpenVINO™ toolkit for Linux distributed through the APT repository.
 
 .. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI. If you want to develop or optimize your models with OpenVINO, see :ref:`Install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>` for detailed steps.
 
+
+
+
+
 .. warning:: By downloading and using this container and the included software, you agree to the terms and conditions of the `software license agreements <https://software.intel.com/content/dam/develop/external/us/en/documents/intel-openvino-license-agreements.pdf>`__. Please review the content inside the ``<INSTALL_DIR>/licensing`` folder for more details.
+
+
+
+
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
@@ -38,9 +46,21 @@ Step 1: Set Up the OpenVINO Toolkit APT Repository
 
 #. Install the GPG key for the repository
    
-   a. Download the `GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB <https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB>`__. You can also use the following command: ```sh wget `https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB <https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB>`__ ```
+   a. Download the `GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB <https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB>`__. You can also use the following command:
    
-   b. Add this key to the system keyring: ```sh sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB `` ``> \*\*NOTE\*\*: You might need to install GnuPG:`` sudo apt-get install gnupg`
+   .. ref-code-block:: cpp
+   
+   	wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+   
+   b. Add this key to the system keyring:
+   
+   .. ref-code-block:: cpp
+   
+   	sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+   
+   
+   
+   .. note:: You might need to install GnuPG: ``sudo apt-get install gnupg``
 
 #. Add the repository via the following command:
    
@@ -103,13 +123,7 @@ To Install a Specific Version
    
    	sudo apt install openvino-<VERSION>.<UPDATE>.<PATCH>
    
-   
-   
-   .. code-block:: cpp
-   
-   	For example:
-   
-   
+   For example:
    
    .. ref-code-block:: cpp
    

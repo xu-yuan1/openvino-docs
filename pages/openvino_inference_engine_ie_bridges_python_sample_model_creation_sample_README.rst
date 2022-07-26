@@ -68,6 +68,8 @@ To run the sample, you need to specify model weights and device.
 
 * The original model is available in the `Caffe\* repository <https://github.com/BVLC/caffe/tree/master/examples/mnist>`__ on GitHub\*.
 
+
+
 For example:
 
 .. ref-code-block:: cpp

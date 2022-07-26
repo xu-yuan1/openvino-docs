@@ -5,7 +5,7 @@
 Install and Configure Intel® Distribution of OpenVINO™ toolkit for macOS
 ===========================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_macos_header_1md_openvino_docs_install_guides_installing-openvino-macos-header`
+:target:`doxid-openvino_docs_install_guides_installing_openvino_macos_header_1md_openvino_docs_install_guides_installing_openvino_macos_header`
 
 
 

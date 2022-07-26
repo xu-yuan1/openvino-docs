@@ -25,6 +25,8 @@ Refer to the :ref:`Get Started with DL Workbench <doxid-workbench_docs__workbenc
 
 .. tip:: If you have optimized the model using :ref:`INT8 Calibration <doxid-workbench_docs__workbench__d_g__int_8__quantization>`, you can use a Not Annotated dataset to compare original and optimized model predictions.
 
+
+
 Once you select a model and a dataset and run a baseline inference, the **Projects** page appears. Go to the **Perform** tab and select **Create Accuracy Report** :
 
 .. image:: create_report.png
@@ -41,6 +43,10 @@ After you click **Create Accuracy Report**, you will be redirected to the **Anal
 .. image:: creating_accuracy_report.png
 
 .. note:: Accuracy measurements are performed on each dataset image. Creating an Accuracy Report may take some time if the dataset is considerably large.
+
+
+
+
 
 Interpret Report Results
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,6 +70,8 @@ Check **Show only erroneous images** option to display only images where the cla
 Here the model predicted class 502 (shoes) with a confidence equal to 0.41. The actual class from dataset annotations is 415 (bakery) and has rank 65 in the model predictions as the model confidence for this class equals 0.
 
 .. tip:: You can enhance your model performance while ensuring that the model accuracy has not decreased dramatically. For that, :ref:`optimize your model <doxid-workbench_docs__workbench__d_g__int_8__quantization>` and create an Accuracy Report that allows you to visualize and :ref:`compare Optimized and Parent model predictions <doxid-workbench_docs__workbench__d_g__tutorial__classification>`.
+
+
 
 *All images were taken from ImageNet, Pascal Visual Object Classes, and Common Objects in Context datasets for demonstration purposes only.*
 

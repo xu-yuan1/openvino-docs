@@ -5,7 +5,7 @@
 Install Intel® Distribution of OpenVINO™ toolkit for Windows from Docker Image
 =================================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_docker_windows_1md_openvino_docs_install_guides_installing-openvino-docker-windows` This guide provides steps for creating a Docker image with Intel® Distribution of OpenVINO™ toolkit for Windows and using the Docker image on different devices.
+:target:`doxid-openvino_docs_install_guides_installing_openvino_docker_windows_1md_openvino_docs_install_guides_installing_openvino_docker_windows` This guide provides steps for creating a Docker image with Intel® Distribution of OpenVINO™ toolkit for Windows and using the Docker image on different devices.
 
 .. _system-requirments:
 
@@ -149,6 +149,10 @@ Configuring the Image for GPU
 -----------------------------
 
 .. note:: Since GPU is not supported in `prebuilt images <#get-prebuilt-image>`__ or `default Dockerfiles <https://github.com/openvinotoolkit/docker_ci/tree/master/dockerfiles>`__, you must make sure the Additional Requirements for GPU in `System Requirements <#system-requirements>`__ are met, and do the following steps to build the image manually.
+
+
+
+
 
 #. Reuse one of `available Dockerfiles <https://github.com/openvinotoolkit/docker_ci/tree/master/dockerfiles>`__. You can also use your own Dockerfile.
 

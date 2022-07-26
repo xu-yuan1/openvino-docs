@@ -377,9 +377,13 @@ Example Kernel
 	    output[out_id] = value < 0 ? value \* neg_slope : value;
 	}
 
+.. _debugging-tips:
+
 .. note:: As described in the previous section, all items like ``INPUT0_TYPE`` are actually defined as OpenCL (pre-)compiler inputs by OpenVINO for efficiency reasons. See `Debugging Tips <#debugging-tips>`__ for information on debugging the results.
 
-.. _debugging-tips:
+
+
+
 
 Debugging Tips
 ~~~~~~~~~~~~~~

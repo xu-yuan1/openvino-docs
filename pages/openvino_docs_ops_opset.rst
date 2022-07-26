@@ -34,6 +34,8 @@ This topic provides a complete list of available sets of operations supported in
 
     * - OpenVINO™ Version
       - Actual Operations Set
+    * - 2022.2
+      - :ref:`opset9 <doxid-openvino_docs_ops_opset9>`
     * - 2022.1
       - :ref:`opset8 <doxid-openvino_docs_ops_opset8>`
     * - 2021.4

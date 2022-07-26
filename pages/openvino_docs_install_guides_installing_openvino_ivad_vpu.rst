@@ -5,7 +5,7 @@
 Configurations for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs
 ==================================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu_1md_openvino_docs_install_guides_installing-openvino-config-ivad-vpu`
+:target:`doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu_1md_openvino_docs_install_guides_configurations_for_ivad_vpu`
 
 
 
@@ -17,7 +17,7 @@ Configurations for Intel® Vision Accelerator Design with Intel® Movidius™ VP
    :maxdepth: 2
    :hidden:
 
-   Configurations for IEI Mustang-V100-MX8-R10 card <openvino_docs_install_guides_movidius_setup_guide>
+   IEI Mustang-V100-MX8-R10 Card <openvino_docs_install_guides_movidius_setup_guide>
 
 The steps in this guide are only required if you want to perform inference on Intel® Vision Accelerator Design with Intel® Movidius™ VPUs with OpenVINO™ on Linux or Windows.
 
@@ -30,31 +30,39 @@ For Intel® Vision Accelerator Design with Intel® Movidius™ VPUs, the followi
 
 .. note:: If you installed the Intel® Distribution of OpenVINO™ toolkit to the non-default install directory, replace ``/opt/intel`` with the directory in which you installed the software.
 
+
+
+
+
 #. Set the environment variables:
    
    .. ref-code-block:: cpp
    
    	source /opt/intel/openvino_2022/setupvars.sh
-
-.. note:: The ``HDDL_INSTALL_DIR`` variable is set to ``<openvino_install_dir>/runtime/3rdparty/hddl``. If you installed the Intel® Distribution of OpenVINO™ to the default install directory, the ``HDDL_INSTALL_DIR`` was set to ``/opt/intel/openvino_2022/runtime/3rdparty/hddl``.
+   
+   
+   
+   .. note:: The ``HDDL_INSTALL_DIR`` variable is set to ``<openvino_install_dir>/runtime/3rdparty/hddl``. If you installed the Intel® Distribution of OpenVINO™ to the default install directory, the ``HDDL_INSTALL_DIR`` was set to ``/opt/intel/openvino_2022/runtime/3rdparty/hddl``.
 
 #. Install dependencies:
    
    .. ref-code-block:: cpp
    
    	${HDDL_INSTALL_DIR}/install_IVAD_VPU_dependencies.sh
-
-Note, if the Linux kernel is updated after the installation, it is required to install drivers again:
-
-.. ref-code-block:: cpp
-
-	cd ${HDDL_INSTALL_DIR}/drivers
-
-.. ref-code-block:: cpp
-
-	sudo ./setup.sh install
-
-Now the dependencies are installed and you are ready to use the Intel® Vision Accelerator Design with Intel® Movidius™ with the Intel® Distribution of OpenVINO™ toolkit.
+   
+   Note, if the Linux kernel is updated after the installation, it is required to install drivers again:
+   
+   .. ref-code-block:: cpp
+   
+   	cd ${HDDL_INSTALL_DIR}/drivers
+   
+   
+   
+   .. ref-code-block:: cpp
+   
+   	sudo ./setup.sh install
+   
+   Now the dependencies are installed and you are ready to use the Intel® Vision Accelerator Design with Intel® Movidius™ with the Intel® Distribution of OpenVINO™ toolkit.
 
 Optional Steps
 --------------

@@ -119,6 +119,8 @@ To use these tests for your own plugin development, link the ``IE::funcSharedTes
 
 .. note:: A plugin may contain its own tests for use cases that are specific to hardware or need to be extensively tested.
 
+
+
 To build test binaries together with other build artifacts, use the ``make all`` command. For details, see :ref:`Build Plugin Using CMake\* <doxid-openvino_docs_ie_plugin_dg_plugin_build>`.
 
 How to Extend Inference Engine Plugin Tests

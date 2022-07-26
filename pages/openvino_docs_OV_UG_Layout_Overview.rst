@@ -1,38 +1,35 @@
-.. index:: pair: page; Layout API overview
+.. index:: pair: page; Layout API Overview
 .. _doxid-openvino_docs__o_v__u_g__layout__overview:
 
 
-Layout API overview
+Layout API Overview
 ===================
 
 :target:`doxid-openvino_docs__o_v__u_g__layout__overview_1md_openvino_docs_ov_runtime_ug_layout_overview`
 
-Introduction
-~~~~~~~~~~~~
+The concept of layout helps you (and your application) to understand what each particular dimension of input/output tensor means. For example, if your input has the ``{1, 3, 720, 1280}`` shape and the ``NCHW`` layout, it is clear that ``N(batch) = 1``, ``C(channels) = 3``, ``H(height) = 720``, and ``W(width) = 1280``. Without the layout information, the ``{1, 3, 720, 1280}`` tuple does not give any idea to your application on what these numbers mean and how to resize the input image to fit the expectations of the model.
 
-In few words, with layout ``NCHW`` it is easier to understand what model's shape ``{8, 3, 224, 224}`` means. Without layout it is just a 4-dimensional tensor.
+With the ``NCHW`` layout, it is easier to understand what the ``{8, 3, 224, 224}`` model shape means. Without the layout, it is just a 4-dimensional tensor.
 
-Concept of layout helps you (and your application) to understand what does each particular dimension of input/output tensor mean. For example, if your input has shape ``{1, 3, 720, 1280}`` and layout "NCHW" - it is clear that ``N(batch) = 1``, ``C(channels) = 3``, ``H(height) = 720`` and ``W(width) = 1280``. Without layout information ``{1, 3, 720, 1280}`` doesn't give any idea to your application what these number mean and how to resize input image to fit model's expectations.
+Below is a list of cases where input/output layout is important:
 
-Reasons when you may want to care about input/output layout:
-
-* Perform model modification:
+* Performing model modification:
   
-  * Apply :ref:`preprocessing <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` steps, like subtract means, divide by scales, resize image, convert RGB<->BGR
+  * Applying the :ref:`preprocessing <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` steps, such as subtracting means, dividing by scales, resizing an image, and converting ``RGB`` <-> ``BGR``.
   
-  * Set/get batch for a model
+  * Setting/getting a batch for a model.
 
-* Same operations, used during model conversion phase, see :ref:`Model Optimizer Embedding Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`
+* Doing the same operations as used during the model conversion phase. For more information, refer to the :ref:`Model Optimizer Embedding Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>` guide.
 
-* Improve readability of a model's input and output
+* Improving the readability of a model input and output.
 
-Layout syntax
-~~~~~~~~~~~~~
+Syntax of Layout
+~~~~~~~~~~~~~~~~
 
-Short
------
+Short Syntax
+------------
 
-The easiest way is to fully specify each dimension with one alphabetical letter
+The easiest way is to fully specify each dimension with one alphabet letter.
 
 .. raw:: html
 
@@ -55,10 +52,6 @@ The easiest way is to fully specify each dimension with one alphabetical letter
 .. ref-code-block:: cpp
 
 	layout = :ref:`ov::Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`("NHWC");
-
-
-
-
 
 .. raw:: html
 
@@ -83,10 +76,6 @@ The easiest way is to fully specify each dimension with one alphabetical letter
 	from openvino.runtime import Layout
 	layout = :ref:`Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`('NCHW')
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -103,12 +92,12 @@ The easiest way is to fully specify each dimension with one alphabetical letter
 
 
 
-This assigns 'N' to first dimension, 'C' to second, 'H' to 3rd and 'W' to 4th
+This assigns ``N`` to the first dimension, ``C`` to the second, ``H`` to the third, and ``W`` to the fourth.
 
-Advanced
---------
+Advanced Syntax
+---------------
 
-Advanced syntax allows assigning a word to a dimension. To do this, wrap layout with square brackets ``[]`` and specify each name separated by comma ``,``
+The advanced syntax allows assigning a word to a dimension. To do this, wrap a layout with square brackets ``[]`` and specify each name separated by a comma ``,``.
 
 .. raw:: html
 
@@ -132,10 +121,6 @@ Advanced syntax allows assigning a word to a dimension. To do this, wrap layout 
 
 	// Each dimension has name separated by comma, layout is wrapped with square brackets
 	layout = :ref:`ov::Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`("[time,temperature,humidity]");
-
-
-
-
 
 .. raw:: html
 
@@ -161,10 +146,6 @@ Advanced syntax allows assigning a word to a dimension. To do this, wrap layout 
 	# Layout is wrapped with square brackets
 	layout = :ref:`Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`('[time,temperature,humidity]')
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -179,10 +160,10 @@ Advanced syntax allows assigning a word to a dimension. To do this, wrap layout 
 
    </div>
 
-Partially defined layout
+Partially Defined Layout
 ------------------------
 
-If some dimension is not important, it's name can be set to ``?``
+If a certain dimension is not important, its name can be set to ``?``.
 
 .. raw:: html
 
@@ -208,10 +189,6 @@ If some dimension is not important, it's name can be set to ``?``
 	layout = :ref:`ov::Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`("N??C");
 	// Or the same using advanced syntax
 	layout = :ref:`ov::Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`("[n,?,?,c]");
-
-
-
-
 
 .. raw:: html
 
@@ -240,10 +217,6 @@ If some dimension is not important, it's name can be set to ``?``
 	# Or the same using advanced syntax
 	layout = :ref:`Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`('[n,?,?,c]')
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -258,10 +231,10 @@ If some dimension is not important, it's name can be set to ``?``
 
    </div>
 
-Dynamic layout
+Dynamic Layout
 --------------
 
-If number of dimensions is not important, ellipsis ``...`` can be used to specify variadic number of dimensions.
+If several dimensions are not important, an ellipsis ``...`` can be used to specify those dimensions.
 
 .. raw:: html
 
@@ -292,10 +265,6 @@ If number of dimensions is not important, ellipsis ``...`` can be used to specif
 	// Last dimension is 'channels' others are whatever
 	layout = :ref:`ov::Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`("...C");
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -325,10 +294,6 @@ If number of dimensions is not important, ellipsis ``...`` can be used to specif
 	# Last dimension is 'channels' others are whatever
 	layout = :ref:`Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`('...C')
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -347,22 +312,22 @@ If number of dimensions is not important, ellipsis ``...`` can be used to specif
 
 
 
-Predefined names
+Predefined Names
 ----------------
 
-Layout has pre-defined some widely used in computer vision dimension names:
+A layout has some pre-defined dimension names, widely used in computer vision:
 
-* N/Batch - batch size
+* ``N`` / ``Batch`` - batch size
 
-* C/Channels - channels dimension
+* ``C`` / ``Channels`` - channels
 
-* D/Depth - depth
+* ``D`` / ``Depth`` - depth
 
-* H/Height - height
+* ``H`` / ``Height`` - height
 
-* W/Width - width
+* ``W`` / ``Width`` - width
 
-These names are used in :ref:`PreProcessing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` and there is a set of helper functions to get appropriate dimension index from layout
+These names are used in :ref:`PreProcessing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`. There is a set of helper functions to get appropriate dimension index from a layout.
 
 .. raw:: html
 
@@ -398,10 +363,6 @@ These names are used in :ref:`PreProcessing API <doxid-openvino_docs__o_v__u_g__
 	
 	// returns -1 for width
 	:ref:`ov::layout::width_idx <doxid-group__ov__layout__cpp__api_1ga8730a2b5c3fd24f752c550ee3d07b870>`("...HW");
-
-
-
-
 
 .. raw:: html
 
@@ -439,10 +400,6 @@ These names are used in :ref:`PreProcessing API <doxid-openvino_docs__o_v__u_g__
 	# returns -1 for width
 	layout_helpers.width_idx(:ref:`Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`('...HW'))
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -464,12 +421,12 @@ These names are used in :ref:`PreProcessing API <doxid-openvino_docs__o_v__u_g__
 Equality
 --------
 
-Layout names are case-insensitive, which means that ``Layout("NCHW") == Layout("nChW") == Layout("[N,c,H,w]")``
+Layout names are case-insensitive, which means that ``Layout("NCHW")`` = ``Layout("nChW") =`` Layout("[N,c,H,w]")`.
 
-Dump layout
+Dump Layout
 -----------
 
-Layout can be converted to string in advanced syntax format. Can be useful for debugging and serialization purposes
+A layout can be converted to a string in the advanced syntax format. It can be useful for debugging and serialization purposes.
 
 .. raw:: html
 
@@ -494,10 +451,6 @@ Layout can be converted to string in advanced syntax format. Can be useful for d
 	layout = :ref:`ov::Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`("NCHW");
 	std::cout << layout.to_string(); // prints [N,C,H,W]
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -521,10 +474,6 @@ Layout can be converted to string in advanced syntax format. Can be useful for d
 	layout = :ref:`Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`('NCHW')
 	print(layout)    # prints [N,C,H,W]
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -546,5 +495,5 @@ Layout can be converted to string in advanced syntax format. Can be useful for d
 See also
 ~~~~~~~~
 
-* ``:ref:`ov::Layout <doxid-classov_1_1_layout>``` C++ class documentation
+* API Reference: ``:ref:`ov::Layout <doxid-classov_1_1_layout>``` C++ class
 

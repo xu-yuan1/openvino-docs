@@ -43,6 +43,8 @@ You will see the **Create Dataset** page where you can add your own images and s
 
 .. note:: Not annotated dataset cannot be used to measure accuracy of your models. If measuring accuracy and accuracy related tasks are critical for you, it is recommended to import an annotated dataset.
 
+
+
 After clicking **Import**, you are redirected to the **Create Project** page where you can check the import status and proceed by creating a project.
 
 .. image:: custom_dataset_imported.png

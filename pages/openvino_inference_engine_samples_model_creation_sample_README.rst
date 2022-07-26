@@ -18,7 +18,7 @@ The following C++ API is used in the application:
       - API
       - Description
     * - OpenVINO Runtime Info
-      - ``:ref:`ov::Core::get_versions <doxid-classov_1_1_core_1a29caa73859531e56017a8b85a7ea7c22>```
+      - ``:ref:`ov::Core::get_versions <doxid-classov_1_1_core_1ad1a54997808ba8bf005ea549dfd5a20b>```
       - Get device plugins versions
     * - Shape Operations
       - ``ov::Output::get_shape`` , ``ov::Shape::size`` , ``:ref:`ov::shape_size <doxid-group__ov__model__cpp__api_1gafe8cdd6477ae9810c2bf368602d35883>```
@@ -33,7 +33,7 @@ The following C++ API is used in the application:
       - ``:ref:`ov::InferRequest::get_input_tensor <doxid-classov_1_1_infer_request_1a5f0bc1ab40de6a7a12136b4a4e6a8b54>```
       - Get a input tensor
     * - Model creation objects
-      - ``ov::opset8::Parameter`` , ``:ref:`ov::Node::output <doxid-classov_1_1_node_1a24dc2a2bac789d34d8e1959249b6347d>``` , ``ov::opset8::Constant`` , ``ov::opset8::Convolution`` , ``ov::opset8::Add`` , ``ov::opset1::MaxPool`` , ``ov::opset8::Reshape`` , ``ov::opset8::MatMul`` , ``ov::opset8::Relu`` , ``ov::opset8::Softmax`` , ``:ref:`ov::descriptor::Tensor::set_names <doxid-classov_1_1descriptor_1_1_tensor_1a5f21c3cb845cbee0b7350163644776a0>``` , ``ov::opset8::Result`` , ``:ref:`ov::Model <doxid-classov_1_1_model>``` , ``ov::ParameterVector::vector``
+      - ``ov::opset8::Parameter`` , ``:ref:`ov::Node::output <doxid-classov_1_1_node_1ac99614dc0669915105d5681cf3873251>``` , ``ov::opset8::Constant`` , ``ov::opset8::Convolution`` , ``ov::opset8::Add`` , ``ov::opset1::MaxPool`` , ``ov::opset8::Reshape`` , ``ov::opset8::MatMul`` , ``ov::opset8::Relu`` , ``ov::opset8::Softmax`` , ``:ref:`ov::descriptor::Tensor::set_names <doxid-classov_1_1descriptor_1_1_tensor_1a5f21c3cb845cbee0b7350163644776a0>``` , ``ov::opset8::Result`` , ``:ref:`ov::Model <doxid-classov_1_1_model>``` , ``ov::ParameterVector::vector``
       - Used to construct an OpenVINO model
 
 Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>`.

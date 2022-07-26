@@ -19,25 +19,12 @@ Integrate OpenVINO™ with Your Application
    openvino_docs_OV_UG_Infer_request
    openvino_docs_OV_UG_Python_API_exclusives
 
-.. note:: Before start using OpenVINO™ Runtime, make sure you set all environment variables during the installation. To do so, follow the instructions from the *Set the Environment Variables* section in the installation guides:
-
-* :ref:`For Windows\* 10 <doxid-openvino_docs_install_guides_installing_openvino_windows>`
-
-* :ref:`For Linux\* <doxid-openvino_docs_install_guides_installing_openvino_linux>`
-
-* :ref:`For macOS\* <doxid-openvino_docs_install_guides_installing_openvino_macos>`
-
-* To build an open source version, use the `OpenVINO™ Runtime Build Instructions <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>`__.
-
-Use OpenVINO™ Runtime API to Implement Inference Pipeline
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This section provides step-by-step instructions to implement a typical inference pipeline with the OpenVINO™ Runtime C++ or Python API:
+Following these steps, you can implement a typical OpenVINO™ Runtime inference pipeline in your application. Before proceeding, make sure you have :ref:`installed OpenVINO Runtime <doxid-openvino_docs_install_guides_install_runtime>` and set environment variables (run ``<INSTALL_DIR>/setupvars.sh`` for Linux or ``setupvars.bat`` for Windows, otherwise, the ``OpenVINO_DIR`` variable won't be configured properly to pass ``find_package`` calls).
 
 .. image:: IMPLEMENT_PIPELINE_with_API_C.svg
 
 Step 1. Create OpenVINO™ Runtime Core
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Include next files to work with OpenVINO™ Runtime:
 
@@ -63,10 +50,6 @@ Include next files to work with OpenVINO™ Runtime:
 
 	#include <openvino/openvino.hpp>
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -88,10 +71,6 @@ Include next files to work with OpenVINO™ Runtime:
 .. ref-code-block:: cpp
 
 	import openvino.runtime as ov
-
-
-
-
 
 .. raw:: html
 
@@ -133,10 +112,6 @@ Use the following code to create OpenVINO™ Core to manage available devices an
 
 	:ref:`ov::Core <doxid-classov_1_1_core>` core;
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -159,10 +134,6 @@ Use the following code to create OpenVINO™ Core to manage available devices an
 
 	core = :ref:`ov.Core <doxid-classov_1_1_core>`()
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -182,7 +153,7 @@ Use the following code to create OpenVINO™ Core to manage available devices an
 
 
 Step 2. Compile the Model
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>``` class represents a device specific compiled model. ``:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>``` allows you to get information inputs or output ports by a tensor name or index. This approach is aligned with the majority of frameworks.
 
@@ -230,10 +201,6 @@ Compile the model for a specific device using ``:ref:`ov::Core::compile_model() 
 
 	:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>` compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`("model.xml", "AUTO");
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -256,10 +223,6 @@ Compile the model for a specific device using ``:ref:`ov::Core::compile_model() 
 
 	:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>` compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`("model.onnx", "AUTO");
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -281,10 +244,6 @@ Compile the model for a specific device using ``:ref:`ov::Core::compile_model() 
 .. ref-code-block:: cpp
 
 	:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>` compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`("model.pdmodel", "AUTO");
-
-
-
-
 
 .. raw:: html
 
@@ -314,10 +273,6 @@ Compile the model for a specific device using ``:ref:`ov::Core::compile_model() 
 	};
 	std::shared_ptr<ov::Model> :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = create_model();
 	compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "AUTO");
-
-
-
-
 
 .. raw:: html
 
@@ -381,10 +336,6 @@ Compile the model for a specific device using ``:ref:`ov::Core::compile_model() 
 
 	compiled_model = core.compile_model("model.xml", "AUTO")
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -407,10 +358,6 @@ Compile the model for a specific device using ``:ref:`ov::Core::compile_model() 
 
 	compiled_model = core.compile_model("model.onnx", "AUTO")
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -432,10 +379,6 @@ Compile the model for a specific device using ``:ref:`ov::Core::compile_model() 
 .. ref-code-block:: cpp
 
 	compiled_model = core.compile_model("model.pdmodel", "AUTO")
-
-
-
-
 
 .. raw:: html
 
@@ -468,10 +411,6 @@ Compile the model for a specific device using ``:ref:`ov::Core::compile_model() 
 	
 	model = create_model()
 	compiled_model = core.compile_model(model, "AUTO")
-
-
-
-
 
 .. raw:: html
 
@@ -514,7 +453,7 @@ The ``:ref:`ov::Model <doxid-classov_1_1_model>``` object represents any models 
 The code above creates a compiled model associated with a single hardware device from the model object. It is possible to create as many compiled models as needed and use them simultaneously (up to the limitation of the hardware resources). To learn how to change the device configuration, read the :ref:`Query device properties <doxid-openvino_docs__o_v__u_g_query_api>` article.
 
 Step 3. Create an Inference Request
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>``` class provides methods for model inference in OpenVINO™ Runtime. Create an infer request using the following code (see :ref:`InferRequest detailed documentation <doxid-openvino_docs__o_v__u_g__infer_request>` for more details):
 
@@ -540,10 +479,6 @@ Step 3. Create an Inference Request
 
 	:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>` infer_request = compiled_model.:ref:`create_infer_request <doxid-classov_1_1_compiled_model_1ae3633c0eb5173ed776446fba32b95953>`();
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -566,10 +501,6 @@ Step 3. Create an Inference Request
 
 	infer_request = compiled_model.create_infer_request()
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -589,7 +520,7 @@ Step 3. Create an Inference Request
 
 
 Step 4. Set Inputs
-------------------
+~~~~~~~~~~~~~~~~~~
 
 You can use external memory to create ``:ref:`ov::Tensor <doxid-classov_1_1_tensor>``` and use the ``:ref:`ov::InferRequest::set_input_tensor <doxid-classov_1_1_infer_request_1a5ddca7af7faffa2c90fd600a3f84aa6e>``` method to put this tensor on the device:
 
@@ -614,15 +545,11 @@ You can use external memory to create ``:ref:`ov::Tensor <doxid-classov_1_1_tens
 .. ref-code-block:: cpp
 
 	// Get input port for model with one input
-	auto input_port = compiled_model.:ref:`input <doxid-classov_1_1_compiled_model_1a55f2867a43fb78829f9901c52f9ccea9>`();
+	auto input_port = compiled_model.:ref:`input <doxid-classov_1_1_compiled_model_1a51691646bfe101f135c03e1e2ef30f4f>`();
 	// Create tensor from external memory
 	:ref:`ov::Tensor <doxid-classov_1_1_tensor>` input_tensor(input_port.get_element_type(), input_port.get_shape(), memory_ptr);
 	// Set input tensor for model with one input
 	infer_request.:ref:`set_input_tensor <doxid-classov_1_1_infer_request_1a5ddca7af7faffa2c90fd600a3f84aa6e>`(input_tensor);
-
-
-
-
 
 .. raw:: html
 
@@ -649,10 +576,6 @@ You can use external memory to create ``:ref:`ov::Tensor <doxid-classov_1_1_tens
 	# Set input tensor for model with one input
 	infer_request.set_input_tensor(input_tensor)
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -672,7 +595,7 @@ You can use external memory to create ``:ref:`ov::Tensor <doxid-classov_1_1_tens
 
 
 Step 5. Start Inference
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenVINO™ Runtime supports inference in either synchronous or asynchronous mode. Using the Async API can improve application's overall frame-rate: instead of waiting for inference to complete, the app can keep working on the host while the accelerator is busy. You can use ``:ref:`ov::InferRequest::start_async <doxid-classov_1_1_infer_request_1a5a05ae4352f804c865e11f5d68b983d5>``` to start model inference in the asynchronous mode and call ``:ref:`ov::InferRequest::wait <doxid-classov_1_1_infer_request_1ab0e0739da45789d816f8b5584a0b5691>``` to wait for the inference results:
 
@@ -699,10 +622,6 @@ OpenVINO™ Runtime supports inference in either synchronous or asynchronous mod
 	infer_request.:ref:`start_async <doxid-classov_1_1_infer_request_1a5a05ae4352f804c865e11f5d68b983d5>`();
 	infer_request.:ref:`wait <doxid-classov_1_1_infer_request_1ab0e0739da45789d816f8b5584a0b5691>`();
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -726,10 +645,6 @@ OpenVINO™ Runtime supports inference in either synchronous or asynchronous mod
 	infer_request.start_async()
 	infer_request.wait()
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -749,7 +664,7 @@ OpenVINO™ Runtime supports inference in either synchronous or asynchronous mod
 This section demonstrates a simple pipeline. To get more information about other ways to perform inference, read the dedicated :ref:`OpenVINO™ Inference Request <doxid-openvino_docs__o_v__u_g__infer_request>` Run inference" section".
 
 Step 6. Process the Inference Results
--------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go over the output tensors and process the inference results.
 
@@ -775,12 +690,8 @@ Go over the output tensors and process the inference results.
 
 	// Get output tensor by tensor name
 	auto output = infer_request.:ref:`get_tensor <doxid-classov_1_1_infer_request_1a75b8da7c6b00686bede600dddceaffc4>`("tensor_name");
-	const float \*output_buffer = output.data<const float>();
-	/\* output_buffer[] - accessing output tensor data \*/
-
-
-
-
+	const float \*output_buffer = output.:ref:`data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>`<const float>();
+	// output_buffer[] - accessing output tensor data
 
 .. raw:: html
 
@@ -807,10 +718,6 @@ Go over the output tensors and process the inference results.
 	output_buffer = output.data
 	# output_buffer[] - accessing output tensor data
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -829,52 +736,47 @@ Go over the output tensors and process the inference results.
 
 
 
-Link and Build Your C++ Application with OpenVINO™ Runtime
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 7. Link and Build Your Application with OpenVINO™ Runtime (example)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The example uses CMake for project configuration.
+This step may differ for different projects. In this example, a C++ application is used, together with CMake for project configuration.
 
-#. **Create a structure** for the project:
-   
-   .. ref-code-block:: cpp
-   
-   	project/
-   	    ├── CMakeLists.txt  - CMake file to build
-   	    ├── ...             - Additional folders like includes/
-   	    └── src/            - source folder
-   	        └── main.cpp
-   	build/                  - build directory
-   	    ...
+For details on additional CMake build options, refer to the `CMake page <https://cmake.org/cmake/help/latest/manual/cmake.1.html#manual:cmake(1)>`__.
 
-#. **Include OpenVINO™ Runtime libraries** in ``project/CMakeLists.txt``
-   
-   .. ref-code-block:: cpp
-   
-   	cmake_minimum_required(VERSION 3.10)
-   	set(CMAKE_CXX_STANDARD 11)
-   	
-   	find_package(OpenVINO REQUIRED)
-   	
-   	add_executable(${TARGET_NAME} src/main.cpp)
-   	
-   	target_link_libraries(${TARGET_NAME} PRIVATE openvino::runtime)
-   
-   To build your project using CMake with the default build tools currently available on your machine, execute the following commands:
+Create a structure for the project:
+-----------------------------------
 
-.. note:: Make sure you set environment variables first by running ``<INSTALL_DIR>/setupvars.sh`` (or ``setupvars.bat`` for Windows). Otherwise the ``OpenVINO_DIR`` variable won't be configured properly to pass ``find_package`` calls.
+.. ref-code-block:: cpp
+
+	project/
+	    ├── CMakeLists.txt  - CMake file to build
+	    ├── ...             - Additional folders like includes/
+	    └── src/            - source folder
+	        └── main.cpp
+	build/                  - build directory
+	    ...
+
+Include OpenVINO™ Runtime libraries in
+----------------------------------------
+
+.. ref-code-block:: cpp
+
+	cmake_minimum_required(VERSION 3.10)
+	set(CMAKE_CXX_STANDARD 11)
+	
+	find_package(OpenVINO REQUIRED)
+	
+	add_executable(${TARGET_NAME} src/main.cpp)
+	
+	target_link_libraries(${TARGET_NAME} PRIVATE openvino::runtime)
+
+To build your project using CMake with the default build tools currently available on your machine, execute the following commands:
 
 .. ref-code-block:: cpp
 
 	cd build/
 	cmake ../project
 	cmake --build .
-
-You can also specify additional build options (e.g. to build CMake project on Windows with a specific build tools). Please refer to the `CMake page <https://cmake.org/cmake/help/latest/manual/cmake.1.html#manual:cmake(1)>`__ for details.
-
-Run Your Application
-~~~~~~~~~~~~~~~~~~~~
-
-Congratulations, you have made your first application with OpenVINO™ toolkit, now you may run it.
 
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~

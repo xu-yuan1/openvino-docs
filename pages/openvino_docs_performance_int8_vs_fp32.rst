@@ -5,7 +5,7 @@
 Model Accuracy for INT8 and FP32 Precision
 ==========================================
 
-:target:`doxid-openvino_docs_performance_int8_vs_fp32_1md_openvino_docs_benchmarks_performance_int8_vs_fp32` The following table shows the absolute accuracy drop that is calculated as the difference in accuracy between the FP32 representation of a model and its INT8 representation.
+:target:`doxid-openvino_docs_performance_int8_vs_fp32_1md_openvino_docs_benchmarks_performance_int8_vs_fp32` The following table presents the absolute accuracy drop calculated as the accuracy difference between FP32 and INT8 representations of a model:
 
 .. raw:: html
 
@@ -243,7 +243,7 @@ Model Accuracy for INT8 and FP32 Precision
       </tr>
     </table>
 
-The table below illustrates the speed-up factor for the performance gain by switching from an FP32 representation of an OpenVINO™ supported model to its INT8 representation.
+The table below illustrates the speed-up factor for the performance gain by switching from an FP32 representation of an OpenVINO™ supported model to its INT8 representation:
 
 .. raw:: html
 

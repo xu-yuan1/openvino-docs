@@ -5,7 +5,7 @@
 Install OpenVINO™ Development Tools
 =====================================
 
-:target:`doxid-openvino_docs_install_guides_install_dev_tools_1md_openvino_docs_install_guides_installing-model-dev-tools` If you want to download, convert, optimize and tune pre-trained deep learning models, install OpenVINO™ Development Tools, which provides the following tools:
+:target:`doxid-openvino_docs_install_guides_install_dev_tools_1md_openvino_docs_install_guides_installing_model_dev_tools` If you want to download, convert, optimize and tune pre-trained deep learning models, install OpenVINO™ Development Tools, which provides the following tools:
 
 * Model Optimizer
 
@@ -19,6 +19,10 @@ Install OpenVINO™ Development Tools
 
 .. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI.
 
+
+
+
+
 For Python Developers
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -29,9 +33,9 @@ While installing OpenVINO Development Tools, OpenVINO Runtime will also be insta
 Step 1. Set Up Python Virtual Environment
 -----------------------------------------
 
-To avoid dependency conflicts, use a virtual environment. Skip this step only if you do want to install all dependencies globally.
+Use a virtual environment to avoid dependency conflicts.
 
-Use the following command to create a virtual environment:
+To create a virtual environment, use the following command:
 
 .. tab:: Linux and macOS
 
@@ -86,7 +90,7 @@ For example, to install and configure the components for working with TensorFlow
 
 	pip install openvino-dev[tensorflow2,onnx]
 
-.. note:: For TensorFlow, use the ``tensorflow2`` value as much as possible. The ``tensorflow`` value is provided only for compatibility reasons.
+.. note:: Model Optimizer support for TensorFlow 1.x environment has been deprecated. Use TensorFlow 2.x environment to convert both TensorFlow 1.x and 2.x models. Use the ``tensorflow2`` value as much as possible. The ``tensorflow`` value is provided only for compatibility reasons.
 
 Step 5. Verify the Installation
 -------------------------------
@@ -146,7 +150,9 @@ If you have installed OpenVINO Runtime via the installer, to avoid version confl
 
 	pip install openvino-dev[tensorflow2,onnx]==2022.1
 
-.. note:: For TensorFlow, use the ``tensorflow2`` value as much as possible. The ``tensorflow`` value is provided only for compatibility reasons.
+.. note:: Model Optimizer support for TensorFlow 1.x environment has been deprecated. Use TensorFlow 2.x environment to convert both TensorFlow 1.x and 2.x models. The ``tensorflow`` value is provided only for compatibility reasons, use the ``tensorflow2`` value instead.
+
+
 
 For more details, see `https://pypi.org/project/openvino-dev/ <https://pypi.org/project/openvino-dev/>`__.
 

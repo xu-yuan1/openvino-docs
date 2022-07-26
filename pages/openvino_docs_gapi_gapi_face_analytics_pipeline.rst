@@ -378,10 +378,10 @@ The OpenCV-based SSD post-processing kernel is defined and implemented in this s
 	            const float rc_top     = data[i \* OBJECT_SIZE + 4];
 	            const float rc_right   = data[i \* OBJECT_SIZE + 5];
 	            const float rc_bottom  = data[i \* OBJECT_SIZE + 6];
-	            if (image_id < 0.:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`) {  // indicates end of detections
+	            if (image_id < 0.f) {  // indicates end of detections
 	                break;
 	            }
-	            if (confidence < 0.5:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`) { // a hard-coded snapshot
+	            if (confidence < 0.5f) { // a hard-coded snapshot
 	                continue;
 	            }
 	            // Convert floating-point coordinates to the absolute image

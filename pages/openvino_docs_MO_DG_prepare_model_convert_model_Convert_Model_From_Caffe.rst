@@ -1,28 +1,21 @@
-.. index:: pair: page; Converting a Caffe\* Model
+.. index:: pair: page; Converting a Caffe Model
 .. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__caffe:
 
 
-Converting a Caffe\* Model
-==========================
+Converting a Caffe Model
+========================
 
-.. _Convert_From_Caffe:
-
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__caffe_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_caffe`
-
-Convert a Caffe\* Model
-~~~~~~~~~~~~~~~~~~~~~~~
-
-To convert a Caffe\* model, run Model Optimizer with the path to the input model ``.caffemodel`` file:
+:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__caffe_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_caffe` :target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__caffe_1convert_from_caffe` To convert a Caffe model, run Model Optimizer with the path to the input model ``.caffemodel`` file:
 
 .. ref-code-block:: cpp
 
 	mo --input_model <INPUT_MODEL>.caffemodel
 
-The following list provides the Caffe\*-specific parameters.
+The following list provides the Caffe-specific parameters.
 
 .. ref-code-block:: cpp
 
-	Caffe\*-specific parameters:
+	Caffe-specific parameters:
 	  --input_proto INPUT_PROTO, -d INPUT_PROTO
 	                        Deploy-ready prototxt file that contains a topology
 	                        structure and layer attributes
@@ -56,16 +49,16 @@ The following list provides the Caffe\*-specific parameters.
 	                        nested parameters. Default behavior is to transfer the
 	                        attributes without flattening nested parameters.
 
-Command-Line Interface (CLI) Examples Using Caffe\*-Specific Parameters
------------------------------------------------------------------------
+CLI Examples Using Caffe-Specific Parameters
+--------------------------------------------
 
-* Launching the Model Optimizer for the `bvlc_alexnet.caffemodel <https://github.com/BVLC/caffe/tree/master/models/bvlc_alexnet>`__ with a specified ``prototxt`` file. This is needed when the name of the Caffe\* model and the ``.prototxt`` file are different or are placed in different directories. Otherwise, it is enough to provide only the path to the input ``model.caffemodel`` file.
+* Launching Model Optimizer for `bvlc_alexnet.caffemodel <https://github.com/BVLC/caffe/tree/master/models/bvlc_alexnet>`__ with a specified ``prototxt`` file. This is needed when the name of the Caffe model and the ``.prototxt`` file are different or are placed in different directories. Otherwise, it is enough to provide only the path to the input ``model.caffemodel`` file.
   
   .. ref-code-block:: cpp
   
   	mo --input_model bvlc_alexnet.caffemodel --input_proto bvlc_alexnet.prototxt
 
-* Launching the Model Optimizer for the `bvlc_alexnet.caffemodel <https://github.com/BVLC/caffe/tree/master/models/bvlc_alexnet>`__ with a specified ``CustomLayersMapping`` file. This is the legacy method of quickly enabling model conversion if your model has custom layers. This requires the Caffe\* system on the computer. Optional parameters without default values and not specified by the user in the ``.prototxt`` file are removed from the Intermediate Representation, and nested parameters are flattened:
+* Launching Model Optimizer for `bvlc_alexnet.caffemodel <https://github.com/BVLC/caffe/tree/master/models/bvlc_alexnet>`__ with a specified ``CustomLayersMapping`` file. This is the legacy method of quickly enabling model conversion if your model has custom layers. This requires the Caffe system on the computer. The optional parameters without default values and not specified by the user in the ``.prototxt`` file are removed from the Intermediate Representation, and nested parameters are flattened:
   
   .. ref-code-block:: cpp
   
@@ -97,32 +90,34 @@ Command-Line Interface (CLI) Examples Using Caffe\*-Specific Parameters
   .. ref-code-block:: cpp
   
   	mo --input_model /path-to/your-model.caffemodel --input data,rois --input_shape (1,3,227,227),[1,6,1,1]
+  
+  
+  
+  Custom Layer Definition
+  ~~~~~~~~~~~~~~~~~~~~~~~
 
-Custom Layer Definition
-~~~~~~~~~~~~~~~~~~~~~~~
+Internally, when you run Model Optimizer, it loads the model, goes through the topology, and tries to find each layer type in a list of known layers. Custom layers are layers that are not included in the list. If your topology contains such kind of layers, Model Optimizer classifies them as custom.
 
-Internally, when you run the Model Optimizer, it loads the model, goes through the topology, and tries to find each layer type in a list of known layers. Custom layers are layers that are not included in the list of known layers. If your topology contains any layers that are not in this list of known layers, the Model Optimizer classifies them as custom.
+Supported Caffe Layers
+~~~~~~~~~~~~~~~~~~~~~~
 
-Supported Caffe\* Layers
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Refer to :ref:`Supported Framework Layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` for the list of supported standard layers.
+For the list of supported standard layers, refer to the :ref:`Supported Framework Layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` page.
 
 Frequently Asked Questions (FAQ)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Model Optimizer provides explanatory messages if it is unable to run to completion due to issues like typographical errors, incorrectly used options, or other issues. The message describes the potential cause of the problem and gives a link to the :ref:`Model Optimizer FAQ <doxid-openvino_docs__m_o__d_g_prepare_model__model__optimizer__f_a_q>`. The FAQ has instructions on how to resolve most issues. The FAQ also includes links to relevant sections in the Model Optimizer Developer Guide to help you understand what went wrong.
+Model Optimizer provides explanatory messages when it is unable to complete conversions due to typographical errors, incorrectly used options, or other issues. A message describes the potential cause of the problem and gives a link to :ref:`Model Optimizer FAQ <doxid-openvino_docs__m_o__d_g_prepare_model__model__optimizer__f_a_q>` which provides instructions on how to resolve most issues. The FAQ also includes links to relevant sections to help you understand what went wrong.
 
 Summary
 ~~~~~~~
 
 In this document, you learned:
 
-* Basic information about how the Model Optimizer works with Caffe\* models
+* Basic information about how the Model Optimizer works with Caffe models.
 
-* Which Caffe\* models are supported
+* Which Caffe models are supported.
 
-* How to convert a trained Caffe\* model using the Model Optimizer with both framework-agnostic and Caffe-specific command-line options
+* How to convert a trained Caffe model by using Model Optimizer with both framework-agnostic and Caffe-specific command-line options.
 
 See Also
 ~~~~~~~~

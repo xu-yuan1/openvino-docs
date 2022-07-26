@@ -5,7 +5,7 @@
 INT8 Calibration
 ================
 
-:target:`doxid-workbench_docs__workbench__d_g__int_8__quantization_1md_openvino_workbench_docs_workbench_dg_int-8_quantization` DL Workbench can lower the precision of a model from FP32 to INT8 with a process called calibration. Calibration accelerates the performance of certain models on hardware that supports INT8. A model in INT8 precision takes up less memory and has higher throughput capacity. Often this performance boost is achieved at the cost of a small accuracy reduction. With the DL Workbench, you can calibrate your model locally, on a `remote target <#remote-calibration>`__, or in the `Intel® DevCloud for the Edge <#devcloud-calibration>`__.
+:target:`doxid-workbench_docs__workbench__d_g__int_8__quantization_1md_openvino_workbench_docs_workbench_dg_int_8_quantization` DL Workbench can lower the precision of a model from FP32 to INT8 with a process called calibration. Calibration accelerates the performance of certain models on hardware that supports INT8. A model in INT8 precision takes up less memory and has higher throughput capacity. Often this performance boost is achieved at the cost of a small accuracy reduction. With the DL Workbench, you can calibrate your model locally, on a `remote target <#remote-calibration>`__, or in the `Intel® DevCloud for the Edge <#devcloud-calibration>`__.
 
 To read more about INT8 inference, see :ref:`Using Low-Precision INT8 Integer Inference <doxid-openvino_docs_model_optimization_guide>` and :ref:`Post-Training Optimization Toolkit <doxid-pot_introduction>`.
 
@@ -17,34 +17,54 @@ To read more about INT8 inference, see :ref:`Using Low-Precision INT8 Integer In
 
 #. AccuracyAware method is disabled if your configuration uses a not annotated dataset.
 
+
+
+
+
 INT8 Calibration Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 DL Workbench supports two calibration methods: `Default method <#default>`__ and `AccuracyAware <#accuracyaware>`__. Each method is further configured with a calibration scheme configuration: the `performance-oriented preset <#performance-preset>`__, which is the default scheme, or the `mixed preset <#mixed-preset>`__. Calibration schemes do not depend on a selected calibration method.
 
+.. _default:
+
 .. tip:: As a rule, the smaller the calibration subset, the less time the algorithms take. It is recommended to use at least a 3-5% subset of the validation dataset (300-1000 images).
+
+
+
+
 
 .. note:: A model optimized by the Default method translates all layers that support INT8 execution into INT8 precision, while the AccuracyAware method translates only those layers that both can be executed in INT8 precision and almost do not increase accuracy drop.
 
-.. _default:
+
+
+
 
 Default Method
 --------------
 
 Default method optimizes your model to achieve best performance. The algorithm usually produces the fastest model and usually but not always results in accuracy drop within 1%. Also, this algorithm takes less time than the AccuracyAware optimization method.
 
+.. _accuracyaware:
+
 .. note:: This method supports both annotated and not annotated datasets. See :ref:`Dataset Types <doxid-workbench_docs__workbench__d_g__dataset__types>` for details.
 
-.. _accuracyaware:
+
+
+
 
 AccuracyAware method
 --------------------
 
 AccuracyAware calibration optimizes your model to achieve best performance possible with the specified maximum acceptable accuracy drop. The AccuracyAware method might result in lower performance compared to the Default method, while the accuracy drop is predictable. Accuracy drop is the difference between the parent model accuracy and the optimized model accuracy. Accuracy of the optimized model is guaranteed to be not smaller than the difference between the parent model accuracy and the accuracy drop.
 
+.. _performance-preset:
+
 .. note:: This method supports only annotated datasets. See :ref:`Dataset Types <doxid-workbench_docs__workbench__d_g__dataset__types>` for details.
 
-.. _performance-preset:
+
+
+
 
 Performance Preset
 ------------------
@@ -113,6 +133,8 @@ Select Calibration Dataset (Optional)
 
 .. note:: During the calibration process, a model tends to overfit the dataset its being calibrated on. To avoid overfitting, use separate datasets for calibration and validation.
 
+
+
 Select a dataset you want to calibrate the model on, or import a calibration dataset by clicking **Select** :
 
 .. image:: calibration_dataset_01.png
@@ -137,6 +159,10 @@ Select an optimization method: `Default Method <#default>`__ or `AccuracyAware M
 For the AccuracyAware option, specify the **Maximum Accuracy Drop** to instruct the DL Workbench to only convert layers that do not exceed the maximum accuracy drop you can tolerate. If a layer is estimated to exceed this value, it is not calibrated and remains at the original precision.
 
 .. note:: See :ref:`Configure Accuracy Settings <doxid-workbench_docs__workbench__d_g__accuracy__configuration>` for details.
+
+
+
+
 
 .. image:: configure_calibration_01-b.png
 

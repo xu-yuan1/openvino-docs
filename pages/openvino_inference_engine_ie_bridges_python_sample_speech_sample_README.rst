@@ -79,6 +79,10 @@ For example, when ``-qb 8`` is specified, the plugin will use 8-bit weights wher
 
 .. note:: * It is not always possible to use 8-bit weights due to GNA hardware limitations. For example, convolutional layers always use 16-bit weights (GNA hardware version 1 and 2). This limitation will be removed in GNA hardware version 3 and higher.
 
+
+
+
+
 Execution Modes
 ---------------
 
@@ -226,6 +230,8 @@ You can do inference on Intel® Processors with the GNA co-processor (or emulati
 * Before running the sample with a trained model, make sure the model is converted to the intermediate representation (IR) format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
 
 * The sample supports input and output in numpy file format (.npz)
+
+
 
 Sample Output
 ~~~~~~~~~~~~~

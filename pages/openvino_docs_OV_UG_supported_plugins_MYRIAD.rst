@@ -1,28 +1,29 @@
-.. index:: pair: page; MYRIAD device
+.. index:: pair: page; MYRIAD Device
 .. _doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d:
 
 
-MYRIAD device
+MYRIAD Device
 =============
 
 :target:`doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d_1md_openvino_docs_ov_runtime_ug_supported_plugins_myriad`
 
-Introducing MYRIAD Plugin
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The OpenVINO Runtime MYRIAD plugin has been developed for inference of neural networks on Intel Neural Compute Stick 2.
+The OpenVINO Runtime MYRIAD plugin has been developed for inference of neural networks on Intel® Neural Compute Stick 2.
 
 Configuring the MYRIAD Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To configure your Intel® Vision Accelerator Design With Intel® Movidius™ on supported operating systemss, refer to the Steps for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs section in the installation guides for :ref:`Linux <doxid-openvino_docs_install_guides_installing_openvino_linux>` or :ref:`Windows <doxid-openvino_docs_install_guides_installing_openvino_windows>`.
+To configure your Intel® Vision Accelerator Design With Intel® Movidius™ on supported operating systems, refer to the `installation guide <../../install_guides/installing-openvino-config-ivad-vpu>`__.
 
-.. note:: The HDDL and MYRIAD plugins may cause conflicts when used at the same time. To ensure proper operation in such a case, the number of booted devices needs to be limited in the 'hddl_autoboot.config' file. Otherwise, the HDDL plugin will boot all available Intel® Movidius™ Myriad™ X devices.
+.. note:: The HDDL and MYRIAD plugins may cause conflicts when used at the same time. To ensure proper operation in such a case, the number of booted devices needs to be limited in the ``hddl_autoboot.config`` file. Otherwise, the HDDL plugin will boot all available Intel® Movidius™ Myriad™ X devices.
+
+
+
+
 
 Supported Configuration Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See VPU common configuration parameters for the :ref:`VPU Plugins <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>`. When specifying key values as raw strings (that is, when using the Python API), omit the ``KEY_`` prefix.
+For information on the VPU common configuration parameters, see the :ref:`VPU Plugins <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>`. When specifying key values as raw strings (when using the Python API), omit the ``KEY_`` prefix.
 
 In addition to common parameters, the MYRIAD plugin accepts the following options:
 

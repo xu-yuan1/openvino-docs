@@ -5,9 +5,13 @@
 Install and Configure Intel® Distribution of OpenVINO™ toolkit for Windows 10
 ================================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_windows_1md_openvino_docs_install_guides_installing-openvino-windows`
+:target:`doxid-openvino_docs_install_guides_installing_openvino_windows_1md_openvino_docs_install_guides_installing_openvino_windows`
 
 .. note:: Since the OpenVINO™ 2022.1 release, the following development tools: Model Optimizer, Post-Training Optimization Tool, Model Downloader and other Open Model Zoo tools, Accuracy Checker, and Annotation Converter are not part of the installer. These tools are now only available on `pypi.org <https://pypi.org/project/openvino-dev/>`__.
+
+
+
+
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
@@ -104,6 +108,8 @@ Step 2: Configure the Environment
 
 .. note:: If you installed the Intel® Distribution of OpenVINO™ to a non-default install directory, replace ``C:\Program Files (x86)\Intel`` with that directory in this guide's instructions.
 
+
+
 You must update several environment variables before you can compile and run OpenVINO™ applications. Open the Command Prompt, and run the ``setupvars.bat`` batch file to temporarily set your environment variables:
 
 .. ref-code-block:: cpp
@@ -114,6 +120,8 @@ You must update several environment variables before you can compile and run Ope
 
 .. note:: If you see an error indicating Python is not installed when you know you installed it, your computer might not be able to find the program. Check your system environment variables, and add Python if necessary.
 
+
+
 The environment variables are set. Next, you can download some additional tools.
 
 .. _model-optimizer:
@@ -123,9 +131,17 @@ Step 3 (Optional): Download Additional Components
 
 .. note:: Since the OpenVINO™ 2022.1 release, the following development tools: Model Optimizer, Post-Training Optimization Tool, Model Downloader and other Open Model Zoo tools, Accuracy Checker, and Annotation Converter are not part of the installer. The OpenVINO™ Development Tools can only be installed via PyPI now. See :ref:`Install OpenVINO™ Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>` for detailed steps.
 
+
+
+
+
+
+
+
+
 .. dropdown:: OpenCV
 
-   OpenCV is necessary to run demos from Open Model Zoo (OMZ). Some OpenVINO samples can also extend their capabilities when compiled with OpenCV as a dependency. The Intel® Distribution of OpenVINO™ provides a script to install OpenCV: ``<INSTALL_DIR>/extras/scripts/download_opencv.sh``.
+   OpenCV is necessary to run demos from Open Model Zoo (OMZ). Some OpenVINO samples can also extend their capabilities when compiled with OpenCV as a dependency. The Intel® Distribution of OpenVINO™ provides a script to install OpenCV: ``<INSTALL_DIR>\extras\scripts\download_opencv.ps1``.
 
    .. note::
       No prerequisites are needed.
@@ -145,11 +161,11 @@ Step 3 (Optional): Download Additional Components
 
    .. code-block:: sh
 
-      .\<INSTALL_DIR>\scripts\download_opencv.ps1 
+      .\<INSTALL_DIR>\extras\scripts\download_opencv.ps1
 
 
    If the Intel® Distribution of OpenVINO™ is installed to the system location (e.g. ``Program Files (x86)``) then privilege elevation dialog will be shown. The script can be run from CMD/PowerShell Administrator console to avoid this dialog in case of system-wide installation. 
-   The script is interactive by default, so during the execution it will wait for user to press ``Enter`` If you want to avoid this, use the ``-batch`` option, e.g. ``powershell <openvino>\extras\scripts\download_opencv.ps1 -batch``. After the execution of the script, you will find OpenCV extracted to ``<INSTALL_DIR>/extras/opencv``.
+   The script is interactive by default, so during the execution it will wait for user to press ``Enter`` If you want to avoid this, use the ``-batch`` option, e.g. ``powershell <INSTALL_DIR>\extras\scripts\download_opencv.ps1 -batch``. After the execution of the script, you will find OpenCV extracted to ``<INSTALL_DIR>/extras/opencv``.
 
 .. _optional-steps:
 
@@ -209,6 +225,13 @@ To uninstall the toolkit, follow the steps on the :ref:`Uninstalling page <doxid
    * Sample applications: :ref:`OpenVINO™ Toolkit Samples Overview <code samples>`
    * Pre-trained deep learning models: :ref:`Overview of OpenVINO™ Toolkit Pre-Trained Models <model zoo>`
    * IoT libraries and code samples in the GitHUB repository: `Intel® IoT Developer Kit`_ 
+
+
+
+
+
+
+
 
 
    .. _Intel® IoT Developer Kit: https://github.com/intel-iot-devkit

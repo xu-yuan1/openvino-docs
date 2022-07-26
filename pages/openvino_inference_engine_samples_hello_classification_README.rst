@@ -21,19 +21,19 @@ The following C++ API is used in the application:
       - ``ov::get_openvino_version``
       - Get Openvino API version
     * - Basic Infer Flow
-      - ``:ref:`ov::Core::read_model <doxid-classov_1_1_core_1a3cca31e2bb5d569330daa8041e01f6f1>``` , ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` , ``:ref:`ov::CompiledModel::create_infer_request <doxid-classov_1_1_compiled_model_1ae3633c0eb5173ed776446fba32b95953>``` , ``:ref:`ov::InferRequest::set_input_tensor <doxid-classov_1_1_infer_request_1a5ddca7af7faffa2c90fd600a3f84aa6e>``` , ``:ref:`ov::InferRequest::get_output_tensor <doxid-classov_1_1_infer_request_1a350159a8d967022db46633eed50d073a>```
+      - ``:ref:`ov::Core::read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>``` , ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` , ``:ref:`ov::CompiledModel::create_infer_request <doxid-classov_1_1_compiled_model_1ae3633c0eb5173ed776446fba32b95953>``` , ``:ref:`ov::InferRequest::set_input_tensor <doxid-classov_1_1_infer_request_1a5ddca7af7faffa2c90fd600a3f84aa6e>``` , ``:ref:`ov::InferRequest::get_output_tensor <doxid-classov_1_1_infer_request_1a350159a8d967022db46633eed50d073a>```
       - Common API to do inference: read and compile a model, create an infer request, configure input and output tensors
     * - Synchronous Infer
       - ``:ref:`ov::InferRequest::infer <doxid-classov_1_1_infer_request_1abcb7facc9f7c4b9226a1fd343e56958d>```
       - Do synchronous inference
     * - Model Operations
-      - ``:ref:`ov::Model::inputs <doxid-classov_1_1_model_1a7121b50a2990b63eb6a73945f0cae089>``` , ``:ref:`ov::Model::outputs <doxid-classov_1_1_model_1a89c629856666f1064cf0418c432004f0>```
+      - ``:ref:`ov::Model::inputs <doxid-classov_1_1_model_1ac28a4c66071e165c4f98906ab489e5d5>``` , ``:ref:`ov::Model::outputs <doxid-classov_1_1_model_1af6e381008712ce22d6f4b93b87303dd8>```
       - Get inputs and outputs of a model
     * - Tensor Operations
       - ``:ref:`ov::Tensor::get_shape <doxid-classov_1_1_tensor_1a706163e01fb555eb9ccdfb5204cf7834>```
       - Get a tensor shape
     * - Preprocessing
-      - ``:ref:`ov::preprocess::InputTensorInfo::set_element_type <doxid-classov_1_1preprocess_1_1_input_tensor_info_1a320c54e50d794da07852ccecf9468e2a>``` , ``:ref:`ov::preprocess::InputTensorInfo::set_layout <doxid-classov_1_1preprocess_1_1_input_tensor_info_1af10932e00c45bb0ef09b2f856fab5268>``` , ``:ref:`ov::preprocess::InputTensorInfo::set_spatial_static_shape <doxid-classov_1_1preprocess_1_1_input_tensor_info_1a03db58db580f2974469a01da5b03f511>``` , ``:ref:`ov::preprocess::PreProcessSteps::resize <doxid-classov_1_1preprocess_1_1_pre_process_steps_1a910dfdc8dc19b1890b2e8f111162a8d6>``` , ``:ref:`ov::preprocess::InputModelInfo::set_layout <doxid-classov_1_1preprocess_1_1_input_model_info_1aeac53aa90be5b8a6b86def31fab396b4>``` , ``:ref:`ov::preprocess::OutputTensorInfo::set_element_type <doxid-classov_1_1preprocess_1_1_output_tensor_info_1a9c2a13f397541993747a5bce4165d17e>``` , ``:ref:`ov::preprocess::PrePostProcessor::build <doxid-classov_1_1preprocess_1_1_pre_post_processor_1a62bde91535a3cd93cb2dcf5f416fe24a>```
+      - ``:ref:`ov::preprocess::InputTensorInfo::set_element_type <doxid-classov_1_1preprocess_1_1_input_tensor_info_1a98fb73ff9178c8c71d809ddf8927faf5>``` , ``:ref:`ov::preprocess::InputTensorInfo::set_layout <doxid-classov_1_1preprocess_1_1_input_tensor_info_1a6f70eb97d02e90a30cd748573abd7b4b>``` , ``:ref:`ov::preprocess::InputTensorInfo::set_spatial_static_shape <doxid-classov_1_1preprocess_1_1_input_tensor_info_1a6f203e0b267549c1ee59bdb5606ef9d1>``` , ``:ref:`ov::preprocess::PreProcessSteps::resize <doxid-classov_1_1preprocess_1_1_pre_process_steps_1a40dab78be1222fee505ed6a13400efe6>``` , ``:ref:`ov::preprocess::InputModelInfo::set_layout <doxid-classov_1_1preprocess_1_1_input_model_info_1af309bac02af20d048e349a2d421c1169>``` , ``:ref:`ov::preprocess::OutputTensorInfo::set_element_type <doxid-classov_1_1preprocess_1_1_output_tensor_info_1aeb8a73d0500208ff460a246b8bef08b3>``` , ``:ref:`ov::preprocess::PrePostProcessor::build <doxid-classov_1_1preprocess_1_1_pre_post_processor_1a07ced56fde3572a337c0abbfdb4bdd19>```
       - Set image of the original size as input for a model with other input size. Resize and layout conversions are performed automatically by the corresponding plugin just before inference.
 
 .. list-table::
@@ -82,6 +82,8 @@ To run the sample, you need specify a model and image:
 * Before running the sample with a trained model, make sure the model is converted to the intermediate representation (IR) format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
 
 * The sample accepts models in ONNX format (.onnx) that do not require preprocessing.
+
+
 
 Example
 -------

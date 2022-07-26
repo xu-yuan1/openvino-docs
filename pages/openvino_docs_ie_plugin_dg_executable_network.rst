@@ -37,10 +37,10 @@ Inference Engine Plugin API provides the helper :ref:`InferenceEngine::Executabl
 	    // Methods from a base class ExecutableNetworkThreadSafeDefault
 	
 	    void :ref:`Export <doxid-class_inference_engine_1_1_i_executable_network_internal_1a057bca9b0f955c03190bdf77635e9516>`(std::ostream& :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`) override;
-	    :ref:`InferenceEngine::IInferRequestInternal::Ptr <doxid-class_inference_engine_1_1_i_infer_request_internal_1a50c614e7a30e1e8ee58e984f210a1558>` :ref:`CreateInferRequestImpl <doxid-class_inference_engine_1_1_i_executable_network_internal_1a6763f64c0b14fd3ef3af645c9c21e9be>`(
+	    :ref:`InferenceEngine::IInferRequestInternal::Ptr <doxid-class_inference_engine_1_1_i_infer_request_internal_1a50c614e7a30e1e8ee58e984f210a1558>` :ref:`CreateInferRequestImpl <doxid-class_inference_engine_1_1_i_executable_network_internal_1a8caf9f0a4b92a12fdb1ac254eb13d645>`(
 	        :ref:`InferenceEngine::InputsDataMap <doxid-namespace_inference_engine_1a08270747275eb79985154365aa782a2a>` networkInputs,
 	        :ref:`InferenceEngine::OutputsDataMap <doxid-namespace_inference_engine_1a76ce999f68455cf962a473718deb500c>` networkOutputs) override;
-	    :ref:`InferenceEngine::IInferRequestInternal::Ptr <doxid-class_inference_engine_1_1_i_infer_request_internal_1a50c614e7a30e1e8ee58e984f210a1558>` :ref:`CreateInferRequestImpl <doxid-class_inference_engine_1_1_i_executable_network_internal_1a6763f64c0b14fd3ef3af645c9c21e9be>`(
+	    :ref:`InferenceEngine::IInferRequestInternal::Ptr <doxid-class_inference_engine_1_1_i_infer_request_internal_1a50c614e7a30e1e8ee58e984f210a1558>` :ref:`CreateInferRequestImpl <doxid-class_inference_engine_1_1_i_executable_network_internal_1a8caf9f0a4b92a12fdb1ac254eb13d645>`(
 	        const std::vector<std::shared_ptr<const ov::Node>>& inputs,
 	        const std::vector<std::shared_ptr<const ov::Node>>& outputs) override;
 	    :ref:`InferenceEngine::IInferRequestInternal::Ptr <doxid-class_inference_engine_1_1_i_infer_request_internal_1a50c614e7a30e1e8ee58e984f210a1558>` :ref:`CreateInferRequest <doxid-class_inference_engine_1_1_executable_network_thread_safe_default_1ab16d0cad93d2838b44acd261fd6ce367>`() override;
@@ -63,8 +63,6 @@ Inference Engine Plugin API provides the helper :ref:`InferenceEngine::Executabl
 	    std::map<std::string, std::size_t> _inputIndex;
 	    std::map<std::string, std::size_t> _outputIndex;
 	};
-
-
 
 Class Fields
 ++++++++++++
@@ -156,9 +154,11 @@ The function accepts a const shared pointer to ``:ref:`ngraph::Function <doxid-c
 	    // Perform any other steps like allocation and filling backend specific memory handles and so on
 	}
 
-
-
 .. note:: After all these steps, the backend specific graph is ready to create inference requests and perform inference.
+
+
+
+
 
 Constructor Importing from Stream
 ---------------------------------
@@ -166,6 +166,10 @@ Constructor Importing from Stream
 This constructor creates a backend specific graph by importing from a stream object:
 
 .. note:: The export of backend specific graph is done in the ``Export`` method, and data formats must be the same for both import and export.
+
+
+
+
 
 .. ref-code-block:: cpp
 
@@ -217,8 +221,6 @@ This constructor creates a backend specific graph by importing from a stream obj
 	    }
 	}
 
-
-
 .. rubric::
 
 The implementation of the method should write all data to the ``model`` stream, which is required to import a backend specific graph later in the ``Plugin::Import`` method:
@@ -250,8 +252,6 @@ The implementation of the method should write all data to the ``model`` stream, 
 	    // TODO: implement network precision, layout, preprocessing info serialization
 	}
 
-
-
 .. rubric::
 
 The method creates an asynchronous inference request and returns it. While the public Inference Engine API has a single interface for inference request, which can be executed in synchronous and asynchronous modes, a plugin library implementation has two separate classes:
@@ -265,25 +265,25 @@ The method creates an asynchronous inference request and returns it. While the p
   * For pipelines with multiple stages, such as performing some preprocessing on host, uploading input data to a device, running inference on a device, or downloading and postprocessing output data, schedule stages on several task executors to achieve better device use and performance. You can do it by creating a sufficient number of inference requests running in parallel. In this case, device stages of different inference requests are overlapped with preprocessing and postprocessing stage giving better performance.
     
     .. warning:: It is up to you to decide how many task executors you need to optimally execute a device pipeline.
-
-.. ref-code-block:: cpp
-
-	:ref:`InferenceEngine::IInferRequestInternal::Ptr <doxid-class_inference_engine_1_1_i_infer_request_internal_1a50c614e7a30e1e8ee58e984f210a1558>` TemplatePlugin::ExecutableNetwork::CreateInferRequest() {
-	    :ref:`InferenceEngine::IInferRequestInternal::Ptr <doxid-class_inference_engine_1_1_i_infer_request_internal_1a50c614e7a30e1e8ee58e984f210a1558>` internalRequest;
-	    if (this->_plugin) {
-	        const auto& core = _plugin->GetCore();
-	        if (core && core->isNewAPI())
-	            internalRequest = CreateInferRequestImpl(_parameters, _results);
-	    }
-	    if (!internalRequest)
-	        internalRequest = CreateInferRequestImpl(_networkInputs, _networkOutputs);
-	    return std::make_shared<TemplateAsyncInferRequest>(std::static_pointer_cast<TemplateInferRequest>(internalRequest),
-	                                                       _taskExecutor,
-	                                                       _plugin->_waitExecutor,
-	                                                       _callbackExecutor);
-	}
-
-
+    
+    
+    
+    
+    
+    .. ref-code-block:: cpp
+    
+    	:ref:`InferenceEngine::IInferRequestInternal::Ptr <doxid-class_inference_engine_1_1_i_infer_request_internal_1a50c614e7a30e1e8ee58e984f210a1558>` TemplatePlugin::ExecutableNetwork::CreateInferRequest() {
+    	    :ref:`InferenceEngine::IInferRequestInternal::Ptr <doxid-class_inference_engine_1_1_i_infer_request_internal_1a50c614e7a30e1e8ee58e984f210a1558>` internalRequest;
+    	    if (this->_plugin && _plugin->IsNewAPI()) {
+    	        internalRequest = CreateInferRequestImpl(_parameters, _results);
+    	    }
+    	    if (!internalRequest)
+    	        internalRequest = CreateInferRequestImpl(_networkInputs, _networkOutputs);
+    	    return std::make_shared<TemplateAsyncInferRequest>(std::static_pointer_cast<TemplateInferRequest>(internalRequest),
+    	                                                       _taskExecutor,
+    	                                                       _plugin->_waitExecutor,
+    	                                                       _callbackExecutor);
+    	}
 
 .. rubric::
 
@@ -306,8 +306,6 @@ This is a helper method used by ``CreateInferRequest`` to create a :ref:`synchro
 	                                                  outputs,
 	                                                  std::static_pointer_cast<ExecutableNetwork>(shared_from_this()));
 	}
-
-
 
 .. rubric::
 
@@ -333,7 +331,7 @@ Returns a metric value for a metric with the name ``name``. A metric is a static
 	        std::vector<std::string> configKeys = {:ref:`CONFIG_KEY <doxid-ie__plugin__config_8hpp_1aad09cfba062e8ec9fb7ab9383f656ec7>`(DEVICE_ID),
 	                                               :ref:`CONFIG_KEY <doxid-ie__plugin__config_8hpp_1aad09cfba062e8ec9fb7ab9383f656ec7>`(PERF_COUNT),
 	                                               TEMPLATE_CONFIG_KEY(THROUGHPUT_STREAMS)};
-	        auto streamExecutorConfigKeys = :ref:`InferenceEngine::IStreamsExecutor::Config <doxid-struct_inference_engine_1_1_i_streams_executor_1_1_config>`{}.:ref:`SupportedKeys <doxid-struct_inference_engine_1_1_i_streams_executor_1_1_config_1af5194c42f86951299ba6a9ef334627ef>`();
+	        auto streamExecutorConfigKeys = :ref:`InferenceEngine::IStreamsExecutor::Config <doxid-struct_inference_engine_1_1_i_streams_executor_1_1_config>`{}.:ref:`SupportedKeys <doxid-struct_inference_engine_1_1_i_streams_executor_1_1_config_1ae159a5dc9d9007cb1cbf8e48362d1f94>`();
 	        for (auto&& configKey : streamExecutorConfigKeys) {
 	            configKeys.emplace_back(configKey);
 	        }

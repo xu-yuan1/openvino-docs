@@ -18,8 +18,6 @@ Template for ModelPass transformation class
 	    bool :ref:`run_on_model <doxid-classov_1_1pass_1_1_model_pass_1afdce6ef577b36b5127115dd574b6615e>`(const std::shared_ptr<ov::Model>& :ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`) override;
 	};
 
-
-
 .. ref-code-block:: cpp
 
 	// template_function_transformation.cpp

@@ -38,7 +38,7 @@ Manual and Automatic modes for assigning affinities
 The Manual Mode
 +++++++++++++++
 
-It assumes setting affinities explicitly for all operations in the model using ``:ref:`ov::Node::get_rt_info <doxid-classov_1_1_node_1a5c73794fbc47e510198261d61682fe79>``` with the ``"affinity"`` key.
+It assumes setting affinities explicitly for all operations in the model using ``:ref:`ov::Node::get_rt_info <doxid-classov_1_1_node_1a6941c753af92828d842297b74df1c45a>``` with the ``"affinity"`` key.
 
 .. raw:: html
 
@@ -64,10 +64,6 @@ It assumes setting affinities explicitly for all operations in the model using `
 	    op->get_rt_info()["affinity"] = "CPU";
 	}
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -91,10 +87,6 @@ It assumes setting affinities explicitly for all operations in the model using `
 	for op in model.get_ops():
 	    rt_info = op.get_rt_info()
 	    rt_info["affinity"] = "CPU"
-
-
-
-
 
 .. raw:: html
 
@@ -137,15 +129,11 @@ The automatic mode causes "greedy" behavior and assigns all operations that can 
 
 .. ref-code-block:: cpp
 
-	auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "HETERO:GPU,CPU");
+	auto compiled_model = core.compile_model(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "HETERO:GPU,CPU");
 	// or with ov::device::priorities with multiple args
-	compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "HETERO", :ref:`ov::device::priorities <doxid-group__ov__runtime__cpp__prop__api_1gae88af90a18871677f39739cb0ef0101e>`("GPU", "CPU"));
+	compiled_model = core.compile_model(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "HETERO", :ref:`ov::device::priorities <doxid-group__ov__runtime__cpp__prop__api_1gae88af90a18871677f39739cb0ef0101e>`("GPU", "CPU"));
 	// or with ov::device::priorities with a single argument
-	compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "HETERO", :ref:`ov::device::priorities <doxid-group__ov__runtime__cpp__prop__api_1gae88af90a18871677f39739cb0ef0101e>`("GPU,CPU"));
-
-
-
-
+	compiled_model = core.compile_model(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "HETERO", :ref:`ov::device::priorities <doxid-group__ov__runtime__cpp__prop__api_1gae88af90a18871677f39739cb0ef0101e>`("GPU,CPU"));
 
 .. raw:: html
 
@@ -170,10 +158,6 @@ The automatic mode causes "greedy" behavior and assigns all operations that can 
 	compiled_model = core.compile_model(model, device_name="HETERO:GPU,CPU")
 	# device priorities via configuration property
 	compiled_model = core.compile_model(model, device_name="HETERO", config={"MULTI_DEVICE_PRIORITIES": "GPU,CPU"})
-
-
-
-
 
 .. raw:: html
 
@@ -223,7 +207,7 @@ In some cases you may need to consider manually adjusting affinities which were 
 	const std::string device = "HETERO:GPU,CPU";
 	
 	// query_model result contains mapping of supported operations to devices
-	auto supported_ops = core.:ref:`query_model <doxid-classov_1_1_core_1acdf8e64824fe4cf147c3b52ab32c1aab>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, device);
+	auto supported_ops = core.query_model(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, device);
 	
 	// update default affinities manually for specific operations
 	supported_ops["operation_name"] = "CPU";
@@ -236,11 +220,7 @@ In some cases you may need to consider manually adjusting affinities which were 
 	}
 	
 	// load model with manually set affinities
-	auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, device);
-
-
-
-
+	auto compiled_model = core.compile_model(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, device);
 
 .. raw:: html
 
@@ -280,10 +260,6 @@ In some cases you may need to consider manually adjusting affinities which were 
 	# load model with manually set affinities
 	compiled_model = core.compile_model(model, device)
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -303,6 +279,10 @@ In some cases you may need to consider manually adjusting affinities which were 
 Importantly, the automatic mode will not work if any operation in a model has its ``"affinity"`` already initialized.
 
 .. note:: ``:ref:`ov::Core::query_model <doxid-classov_1_1_core_1acdf8e64824fe4cf147c3b52ab32c1aab>``` does not depend on affinities set by a user. Instead, it queries for an operation support based on device capabilities.
+
+
+
+
 
 Configure fallback devices
 --------------------------
@@ -329,7 +309,7 @@ If you want different devices in Hetero execution to have different device-speci
 
 .. ref-code-block:: cpp
 
-	auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "HETERO",
+	auto compiled_model = core.compile_model(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "HETERO",
 	    // GPU with fallback to CPU
 	    :ref:`ov::device::priorities <doxid-group__ov__runtime__cpp__prop__api_1gae88af90a18871677f39739cb0ef0101e>`("GPU", "CPU"),
 	    // profiling is enabled only for GPU
@@ -337,10 +317,6 @@ If you want different devices in Hetero execution to have different device-speci
 	    // FP32 inference precision only for CPU
 	    :ref:`ov::device::properties <doxid-group__ov__runtime__cpp__prop__api_1ga794d09f2bd8aad506508b2c53ef6a6fc>`("CPU", :ref:`ov::hint::inference_precision <doxid-group__ov__runtime__cpp__prop__api_1gad605a888f3c9b7598ab55023fbf44240>`(:ref:`ov::element::f32 <doxid-group__ov__element__cpp__api_1gadc8a5dda3244028a5c0b024897215d43>`))
 	);
-
-
-
-
 
 .. raw:: html
 
@@ -366,10 +342,6 @@ If you want different devices in Hetero execution to have different device-speci
 	core.set_property("GPU", {"PERF_COUNT": "YES"})
 	core.set_property("CPU", {"INFERENCE_PRECISION_HINT": "f32"})
 	compiled_model = core.compile_model(model=model, device_name="HETERO")
-
-
-
-
 
 .. raw:: html
 
@@ -426,6 +398,8 @@ Here is an example of the output for Googlenet v1 running on HDDL with fallback 
 	subgraph2: out_prob:          NOT_RUN                       layerType: Output   realTime: 0     cpu: 0    execType: unknown
 	subgraph2: prob:              EXECUTED                      layerType: SoftMax  realTime: 10    cpu: 10   execType: ref
 	Total time: 4212 microseconds
+
+
 
 Sample Usage
 ------------

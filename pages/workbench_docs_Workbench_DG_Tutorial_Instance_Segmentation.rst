@@ -30,6 +30,10 @@ In this tutorial, you will learn how to optimize your model using INT8 Calibrati
 
 .. tip:: You can learn how to :ref:`import the model <doxid-workbench_docs__workbench__d_g__select__model>` and :ref:`create a not annotated dataset <doxid-workbench_docs__workbench__create__project>` in the DL Workbench :ref:`Get Started Guide <doxid-workbench_docs__workbench__d_g__work_with__models_and__sample__datasets>`.
 
+
+
+
+
 Optimize Model Using INT8 Calibration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -53,6 +57,8 @@ Compare Optimized and Parent Model Performance
 Go back to the model page and check the performance of the imported and optimized models. Compare the throughput numbers and click **Compare Projects** button to see more details. Learn more about projects comparison on the :ref:`Compare Performance <doxid-workbench_docs__workbench__d_g__compare__performance_between__two__versions_of__models>` page.
 
 **NOTE:** Throughput is the number of images processed in a given amount of time. It is measured in frames per second (FPS). Higher throughput value means better performance.
+
+
 
 .. image:: compare_instance_segmentation.png
 

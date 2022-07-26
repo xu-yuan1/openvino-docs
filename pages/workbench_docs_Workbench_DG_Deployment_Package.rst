@@ -21,14 +21,22 @@ When you find an optimal configuration for your model, the next step is to use t
 
 .. warning:: Deployment Manager available inside the DL Workbench provides libraries compatible with Ubuntu 18.04 and 20.04.
 
+
+
 Refer to the section below to learn how to download a deployment package for your configuration. Once you download the package, see how to `create a binary with your application <#sample>`__ on your developer machine and `deploy it on a target device <#deploy>`__.
 
 .. note:: *Developer machine* is the machine where you use the DL Workbench to download the package and where you prepare your own application. *Target machine* is the machine where you deploy the application.
+
+
+
+
 
 Download Deployment Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: Perform these steps on your developer machine.
+
+
 
 Go to the **Perform** tab on the **Projects** page and open the **Create Deployment Package** subtab.
 
@@ -48,6 +56,8 @@ Now you have an archive that contains the required libraries and your model.
 
 * The archive contains C++\* libraries, so your application can be written in C++ only. A Python\* application cannot use these libraries directly and Python bindings are not included in the deployment package. This document does not contain instructions on how to prepare a Python application for deployment.
 
+
+
 Your application should be compiled into a binary file. If you do not have an application, see `Create Binary Sample <#sample>`__. The next step is `moving a binary to the target device and deploying it there <#deploy>`__.
 
 .. _sample:
@@ -58,6 +68,10 @@ Create Binary Sample
 You can learn how to use batches and streams in your application with DL Workbench :ref:`C++ Sample Application <doxid-workbench_docs__workbench__d_g__deploy_and__integrate__performance__criteria_into__application>`.
 
 .. note:: Perform these steps on your developer machine.
+
+
+
+
 
 Prerequisite
 ------------
@@ -103,7 +117,7 @@ Create a file named ``main.cpp`` with the source code of your application:
 	
 	    std::transform(device.begin(), device.end(), device.begin(), ::toupper);
 	
-	    :ref:`Core <doxid-class_inference_engine_1_1_core>` :ref:`ie <doxid-namespace_inference_engine>`;
+	    Core :ref:`ie <doxid-namespace_inference_engine>`;
 	
 	    // Start setting number of streams
 	    int numStreams = numInferReq;
@@ -121,12 +135,12 @@ Create a file named ``main.cpp`` with the source code of your application:
 	    }
 	    // Finish setting number of streams
 	
-	    :ref:`CNNNetwork <doxid-class_inference_engine_1_1_c_n_n_network>` network = :ref:`ie <doxid-namespace_inference_engine>`.ReadNetwork(modelXml);
+	    CNNNetwork network = :ref:`ie <doxid-namespace_inference_engine>`.ReadNetwork(modelXml);
 	
 	    // Set batch
-	    network.:ref:`setBatchSize <doxid-class_inference_engine_1_1_c_n_n_network_1a8e9d19270a48aab50cb5b1c43eecb8e9>`(batchSize);
+	    network.setBatchSize(batchSize);
 	
-	    :ref:`ExecutableNetwork <doxid-class_inference_engine_1_1_executable_network>` executableNetwork = :ref:`ie <doxid-namespace_inference_engine>`.LoadNetwork(network, device);
+	    ExecutableNetwork executableNetwork = :ref:`ie <doxid-namespace_inference_engine>`.LoadNetwork(network, device);
 	
 	    std::vector<InferRequest> requests(numInferReq);
 	
@@ -195,6 +209,8 @@ Open a terminal in the directory with ``main.cpp`` and ``CMakeLists.txt``, and r
 	cmake ../
 	make
 
+
+
 .. note:: Replace ``<INSTALL_OPENVINO_DIR>`` with the directory where you installed the OpenVINO™ package. By default, the package is installed in ``/opt/intel/openvino`` or ``~/intel/openvino``.
 
 
@@ -231,6 +247,8 @@ Deploy Your Application on Target Machine
 
 .. note:: Perform the steps below on your target machine.
 
+
+
 **Step 4.** Open a terminal in the ``deployment_package`` folder on the target machine.
 
 **Step 5.** Optional: for inference on Intel® GPU, Intel® Movidius™ VPU, or Intel® Vision Accelerator Design with Intel® Movidius™ VPUs targets.
@@ -253,7 +271,7 @@ Install dependencies by running the ``install_openvino_dependencies.sh`` script:
 
 	./ie_sample  <path>/<model>.xml CPU
 
-**NOTES** :
+	**NOTES** :
 
 * Replace ``<path>`` and ``<model>`` with the path to your model and its name.
 

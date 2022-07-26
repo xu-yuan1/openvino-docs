@@ -50,11 +50,17 @@ Use these requirements to make sure all features are available.
       - Google Chrome\* 88
       - Google Chrome\* 88
 
+.. _proxy:
+
 \*\* You need more space if you optimize or measure accuracy of computationally expensive models, such as mask_rcnn_inception_v2_coco or faster-rcnn-resnet101-coco-sparse-60-0001.
+
+
 
 .. note:: Windows\*, Linux\* and MacOS\* support CPU targets. GPU, Intel® Neural Compute Stick 2 and Intel® Vision Accelerator Design with Intel® Movidius™ VPUs are supported only for Linux\*.
 
-.. _proxy:
+
+
+
 
 Set Proxy
 ~~~~~~~~~

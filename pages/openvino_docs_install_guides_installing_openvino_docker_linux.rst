@@ -5,7 +5,7 @@
 Install Intel® Distribution of OpenVINO™ toolkit for Linux from a Docker Image
 =================================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_docker_linux_1md_openvino_docs_install_guides_installing-openvino-docker-linux` This guide provides steps on creating a Docker image with Intel® Distribution of OpenVINO™ toolkit for Linux and using the image on different devices.
+:target:`doxid-openvino_docs_install_guides_installing_openvino_docker_linux_1md_openvino_docs_install_guides_installing_openvino_docker_linux` This guide provides steps on creating a Docker image with Intel® Distribution of OpenVINO™ toolkit for Linux and using the image on different devices.
 
 .. _system-requirments:
 
@@ -147,11 +147,17 @@ Configuring Docker Image for Intel® Vision Accelerator Design with Intel® Movi
 
 .. note:: When building the Docker image, create a user in the Dockerfile that has the same UID (User Identifier) and GID (Group Identifier) as the user which that runs hddldaemon on the host, and then run the application in the Docker image with this user. This step is necessary to run the container as a non-root user.
 
+
+
 To use the Docker container for inference on Intel® Vision Accelerator Design with Intel® Movidius™ VPUs, do the following steps:
 
 #. Set up the environment on the host machine to be used for running Docker. It is required to execute ``hddldaemon``, which is responsible for communication between the HDDL plugin and the board. To learn how to set up the environment (the OpenVINO package or HDDL package must be pre-installed), see `Configuration guide for HDDL device <https://github.com/openvinotoolkit/docker_ci/blob/master/install_guide_vpu_hddl.md>`__ or :ref:`Configurations for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs on Linux <doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu>`.
 
-#. Run ``hddldaemon`` on the host in a separate terminal session using the following command: ```sh $HDDL_INSTALL_DIR/hddldaemon ```
+#. Run ``hddldaemon`` on the host in a separate terminal session using the following command:
+   
+   .. ref-code-block:: cpp
+   
+   	$HDDL_INSTALL_DIR/hddldaemon
 
 .. _run-image:
 
@@ -180,6 +186,8 @@ Running the Image on GPU
 
 .. note:: Only Intel® integrated graphics are supported.
 
+
+
 Note the following things:
 
 * GPU is not available in the container by default. You must attach it to the container.
@@ -190,9 +198,25 @@ Note the following things:
 
 To make GPU available in the container, attach the GPU to the container using ``--device /dev/dri`` option and run the container:
 
-* Ubuntu 18 or RHEL 8: ```sh docker run -it rm device /dev/dri <image_name> ``` > **NOTE** : If your host system is Ubuntu 20, follow the `Configuration Guide for the Intel® Graphics Compute Runtime for OpenCL™ on Ubuntu\* 20.04 <https://github.com/openvinotoolkit/docker_ci/blob/master/configure_gpu_ubuntu20.md>`__.
+* Ubuntu 18 or RHEL 8:
+  
+  .. ref-code-block:: cpp
+  
+  	docker run -it --rm --device /dev/dri <image_name>
+  
+  
+  
+  .. note:: If your host system is Ubuntu 20, follow the `Configuration Guide for the Intel® Graphics Compute Runtime for OpenCL™ on Ubuntu\* 20.04 <https://github.com/openvinotoolkit/docker_ci/blob/master/configure_gpu_ubuntu20.md>`__.
 
-* WSL2: ```sh docker run -it rm device /dev/dxg volume /usr/lib/wsl:/usr/lib/wsl <image_name> ``` > **NOTE** : To launch a Linux image on WSL2, make sure that the additional requirements in `System Requirements <#system-requirements>`__ are met.
+* WSL2:
+  
+  .. ref-code-block:: cpp
+  
+  	docker run -it --rm --device /dev/dxg --volume /usr/lib/wsl:/usr/lib/wsl <image_name>
+  
+  
+  
+  .. note:: To launch a Linux image on WSL2, make sure that the additional requirements in `System Requirements <#system-requirements>`__ are met.
 
 Running the Image on Intel® Neural Compute Stick 2
 ---------------------------------------------------
@@ -211,6 +235,10 @@ While the command above is not working, you can also run container in the privil
 
 .. note:: This option is not recommended, as conflicts with Kubernetes and other tools that use orchestration and private networks may occur. Please use it with caution and only for troubleshooting purposes.
 
+
+
+
+
 Known Limitations
 +++++++++++++++++
 
@@ -224,6 +252,8 @@ Running the Image on Intel® Vision Accelerator Design with Intel® Movidius™ 
 ------------------------------------------------------------------------------------
 
 .. note:: To run inferences on Intel® Vision Accelerator Design with Intel® Movidius™ VPUs, make sure that you have `configured the Docker image <#set-up-hddldaemon>`__ first.
+
+
 
 Use the following command:
 

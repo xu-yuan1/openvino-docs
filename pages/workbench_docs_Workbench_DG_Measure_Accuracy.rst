@@ -21,6 +21,8 @@ Create Accuracy Report
 
 .. note:: Accuracy Measurements are not available for Natural Language Processing models.
 
+
+
 Once you select a model and a dataset and run a baseline inference, the **Projects** page appears. Go to the **Perform** tab and select **Create Accuracy Report** :
 
 .. image:: create_report.png

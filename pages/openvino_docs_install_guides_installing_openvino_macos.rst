@@ -5,11 +5,19 @@
 Install and Configure Intel® Distribution of OpenVINO™ toolkit for macOS
 ===========================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_macos_1md_openvino_docs_install_guides_installing-openvino-macos`
+:target:`doxid-openvino_docs_install_guides_installing_openvino_macos_1md_openvino_docs_install_guides_installing_openvino_macos`
 
 .. note:: Since the OpenVINO™ 2022.1 release, the following development tools: Model Optimizer, Post-Training Optimization Tool, Model Downloader and other Open Model Zoo tools, Accuracy Checker, and Annotation Converter are not part of the installer. These tools are now only available on `pypi.org <https://pypi.org/project/openvino-dev/>`__.
 
+
+
+
+
 .. note:: The Intel® Distribution of OpenVINO™ toolkit is supported on macOS version 10.15 with Intel® processor-based machines.
+
+
+
+
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
@@ -100,6 +108,8 @@ If you have more than one OpenVINO™ version on your machine, you can easily sw
 
 .. note:: You can also run this script every time when you start new terminal session. Open ``~/.bashrc`` in your favorite editor, and add ``source <INSTALL_DIR>/setupvars.sh``. Next time when you open a terminal, you will see ``[setupvars.sh] OpenVINO™ environment initialized``. Changing ``.bashrc`` is not recommended when you have many OpenVINO™ versions on your machine and want to switch among them, as each may require different setup.
 
+
+
 The environment variables are set. Continue to the next section if you want to download any additional components.
 
 .. _model-optimizer:
@@ -108,6 +118,14 @@ Step 3 (Optional): Download Additional Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: Since the OpenVINO™ 2022.1 release, the following development tools: Model Optimizer, Post-Training Optimization Tool, Model Downloader and other Open Model Zoo tools, Accuracy Checker, and Annotation Converter are not part of the installer. The OpenVINO™ Development Tools can only be installed via PyPI now. See :ref:`Install OpenVINO™ Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>` for detailed steps.
+
+
+
+
+
+
+
+
 
 .. dropdown:: OpenCV
 
@@ -166,6 +184,13 @@ To uninstall the toolkit, follow the steps on the :ref:`Uninstalling page <doxid
    * Sample applications: :ref:`OpenVINO™ Toolkit Samples Overview <code samples>`
    * Pre-trained deep learning models: :ref:`Overview of OpenVINO™ Toolkit Pre-Trained Models <model zoo>`
    * IoT libraries and code samples in the GitHUB repository: `Intel® IoT Developer Kit`_ 
+
+
+
+
+
+
+
 
 
    .. _Intel® IoT Developer Kit: https://github.com/intel-iot-devkit

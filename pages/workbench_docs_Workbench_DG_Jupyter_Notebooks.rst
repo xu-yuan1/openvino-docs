@@ -29,6 +29,10 @@ Choose one of the ways to access the notebooks:
 
 .. note:: The playground opens in a new tab. Make sure your browser does not block pop-ups.
 
+
+
+
+
 Learn Model Inference with OpenVINO API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -45,6 +49,8 @@ The JupyterLab\* provides you with tutorials that show how to infer a model usin
 If you could not find your use case in the list above, open the Generic tutorial: ``tutorials/generic/tutorial_generic.ipynb``.
 
 .. note:: If you opened the playground from the **Learn OpenVINO** tab and the DL Workbench recognized the task of your model, you go directly to the associated tutorial. See `You Have a Model Imported into the DL Workbench <#model-from-dl-workbench>`__ for next steps.
+
+
 
 Decide on the model you want to work with:
 
@@ -86,11 +92,9 @@ To use a model, sample image, and/or device other than those specified in a tuto
 
 
 
+1. Upload the files to the playground using the upload icon under the top menu:
 
-
-#. Upload the files to the playground using the upload icon under the top menu:
-   
-   .. image:: menu.png
+.. image:: menu.png
 
 #. Replace the paths and device name in the notebook:
    
@@ -118,6 +122,8 @@ If you do not have a model, you still can use the tutorials. `Intel® Open Model
 * ``models``. Contains all models imported in the DL Workbench. Feel free to use models from the folder, however, do not change the content.
 
 * ``tutorials``. Contains Jupyter notebooks with a full inference workflow for different use cases. Feel free to change the content of the folder.
+
+
 
 See Also
 ~~~~~~~~

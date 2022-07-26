@@ -1,9 +1,9 @@
-.. index:: pair: page; Deploy with OpenVINO
+.. index:: pair: page; Deploying Your Applications with OpenVINO™
 .. _doxid-openvino_deployment_guide:
 
 
-Deploy with OpenVINO
-====================
+Deploying Your Applications with OpenVINO™
+============================================
 
 :target:`doxid-openvino_deployment_guide_1md_openvino_docs_ov_runtime_ug_deployment_deployment_intro`
 
@@ -18,67 +18,62 @@ Deploy with OpenVINO
    openvino_docs_install_guides_deployment_manager_tool
    openvino_docs_deploy_local_distribution
 
-Once the :ref:`OpenVINO application development <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>` has been finished, usually application developers need to deploy their applications to end users. There are several ways how to achieve that:
+Once the :ref:`OpenVINO™ application development <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>` has been finished, application developers usually need to deploy their applications to end users. There are several ways to achieve that:
 
-* Set a dependency on existing prebuilt packages (so called *centralized distribution*):
+* Set a dependency on the existing prebuilt packages, also called "centralized distribution":
   
-  * Using Debian / RPM packages, a recommended way for a family of Linux operation systems
+  * using Debian / RPM packages - a recommended way for Linux operating systems;
   
-  * Using pip package manager on PyPi, default approach for Python-based applications
+  * using PIP package manager on PyPI - the default approach for Python-based applications;
   
-  * Using Docker images. If the application should be deployed as a Docker image, developer can use a pre-built runtime OpenVINO Docker image as a base image in the Dockerfile for the application container image. You can find more info about available OpenVINO Docker images in the Install Guides for :ref:`Linux <doxid-openvino_docs_install_guides_installing_openvino_docker_linux>` and :ref:`Windows <doxid-openvino_docs_install_guides_installing_openvino_docker_windows>`. Also, if you need to customize OpenVINO Docker image, you can use `Docker CI Framework <https://github.com/openvinotoolkit/docker_ci>`__ to generate a Dockerfile and built it.
+  * using Docker images - if the application should be deployed as a Docker image, use a pre-built OpenVINO™ Runtime Docker image as a base image in the Dockerfile for the application container image. For more information about OpenVINO Docker images, refer to :ref:`Installing OpenVINO on Linux from Docker <doxid-openvino_docs_install_guides_installing_openvino_docker_linux>` and :ref:`Installing OpenVINO on Windows from Docker <doxid-openvino_docs_install_guides_installing_openvino_docker_windows>`. Furthermore, to customize your OpenVINO Docker image, use the `Docker CI Framework <https://github.com/openvinotoolkit/docker_ci>`__ to generate a Dockerfile and built the image.
 
-* Grab a necessary functionality of OpenVINO together with your application (so-called *local distribution*):
+* Grab a necessary functionality of OpenVINO together with your application, also called "local distribution":
   
-  * Using :ref:`OpenVINO Deployment manager <doxid-openvino_docs_install_guides_deployment_manager_tool>` providing a convinient way create a distribution package
+  * using :ref:`OpenVINO Deployment Manager <doxid-openvino_docs_install_guides_deployment_manager_tool>` - providing a convenient way for creating a distribution package;
   
-  * Using advanced :ref:`Local distribution <doxid-openvino_docs_deploy_local_distribution>` approach
+  * using the advanced :ref:`local distribution <doxid-openvino_docs_deploy_local_distribution>` approach;
   
-  * Using `static version of OpenVINO Runtime linked into the final app <https://github.com/openvinotoolkit/openvino/wiki/StaticLibraries>`__
+  * using `a static version of OpenVINO Runtime linked to the final app <https://github.com/openvinotoolkit/openvino/wiki/StaticLibraries>`__.
 
-The table below shows which distribution type can be used depending on target operation system:
-
-.. raw:: html
-
-    <div class="collapsible-section" data-title="Click to expand/collapse">
+The table below shows which distribution type can be used for what target operating system:
 
 .. list-table::
     :header-rows: 1
 
     * - Distribution type
-      - Operation systems
+      - Operating systems
     * - Debian packages
       - Ubuntu 18.04 long-term support (LTS), 64-bit; Ubuntu 20.04 long-term support (LTS), 64-bit
     * - RMP packages
       - Red Hat Enterprise Linux 8, 64-bit
     * - Docker images
       - Ubuntu 18.04 long-term support (LTS), 64-bit; Ubuntu 20.04 long-term support (LTS), 64-bit; Red Hat Enterprise Linux 8, 64-bit; Windows Server Core base LTSC 2019, 64-bit; Windows 10, version 20H2, 64-bit
-    * - PyPi (pip package manager)
+    * - PyPI (PIP package manager)
       - See `https://pypi.org/project/openvino/ <https://pypi.org/project/openvino/>`__
     * - :ref:`OpenVINO Deployment Manager <doxid-openvino_docs_install_guides_deployment_manager_tool>`
-      - All operation systems
+      - All operating systems
     * - :ref:`Local distribution <doxid-openvino_docs_deploy_local_distribution>`
-      - All operation systems
-    * - `Build OpenVINO statically and link into the final app <https://github.com/openvinotoolkit/openvino/wiki/StaticLibraries>`__
-      - All operation systems
+      - All operating systems
+    * - `Build OpenVINO statically and link to the final app <https://github.com/openvinotoolkit/openvino/wiki/StaticLibraries>`__
+      - All operating systems
 
-.. raw:: html
+Granularity of Major Distribution Types
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    </div>
-
-Depending on the distribution type, the granularity of OpenVINO packages may vary: PyPi distribution `OpenVINO has a single package 'openvino' <https://pypi.org/project/openvino/>`__ containing all the runtime libraries and plugins, while more configurable ways like :ref:`Local distribution <doxid-openvino_docs_deploy_local_distribution>` provide higher granularity, so it is important to now some details about the set of libraries which are part of OpenVINO Runtime package:
+The granularity of OpenVINO packages may vary for different distribution types. For example, the PyPI distribution of OpenVINO has a `single 'openvino' package <https://pypi.org/project/openvino/>`__ that contains all the runtime libraries and plugins, while a :ref:`local distribution <doxid-openvino_docs_deploy_local_distribution>` is a more configurable type providing higher granularity. Below are important details of the set of libraries included in the OpenVINO Runtime package:
 
 .. image:: deployment_simplified.png
 
-* The main library ``openvino`` is used by C++ user's applications to link against with. The library provides all OpenVINO Runtime public API for both OpenVINO API 2.0 and Inference Engine, nGraph APIs. For C language applications ``openvino_c`` is additionally required for distribution.
+* The main library ``openvino`` is used by users' C++ applications to link against with. The library provides all OpenVINO Runtime public APIs, including both API 2.0 and the previous Inference Engine and nGraph APIs. For C language applications, ``openvino_c`` is additionally required for distribution.
 
-* The *optional* plugin libraries like ``openvino_intel_cpu_plugin`` (matching ``openvino_.+_plugin`` pattern) are used to provide inference capabilities on specific devices or additional capabitilies like :ref:`Hetero execution <doxid-openvino_docs__o_v__u_g__hetero_execution>` or :ref:`Multi-Device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`.
+* The "optional" plugin libraries like ``openvino_intel_cpu_plugin`` (matching the ``openvino_.+_plugin`` pattern) are used to provide inference capabilities on specific devices or additional capabilities like :ref:`Hetero Execution <doxid-openvino_docs__o_v__u_g__hetero_execution>` and :ref:`Multi-Device Execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`.
 
-* The *optional* plugin libraries like ``openvino_ir_frontnend`` (matching ``openvino_.+_frontend``) are used to provide capabilities to read models of different file formats like OpenVINO IR, ONNX or Paddle.
+* The "optional" plugin libraries like ``openvino_ir_frontend`` (matching ``openvino_.+_frontend``) are used to provide capabilities to read models of different file formats such as OpenVINO IR, ONNX, and PaddlePaddle.
 
-The *optional* means that if the application does not use the capability enabled by the plugin, the plugin's library or package with the plugin is not needed in the final distribution.
+Here the term "optional" means that if the application does not use the capability enabled by the plugin, the plugin library or a package with the plugin is not needed in the final distribution.
 
-The information above covers granularity aspects of majority distribution types, more detailed information is only needed and provided in :ref:`Local Distribution <doxid-openvino_docs_deploy_local_distribution>`.
+Building a local distribution will require more detailed information, and you will find it in the dedicated :ref:`Libraries for Local Distribution <doxid-openvino_docs_deploy_local_distribution>` article.
 
-.. note:: Depending on target OpenVINO devices, you also have to use :ref:`Configurations for GPU <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`, :ref:`Configurations for GNA <doxid-openvino_docs_install_guides_configurations_for_intel_gna>`, :ref:`Configurations for NCS2 <doxid-openvino_docs_install_guides_configurations_for_ncs2>` or :ref:`Configurations for VPU <doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu>` for proper configuration of deployed machines.
+.. note:: Depending on your target OpenVINO devices, the following configurations might be needed for deployed machines: :ref:`Configurations for GPU <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`, :ref:`Configurations for GNA <doxid-openvino_docs_install_guides_configurations_for_intel_gna>`, :ref:`Configurations for NCS2 <doxid-openvino_docs_install_guides_configurations_for_ncs2>`, :ref:`Configurations for VPU <doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu>`.
 

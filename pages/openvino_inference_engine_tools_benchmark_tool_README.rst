@@ -9,12 +9,20 @@ Benchmark Python\* Tool
 
 .. note:: This topic describes usage of Python implementation of the Benchmark Tool. For the C++ implementation, refer to :ref:`Benchmark C++ Tool <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`.
 
+
+
+
+
 How It Works
 ~~~~~~~~~~~~
 
 Upon start-up, the application reads command-line parameters and loads a network and inputs (images/binary files) to the specified device. Device-specific execution parameters (number of streams, threads, and so on) can be either explicitly specified through the command line or left default. In the latter case, the sample logic will select the values for the optimal throughput. While further experimenting with individual parameters (like number of streams and requests, batch size, etc) allows to find the performance sweet spot, usually, the resulting values are not very performance-portable, so the values from one machine or device are not necessarily optimal for another. From this perspective, the most portable way is experimenting only the performance hints. To learn more, refer to the section below.
 
 .. note:: By default, OpenVINO samples, tools and demos expect input with BGR channels order. If you trained your model to work with RGB order, you need to manually rearrange the default channels order in the sample or demo application or reconvert your model using the Model Optimizer tool with ``--reverse_input_channels`` argument specified. For more information about the argument, refer to **When to Reverse Input Channels** section of :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`.
+
+
+
+
 
 Latency and Throughput-focused Inference Modes
 ----------------------------------------------
@@ -165,6 +173,10 @@ To run the tool, you can use public or Intel's pre-trained models from the Open 
 
 .. note:: Before running the tool with a trained model, make sure the model is converted to the OpenVINO format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
 
+
+
+
+
 Examples of Running the Tool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -172,17 +184,21 @@ This section provides step-by-step instructions on how to run the Benchmark Tool
 
 .. note:: The Internet access is required to execute the following steps successfully. If you have access to the Internet through the proxy server only, please make sure that it is configured in your OS environment.
 
+
+
+
+
 #. Install OpenVINO Development Tools to work with Caffe\* models:
-
-.. ref-code-block:: cpp
-
-	pip install openvino-dev[caffe]
+   
+   .. ref-code-block:: cpp
+   
+   	pip install openvino-dev[caffe]
 
 #. Download the model. Go to the Model Downloader directory and run the ``omz_downloader`` tool with the model name and directory to download the model to:
-
-.. ref-code-block:: cpp
-
-	omz_downloader --name googlenet-v1 -o <models_dir>
+   
+   .. ref-code-block:: cpp
+   
+   	omz_downloader --name googlenet-v1 -o <models_dir>
 
 #. Convert the model to the OpenVINO IR format. Run Model Optimizer with the path to the model, model format and output directory to generate the IR files:
    

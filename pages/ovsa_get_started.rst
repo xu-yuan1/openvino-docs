@@ -133,6 +133,10 @@ Begin this step on the Intel® Core™ or Xeon® processor machine that meets th
 
 .. note:: As an alternative to manually following steps 1 - 11, you can run the script ``install_host_deps.sh`` in the ``Scripts/reference directory`` under the OpenVINO™ Security Add-on repository. The script stops with an error message if it identifies any issues. If the script halts due to an error, correct the issue that caused the error and restart the script. The script runs for several minutes and provides progress information.
 
+
+
+
+
 #. Test for Trusted Platform Module (TPM) support:
    
    .. ref-code-block:: cpp
@@ -167,9 +171,11 @@ Begin this step on the Intel® Core™ or Xeon® processor machine that meets th
    
    	sudo apt install -y cpu-checker
 
-#. Install the Kernel-based Virtual Machine (KVM) and QEMU packages. ```sh
+#. Install the Kernel-based Virtual Machine (KVM) and QEMU packages.
    
-   sudo apt install qemu qemu-kvm libvirt-bin bridge-utils virt-manager ```
+   .. ref-code-block:: cpp
+   
+   	sudo apt install qemu qemu-kvm libvirt-bin  bridge-utils  virt-manager
 
 #. Check the QEMU version:
    
@@ -277,12 +283,14 @@ This example in this step uses the following names. Your configuration might use
    .. ref-code-block:: cpp
    
    	sudo netplan generate
-
-.. ref-code-block:: cpp
-
-	sudo netplan apply
-
-A bridge is created and an IP address is assigned to the new bridge.
+   
+   
+   
+   .. ref-code-block:: cpp
+   
+   	sudo netplan apply
+   
+   A bridge is created and an IP address is assigned to the new bridge.
 
 #. Verify the new bridge:
    
@@ -655,9 +663,11 @@ Building OpenVINO™ Security Add-on depends on OpenVINO™ Model Server docker 
    	git clone https://github.com/openvinotoolkit/model_server.git
    	cd model_server
    	make docker_build
-
-Step 2: Build the software required for all roles
--------------------------------------------------
+   
+   
+   
+   Step 2: Build the software required for all roles
+   -------------------------------------------------
 
 This step is for the combined role of Model Developer and Independent Software Vendor, and the User
 
@@ -764,7 +774,11 @@ The Model Hosting components install the OpenVINO™ Security Add-on Runtime Doc
 
 #. Log on to the Guest VM as ``<user>``.
 
-#. Create the OpenVINO™ Security Add-on directory in the home directory ```sh mkdir -p ~/OVSA ```
+#. Create the OpenVINO™ Security Add-on directory in the home directory
+   
+   .. ref-code-block:: cpp
+   
+   	mkdir -p ~/OVSA
 
 #. While on the Host Machine copy the ovsa-model-hosting.tar.gz from release_files to the Guest VM:
    
@@ -824,6 +838,8 @@ Create a directory named artefacts. This directory will hold artefacts required 
 	cd ~/OVSA/artefacts
 	export OVSA_DEV_ARTEFACTS=$PWD
 	source /opt/ovsa/scripts/setupvars.sh
+
+
 
 Step 2: Create a key store and add a certificate to it
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -982,9 +998,11 @@ This example uses scp to share data between the ovsa_runtime and ovsa_dev Guest 
    
    	cd $OVSA_RUNTIME_ARTEFACTS
    	scp custkeystore.csr.crt username@<developer-vm-ip-address>:/<username-home-directory>/OVSA/artefacts
-
-Step 4: Receive and load the access controlled model into the OpenVINO™ Model Server
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   
+   
+   
+   Step 4: Receive and load the access controlled model into the OpenVINO™ Model Server
+   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 #. Receive the model as files named:
    

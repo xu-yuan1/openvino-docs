@@ -1,18 +1,18 @@
-.. index:: pair: page; Convert PyTorch\* YOLACT Model
+.. index:: pair: page; Converting a PyTorch YOLACT Model
 .. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_pytorch_specific__convert__y_o_l_a_c_t:
 
 
-Convert PyTorch\* YOLACT Model
-==============================
+Converting a PyTorch YOLACT Model
+=================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_pytorch_specific__convert__y_o_l_a_c_t_1md_openvino_docs_mo_dg_prepare_model_convert_model_pytorch_specific_convert_yolact` You Only Look At CoefficienTs (YOLACT) is a simple, fully convolutional model for real-time instance segmentation. The PyTorch\* implementation is publicly available in `this GitHub\* repository <https://github.com/dbolya/yolact>`__. The YOLACT++ model is not supported, because it uses deformable convolutional layers that cannot be represented in ONNX\* format.
+:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_pytorch_specific__convert__y_o_l_a_c_t_1md_openvino_docs_mo_dg_prepare_model_convert_model_pytorch_specific_convert_yolact` You Only Look At CoefficienTs (YOLACT) is a simple, fully convolutional model for real-time instance segmentation. The PyTorch implementation is publicly available in `this GitHub repository <https://github.com/dbolya/yolact>`__. The YOLACT++ model is not supported, because it uses deformable convolutional layers that cannot be represented in ONNX format.
 
 .. _patch-file:
 
-Create a Patch File
-~~~~~~~~~~~~~~~~~~~
+Creating a Patch File
+~~~~~~~~~~~~~~~~~~~~~
 
-Before converting the model, create a patch file for the repository. The patch modifies the framework code by adding a special command-line argument to the framework options that enables inference graph dumping:
+Before converting the model, create a patch file for the repository. The patch modifies the framework code by adding a special command-line argument to the framework options. The argument enables inference graph dumping:
 
 #. Go to a writable directory and create a ``YOLACT_onnx_export.patch`` file.
 
@@ -131,8 +131,8 @@ Before converting the model, create a patch file for the repository. The patch m
 
 #. Save and close the file.
 
-Convert YOLACT Model to the Intermediate Representation (IR) format
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Converting a YOLACT Model to the OpenVINO IR format
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Step 1**. Clone the GitHub repository and check out the commit:
 
@@ -150,9 +150,9 @@ Convert YOLACT Model to the Intermediate Representation (IR) format
 
 #. Set up the environment as described in ``README.md``.
 
-**Step 2**. Download a pre-trained model from the list attached in the ``Evaluation`` section of ``README.md`` document, for example ``yolact_base_54_800000.pth``.
+**Step 2**. Download a pretrained model from the list attached in the ``Evaluation`` section of ``README.md`` document, for example ``yolact_base_54_800000.pth``.
 
-**Step 3**. Export the model to ONNX\* format.
+**Step 3**. Export the model to ONNX format.
 
 #. Apply the ``YOLACT_onnx_export.patch`` patch to the repository. Refer to the `Create a Patch File <#patch-file>`__ instructions if you do not have it:
    
@@ -160,7 +160,7 @@ Convert YOLACT Model to the Intermediate Representation (IR) format
    
    	git apply /path/to/patch/YOLACT_onnx_export.patch
 
-#. Evaluate the YOLACT model to export it to ONNX\* format:
+#. Evaluate the YOLACT model to export it to ONNX format:
 
 .. ref-code-block:: cpp
 
@@ -193,7 +193,7 @@ To get performance gain by offloading to the OpenVINO application of mean/scale 
   	    --mean_values "[123.68, 116.78, 103.94]" \
   	    --scale_values "[58.40, 57.12, 57.38]"
 
-* If the backbone of the model is Darknet53-FPN, use the following command line:
+* If the backbone of the model is Darknet53-FPN, use the following MO command line:
   
   .. ref-code-block:: cpp
   

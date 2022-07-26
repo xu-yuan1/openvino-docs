@@ -1,57 +1,56 @@
-.. index:: pair: page; Running on multiple devices simultaneously
+.. index:: pair: page; Running on Multiple Devices Simultaneously
 .. _doxid-openvino_docs__o_v__u_g__running_on_multiple_devices:
 
 
-Running on multiple devices simultaneously
+Running on Multiple Devices Simultaneously
 ==========================================
 
 :target:`doxid-openvino_docs__o_v__u_g__running_on_multiple_devices_1md_openvino_docs_ov_runtime_ug_multi_device`
 
-Introducing the Multi-Device Plugin (C++)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
 
-    <div id="switcher-cpp" class="switcher-anchor">C++</div>
 
-The Multi-Device plugin automatically assigns inference requests to available computational devices to execute the requests in parallel. By contrast, the Heterogeneous plugin can run different layers on different devices but not in parallel. The potential gains with the Multi-Device plugin are:
 
-* Improved throughput from using multiple devices (compared to single-device execution)
+To run inference on multiple devices, you can choose either of the following ways:
 
-* More consistent performance, since the devices share the inference burden (if one device is too busy, another can take more of the load)
+   - Use the :ref:`CUMULATIVE_THROUGHPUT option <cumulative throughput>` of the Automatic Device Selection mode. This way, you can use all available devices in the system without the need to specify them. 
+   - Use the Multi-Device execution mode. This page will explain how it works and how to use it.
 
-Note that with Multi-Device the application logic is left unchanged, so you don't need to explicitly compile the model on every device, create and balance the inference requests and so on. From the application point of view, this is just another device that handles the actual machinery. The only thing that is required to leverage performance is to provide the multi-device (and hence the underlying devices) with enough inference requests to process. For example, if you were processing 4 cameras on the CPU (with 4 inference requests), it might be desirable to process more cameras (with more requests in flight) to keep CPU and GPU busy via Multi-Device.
+How MULTI Works
+~~~~~~~~~~~~~~~
 
-The setup of Multi-Device can be described in three major steps:
+The Multi-Device execution mode, or MULTI for short, acts as a "virtual" or a "proxy" device, which does not bind to a specific type of hardware. Instead, it assigns available computing devices to particular inference requests, which are then executed in parallel.
 
-#. Prepare configure for each device.
+The potential gains from using Multi-Device execution are:
 
-#. Compile the model on the Multi-Device plugin created on top of a (prioritized) list of the configured devices with the configure prepared in step one.
+* improved throughput from using multiple devices at once,
 
-#. As with any other CompiledModel call (resulting from ``compile_model``), you create as many requests as needed to saturate the devices.
+* increase in performance stability due to multiple devices sharing inference workload.
 
-These steps are covered below in detail.
+Importantly, the Multi-Device mode does not change the application logic, so it does not require you to explicitly compile the model on every device or create and balance inference requests. It appears to use a typical device but internally handles the actual hardware.
 
-Defining and Configuring the Multi-Device Plugin
-------------------------------------------------
+Note that the performance increase in this mode comes from utilizing multiple devices at once. This means that you need to provide the devices with enough inference requests to keep them busy, otherwise you will not benefit much from using MULTI.
 
-Following the OpenVINO™ convention of labeling devices, the Multi-Device plugin uses the name "MULTI". The only configuration option for the Multi-Device plugin is a prioritized list of devices to use:
+Using the Multi-Device Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. list-table::
-    :header-rows: 1
+Following the OpenVINO™ naming convention, the Multi-Device mode is assigned the label of “MULTI.” The only configuration option available for it is a prioritized list of devices to use:
 
-    * - Parameter name
-      - Parameter values
-      - Default
-      - Description
-    * - :ref:`ov::device::priorities <doxid-group__ov__runtime__cpp__prop__api_1gae88af90a18871677f39739cb0ef0101e>`
-      - comma-separated device names with no spaces
-      - N/A
-      - Prioritized list of devices
++---------------------------+---------------------------------+------------------------------------------------------------+
+| Property                  | Property values                 | Description                                                |
++===========================+=================================+============================================================+
+| <device list>             | | MULTI: <device names>         | | Specifies the devices available for selection.           |
+|                           | | comma-separated, no spaces    | | The device sequence will be taken as priority            |
++---------------------------+---------------------------------+ | from high to low.                                        |
+| ov::device::priorities    | | device names                  | | Priorities can be set directly as a string.              |
+|                           | | comma-separated, no spaces    |                                                            |
++---------------------------+---------------------------------+------------------------------------------------------------+
 
-You can set the priorities directly as a string.
+Specifying the device list explicitly is required by MULTI, as it defines the devices available for inference and sets their priorities. Importantly, the list may also specify the number of requests for MULTI to keep for each device, as described below.
 
-Basically, there are three ways to specify the devices to be use by the "MULTI":
+Note that OpenVINO™ Runtime enables you to use “GPU” as an alias for “GPU.0” in function calls. More details on enumerating devices can be found in :ref:`Working with devices <doxid-openvino_docs__o_v__u_g__working_with_devices>`.
+
+The following commands are accepted by the API:
 
 .. tab:: C++
 
@@ -59,7 +58,13 @@ Basically, there are three ways to specify the devices to be use by the "MULTI":
        :language: cpp
        :fragment: [part0]
 
-Notice that the priorities of the devices can be changed in real time for the compiled model:
+.. tab:: Python
+
+    .. doxygensnippet:: docs/snippets/ov_multi.py
+       :language: python
+       :fragment: [MULTI_0]
+
+Notice that MULTI allows you to **change device priorities on the fly**. You can alter the order, exclude a device, and bring an excluded device back. Still, it does not allow adding new devices.
 
 .. tab:: C++
 
@@ -67,54 +72,20 @@ Notice that the priorities of the devices can be changed in real time for the co
        :language: cpp
        :fragment: [part1]
 
-Finally, there is a way to specify number of requests that the Multi-Device will internally keep for each device. Suppose your original app was running 4 cameras with 4 inference requests. You would probably want to share these 4 requests between 2 devices used in MULTI. The easiest way is to specify a number of requests for each device using parentheses: "MULTI:CPU(2),GPU(2)" and use the same 4 requests in your app. However, such an explicit configuration is not performance-portable and hence not recommended. Instead, the better way is to configure the individual devices and query the resulting number of requests to be used at the application level (see `Configuring the Individual Devices and Creating the Multi-Device On Top <#configuring-the-individual-devices-and-creating-the-multi-device-on-top>`__).
+.. tab:: Python
 
-Enumerating Available Devices
------------------------------
+    .. doxygensnippet:: docs/snippets/ov_multi.py
+       :language: python
+       :fragment: [MULTI_1]
 
-The OpenVINO Runtime API features a dedicated methods to enumerate devices and their capabilities. See the :ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>`. This is example output from the sample (truncated to device names only):
+One more thing you can define is the **number of requests to allocate for each device**. You can do it simply by adding the number to each device in parentheses, like this: ``"MULTI:CPU(2),GPU(2)"``. However, this method is not recommended as it is not performance-portable. The suggested approach is to configure individual devices and query the resulting number of requests to be used at the application level, as described in `Configuring Individual Devices and Creating MULTI On Top <#configuring-the-individual-devices-and-creating-the-multi-device-on-top>`__.
 
-.. ref-code-block:: cpp
+To check what devices are present in the system, you can use the Device API. For information on how to do it, check :ref:`Query device properties and configuration <doxid-openvino_docs__o_v__u_g_query_api>`.
 
-	./hello_query_device
-	Available devices:
-	    Device: CPU
-	...
-	    Device: GPU.0
-	...
-	    Device: GPU.1
-	...
-	    Device: HDDL
+Configuring Individual Devices and Creating the Multi-Device On Top
+-------------------------------------------------------------------
 
-A simple programmatic way to enumerate the devices and use with the multi-device is as follows:
-
-.. tab:: C++
-
-    .. doxygensnippet:: docs/snippets/MULTI2.cpp
-       :language: cpp
-       :fragment: [part2]
-
-Beyond the trivial "CPU", "GPU", "HDDL" and so on, when multiple instances of a device are available the names are more qualified. For example, this is how two Intel® Movidius™ Myriad™ X sticks are listed with the hello_query_sample:
-
-.. ref-code-block:: cpp
-
-	...
-	    Device: MYRIAD.1.2-ma2480
-	...
-	    Device: MYRIAD.1.4-ma2480
-
-So the explicit configuration to use both would be "MULTI:MYRIAD.1.2-ma2480,MYRIAD.1.4-ma2480". Accordingly, the code that loops over all available devices of "MYRIAD" type only is below:
-
-.. tab:: C++
-
-    .. doxygensnippet:: docs/snippets/MULTI3.cpp
-       :language: cpp
-       :fragment: [part3]
-
-Configuring the Individual Devices and Creating the Multi-Device On Top
------------------------------------------------------------------------
-
-As discussed in the first section, you shall configure each individual device as usual and then just create the "MULTI" device on top:
+As mentioned previously, executing inference with MULTI may be set up by configuring individual devices before creating the "MULTI" device on top. It may be considered for performance reasons.
 
 .. tab:: C++
 
@@ -122,14 +93,18 @@ As discussed in the first section, you shall configure each individual device as
        :language: cpp
        :fragment: [part4]
 
-An alternative is to combine all the individual device settings into a single config file and load that, allowing the Multi-Device plugin to parse and apply settings to the right devices. See the code example in the next section.
+.. tab:: Python
 
-Note that while the performance of accelerators combines really well with Multi-Device, the CPU+GPU execution poses some performance caveats, as these devices share the power, bandwidth and other resources. For example it is recommended to enable the GPU throttling hint (which save another CPU thread for the CPU inference). See the `Using the Multi-Device with OpenVINO samples and benchmarking the performance <#using-the-multi-device-with-openvino-samples-and-benchmarking-the-performance>`__ section below.
+    .. doxygensnippet:: docs/snippets/ov_multi.py
+       :language: python
+       :fragment: [MULTI_4]
+
+Alternatively, you can combine all the individual device settings into a single config file and load it for MULTI to parse. See the code example in the next section.
 
 Querying the Optimal Number of Inference Requests
 -------------------------------------------------
 
-You can use the :ref:`configure devices <doxid-openvino_docs__o_v__u_g_query_api>` to query the optimal number of requests. Similarly, when using the Multi-Device you don't need to sum over included devices yourself, you can query property directly:
+When using MULTI, you don't need to sum over included devices yourself, you can query the optimal number of requests directly, using the :ref:`configure devices <doxid-openvino_docs__o_v__u_g_query_api>` property:
 
 .. tab:: C++
 
@@ -137,186 +112,48 @@ You can use the :ref:`configure devices <doxid-openvino_docs__o_v__u_g_query_api
        :language: cpp
        :fragment: [part5]
 
-Using the Multi-Device with OpenVINO Samples and Benchmarking the Performance
------------------------------------------------------------------------------
+Using the Multi-Device with OpenVINO Samples and Benchmarking Performance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Every OpenVINO sample that supports the ``-d`` (which stands for "device") command-line option transparently accepts Multi-Device. The :ref:`Benchmark Application <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` is the best reference for the optimal usage of Multi-Device. As discussed earlier, you do not need to set up the number of requests, CPU streams or threads because the application provides optimal performance out of the box. Below is an example command to evaluate HDDL+GPU performance with that:
+To see how the Multi-Device execution is used in practice and test its performance, take a look at OpenVINO's Benchmark Application which presents the optimal performance of the plugin without the need for additional settings, like the number of requests or CPU threads. Here is an example command to evaluate performance of HDDL+GPU:
 
 .. ref-code-block:: cpp
 
 	./benchmark_app –d MULTI:HDDL,GPU –m <model> -i <input> -niter 1000
 
-The Multi-Device plugin supports FP16 IR files. The CPU plugin automatically upconverts it to FP32 and the other devices support it natively. Note that no demos are (yet) fully optimized for Multi-Device, by means of supporting the :ref:`ov::optimal_number_of_infer_requests <doxid-group__ov__runtime__cpp__prop__api_1ga087c6da667f7c3d8374aec5f6cbba027>` property, using the GPU streams/throttling, and so on.
+For more information, refer to the :ref:`C++ <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` or :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` version instructions.
 
-Video: MULTI Plugin
--------------------
+.. note::
 
-.. raw:: html
+   You can keep using the FP16 IR without converting it to FP32, even if some of the listed devices do not support it. The conversion will be done automatically for you.
 
-    <iframe allowfullscreen mozallowfullscreen msallowfullscreen oallowfullscreen webkitallowfullscreen width="560" height="315" src="https://www.youtube.com/embed/xbORYFEmrqU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-See Also
---------
-
-:ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+   No demos are yet fully optimized for MULTI, by means of supporting the ov::optimal_number_of_infer_requests property, using the GPU streams/throttling, and so on.
 
 Performance Considerations for the Multi-Device Execution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section covers few recommendations for the multi-device execution (applicable for both Python and C++):
+For best performance when using the MULTI execution mode you should consider a few recommendations:
 
-* MULTI usually performs best when the fastest device is specified first in the list of the devices. This is particularly important when the request-level parallelism is not sufficient (e.g. the number of request in the flight is not enough to saturate all devices).
+* MULTI usually performs best when the fastest device is specified first in the device candidate list. This is particularly important when the request-level parallelism is not sufficient (e.g. the number of requests is not enough to saturate all devices).
 
-* Just like with any throughput-oriented execution, it is highly recommended to query the optimal number of inference requests directly from the instance of the ``ov:compiled_model``. Please refer to the code of the ``benchmark_app``, that exists in both :ref:`C++ <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` and :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>`, for more details.
+* Just like with any throughput-oriented execution mode, it is highly recommended to query the optimal number of inference requests directly from the instance of the ``ov:compiled_model``. Refer to the code of the previously mentioned ``benchmark_app`` for more details.
 
-* Notice that for example CPU+GPU execution performs better with certain knobs which you can find in the code of the same :ref:`Benchmark App <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` sample. One specific example is disabling GPU driver polling, which in turn requires multiple GPU streams to amortize slower communication of inference completion from the device to the host.
+* Execution on certain device combinations, for example CPU+GPU, performs better with certain knobs. Refer to the ``benchmark_app`` code for details. One specific example is disabling GPU driver polling, which in turn requires multiple GPU streams to balance out slower communication of inference completion from the device to the host.
 
-* Multi-device logic always attempts to save on the (e.g. inputs) data copies between device-agnostic, user-facing inference requests and device-specific 'worker' requests that are being actually scheduled behind the scene. To facilitate the copy savings, it is recommended to run the requests in the order that they were created.
+* The MULTI logic always attempts to save on copying data between device-agnostic and user-facing inference requests, and device-specific 'worker' requests that are being actually scheduled behind the scene. To facilitate the copy savings, it is recommended to run the requests in the order in which they were created.
 
-Introducing the Multi-Device Plugin (Python)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* While performance of accelerators combines well with MULTI, the CPU+GPU execution may introduce certain performance issues. It is due to the devices sharing some resources, like power or bandwidth. Enabling the GPU throttling hint, which saves a CPU thread for CPU inference, is an example of a recommended solution addressing this issue.
 
-.. raw:: html
+See Also
+~~~~~~~~
 
-    <div id="switcher-python" class="switcher-anchor">Python</div>
+* :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 
-The Multi-Device plugin automatically assigns inference requests to available computational devices to execute the requests in parallel. By contrast, the Heterogeneous plugin can run different layers on different devices but not in parallel. The potential gains with the Multi-Device plugin are:
-
-* Improved throughput from using multiple devices (compared to single-device execution)
-
-* More consistent performance, since the devices share the inference burden (if one device is too busy, another can take more of the load)
-
-Note that with Multi-Device the application logic is left unchanged, so you don't need to explicitly compile the model on every device, create and balance the inference requests and so on. From the application point of view, this is just another device that handles the actual machinery. The only thing that is required to leverage performance is to provide the multi-device (and hence the underlying devices) with enough inference requests to process. For example, if you were processing 4 cameras on the CPU (with 4 inference requests), it might be desirable to process more cameras (with more requests in flight) to keep CPU and GPU busy via Multi-Device.
-
-The setup of Multi-Device can be described in three major steps:
-
-#. Configure each device (using the conventional :ref:`configure devices <doxid-openvino_docs__o_v__u_g_query_api>` method
-
-#. Compile the model on the Multi-Device plugin created on top of a (prioritized) list of the configured devices. This is the only change needed in the application.
-
-#. As with any other CompiledModel call (resulting from ``compile_model``), you create as many requests as needed to saturate the devices.
-
-These steps are covered below in detail.
-
-Defining and Configuring the Multi-Device Plugin
-------------------------------------------------
-
-Following the OpenVINO™ convention of labeling devices, the Multi-Device plugin uses the name "MULTI". The only configuration option for the Multi-Device plugin is a prioritized list of devices to use:
-
-.. list-table::
-    :header-rows: 1
-
-    * - Parameter name
-      - Parameter values
-      - Default
-      - Description
-    * - "MULTI_DEVICE_PRIORITIES"
-      - comma-separated device names with no spaces
-      - N/A
-      - Prioritized list of devices
-
-You can set the configuration directly as a string, or use the metric key ``MULTI_DEVICE_PRIORITIES`` from the ``multi/multi_device_config.hpp`` file, which defines the same string.
-
-The Three Ways to Specify Devices Targets for the MULTI plugin
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-* Option 1 - Pass a Prioritized List as a Parameter in ie.load_network()
-
-.. tab:: Python
-
-    .. doxygensnippet:: docs/snippets/ov_multi.py
-       :language: python
-       :fragment: [Option_1]
-
-* Option 2 - Pass a List as a Parameter, and Dynamically Change Priorities during Execution Notice that the priorities of the devices can be changed in real time for the compiled model:
-
-.. tab:: Python
-
-    .. doxygensnippet:: docs/snippets/ov_multi.py
-       :language: python
-       :fragment: [Option_2]
-
-* Option 3 - Use Explicit Hints for Controlling Request Numbers Executed by Devices There is a way to specify the number of requests that Multi-Device will internally keep for each device. If the original app was running 4 cameras with 4 inference requests, it might be best to share these 4 requests between 2 devices used in the MULTI. The easiest way is to specify a number of requests for each device using parentheses: “MULTI:CPU(2),GPU(2)” and use the same 4 requests in the app. However, such an explicit configuration is not performance-portable and not recommended. The better way is to configure the individual devices and query the resulting number of requests to be used at the application level. See `Configuring the Individual Devices and Creating the Multi-Device On Top <#configuring-the-individual-devices-and-creating-the-multi-device-on-top>`__.
-
-Enumerating Available Devices
------------------------------
-
-The OpenVINO Runtime API features a dedicated methods to enumerate devices and their capabilities. See the :ref:`Hello Query Device Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_query_device__r_e_a_d_m_e>`. This is example output from the sample (truncated to device names only):
-
-.. ref-code-block:: cpp
-
-	./hello_query_device
-	Available devices:
-	    Device: CPU
-	...
-	    Device: GPU.0
-	...
-	    Device: GPU.1
-	...
-	    Device: HDDL
-
-A simple programmatic way to enumerate the devices and use with the multi-device is as follows:
-
-.. tab:: Python
-
-    .. doxygensnippet:: docs/snippets/ov_multi.py
-       :language: python
-       :fragment: [available_devices_1]
-
-Beyond the trivial "CPU", "GPU", "HDDL" and so on, when multiple instances of a device are available the names are more qualified. For example, this is how two Intel® Movidius™ Myriad™ X sticks are listed with the hello_query_sample:
-
-.. ref-code-block:: cpp
-
-	...
-	    Device: MYRIAD.1.2-ma2480
-	...
-	    Device: MYRIAD.1.4-ma2480
-
-So the explicit configuration to use both would be "MULTI:MYRIAD.1.2-ma2480,MYRIAD.1.4-ma2480". Accordingly, the code that loops over all available devices of "MYRIAD" type only is below:
-
-.. tab:: Python
-
-    .. doxygensnippet:: docs/snippets/ov_multi.py
-       :language: python
-       :fragment: [available_devices_2]
-
-Configuring the Individual Devices and Creating the Multi-Device On Top
------------------------------------------------------------------------
-
-It is possible to configure each individual device as usual and then create the "MULTI" device on top:
-
-.. tab:: Python
-
-    .. doxygensnippet:: docs/snippets/ov_multi.py
-       :language: python
-       :fragment: [set_property]
-
-An alternative is to combine all the individual device settings into a single config file and load that, allowing the Multi-Device plugin to parse and apply settings to the right devices. See the code example in the next section.
-
-Note that while the performance of accelerators works well with Multi-Device, the CPU+GPU execution poses some performance caveats, as these devices share power, bandwidth and other resources. For example it is recommended to enable the GPU throttling hint (which saves another CPU thread for CPU inferencing). See the section below titled Using the Multi-Device with OpenVINO Samples and Benchmarking the Performance.
-
-Using the Multi-Device with OpenVINO Samples and Benchmarking the Performance
------------------------------------------------------------------------------
-
-Every OpenVINO sample that supports the ``-d`` (which stands for "device") command-line option transparently accepts Multi-Device. The :ref:`Benchmark application <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` is the best reference for the optimal usage of Multi-Device. As discussed earlier, you do not need to set up the number of requests, CPU streams or threads because the application provides optimal performance out of the box. Below is an example command to evaluate CPU+GPU performance with the Benchmark application:
-
-.. ref-code-block:: cpp
-
-	benchmark_app –d MULTI:CPU,GPU –m <model>
-
-The Multi-Device plugin supports FP16 IR files. The CPU plugin automatically upconverts it to FP32 and the other devices support it natively. Note that no demos are (yet) fully optimized for Multi-Device, by means of supporting the :ref:`ov::optimal_number_of_infer_requests <doxid-group__ov__runtime__cpp__prop__api_1ga087c6da667f7c3d8374aec5f6cbba027>` property, using the GPU streams/throttling, and so on.
-
-Video: MULTI Plugin
--------------------
-
-.. note:: This video is currently available only for C++, but many of the same concepts apply to Python.
+* :ref:`Automatic Device Selection <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>`
 
 .. raw:: html
 
     <iframe allowfullscreen mozallowfullscreen msallowfullscreen oallowfullscreen webkitallowfullscreen width="560" height="315" src="https://www.youtube.com/embed/xbORYFEmrqU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-See Also
---------
-
-:ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+.. note:: This video is currently available only for C++, but many of the same concepts apply to Python.
 

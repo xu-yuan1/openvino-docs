@@ -1,17 +1,17 @@
-.. index:: pair: page; Convert TensorFlow Neural Collaborative Filtering Model
+.. index:: pair: page; Converting a TensorFlow Neural Collaborative Filtering Model
 .. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__n_c_f__from__tensorflow:
 
 
-Convert TensorFlow Neural Collaborative Filtering Model
-=======================================================
+Converting a TensorFlow Neural Collaborative Filtering Model
+============================================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__n_c_f__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_ncf_from_tensorflow` This tutorial explains how to convert Neural Collaborative Filtering (NCF) model to Intermediate Representation (IR).
+:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__n_c_f__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_ncf_from_tensorflow` This tutorial explains how to convert Neural Collaborative Filtering (NCF) model to the OpenVINO Intermediate Representation.
 
 `Public TensorFlow NCF model <https://github.com/tensorflow/models/tree/master/official/recommendation>`__ does not contain pre-trained weights. To convert this model to the IR:
 
 #. Use `the instructions <https://github.com/tensorflow/models/tree/master/official/recommendation#train-and-evaluate-model>`__ from this repository to train the model.
 
-#. Freeze the inference graph you get on previous step in ``model_dir`` following the instructions from the Freezing Custom Models in Python\* section of :ref:`Converting a TensorFlow\* Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>`. Run the following commands:
+#. Freeze the inference graph you get in the previous step in ``model_dir``, following the instructions from the **Freezing Custom Models in Python** section of the :ref:`Converting a TensorFlow Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>` guide. Run the following commands:
    
    .. ref-code-block:: cpp
    
@@ -25,15 +25,15 @@ Convert TensorFlow Neural Collaborative Filtering Model
    	frozen = tf.compat.v1.graph_util.convert_variables_to_constants(sess, sess.graph_def, \
    	                                                      ["rating/BiasAdd"])
    	graph_io.write_graph(frozen, './', 'inference_graph.pb', as_text=False)
+   
+   where ``rating/BiasAdd`` is an output node.
 
-where ``rating/BiasAdd`` is an output node.
-
-#. Convert the model to the IR.If you look at your frozen model, you can see that it has one input that is split into four ``ResourceGather`` layers. (Click image to zoom in.)
+#. Convert the model to the OpenVINO format. If you look at your frozen model, you can see that it has one input that is split into four ``ResourceGather`` layers. (Click image to zoom in.)
 
 .. image:: NCF_start.png
 	:alt: NCF model beginning
 
-But as the Model Optimizer does not support such data feeding, you should skip it. Cut the edges incoming in ``ResourceGather`` s port 1:
+However, as the Model Optimizer does not support such data feeding, you should skip it. Cut the edges incoming in ``ResourceGather`` port 1:
 
 .. ref-code-block:: cpp
 

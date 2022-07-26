@@ -56,6 +56,8 @@ Go to the model page and check the performance of the imported and optimized mod
 
 .. note:: Throughput is the number of images processed in a given amount of time. It is measured in frames per second (FPS). Higher throughput value means better performance.
 
+
+
 You can observe that ``fast-neural-style-mosaic-onnx`` model has become 1.7x times faster on CPU device after optimization.
 
 Lowering the precision of the model using quantization leads to a loss in prediction capability. Therefore you need to assess the model prediction capability to ensure that you have not lost a significant amount of accuracy.
@@ -73,6 +75,10 @@ To measure accuracy of the model, go to the **Perform** tab and select **Create 
 Calculation of Tensor Distance to Parent Model Output Report allows to evaluate the mean squared error (MSE) between Optimized and Parent models output on tensor level for each image in the validation dataset. Mean Squared Error (MSE) is an average of the square of the difference between actual and estimated values. MSE evaluation enables you to identify differences between Parent and Optimized model predictions for a wider set of use cases besides classification and object detection.
 
 .. tip:: To sort the numbers from lowest to highest, click on the parameter name in the table.
+
+
+
+
 
 Visualize Model Predictions
 ---------------------------

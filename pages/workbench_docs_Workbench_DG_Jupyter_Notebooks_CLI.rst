@@ -69,6 +69,10 @@ The `JupyterLab\* <https://jupyter-notebook.readthedocs.io/en/stable/>`__ enviro
 
 .. note:: The environment opens in a new tab. Make sure your browser does not block pop-ups.
 
+
+
+
+
 How to Use the Notebook
 ~~~~~~~~~~~~~~~~~~~~~~~
 

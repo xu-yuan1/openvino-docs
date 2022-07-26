@@ -58,8 +58,10 @@ When installing from Docker Hub\* with the ``openvino-workbench`` script :
    	  --assets-directory <full_path_to_assets>/assets \
    	  --ssl-certificate-name <full_path_to_assets>/assets/certificate.pem \
    	  --ssl-key-name <full_path_to_assets>/assets/key.pem
-
-.. note:: Replace the placeholders in angle brackets the full path to the ``assets`` folder.
+   
+   
+   
+   .. note:: Replace the placeholders in angle brackets the full path to the ``assets`` folder.
 
 Self-Signed Certificate on Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,8 +79,8 @@ When installing from Docker Hub\* with the ``openvino-workbench`` script :
    .. ref-code-block:: cpp
    
    	openssl req -newkey rsa:4096 -nodes -keyout assets/key.pem -x509 -days 365 -out assets/certificate.pem
-
-Follow the command-line instructions to provide the required data.
+   
+   Follow the command-line instructions to provide the required data.
 
 #. Run the Docker container with the command that mounts the directory with the ``assets`` folder to the ``/home/workbench/.workbench`` directory in the Docker container and provides paths to the key and certificate:
    
@@ -89,11 +91,17 @@ Follow the command-line instructions to provide the required data.
    	  --ssl-certificate-name <full_path_to_assets>/assets/certificate.pem \
    	  --ssl-key-name <full_path_to_assets>/assets/key.pem \
    	  --verify-ssl off
-
-.. note:: Replace the placeholders in angle brackets the full path to the ``assets`` folder.
-
-Trusted Certificate on Windows\*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+   
+   
+   .. note:: Replace the placeholders in angle brackets the full path to the ``assets`` folder.
+   
+   
+   
+   
+   
+   Trusted Certificate on Windows\*
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Open a terminal and create the ``workbench_volume`` volume:
    

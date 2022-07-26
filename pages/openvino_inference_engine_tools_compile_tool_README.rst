@@ -5,31 +5,27 @@
 Compile Tool
 ============
 
-:target:`doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e_1md_openvino_tools_compile_tool_readme` Compile tool is a C++ application that enables you to compile a model for inference on a specific device and export the compiled representation to a binary file. With the Compile Tool, you can compile a model using supported OpenVINO Runtime devices on a machine that doesn't have the physical device connected and then transfer a generated file to any machine with the target inference device available. See the :ref:`Features support matrix <doxid-openvino_docs__o_v__u_g__working_with_devices>` to understand which device support import / export functionality.
+:target:`doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e_1md_openvino_tools_compile_tool_readme` Compile tool is a C++ application that enables you to compile a model for inference on a specific device and export the compiled representation to a binary file. With this tool, you can compile a model using supported OpenVINO Runtime devices on a machine that does not have the physical device connected, and then transfer a generated file to any machine with the target inference device available. To learn which device supports the import / export functionality, see the :ref:`feature support matrix <doxid-openvino_docs__o_v__u_g__working_with_devices>`.
 
-The tool compiles networks for the following target devices using corresponding OpenVINO Runtime plugins:
+The tool compiles networks for the following target devices using a corresponding OpenVINO Runtime plugin: Intel® Neural Compute Stick 2 (MYRIAD plugin).
 
-* Intel® Neural Compute Stick 2 (MYRIAD plugin)
-
-The tool is delivered as an executable file that can be run on both Linux\* and Windows\*. The tool is located in the ``<INSTALLROOT>/tools/compile_tool`` directory.
+The tool is delivered as an executable file that can be run on both Linux and Windows. It is located in the ``<INSTALLROOT>/tools/compile_tool`` directory.
 
 Workflow of the Compile tool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. First, the application reads command-line parameters and loads a model to the OpenVINO Runtime device.
+First, the application reads command-line parameters and loads a model to the OpenVINO Runtime device. After that, the application exports a blob with the compiled model and writes it to the output file.
 
-#. Then the application exports a blob with the compiled model and writes it to the output file.
+Also, the Compile tool supports the following capabilities:
 
-Also, the compile_tool supports the following capabilities:
+* Embedding :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` and precision conversions (for more details, see the :ref:`Optimize Preprocessing <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`). To compile the model with advanced preprocessing capabilities, refer to the :ref:`Use Case - Integrate and Save Preprocessing Steps Into OpenVINO IR <doxid-openvino_docs__o_v__u_g__preprocess__usecase_save>`, which shows how to have all the preprocessing in the compiled blob.
 
-* Embedding :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` and precision conversions (see :ref:`Optimize Preprocessing <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`). To compile the model with advanced preprocessing capabilities, refer to :ref:`Use Case - Integrate and Save Preprocessing Steps Into IR <doxid-openvino_docs__o_v__u_g__preprocess__usecase_save>` which shows how to have all the preprocessing in the compiled blob.
+* Compiling blobs for OpenVINO Runtime API 2.0 by default or for Inference Engine API with explicit option ``-ov_api_1_0``.
 
-* Compile blobs for OpenVINO Runtime API 2.0 by default or for Inference Engine API with explicit option ``-ov_api_1_0``
+* Accepting device specific options for customizing the compilation process.
 
-* Accepts device specific options for customizing the compilation process
-
-Run the Compile Tool
-~~~~~~~~~~~~~~~~~~~~
+Running the Compile Tool
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Running the application with the ``-h`` option yields the following usage message:
 

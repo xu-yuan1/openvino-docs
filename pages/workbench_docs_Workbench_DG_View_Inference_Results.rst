@@ -103,6 +103,10 @@ To see details about a layer:
 
 .. tip:: To download a ``.csv`` inference report for your model, click **Download Report**.
 
+
+
+
+
 Sort and Filter Layers
 ----------------------
 
@@ -117,6 +121,8 @@ To filter by multiple columns, click **Add new filter** after you specify all th
 .. image:: layers_table_03.png
 
 .. note:: The filters you select are applied simultaneously.
+
+
 
 Once you configure the filters, press **Apply Filter**. To apply a different filter, press **Clear Filter** and configure new filters.
 

@@ -21,50 +21,55 @@ Runtime Inference Optimizations
    openvino_docs_deployment_optimization_guide_tput_advanced
    openvino_docs_deployment_optimization_guide_internals
 
-Runtime or deployment optimizations are focused on tuning of the inference *parameters* (e.g. optimal number of the requests executed simultaneously) and other means of how a model is *executed*.
+Runtime optimizations, or deployment optimizations, focus on tuning inference parameters and execution means (e.g., the optimum number of requests executed simultaneously). Unlike model-level optimizations, they are highly specific to the hardware and case they are used for, and often come at a cost. ``:ref:`ov::hint::inference_precision <doxid-group__ov__runtime__cpp__prop__api_1gad605a888f3c9b7598ab55023fbf44240>``` is a "typical runtime configuration" which trades accuracy for performance, allowing ``fp16/bf16`` execution for the layers that remain in ``fp32`` after quantization of the original ``fp32`` model.
 
-As referenced in the parent :ref:`performance introduction topic <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`, the :ref:`dedicated document <doxid-openvino_docs_model_optimization_guide>` covers the **model-level optimizations** like quantization that unlocks the 8-bit inference. Model-optimizations are most general and help any scenario and any device (that e.g. accelerates the quantized models). The relevant *runtime* configuration is ``:ref:`ov::hint::inference_precision <doxid-group__ov__runtime__cpp__prop__api_1gad605a888f3c9b7598ab55023fbf44240>``` which trades the accuracy for the performance (e.g. by allowing the fp16/bf16 execution for the layers that remain in fp32 after quantization of the original fp32 model).
+Therefore, optimization should start with defining the use case. For example, if it is about processing millions of samples by overnight jobs in data centers, throughput could be prioritized over latency. On the other hand, real-time usages would likely trade off throughput to deliver the results at minimal latency. A combined scenario is also possible, targeting the highest possible throughput, while maintaining a specific latency threshold.
 
-Then, possible optimization should start with defining the use-case. For example, whether the target scenario emphasizes throughput over latency like processing millions of samples by overnight jobs in the data centers. In contrast, real-time usages would likely trade off the throughput to deliver the results at minimal latency. Often this is a combined scenario that targets highest possible throughput while maintaining a specific latency threshold. Below you can find summary on the associated tips.
+It is also important to understand how the full-stack application would use the inference component "end-to-end." For example, to know what stages need to be orchestrated to save workload devoted to fetching and preparing input data.
 
-How the full-stack application uses the inference component *end-to-end* is also important. For example, what are the stages that needs to be orchestrated? In some cases a significant part of the workload time is spent on bringing and preparing the input data. Below you can find multiple tips on connecting the data input pipeline and the model inference efficiently. These are also common performance tricks that help both latency and throughput scenarios.
+For more information on this topic, see the following articles:
 
-Further documents cover the associated *runtime* performance optimizations topics. Please also consider :ref:`matrix support of the features by the individual devices <doxid-openvino_docs__o_v__u_g__working_with_devices_1features_support_matrix>`.
+* :ref:`feature support by device <doxid-openvino_docs__o_v__u_g__working_with_devices_1features_support_matrix>`,
 
-:ref:`General, application-level optimizations <doxid-openvino_docs_deployment_optimization_guide_common>`, and specifically:
+* :ref:`Inputs Pre-processing with the OpenVINO <doxid-openvino_docs_deployment_optimization_guide_common_1inputs_pre_processing>`.
 
-* :ref:`Inputs Pre-processing with the OpenVINO <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`
+* :ref:`Async API <doxid-openvino_docs_deployment_optimization_guide_common_1async_api>`.
 
-* :ref:`Async API and 'get_tensor' Idiom <doxid-openvino_docs_deployment_optimization_guide_common>`
+* :ref:`The 'get_tensor' Idiom <doxid-openvino_docs_deployment_optimization_guide_common_1tensor_idiom>`.
 
-* For variably-sized inputs, consider :ref:`dynamic shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`
+* For variably-sized inputs, consider :ref:`dynamic shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
 
-**Use-case specific optimizations** such as optimizing for :ref:`latency <doxid-openvino_docs_deployment_optimization_guide_latency>` or :ref:`throughput <doxid-openvino_docs_deployment_optimization_guide_tput>`
+See the :ref:`latency <doxid-openvino_docs_deployment_optimization_guide_latency>` and :ref:`throughput <doxid-openvino_docs_deployment_optimization_guide_tput>` optimization guides, for **use-case-specific optimizations**
 
-Writing Performance Portable Inference Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Writing Performance-Portable Inference Applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each of the OpenVINO's :ref:`supported devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` offers a bunch of low-level performance settings. Tweaking this detailed configuration requires deep architecture understanding.
+Although inference performed in OpenVINO Runtime can be configured with a multitude of low-level performance settings, it is not recommended in most cases. Firstly, achieving the best performance with such adjustments requires deep understanding of device architecture and the inference engine.
 
-Also, while the resulting performance may be optimal for the specific combination of the device and the model that is inferred, it is actually neither device/model nor future-proof:
+Secondly, such optimization may not translate well to other device-model combinations. In other words, one set of execution parameters is likely to result in different performance when used under different conditions. For example:
 
-* Even within a family of the devices (like various CPUs), different instruction set, or number of CPU cores would eventually result in different execution configuration to be optimal.
+* both the CPU and GPU support the notion of :ref:`streams <doxid-openvino_docs_deployment_optimization_guide_tput_advanced>`, yet they deduce their optimal number very differently.
 
-* Similarly the optimal batch size is very much specific to the particular instance of the GPU.
+* Even among devices of the same type, different execution configurations can be considered optimal, as in the case of instruction sets or the number of cores for the CPU and the batch size for the GPU.
 
-* Compute vs memory-bandwidth requirements for the model being inferenced, as well as inference precision, possible model's quantization also contribute to the optimal parameters selection.
+* Different models have different optimal parameter configurations, considering factors such as compute vs memory-bandwidth, inference precision, and possible model quantization.
 
-* Finally, the optimal execution parameters of one device do not transparently map to another device type, for example:
-  
-  * Both the CPU and GPU devices support the notion of the :ref:`streams <doxid-openvino_docs_deployment_optimization_guide_tput_advanced>`, yet the optimal number of the streams is deduced very differently.
+* Execution "scheduling" impacts performance strongly and is highly device-specific, for example, GPU-oriented optimizations like batching, combining multiple inputs to achieve the optimal throughput, :ref:`do not always map well to the CPU <doxid-openvino_docs_deployment_optimization_guide_internals>`.
 
-Here, to mitigate the performance configuration complexity the **Performance Hints** offer the high-level "presets" for the **latency** and **throughput**, as detailed in the :ref:`Performance Hints usage document <doxid-openvino_docs__o_v__u_g__performance__hints>`.
+To make the configuration process much easier and its performance optimization more portable, the option of :ref:`Performance Hints <doxid-openvino_docs__o_v__u_g__performance__hints>` has been introduced. It comprises two high-level "presets" focused on either **latency** or **throughput** and, essentially, makes execution specifics irrelevant.
 
-Beyond execution *parameters* there is a device-specific *scheduling* that greatly affects the performance. Specifically, GPU-oriented optimizations like batching, which combines many (potentially tens) of inputs to achieve optimal throughput, do not always map well to the CPU, as e.g. detailed in the :ref:`further internals <doxid-openvino_docs_deployment_optimization_guide_internals>` sections.
+The Performance Hints functionality makes configuration transparent to the application, for example, anticipates the need for explicit (application-side) batching or streams, and facilitates parallel processing of separate infer requests for different input sources
 
-The hints really hide the *execution* specifics required to saturate the device. In the :ref:`internals <doxid-openvino_docs_deployment_optimization_guide_internals>` sections you can find the implementation details (particularly how the OpenVINO implements the 'throughput' approach) for the specific devices. Keep in mind that the hints make this transparent to the application. For example, the hints obviates the need for explicit (application-side) batching or streams.
+Additional Resources
+~~~~~~~~~~~~~~~~~~~~
 
-With the hints, it is enough to keep separate infer requests per camera or another source of input and process the requests in parallel using Async API as explained in the :ref:`application design considerations section <doxid-openvino_docs_deployment_optimization_guide_tput_1throughput_app_design>`. The main requirement for the application to leverage the throughput is **running multiple inference requests in parallel**.
+* :ref:`Using Async API and running multiple inference requests in parallel to leverage throughput <doxid-openvino_docs_deployment_optimization_guide_tput_1throughput_app_design>`.
 
-In summary, when the performance *portability* is of concern, consider the Performance Hints as a solution. You may find further details and API examples :ref:`here <doxid-openvino_docs__o_v__u_g__performance__hints>`.
+* :ref:`The throughput approach implementation details for specific devices <doxid-openvino_docs_deployment_optimization_guide_internals>`
+
+* :ref:`Details on throughput <doxid-openvino_docs_deployment_optimization_guide_tput>`
+
+* :ref:`Details on latency <doxid-openvino_docs_deployment_optimization_guide_latency>`
+
+* :ref:`API examples and details <doxid-openvino_docs__o_v__u_g__performance__hints>`.
 

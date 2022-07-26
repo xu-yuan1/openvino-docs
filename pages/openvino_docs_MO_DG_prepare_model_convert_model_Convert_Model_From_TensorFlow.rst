@@ -11,15 +11,15 @@ To use Model Optimizer, install OpenVINO Development Tools by following the :ref
 
 .. _Convert_From_TF2X:
 
-Convert TensorFlow 1 Models
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Converting TensorFlow 1 Models
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _Convert_From_TF:
 
-Convert Frozen Model Format
----------------------------
+Converting Frozen Model Format
+------------------------------
 
-To convert a TensorFlow model, use the ``mo`` script to simply convert a model with the path to the input model ``.pb`` file:
+To convert a TensorFlow model, use the \* ``mo`` \* script to simply convert a model with a path to the input model \* ``.pb`` \* file:
 
 .. ref-code-block:: cpp
 
@@ -27,24 +27,24 @@ To convert a TensorFlow model, use the ``mo`` script to simply convert a model w
 
 .. _loading-nonfrozen-models:
 
-Convert Non-Frozen Model Formats
---------------------------------
+Converting Non-Frozen Model Formats
+-----------------------------------
 
 There are three ways to store non-frozen TensorFlow models and convert them by Model Optimizer:
 
-#. **Checkpoint**. In this case, a model consists of two files: ``inference_graph.pb`` (or ``inference_graph.pbtxt``) and ``checkpoint_file.ckpt``. If you do not have an inference graph file, refer to `Freezing Custom Models in Python <#freeze-the-tensorflow-model>`__. To convert the model with the inference graph in ``.pb`` format, run the ``mo`` script with the path to the checkpoint file to convert a model:
+#. **Checkpoint**. In this case, a model consists of two files: ``inference_graph.pb`` (or ``inference_graph.pbtxt``) and ``checkpoint_file.ckpt``. If you do not have an inference graph file, refer to the `Freezing Custom Models in Python <#freeze-the-tensorflow-model>`__ section. To convert the model with the inference graph in ``.pb`` format, run the ``mo`` script with a path to the checkpoint file:
    
    .. ref-code-block:: cpp
    
    	mo --input_model <INFERENCE_GRAPH>.pb --input_checkpoint <INPUT_CHECKPOINT>
+   
+   To convert the model with the inference graph in ``.pbtxt`` format, run the ``mo`` script with a path to the checkpoint file:
+   
+   .. ref-code-block:: cpp
+   
+   	mo --input_model <INFERENCE_GRAPH>.pbtxt --input_checkpoint <INPUT_CHECKPOINT> --input_model_is_text
 
-To convert the model with the inference graph in ``.pbtxt`` format, run the ``mo`` script with the path to the checkpoint file to convert a model:
-
-.. ref-code-block:: cpp
-
-	mo --input_model <INFERENCE_GRAPH>.pbtxt --input_checkpoint <INPUT_CHECKPOINT> --input_model_is_text
-
-#. **MetaGraph**. In this case, a model consists of three or four files stored in the same directory: ``model_name.meta``, ``model_name.index``, ``model_name.data-00000-of-00001`` (digit part may vary), and ``checkpoint`` (optional). To convert such TensorFlow model, run the ``mo`` script with a path to the MetaGraph ``.meta`` file:
+#. **MetaGraph**. In this case, a model consists of three or four files stored in the same directory: ``model_name.meta``, ``model_name.index``, ``model_name.data-00000-of-00001`` (the numbers may vary), and ``checkpoint`` (optional). To convert such TensorFlow model, run the ``mo`` script with a path to the MetaGraph ``.meta`` file:
    
    .. ref-code-block:: cpp
    
@@ -60,10 +60,10 @@ You can convert TensorFlow 1.x SavedModel format in the environment that has a 1
 
 .. _freeze-the-tensorflow-model:
 
-Freezing Custom Models in Python\*
-----------------------------------
+Freezing Custom Models in Python
+--------------------------------
 
-When a network is defined in Python\* code, you have to create an inference graph file. Usually graphs are built in a form that allows model training. That means that all trainable parameters are represented as variables in the graph. To be able to use such graph with Model Optimizer such graph should be frozen. The graph is frozen and dumped to a file with the following code:
+When a network is defined in Python code, you have to create an inference graph file. Graphs are usually built in a form that allows model training. That means all trainable parameters are represented as variables in the graph. To be able to use such graph with Model Optimizer, it should be frozen and dumped to a file with the following code:
 
 .. ref-code-block:: cpp
 
@@ -74,9 +74,9 @@ When a network is defined in Python\* code, you have to create an inference grap
 
 Where:
 
-* ``sess`` is the instance of the TensorFlow\* Session object where the network topology is defined.
+* ``sess`` is the instance of the TensorFlow Session object where the network topology is defined.
 
-* ``["name_of_the_output_node"]`` is the list of output node names in the graph; ``frozen`` graph will include only those nodes from the original ``sess.graph_def`` that are directly or indirectly used to compute given output nodes. 'name_of_the_output_node ` here is an example of possible output node name. You should derive the names based on your own graph.
+* ``["name_of_the_output_node"]`` is the list of output node names in the graph; ``frozen`` graph will include only those nodes from the original ``sess.graph_def`` that are directly or indirectly used to compute given output nodes. The 'name_of_the_output_node ` is an example of a possible output node name. You should derive the names based on your own graph.
 
 * ``./`` is the directory where the inference graph file should be generated.
 
@@ -86,10 +86,10 @@ Where:
 
 .. _Convert_From_TF2X:
 
-Convert TensorFlow 2 Models
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Converting TensorFlow 2 Models
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To convert TensorFlow\* 2 models, ensure that ``openvino-dev[tensorflow2]`` is installed via ``pip``. TensorFlow\* 2.X officially supports two model formats: SavedModel and Keras H5 (or HDF5). Below are the instructions on how to convert each of them.
+To convert TensorFlow 2 models, ensure that ``openvino-dev[tensorflow2]`` is installed via ``pip``. TensorFlow 2.X officially supports two model formats: SavedModel and Keras H5 (or HDF5). Below are the instructions on how to convert each of them.
 
 SavedModel Format
 -----------------
@@ -100,18 +100,18 @@ A model in the SavedModel format consists of a directory with a ``saved_model.pb
 
 	mo --saved_model_dir <SAVED_MODEL_DIRECTORY>
 
-TensorFlow\* 2 SavedModel format strictly requires the 2.x version of TensorFlow installed in the environment for conversion to the Intermediate Representation (IR).
+TensorFlow 2 SavedModel format strictly requires the 2.x version of TensorFlow installed in the environment for conversion to the Intermediate Representation (IR).
 
 If a model contains operations currently unsupported by OpenVINO™, prune these operations by explicit specification of input nodes using the ``--input`` or ``--output`` options. To determine custom input nodes, visualize a model graph in the TensorBoard.
 
 To generate TensorBoard logs of the graph, use the Model Optimizer ``--tensorboard_logs`` command-line option.
 
-TensorFlow\* 2 SavedModel format has a specific graph structure due to eager execution. In case of pruning, find custom input nodes in the ``StatefulPartitionedCall/\*`` subgraph.
+TensorFlow 2 SavedModel format has a specific graph structure due to eager execution. In case of pruning, find custom input nodes in the ``StatefulPartitionedCall/\*`` subgraph.
 
 Keras H5
 --------
 
-If you have a model in the HDF5 format, load the model using TensorFlow\* 2 and serialize it in the SavedModel format. Here is an example of how to do it:
+If you have a model in the HDF5 format, load the model using TensorFlow 2 and serialize it in the SavedModel format. Here is an example of how to do it:
 
 .. ref-code-block:: cpp
 
@@ -130,10 +130,14 @@ The Keras H5 model with a custom layer has specifics to be converted into SavedM
 
 Then follow the above instructions for the SavedModel format.
 
-.. note:: Do not use other hacks to resave TensorFlow\* 2 models into TensorFlow\* 1 formats.
+.. note:: Do not use other hacks to resave TensorFlow 2 models into TensorFlow 1 formats.
 
-Command-Line Interface (CLI) Examples Using TensorFlow\*-Specific Parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+Command-Line Interface (CLI) Examples Using TensorFlow-Specific Parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Launching the Model Optimizer for Inception V1 frozen model when model file is a plain text protobuf:
 
@@ -147,34 +151,34 @@ Command-Line Interface (CLI) Examples Using TensorFlow\*-Specific Parameters
 
 	mo --input_model inception_v1.pb -b 1 --tensorboard_logdir /tmp/log_dir
 
-* Launching the Model Optimizer for BERT model in the SavedModel format, with three inputs. Explicitly specify input shapes where the batch size and the sequence length equal 2 and 30 respectively.
+* Launching the Model Optimizer for BERT model in the SavedModel format, with three inputs. Specify explicitly the input shapes where the batch size and the sequence length equal 2 and 30 respectively.
 
 .. ref-code-block:: cpp
 
 	mo --saved_model_dir BERT --input mask,word_ids,type_ids --input_shape [2,30],[2,30],[2,30]
 
-Supported TensorFlow\* and TensorFlow 2 Keras\* Layers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Supported TensorFlow and TensorFlow 2 Keras Layers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Refer to :ref:`Supported Framework Layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` for the list of supported standard layers.
+For the list of supported standard layers, refer to the :ref:`Supported Framework Layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` page.
 
 Frequently Asked Questions (FAQ)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Model Optimizer provides explanatory messages if it is unable to run to completion due to issues like typographical errors, incorrectly used options, or other issues. The message describes the potential cause of the problem and gives a link to the :ref:`Model Optimizer FAQ <doxid-openvino_docs__m_o__d_g_prepare_model__model__optimizer__f_a_q>`. The FAQ has instructions on how to resolve most issues. The FAQ also includes links to relevant sections in the Model Optimizer Developer Guide to help you understand what went wrong.
+The Model Optimizer provides explanatory messages if it is unable to run to completion due to typographical errors, incorrectly used options, or other issues. The message describes the potential cause of the problem and gives a link to the :ref:`Model Optimizer FAQ <doxid-openvino_docs__m_o__d_g_prepare_model__model__optimizer__f_a_q>`. The FAQ provides instructions on how to resolve most issues. The FAQ also includes links to relevant sections in the Model Optimizer Developer Guide to help you understand what went wrong.
 
 Summary
 ~~~~~~~
 
 In this document, you learned:
 
-* Basic information about how the Model Optimizer works with TensorFlow models
+* Basic information about how the Model Optimizer works with TensorFlow models.
 
-* Which TensorFlow model formats are supported
+* Which TensorFlow models are supported.
 
-* How to freeze a TensorFlow 1 model
+* How to freeze a TensorFlow model.
 
-* How to convert a trained TensorFlow model using the Model Optimizer with both framework-agnostic and TensorFlow-specific command-line options
+* How to convert a trained TensorFlow model using the Model Optimizer with both framework-agnostic and TensorFlow-specific command-line options.
 
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~

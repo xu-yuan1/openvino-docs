@@ -1,11 +1,11 @@
-.. index:: pair: page; Convert TensorFlow Wide and Deep Family Models
+.. index:: pair: page; Converting TensorFlow Wide and Deep Family Models
 .. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__wide_and_deep__family__models:
 
 
-Convert TensorFlow Wide and Deep Family Models
-==============================================
+Converting TensorFlow Wide and Deep Family Models
+=================================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__wide_and_deep__family__models_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_wideanddeep_family_models` The Wide and Deep models is a combination of wide and deep parts for memorization and generalization of object features respectively. These models can contain different types of object features such as numerical, categorical, sparse and sequential features. These feature types are specified through Tensorflow\* tf.feature_column API. Table below presents what feature types are supported by the OpenVINO toolkit.
+:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__wide_and_deep__family__models_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_wideanddeep_family_models` The Wide and Deep models is a combination of wide and deep parts for memorization and generalization of object features respectively. These models can contain different types of object features such as numerical, categorical, sparse and sequential features. These feature types are specified through Tensorflow tf.feature_column API. Table below presents what feature types are supported by the OpenVINO toolkit.
 
 .. list-table::
     :header-rows: 1
@@ -23,10 +23,14 @@ Convert TensorFlow Wide and Deep Family Models
       - yes
       - no
 
-**NOTE** : the categorical with hash and crossed features are currently unsupported since The OpenVINO toolkit does not support tensors of ``string`` type and operations with them.
+.. note:: The categorical with hash and crossed features are currently unsupported since OpenVINO does not cover tensors of the ``string`` type and operations with them.
 
-Prepare an Example of Wide and Deep Model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+Preparing an Example of Wide and Deep Model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Step 1**. Clone the GitHub repository with TensorFlow models and move to the directory with an example of Wide and Deep model:
 
@@ -95,14 +99,14 @@ As the OpenVINO toolkit does not support the categorical with hash and crossed f
 	  ]
 	  return wide_columns, deep_columns
 
-After that start training by the following command:
+After that, start training with the following command:
 
 .. ref-code-block:: cpp
 
 	python census_main.py
 
-Convert the Wide and Deep Model to IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Converting the Wide and Deep Model to IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the following command line to convert the saved model file with the checkpoint:
 
@@ -143,5 +147,5 @@ Use the following command line to convert the saved model file with the checkpoi
 
 The model contains operations unsupported by the OpenVINO toolkit such as ``IteratorGetNext`` and ``LookupTableFindV2``, so the Model Optimizer must prune these nodes. The pruning is specified through ``--input`` option. The prunings for ``IteratorGetNext:\*`` nodes correspond to numeric features. The pruning for each categorical feature consists of three prunings for the following nodes: ``\*/to_sparse_input/indices:0``, ``\*/hash_table_Lookup/LookupTableFindV2:0``, and ``\*/to_sparse_input/dense_shape:0``.
 
-The above command line generates IR for a batch of two objects, with total number of actual categorical feature values equal to 10 and maximum size of sparse categorical feature for one object equal to 50.
+The above command line generates an OpenVINO model for a batch of two objects, with the total number of actual categorical feature values equal to 10 and maximum size of a sparse categorical feature for one object equal to 50.
 

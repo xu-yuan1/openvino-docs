@@ -33,7 +33,7 @@ Inference Engine Plugin API provides the helper :ref:`InferenceEngine::IInferReq
 	    ~TemplateInferRequest();
 	
 	    void :ref:`InferImpl <doxid-class_inference_engine_1_1_i_infer_request_internal_1a0ff052d969d599023769a8f5f3a75a56>`() override;
-	    std::map<std::string, InferenceEngine::InferenceEngineProfileInfo> :ref:`GetPerformanceCounts <doxid-class_inference_engine_1_1_i_infer_request_internal_1a2eefb67a9766a29e032dc57bbf26d592>`() const override;
+	    std::map<std::string, InferenceEngine::InferenceEngineProfileInfo> :ref:`GetPerformanceCounts <doxid-class_inference_engine_1_1_i_infer_request_internal_1a76b8e3bfe03554e4d167e5879e709a31>`() const override;
 	
 	    // pipeline methods-stages which are used in async infer request implementation and assigned to particular executor
 	    void inferPreprocess();
@@ -64,8 +64,6 @@ Inference Engine Plugin API provides the helper :ref:`InferenceEngine::IInferReq
 	    std::vector<std::shared_ptr<ngraph::runtime::Tensor>> _outputTensors;
 	    std::shared_ptr<ngraph::runtime::Executable> _executable;
 	};
-
-
 
 Class Fields
 ++++++++++++
@@ -140,9 +138,11 @@ The constructor initializes helper fields and calls methods which allocate blobs
 	    allocateBlobs();
 	}
 
-
-
 .. note:: Call :ref:`InferenceEngine::CNNNetwork::getInputsInfo <doxid-class_inference_engine_1_1_c_n_n_network_1a76de2a6101fe8276f56b0dc0f99c7ff7>` and :ref:`InferenceEngine::CNNNetwork::getOutputsInfo <doxid-class_inference_engine_1_1_c_n_n_network_1af8a6200f549b15a895e2cfefd304a9c2>` to specify both layout and precision of blobs, which you can set with :ref:`InferenceEngine::InferRequest::SetBlob <doxid-class_inference_engine_1_1_infer_request_1a27fb179e3bae652d76076965fd2a5653>` and get with :ref:`InferenceEngine::InferRequest::GetBlob <doxid-class_inference_engine_1_1_infer_request_1a9601a4cda3f309181af34feedf1b914c>`. A plugin uses these hints to determine its internal layouts and precisions for input and output blobs if needed.
+
+
+
+
 
 Destructor
 ----------
@@ -154,8 +154,6 @@ Decrements a number of created inference requests:
 	TemplateInferRequest::~TemplateInferRequest() {
 	    _executableNetwork->_requestId--;
 	}
-
-
 
 .. rubric::
 
@@ -174,8 +172,6 @@ Decrements a number of created inference requests:
 	    waitPipeline();  // does nothing in current implementation
 	    inferPostprocess();
 	}
-
-
 
 1.
 ++
@@ -289,8 +285,6 @@ Executes a pipeline synchronously using ``_executable`` object:
 	    _durations[StartPipeline] = Time::now() - start;
 	}
 
-
-
 3.
 ++
 
@@ -320,8 +314,6 @@ Converts output blobs if precisions of backend output blobs and blobs passed by 
 	    }
 	    _durations[Postprocess] = Time::now() - start;
 	}
-
-
 
 .. rubric::
 

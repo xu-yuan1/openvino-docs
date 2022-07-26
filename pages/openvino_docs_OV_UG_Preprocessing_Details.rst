@@ -5,15 +5,17 @@
 Preprocessing API - details
 ===========================
 
-:target:`doxid-openvino_docs__o_v__u_g__preprocessing__details_1md_openvino_docs_ov_runtime_ug_preprocessing_details`
+:target:`doxid-openvino_docs__o_v__u_g__preprocessing__details_1md_openvino_docs_ov_runtime_ug_preprocessing_details` The purpose of this article is to present details on preprocessing API, such as its capabilities and post-processing.
 
-Preprocessing capabilities
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pre-processing Capabilities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Addressing particular input/output
+Below is a full list of pre-processing API capabilities:
+
+Addressing Particular Input/Output
 ----------------------------------
 
-If your model has only one input, then simple ``:ref:`ov::preprocess::PrePostProcessor::input() <doxid-classov_1_1preprocess_1_1_pre_post_processor_1aacaaece6f739eeabac7b5c31f141471c>``` will get a reference to preprocessing builder for this input (tensor, steps, model):
+If the model has only one input, then simple ``:ref:`ov::preprocess::PrePostProcessor::input() <doxid-classov_1_1preprocess_1_1_pre_post_processor_1a611b930e59cd16176f380d21e755cda1>``` will get a reference to pre-processing builder for this input (a tensor, the steps, a model):
 
 .. raw:: html
 
@@ -36,14 +38,10 @@ If your model has only one input, then simple ``:ref:`ov::preprocess::PrePostPro
 .. ref-code-block:: cpp
 
 	ppp.input() // no index/name is needed if model has one input
-	  .preprocess().scale(50.:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`);
+	  .preprocess().scale(50.f);
 	
 	ppp.output()   // same for output
 	  .postprocess().convert_element_type(:ref:`ov::element::u8 <doxid-group__ov__element__cpp__api_1gaaf60c536d3e295285f6a899eb3d29e2f>`);
-
-
-
-
 
 .. raw:: html
 
@@ -72,10 +70,6 @@ If your model has only one input, then simple ``:ref:`ov::preprocess::PrePostPro
 	ppp.output() \
 	    .postprocess().convert_element_type(Type.u8)
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -90,7 +84,7 @@ If your model has only one input, then simple ``:ref:`ov::preprocess::PrePostPro
 
    </div>
 
-In general, when model has multiple inputs/outputs, each one can be addressed by tensor name
+In general, when a model has multiple inputs/outputs, each one can be addressed by a tensor name.
 
 .. raw:: html
 
@@ -115,10 +109,6 @@ In general, when model has multiple inputs/outputs, each one can be addressed by
 	auto &input_image = ppp.input("image");
 	auto &output_result = ppp.output("result");
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -142,10 +132,6 @@ In general, when model has multiple inputs/outputs, each one can be addressed by
 	ppp.input('image')
 	ppp.output('result')
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -160,7 +146,7 @@ In general, when model has multiple inputs/outputs, each one can be addressed by
 
    </div>
 
-Or by it's index
+Or by it's index.
 
 .. raw:: html
 
@@ -185,10 +171,6 @@ Or by it's index
 	auto &input_1 = ppp.input(1); // Gets 2nd input in a model
 	auto &output_1 = ppp.output(2); // Get output with index=2 (3rd one) in a model
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -211,10 +193,6 @@ Or by it's index
 
 	ppp.input(1) # Gets 2nd input in a model
 	ppp.output(2) # Gets output with index=2 (3rd one) in a model
-
-
-
-
 
 .. raw:: html
 
@@ -240,14 +218,14 @@ C++ references:
 
 * ``:ref:`ov::preprocess::PrePostProcessor <doxid-classov_1_1preprocess_1_1_pre_post_processor>```
 
-Supported preprocessing operations
-----------------------------------
+Supported Pre-processing Operations
+-----------------------------------
 
 C++ references:
 
 * ``:ref:`ov::preprocess::PreProcessSteps <doxid-classov_1_1preprocess_1_1_pre_process_steps>```
 
-Mean/Scale normalization
+Mean/Scale Normalization
 ++++++++++++++++++++++++
 
 Typical data normalization includes 2 operations for each data item: subtract mean value and divide to standard deviation. This can be done with the following code:
@@ -274,10 +252,6 @@ Typical data normalization includes 2 operations for each data item: subtract me
 
 	ppp.input("input").preprocess().mean(128).scale(127);
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -298,11 +272,7 @@ Typical data normalization includes 2 operations for each data item: subtract me
 
 .. ref-code-block:: cpp
 
-	ppp.input('input').preprocess().:ref:`mean <doxid-namespacengraph_1_1builder_1_1opset1_1a3377b4f15f56daf79c96a94ccefdb489>`(128).scale(127)
-
-
-
-
+	ppp.input('input').preprocess().:ref:`mean <doxid-namespacengraph_1_1builder_1_1opset1_1a06c7367d66f6e48931cbdf49c696d8c9>`(128).scale(127)
 
 .. raw:: html
 
@@ -348,10 +318,6 @@ In Computer Vision area normalization is usually done separately for R, G, B val
 	ppp.input("input").preprocess()
 	  .mean({103.94, 116.78, 123.68}).scale({57.21, 57.45, 57.73});
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -377,11 +343,7 @@ In Computer Vision area normalization is usually done separately for R, G, B val
 	ppp.input('input').:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`().:ref:`set_layout <doxid-group__ov__layout__cpp__api_1ga18464fb8ed029acb5fdc2bb1737358d9>`(:ref:`Layout <doxid-namespace_inference_engine_1a246d143abc5ca07da8d2cadeeb88fdb8>`('NCHW'))
 	# Mean/Scale has 3 values which matches with C=3
 	ppp.input('input').preprocess() \
-	    .:ref:`mean <doxid-namespacengraph_1_1builder_1_1opset1_1a3377b4f15f56daf79c96a94ccefdb489>`([103.94, 116.78, 123.68]).scale([57.21, 57.45, 57.73])
-
-
-
-
+	    .:ref:`mean <doxid-namespacengraph_1_1builder_1_1opset1_1a06c7367d66f6e48931cbdf49c696d8c9>`([103.94, 116.78, 123.68]).scale([57.21, 57.45, 57.73])
 
 .. raw:: html
 
@@ -401,16 +363,16 @@ In Computer Vision area normalization is usually done separately for R, G, B val
 
 C++ references:
 
-* ``:ref:`ov::preprocess::PreProcessSteps::mean() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1a73234aefee9b6f7c585ac7718c1e396e>```
+* ``:ref:`ov::preprocess::PreProcessSteps::mean() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1aef1bb8c1fc5eb0014b07b78749c432dc>```
 
-* ``:ref:`ov::preprocess::PreProcessSteps::scale() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1ae32615f1a234e4c49c1eedf4cabf99ac>```
+* ``:ref:`ov::preprocess::PreProcessSteps::scale() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1aeacaf406d72a238e31a359798ebdb3b7>```
 
-Convert precision
-+++++++++++++++++
+Converting Precision
+++++++++++++++++++++
 
-In Computer Vision, image is represented by array of unsigned 8-but integer values (for each color), but model accepts floating point tensors
+In Computer Vision, the image is represented by an array of unsigned 8-bit integer values (for each color), but the model accepts floating point tensors.
 
-To integrate precision conversion into execution graph as a preprocessing step, just do:
+To integrate precision conversion into an execution graph as a pre-processing step:
 
 .. raw:: html
 
@@ -441,10 +403,6 @@ To integrate precision conversion into execution graph as a preprocessing step, 
 	// If conversion is needed to `model's` element type, 'f32' can be omitted
 	ppp.input("input").preprocess().convert_element_type();
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -474,10 +432,6 @@ To integrate precision conversion into execution graph as a preprocessing step, 
 	# If conversion is needed to `model's` element type, 'f32' can be omitted
 	ppp.input('input').preprocess().convert_element_type()
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -496,16 +450,16 @@ To integrate precision conversion into execution graph as a preprocessing step, 
 
 C++ references:
 
-* ``:ref:`ov::preprocess::InputTensorInfo::set_element_type() <doxid-classov_1_1preprocess_1_1_input_tensor_info_1a320c54e50d794da07852ccecf9468e2a>```
+* ``:ref:`ov::preprocess::InputTensorInfo::set_element_type() <doxid-classov_1_1preprocess_1_1_input_tensor_info_1a98fb73ff9178c8c71d809ddf8927faf5>```
 
-* ``:ref:`ov::preprocess::PreProcessSteps::convert_element_type() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1ab9e7979668e7403a72b07786f76ec0e0>```
+* ``:ref:`ov::preprocess::PreProcessSteps::convert_element_type() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1aac6316155a1690609eb320637c193d50>```
 
-Convert layout (transpose)
-++++++++++++++++++++++++++
+Converting layout (transposing)
++++++++++++++++++++++++++++++++
 
-Transposing of matrices/tensors is a typical operation in Deep Learning - you may have a BMP image 640x480 which is an array of ``{480, 640, 3}`` elements, but Deep Learning model can require input with shape ``{1, 3, 480, 640}``
+Transposing of matrices/tensors is a typical operation in Deep Learning - you may have a BMP image 640x480, which is an array of ``{480, 640, 3}`` elements, but Deep Learning model can require input with shape ``{1, 3, 480, 640}``.
 
-Using :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` of user's tensor and layout of original model conversion can be done implicitly
+Conversion can be done implicitly, using the :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` of a user's tensor and the layout of an original model.
 
 .. raw:: html
 
@@ -535,10 +489,6 @@ Using :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` of user's 
 	
 	std::cout << ppp; // Will print 'implicit layout conversion step'
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -567,10 +517,6 @@ Using :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` of user's 
 	
 	print(ppp)  # Will print 'implicit layout conversion step'
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -585,7 +531,7 @@ Using :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` of user's 
 
    </div>
 
-Or if you prefer manual transpose of axes without usage of :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` in your code, just do:
+For a manual transpose of axes without the use of a :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` in the code:
 
 .. raw:: html
 
@@ -611,10 +557,6 @@ Or if you prefer manual transpose of axes without usage of :ref:`layout <doxid-o
 	// Model expects shape {1, 3, 480, 640}
 	ppp.input("input").preprocess().convert_layout({0, 3, 1, 2});
 	// 0 -> 0; 3 -> 1; 1 -> 2; 2 -> 3
-
-
-
-
 
 .. raw:: html
 
@@ -643,10 +585,6 @@ Or if you prefer manual transpose of axes without usage of :ref:`layout <doxid-o
 	    .convert_layout([0, 3, 1, 2])
 	# 0 -> 0; 3 -> 1; 1 -> 2; 2 -> 3
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -663,24 +601,24 @@ Or if you prefer manual transpose of axes without usage of :ref:`layout <doxid-o
 
 
 
-It performs the same transpose, but we believe that approach using source and destination layout can be easier to read and understand
+It performs the same transpose. However, the approach where source and destination layout are used can be easier to read and understand.
 
 C++ references:
 
-* ``:ref:`ov::preprocess::PreProcessSteps::convert_layout() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1ab5a0cd9d0090f82e0489171a057fcfd4>```
+* ``:ref:`ov::preprocess::PreProcessSteps::convert_layout() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1a0f65fdadca32e90f5ef3a323b640b978>```
 
-* ``:ref:`ov::preprocess::InputTensorInfo::set_layout() <doxid-classov_1_1preprocess_1_1_input_tensor_info_1af10932e00c45bb0ef09b2f856fab5268>```
+* ``:ref:`ov::preprocess::InputTensorInfo::set_layout() <doxid-classov_1_1preprocess_1_1_input_tensor_info_1a6f70eb97d02e90a30cd748573abd7b4b>```
 
-* ``:ref:`ov::preprocess::InputModelInfo::set_layout() <doxid-classov_1_1preprocess_1_1_input_model_info_1aeac53aa90be5b8a6b86def31fab396b4>```
+* ``:ref:`ov::preprocess::InputModelInfo::set_layout() <doxid-classov_1_1preprocess_1_1_input_model_info_1af309bac02af20d048e349a2d421c1169>```
 
 * ``:ref:`ov::Layout <doxid-classov_1_1_layout>```
 
-Resize image
-++++++++++++
+Resizing Image
+++++++++++++++
 
-Resizing of image is a typical preprocessing step for computer vision tasks. With preprocessing API this step can also be integrated into execution graph and performed on target device.
+Resizing an image is a typical pre-processing step for computer vision tasks. With pre-processing API, this step can also be integrated into an execution graph and performed on a target device.
 
-To resize the input image, it is needed to define ``H`` and ``W`` dimensions of :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>`
+To resize the input image, it is needed to define ``H`` and ``W`` dimensions of the :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>`
 
 .. raw:: html
 
@@ -704,11 +642,7 @@ To resize the input image, it is needed to define ``H`` and ``W`` dimensions of 
 
 	ppp.input("input").tensor().set_shape({1, 3, 960, 1280});
 	ppp.input("input").model().set_layout("??HW");
-	ppp.input("input").preprocess().resize(ov::preprocess::ResizeAlgorithm::RESIZE_LINEAR, 480, 640);
-
-
-
-
+	ppp.input("input").preprocess().resize(:ref:`ov::preprocess::ResizeAlgorithm::RESIZE_LINEAR <doxid-namespaceov_1_1preprocess_1a8665e295e222dc2120be3550e04db8f3a8803101bcf6d2ec700e6e7358217db68>`, 480, 640);
 
 .. raw:: html
 
@@ -735,10 +669,6 @@ To resize the input image, it is needed to define ``H`` and ``W`` dimensions of 
 	ppp.input('input').preprocess()\
 	    .resize(ResizeAlgorithm.RESIZE_LINEAR, 480, 640)
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -755,7 +685,7 @@ To resize the input image, it is needed to define ``H`` and ``W`` dimensions of 
 
 
 
-Or in case if original model has known spatial dimensions (widht+height), target width/height can be omitted
+When original model has known spatial dimensions (``width`` + ``height``), target ``width`` / ``height`` can be omitted.
 
 .. raw:: html
 
@@ -780,11 +710,7 @@ Or in case if original model has known spatial dimensions (widht+height), target
 	ppp.input("input").tensor().set_shape({1, 3, 960, 1280});
 	ppp.input("input").model().set_layout("??HW"); // Model accepts {1, 3, 480, 640} shape
 	// Resize to model's dimension
-	ppp.input("input").preprocess().resize(ov::preprocess::ResizeAlgorithm::RESIZE_LINEAR);
-
-
-
-
+	ppp.input("input").preprocess().resize(:ref:`ov::preprocess::ResizeAlgorithm::RESIZE_LINEAR <doxid-namespaceov_1_1preprocess_1a8665e295e222dc2120be3550e04db8f3a8803101bcf6d2ec700e6e7358217db68>`);
 
 .. raw:: html
 
@@ -812,10 +738,6 @@ Or in case if original model has known spatial dimensions (widht+height), target
 	# Resize to model's dimension
 	ppp.input('input').preprocess().resize(ResizeAlgorithm.RESIZE_LINEAR)
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -834,14 +756,14 @@ Or in case if original model has known spatial dimensions (widht+height), target
 
 C++ references:
 
-* ``:ref:`ov::preprocess::PreProcessSteps::resize() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1a910dfdc8dc19b1890b2e8f111162a8d6>```
+* ``:ref:`ov::preprocess::PreProcessSteps::resize() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1a40dab78be1222fee505ed6a13400efe6>```
 
 * ``:ref:`ov::preprocess::ResizeAlgorithm <doxid-namespaceov_1_1preprocess_1a8665e295e222dc2120be3550e04db8f3>```
 
-Color conversion
+Color Conversion
 ++++++++++++++++
 
-Typical use case is to reverse color channels from RGB to BGR and wise versa. To do this, specify source color format in ``tensor`` section and perform ``convert_color`` preprocessing operation. In example below, user has ``BGR`` image and needs to convert it to ``RGB`` as required for model's input
+Typical use case is to reverse color channels from ``RGB`` to ``BGR`` and vice versa. To do this, specify source color format in ``tensor`` section and perform ``convert_color`` pre-processing operation. In the example below, a ``BGR`` image needs to be converted to ``RGB`` as required for the model input.
 
 .. raw:: html
 
@@ -863,12 +785,8 @@ Typical use case is to reverse color channels from RGB to BGR and wise versa. To
 
 .. ref-code-block:: cpp
 
-	ppp.input("input").tensor().set_color_format(:ref:`ov::preprocess::ColorFormat::BGR <doxid-namespace_inference_engine_1a5ee5ca7708cc67a9a0becc2593d0558aa0fb221afef06def7c25b82d6fa9efc1b>`);
-	ppp.input("input").preprocess().convert_color(:ref:`ov::preprocess::ColorFormat::RGB <doxid-namespace_inference_engine_1a5ee5ca7708cc67a9a0becc2593d0558aae2262afdcd9754598dbc87e4a4725246>`);
-
-
-
-
+	ppp.input("input").tensor().set_color_format(:ref:`ov::preprocess::ColorFormat::BGR <doxid-namespaceov_1_1preprocess_1ab027f26e58038e454e1b50a5243f1707a2ad5640ebdec72fc79531d1778c6c2dc>`);
+	ppp.input("input").preprocess().convert_color(:ref:`ov::preprocess::ColorFormat::RGB <doxid-namespaceov_1_1preprocess_1ab027f26e58038e454e1b50a5243f1707a889574aebacda6bfd3e534e2b49b8028>`);
 
 .. raw:: html
 
@@ -894,10 +812,6 @@ Typical use case is to reverse color channels from RGB to BGR and wise versa. To
 	
 	ppp.input('input').preprocess().convert_color(ColorFormat.RGB)
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -916,10 +830,10 @@ Typical use case is to reverse color channels from RGB to BGR and wise versa. To
 
 
 
-Color conversion - NV12/I420
+Color Conversion - NV12/I420
 ++++++++++++++++++++++++++++
 
-Preprocessing also support YUV-family source color formats, i.e. NV12 and I420. In advanced cases such YUV images can be splitted into separate planes, e.g. for NV12 images Y-component may come from one source and UV-component comes from another source. Concatenating such components in user's application manually is not a perfect solution from performance and device utilization perspectives, so there is a way to use Preprocessing API. For such cases there is ``NV12_TWO_PLANES`` and ``I420_THREE_PLANES`` source color formats, which will split original ``input`` to 2 or 3 inputs
+Pre-processing also supports YUV-family source color formats, i.e. NV12 and I420. In advanced cases, such YUV images can be split into separate planes, e.g., for NV12 images Y-component may come from one source and UV-component from another one. Concatenating such components in user's application manually is not a perfect solution from performance and device utilization perspectives. However, there is a way to use Pre-processing API. For such cases there are ``NV12_TWO_PLANES`` and ``I420_THREE_PLANES`` source color formats, which will split the original ``input`` into 2 or 3 inputs.
 
 .. raw:: html
 
@@ -942,13 +856,9 @@ Preprocessing also support YUV-family source color formats, i.e. NV12 and I420. 
 .. ref-code-block:: cpp
 
 	// This will split original `input` to 2 separate inputs: `input/y' and 'input/uv'
-	ppp.input("input").tensor().set_color_format(ov::preprocess::ColorFormat::NV12_TWO_PLANES);
-	ppp.input("input").preprocess().convert_color(:ref:`ov::preprocess::ColorFormat::RGB <doxid-namespace_inference_engine_1a5ee5ca7708cc67a9a0becc2593d0558aae2262afdcd9754598dbc87e4a4725246>`);
+	ppp.input("input").tensor().set_color_format(:ref:`ov::preprocess::ColorFormat::NV12_TWO_PLANES <doxid-namespaceov_1_1preprocess_1ab027f26e58038e454e1b50a5243f1707a54f60c652650de96e9d118187b3ba25f>`);
+	ppp.input("input").preprocess().convert_color(:ref:`ov::preprocess::ColorFormat::RGB <doxid-namespaceov_1_1preprocess_1ab027f26e58038e454e1b50a5243f1707a889574aebacda6bfd3e534e2b49b8028>`);
 	std::cout << ppp;  // Dump preprocessing steps to see what will happen
-
-
-
-
 
 .. raw:: html
 
@@ -978,10 +888,6 @@ Preprocessing also support YUV-family source color formats, i.e. NV12 and I420. 
 	    .convert_color(ColorFormat.RGB)
 	print(ppp)  # Dump preprocessing steps to see what will happen
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -998,22 +904,22 @@ Preprocessing also support YUV-family source color formats, i.e. NV12 and I420. 
 
 
 
-In this example, original ``input`` is being split to ``input/y`` and ``input/uv`` inputs. You can fill ``input/y`` from one source, and ``input/uv`` from another source. Color conversion to ``RGB`` will be performed using these sources, it is more optimal as there will be no additional copies of NV12 buffers.
+In this example, the original ``input`` is split to ``input/y`` and ``input/uv`` inputs. You can fill ``input/y`` from one source, and ``input/uv`` from another source. Color conversion to ``RGB`` will be performed, using these sources. It is more efficient as there will be no additional copies of NV12 buffers.
 
 C++ references:
 
 * ``:ref:`ov::preprocess::ColorFormat <doxid-namespaceov_1_1preprocess_1ab027f26e58038e454e1b50a5243f1707>```
 
-* ``:ref:`ov::preprocess::PreProcessSteps::convert_color <doxid-classov_1_1preprocess_1_1_pre_process_steps_1a1cc7cc3fc7afb5992c1920c483ce3332>```
+* ``:ref:`ov::preprocess::PreProcessSteps::convert_color <doxid-classov_1_1preprocess_1_1_pre_process_steps_1a4f062246cc0082822346c97917903983>```
 
-Custom operations
+Custom Operations
 -----------------
 
-Preprocessing API also allows adding custom preprocessing steps into execution graph. Custom step is a function which accepts current 'input' node and returns new node after adding preprocessing step
+Pre-processing API also allows adding ``custom`` preprocessing steps into an execution graph. The ``custom`` function accepts the current ``input`` node, applies the defined preprocessing operations, and returns a new node.
 
-**Note:** Custom preprocessing function shall only insert node(s) after input, it will be done during model compilation. This function will NOT be called during execution phase. This may look not trivial and require some knowledge of :ref:`OpenVINO™ operations <doxid-openvino_docs_ops_opset>`
+**Note:** Custom pre-processing function should only insert node(s) after the input. It is done during model compilation. This function will NOT be called during the execution phase. This may appear to be complicated and require knowledge of :ref:`OpenVINO™ operations <doxid-openvino_docs_ops_opset>`.
 
-If there is a need to insert some additional operations to execution graph right after input, like some specific crops and/or resizes - Preprocessing API can be a good choice to implement this
+If there is a need to insert additional operations to the execution graph right after the input, like some specific crops and/or resizes - Pre-processing API can be a good choice to implement this.
 
 .. raw:: html
 
@@ -1040,10 +946,6 @@ If there is a need to insert some additional operations to execution graph right
 	       // Custom nodes can be inserted as Pre-processing steps
 	       return std::make_shared<ov::opset8::Abs>(node);
 	   });
-
-
-
-
 
 .. raw:: html
 
@@ -1078,10 +980,6 @@ If there is a need to insert some additional operations to execution graph right
 	ppp.input("input_image").preprocess() \
 	    .custom(custom_abs)
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -1100,28 +998,28 @@ If there is a need to insert some additional operations to execution graph right
 
 C++ references:
 
-* ``:ref:`ov::preprocess::PreProcessSteps::custom() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1af09aed52169c79fcea85a10e8f91d43d>```
+* ``:ref:`ov::preprocess::PreProcessSteps::custom() <doxid-classov_1_1preprocess_1_1_pre_process_steps_1aa88ce522ef69253e4d978f10c3b566f1>```
 
 * :ref:`Available Operations Sets <doxid-openvino_docs_ops_opset>`
 
-Postprocessing
-~~~~~~~~~~~~~~
+Post-processing
+~~~~~~~~~~~~~~~
 
-Postprocessing steps can be added to model outputs. As for preprocessing, these steps will be also integrated into graph and executed on selected device.
+Post-processing steps can be added to model outputs. As for pre-processing, these steps will be also integrated into a graph and executed on a selected device.
 
-Preprocessing uses flow **User tensor** -> **Steps** -> **Model input**
+Pre-processing uses the following flow: **User tensor** -> **Steps** -> **Model input**.
 
-Postprocessing is wise versa: **Model output** -> **Steps** -> **User tensor**
+Post-processing uses the reverse: **Model output** -> **Steps** -> **User tensor**.
 
-Comparing to preprocessing, there is not so much operations needed to do in post-processing stage, so right now only following postprocessing operations are supported:
+Compared to pre-processing, there are not as many operations needed for the post-processing stage. Currently, only the following post-processing operations are supported:
 
-* Convert :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>`
+* Convert a :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>`.
 
-* Convert element type
+* Convert an element type.
 
-* Custom operations
+* Customize operations.
 
-Usage of these operations is similar to Preprocessing. Some example is shown below:
+Usage of these operations is similar to pre-processing. See the following example:
 
 .. raw:: html
 
@@ -1158,10 +1056,6 @@ Usage of these operations is similar to Preprocessing. Some example is shown bel
 	       // Custom nodes can be inserted as Post-processing steps
 	       return std::make_shared<ov::opset8::Abs>(node);
 	   });
-
-
-
-
 
 .. raw:: html
 
@@ -1204,10 +1098,6 @@ Usage of these operations is similar to Preprocessing. Some example is shown bel
 	
 	ppp.output("result_image").postprocess()\
 	    .custom(custom_abs)
-
-
-
-
 
 .. raw:: html
 

@@ -5,106 +5,57 @@
 Model Representation in OpenVINO™ Runtime
 ===========================================
 
-:target:`doxid-openvino_docs__o_v__u_g__model__representation_1md_openvino_docs_ov_runtime_ug_model_representation` In OpenVINO™ Runtime a model is represented by the ``:ref:`ov::Model <doxid-classov_1_1_model>``` class.
+:target:`doxid-openvino_docs__o_v__u_g__model__representation_1md_openvino_docs_ov_runtime_ug_model_representation` In OpenVINO™ Runtime, a model is represented by the ``:ref:`ov::Model <doxid-classov_1_1_model>``` class.
 
-The ``:ref:`ov::Model <doxid-classov_1_1_model>``` object stores shared pointers to ``:ref:`ov::op::v0::Parameter <doxid-classov_1_1op_1_1v0_1_1_parameter>```, ``:ref:`ov::op::v0::Result <doxid-classov_1_1op_1_1v0_1_1_result>``` and ``:ref:`ov::op::Sink <doxid-classov_1_1op_1_1_sink>``` operations that are inputs, outputs and sinks of the graph. Sinks of the graph have no consumers and are not included in the results vector. All other operations hold each other via shared pointers: child operation holds its parent (hard link). If an operation has no consumers and it's not the ``Result`` or ``Sink`` operation (shared pointer counter is zero), then it will be destructed and won't be accessible anymore.
+The ``:ref:`ov::Model <doxid-classov_1_1_model>``` object stores shared pointers to ``:ref:`ov::op::v0::Parameter <doxid-classov_1_1op_1_1v0_1_1_parameter>```, ``:ref:`ov::op::v0::Result <doxid-classov_1_1op_1_1v0_1_1_result>```, and ``:ref:`ov::op::Sink <doxid-classov_1_1op_1_1_sink>``` operations, which are inputs, outputs, and sinks of the graph. Sinks of the graph have no consumers and are not included in the results vector. All other operations hold each other via shared pointers, in which a child operation holds its parent via a hard link. If an operation has no consumers and is neither the ``Result`` nor the ``Sink`` operation whose shared pointer counter is zero, the operation will be destructed and not be accessible anymore.
 
 Each operation in ``:ref:`ov::Model <doxid-classov_1_1_model>``` has the ``std::shared_ptr<:ref:`ov::Node <doxid-classov_1_1_node>`>`` type.
 
-For details on how to build a model in OpenVINO™ Runtime, see the :ref:`Build a Model in OpenVINO™ Runtime <doxid-openvino_docs__o_v__u_g__model__representation_1ov_ug_build_model>` section.
+How OpenVINO Runtime Works with Models
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OpenVINO™ Runtime allows to use different approaches to work with model inputs/outputs:
+OpenVINO™ Runtime enables you to use different approaches to work with model inputs/outputs:
 
-* ``:ref:`ov::Model::inputs() <doxid-classov_1_1_model_1a7121b50a2990b63eb6a73945f0cae089>``` / ``:ref:`ov::Model::outputs() <doxid-classov_1_1_model_1a89c629856666f1064cf0418c432004f0>``` methods allow to get vector of all input/output ports.
+* The ``:ref:`ov::Model::inputs() <doxid-classov_1_1_model_1ac28a4c66071e165c4f98906ab489e5d5>``` / ``:ref:`ov::Model::outputs() <doxid-classov_1_1_model_1af6e381008712ce22d6f4b93b87303dd8>``` methods are used to get vectors of all input/output ports.
 
-* For a model which has only one input or output you can use methods ``:ref:`ov::Model::input() <doxid-classov_1_1_model_1a9bf0166a1f9005222cb9a2f68a3b9a4c>``` or ``:ref:`ov::Model::output() <doxid-classov_1_1_model_1a77b209dd9632a199c20fd48b0e5cab62>``` without arguments to get input or output port respectively.
+* For a model that has only one input or output, you can use the ``:ref:`ov::Model::input() <doxid-classov_1_1_model_1a5deeced6688795bc6cdad9ce74d972e7>``` or ``:ref:`ov::Model::output() <doxid-classov_1_1_model_1a54c76c98bc7dd8fb04e866d06134efc7>``` methods without any arguments to get input or output port respectively.
 
-* Methods ``:ref:`ov::Model::input() <doxid-classov_1_1_model_1a9bf0166a1f9005222cb9a2f68a3b9a4c>``` and ``:ref:`ov::Model::output() <doxid-classov_1_1_model_1a77b209dd9632a199c20fd48b0e5cab62>``` can be used with index of input or output from the framework model to get specific port by index.
+* The ``:ref:`ov::Model::input() <doxid-classov_1_1_model_1a5deeced6688795bc6cdad9ce74d972e7>``` and ``:ref:`ov::Model::output() <doxid-classov_1_1_model_1a54c76c98bc7dd8fb04e866d06134efc7>``` methods can be used with the index of inputs or outputs from the framework model to get specific ports by index.
 
-* You can use tensor name of input or output from the original framework model together with methods ``:ref:`ov::Model::input() <doxid-classov_1_1_model_1a9bf0166a1f9005222cb9a2f68a3b9a4c>``` or ``:ref:`ov::Model::output() <doxid-classov_1_1_model_1a77b209dd9632a199c20fd48b0e5cab62>``` to get specific port. It means that you don't need to have any additional mapping of names from framework to OpenVINO, as it was before, OpenVINO™ Runtime allows using of native framework tensor names.
+* You can use the tensor name of input or output from the original framework model together with the ``:ref:`ov::Model::input() <doxid-classov_1_1_model_1a5deeced6688795bc6cdad9ce74d972e7>``` or ``:ref:`ov::Model::output() <doxid-classov_1_1_model_1a54c76c98bc7dd8fb04e866d06134efc7>``` methods to get specific ports. It means that you do not need to have any additional mapping of names from framework to OpenVINO as it was before. OpenVINO™ Runtime allows the usage of native framework tensor names, for example:
+  
+  .. code-block:: cpp
+  
+  	\n\xmlonly<sphinxtabset></sphinxtabset>\endxmlonly\n
+  
+  	\n\xmlonly<sphinxtab>C++</sphinxtab>\endxmlonly\n
+  
+  	@snippet docs/snippets/ov_model_snippets.cpp all_inputs_ouputs
+  
+  	\n\xmlonly<endsphinxtab></endsphinxtab>\endxmlonly\n
+  
+  	\n\xmlonly<sphinxtab>Python</sphinxtab>\endxmlonly\n
+  
+  	@snippet docs/snippets/ov_model_snippets.py all_inputs_ouputs
+  
+  	\n\xmlonly<endsphinxtab></endsphinxtab>\endxmlonly\n
+  
+  	\n\xmlonly<endsphinxtabset></endsphinxtabset>\endxmlonly\n
+  
+  For details on how to build a model in OpenVINO™ Runtime, see the :ref:`Build a Model in OpenVINO™ Runtime <doxid-openvino_docs__o_v__u_g__model__representation_1ov_ug_build_model>` section.
 
-.. raw:: html
+OpenVINO™ Runtime model representation uses special classes to work with model data types and shapes. The ``:ref:`ov::element::Type <doxid-classov_1_1element_1_1_type>``` is used for data types. See the section below for representation of shapes.
 
-   <div class='sphinxtabset'>
-
-
-
-
-
-
-
-.. raw:: html
-
-   <div class="sphinxtab" data-sphinxtab-value="C++">
-
-
-
-
-
-.. ref-code-block:: cpp
-
-	/\* Take information about all topology inputs \*/
-	auto inputs = :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`->inputs();
-	/\* Take information about all topology outputs \*/
-	auto outputs = :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`->outputs();
-
-
-
-
-
-.. raw:: html
-
-   </div>
-
-
-
-
-
-
-
-.. raw:: html
-
-   <div class="sphinxtab" data-sphinxtab-value="Python">
-
-
-
-
-
-.. ref-code-block:: cpp
-
-	inputs = model.inputs
-	outputs = model.outputs
-
-
-
-
-
-.. raw:: html
-
-   </div>
-
-
-
-
-
-
-
-.. raw:: html
-
-   </div>
-
-
-
-OpenVINO™ Runtime model representation uses special classes to work with model data types and shapes. For data types the ``:ref:`ov::element::Type <doxid-classov_1_1element_1_1_type>``` is used.
-
-Shapes Representation
-~~~~~~~~~~~~~~~~~~~~~
+Representation of Shapes
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenVINO™ Runtime provides two types for shape representation:
 
 * ``:ref:`ov::Shape <doxid-classov_1_1_shape>``` - Represents static (fully defined) shapes.
 
-* ``:ref:`ov::PartialShape <doxid-classov_1_1_partial_shape>``` - Represents dynamic shapes. That means that the rank or some of dimensions are dynamic (dimension defines an interval or undefined). ``:ref:`ov::PartialShape <doxid-classov_1_1_partial_shape>``` can be converted to ``:ref:`ov::Shape <doxid-classov_1_1_shape>``` using the ``get_shape()`` method if all dimensions are static; otherwise the conversion raises an exception.
+* ``:ref:`ov::PartialShape <doxid-classov_1_1_partial_shape>``` - Represents dynamic shapes. This means that the rank or some of dimensions are dynamic (dimension defines an interval or undefined).
+
+``:ref:`ov::PartialShape <doxid-classov_1_1_partial_shape>``` can be converted to ``:ref:`ov::Shape <doxid-classov_1_1_shape>``` by using the ``get_shape()`` method if all dimensions are static; otherwise, the conversion will throw an exception. For example:
 
 .. raw:: html
 
@@ -132,10 +83,6 @@ OpenVINO™ Runtime provides two types for shape representation:
 	    static_shape = partial_shape.:ref:`get_shape <doxid-classov_1_1_partial_shape_1a7973b448c76e208993190d2e1e5d7a4a>`();
 	}
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -160,10 +107,6 @@ OpenVINO™ Runtime provides two types for shape representation:
 	if not partial_shape.is_dynamic: # or partial_shape.is_static
 	    static_shape = partial_shape.get_shape()
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -180,28 +123,30 @@ OpenVINO™ Runtime provides two types for shape representation:
 
 
 
-But in most cases before getting static shape using ``get_shape()`` method, you need to check that shape is static.
+However, in most cases, before getting static shape using the ``get_shape()`` method, you need to check if that shape is static.
 
-Operations
-~~~~~~~~~~
+Representation of Operations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``ov::Op`` class represents any abstract operation in the model representation. Use this class to create :ref:`custom operations <doxid-openvino_docs__extensibility__u_g_add_openvino_ops>`.
 
-Operation Sets
-~~~~~~~~~~~~~~
+Representation of Operation Sets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Operation set (opset) is a collection of operations that can be used to construct a model. The ``:ref:`ov::OpSet <doxid-classov_1_1_op_set>``` class provides a functionality to work with operation sets. For each operation set, OpenVINO™ Runtime provides a separate namespace, for example ``opset8``. Each OpenVINO™ Release introduces new operations and add these operations to a new operation set. New operation sets help to introduce a new version of operations that change behavior of previous operations. Using operation sets allows you to avoid changes in your application if new operations have been introduced. For a complete list of operation sets supported in OpenVINO™ toolkit, see :ref:`Available Operations Sets <doxid-openvino_docs_ops_opset>`. To add support of custom operations, see the :ref:`Add Custom OpenVINO Operations <doxid-openvino_docs__extensibility__u_g__intro>` document.
+An operation set (opset) is a collection of operations that can be used to construct a model. The ``:ref:`ov::OpSet <doxid-classov_1_1_op_set>``` class provides the functionality to work with operation sets. For each operation set, OpenVINO™ Runtime provides a separate namespace, for example ``opset8``.
+
+Each OpenVINO™ Release introduces new operations and adds them to new operation sets, within which the new operations would change the behavior of previous operations. Using operation sets helps you avoid changing your application when new operations are introduced. For a complete list of operation sets supported in OpenVINO™ toolkit, see the :ref:`Available Operations Sets <doxid-openvino_docs_ops_opset>`. To add the support for custom operations, see :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>`.
 
 
 
 .. _doxid-openvino_docs__o_v__u_g__model__representation_1ov_ug_build_model:
 
-Build a Model in OpenVINO™ Runtime
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Building a Model in OpenVINO™ Runtime
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can create a model from source. This section illustrates how to construct a model composed of operations from an available operation set.
 
-Operation set ``opsetX`` integrates a list of pre-compiled operations that work for this purpose. In other words, ``opsetX`` defines a set of operations for building a graph.
+Operation set  ``opsetX`` integrates a list of pre-compiled operations that work for this purpose. In other words, ``opsetX`` defines a set of operations for building a graph.
 
 To build an ``:ref:`ov::Model <doxid-classov_1_1_model>``` instance from ``opset8`` operations, include the following files:
 
@@ -228,10 +173,6 @@ To build an ``:ref:`ov::Model <doxid-classov_1_1_model>``` instance from ``opset
 	#include <openvino/core/model.hpp>
 	#include <openvino/opsets/opset8.hpp>
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -253,10 +194,6 @@ To build an ``:ref:`ov::Model <doxid-classov_1_1_model>``` instance from ``opset
 .. ref-code-block:: cpp
 
 	import openvino.runtime as ov
-
-
-
-
 
 .. raw:: html
 
@@ -319,10 +256,6 @@ The following code demonstrates how to create a simple model:
 	    return std::make_shared<ov::Model>(:ref:`ov::ResultVector <doxid-namespaceov_1adf9015702d0f2f7e69c705651f19b72a>`{res}, :ref:`ov::ParameterVector <doxid-namespaceov_1a2fd9bce881f1d37b496cf2e098274098>`{data});
 	}
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -356,10 +289,6 @@ The following code demonstrates how to create a simple model:
 	    add = ov.opset8.add(mul, add_constant)
 	    res = ov.opset8.result(add)
 	    return :ref:`ov.Model <doxid-classov_1_1_model>`([res], [data], "model")
-
-
-
-
 
 .. raw:: html
 
@@ -412,19 +341,15 @@ The following code creates a model with several outputs:
 	    auto axis_const = ov::opset8::Constant::create(:ref:`ov::element::i64 <doxid-group__ov__element__cpp__api_1ga6c86a9a54d44fc205ad9cbf28ca556a6>`, :ref:`ov::Shape <doxid-classov_1_1_shape>`{} /\*scalar shape\*/, {1});
 	
 	    // Create opset8::Split operation that splits input to three slices across 1st dimension
-	    auto :ref:`split <doxid-namespaceov_1_1util_1aa7286e4cc2f3fc985397a6839f1e02e6>` = std::make_shared<ov::opset8::Split>(data, axis_const, 3);
+	    auto :ref:`split <doxid-namespaceov_1_1util_1a128965e0b428278d28f9fa805b767137>` = std::make_shared<ov::opset8::Split>(data, axis_const, 3);
 	
 	    // Create opset8::Relu operation that takes 1st Split output as input
-	    auto :ref:`relu <doxid-namespaceov_1_1op_1_1util_1_1detail_1ab226e58ed2f3e7bbdea890077afe523f>` = std::make_shared<ov::opset8::Relu>(:ref:`split <doxid-namespaceov_1_1util_1aa7286e4cc2f3fc985397a6839f1e02e6>`->output(1) /\*specify explicit output\*/);
+	    auto :ref:`relu <doxid-namespaceov_1_1op_1_1util_1_1detail_1a17863cb19970ed8fa653f7fd0442bcab>` = std::make_shared<ov::opset8::Relu>(:ref:`split <doxid-namespaceov_1_1util_1a128965e0b428278d28f9fa805b767137>`->output(1) /\*specify explicit output\*/);
 	
 	    // Results operations will be created automatically based on provided OutputVector
-	    return std::make_shared<ov::Model>(:ref:`ov::OutputVector <doxid-namespaceov_1a0a3841455b82c164b1b04b61a9c7c560>`{:ref:`split <doxid-namespaceov_1_1util_1aa7286e4cc2f3fc985397a6839f1e02e6>`->output(0), :ref:`relu <doxid-namespaceov_1_1op_1_1util_1_1detail_1ab226e58ed2f3e7bbdea890077afe523f>`, :ref:`split <doxid-namespaceov_1_1util_1aa7286e4cc2f3fc985397a6839f1e02e6>`->output(2)},
+	    return std::make_shared<ov::Model>(:ref:`ov::OutputVector <doxid-namespaceov_1a0a3841455b82c164b1b04b61a9c7c560>`{:ref:`split <doxid-namespaceov_1_1util_1a128965e0b428278d28f9fa805b767137>`->output(0), :ref:`relu <doxid-namespaceov_1_1op_1_1util_1_1detail_1a17863cb19970ed8fa653f7fd0442bcab>`, :ref:`split <doxid-namespaceov_1_1util_1a128965e0b428278d28f9fa805b767137>`->output(2)},
 	                                       :ref:`ov::ParameterVector <doxid-namespaceov_1a2fd9bce881f1d37b496cf2e098274098>`{data});
 	}
-
-
-
-
 
 .. raw:: html
 
@@ -465,10 +390,6 @@ The following code creates a model with several outputs:
 	    # Results operations will be created automatically based on provided OutputVector
 	    return :ref:`ov.Model <doxid-classov_1_1_model>`([split.output(0), relu, split.output[2]], [data], "model")
 
-
-
-
-
 .. raw:: html
 
    </div>
@@ -487,8 +408,8 @@ The following code creates a model with several outputs:
 
 
 
-Model debug capabilities
-~~~~~~~~~~~~~~~~~~~~~~~~
+Model Debugging Capabilities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenVINO™ provides several debug capabilities:
 
@@ -523,14 +444,10 @@ OpenVINO™ provides several debug capabilities:
   	    :ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>` manager;
   	
   	    // Serialize ov::Model to before.svg file before transformation
-  	    manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ov::pass::VisualizeTree <doxid-classov_1_1pass_1_1_visualize_tree>`>("image.svg");
+  	    manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<:ref:`ov::pass::VisualizeTree <doxid-classov_1_1pass_1_1_visualize_tree>`>("image.svg");
   	
   	    manager.:ref:`run_passes <doxid-classov_1_1pass_1_1_manager_1a8b155191130f2c15e294cfd259d4ca0d>`(m);
   	}
-  
-  
-  
-  
   
   .. raw:: html
   
@@ -559,10 +476,6 @@ OpenVINO™ provides several debug capabilities:
   	    pass_manager.register_pass(pass_name="VisualTree", file_name='image.svg')
   	    pass_manager.run_passes(m)
   
-  
-  
-  
-  
   .. raw:: html
   
      </div>
@@ -584,13 +497,18 @@ OpenVINO™ provides several debug capabilities:
   .. code-block:: cpp
   
   	`ov::pass::VisualizeTree` can be parametrized via environment variables:
-  	
-  	    OV_VISUALIZE_TREE_OUTPUT_SHAPES=1       - visualize shapes
-  	    OV_VISUALIZE_TREE_OUTPUT_TYPES=1        - visualize types
-  	    OV_VISUALIZE_TREE_MIN_MAX_DENORMAL=1    - pretty denormal values
-  	    OV_VISUALIZE_TREE_RUNTIME_INFO=1        - print runtime information
-  	    OV_VISUALIZE_TREE_IO=1                  - print I/O ports
-  	    OV_VISUALIZE_TREE_MEMBERS_NAME=1        - print member names
+  
+  	OV_VISUALIZE_TREE_OUTPUT_SHAPES=1       - visualize shapes
+  
+  	OV_VISUALIZE_TREE_OUTPUT_TYPES=1        - visualize types
+  
+  	OV_VISUALIZE_TREE_MIN_MAX_DENORMAL=1    - pretty denormal values
+  
+  	OV_VISUALIZE_TREE_RUNTIME_INFO=1        - print runtime information
+  
+  	OV_VISUALIZE_TREE_IO=1                  - print I/O ports
+  
+  	OV_VISUALIZE_TREE_MEMBERS_NAME=1        - print member names
 
 * Also model can be serialized to IR:
   
@@ -621,14 +539,10 @@ OpenVINO™ provides several debug capabilities:
   	    :ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>` manager;
   	
   	    // Serialize ov::Model to IR
-  	    manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ov::pass::Serialize <doxid-classov_1_1pass_1_1_serialize>`>("/path/to/file/model.xml", "/path/to/file/model.bin");
+  	    manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<:ref:`ov::pass::Serialize <doxid-classov_1_1pass_1_1_serialize>`>("/path/to/file/model.xml", "/path/to/file/model.bin");
   	
   	    manager.:ref:`run_passes <doxid-classov_1_1pass_1_1_manager_1a8b155191130f2c15e294cfd259d4ca0d>`(:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`);
   	}
-  
-  
-  
-  
   
   .. raw:: html
   
@@ -656,10 +570,6 @@ OpenVINO™ provides several debug capabilities:
   	    pass_manager = passes.Manager()
   	    pass_manager.register_pass(pass_name="Serialize", xml_path='model.xml', bin_path='model.bin')
   	    pass_manager.run_passes(m)
-  
-  
-  
-  
   
   .. raw:: html
   

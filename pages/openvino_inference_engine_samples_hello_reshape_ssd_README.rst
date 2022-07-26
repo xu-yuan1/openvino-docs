@@ -16,16 +16,16 @@ The following C++ API is used in the application:
       - API
       - Description
     * - Node operations
-      - ``:ref:`ov::Node::get_type_info <doxid-classov_1_1_node_1a09d7370d5fa57c28880598760fd9c893>``` , ``:ref:`ngraph::op::DetectionOutput::get_type_info_static <doxid-classov_1_1op_1_1_op_1a236ae4310a12e8b9ee7115af2154c489>``` , ``ov::Output::get_any_name`` , ``ov::Output::get_shape``
+      - ``:ref:`ov::Node::get_type_info <doxid-classov_1_1_node_1a21eaf78313b6823ee7af4a099147f2a7>``` , ``:ref:`ngraph::op::DetectionOutput::get_type_info_static <doxid-classov_1_1op_1_1_op_1a67be7c9343aa67e8dcc9866c722cb097>``` , ``ov::Output::get_any_name`` , ``ov::Output::get_shape``
       - Get a node info
     * - Model Operations
-      - ``:ref:`ov::Model::get_ops <doxid-classov_1_1_model_1aa59b85f01b9660f69d9616f2ca40c3ef>``` , ``:ref:`ov::Model::reshape <doxid-classov_1_1_model_1aa21aff80598d5089d591888a4c7f33ae>```
+      - ``:ref:`ov::Model::get_ops <doxid-classov_1_1_model_1ac52bc1bbf8140877ceb74f387794d7b3>``` , ``:ref:`ov::Model::reshape <doxid-classov_1_1_model_1aa21aff80598d5089d591888a4c7f33ae>```
       - Get model nodes, reshape input
     * - Tensor Operations
-      - ``:ref:`ov::Tensor::data <doxid-classov_1_1_tensor_1ac1b8835f54d67d92969d7979e666e2a8>```
+      - ``:ref:`ov::Tensor::data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>```
       - Get a tensor data
     * - Preprocessing
-      - ``:ref:`ov::preprocess::PreProcessSteps::convert_element_type <doxid-classov_1_1preprocess_1_1_pre_process_steps_1ab9e7979668e7403a72b07786f76ec0e0>``` , ``:ref:`ov::preprocess::PreProcessSteps::convert_layout <doxid-classov_1_1preprocess_1_1_pre_process_steps_1ab5a0cd9d0090f82e0489171a057fcfd4>```
+      - ``:ref:`ov::preprocess::PreProcessSteps::convert_element_type <doxid-classov_1_1preprocess_1_1_pre_process_steps_1aac6316155a1690609eb320637c193d50>``` , ``:ref:`ov::preprocess::PreProcessSteps::convert_layout <doxid-classov_1_1preprocess_1_1_pre_process_steps_1a0f65fdadca32e90f5ef3a323b640b978>```
       - Model input preprocessing
 
 Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>`.
@@ -76,6 +76,8 @@ To run the sample, you need specify a model and image:
 * Before running the sample with a trained model, make sure the model is converted to the intermediate representation (IR) format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
 
 * The sample accepts models in ONNX format (\*.onnx) that do not require preprocessing.
+
+
 
 Example
 -------

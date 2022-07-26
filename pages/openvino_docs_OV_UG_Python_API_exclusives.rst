@@ -1,16 +1,16 @@
-.. index:: pair: page; OpenVINO™ Python API exclusives
+.. index:: pair: page; OpenVINO™ Python API Exclusives
 .. _doxid-openvino_docs__o_v__u_g__python__a_p_i_exclusives:
 
 
-OpenVINO™ Python API exclusives
+OpenVINO™ Python API Exclusives
 =================================
 
-:target:`doxid-openvino_docs__o_v__u_g__python__a_p_i_exclusives_1md_openvino_docs_ov_runtime_ug_python_api_exclusives` OpenVINO™ Runtime Python API is exposing additional features and helpers to elevate user experience. Main goal of Python API is to provide user-friendly and simple, still powerful, tool for Python users.
+:target:`doxid-openvino_docs__o_v__u_g__python__a_p_i_exclusives_1md_openvino_docs_ov_runtime_ug_python_api_exclusives` OpenVINO™ Runtime Python API offers additional features and helpers to enhance user experience. The main goal of Python API is to provide user-friendly and simple yet powerful tool for Python users.
 
-Easier model compilation
+Easier Model Compilation
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-``CompiledModel`` can be easily created with the helper method. It hides ``Core`` creation and applies ``AUTO`` device by default.
+``CompiledModel`` can be easily created with the helper method. It hides the creation of ``Core`` and applies ``AUTO`` inference mode by default.
 
 .. ref-code-block:: cpp
 
@@ -18,12 +18,10 @@ Easier model compilation
 	
 	compiled_model = ov.compile_model("model.xml")
 
-
-
-Model/CompiledModel inputs and outputs
+Model/CompiledModel Inputs and Outputs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Besides functions aligned to C++ API, some of them have their Pythonic counterparts or extensions. For example, ``Model`` and ``CompiledModel`` inputs/outputs can be accessed via properties.
+Besides functions aligned to C++ API, some of them have their Python counterparts or extensions. For example, ``Model`` and ``CompiledModel`` inputs/outputs can be accessed via properties.
 
 .. ref-code-block:: cpp
 
@@ -45,7 +43,7 @@ Refer to Python API documentation on which helper functions or properties are av
 Working with Tensor
 ~~~~~~~~~~~~~~~~~~~
 
-Python API allows passing data as tensors. ``Tensor`` object holds a copy of the data from the given array. ``dtype`` of numpy arrays is converted to OpenVINO™ types automatically.
+Python API allows passing data as tensors. The ``Tensor`` object holds a copy of the data from the given array. The ``dtype`` of *numpy* arrays is converted to OpenVINO™ types automatically.
 
 .. ref-code-block:: cpp
 
@@ -59,12 +57,10 @@ Python API allows passing data as tensors. ``Tensor`` object holds a copy of the
 	tensor = :ref:`ov.Tensor <doxid-classov_1_1_tensor>`(data_int32)
 	assert tensor.element_type == ov.Type.i32
 
-
-
-Shared memory mode
+Shared Memory Mode
 ------------------
 
-``Tensor`` objects can share the memory with numpy arrays. By specifing ``shared_memory`` argument, a ``Tensor`` object does not perform copy of data and has access to the memory of the numpy array.
+``Tensor`` objects can share the memory with *numpy* arrays. By specifying the ``shared_memory`` argument, the ``Tensor`` object does not copy data. Instead, it has access to the memory of the *numpy* array.
 
 .. ref-code-block:: cpp
 
@@ -80,14 +76,12 @@ Shared memory mode
 	shared_tensor.data[0][2] = 0.6
 	assert data_to_share[0][2] == 0.6
 
-
-
-Running inference
+Running Inference
 ~~~~~~~~~~~~~~~~~
 
 Python API supports extra calling methods to synchronous and asynchronous modes for inference.
 
-All infer methods allow users to pass data as popular numpy arrays, gathered in either Python dicts or lists.
+All infer methods allow users to pass data as popular *numpy* arrays, gathered in either Python dicts or lists.
 
 .. ref-code-block:: cpp
 
@@ -109,12 +103,10 @@ Results from inference can be obtained in various ways:
 	# Get all results with special helper property
 	results = list(infer_request.results.values())
 
-
-
-Synchronous mode - extended
+Synchronous Mode - Extended
 ---------------------------
 
-Python API provides different synchronous calls to infer model, which block the application execution. Additionally these calls return results of inference:
+Python API provides different synchronous calls to infer model, which block the application execution. Additionally, these calls return results of inference:
 
 .. ref-code-block:: cpp
 
@@ -123,16 +115,14 @@ Python API provides different synchronous calls to infer model, which block the 
 	# Extra feature: calling CompiledModel directly
 	results = compiled_model(inputs={0: data})
 
-
-
 AsyncInferQueue
 ---------------
 
-Asynchronous mode pipelines can be supported with wrapper class called ``AsyncInferQueue``. This class automatically spawns pool of ``InferRequest`` objects (also called "jobs") and provides synchronization mechanisms to control flow of the pipeline.
+Asynchronous mode pipelines can be supported with a wrapper class called ``AsyncInferQueue``. This class automatically spawns the pool of ``InferRequest`` objects (also called "jobs") and provides synchronization mechanisms to control the flow of the pipeline.
 
-Each job is distinguishable by unique ``id``, which is in the range from 0 up to number of jobs specified in ``AsyncInferQueue`` constructor.
+Each job is distinguishable by a unique ``id``, which is in the range from 0 up to the number of jobs specified in the ``AsyncInferQueue`` constructor.
 
-Function call ``start_async`` is not required to be synchronized, it waits for any available job if queue is busy/overloaded. Every ``AsyncInferQueue`` code block should end with ``wait_all`` function. It provides "global" synchronization of all jobs in the pool and ensure that access to them is safe.
+The ``start_async`` function call is not required to be synchronized - it waits for any available job if the queue is busy/overloaded. Every ``AsyncInferQueue`` code block should end with the ``wait_all`` function which provides the "global" synchronization of all jobs in the pool and ensure that access to them is safe.
 
 .. ref-code-block:: cpp
 
@@ -150,36 +140,32 @@ Function call ``start_async`` is not required to be synchronized, it waits for a
 	infer_queue = ov.AsyncInferQueue(compiled, jobs)
 	
 	# Create data
-	data = [np.array([i] \* 8, dtype=np.float32) for i in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1a6e7a7da51225b5333900d059a6f386d3>`(jobs)]
+	data = [np.array([i] \* 8, dtype=np.float32) for i in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(jobs)]
 	
 	# Run all jobs
-	for i in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1a6e7a7da51225b5333900d059a6f386d3>`(len(data)):
+	for i in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(len(data)):
 	    infer_queue.start_async({0: data[i], 1: data[i]})
 	infer_queue.wait_all()
 
+Acquiring Results from Requests
++++++++++++++++++++++++++++++++
 
-
-Acquire results from requests
-+++++++++++++++++++++++++++++
-
-After the call to ``wait_all``, jobs and their data can be safely accessed. Acquring of a specific job with ``[id]`` returns ``InferRequest`` object, which results in seamless retrieval of the output data.
+After the call to ``wait_all``, jobs and their data can be safely accessed. Acquiring a specific job with ``[id]`` will return the ``InferRequest`` object, which will result in seamless retrieval of the output data.
 
 .. ref-code-block:: cpp
 
 	results = infer_queue[3].get_output_tensor().data
 
-
-
-Setting callbacks
+Setting Callbacks
 +++++++++++++++++
 
-Another feature of ``AsyncInferQueue`` is ability of setting callbacks. When callback is set, any job that ends inference, calls upon Python function. Callback function must have two arguments. First is the request that calls the callback, it provides ``InferRequest`` API. Second one being called "userdata", provides possibility of passing runtime values, which can be of any Python type and later used inside callback function.
+Another feature of ``AsyncInferQueue`` is the ability to set callbacks. When callback is set, any job that ends inference calls upon the Python function. The callback function must have two arguments: one is the request that calls the callback, which provides the ``InferRequest`` API; the other is called "userdata", which provides the possibility of passing runtime values. Those values can be of any Python type and later used within the callback function.
 
 The callback of ``AsyncInferQueue`` is uniform for every job. When executed, GIL is acquired to ensure safety of data manipulation inside the function.
 
 .. ref-code-block:: cpp
 
-	data_done = [False for _ in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1a6e7a7da51225b5333900d059a6f386d3>`(jobs)]
+	data_done = [False for _ in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(jobs)]
 	
 	def :ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`(request, userdata):
 	    print(f"Done! Result: {request.get_output_tensor().data}")
@@ -187,18 +173,16 @@ The callback of ``AsyncInferQueue`` is uniform for every job. When executed, GIL
 	
 	infer_queue.set_callback(f)
 	
-	for i in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1a6e7a7da51225b5333900d059a6f386d3>`(len(data)):
+	for i in :ref:`range <doxid-namespacengraph_1_1runtime_1_1reference_1ad38dec78131946cded583cc1154a406d>`(len(data)):
 	    infer_queue.start_async({0: data[i], 1: data[i]}, userdata=i)
 	infer_queue.wait_all()
 	
 	assert all(data_done)
 
-
-
-Working with u1, u4 and i4 element types
+Working with u1, u4 and i4 Element Types
 ----------------------------------------
 
-Since openvino supports low precision element types there are few ways how to handle them in python. To create an input tensor with such element types you may need to pack your data in new numpy array which byte size matches original input size:
+Since OpenVINO™ supports low precision element types, there are a few ways to handle them in Python. To create an input tensor with such element types, you may need to pack your data in the new *numpy* array, with which the byte size matches the original input size:
 
 .. ref-code-block:: cpp
 
@@ -208,7 +192,7 @@ Since openvino supports low precision element types there are few ways how to ha
 	# Create tensor with shape in element types
 	t = :ref:`ov.Tensor <doxid-classov_1_1_tensor>`(packed_buffer, [1, 128], ov.Type.u4)
 
-To extract low precision values from tensor into numpy array you can use next helper:
+To extract low precision values from a tensor into the *numpy* array, you can use the following helper:
 
 .. ref-code-block:: cpp
 
@@ -217,12 +201,10 @@ To extract low precision values from tensor into numpy array you can use next he
 	unpacked_data = unpack_data(t.data, t.element_type, t.shape)
 	assert np.array_equal(unpacked_data , unt8_data)
 
+Release of GIL
+--------------
 
-
-Releasing the GIL
------------------
-
-Some functions in Python API release the Global Lock Interpreter (GIL) while running work-intensive code. It can help you to achieve more parallelism in your application using Python threads. For more information about GIL please refer to the Python documentation.
+Some functions in Python API release the Global Lock Interpreter (GIL) while running work-intensive code. This can help you achieve more parallelism in your application, using Python threads. For more information about GIL, refer to the Python documentation.
 
 .. ref-code-block:: cpp
 
@@ -260,11 +242,13 @@ Some functions in Python API release the Global Lock Interpreter (GIL) while run
 	# running the inference
 	request.infer(input_data)
 
+.. note:: While GIL is released, functions can still modify and/or operate on Python objects in C++. Hence, there is no reference counting. You should pay attention to thread safety in case sharing of these objects with another thread occurs. It might affect code only if multiple threads are spawned in Python.
 
 
-.. note:: While GIL is released functions can still modify and/or operate on Python objects in C++, thus there is no reference counting. User is responsible for thread safety if sharing of these objects with other thread occurs. It can affects your code only if multiple threads are spawned in Python.:
 
-List of functions that release the GIL
+
+
+List of Functions that Release the GIL
 ++++++++++++++++++++++++++++++++++++++
 
 * openvino.runtime.AsyncInferQueue.start_async

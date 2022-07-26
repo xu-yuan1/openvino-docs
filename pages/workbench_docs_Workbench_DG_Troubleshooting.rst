@@ -40,6 +40,8 @@ To learn more about an error, download a ``.txt`` file with server logs. Click t
 
 .. note:: Server logs contain sensitive information like data on your models. If you do not wish to share this information, attach only the ``RUN COMMAND`` part.
 
+
+
 If you cannot copy the logs from the DL Workbench UI, use the following command to download logs:
 
 .. ref-code-block:: cpp
@@ -130,11 +132,15 @@ To resolve the problem, follow the steps below:
 
 #. Copy required DL Workbench assets into it. Assign this path to the ``--assets-directory`` argument in the script you used to :ref:`install the application <doxid-workbench_docs__workbench__d_g__install>`.
 
+.. _incompatible:
+
 .. note:: * If you use a non-default configuration directory, replace ``~/.workbench`` with it.
 
 * Creating the directory with the ``-m 777`` mode makes the directory accessible to ALL users for reading, writing and executing.
 
-.. _incompatible:
+
+
+
 
 Incompatible Model and Dataset
 ------------------------------
@@ -266,6 +272,8 @@ You should upload the :ref:``id_rsa` key <doxid-workbench_docs__workbench__d_g__
 .. ref-code-block:: cpp
 
 	-----BEGIN RSA PRIVATE KEY-----
+
+
 
 .. ref-code-block:: cpp
 

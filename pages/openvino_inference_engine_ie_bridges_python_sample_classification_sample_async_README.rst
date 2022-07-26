@@ -87,6 +87,8 @@ To run the sample, you need specify a model and image:
 
 * The sample accepts models in ONNX format (.onnx) that do not require preprocessing.
 
+
+
 Example
 -------
 

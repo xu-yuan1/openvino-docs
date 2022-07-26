@@ -57,8 +57,6 @@ Lets look at the code example.
 	// Getting all consumers for output port
 	auto consumers = output.get_target_inputs();
 
-
-
 Node replacement
 ----------------
 
@@ -134,8 +132,6 @@ The alternative way to the insert operation is to make a node copy and use ``:re
 	    :ref:`ov::replace_node <doxid-namespaceov_1a75d84ee654edb73fe4fb18936a5dca6d>`(node, new_node);
 	}
 
-
-
 Node elimination
 ----------------
 
@@ -190,7 +186,7 @@ Each ``:ref:`ov::Node <doxid-classov_1_1_node>``` has an unique name and a frien
 
 	// Replace Div operation with Power and Multiply sub-graph and set original friendly name to Multiply operation
 	auto pow = std::make_shared<ov::opset8::Power>(div->input(1).get_source_output(),
-	                                               :ref:`ov::op::v0::Constant::create <doxid-classov_1_1op_1_1v0_1_1_constant_1aded3f3d661b74d480aa1e20c81a66c09>`(div->get_input_element_type(1), :ref:`ov::Shape <doxid-classov_1_1_shape>`{1}, {-1}));
+	                                               :ref:`ov::op::v0::Constant::create <doxid-classov_1_1op_1_1v0_1_1_constant_1ad812afdc89a39746c8bb84b5b6cee9ac>`(div->get_input_element_type(1), :ref:`ov::Shape <doxid-classov_1_1_shape>`{1}, {-1}));
 	auto mul = std::make_shared<ov::opset8::Multiply>(div->input(0).get_source_output(), pow);
 	mul->set_friendly_name(div->get_friendly_name());
 	:ref:`ngraph::replace_node <doxid-namespaceov_1a75d84ee654edb73fe4fb18936a5dca6d>`(div, mul);
@@ -205,7 +201,7 @@ Runtime info is a map ``std::map<std::string, :ref:`ov::Any <doxid-classov_1_1_a
 .. ref-code-block:: cpp
 
 	// Replace Transpose with Reshape operation (1:1)
-	:ref:`ov::copy_runtime_info <doxid-namespaceov_1a3bb5969a95703b4b4fd77f6f58837207>`(:ref:`transpose <doxid-namespacengraph_1_1builder_1_1opset1_1ae0ce58415f5474a2b293ee74b6d09c40>`, :ref:`reshape <doxid-namespacengraph_1_1builder_1_1opset1_1ae436bb386fa882348f9a2a15148af42d>`);
+	:ref:`ov::copy_runtime_info <doxid-namespaceov_1a3bb5969a95703b4b4fd77f6f58837207>`(:ref:`transpose <doxid-namespacengraph_1_1builder_1_1opset1_1a5541708ed899fa8e1196222a68727be9>`, :ref:`reshape <doxid-namespacengraph_1_1builder_1_1opset1_1ad5b09acfb63fe54b85b33d6e22ccdc72>`);
 	
 	// Replace Div operation with Power and Multiply sub-graph (1:N)
 	:ref:`ov::copy_runtime_info <doxid-namespaceov_1a3bb5969a95703b4b4fd77f6f58837207>`(div, {pow, mul});
@@ -237,12 +233,10 @@ Manual constant folding is more preferable than ``:ref:`ov::pass::ConstantFoldin
 
 Below you can find an example of manual constant folding:
 
-.. _common_mistakes:
-
 .. ref-code-block:: cpp
 
 	template <class T>
-	:ref:`ov::Output\<ov::Node> <doxid-classov_1_1_output>` :ref:`eltwise_fold <doxid-namespacengraph_1_1op_1_1util_1a3cdf081b9f74d5983566a09d367b6a69>`(const :ref:`ov::Output\<ov::Node> <doxid-classov_1_1_output>`& input0, const :ref:`ov::Output\<ov::Node> <doxid-classov_1_1_output>`& input1) {
+	:ref:`ov::Output\<ov::Node> <doxid-classov_1_1_output>` :ref:`eltwise_fold <doxid-namespacengraph_1_1op_1_1util_1a509012b6f17705b68e32968c38b36d37>`(const :ref:`ov::Output\<ov::Node> <doxid-classov_1_1_output>`& input0, const :ref:`ov::Output\<ov::Node> <doxid-classov_1_1_output>`& input1) {
 	    auto eltwise = std::make_shared<T>(input0, input1);
 	    :ref:`ov::OutputVector <doxid-namespaceov_1a0a3841455b82c164b1b04b61a9c7c560>` output(eltwise->get_output_size());
 	    // If constant folding wasn't successful return eltwise output
@@ -252,7 +246,7 @@ Below you can find an example of manual constant folding:
 	    return output[0];
 	}
 
-
+.. _common_mistakes:
 
 Common mistakes in transformations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -283,27 +277,25 @@ The example below shows basic usage of ``:ref:`ov::pass::Manager <doxid-classov_
 .. ref-code-block:: cpp
 
 	:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>` manager;
-	manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<ov::pass::MyModelTransformation>();
+	manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<ov::pass::MyModelTransformation>();
 	// Two matchers will run independently (two independent graph traversals)
 	// pass::Manager automatically creates GraphRewrite container for each MatcherPass
-	manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<ov::pass::DecomposeDivideMatcher>();
-	manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<ov::pass::ReluReluFusionMatcher>();
+	manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<ov::pass::DecomposeDivideMatcher>();
+	manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<ov::pass::ReluReluFusionMatcher>();
 	manager.:ref:`run_passes <doxid-classov_1_1pass_1_1_manager_1a8b155191130f2c15e294cfd259d4ca0d>`(:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`);
 
 Another example shows how multiple matcher passes can be united into single GraphRewrite.
-
-.. _how_to_debug_transformations:
 
 .. ref-code-block:: cpp
 
 	// Register anchor GraphRewrite pass inside manager that will execute two matchers simultaneously
 	:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>` manager;
-	auto anchor = manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ov::pass::GraphRewrite <doxid-classov_1_1pass_1_1_graph_rewrite>`>();
-	anchor->:ref:`add_matcher <doxid-classov_1_1pass_1_1_graph_rewrite_1aa51d9ab71470eb93e0e8ce8f59c44eac>`<ov::pass::DecomposeDivideMatcher>();
+	auto anchor = manager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<:ref:`ov::pass::GraphRewrite <doxid-classov_1_1pass_1_1_graph_rewrite>`>();
+	anchor->:ref:`add_matcher <doxid-classov_1_1pass_1_1_graph_rewrite_1abb0dd37c85a3d1a0f875f9d2deac4a79>`<ov::pass::DecomposeDivideMatcher>();
 	anchor->add_matcher<ov::pass::ReluReluFusionMatcher>();
 	manager.:ref:`run_passes <doxid-classov_1_1pass_1_1_manager_1a8b155191130f2c15e294cfd259d4ca0d>`(:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`);
 
-
+.. _how_to_debug_transformations:
 
 How to debug transformations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -316,6 +308,8 @@ If you are using ``ngraph::pass::Manager`` to run sequence of transformations, y
 	OV_ENABLE_VISUALIZE_TRACING=1 -  enables visualization after each transformation. By default, it saves dot and svg files.
 
 **Note** : Make sure that you have dot installed on your machine; otherwise, it will silently save only dot file without svg file.
+
+
 
 See Also
 ~~~~~~~~

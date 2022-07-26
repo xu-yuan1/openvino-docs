@@ -1,11 +1,11 @@
 .. index:: pair: page; How to Implement Custom Layers for VPU (Intel® Neural Compute Stick 2)
-.. _doxid-openvino_docs__i_e__d_g__extensibility__d_g__v_p_u__kernel:
+.. _doxid-openvino_docs__extensibility__u_g__v_p_u__kernel:
 
 
 How to Implement Custom Layers for VPU (Intel® Neural Compute Stick 2)
 =======================================================================
 
-:target:`doxid-openvino_docs__i_e__d_g__extensibility__d_g__v_p_u__kernel_1md_openvino_docs_extensibility_ug_vpu_extensibility` To enable operations not supported by OpenVINO™ out of the box, you need a custom extension for Model Optimizer, a custom nGraph operation set, and a custom kernel for the device you will target. This page describes custom kernel support for one the VPU, the Intel® Neural Compute Stick 2 device, which uses the MYRIAD device plugin.
+:target:`doxid-openvino_docs__extensibility__u_g__v_p_u__kernel_1md_openvino_docs_extensibility_ug_vpu_extensibility` To enable operations not supported by OpenVINO™ out of the box, you need a custom extension for Model Optimizer, a custom nGraph operation set, and a custom kernel for the device you will target. This page describes custom kernel support for one the VPU, the Intel® Neural Compute Stick 2 device, which uses the MYRIAD device plugin.
 
 **NOTES:**
 
@@ -34,24 +34,22 @@ OpenCL support is provided by ComputeAorta\* and is distributed under a license 
 
 
 
+1. Prior to running a compilation, make sure that the following variables are set:
 
+* ``SHAVE_MA2X8XLIBS_DIR=<INSTALL_DIR>/tools/cl_compiler/lib/``
 
-#. Prior to running a compilation, make sure that the following variables are set:
-   
-   * ``SHAVE_MA2X8XLIBS_DIR=<INSTALL_DIR>/tools/cl_compiler/lib/``
-   
-   * ``SHAVE_LDSCRIPT_DIR=<INSTALL_DIR>/tools/cl_compiler/ldscripts/``
-   
-   * ``SHAVE_MYRIAD_LD_DIR=<INSTALL_DIR>/tools/cl_compiler/bin/``
-   
-   * ``SHAVE_MOVIASM_DIR=<INSTALL_DIR>/tools/cl_compiler/bin/``
+* ``SHAVE_LDSCRIPT_DIR=<INSTALL_DIR>/tools/cl_compiler/ldscripts/``
 
-#. Run the compilation with the command below. You should use ``--strip-binary-header`` to make an OpenCL runtime-agnostic binary runnable with the OpenVINO™ Runtime.
-   
-   .. ref-code-block:: cpp
-   
-   	cd <INSTALL_DIR>/tools/cl_compiler/bin
-   	./clc --strip-binary-header custom_layer.cl -o custom_layer.bin
+* ``SHAVE_MYRIAD_LD_DIR=<INSTALL_DIR>/tools/cl_compiler/bin/``
+
+* ``SHAVE_MOVIASM_DIR=<INSTALL_DIR>/tools/cl_compiler/bin/``
+
+Run the compilation with the command below. You should use ``--strip-binary-header`` to make an OpenCL runtime-agnostic binary runnable with the OpenVINO™ Runtime.
+
+.. ref-code-block:: cpp
+
+	cd <INSTALL_DIR>/tools/cl_compiler/bin
+	./clc --strip-binary-header custom_layer.cl -o custom_layer.bin
 
 Write a Configuration File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -230,8 +228,6 @@ Before loading the network that features the custom layers, provide a separate c
 	// Load Myriad Extensions
 	core.:ref:`set_property <doxid-classov_1_1_core_1aa953cb0a1601dbc9a34ef6ba82b8476e>`("MYRIAD", {{:ref:`CONFIG_KEY <doxid-ie__plugin__config_8hpp_1aad09cfba062e8ec9fb7ab9383f656ec7>`(CONFIG_FILE), "<path_to_the_xml_file>"}});
 
-
-
 Optimizing Kernels with OpenCL for VPU (Intel® Neural Compute Stick 2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -294,57 +290,57 @@ Here is a short list of optimization tips:
    	    int :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` = get_global_size(0);
    	    int y = get_global_id(1);
    	    int :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>` = get_global_size(1);
-   	    float :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` = bias + 1e-9:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`;
+   	    float :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` = bias + 1e-9f;
    	    #pragma unroll 4
    	    for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
-   	        :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` += (float)(src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x] \* src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x]);
-   	    :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` = 1.f / native_sqrt(:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>`);
+   	        :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` += (float)(src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x] \* src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x]);
+   	    :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` = 1.f / native_sqrt(:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>`);
    	    #pragma unroll 4
    	    for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
-   	        dst_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x] = (half)((float)src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x] \* :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>`);
+   	        dst_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x] = (half)((float)src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x] \* :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>`);
    	}
-
-To check the efficiency of WGV, you can compare performance of the kernel above with the kernel below, which is manually vectorized over width:
-
-.. ref-code-block:: cpp
-
-	__kernel void ocl_grn_line(__global const half\* restrict src_data,  __global half\* restrict dst_data, int :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`, int :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`, float bias)
-	{
-	    int y   = get_global_id(1);
-	    int :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`   = get_global_size(1);
-	    for (int x = 0; x < :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`/8; x++)
-	    {
-	        float8 :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` = (float8)(bias+1e-9:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`);
-	        #pragma unroll 4
-	        for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
-	        {
-	            __global const half8\* restrict src_line = ((__global const half8 \* restrict)(src_data + c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`));
-	            half8 sh = src_line[x];
-	            :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` += convert_float8(sh\*sh);
-	        }
-	        :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` = 1.f/native_sqrt(:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>`);
-	        #pragma unroll 4
-	        for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
-	        {
-	            __global const half8\* restrict src_line = ((__global const half8 \* restrict)(src_data + c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`));
-	            __global       half8\* restrict dst_line = ((__global       half8 \* restrict)(dst_data + c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`));
-	            dst_line[x] = convert_half8(convert_float8(src_line[x])\*:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>`);
-	        }
-	    }
-	    for (int x = :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`/8\*8; x < :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`; x++)
-	    {
-	        float :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` = bias+1e-9:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`;
-	        #pragma unroll 4
-	        for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
-	            :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` += (float)(src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x]\*src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x]);
-	        :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` = 1.f/native_sqrt(:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>`);
-	        #pragma unroll 4
-	        for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
-	            dst_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x] = (float)src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x]\*:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>`;
-	    }
-	}
-
-Both versions perform the same, but the second one has more complex code.
+   
+   To check the efficiency of WGV, you can compare performance of the kernel above with the kernel below, which is manually vectorized over width:
+   
+   .. ref-code-block:: cpp
+   
+   	__kernel void ocl_grn_line(__global const half\* restrict src_data,  __global half\* restrict dst_data, int :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`, int :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`, float bias)
+   	{
+   	    int y   = get_global_id(1);
+   	    int :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`   = get_global_size(1);
+   	    for (int x = 0; x < :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`/8; x++)
+   	    {
+   	        float8 :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` = (float8)(bias+1e-9f);
+   	        #pragma unroll 4
+   	        for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
+   	        {
+   	            __global const half8\* restrict src_line = ((__global const half8 \* restrict)(src_data + c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`));
+   	            half8 sh = src_line[x];
+   	            :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` += convert_float8(sh\*sh);
+   	        }
+   	        :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` = 1.f/native_sqrt(:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>`);
+   	        #pragma unroll 4
+   	        for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
+   	        {
+   	            __global const half8\* restrict src_line = ((__global const half8 \* restrict)(src_data + c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`));
+   	            __global       half8\* restrict dst_line = ((__global       half8 \* restrict)(dst_data + c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`));
+   	            dst_line[x] = convert_half8(convert_float8(src_line[x])\*:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>`);
+   	        }
+   	    }
+   	    for (int x = :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`/8\*8; x < :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`; x++)
+   	    {
+   	        float :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` = bias+1e-9f;
+   	        #pragma unroll 4
+   	        for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
+   	            :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` += (float)(src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x]\*src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x]);
+   	        :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` = 1.f/native_sqrt(:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>`);
+   	        #pragma unroll 4
+   	        for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
+   	            dst_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x] = (float)src_data[c\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + y\*:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>` + x]\*:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>`;
+   	    }
+   	}
+   
+   Both versions perform the same, but the second one has more complex code.
 
 #. If it is easy to predict the work group size, you can also use the ``reqd_work_group_size`` kernel attribute to ask the compiler to unroll the code up to the local size of the work group. Note that if the kernel is actually executed with the different work group configuration, the result is undefined.
 
@@ -374,56 +370,56 @@ Both versions perform the same, but the second one has more complex code.
    	  int w2 = w\*stride + offset - stride \* (offset / stride);
    	  :ref:`out <doxid-namespacengraph_1_1runtime_1_1reference_1ac9d07fc6d49867bb411a4f4132777aae>`[:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*c + :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*h + w] = src[W2\*H2\*c2 + W2\*h2 + w2];
    	}
-
-This ``reorg`` kernel is auto-vectorizable, but an input for YOLO v2 topology is ``NCHW=<1,64,26,26>`` and it is not multiple of vector width, which is ``8`` for ``half`` data type. As a result, the Inference Engine does not select the auto-vectorized kernel. To compare performance of auto-vectorized and scalar version of the kernel, change the input size to ``NCHW=<1,64,26,32>``. This enables the auto-vectorized version to be selected by the Inference Engine and can give you about 30% uplift. Since the auto-vectorized version is faster, it makes sense to enable it for the YOLO v2 topology input size by setting the local size multiple of vector, for example, 32, and adjust global sizes accordingly. As a result, the execution work grid exceeds actual input dimension, so out-of-bound checks should be inserted. See the updated kernel version below:
-
-.. ref-code-block:: cpp
-
-	// Version with out-of-bound checks added
-	__kernel void reorg(const __global half\* restrict src, __global half\* restrict :ref:`out <doxid-namespacengraph_1_1runtime_1_1reference_1ac9d07fc6d49867bb411a4f4132777aae>`, int :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`, int stride)
-	{
-	  int w = get_global_id(0);
-	  w = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(w, :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`-1);
-	  int h = get_global_id(1);
-	  int :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>` = get_global_size(1);
-	  int c = get_global_id(2);
-	  int :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>` = get_global_size(2);
-	  int C2 = :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`/(stride\*stride);
-	  int offset = c / C2;
-	  int c2 = c - C2 \* offset;
-	  int H2 = :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*stride;
-	  int W2 = :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*stride;
-	  int h2 = h\*stride + offset / stride;
-	  int w2 = w\*stride + offset - stride \* (offset / stride);
-	  :ref:`out <doxid-namespacengraph_1_1runtime_1_1reference_1ac9d07fc6d49867bb411a4f4132777aae>`[:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*c + :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*h + w] = src[W2\*H2\*c2 + W2\*h2 + w2];
-	}
-
-This code performs the same as the initial kernel above (scalar) due to branching overhead. If you replace min/max expression ``w = min(w, W-1);`` with ``if (w >= W) return;``, runtime increases up to 2x against to code without branching (initial version).
-
-If branching is inevitable for your element-based kernel, it is recommended to change the scheme to line-based. See the kernel variant below:
-
-.. ref-code-block:: cpp
-
-	// Line-wise version
-	__kernel void reorg(const __global half\* restrict src, __global half\* restrict :ref:`out <doxid-namespacengraph_1_1runtime_1_1reference_1ac9d07fc6d49867bb411a4f4132777aae>`, int :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`, int :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`, int stride)
-	{
-	    int h = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`((int)get_global_id(0), :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`-1);
-	    int c = get_global_id(1);
-	    int :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>` = get_global_size(1);
-	    int C2 = :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`/(stride\*stride);
-	    int offset = c / C2;
-	    int c2 = c - C2 \* offset;
-	    int H2 = :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*stride;
-	    int W2 = :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*stride;
-	    for (int w = 0; w < :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`; ++w)
-	    {
-	        int h2 = h\*stride + offset / stride;
-	        int w2 = w\*stride + offset - stride \* (offset / stride);
-	        :ref:`out <doxid-namespacengraph_1_1runtime_1_1reference_1ac9d07fc6d49867bb411a4f4132777aae>`[:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*c + :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*h + w] = src[W2\*H2\*c2 + W2\*h2 + w2];
-	    }
-	}
-
-This decreases the execution time up to 40% against the best performing vectorized kernel without early exits (initial version).
+   
+   This ``reorg`` kernel is auto-vectorizable, but an input for YOLO v2 topology is ``NCHW=<1,64,26,26>`` and it is not multiple of vector width, which is ``8`` for ``half`` data type. As a result, the Inference Engine does not select the auto-vectorized kernel. To compare performance of auto-vectorized and scalar version of the kernel, change the input size to ``NCHW=<1,64,26,32>``. This enables the auto-vectorized version to be selected by the Inference Engine and can give you about 30% uplift. Since the auto-vectorized version is faster, it makes sense to enable it for the YOLO v2 topology input size by setting the local size multiple of vector, for example, 32, and adjust global sizes accordingly. As a result, the execution work grid exceeds actual input dimension, so out-of-bound checks should be inserted. See the updated kernel version below:
+   
+   .. ref-code-block:: cpp
+   
+   	// Version with out-of-bound checks added
+   	__kernel void reorg(const __global half\* restrict src, __global half\* restrict :ref:`out <doxid-namespacengraph_1_1runtime_1_1reference_1ac9d07fc6d49867bb411a4f4132777aae>`, int :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`, int stride)
+   	{
+   	  int w = get_global_id(0);
+   	  w = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`(w, :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`-1);
+   	  int h = get_global_id(1);
+   	  int :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>` = get_global_size(1);
+   	  int c = get_global_id(2);
+   	  int :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>` = get_global_size(2);
+   	  int C2 = :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`/(stride\*stride);
+   	  int offset = c / C2;
+   	  int c2 = c - C2 \* offset;
+   	  int H2 = :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*stride;
+   	  int W2 = :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*stride;
+   	  int h2 = h\*stride + offset / stride;
+   	  int w2 = w\*stride + offset - stride \* (offset / stride);
+   	  :ref:`out <doxid-namespacengraph_1_1runtime_1_1reference_1ac9d07fc6d49867bb411a4f4132777aae>`[:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*c + :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*h + w] = src[W2\*H2\*c2 + W2\*h2 + w2];
+   	}
+   
+   This code performs the same as the initial kernel above (scalar) due to branching overhead. If you replace min/max expression ``w = min(w, W-1);`` with ``if (w >= W) return;``, runtime increases up to 2x against to code without branching (initial version).
+   
+   If branching is inevitable for your element-based kernel, it is recommended to change the scheme to line-based. See the kernel variant below:
+   
+   .. ref-code-block:: cpp
+   
+   	// Line-wise version
+   	__kernel void reorg(const __global half\* restrict src, __global half\* restrict :ref:`out <doxid-namespacengraph_1_1runtime_1_1reference_1ac9d07fc6d49867bb411a4f4132777aae>`, int :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`, int :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`, int stride)
+   	{
+   	    int h = :ref:`min <doxid-namespacengraph_1_1runtime_1_1reference_1abc42885cb896b121ab5ac214cbf60935>`((int)get_global_id(0), :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`-1);
+   	    int c = get_global_id(1);
+   	    int :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>` = get_global_size(1);
+   	    int C2 = :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`/(stride\*stride);
+   	    int offset = c / C2;
+   	    int c2 = c - C2 \* offset;
+   	    int H2 = :ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*stride;
+   	    int W2 = :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*stride;
+   	    for (int w = 0; w < :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`; ++w)
+   	    {
+   	        int h2 = h\*stride + offset / stride;
+   	        int w2 = w\*stride + offset - stride \* (offset / stride);
+   	        :ref:`out <doxid-namespacengraph_1_1runtime_1_1reference_1ac9d07fc6d49867bb411a4f4132777aae>`[:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*c + :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*h + w] = src[W2\*H2\*c2 + W2\*h2 + w2];
+   	    }
+   	}
+   
+   This decreases the execution time up to 40% against the best performing vectorized kernel without early exits (initial version).
 
 #. Reuse computations among work items by using line-based kernels or sharing values though ``__local`` memory.
 
@@ -446,8 +442,8 @@ This decreases the execution time up to 40% against the best performing vectoriz
    	      for (int w2 = 0, w = 0; w < :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`; w2 += stride, w++)
    	        dst[:ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*C2\*(stride_y\*stride+stride_x) + :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*:ref:`H <doxid-ie__preprocess__gapi_8cpp_1affa487e8e3cc48473cfc05c0ce0165e9>`\*c2 + :ref:`W <doxid-ie__preprocess__gapi_8cpp_1a2dd51e03005d5cb52315290d27f61870>`\*h + w] = src[W2\*H2\*c2 + W2\*h\*stride + W2\*stride_y + w2 + stride_x];
    	}
-
-``scr`` data in this case loaded only once. As the result, the cycle count drops up to 45% against the line-wise version.
+   
+   ``scr`` data in this case loaded only once. As the result, the cycle count drops up to 45% against the line-wise version.
 
 #. Copy data from ``__dlobal`` to ``__local`` or ``__private`` memory if the data is accessed more than once. Access to ``__dlobal`` memory is orders of magnitude slower than access to ``__local`` / ``__private`` due to statically scheduled pipeline, which stalls completely on memory access without any prefetch. The same recommendation is applicable for scalar load/store from/to a ``__blobal`` pointer since work-group copying could be done in a vector fashion.
 
@@ -461,14 +457,14 @@ This decreases the execution time up to 40% against the best performing vectoriz
    	  int :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`,
    	  float bias)
    	{
-   	  float :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` = bias + 1e-9:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`;
+   	  float :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` = bias + 1e-9f;
    	  #pragma unroll 4
    	  for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
    	  {
    	    float val = (float) src_data[c\*get_global_size(1)\*get_global_size(0) + get_global_id(1)\*get_global_size(0) + get_global_id(0)];
-   	    :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` += val\*val;
+   	    :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` += val\*val;
    	  }
-   	  half hvariance = (half)(native_rsqrt((half)(:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>`/16.:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`))\*0.25f);
+   	  half hvariance = (half)(native_rsqrt((half)(:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>`/16.f))\*0.25f);
    	  #pragma unroll 4
    	  for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
    	  {
@@ -623,14 +619,14 @@ Modified version of the GRN kernel could be the following:
 	    int :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`,
 	    float bias)
 	{
-	    float :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` = bias + 1e-9:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`;
+	    float :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` = bias + 1e-9f;
 	    #pragma unroll 8
 	    for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
 	    {
 	        float val = (float) src[c\*get_local_size(1)\*get_local_size(0) + get_local_id(1)\*get_local_size(0) + get_local_id(0)];
-	        :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>` += val\*val;
+	        :ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>` += val\*val;
 	    }
-	    half hvariance = (half)(native_rsqrt((half)(:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1a1bc1e531b299d3bf5b7ad6f685b7dec4>`/16.:ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`))\*0.25f);
+	    half hvariance = (half)(native_rsqrt((half)(:ref:`variance <doxid-namespacengraph_1_1builder_1_1opset1_1af98cfc8c8cbe78e86ce0d61662427298>`/16.f))\*0.25f);
 	    #pragma unroll 8
 	    for (int c = 0; c < :ref:`C <doxid-ie__preprocess__gapi_8cpp_1a5464533d23b59ba11030432e73528730>`; c++)
 	    {

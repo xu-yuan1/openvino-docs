@@ -1,8 +1,8 @@
-.. index:: pair: page; VPU devices
+.. index:: pair: page; VPU Devices
 .. _doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u:
 
 
-VPU devices
+VPU Devices
 ===========
 
 :target:`doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u_1md_openvino_docs_ov_runtime_ug_supported_plugins_vpu`
@@ -18,7 +18,7 @@ VPU devices
    openvino_docs_OV_UG_supported_plugins_MYRIAD
    openvino_docs_OV_UG_supported_plugins_HDDL
 
-This chapter provides information on the OpenVINO Runtime plugins that enable inference of deep learning models on the supported VPU devices:
+This chapter provides information on the OpenVINO™ Runtime plugins that enable inference of deep learning models on the supported VPU devices:
 
 * Intel® Neural Compute Stick 2 powered by the Intel® Movidius™ Myriad™ X — Supported by the :ref:`MYRIAD Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d>`
 
@@ -26,10 +26,14 @@ This chapter provides information on the OpenVINO Runtime plugins that enable in
 
 .. note:: With the OpenVINO™ 2020.4 release, Intel® Movidius™ Neural Compute Stick powered by the Intel® Movidius™ Myriad™ 2 is no longer supported.
 
+
+
+
+
 Supported Networks
 ~~~~~~~~~~~~~~~~~~
 
-Caffe\* :
+**Caffe** :
 
 * AlexNet
 
@@ -51,7 +55,7 @@ Caffe\* :
 
 * SSD-300, SSD-512, SSD-MobileNet, SSD-GoogleNet, SSD-SqueezeNet
 
-TensorFlow\* :
+**TensorFlow** :
 
 * AlexNet
 
@@ -77,7 +81,7 @@ TensorFlow\* :
 
 * DeepLab-v3+
 
-MXNet\* :
+**Apache MXNet** :
 
 * AlexNet and CaffeNet
 
@@ -112,7 +116,7 @@ Layer Fusion
 Fusing Rules
 ++++++++++++
 
-Certain layers can be merged into convolution, ReLU, and Eltwise layers according to the patterns below:
+Certain layers can be merged into 'convolution', 'ReLU', and 'Eltwise' layers according to the patterns below:
 
 * Convolution
   
@@ -139,7 +143,9 @@ Certain layers can be merged into convolution, ReLU, and Eltwise layers accordin
 Joining Rules
 +++++++++++++
 
-.. note:: Application of these rules depends on tensor sizes and resources available.
+.. note:: Application of these rules depends on tensor sizes and available resources.
+
+
 
 Layers can be joined only when the two conditions below are met:
 
@@ -150,26 +156,34 @@ Layers can be joined only when the two conditions below are met:
 Decomposition Rules
 -------------------
 
-* Convolution and Pooling layers are tiled resulting in the following pattern:
+* Convolution and Pooling layers are tiled, resulting in the following pattern:
   
-  * A Split layer that splits tensors into tiles
+  * A ``Split`` layer that splits tensors into tiles
   
-  * A set of tiles, optionally with service layers like Copy
+  * A set of tiles, optionally with service layers like ``Copy``
   
-  * Depending on a tiling scheme, a Concatenation or Sum layer that joins all resulting tensors into one and restores the full blob that contains the result of a tiled operation
+  * Depending on a tiling scheme, a ``Concatenation`` or ``Sum`` layer that joins all resulting tensors into one and restores the full blob that contains the result of a tiled operation
   
   Names of tiled layers contain the ``@soc=M/N`` part, where ``M`` is the tile number and ``N`` is the number of tiles:
   
   .. image:: yolo_tiny_v1.png
 
-.. note:: Nominal layers, such as Shrink and Expand, are not executed.
+.. note:: Nominal layers, such as ``Shrink`` and ``Expand``, are not executed.
 
-.. note:: VPU plugins can add extra layers like Copy.
+
+
+
+
+.. note:: VPU plugins can add extra layers like ``Copy``.
+
+
+
+
 
 VPU Common Configuration Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-VPU plugins support the configuration parameters listed below. The parameters are passed as ``std::map<std::string, std::string>`` on ``:ref:`InferenceEngine::Core::LoadNetwork <doxid-class_inference_engine_1_1_core_1a7b0b5ab0009abc572762422105b5c666>``` or ``:ref:`InferenceEngine::Core::SetConfig <doxid-class_inference_engine_1_1_core_1a34aa9ac6fb237b634d5bf08b288e88d4>```. When specifying key values as raw strings (that is, when using Python API), omit the ``KEY_`` prefix.
+VPU plugins support the configuration parameters listed below. The parameters are passed as ``std::map<std::string, std::string>`` on ``:ref:`InferenceEngine::Core::LoadNetwork <doxid-class_inference_engine_1_1_core_1a7b0b5ab0009abc572762422105b5c666>``` or ``:ref:`InferenceEngine::Core::SetConfig <doxid-class_inference_engine_1_1_core_1a34aa9ac6fb237b634d5bf08b288e88d4>```. When specifying key values as raw strings (when using Python API), omit the ``KEY_`` prefix.
 
 .. list-table::
     :header-rows: 1
@@ -189,31 +203,31 @@ VPU plugins support the configuration parameters listed below. The parameters ar
     * - ``KEY_VPU_PRINT_RECEIVE_TENSOR_TIME``
       - ``YES`` / ``NO``
       - ``NO``
-      - Add device-side time spent waiting for input to PerformanceCounts. See `Data Transfer Pipelining <#VPU_DATA_TRANSFER_PIPELINING>`__ section for details.
+      - Add device-side time spent waiting for input to PerformanceCounts. See the `Data Transfer Pipelining <#VPU_DATA_TRANSFER_PIPELINING>`__ section for details.
     * - ``KEY_VPU_IGNORE_IR_STATISTIC``
       - ``YES`` / ``NO``
       - ``NO``
-      - VPU plugin could use statistic present in IR in order to try to improve calculations precision. If you don't want statistic to be used enable this option.
+      - VPU plugin could use statistic present in IR in order to try to improve calculations precision. This option is enabled to exclude the statistic.
     * - ``KEY_VPU_CUSTOM_LAYERS``
       - path to XML file
       - empty string
-      - This option allows to pass XML file with custom layers binding. If layer is present in such file, it would be used during inference even if the layer is natively supported.
+      - This option allows passing XML file with custom layers binding. If a layer is present in such file, it will be used during inference even if the layer is natively supported.
 
 .. _VPU_DATA_TRANSFER_PIPELINING:
 
 Data Transfer Pipelining
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-MYRIAD plugin tries to pipeline data transfer to/from device with computations. While one infer request is executed, the data for next infer request can be uploaded to device in parallel. The same applies to result downloading.
+MYRIAD plugin tries to pipeline data transfer to/from a device with computations. While one infer request is executed, the data for the next infer request can be uploaded to a device in parallel. The same applies to result downloading.
 
 ``KEY_VPU_PRINT_RECEIVE_TENSOR_TIME`` configuration parameter can be used to check the efficiency of current pipelining. The new record in performance counters will show the time that device spent waiting for input before starting the inference. In a perfect pipeline this time should be near zero, which means that the data was already transferred when new inference started.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
-**Get the following message when running inference with the VPU plugin: "[VPU] Cannot convert layer <layer_name> due to unsupported layer type <layer_type>"**
+**When running inference with the VPU plugin: "[VPU] Cannot convert layer <layer_name> due to unsupported layer type <layer_type>"**
 
-This means that your topology has a layer that is unsupported by your target VPU plugin. To resolve this issue, you can implement the custom layer for the target device using the :ref:`OpenVINO™ Extensibility mechanism <doxid-openvino_docs__extensibility__u_g__intro>`. Or, to quickly get a working prototype, you can use the heterogeneous scenario with the default fallback policy (see the :ref:`Heterogeneous execution <doxid-openvino_docs__o_v__u_g__hetero_execution>` section). Use the HETERO mode with a fallback device that supports this layer, for example, CPU: ``HETERO:MYRIAD,CPU``. For a list of VPU-supported layers, see the Supported Layers section of the :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` page.
+This means that the topology has a layer unsupported by the target VPU plugin. To resolve this issue, the custom layer can be implemented for the target device, using the :ref:`OpenVINO™ Extensibility mechanism <doxid-openvino_docs__extensibility__u_g__intro>`. To quickly get a working prototype, use the heterogeneous scenario with the default fallback policy (see the :ref:`Heterogeneous execution <doxid-openvino_docs__o_v__u_g__hetero_execution>` section). Use the HETERO mode with a fallback device that supports this layer, for example, CPU: ``HETERO:MYRIAD,CPU``. For a list of VPU-supported layers, see the **Supported Layers** section of the :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` page.
 
 Known Layers Limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~

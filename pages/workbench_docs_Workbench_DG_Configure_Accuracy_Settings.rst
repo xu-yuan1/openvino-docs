@@ -29,19 +29,21 @@ Accuracy settings depend on the model usage. Choose the usage-specific instructi
 
 * `Face Recognition <#face_recognition>`__
 
+.. _classification:
+
 **Limitations** :
 
 * DL Workbench does not support multi-input models, so make sure to use a single-input model. You can choose and download one of the Intel® Open Model Zoo models directly in the tool.
 
 * Accuracy parameters of models from Intel® Open Model Zoo are already configured. You cannot change accuracy configurations for these models.
 
-**Possible problems with accuracy** :
+	**Possible problems with accuracy** :
 
 * AccuracyAware optimization method that is used to measure accuracy is impossible to apply to certain model types, for example, language models. If you see an error message when trying to calibrate such a model, return to the **Calibration Options** page and select the **Default** method.
 
 * Accuracy close to zero may appear due to incorrectly configured parameters. Often users make mistakes when setting parameters such as *Color space*, *Normalization scales*, or *Normalization means* in the **Conversion Settings** before importing the model.
 
-.. _classification:
+
 
 Classification
 ~~~~~~~~~~~~~~
@@ -226,6 +228,10 @@ Specify **Object Detection** in the drop-down list in the **Accuracy Settings** 
 Then specify YOLO V2 or YOLO Tiny V2 in the **Model Type** box that opens below.
 
 .. note:: YOLO models of other versions, like YOLO V3 or YOLO V5, are not supported.
+
+
+
+
 
 Preprocessing Configuration
 ---------------------------

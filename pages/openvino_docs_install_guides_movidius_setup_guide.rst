@@ -1,15 +1,15 @@
-.. index:: pair: page; Configurations for IEI Mustang-V100-MX8-R10 card
+.. index:: pair: page; Configurations for IEI Mustang-V100-MX8-R10 Card
 .. _doxid-openvino_docs_install_guides_movidius_setup_guide:
 
 
-Configurations for IEI Mustang-V100-MX8-R10 card
+Configurations for IEI Mustang-V100-MX8-R10 Card
 ================================================
 
-:target:`doxid-openvino_docs_install_guides_movidius_setup_guide_1md_openvino_docs_install_guides_movidius-setup-guide`
+:target:`doxid-openvino_docs_install_guides_movidius_setup_guide_1md_openvino_docs_install_guides_configurations_for_iei_card`
 
 .. note:: These steps are only required for **IEI Mustang-V100-MX8-R10** card. **IEI Mustang-V100-MX8-R11** card doesn't require any additional steps and it's completely configured using the :ref:`general guidance <doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu>`.
 
-The IEI Mustang-V100-MX8 is an OEM version of the Intel® Vision Accelerator Design with Intel® Movidius™ VPUs. This guide assumes you have installed the `Mustang-V100-MX8 <https://download.ieiworld.com/>`__ and the `Intel® Distribution of OpenVINO™ toolkit <https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html>`__.
+The IEI Mustang-V100-MX8 is an OEM version of the Intel® Vision Accelerator Design with Intel® Movidius™ VPUs. This guide assumes you have installed the `Mustang-V100-MX8 <https://download.ieiworld.com/>`__ and Intel® Distribution of OpenVINO™ toolkit.
 
 Instructions in this guide for configuring your accelerator include:
 
@@ -18,6 +18,10 @@ Instructions in this guide for configuring your accelerator include:
 #. Configuration settings for the ``hddldaemon`` service
 
 .. note:: This guide does not apply to Uzel cards.
+
+
+
+
 
 Installing IEI Reset Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,6 +50,10 @@ Configuring Mustang-V100-MX8 Service
 The ``hddldaemon`` is a system service, a binary executable that is run to manage the computational workload on the board. It is a required abstraction layer that handles inference, graphics processing, and any type of computation that should be run on the video processing units (VPUs). Depending on the board configuration, there can be 8 or 16 VPUs.
 
 .. note:: Graphics and other specialized processing may require some custom development.
+
+
+
+
 
 Conventions Used in This Document
 ---------------------------------
@@ -81,6 +89,10 @@ Service Configuration File Settings
 Below are some possible configuration options.
 
 .. note:: After changing a configuration file, the ``hddldaemon`` must be restarted.
+
+
+
+
 
 Recommended Settings
 ++++++++++++++++++++
@@ -158,6 +170,8 @@ This setting reports the amount of memory being used by each VPU.
 Requires the squeeze scheduler. This setting might speed up performance significantly, depending on the app.
 
 .. note:: This setting works in conjunction with: ``max_task_number_switch_out``.
+
+
 
 ``"client_fps" : "off"``
 

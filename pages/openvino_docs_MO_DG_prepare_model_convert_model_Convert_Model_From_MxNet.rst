@@ -1,18 +1,11 @@
-.. index:: pair: page; Converting an MXNet\* Model
+.. index:: pair: page; Converting an MXNet Model
 .. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__mx_net:
 
 
-Converting an MXNet\* Model
-===========================
+Converting an MXNet Model
+=========================
 
-.. _ConvertMxNet:
-
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__mx_net_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_mxnet`
-
-Convert an MXNet\* Model
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-To convert an MXNet\* model, run Model Optimizer with a path to the input model ``.params`` file:
+:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__mx_net_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_mxnet` :target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__mx_net_1convertmxnet` To convert an MXNet model, run Model Optimizer with the path to the \* ``.params`` \* file of the input model:
 
 .. ref-code-block:: cpp
 
@@ -20,10 +13,10 @@ To convert an MXNet\* model, run Model Optimizer with a path to the input model 
 
 .. _mxnet_specific_conversion_params:
 
-Using MXNet\*-Specific Conversion Parameters
---------------------------------------------
+Using MXNet-Specific Conversion Parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following list provides the MXNet\*-specific parameters.
+The following list provides the MXNet-specific parameters.
 
 .. ref-code-block:: cpp
 
@@ -39,39 +32,43 @@ The following list provides the MXNet\*-specific parameters.
 	  --save_params_from_nd
 	            Enable saving built parameters file from .nd files
 	  --legacy_mxnet_model
-	            Enable MXNet loader to make a model compatible with the latest MXNet version.
-	            Use only if your model was trained with MXNet version lower than 1.0.0
+	            Enable Apache MXNet loader to make a model compatible with the latest Apache MXNet version.
+	            Use only if your model was trained with Apache MXNet version lower than 1.0.0
 	  --enable_ssd_gluoncv
 	            Enable transformation for converting the gluoncv ssd topologies.
 	            Use only if your topology is one of ssd gluoncv topologies
 
-.. note:: By default, the Model Optimizer does not use the MXNet loader, as it transforms the topology to another format, which is compatible with the latest version of MXNet, but it is required for models trained with lower version of MXNet. If your model was trained with MXNet version lower than 1.0.0, specify the ``--legacy_mxnet_model`` key to enable the MXNet loader. However, the loader does not support models with custom layers. In this case, you must manually recompile MXNet with custom layers and install it to your environment.
+.. note:: By default, Model Optimizer does not use the Apache MXNet loader. It transforms the topology to another format which is compatible with the latest version of Apache MXNet. However, the Apache MXNet loader is required for models trained with lower version of Apache MXNet. If your model was trained with an Apache MXNet version lower than 1.0.0, specify the ``--legacy_mxnet_model`` key to enable the Apache MXNet loader. Note that the loader does not support models with custom layers. In this case, you must manually recompile Apache MXNet with custom layers and install it in your environment.
+
+
+
+
 
 Custom Layer Definition
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Internally, when you run the Model Optimizer, it loads the model, goes through the topology, and tries to find each layer type in a list of known layers. Custom layers are layers that are not included in the list of known layers. If your topology contains any layers that are not in this list of known layers, the Model Optimizer classifies them as custom.
+Internally, when you run Model Optimizer, it loads the model, goes through the topology, and tries to find each layer type in a list of known layers. Custom layers are layers that are not included in the list. If your topology contains such kind of layers, Model Optimizer classifies them as custom.
 
-Supported MXNet\* Layers
-~~~~~~~~~~~~~~~~~~~~~~~~
+Supported MXNet Layers
+~~~~~~~~~~~~~~~~~~~~~~
 
-Refer to :ref:`Supported Framework Layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` for the list of supported standard layers.
+For the list of supported standard layers, refer to the :ref:`Supported Framework Layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` page.
 
 Frequently Asked Questions (FAQ)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Model Optimizer provides explanatory messages if it is unable to run to completion due to issues like typographical errors, incorrectly used options, or other issues. The message describes the potential cause of the problem and gives a link to the :ref:`Model Optimizer FAQ <doxid-openvino_docs__m_o__d_g_prepare_model__model__optimizer__f_a_q>`. The FAQ has instructions on how to resolve most issues. The FAQ also includes links to relevant sections in the Model Optimizer Developer Guide to help you understand what went wrong.
+Model Optimizer provides explanatory messages when it is unable to complete conversions due to typographical errors, incorrectly used options, or other issues. A message describes the potential cause of the problem and gives a link to :ref:`Model Optimizer FAQ <doxid-openvino_docs__m_o__d_g_prepare_model__model__optimizer__f_a_q>` which provides instructions on how to resolve most issues. The FAQ also includes links to relevant sections to help you understand what went wrong.
 
 Summary
 ~~~~~~~
 
 In this document, you learned:
 
-* Basic information about how the Model Optimizer works with MXNet\* models
+* Basic information about how Model Optimizer works with MXNet models.
 
-* Which MXNet\* models are supported
+* Which MXNet models are supported.
 
-* How to convert a trained MXNet\* model using the Model Optimizer with both framework-agnostic and MXNet-specific command-line options
+* How to convert a trained MXNet model by using the Model Optimizer with both framework-agnostic and MXNet-specific command-line options.
 
 See Also
 ~~~~~~~~

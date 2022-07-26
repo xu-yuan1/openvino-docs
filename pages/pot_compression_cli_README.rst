@@ -47,8 +47,8 @@ There are two ways how to run POT via command line:
   .. ref-code-block:: cpp
   
   	pot -c <path_to_config_file>
-
-For all available usage options, use the ``-h``, ``--help`` arguments or refer to the Command-Line Arguments section below.
+  
+  For all available usage options, use the ``-h``, ``--help`` arguments or refer to the Command-Line Arguments section below.
 
 By default, the results are dumped into the separate output subfolder inside the ``./results`` folder that is created in the same directory where the tool is run from. Use the ``-e`` option to evaluate the accuracy directly from the tool.
 

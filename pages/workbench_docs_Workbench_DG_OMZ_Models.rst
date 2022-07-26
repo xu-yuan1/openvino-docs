@@ -25,6 +25,8 @@ On the **Convert Model to IR** step, you can specify the precision:
 
 .. note:: * If you are behind a corporate proxy, set environment variables during the :ref:`Installation <doxid-workbench_docs__workbench__d_g__run__locally>` step. To learn about the import process, see the Model Downloader documentation.
 
+
+
 Once you import a model, you are redirected to the **Create Project** page, where you can select the model and proceed to :ref:`select a dataset <doxid-workbench_docs__workbench__d_g__generate__datasets>`.
 
 See Also

@@ -5,9 +5,13 @@
 Install Intel® Distribution of OpenVINO™ Toolkit from PyPI Repository
 ========================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_pip_1md_openvino_docs_install_guides_installing-openvino-pip` You can install both OpenVINO™ Runtime and OpenVINO Development Tools through the PyPI repository. This page provides the main steps for installing OpenVINO Runtime.
+:target:`doxid-openvino_docs_install_guides_installing_openvino_pip_1md_openvino_docs_install_guides_installing_openvino_pip` You can install both OpenVINO™ Runtime and OpenVINO Development Tools through the PyPI repository. This page provides the main steps for installing OpenVINO Runtime.
 
 .. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI. See :ref:`Install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>` for detailed steps.
+
+
+
+
 
 Installing OpenVINO Runtime
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -17,9 +21,9 @@ For system requirements and troubleshooting, see `https://pypi.org/project/openv
 Step 1. Set Up Python Virtual Environment
 -----------------------------------------
 
-To avoid dependency conflicts, use a virtual environment. Skip this step only if you do want to install all dependencies globally.
+Use a virtual environment to avoid dependency conflicts.
 
-Use the following command to create a virtual environment:
+To create a virtual environment, use the following command:
 
 .. tab:: Linux and macOS
 

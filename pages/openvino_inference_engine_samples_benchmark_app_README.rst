@@ -16,6 +16,8 @@ Upon start-up, the application reads command-line parameters and loads a network
 
 .. note:: By default, OpenVINO™ Toolkit Samples, Tools and Demos expect input with BGR channels order. If you trained your model to work with RGB order, you need to manually rearrange the default channels order in the sample or demo application or reconvert your model using the Model Optimizer tool with ``--reverse_input_channels`` argument specified. For more information about the argument, refer to **When to Reverse Input Channels** section of :ref:`Embedding Preprocessing Computation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`.
 
+
+
 Device-specific execution parameters (number of streams, threads, and so on) can be either explicitly specified through the command line or left default. In the last case, the sample logic will select the values for the optimal throughput. While experimenting with individual parameters allows to find the performance sweet spot, usually, the parameters are not very performance-portable, so the values from one machine or device are not necessarily optimal for another. From this perspective, the most portable way is experimenting only with the performance hints. To learn more, refer to the section on the command-line parameters below.
 
 A number of execution steps is defined by one of the following parameters:
@@ -154,6 +156,10 @@ To run the tool, you can use public or Intel's pre-trained models from the Open 
 
 The sample accepts models in ONNX format (.onnx) that do not require preprocessing.
 
+
+
+
+
 Examples of Running the Tool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -161,23 +167,27 @@ This section provides step-by-step instructions on how to run the Benchmark Tool
 
 .. note:: The Internet access is required to execute the following steps successfully. If you have access to the Internet through the proxy server only, please make sure that it is configured in your OS environment.
 
+
+
+
+
 #. Install OpenVINO Development Tools to work with Caffe\* models:
-
-.. ref-code-block:: cpp
-
-	pip install openvino-dev[caffe]
+   
+   .. ref-code-block:: cpp
+   
+   	pip install openvino-dev[caffe]
 
 #. Download the model. Go to the Model Downloader directory and run the ``omz_downloader`` script with specifying the model name and directory to download the model to:
-
-.. ref-code-block:: cpp
-
-	omz_downloader --name googlenet-v1 -o <models_dir>
+   
+   .. ref-code-block:: cpp
+   
+   	omz_downloader --name googlenet-v1 -o <models_dir>
 
 #. Convert the model to the OpenVINO IR format. Run the Model Optimizer using the ``mo`` command with the path to the model, model format and output directory to generate the IR files:
-
-.. ref-code-block:: cpp
-
-	mo --input_model <models_dir>/public/googlenet-v1/googlenet-v1.caffemodel --data_type FP32 --output_dir <ir_dir>
+   
+   .. ref-code-block:: cpp
+   
+   	mo --input_model <models_dir>/public/googlenet-v1/googlenet-v1.caffemodel --data_type FP32 --output_dir <ir_dir>
 
 #. Run the tool with specifying the ``dog.bmp`` file as an input image, the IR of the ``googlenet-v1`` model and a device to perform inference on. The following commands demonstrate running the Benchmark Tool in the asynchronous mode on CPU and GPU devices:
    

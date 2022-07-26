@@ -87,8 +87,8 @@ Transformations are run with the following parameters:
 
 	auto supportedPrecisions = std::vector<PrecisionsRestriction>({
 	    PrecisionsRestriction::create<ngraph::opset1::Convolution>({
-	        {0, {:ref:`ngraph::element::u8 <doxid-group__ov__element__cpp__api_1gaaf60c536d3e295285f6a899eb3d29e2f>`}},
-	        {1, {:ref:`ngraph::element::i8 <doxid-group__ov__element__cpp__api_1gaae12d14b28baf46d3c6f76c55b05fb42>`}},
+	        {0, {ngraph::element::u8}},
+	        {1, {ngraph::element::i8}},
 	    }),
 	});
 	
@@ -97,10 +97,8 @@ Transformations are run with the following parameters:
 	});
 	
 	:ref:`ngraph::pass::Manager <doxid-classov_1_1pass_1_1_manager>` lptManager;
-	lptManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1affc722b2463a786b66398472141d45f2>`<:ref:`ngraph::pass::low_precision::LowPrecision <doxid-classngraph_1_1pass_1_1low__precision_1_1_low_precision>`>(supportedPrecisions, perTensorQuantization);
+	lptManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<:ref:`ngraph::pass::low_precision::LowPrecision <doxid-classngraph_1_1pass_1_1low__precision_1_1_low_precision>`>(supportedPrecisions, perTensorQuantization);
 	lptManager.run_passes(nGraphFunc);
-
-
 
 1. MarkupCanBeQuantized
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -199,6 +197,10 @@ Result model:
 	:alt: PropagatePrecisions
 
 .. note:: ``AlignQuantizationIntervals`` and ``AlignQuantizationParameters`` transformations are required if the model has quantized concatenation operations.
+
+
+
+
 
 6. AlignQuantizationIntervals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

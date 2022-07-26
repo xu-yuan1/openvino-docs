@@ -55,10 +55,7 @@ Example 3 shows how *GatherND* operates when ``indices`` tensor has leading dime
   
   * **Description** : *batch_dims* (denoted as ``b``) is a leading number of dimensions of ``data`` tensor and ``indices`` representing the batches, and *GatherND* starts to gather from the ``b+1`` dimension. It requires the first ``b`` dimensions in ``data`` and ``indices`` tensors to be equal. In case of non-default value for *batch_dims*, the output shape is calculated as ``(multiplication of indices.shape[:b]) + indices.shape[b:-1] + data.shape[(indices.shape[-1] + b):]``.
     
-    .. code-block:: cpp
-    
-    	\*\*NOTE:\*\* The calculation of output shape is incorrect for non-default \*batch_dims\* value greater than one.
-    	For correct calculations use [GatherND_8](@ref openvino_docs_ops_movement_GatherND_8) operation\*\*
+    **NOTE:** The calculation of output shape is incorrect for non-default *batch_dims* value greater than one. For correct calculations use :ref:`GatherND_8 <doxid-openvino_docs_ops_movement__gather_n_d_8>` operation\*\*
   
   * **Range of values** : integer number and belongs to ``[0; min(data.rank, indices.rank))``
   
