@@ -56,105 +56,105 @@ bert-base-cased [124]
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/bert-base-cased124.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/bert-base-cased124.csv"></div>
 
 bert-large-uncased-whole-word-masking-squad-int8-0001 [384]
 -----------------------------------------------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/bert-large-uncased-whole-word-masking-squad-int8-0001-384.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/bert-large-uncased-whole-word-masking-squad-int8-0001-384.csv"></div>
 
 deeplabv3-TF [513x513]
 ----------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/deeplabv3-TF-513x513.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/deeplabv3-TF-513x513.csv"></div>
 
 densenet-121-TF [224x224]
 -------------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/densenet-121-TF-224x224.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/densenet-121-TF-224x224.csv"></div>
 
 efficientdet-d0 [512x512]
 -------------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/efficientdet-d0-512x512.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/efficientdet-d0-512x512.csv"></div>
 
 faster-rcnn-resnet50-coco-TF [600x1024]
 ---------------------------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/faster_rcnn_resnet50_coco-TF-600x1024.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/faster_rcnn_resnet50_coco-TF-600x1024.csv"></div>
 
 inception-v4-TF [299x299]
 -------------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/inception-v4-TF-299x299.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/inception-v4-TF-299x299.csv"></div>
 
 mobilenet-ssd-CF [300x300]
 --------------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/mobilenet-ssd-CF-300x300.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/mobilenet-ssd-CF-300x300.csv"></div>
 
 mobilenet-v2-pytorch [224x224]
 ------------------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/mobilenet-v2-pytorch-224x224.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/mobilenet-v2-pytorch-224x224.csv"></div>
 
 resnet-18-pytorch [224x224]
 ---------------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/resnet-18-pytorch-224x224.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/resnet-18-pytorch-224x224.csv"></div>
 
 resnet_50_TF [224x224]
 ----------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/resnet-50-TF-224x224.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/resnet-50-TF-224x224.csv"></div>
 
 ssd-resnet34-1200-onnx [1200x1200]
 ----------------------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/ssd-resnet34-1200-onnx-1200x1200.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/ssd-resnet34-1200-onnx-1200x1200.csv"></div>
 
 unet-camvid-onnx-0001 [368x480]
 -------------------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/unet-camvid-onnx-0001-368x480.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/unet-camvid-onnx-0001-368x480.csv"></div>
 
 yolo-v3-tiny-tf [416x416]
 -------------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/yolo-v3-tiny-tf-416x416.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/yolo-v3-tiny-tf-416x416.csv"></div>
 
 yolo_v4-tf [608x608]
 --------------------
 
 .. raw:: html
 
-    <div class="chart-block" data-loadcsv="csv/yolo_v4-tf-608x608.csv"></div>
+    <div class="chart-block" data-loadcsv="../_static/csv/yolo_v4-tf-608x608.csv"></div>
 
 © Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others.
 
