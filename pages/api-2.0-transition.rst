@@ -18,8 +18,9 @@ OpenVINO™ API 2.0 Transition Guide
    api-2.0-transition/api-2.0-deployment
    api-2.0-transition/api-2.0-inference-pipeline
    api-2.0-transition/api-2.0-configure-devices
-   openvino_2_0_preprocessing
+   api-2.0-transition/api-2.0-preprocessing
    api-2.0-transition/api-2.0-model-creation
+   
 
 This guide introduces the new OpenVINO™ API: API 2.0, as well as the new OpenVINO IR model format: IR v11. Here, you will find comparisons of their "old" and "new" versions.
 
