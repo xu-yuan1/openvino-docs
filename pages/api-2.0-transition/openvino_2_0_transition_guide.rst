@@ -15,11 +15,11 @@ OpenVINO™ API 2.0 Transition Guide
    :maxdepth: 1
    :hidden:
 
-   openvino_2_0_deployment
-   openvino_2_0_inference_pipeline
-   openvino_2_0_configure_devices
-   openvino_2_0_preprocessing
-   openvino_2_0_model_creation
+   ../openvino_2_0_deployment
+   ../openvino_2_0_inference_pipeline
+   ../openvino_2_0_configure_devices
+   ../openvino_2_0_preprocessing
+   ../openvino_2_0_model_creation
 
 This guide introduces the new OpenVINO™ API: API 2.0, as well as the new OpenVINO IR model format: IR v11. Here, you will find comparisons of their "old" and "new" versions.
 
@@ -32,7 +32,7 @@ Versions of OpenVINO prior to 2022.1 required changes in the application logic w
 
 * Model Optimizer changed layouts for TensorFlow models (see the :ref:`Layouts in OpenVINO <doxid-openvino_docs__o_v__u_g__layout__overview>`). It lead to unusual requirement of using the input data with a different layout than that of the framework:
   
-  .. image:: tf_openvino.png
+  .. image:: _assets/tf_openvino.png
 
 * Inference Engine API (``:ref:`InferenceEngine::CNNNetwork <doxid-class_inference_engine_1_1_c_n_n_network>```) applied some conversion rules for input and output precisions due to limitations in device plugins.
 
