@@ -8,9 +8,6 @@ Get Started
 :target:`doxid-get_started_1md_openvino_docs_get_started`
 
 
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
