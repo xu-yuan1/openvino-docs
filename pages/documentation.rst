@@ -16,7 +16,7 @@ Documentation
    :caption: API 2.0
    :hidden:
 
-   openvino_2_0_transition_guide
+   api-2.0-transition/openvino_2_0_transition_guide
 
 
 .. toctree::
