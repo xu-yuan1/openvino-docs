@@ -17,7 +17,7 @@ OpenVINO™ API 2.0 Transition Guide
 
    api-2.0-transition/api-2.0-deployment
    api-2.0-transition/api-2.0-inference-pipeline
-   openvino_2_0_configure_devices
+   api-2.0-transition/api-2.0-configure-devices
    openvino_2_0_preprocessing
    openvino_2_0_model_creation
 
