@@ -13,7 +13,7 @@ Get Started
    :hidden:
    :caption: Install & Config
 
-   Installing OpenVINO™ <get-started-guide/install-guides-overview>
+   Installing OpenVINO™ <get-started-guide/install-openvino-overview>
    Additional Configurations <get-started-guide/install-additional-configurations>
    Uninstalling <../openvino_docs_install_guides_uninstalling_openvino>
    Troubleshooting <../openvino_docs_get_started_guide_troubleshooting>
