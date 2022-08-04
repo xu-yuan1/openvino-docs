@@ -95,7 +95,7 @@ OpenVINO™ Documentation
    :maxdepth: 2
    :hidden:
    
-   pages/get_started
+   pages/get-started-guide
    pages/documentation
    tutorials
    api/api_reference
