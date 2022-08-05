@@ -34,12 +34,23 @@ OpenVINO™ Documentation
 	 Supports deployment on Windows, Linux, and macOS.
       </p>      
       <div class="HP_separator-header">
-         <p> Train, Optimize, Deploy </p>
-      </div>
-      <div style="clear:both;"> </div>
-      <img class="HP_img_chart" src="_static/images/HP_ov_flow.svg" alt="" />
-      <p>* The ONNX format is also supported, but conversion to OpenVINO is recommended for better performance.</p>
-      <div style="clear:both;"> </div>
+            <p> OpenVINO Workflow </p>
+         </div>
+         <div style="clear:both;"> </div>
+   	  
+         <div id="HP_flow-container">
+   	     <a id="HP_flow-a" href="pages/model_processing.html">
+   		   <div> </div>
+   	     </a>
+            <div class="HP_flow-arrow"> </div>
+            <a id="HP_flow-b" href="pages/openvino_docs_optimization_guide_dldt_optimization_guide.html">
+   	        <div> </div>
+   	     </a> 
+            <div class="HP_flow-arrow"> </div>
+            <a id="HP_flow-c" href="pages/openvino_docs_deployment_guide_introduction.html">
+   	        <div> </div>
+            </a>
+         </div>
       
       <div style="clear:both;"> </div>
       <div class="HP_separator-header">
@@ -48,15 +59,15 @@ OpenVINO™ Documentation
       <div style="clear:both;"> </div>
       
       <div class="HP_infoboxes">
-         <a href="get_started.html">
+         <a href="pages/get-started-guide.html">
             <h3>Get Started </H3>
             <p> Learn how to download, install, and configure OpenVINO. </p>
          </a>
-	 <a href="model_zoo.html" >
+	 <a href="pages/model_zoo.html" >
 	    <h3>Open Model Zoo </h3>
 	    <p> Browse through over 200 publicly available neural networks and pick the right one for your solution. </p>
 	 </a>
-         <a href="openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html" >
+         <a href="pages/openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html" >
 	    <h3>Model Optimizer </h3>
 	    <p> Learn how to convert your model and optimize it for use with OpenVINO. </p> 
 	 </a>
@@ -64,23 +75,23 @@ OpenVINO™ Documentation
 	    <h3>Tutorials </h3>
 	    <p> Learn how to use OpenVINO based on our training material. </p>  
 	 </a>
-	 <a href="openvino_docs_OV_UG_Samples_Overview.html" >
+	 <a href="pages/openvino_docs_OV_UG_Samples_Overview.html" >
 	    <h3>Samples </h3>
 	    <p> Try OpenVINO using ready-made applications explaining various use cases. </p>  
 	 </a>
-	 <a href="workbench_docs_Workbench_DG_Introduction.html" >
+	 <a href="pages/workbench_docs_Workbench_DG_Introduction.html" >
 	    <h3>DL Workbench </h3>
 	    <p> Learn about the alternative, web-based version of OpenVINO. DL Workbench container installation Required. </p>
 	 </a>
-	 <a href="openvino_docs_OV_UG_OV_Runtime_User_Guide.html" >
+	 <a href="pages/openvino_docs_OV_UG_OV_Runtime_User_Guide.html" >
 	    <h3>OpenVINO™ Runtime </h3>
 	    <p> Learn about OpenVINO's inference mechanism which executes the IR, ONNX, Paddle models on target devices. </p>  
 	 </a>
-	 <a href="openvino_docs_optimization_guide_dldt_optimization_guide.html" >
+	 <a href="pages/openvino_docs_optimization_guide_dldt_optimization_guide.html" >
 	    <h3>Tune & Optimize </h3>
 	    <p> Model-level (e.g. quantization) and Runtime (i.e. application) -level  optimizations to make your inference as fast as possible. </p> 
 	 </a>
-	 <a href="openvino_docs_performance_benchmarks.html" >
+	 <a href="pages/openvino_docs_performance_benchmarks.html" >
 	    <h3>Performance<br /> Benchmarks </h3>
 	    <p> View performance benchmark results for various models on Intel platforms. </p>  
 	 </a>
@@ -89,11 +100,10 @@ OpenVINO™ Documentation
    </div>
 
 
-
-
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :glob:
    
    pages/get-started-guide
    pages/documentation
