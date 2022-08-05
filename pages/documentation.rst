@@ -24,8 +24,8 @@ Documentation
    :caption: Converting and Preparing Models
    :hidden:
 
-   openvino_docs_model_processing_introduction
-   openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide
+   model-processing
+   converting-models-model-optimizer
    omz_tools_downloader
 
 
