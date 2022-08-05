@@ -7,7 +7,7 @@ Uninstalling the Intel® Distribution of OpenVINO™ Toolkit
 
 :target:`doxid-openvino_docs_install_guides_uninstalling_openvino_1md_openvino_docs_install_guides_uninstalling_openvino`
 
-.. note:: Uninstallation procedures remove all Intel® Distribution of OpenVINO™ Toolkit component files but don't affect user files in the installation directory.
+.. note:: Uninstallation procedures remove all Intel® Distribution of OpenVINO™ toolkit component files but don't affect user files in the installation directory.
 
 
 
