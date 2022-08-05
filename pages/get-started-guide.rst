@@ -15,7 +15,7 @@ Get Started
 
    Installing OpenVINO™ <get-started-guide/install-openvino-overview>
    Additional Configurations <get-started-guide/install-additional-configurations>
-   Uninstalling <../openvino_docs_install_guides_uninstalling_openvino>
+   Uninstalling <get-started-guide/install-uninstalling-openvino>
    Troubleshooting <../openvino_docs_get_started_guide_troubleshooting>
 
 .. toctree::
