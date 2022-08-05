@@ -16,7 +16,7 @@ Documentation
    :caption: API 2.0
    :hidden:
 
-   api-2.0-transition
+   ./documentation/api-2.0-transition
 
 
 .. toctree::
@@ -25,7 +25,7 @@ Documentation
    :hidden:
 
    model-processing
-   converting-models-model-optimizer
+   ./documentation/converting-models-model-optimizer
    omz_tools_downloader
 
 
@@ -48,7 +48,7 @@ Documentation
    :hidden:
 
    openvino_docs_deployment_guide_introduction
-   openvino_docs_OV_UG_OV_Runtime_User_Guide
+   ./documentation/openvino-runtime-user-guide
    openvino_deployment_guide
    openvino_inference_engine_tools_compile_tool_README
 
@@ -82,7 +82,7 @@ Documentation
    :caption: OpenVINO Extensibility
    :hidden:
 
-   openvino_docs_Extensibility_UG_Intro
+   ./documentation/openvino-extensibility-mechanism
    openvino_docs_transformations
    OpenVINO Plugin Developer Guide <openvino_docs_ie_plugin_dg_overview>
 

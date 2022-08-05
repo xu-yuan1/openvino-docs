@@ -19,18 +19,18 @@ Converting Models with Model Optimizer
 
    converting-models-model-optimizer/input-shapes-model-optimizer
    converting-models-model-optimizer/model-optimization-techniques-model-optimizer
-   ./openvino_docs_MO_DG_prepare_model_convert_model_Cutting_Model
-   ./openvino_docs_MO_DG_Additional_Optimization_Use_Cases
-   ./openvino_docs_MO_DG_FP16_Compression
-   ./openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow
-   ./openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_ONNX
-   ./openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_PyTorch
-   ./openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Paddle
-   ./openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_MxNet
-   ./openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Caffe
-   ./openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Kaldi
-   ./openvino_docs_MO_DG_prepare_model_convert_model_tutorials
-   ./openvino_docs_MO_DG_prepare_model_Model_Optimizer_FAQ
+   ../openvino_docs_MO_DG_prepare_model_convert_model_Cutting_Model
+   ../openvino_docs_MO_DG_Additional_Optimization_Use_Cases
+   ../openvino_docs_MO_DG_FP16_Compression
+   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow
+   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_ONNX
+   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_PyTorch
+   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Paddle
+   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_MxNet
+   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Caffe
+   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Kaldi
+   ../openvino_docs_MO_DG_prepare_model_convert_model_tutorials
+   ../openvino_docs_MO_DG_prepare_model_Model_Optimizer_FAQ
 
 Model Optimizer is a cross-platform command-line tool that facilitates the transition between training and deployment environments, performs static model analysis, and adjusts deep learning models for optimal execution on end-point target devices.
 

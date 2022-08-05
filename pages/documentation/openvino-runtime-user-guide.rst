@@ -17,18 +17,18 @@ Performing Inference with OpenVINO Runtime
    :maxdepth: 1
    :hidden:
 
-   openvino-runtime-user-guide/openvino-runtime-integrate-application
-   ./openvino_docs_OV_UG_ShapeInference
-   ./openvino_docs_OV_UG_Working_with_devices
-   ./openvino_docs_OV_UG_Preprocessing_Overview
-   ./openvino_docs_OV_UG_DynamicShapes
-   ./openvino_docs_OV_UG_supported_plugins_AUTO
-   ./openvino_docs_OV_UG_Running_on_multiple_devices
-   ./openvino_docs_OV_UG_Hetero_execution
-   ./openvino_docs_OV_UG_Performance_Hints
-   ./openvino_docs_OV_UG_Automatic_Batching
-   ./openvino_docs_OV_UG_network_state_intro
-   ./ONNX_Format_Support
+   ./openvino-runtime-user-guide/openvino-runtime-integrate-application
+   ../openvino_docs_OV_UG_ShapeInference
+   ../openvino_docs_OV_UG_Working_with_devices
+   ../openvino_docs_OV_UG_Preprocessing_Overview
+   ../openvino_docs_OV_UG_DynamicShapes
+   ../openvino_docs_OV_UG_supported_plugins_AUTO
+   ../openvino_docs_OV_UG_Running_on_multiple_devices
+   ../openvino_docs_OV_UG_Hetero_execution
+   ../openvino_docs_OV_UG_Performance_Hints
+   ../openvino_docs_OV_UG_Automatic_Batching
+   ../openvino_docs_OV_UG_network_state_intro
+   ../ONNX_Format_Support
 
 OpenVINO Runtime is a set of C++ libraries with C and Python bindings providing a common API to deliver inference solutions on the platform of your choice. Use the OpenVINO Runtime API to read an Intermediate Representation (IR), ONNX, or PaddlePaddle model and execute it on preferred devices.
 
