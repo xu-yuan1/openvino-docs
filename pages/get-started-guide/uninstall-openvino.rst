@@ -20,7 +20,7 @@ Uninstall Using the Original Installation Package
 
   Use initial bootstrapper file ``w_openvino_toolkit_p_<version>.exe`` to select product for uninstallation. Follow the wizard instructions. Select **Remove** option when presented. If you have more product versions installed, you can select one from a drop-down menu in GUI.
 
-  .. image:: _static/images/openvino-uninstall-dropdown-win.png
+  .. image:: ./_assets/openvino-uninstall-dropdown-win.png
     :width: 500px
     :align: center
 
@@ -50,7 +50,7 @@ Uninstall Using the Original Installation Package
 
   Use initial bootstrapper file ``m_openvino_toolkit_p_<version>.dmg`` to select product for uninstallation. Mount the file and double-click ``bootstrapper.app``. Follow the wizard instructions. Select **Remove** option when presented. If you have more product versions installed, you can select one from a drop-down menu in GUI.
 
-  .. image:: _static/images/openvino-uninstall-dropdown-macos.png
+  .. image:: ./_assets/openvino-uninstall-dropdown-macos.png
     :width: 500px
     :align: center
 
@@ -99,25 +99,25 @@ Finally, complete the procedure with clicking on **Modify** and then selecting *
 
 .. tab:: Windows
 
-  .. image:: _static/images/openvino-uninstall-win.png
+  .. image:: ./_assets/openvino-uninstall-win.png
     :width: 500px
     :align: center
 
 .. tab:: Linux
 
-  .. image:: _static/images/openvino-uninstall-linux.png
+  .. image:: ./_assets/openvino-uninstall-linux.png
     :width: 500px
     :align: center
 
   if GUI is not available, installer also could be run in a CLI mode:
 
-  .. image:: _static/images/openvino-uninstall-cli.png
+  .. image:: ./_assets/openvino-uninstall-cli.png
      :width: 500px
      :align: center
 
 .. tab:: macOS
 
-  .. image:: _static/images/openvino-uninstall-macos.png
+  .. image:: ./_assets/openvino-uninstall-macos.png
     :width: 500px
     :align: center
 
