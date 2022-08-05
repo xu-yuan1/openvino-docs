@@ -33,7 +33,7 @@ Versions of OpenVINO prior to 2022.1 required changes in the application logic w
 
 * Model Optimizer changed layouts for TensorFlow models (see the :ref:`Layouts in OpenVINO <doxid-openvino_docs__o_v__u_g__layout__overview>`). It lead to unusual requirement of using the input data with a different layout than that of the framework:
   
-  .. image:: _assets/api-2.0-transition-tf-openvino.png
+  .. image:: ./_assets/api-2.0-transition-tf-openvino.png
 
 * Inference Engine API (``:ref:`InferenceEngine::CNNNetwork <doxid-class_inference_engine_1_1_c_n_n_network>```) applied some conversion rules for input and output precisions due to limitations in device plugins.
 

@@ -17,8 +17,8 @@ Converting Models with Model Optimizer
    :maxdepth: 1
    :hidden:
 
-   converting-models-model-optimizer/converting-models-input-shapes
-   ./openvino_docs_MO_DG_prepare_model_Model_Optimization_Techniques
+   converting-models-model-optimizer/input-shapes-model-optimizer
+   converting-models-model-optimizer/model-optimization-techniques-model-optimizer
    ./openvino_docs_MO_DG_prepare_model_convert_model_Cutting_Model
    ./openvino_docs_MO_DG_Additional_Optimization_Use_Cases
    ./openvino_docs_MO_DG_FP16_Compression
@@ -40,7 +40,7 @@ Note that Model Optimizer does not infer models.
 
 The figure below illustrates the typical workflow for deploying a trained deep learning model:
 
-.. image:: _assets/BASIC_FLOW_MO_simplified.svg
+.. image:: ./_assets/BASIC_FLOW_MO_simplified.svg
 
 where IR is a pair of files describing the model:
 
