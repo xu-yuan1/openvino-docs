@@ -15,13 +15,13 @@ Integrate OpenVINO™ with Your Application
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_OV_UG_Model_Representation
-   openvino_docs_OV_UG_Infer_request
-   openvino_docs_OV_UG_Python_API_exclusives
+   ../openvino_docs_OV_UG_Model_Representation
+   ../openvino_docs_OV_UG_Infer_request
+   ../openvino_docs_OV_UG_Python_API_exclusives
 
 Following these steps, you can implement a typical OpenVINO™ Runtime inference pipeline in your application. Before proceeding, make sure you have :ref:`installed OpenVINO Runtime <doxid-openvino_docs_install_guides_install_runtime>` and set environment variables (run ``<INSTALL_DIR>/setupvars.sh`` for Linux or ``setupvars.bat`` for Windows, otherwise, the ``OpenVINO_DIR`` variable won't be configured properly to pass ``find_package`` calls).
 
-.. image:: IMPLEMENT_PIPELINE_with_API_C.svg
+.. image:: ./_assets/IMPLEMENT_PIPELINE_with_API_C.svg
 
 Step 1. Create OpenVINO™ Runtime Core
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
