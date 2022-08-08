@@ -25,7 +25,7 @@ Documentation
    :hidden:
 
    model-processing
-   ./documentation/converting-models-model-optimizer
+   ./documentation/converting-models-with-model-optimizer
    omz_tools_downloader
 
 
