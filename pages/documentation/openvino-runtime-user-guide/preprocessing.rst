@@ -2,8 +2,8 @@
 .. _doxid-openvino_docs__o_v__u_g__preprocessing__overview:
 
 
-Optimize Preprocessing
-======================
+Preprocessing
+=============
 
 :target:`doxid-openvino_docs__o_v__u_g__preprocessing__overview_1md_openvino_docs_ov_runtime_ug_preprocessing_overview`
 
@@ -15,9 +15,9 @@ Optimize Preprocessing
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_OV_UG_Preprocessing_Details
-   openvino_docs_OV_UG_Layout_Overview
-   openvino_docs_OV_UG_Preprocess_Usecase_save
+   ../../openvino_docs_OV_UG_Preprocessing_Details
+   ../../openvino_docs_OV_UG_Layout_Overview
+   ../../openvino_docs_OV_UG_Preprocess_Usecase_save
 
 Introduction
 ~~~~~~~~~~~~
@@ -39,7 +39,7 @@ Consider the following standard example: deep learning model expects input with 
 
 * For each pixel, subtract mean values and divide by scale factor.
 
-.. image:: preprocess_not_fit.png
+.. image:: ./_assets/preprocess_not_fit.png
 
 Even though it is relatively easy to implement all these steps in the application code manually, before actual inference, it is also possible with the use of Preprocessing API. Advantages of using the API are:
 

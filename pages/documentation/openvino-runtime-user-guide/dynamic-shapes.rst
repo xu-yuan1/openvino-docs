@@ -7,15 +7,11 @@ Dynamic Shapes
 
 :target:`doxid-openvino_docs__o_v__u_g__dynamic_shapes_1md_openvino_docs_ov_runtime_ug_ov_dynamic_shapes`
 
-
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_OV_UG_NoDynamicShapes
+   ./dynamic-shapes/dynamic-shapes-not-applicable
 
 As it was demonstrated in the :ref:`Changing Input Shapes <doxid-openvino_docs__o_v__u_g__shape_inference>` article, there are models that support changing input shapes before model compilation in ``Core::compile_model``. Reshaping models provides an ability to customize the model input shape for the exact size required in the end application. This article explains how the ability of model to reshape can further be leveraged in more dynamic scenarios.
 
@@ -684,4 +680,3 @@ It can also be verified in a more programmatic way:
    </div>
 
 If at least one dynamic dimension exists in an output of a model, a shape of the corresponding output tensor will be set as the result of inference call. Before the first inference, memory for such a tensor is not allocated and has the ``[0]`` shape. If the ``set_output_tensor`` method is called with a pre-allocated tensor, the inference will call the ``set_shape`` internally, and the initial shape is replaced by the calculated shape. Therefore, setting a shape for output tensors in this case is useful only when pre-allocating enough memory for output tensor. Normally, the ``set_shape`` method of a ``Tensor`` re-allocates memory only if a new shape requires more storage.
-

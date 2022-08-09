@@ -20,8 +20,8 @@ Performing Inference with OpenVINO Runtime
    ./openvino-runtime-user-guide/openvino-runtime-integrate-application
    ./openvino-runtime-user-guide/changing-input-shapes
    ./openvino-runtime-user-guide/working-with-devices
-   ../openvino_docs_OV_UG_Preprocessing_Overview
-   ../openvino_docs_OV_UG_DynamicShapes
+   ./openvino-runtime-user-guide/preprocessing
+   ./openvino-runtime-user-guide/dynamic-shapes
    ../openvino_docs_OV_UG_supported_plugins_AUTO
    ../openvino_docs_OV_UG_Running_on_multiple_devices
    ../openvino_docs_OV_UG_Hetero_execution
