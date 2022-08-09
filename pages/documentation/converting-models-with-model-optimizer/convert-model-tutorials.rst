@@ -30,9 +30,9 @@ Model Conversion Tutorials
    ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_WideAndDeep_Family_Models
    ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_XLNet_From_Tensorflow
    ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_YOLO_From_Tensorflow
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_Faster_RCNN
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_GPT2
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_onnx_specific_Convert_Mask_RCNN
+   ./convert-model-tutorials/converting-onnx-faster-r-cnn-model
+   ./convert-model-tutorials/converting-onnx-gpt-2-model
+   ./convert-model-tutorials/converting-onnx-mask-r-cnn-model
    ../../openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Bert_ner
    ../../openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Cascade_RCNN_res101
    ../../openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_F3Net
