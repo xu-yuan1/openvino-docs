@@ -17,11 +17,11 @@ Converting Models with Model Optimizer
    :maxdepth: 1
    :hidden:
 
-   converting-models-with-model-optimizer/input-shapes
-   converting-models-with-model-optimizer/model-optimization-techniques
-   converting-models-with-model-optimizer/cutting-model-with-model-optimizer
+   ./converting-models-with-model-optimizer/input-shapes
+   ./converting-models-with-model-optimizer/model-optimization-techniques
+   ./converting-models-with-model-optimizer/cutting-model-with-model-optimizer
    ../openvino_docs_MO_DG_Additional_Optimization_Use_Cases
-   ../openvino_docs_MO_DG_FP16_Compression
+   ./converting-models-with-model-optimizer/fp16-compression-with-model-optimizer
    ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow
    ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_ONNX
    ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_PyTorch
