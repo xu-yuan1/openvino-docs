@@ -12,7 +12,7 @@ Automatic Device Selection
    :maxdepth: 1
    :hidden:
 
-   Debugging Auto-Device Plugin <openvino_docs_OV_UG_supported_plugins_AUTO_debugging>
+   ./automatic-device-selection/debugging-auto-device
 
 This article introduces how Automatic Device Selection works and how to use it for inference.
 
@@ -69,7 +69,7 @@ latency of AUTO will be better than that of using GPU alone.
 Note that if you choose to exclude CPU from the priority list, it will be unable to 
 support the initial model compilation stage.
 
-.. image:: ./autoplugin_accelerate.png
+.. image:: ./_assets/autoplugin_accelerate.png
 
 This mechanism can be easily observed in the 
 `Using AUTO with Benchmark app sample <#using-auto-with-openvino-samples-and-benchmark-app>`__ 
@@ -153,13 +153,13 @@ See the following code for using AUTO and specifying devices:
 
 .. tab:: C++
 
-    .. doxygensnippet:: ./snippets/AUTO0.cpp
+    .. doxygensnippet:: ../../snippets/AUTO0.cpp
        :language: cpp
        :fragment: [part0]
 
 .. tab:: Python
 
-    .. doxygensnippet:: ./snippets/ov_auto.py
+    .. doxygensnippet:: ../../snippets/ov_auto.py
        :language: python
        :fragment: [part0]
 
@@ -286,13 +286,13 @@ To enable performance hints for your application, use the following code:
 
 .. tab:: C++
 
-    .. doxygensnippet:: ./snippets/AUTO3.cpp
+    .. doxygensnippet:: ../../snippets/AUTO3.cpp
        :language: cpp
        :fragment: [part3]
 
 .. tab:: Python
 
-    .. doxygensnippet:: ./snippets/ov_auto.py
+    .. doxygensnippet:: ../../snippets/ov_auto.py
        :language: python
        :fragment: [part3]
 
@@ -319,13 +319,13 @@ model will not be loaded to a device that is occupied by a higher-priority model
 
 .. tab:: C++
 
-    .. doxygensnippet:: ./snippets/AUTO4.cpp
+    .. doxygensnippet:: ../../snippets/AUTO4.cpp
        :language: cpp
        :fragment: [part4]
 
 .. tab:: Python
 
-    .. doxygensnippet:: ./snippets/ov_auto.py
+    .. doxygensnippet:: ../../snippets/ov_auto.py
        :language: python
        :fragment: [part4]
 
@@ -339,13 +339,13 @@ Myriad devices, incapable of utilizing the Performance Hints option.
 
 .. tab:: C++
 
-    .. doxygensnippet:: ./snippets/AUTO5.cpp
+    .. doxygensnippet:: ../../snippets/AUTO5.cpp
        :language: cpp
        :fragment: [part5]
 
 .. tab:: Python
 
-    .. doxygensnippet:: ./snippets/ov_auto.py
+    .. doxygensnippet:: ../../snippets/ov_auto.py
        :language: python
        :fragment: [part5]
 

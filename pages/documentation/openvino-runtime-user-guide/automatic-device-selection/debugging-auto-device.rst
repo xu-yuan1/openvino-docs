@@ -32,13 +32,13 @@ There are six levels of logs, which can be called explicitly or set via the
 
 .. tab:: C++
 
-    .. doxygensnippet:: ./snippets/AUTO6.cpp
+    .. doxygensnippet:: ../../../snippets/AUTO6.cpp
        :language: cpp
        :fragment: [part6]
 
 .. tab:: Python
 
-    .. doxygensnippet:: ./snippets/ov_auto.py
+    .. doxygensnippet:: ../../../snippets/ov_auto.py
        :language: python
        :fragment: [part6]
 
@@ -103,26 +103,44 @@ With Intel® VTune™ Profiler installed you can configure your analysis with th
 #. select **Configure Analysis**
 
 #. In the **where** pane, select **Local Host**
-
-   .. image:: ./OV_UG_supported_plugins_AUTO_debugging-img01-localhost.png
+   
+   
+   
+   
+   .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img01-localhost.png
       :align: center
 
 #. In the **what** pane, specify your target application/script on the local system.
-
-   .. image:: ./OV_UG_supported_plugins_AUTO_debugging-img02-launch.png
+   
+   
+   
+   
+   .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img02-launch.png
       :align: center
 
 #. In the **how** pane, choose and configure the analysis type you want to perform, for example, **Hotspots Analysis** : identify the most time-consuming functions and drill down to see time spent on each line of source code. Focus optimization efforts on hot code for the greatest performance impact.
-
-   .. image:: ./OV_UG_supported_plugins_AUTO_debugging-img03-hotspots.png
+   
+   
+   
+   
+   .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img03-hotspots.png
       :align: center
 
 #. Start the analysis by clicking the start button. When it is done, you will get a summary of the run, including top hotspots and top tasks in your application:
-
-   .. image:: ./OV_UG_supported_plugins_AUTO_debugging-img04-vtunesummary.png
+   
+   
+   
+   
+   .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img04-vtunesummary.png
       :align: center
 
 #. To analyze ITT info related to the Auto plugin, click on the **Bottom-up** tab, choose the **Task Domain/Task Type/Function/Call Stack** from the dropdown list - Auto plugin-related ITT info is under the MULTIPlugin task domain:
+   
+   
+   
+   
+   .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img05-vtunebottomup.png
+      :align: center
 
    .. image:: ./OV_UG_supported_plugins_AUTO_debugging-img05-vtunebottomup.png
       :align: center
