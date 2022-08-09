@@ -23,12 +23,12 @@ Converting Models with Model Optimizer
    ./converting-models-with-model-optimizer/additional-optimization-use-cases
    ./converting-models-with-model-optimizer/fp16-compression-with-model-optimizer
    ./converting-models-with-model-optimizer/converting-tensorflow-model-with-model-optimizer
-   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_ONNX
-   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_PyTorch
-   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Paddle
-   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_MxNet
-   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Caffe
-   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Kaldi
+   ./converting-models-with-model-optimizer/converting-onnx-model-with-model-optimizer
+   ./converting-models-with-model-optimizer/converting-pytorch-model
+   ./converting-models-with-model-optimizer/converting-paddlepaddle-model-with-model-optimizer
+   ./converting-models-with-model-optimizer/converting-mxnet-model-with-model-optimizer
+   ./converting-models-with-model-optimizer/converting-caffe-model-with-model-optimizer
+   ./converting-models-with-model-optimizer/converting-kaldi-model-with-model-optimizer
    ../openvino_docs_MO_DG_prepare_model_convert_model_tutorials
    ../openvino_docs_MO_DG_prepare_model_Model_Optimizer_FAQ
 

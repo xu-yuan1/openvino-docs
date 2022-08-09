@@ -39,9 +39,9 @@ Additional Resources
 
 See the :ref:`Model Conversion Tutorials <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tutorials>` page for a set of tutorials providing step-by-step instructions for converting specific ONNX models. Here are some examples:
 
-* :ref:`Convert ONNX\* Faster R-CNN Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_onnx_specific__convert__faster__r_c_n_n>`
+* :ref:`Convert ONNX Faster R-CNN Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_onnx_specific__convert__faster__r_c_n_n>`
 
-* :ref:`Convert ONNX\* GPT-2 Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_onnx_specific__convert__g_p_t2>`
+* :ref:`Convert ONNX GPT-2 Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_onnx_specific__convert__g_p_t2>`
 
-* :ref:`Convert ONNX\* Mask R-CNN Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_onnx_specific__convert__mask__r_c_n_n>`
+* :ref:`Convert ONNX Mask R-CNN Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_onnx_specific__convert__mask__r_c_n_n>`
 
