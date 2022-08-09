@@ -18,8 +18,8 @@ Performing Inference with OpenVINO Runtime
    :hidden:
 
    ./openvino-runtime-user-guide/openvino-runtime-integrate-application
-   ../openvino_docs_OV_UG_ShapeInference
-   ../openvino_docs_OV_UG_Working_with_devices
+   ./openvino-runtime-user-guide/changing-input-shapes
+   ./openvino-runtime-user-guide/working-with-devices
    ../openvino_docs_OV_UG_Preprocessing_Overview
    ../openvino_docs_OV_UG_DynamicShapes
    ../openvino_docs_OV_UG_supported_plugins_AUTO

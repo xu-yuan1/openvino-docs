@@ -7,20 +7,16 @@ Working with devices
 
 :target:`doxid-openvino_docs__o_v__u_g__working_with_devices_1md_openvino_docs_ov_runtime_ug_supported_plugins_device_plugins`
 
-
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_OV_UG_query_api
-   openvino_docs_OV_UG_supported_plugins_CPU
-   openvino_docs_OV_UG_supported_plugins_GPU
-   openvino_docs_OV_UG_supported_plugins_VPU
-   openvino_docs_OV_UG_supported_plugins_GNA
-   openvino_docs_OV_UG_supported_plugins_ARM_CPU
+   ../../openvino_docs_OV_UG_query_api
+   ../../openvino_docs_OV_UG_supported_plugins_CPU
+   ../../openvino_docs_OV_UG_supported_plugins_GPU
+   ../../openvino_docs_OV_UG_supported_plugins_VPU
+   ../../openvino_docs_OV_UG_supported_plugins_GNA
+   ../../openvino_docs_OV_UG_supported_plugins_ARM_CPU
 
 The OpenVINO Runtime provides capabilities to infer deep learning models on the following device types with corresponding plugins:
 
@@ -147,7 +143,7 @@ A simple programmatic way to enumerate the devices and use with the multi-device
 
 .. tab:: C++
 
-    .. doxygensnippet:: docs/snippets/MULTI2.cpp
+    .. doxygensnippet:: ../../snippets/MULTI2.cpp
        :language: cpp
        :fragment: [part2]
 
@@ -164,7 +160,6 @@ So, the explicit configuration to use both would be "MULTI:MYRIAD.1.2-ma2480,MYR
 
 .. tab:: C++
 
-    .. doxygensnippet:: docs/snippets/MULTI3.cpp
+    .. doxygensnippet:: ../../snippets/MULTI3.cpp
        :language: cpp
        :fragment: [part3]
-

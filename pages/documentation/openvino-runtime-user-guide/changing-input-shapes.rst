@@ -18,7 +18,7 @@ Setting a New Input Shape with Reshape Method
 
 The ``:ref:`ov::Model::reshape <doxid-classov_1_1_model_1aa21aff80598d5089d591888a4c7f33ae>``` method updates input shapes and propagates them down to the outputs of the model through all intermediate layers. For example, changing the batch size and spatial dimensions of input of a model with an image input:
 
-.. image:: original_vs_reshaped_model.png
+.. image:: ./_assets/original_vs_reshaped_model.png
 	:alt: shape_inference_explained
 
 Consider the code below to achieve that:
@@ -76,19 +76,19 @@ To do the opposite - resize input image to the input shapes of the model, use th
 
 .. tab:: Port
 
-    .. doxygensnippet:: docs/snippets/ShapeInference.cpp
+    .. doxygensnippet:: ../../snippets/ShapeInference.cpp
        :language: cpp
        :fragment: [obj_to_shape]
 
 .. tab:: Index
 
-    .. doxygensnippet:: docs/snippets/ShapeInference.cpp
+    .. doxygensnippet:: ../../snippets/ShapeInference.cpp
        :language: cpp
        :fragment: [idx_to_shape]
 
 .. tab:: Tensor Name
 
-    .. doxygensnippet:: docs/snippets/ShapeInference.cpp
+    .. doxygensnippet:: ../../snippets/ShapeInference.cpp
        :language: cpp
        :fragment: [name_to_shape]
 
@@ -130,7 +130,7 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
   
   With ``1:reshaped[2]``, it's requested to cut the 2nd input (counting from zero, so ``1:`` means the 2nd input) of the operation named ``reshaped`` and replace it with a ``Parameter`` with shape ``[2]``. With ``->[0 -1]``, this new ``Parameter`` is replaced by a ``Constant`` operator which has the ``[0, -1]`` value. Since the ``Reshape`` operator has ``0`` and ``-1`` as specific values (see the meaning in :ref:`this specification <doxid-openvino_docs_ops_shape__reshape_1>`), it allows propagating shapes freely without losing the intended meaning of ``Reshape``.
 
-.. image:: batch_relaxation.png
+.. image:: ./_assets/batch_relaxation.png
 	:alt: batch_relaxed
 
 * transform the model during Model Optimizer conversion on the back phase. For more information, see the :ref:`Model Optimizer extension <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`.
@@ -158,12 +158,12 @@ Setting a New Input Shape with Reshape Method
 
 The `Model.reshape <api/ie_python_api/_autosummary/openvino.runtime.Model.html#openvino.runtime.Model.reshape>`__ method updates input shapes and propagates them down to the outputs of the model through all intermediate layers. Example: Changing the batch size and spatial dimensions of input of a model with an image input:
 
-.. image:: original_vs_reshaped_model.png
+.. image:: ./_assets/original_vs_reshaped_model.png
 	:alt: shape_inference_explained
 
 Consider the code below to achieve that:
 
-.. doxygensnippet:: docs/snippets/ShapeInference.py
+.. doxygensnippet:: ../../snippets/ShapeInference.py
    :language: python
    :fragment: [picture_snippet]
 
@@ -172,7 +172,7 @@ Setting a New Batch Size with the set_batch Method
 
 The meaning of the model batch may vary depending on the model design. In order to change the batch dimension of the model, :ref:`set the layout <doxid-openvino_docs__o_v__u_g__preprocessing__overview_1declare_model_s_layout>` for inputs and call the `set_batch <api/ie_python_api/_autosummary/openvino.runtime.set_batch.html>`__ method.
 
-.. doxygensnippet:: docs/snippets/ShapeInference.py
+.. doxygensnippet:: ../../snippets/ShapeInference.py
    :language: python
    :fragment: [set_batch]
 
@@ -196,7 +196,7 @@ The primary method of the feature is `Model.reshape <api/ie_python_api/_autosumm
 
 1) To change the input shape of a model with a single input, you may pass a new shape to the method. See the example of adjusting spatial dimensions to the input image:
 
-.. doxygensnippet:: docs/snippets/ShapeInference.py
+.. doxygensnippet:: ../../snippets/ShapeInference.py
    :language: python
    :fragment: [simple_spatials_change]
 
@@ -220,19 +220,19 @@ Dictionary values (representing new shapes) could be:
 
 .. tab:: Port
 
-    .. doxygensnippet:: docs/snippets/ShapeInference.py
+    .. doxygensnippet:: ../../snippets/ShapeInference.py
        :language: python
        :fragment: [obj_to_shape]
 
 .. tab:: Index
 
-    .. doxygensnippet:: docs/snippets/ShapeInference.py
+    .. doxygensnippet:: ../../snippets/ShapeInference.py
        :language: python
        :fragment: [idx_to_shape]
 
 .. tab:: Tensor Name
 
-    .. doxygensnippet:: docs/snippets/ShapeInference.py
+    .. doxygensnippet:: ../../snippets/ShapeInference.py
        :language: python
        :fragment: [name_to_shape]
 
@@ -270,7 +270,7 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
   
   With ``1:reshaped[2]``, it's requested to cut the 2nd input (counting from zero, so ``1:`` means the 2nd input) of the operation named ``reshaped`` and replace it with a ``Parameter`` with shape ``[2]``. With ``->[0 -1]``, this new ``Parameter`` is replaced by a ``Constant`` operator which has value ``[0, -1]``. Since the ``Reshape`` operator has ``0`` and ``-1`` as specific values (see the meaning in :ref:`this specification <doxid-openvino_docs_ops_shape__reshape_1>`), it allows propagating shapes freely without losing the intended meaning of ``Reshape``.
 
-.. image:: batch_relaxation.png
+.. image:: ./_assets/batch_relaxation.png
 	:alt: batch_relaxed
 
 * transform the model during Model Optimizer conversion on the back phase. See :ref:`Model Optimizer extension <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`.
