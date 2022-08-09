@@ -25,7 +25,7 @@ Performing Inference with OpenVINO Runtime
    ./openvino-runtime-user-guide/automatic-device-selection
    ./openvino-runtime-user-guide/multi-device-execution-mode
    ./openvino-runtime-user-guide/heterogeneous-execution-mode
-   ../openvino_docs_OV_UG_Performance_Hints
+   ./openvino-runtime-user-guide/performance-hints
    ../openvino_docs_OV_UG_Automatic_Batching
    ../openvino_docs_OV_UG_network_state_intro
    ../ONNX_Format_Support

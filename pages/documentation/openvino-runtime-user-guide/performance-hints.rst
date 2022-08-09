@@ -54,13 +54,13 @@ In the example code snippet below, ``:ref:`ov::hint::PerformanceMode::THROUGHPUT
 
 .. tab:: C++
 
-    .. doxygensnippet:: docs/snippets/ov_auto_batching.cpp
+    .. doxygensnippet:: ../../snippets/ov_auto_batching.cpp
        :language: cpp
        :fragment: [compile_model]
 
 .. tab:: Python
 
-    .. doxygensnippet:: docs/snippets/ov_auto_batching.py
+    .. doxygensnippet:: ../../snippets/ov_auto_batching.py
        :language: python
        :fragment: [compile_model]
 
@@ -75,13 +75,13 @@ For an application that processes 4 video streams, the most future-proof way to 
 
 .. tab:: C++
 
-    .. doxygensnippet:: docs/snippets/ov_auto_batching.cpp
+    .. doxygensnippet:: ../../snippets/ov_auto_batching.cpp
        :language: cpp
        :fragment: [hint_num_requests]
 
 .. tab:: Python
 
-    .. doxygensnippet:: docs/snippets/ov_auto_batching.py
+    .. doxygensnippet:: ../../snippets/ov_auto_batching.py
        :language: python
        :fragment: [hint_num_requests]
 
@@ -96,13 +96,13 @@ The hints are used on the presumption that the application queries ``:ref:`ov::o
 
 .. tab:: C++
 
-    .. doxygensnippet:: docs/snippets/ov_auto_batching.cpp
+    .. doxygensnippet:: ../../snippets/ov_auto_batching.cpp
        :language: cpp
        :fragment: [query_optimal_num_requests]
 
 .. tab:: Python
 
-    .. doxygensnippet:: docs/snippets/ov_auto_batching.py
+    .. doxygensnippet:: ../../snippets/ov_auto_batching.py
        :language: python
        :fragment: [query_optimal_num_requests]
 
@@ -128,13 +128,13 @@ While sacrificing the portability to some extent, it is possible to combine the 
 
 .. tab:: C++
 
-    .. doxygensnippet:: docs/snippets/ov_auto_batching.cpp
+    .. doxygensnippet:: ../../snippets/ov_auto_batching.cpp
        :language: cpp
        :fragment: [hint_plus_low_level]
 
 .. tab:: Python
 
-    .. doxygensnippet:: docs/snippets/ov_auto_batching.py
+    .. doxygensnippet:: ../../snippets/ov_auto_batching.py
        :language: python
        :fragment: [hint_plus_low_level]
 
