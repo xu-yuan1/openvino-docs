@@ -54,13 +54,13 @@ The following commands are accepted by the API:
 
 .. tab:: C++
 
-    .. doxygensnippet:: docs/snippets/MULTI0.cpp
+    .. doxygensnippet:: ../../snippets/MULTI0.cpp
        :language: cpp
        :fragment: [part0]
 
 .. tab:: Python
 
-    .. doxygensnippet:: docs/snippets/ov_multi.py
+    .. doxygensnippet:: ../../snippets/ov_multi.py
        :language: python
        :fragment: [MULTI_0]
 
@@ -68,13 +68,13 @@ Notice that MULTI allows you to **change device priorities on the fly**. You can
 
 .. tab:: C++
 
-    .. doxygensnippet:: docs/snippets/MULTI1.cpp
+    .. doxygensnippet:: ../../snippets/MULTI1.cpp
        :language: cpp
        :fragment: [part1]
 
 .. tab:: Python
 
-    .. doxygensnippet:: docs/snippets/ov_multi.py
+    .. doxygensnippet:: ../../snippets/ov_multi.py
        :language: python
        :fragment: [MULTI_1]
 
@@ -89,13 +89,13 @@ As mentioned previously, executing inference with MULTI may be set up by configu
 
 .. tab:: C++
 
-    .. doxygensnippet:: docs/snippets/MULTI4.cpp
+    .. doxygensnippet:: ../../snippets/MULTI4.cpp
        :language: cpp
        :fragment: [part4]
 
 .. tab:: Python
 
-    .. doxygensnippet:: docs/snippets/ov_multi.py
+    .. doxygensnippet:: ../../snippets/ov_multi.py
        :language: python
        :fragment: [MULTI_4]
 
@@ -108,7 +108,7 @@ When using MULTI, you don't need to sum over included devices yourself, you can 
 
 .. tab:: C++
 
-    .. doxygensnippet:: docs/snippets/MULTI5.cpp
+    .. doxygensnippet:: ../../snippets/MULTI5.cpp
        :language: cpp
        :fragment: [part5]
 

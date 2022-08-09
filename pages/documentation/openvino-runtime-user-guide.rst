@@ -23,8 +23,8 @@ Performing Inference with OpenVINO Runtime
    ./openvino-runtime-user-guide/preprocessing
    ./openvino-runtime-user-guide/dynamic-shapes
    ./openvino-runtime-user-guide/automatic-device-selection
-   ../openvino_docs_OV_UG_Running_on_multiple_devices
-   ../openvino_docs_OV_UG_Hetero_execution
+   ./openvino-runtime-user-guide/multi-device-execution-mode
+   ./openvino-runtime-user-guide/heterogeneous-execution-mode
    ../openvino_docs_OV_UG_Performance_Hints
    ../openvino_docs_OV_UG_Automatic_Batching
    ../openvino_docs_OV_UG_network_state_intro
