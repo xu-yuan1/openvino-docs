@@ -2,7 +2,7 @@
 .. _doxid-openvino_docs__extensibility__u_g__g_p_u:
 
 
-How to Implement Custom GPU Operations
+How to Implement Custom Operations for GPU 
 ======================================
 
 :target:`doxid-openvino_docs__extensibility__u_g__g_p_u_1md_openvino_docs_extensibility_ug_gpu_extensibility` To enable operations not supported by OpenVINO out of the box, you may need an extension for an OpenVINO operation set, and a custom kernel for the device you will target. This page describes custom kernel support for the GPU device.
