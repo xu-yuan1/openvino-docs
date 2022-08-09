@@ -22,7 +22,7 @@ Converting Models with Model Optimizer
    ./converting-models-with-model-optimizer/cutting-model-with-model-optimizer
    ./converting-models-with-model-optimizer/additional-optimization-use-cases
    ./converting-models-with-model-optimizer/fp16-compression-with-model-optimizer
-   ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_TensorFlow
+   ./converting-models-with-model-optimizer/converting-tensorflow-model-with-model-optimizer
    ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_ONNX
    ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_PyTorch
    ../openvino_docs_MO_DG_prepare_model_convert_model_Convert_Model_From_Paddle
