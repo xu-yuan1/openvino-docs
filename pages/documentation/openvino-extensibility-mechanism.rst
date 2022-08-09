@@ -19,7 +19,7 @@ OpenVINO Extensibility Mechanism
    ./openvino-extensibility-mechanism/frontend-extensions
    ./openvino-extensibility-mechanism/custom-operations_for_gpu
    ./openvino-extensibility-mechanism/custom-operations_for_vpu
-   ../openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Customize_Model_Optimizer
+   ./openvino-extensibility-mechanism/model_optimizer_extensibility
 
 The Intel® Distribution of OpenVINO™ toolkit supports neural network models trained with various frameworks, including TensorFlow, PyTorch, ONNX, PaddlePaddle, Apache MXNet, Caffe, and Kaldi. The list of supported operations is different for each of the supported frameworks. To see the operations supported by your framework, refer to :ref:`Supported Framework Operations <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>`.
 

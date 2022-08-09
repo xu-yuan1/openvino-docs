@@ -1,7 +1,7 @@
 .. index:: pair: page; Model Optimizer Extensibility
 .. _doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer:
 
-
+ 
 Model Optimizer Extensibility
 =============================
 
@@ -10,12 +10,11 @@ Model Optimizer Extensibility
 
 
 
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Extending_Model_Optimizer_With_Caffe_Python_Layers
+   ./model_optimizer_extensibility/extending-model-optimizer-with-caffe-python-layers
 
 :target:`doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer_1model-optimizer-extensibility` Model Optimizer extensibility mechanism enables support of new operations and custom transformations to generate the optimized intermediate representation (IR) as described in the :ref:`Deep Learning Network Intermediate Representation and Operation Sets in OpenVINO™ <doxid-openvino_docs__m_o__d_g__i_r_and_opsets>`. This mechanism is a core part of Model Optimizer, as a huge set of examples showing how to add custom logic to support your model.
 
@@ -59,7 +58,7 @@ Model Conversion Pipeline
 
 A model conversion pipeline can be represented with the following diagram:
 
-.. image:: MO_conversion_pipeline.png
+.. image:: _assets/MO_conversion_pipeline.png
 	:alt: Model Conversion pipeline
 
 Each conversion step is reviewed in details below.
@@ -77,7 +76,7 @@ Model Optimizer gets a trained model file as an input. The model loader componen
 
 The result of a model loading step is a ``Graph`` object, which can be depicted like in the following example:
 
-.. image:: MO_graph_after_loader.png
+.. image:: _assets/MO_graph_after_loader.png
 	:alt: Graph After Load
 
 Model Optimizer loader saves an operation instance framework description (usually it is a Protobuf message) into a node attribute usually with a name ``pb`` for each operation of an input model. It is important that this is a **framework-specific** description of an operation. This means that an operation, for example, :ref:`Convolution <doxid-openvino_docs_ops_convolution__convolution_1>` may be represented differently in, for example, Caffe and TensorFlow frameworks but performs the same calculations from a mathematical point of view.
@@ -107,7 +106,7 @@ The extractors execution order is the following:
 
 The result of operations attributes extracting step can be depicted like in the following example:
 
-.. image:: MO_graph_after_extractors.png
+.. image:: _assets/MO_graph_after_extractors.png
 	:alt: Graph After Attributes Extraction
 
 The only difference in the graph from the previous step is that nodes contain dictionary with extracted attributes and operation-specific attributes needed for Model Optimizer. However, starting from this step, Model Optimizer does not need the original representation of the operation/model and uses just Model Optimizer representation (there are some peculiar cases in which Model Optimizer still uses the ``pb`` attribute, covered in this article partially). A detailed list of common node attributes and their values is provided below in the `Model Optimizer Operation <#extension-operation>`__ section.
@@ -156,7 +155,7 @@ Model Optimizer inserts **data** nodes to the computation graph before starting 
 
 Before running partial inference, the graph can be depicted like in the following example:
 
-.. image:: MO_graph_before_partial_inference.png
+.. image:: _assets/MO_graph_before_partial_inference.png
 	:alt: Graph Before Partial Inference
 
 The difference in a graph structure with a graph during the front phase is not only in the data nodes, but also in the edge attributes. Note that an ``out`` attribute is specified for edges **from operation** nodes only, while an ``in`` attribute is specified for edges **from data** nodes only. This corresponds to the fact that a tensor (data node) is produced from a specific output port of an operation and is consumed with a specific input port of an operation. Also, a unique data node is created for each output port of an operation. The node may be used as an input node for several operation nodes. Similarly to the data node "data2_0", which is consumed with the input "port 1" of the "Operation 3" and input "port 0" of the "Operation 5".
@@ -311,7 +310,7 @@ The ``Port`` class is just an abstraction that works with edges incoming/outgoin
 
 Consider the example of a graph part with 4 operation nodes "Op1", "Op2", "Op3", and "Op4" and a number of data nodes depicted with light green boxes.
 
-.. image:: MO_ports_example_1.png
+.. image:: _assets/MO_ports_example_1.png
 	:alt: Ports example 1
 
 Operation nodes have input ports (yellow squares) and output ports (light purple squares). Input port may not be connected. For example, the input "port 2" of node "Op1" does not have incoming edge, while output port always has an associated data node (after the partial inference when the data nodes are added to the graph), which may have no consumers.
@@ -333,14 +332,10 @@ For example, applying the following two methods to the graph above will result i
 	op4.in_port(1).disconnect()
 	op3.out_port(0).connect(op4.in_port(1))
 
-.. image:: MO_ports_example_2.png
+.. image:: _assets/MO_ports_example_2.png
 	:alt: Ports example 2
 
-.. note:: For a full list of available methods, refer to the ``Node`` class implementation in the ``mo/graph/graph.py`` and ``Port`` class implementation in the
-
-
-
-``mo/graph/port.py`` files.
+.. note:: For a full list of available methods, refer to the ``Node`` class implementation in the ``mo/graph/graph.py`` and ``Port`` class implementation in the ``mo/graph/port.py`` files.
 
 .. _intro-conneсtions:
 
@@ -363,7 +358,7 @@ The ``Connection`` class provides methods to get source and destination(s) ports
 
 The ``Connection`` class provides methods to modify a graph by changing a source or destination(s) of a connection. For example, the function call ``op3.out_port(0).get_connection().set_source(op1.out_port(0))`` changes source port of edges consuming data from port ``op3.out_port(0)`` to ``op1.out_port(0)``. The transformed graph from the sample above is depicted below:
 
-.. image:: MO_connection_example_1.png
+.. image:: _assets/MO_connection_example_1.png
 	:alt: Connection example 1
 
 Another example is the ``connection.set_destination(dest_port)`` method. It disconnects ``dest_port`` and all input ports to which the connection is currently connected and connects the connection source port to ``dest_port``.
@@ -648,7 +643,7 @@ Model Optimizer provides various base classes to implement `Front Phase Transfor
 
 Model Optimizer builds a graph of dependencies between registered transformations and executes them in the topological order. To execute the transformation during a proper model conversion phase, Model Optimizer defines several anchor transformations that do nothing. All transformations are ordered with respect to these anchor transformations. The diagram below shows anchor transformations, some of built-in transformations and dependencies between them:
 
-.. image:: MO_transformations_graph.png
+.. image:: _assets/MO_transformations_graph.png
 	:alt: Transformations Graph
 
 User-defined transformations are executed after the corresponding ``Start`` and before the corresponding ``Finish`` anchor transformations by default (if ``run_before()`` and ``run_after()`` methods have not been overridden).

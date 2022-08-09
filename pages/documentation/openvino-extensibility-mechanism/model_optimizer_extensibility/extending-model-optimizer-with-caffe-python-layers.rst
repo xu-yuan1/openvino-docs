@@ -1,7 +1,7 @@
 .. index:: pair: page; Extending Model Optimizer with Caffe Python Layers
 .. _doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__extending__model__optimizer__with__caffe__python__layers:
 
-
+ 
 Extending Model Optimizer with Caffe Python Layers
 ==================================================
 
