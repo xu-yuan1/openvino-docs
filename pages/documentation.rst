@@ -83,7 +83,7 @@ Documentation
    :hidden:
 
    ./documentation/openvino-extensibility-mechanism
-   openvino_docs_transformations
+   ./documentation/openvino-transformation-api
    OpenVINO Plugin Developer Guide <openvino_docs_ie_plugin_dg_overview>
 
 .. toctree::

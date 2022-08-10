@@ -15,16 +15,16 @@ Overview of Transformations API
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_Extensibility_UG_model_pass
-   openvino_docs_Extensibility_UG_matcher_pass
-   openvino_docs_Extensibility_UG_graph_rewrite_pass
+   ./openvino-transformation-api/transformation-api-model-pass
+   ./openvino-transformation-api/transformation-api-matcher-pass
+   ./openvino-transformation-api/transformation-api-graph-rewrite-pass
 
 OpenVINO Transformation mechanism allows to develop transformation passes to modify ``:ref:`ov::Model <doxid-classov_1_1_model>```. You can use this mechanism to apply additional optimizations to the original Model or transform unsupported subgraphs and operations to new operations which are supported by the plugin. This guide contains all necessary information that you need to start implementing OpenVINO™ transformations.
 
 Working with Model
 ~~~~~~~~~~~~~~~~~~
 
-Before the moving to transformation part it is needed to say several words about functions which allow to modify ``:ref:`ov::Model <doxid-classov_1_1_model>```. This chapter extends the :ref:`model representation guide <doxid-openvino_docs__o_v__u_g__model__representation>` and shows an API that allows us to manipulate with ``:ref:`ov::Model <doxid-classov_1_1_model>```.
+Before moving to the transformation part,  several words need to be said about functions that allow to modify ``:ref:`ov::Model <doxid-classov_1_1_model>```. This chapter extends the :ref:`model representation guide <doxid-openvino_docs__o_v__u_g__model__representation>` and shows an API that allows us to manipulate with ``:ref:`ov::Model <doxid-classov_1_1_model>```.
 
 Working with node input and output ports
 ----------------------------------------
@@ -66,7 +66,7 @@ Let's start with OpenVINO™ helper functions. The most popular function is ``ov
 
 We will review real replacement case where Negative operation is replaced with Multiply.
 
-.. image:: ngraph_replace_node.png
+.. image:: _assets/ngraph_replace_node.png
 
 .. ref-code-block:: cpp
 
@@ -102,7 +102,7 @@ The alternative way to do the same replacement is the following:
 
 Another transformation example is insertion.
 
-.. image:: ngraph_insert_node.png
+.. image:: _assets/ngraph_insert_node.png
 
 .. ref-code-block:: cpp
 

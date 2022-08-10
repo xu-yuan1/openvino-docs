@@ -23,11 +23,11 @@ In addition, GraphRewrite handles nodes that were registered by MatcherPasses du
 
 GraphRewrite has two algorithms for MatcherPasses execution. First algorithm is straightforward. It applies each MatcherPass in registration order to current node.
 
-.. image:: graph_rewrite_execution.png
+.. image:: _assets/graph_rewrite_execution.png
 
 But it is not really efficient when you have a lot of registered passes. So first of all GraphRewrite checks that all MatcherPass patterns has type-based root node (it means that type of this node is not hidden into predicate). And then creates map from registered MatcherPasses. That helps to avoid additional cost of applying each MatcherPass for each node.
 
-.. image:: graph_rewrite_efficient_search.png
+.. image:: _assets/graph_rewrite_efficient_search.png
 
 .. note:: GraphRewrite execution algorithm cannot be set manually and depends only on root nodes registered inside MatcherPasses.
 
