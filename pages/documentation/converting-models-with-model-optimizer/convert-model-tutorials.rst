@@ -33,13 +33,13 @@ Model Conversion Tutorials
    ./convert-model-tutorials/converting-onnx-faster-r-cnn-model
    ./convert-model-tutorials/converting-onnx-gpt-2-model
    ./convert-model-tutorials/converting-onnx-mask-r-cnn-model
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Bert_ner
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_Cascade_RCNN_res101
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_F3Net
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_QuartzNet
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_RCAN
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_RNNT
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_pytorch_specific_Convert_YOLACT
+   ./convert-model-tutorials/converting-pytorch-bert-ner-model
+   ./convert-model-tutorials/converting-pytorch-cascade-rcn-r-101-model
+   ./convert-model-tutorials/converting-pytorch-f3net-model
+   ./convert-model-tutorials/converting-pytorch-quartznet-model
+   ./convert-model-tutorials/converting-pytorch-rcan-model
+   ./convert-model-tutorials/converting-pytorch-rnn-t-model
+   ./convert-model-tutorials/converting-pytorch-yolact-model
    ../../openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_GluonCV_Models
    ../../openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_Style_Transfer_From_MXNet
    ../../openvino_docs_MO_DG_prepare_model_convert_model_kaldi_specific_Aspire_Tdnn_Model

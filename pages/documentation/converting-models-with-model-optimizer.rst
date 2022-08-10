@@ -18,7 +18,6 @@ Converting Models with Model Optimizer
    :hidden:
 
    ./converting-models-with-model-optimizer/input-shapes
-   ./converting-models-with-model-optimizer/model-optimization-techniques
    ./converting-models-with-model-optimizer/cutting-model-with-model-optimizer
    ./converting-models-with-model-optimizer/additional-optimization-use-cases
    ./converting-models-with-model-optimizer/fp16-compression-with-model-optimizer

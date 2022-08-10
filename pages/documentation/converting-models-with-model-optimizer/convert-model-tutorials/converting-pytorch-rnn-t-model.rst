@@ -38,9 +38,10 @@ The link was taken from ``setup.sh`` in the ``speech_recoginitin/rnnt`` subfolde
 
 **Step 5**. Export RNN-T model into ONNX, using the script below. Copy the code below into a file named ``export_rnnt_to_onnx.py`` and run it in the current directory ``rnnt_for_openvino`` :
 
-.. note:: If you already have a full clone of MLCommons inference repository, you need to specify the ``mlcommons_inference_path`` variable.
+.. note::
 
-
+   If you already have a full clone of MLCommons inference repository, you need to 
+   specify the ``mlcommons_inference_path`` variable.
 
 
 
@@ -111,9 +112,11 @@ After completing this step, the files ``rnnt_encoder.onnx``, ``rnnt_prediction.o
 
 
 
-.. note:: The hardcoded value for sequence length = 157 was taken from the MLCommons, but conversion to IR preserves
+.. note::
 
-
-
-network :ref:`reshapeability <doxid-openvino_docs__o_v__u_g__shape_inference>`. Therefore, input shapes can be changed manually to any value during either conversion or inference.
+   The hardcoded value for sequence length = 157 was taken from the MLCommons, 
+   but conversion to IR preserves network 
+   :ref:`reshapeability <doxid-openvino_docs__o_v__u_g__shape_inference>`. 
+   Therefore, input shapes can be changed manually to any value during either 
+   conversion or inference.
 
