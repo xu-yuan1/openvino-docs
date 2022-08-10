@@ -8,21 +8,17 @@ OpenVINO™ Low Precision Transformations
 :target:`doxid-openvino_docs__o_v__u_g_lpt_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_lpt`
 
 
-
-
-
 .. toctree::
    :maxdepth: 1
    :caption: Low Precision Transformations
    :hidden:
 
-   Low Precision Transformations <openvino_docs_OV_UG_lpt>
+   ./low-precision-transformations/low-precision-transformation-attributes
+   ./low-precision-transformations/prerequisites-transformations
+   ./low-precision-transformations/markup-transformations
+   ./low-precision-transformations/main-transformations
+   ./low-precision-transformations/cleanup-transformations
 
-   Attributes <openvino_docs_OV_UG_lpt_attributes>
-   Step 1. Prerequisites transformations <openvino_docs_OV_UG_lpt_step1_prerequisites>
-   Step 2. Markup transformations <openvino_docs_OV_UG_lpt_step2_markup>
-   Step 3. Main transformations <openvino_docs_OV_UG_lpt_step3_main>
-   Step 4. Cleanup transformations <openvino_docs_OV_UG_lpt_step4_cleanup>
 
 Introduction
 ~~~~~~~~~~~~
@@ -112,7 +108,7 @@ If operation is not supported by LPT then dequantization operation will not be p
 
 For example, if you would like to infer a model with ``Convolution`` operation in low precision then the model can look as on picture below:
 
-.. image:: model_fq_and_convolution.common.png
+.. image:: ./_assets/model_fq_and_convolution.common.png
 	:alt: Quantized Convolution
 
 There are several supported quantization approaches on activations and on weights. All supported approaches are described in `Quantization approaches <#quantization-approaches>`__ section below. In demonstrated model `FakeQuantize operation quantization <#fakequantize-operation>`__ approach is used.
@@ -140,7 +136,7 @@ FakeQuantize operation
 
 In this case ``FakeQuantize`` operation is used on activations and quantized constant on weights. Original input model:
 
-.. image:: model_fq_and_convolution.common.png
+.. image:: ./_assets/model_fq_and_convolution.common.png
 	:alt: Original model with FakeQuantize
 
 Quantize and dequantization operations
@@ -148,7 +144,7 @@ Quantize and dequantization operations
 
 In this case ``FakeQuantize`` operation and ``Convert`` are used as quantize operation and return quantized low precision tensor. After quantize operation on activations there are ``Convert`` and dequantization operations to compensate decomposition. Original input model:
 
-.. image:: model_qdq_and_convolution.common.png
+.. image:: ./_assets/model_qdq_and_convolution.common.png
 	:alt: Original model with Q/DQ
 
 In both cases result is the same. In LPT result model you can see, that:
@@ -165,7 +161,7 @@ In both cases result is the same. In LPT result model you can see, that:
 
 LPT result model:
 
-.. image:: model_fq_and_convolution.transformed.png
+.. image:: ./_assets/model_fq_and_convolution.transformed.png
 	:alt: Result model
 
 Low precision transformations pipeline
@@ -173,7 +169,7 @@ Low precision transformations pipeline
 
 LPT transformation pipeline has several steps. For each transformation inside one step pattern matcher is unique per transformation, but each operation can be assigned to several transformations.
 
-.. image:: low_precision_transformation_pipeline.png
+.. image:: ./_assets/low_precision_transformation_pipeline.png
 	:alt: Low precision transformations pipeline
 
 Inside each step LPT transformations handle input model operation by operation, applying transformation matching pattern for each transformation from the step to an operation, and execute transformation if pattern is matched. Decomposition transformation decomposes ``FakeQuantize`` to quantize and dequantization operations. Dequantization operations from previous transformation result is used for the current one and so on, until the end of the model is achieved.
@@ -298,14 +294,14 @@ Original ``FakeQuantize`` :
 
 
 
-.. image:: fq.common.png
+.. image:: ./_assets/fq.common.png
 	:alt: FakeQuantize operation before LPT
 
 ``FakeQuantize`` after decomposition to quantization and dequantization operations:
 
 
 
-.. image:: fq.transformed.png
+.. image:: ./_assets/fq.transformed.png
 	:alt: FakeQuantize operation after LPT
 
 Dequantization operations handling transformations
@@ -317,14 +313,14 @@ Original ``Convolution`` operation in FP32 with dequantization operations before
 
 
 
-.. image:: model_fq_and_convolution.common.png
+.. image:: ./_assets/model_fq_and_convolution.common.png
 	:alt: Convolution operation before LPT
 
 ``Convolution`` operation in INT8 after decomposition and dequantization operations handling:
 
 
 
-.. image:: model_fq_and_convolution.transformed.png
+.. image:: ./_assets/model_fq_and_convolution.transformed.png
 	:alt: Convolution operation after LPT
 
 Step 4: Cleanup of the result model
@@ -350,14 +346,14 @@ There are more details in developer guide :ref:`Cleanup transformations <doxid-o
 
 
 
-.. image:: fq.transformed.png
+.. image:: ./_assets/fq.transformed.png
 	:alt: TODO: FakeQuantize operation with dequantization operations before LPT
 
 ``FakeQuantize`` operation with fused dequantization operations:
 
 
 
-.. image:: fq.common.png
+.. image:: ./_assets/fq.common.png
 	:alt: TODO: FakeQuantize operation with fused operations after LPT
 
 Low precision transformations in plugin transformation pipeline

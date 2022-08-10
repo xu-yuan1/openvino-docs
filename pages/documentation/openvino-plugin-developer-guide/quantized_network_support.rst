@@ -5,7 +5,9 @@
 Quantized networks compute and restrictions
 ===========================================
 
-:target:`doxid-openvino_docs_ie_plugin_dg_quantized_networks_1md_openvino_docs_ie_plugin_dg_quantizednetworks` One of the feature of Inference Engine is the support of quantized networks with different precisions: INT8, INT4, etc. However, it is up to the plugin to define what exact precisions are supported by the particular HW. All quantized networks which can be expressed in IR have a unified representation by means of *FakeQuantize* operation. For more details about low-precision model representation please refer to this :ref:`document <doxid-openvino_docs_ie_plugin_dg_lp_representation>`.
+:target:`doxid-openvino_docs_ie_plugin_dg_quantized_networks_1md_openvino_docs_ie_plugin_dg_quantizednetworks` 
+
+One of the features of Inference Engine is the support of quantized networks with different precisions: INT8, INT4, etc. However, it is up to the plugin to define what exact precisions are supported by the particular HW. All quantized networks which can be expressed in IR have a unified representation by means of *FakeQuantize* operation. For more details about low-precision model representation please refer to this :ref:`document <doxid-openvino_docs_ie_plugin_dg_lp_representation>`.
 
 Interpreting FakeQuantize at runtime
 ------------------------------------
@@ -18,7 +20,7 @@ During the model load each plugin can interpret quantization rules expressed in 
 
 Here we provide only a high-level overview of the interpretation rules of FakeQuantize. At runtime each FakeQuantize can be split into two independent operations: **Quantize** and **Dequantize**. The former one is aimed to transform the input data into the target precision while the latter transforms the resulting values back to the original range and precision. In practice *Dequantize* operations can be propagated forward through the linear operations, such as *Convolution* or *Fully-Connected*, and in some cases fused with the following *Quantize* operation for the next layer into the so-called *Requantize* operation (see Fig. 1).
 
-.. image:: qdq_propagation.png
+.. image:: ./_assets/qdq_propagation.png
 
 Figure 1. Quantization operations propagation at runtime. Q, DQ, RQ stand for Quantize, Dequantize, and Requantize correspondingly.
 

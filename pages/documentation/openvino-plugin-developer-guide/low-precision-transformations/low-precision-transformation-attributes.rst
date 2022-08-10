@@ -2,8 +2,8 @@
 .. _doxid-openvino_docs__o_v__u_g_lpt_attributes:
 
 
-Attributes
-==========
+Low-Precision Transformation Attributes
+=========================================
 
 :target:`doxid-openvino_docs__o_v__u_g_lpt_attributes_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_lpt_attributes`
 
@@ -16,12 +16,13 @@ Attributes
    :caption: Attributes
    :hidden:
 
-   AvgPoolPrecisionPreserved <openvino_docs_OV_UG_lpt_AvgPoolPrecisionPreserved>
-   IntervalsAlignment <openvino_docs_OV_UG_lpt_IntervalsAlignment>   
-   PrecisionPreserved <openvino_docs_OV_UG_lpt_PrecisionPreserved>
-   Precisions <openvino_docs_OV_UG_lpt_Precisions>
-   QuantizationAlignment <openvino_docs_OV_UG_lpt_QuantizationAlignment>
-   QuantizationGranularity <openvino_docs_OV_UG_lpt_QuantizationGranularity>
+   ./low-precision-transformation-attributes/avgpoolprecisionpreserved
+   ./low-precision-transformation-attributes/intervalsalignment
+   ./low-precision-transformation-attributes/precisionpreserved
+   ./low-precision-transformation-attributes/precisions
+   ./low-precision-transformation-attributes/quantizationalignment
+   ./low-precision-transformation-attributes/quantizationgranularity
+
 
 Introduction
 ~~~~~~~~~~~~
