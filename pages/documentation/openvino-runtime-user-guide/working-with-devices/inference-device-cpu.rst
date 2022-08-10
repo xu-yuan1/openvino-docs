@@ -82,7 +82,7 @@ See the :ref:`low-precision optimization guide <doxid-openvino_docs_model_optimi
 for more details on how to get a quantized model.
 
 .. note:: 
-   
+
    Platforms that do not support Intel® AVX512-VNNI have a known "saturation issue" 
    that may lead to reduced computational accuracy for ``u8/i8`` precision calculations. 
    See the :ref:`saturation (overflow) issue section <doxid-pot_saturation_issue>` to 
@@ -166,14 +166,14 @@ the simulation, the ``:ref:`ov::hint::inference_precision <doxid-group__ov__runt
 has to be explicitly set to ``:ref:`ov::element::bf16 <doxid-group__ov__element__cpp__api_1ga57b838ff7f62e66151e0b53b24c27819>```.
 
 .. note:: 
-   
+
    If ``:ref:`ov::hint::inference_precision <doxid-group__ov__runtime__cpp__prop__api_1gad605a888f3c9b7598ab55023fbf44240>``` 
    is set to ``:ref:`ov::element::bf16 <doxid-group__ov__element__cpp__api_1ga57b838ff7f62e66151e0b53b24c27819>``` 
    on a CPU without native bfloat16 support or bfloat16 simulation mode, an exception is thrown.
 
 
 .. note:: 
-   
+
    Due to the reduced mantissa size of the ``bfloat16`` data type, the resulting 
    ``bf16`` inference accuracy may differ from the ``f32`` inference, especially 
    for models that were not trained using the ``bfloat16`` data type. If the ``bf16`` 
@@ -219,7 +219,7 @@ If either ``ov::num_streams(n_streams)`` with ``n_streams > 1`` or ``ov::hint::p
 For more details, see the :ref:`optimization guide <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`.
 
 .. note:: 
-   
+
    When it comes to latency, be aware that running only one stream on multi-socket 
    platform may introduce additional overheads on data transfer between NUMA nodes. 
    In that case it is better to use the 
@@ -233,7 +233,7 @@ Dynamic Shapes
 CPU provides full functional support for models with dynamic shapes in terms of the opset coverage.
 
 .. note:: 
-   
+
    The CPU plugin does not support tensors with dynamically changing rank. In case 
    of an attempt to infer a model with such tensors, an exception will be thrown.
 
@@ -267,7 +267,7 @@ To do so, set dynamic shapes explicitly, with defined upper bounds.
 
 
 .. note:: 
-   
+
    Using fully undefined shapes may result in significantly higher memory consumption 
    compared to inferring the same model with static shapes. If memory consumption is 
    unacceptable but dynamic shapes are still required, the model can be reshaped using 
@@ -477,13 +477,13 @@ property must be set to `True`:
 
 .. tab:: C++
 
-   .. doxygensnippet:: snippets/ov_denormals.cpp
+   .. doxygensnippet:: ../../snippets/ov_denormals.cpp
       :language: cpp
       :fragment: [ov:intel_cpu:denormals_optimization:part0]
 
 .. tab:: Python
 
-   .. doxygensnippet:: snippets/ov_denormals.py
+   .. doxygensnippet:: ../../snippets/ov_denormals.py
       :language: python
       :fragment: [ov:intel_cpu:denormals_optimization:part0]
 

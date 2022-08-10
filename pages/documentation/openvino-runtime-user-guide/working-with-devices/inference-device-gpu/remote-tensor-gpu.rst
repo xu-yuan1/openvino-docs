@@ -821,7 +821,10 @@ Examples
 
 To see pseudo-code of usage examples, refer to the sections below.
 
-.. note:: For low-level parameter usage examples, see the source code of user-side wrappers from the include files mentioned above.
+.. note::
+
+   For low-level parameter usage examples, see the source code of user-side 
+	wrappers from the include files mentioned above.
 
 .. raw:: html
 

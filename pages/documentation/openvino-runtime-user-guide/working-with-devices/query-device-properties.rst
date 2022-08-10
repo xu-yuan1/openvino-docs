@@ -193,7 +193,10 @@ The code below demonstrates how to query ``HETERO`` device priority of devices w
 
 
 
-.. note:: All properties have a type, which is specified during property declaration. Based on this, actual type under ``auto`` is automatically deduced by C++ compiler.
+.. note::
+
+   All properties have a type, which is specified during property declaration. 
+   Based on this, actual type under ``auto`` is automatically deduced by C++ compiler.
 
 
 
@@ -261,7 +264,17 @@ To extract device properties such as available devices (``:ref:`ov::available_de
 
 A returned value appears as follows: ``Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz``.
 
-.. note:: In order to understand a list of supported properties on ``:ref:`ov::Core <doxid-classov_1_1_core>``` or ``:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>``` levels, use ``:ref:`ov::supported_properties <doxid-group__ov__runtime__cpp__prop__api_1ga097f1274f26f3f4e1aa4fc3928748592>``` which contains a vector of supported property names. Properties which can be changed, has ``:ref:`ov::PropertyName::is_mutable <doxid-structov_1_1_property_name_1a7c31d6356fad04394463ec5a3b9b4148>``` returning the ``true`` value. Most of the properites which are changable on ``:ref:`ov::Core <doxid-classov_1_1_core>``` level, cannot be changed once the model is compiled, so it becomes immutable read-only property.
+.. note::
+
+   In order to understand a list of supported properties on 
+   ``:ref:`ov::Core <doxid-classov_1_1_core>``` or 
+   ``:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>``` 
+   levels, use ``:ref:`ov::supported_properties <doxid-group__ov__runtime__cpp__prop__api_1ga097f1274f26f3f4e1aa4fc3928748592>``` 
+   which contains a vector of supported property names. Properties which can be 
+   changed, has ``:ref:`ov::PropertyName::is_mutable <doxid-structov_1_1_property_name_1a7c31d6356fad04394463ec5a3b9b4148>``` 
+   returning the ``true`` value. Most of the properites which are changable on 
+   ``:ref:`ov::Core <doxid-classov_1_1_core>``` level, cannot be changed once the 
+   model is compiled, so it becomes immutable read-only property.
 
 
 

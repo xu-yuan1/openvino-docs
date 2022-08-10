@@ -15,7 +15,7 @@ GPU Device
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_OV_UG_supported_plugins_GPU_RemoteTensor_API
+   ./inference-device-gpu/remote-tensor-gpu
 
 The GPU plugin is an OpenCL based plugin for inference of deep neural networks on Intel GPUs, both integrated and discrete ones. For an in-depth description of the GPU plugin, see:
 
@@ -387,7 +387,12 @@ Selected precision of each primitive depends on the operation precision in IR, q
 
 Floating-point precision of a GPU primitive is selected based on operation precision in the OpenVINO IR, except for the :ref:`compressed f16 OpenVINO IR form <doxid-openvino_docs__m_o__d_g__f_p16__compression>`, which is executed in the ``f16`` precision.
 
-.. note:: Hardware acceleration for ``i8`` / ``u8`` precision may be unavailable on some platforms. In such cases, a model is executed in the floating-point precision taken from IR. Hardware support of ``u8`` / ``i8`` acceleration can be queried via the ``:ref:`ov::device::capabilities <doxid-group__ov__runtime__cpp__prop__api_1gadb13d62787fc4485733329f044987294>``` property.
+.. note::
+
+   Hardware acceleration for ``i8`` / ``u8`` precision may be unavailable on some 
+	platforms. In such cases, a model is executed in the floating-point precision 
+	taken from IR. Hardware support of ``u8`` / ``i8`` acceleration can be queried 
+	via the ``:ref:`ov::device::capabilities <doxid-group__ov__runtime__cpp__prop__api_1gadb13d62787fc4485733329f044987294>``` property.
 
 
 
@@ -697,7 +702,12 @@ Multi-stream Execution
 
 If either the ``ov::num_streams(n_streams)`` with ``n_streams > 1`` or the ``ov::hint::performance_mode(ov::hint::PerformanceMode::THROUGHPUT)`` property is set for the GPU plugin, multiple streams are created for the model. In the case of GPU plugin each stream has its own host thread and an associated OpenCL queue which means that the incoming infer requests can be processed simultaneously.
 
-.. note:: Simultaneous scheduling of kernels to different queues does not mean that the kernels are actually executed in parallel on the GPU device. The actual behavior depends on the hardware architecture and in some cases the execution may be serialized inside the GPU driver.
+.. note::
+
+   Simultaneous scheduling of kernels to different queues does not mean that the 
+	kernels are actually executed in parallel on the GPU device. The actual behavior 
+	depends on the hardware architecture and in some cases the execution may be 
+	serialized inside the GPU driver.
 
 
 
@@ -710,7 +720,10 @@ Dynamic Shapes
 
 The GPU plugin supports dynamic shapes for batch dimension only (specified as ``N`` in the :ref:`layouts terms <doxid-openvino_docs__o_v__u_g__layout__overview>`) with a fixed upper bound. Any other dynamic dimensions are unsupported. Internally, GPU plugin creates ``log2(N)`` (``N`` - is an upper bound for batch dimension here) low-level execution graphs for batch sizes equal to powers of 2 to emulate dynamic behavior, so that incoming infer request with a specific batch size is executed via a minimal combination of internal networks. For example, batch size 33 may be executed via 2 internal networks with batch size 32 and 1.
 
-.. note:: Such approach requires much more memory and the overall model compilation time is significantly longer, compared to the static batch scenario.
+.. note::
+
+   Such approach requires much more memory and the overall model compilation 
+	time is significantly longer, compared to the static batch scenario.
 
 
 

@@ -7,16 +7,12 @@ VPU Devices
 
 :target:`doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u_1md_openvino_docs_ov_runtime_ug_supported_plugins_vpu`
 
-
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_OV_UG_supported_plugins_MYRIAD
-   openvino_docs_OV_UG_supported_plugins_HDDL
+   ./inference-device-vpu/myriad-device
+   ./inference-device-vpu/hddl-device
 
 This chapter provides information on the OpenVINO™ Runtime plugins that enable inference of deep learning models on the supported VPU devices:
 
@@ -24,10 +20,10 @@ This chapter provides information on the OpenVINO™ Runtime plugins that enable
 
 * Intel® Vision Accelerator Design with Intel® Movidius™ VPUs — Supported by the :ref:`HDDL Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__h_d_d_l>`
 
-.. note:: With the OpenVINO™ 2020.4 release, Intel® Movidius™ Neural Compute Stick powered by the Intel® Movidius™ Myriad™ 2 is no longer supported.
+.. note::
 
-
-
+   With the OpenVINO™ 2020.4 release, Intel® Movidius™ Neural Compute Stick 
+   powered by the Intel® Movidius™ Myriad™ 2 is no longer supported.
 
 
 Supported Networks
@@ -143,7 +139,9 @@ Certain layers can be merged into 'convolution', 'ReLU', and 'Eltwise' layers ac
 Joining Rules
 +++++++++++++
 
-.. note:: Application of these rules depends on tensor sizes and available resources.
+.. note::
+
+   Application of these rules depends on tensor sizes and available resources.
 
 
 
@@ -166,15 +164,19 @@ Decomposition Rules
   
   Names of tiled layers contain the ``@soc=M/N`` part, where ``M`` is the tile number and ``N`` is the number of tiles:
   
-  .. image:: yolo_tiny_v1.png
+  .. image:: ./_assets/yolo_tiny_v1.png
 
-.. note:: Nominal layers, such as ``Shrink`` and ``Expand``, are not executed.
+.. note::
+
+   Nominal layers, such as ``Shrink`` and ``Expand``, are not executed.
 
 
 
 
 
-.. note:: VPU plugins can add extra layers like ``Copy``.
+.. note::
+
+   VPU plugins can add extra layers like ``Copy``.
 
 
 

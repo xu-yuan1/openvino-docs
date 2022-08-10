@@ -11,12 +11,12 @@ Working with devices
    :maxdepth: 1
    :hidden:
 
-   ../../openvino_docs_OV_UG_query_api
-   ../../openvino_docs_OV_UG_supported_plugins_CPU
-   ../../openvino_docs_OV_UG_supported_plugins_GPU
-   ../../openvino_docs_OV_UG_supported_plugins_VPU
-   ../../openvino_docs_OV_UG_supported_plugins_GNA
-   ../../openvino_docs_OV_UG_supported_plugins_ARM_CPU
+   ./working-with-devices/query-device-properties
+   ./working-with-devices/inference-device-cpu
+   ./working-with-devices/inference-device-gpu
+   ./working-with-devices/inference-device-vpu
+   ./working-with-devices/inference-device-gna
+   ./working-with-devices/inference-device-arm-cpu
 
 The OpenVINO Runtime provides capabilities to infer deep learning models on the following device types with corresponding plugins:
 

@@ -31,7 +31,13 @@ When a model is run, using the GNA plugin, it is compiled internally for the spe
    "GNA 2.0", "Supported", "Not supported (incompatible layers emulated on CPU)"
    "GNA 3.0", "Partially supported", "Supported"
 
-.. note:: In most cases, a network compiled for GNA 2.0 runs as expected on GNA 3.0. However, the performance may be worse compared to when a network is compiled specifically for the latter. The exception is a network with convolutions with the number of filters greater than 8192 (see the `Models and Operations Limitations <#models-and-operations-limitations>`__ section).
+.. note::
+
+   In most cases, a network compiled for GNA 2.0 runs as expected on GNA 3.0. 
+   However, the performance may be worse compared to when a network is compiled 
+   specifically for the latter. The exception is a network with convolutions with 
+   the number of filters greater than 8192 
+   (see the `Models and Operations Limitations <#models-and-operations-limitations>`__ section).
 
 
 
@@ -141,7 +147,10 @@ Starting with the 2021.4.1 release of OpenVINO™ and the 03.00.00.1363 version 
 
 
 
-.. note:: Due to the "first come - first served" nature of GNA driver and the QoS feature, this mode may lead to increased CPU consumption
+.. note::
+
+   Due to the "first come - first served" nature of GNA driver and the QoS feature, 
+   this mode may lead to increased CPU consumption
 
 
 
@@ -322,7 +331,12 @@ Stateful Models
 
 GNA plugin natively supports stateful models. For more details on such models, refer to the :ref:`Stateful models <doxid-openvino_docs__o_v__u_g_network_state_intro>`.
 
-.. note:: The GNA is typically used in streaming scenarios when minimizing latency is important. Taking into account that POT does not support the ``TensorIterator`` operation, the recommendation is to use the ``--transform`` option of the Model Optimizer to apply ``LowLatency2`` transformation when converting an original model.
+.. note::
+
+   The GNA is typically used in streaming scenarios when minimizing latency is 
+   important. Taking into account that POT does not support the ``TensorIterator`` 
+   operation, the recommendation is to use the ``--transform`` option of the Model 
+   Optimizer to apply ``LowLatency2`` transformation when converting an original model.
 
 
 
@@ -454,7 +468,13 @@ The following tables provide a more explicit representation of the Intel(R) GNA 
 
 :download:`Table of Maximum Input Tensor Widths (W) vs. Rest of Parameters (Input and Kernel Precision: i8) <../../../docs/OV_Runtime_UG/supported_plugins/files/GNA_Maximum_Input_Tensor_Widths_i8.csv>`
 
-.. note:: The above limitations only apply to the new hardware 2D convolution operation. When possible, the Intel® GNA plugin graph compiler flattens 2D convolutions so that the second generation Intel® GNA 1D convolution operations (without these limitations) may be used. The plugin will also flatten 2D convolutions regardless of the sizes if GNA 2.0 compilation target is selected (see below).
+.. note::
+
+   The above limitations only apply to the new hardware 2D convolution operation. 
+   When possible, the Intel® GNA plugin graph compiler flattens 2D convolutions so 
+   that the second generation Intel® GNA 1D convolution operations (without these 
+   limitations) may be used. The plugin will also flatten 2D convolutions regardless 
+   of the sizes if GNA 2.0 compilation target is selected (see below).
 
 
 
@@ -620,7 +640,10 @@ then set batch size:
 
 Increasing batch size only improves efficiency of ``MatMul`` layers.
 
-.. note:: For models with ``Convolution``, ``LSTMCell``, or ``ReadValue`` / ``Assign`` operations, the only supported batch size is 1.
+.. note::
+
+   For models with ``Convolution``, ``LSTMCell``, or ``ReadValue`` / ``Assign`` 
+   operations, the only supported batch size is 1.
 
 
 
