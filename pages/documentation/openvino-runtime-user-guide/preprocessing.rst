@@ -7,17 +7,13 @@ Preprocessing
 
 :target:`doxid-openvino_docs__o_v__u_g__preprocessing__overview_1md_openvino_docs_ov_runtime_ug_preprocessing_overview`
 
-
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   ../../openvino_docs_OV_UG_Preprocessing_Details
-   ../../openvino_docs_OV_UG_Layout_Overview
-   ../../openvino_docs_OV_UG_Preprocess_Usecase_save
+   ./preprocessing/preprocessing-api-details
+   ./preprocessing/layout-api-overview
+   ./preprocessing/preprocessing-use-case
 
 Introduction
 ~~~~~~~~~~~~
@@ -58,7 +54,10 @@ Intuitively, preprocessing API consists of the following parts:
 
 #. **Model** - specifies model data format. Usually, precision and shape are already known for model, only additional information, like :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` can be specified.
 
-.. note:: Graph modifications of a model shall be performed after the model is read from a drive and **before** it is loaded on the actual device.
+.. note::
+
+   Graph modifications of a model shall be performed after the model is read 
+	from a drive and **before** it is loaded on the actual device.
 
 
 
