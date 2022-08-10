@@ -9,7 +9,10 @@ Libraries for Local Distribution
 
 Local dsitribution is also appropriate for OpenVINO binaries built from sources using `Build instructions <https://github.com/openvinotoolkit/openvino/wiki#how-to-build>`__, but the guide below supposes OpenVINO Runtime is built dynamically. For case of `Static OpenVINO Runtime <https://github.com/openvinotoolkit/openvino/wiki/StaticLibraries>`__ select the required OpenVINO capabilities on CMake configuration stage using `CMake Options for Custom Compilation <https://github.com/openvinotoolkit/openvino/wiki/CMakeOptionsForCustomCompilation>`__, the build and link the OpenVINO components into the final application.
 
-.. note:: The steps below are operating system independent and refer to a library file name without any prefixes (like ``lib`` on Unix systems) or suffixes (like ``.dll`` on Windows OS). Do not put ``.lib`` files on Windows OS to the distribution, because such files are needed only on a linker stage.
+.. note:: The steps below are operating system independent and refer to a library 
+   file name without any prefixes (like ``lib`` on Unix systems) or suffixes (like 
+   ``.dll`` on Windows OS). Do not put ``.lib`` files on Windows OS to the distribution, 
+   because such files are needed only on a linker stage.
 
 
 
@@ -29,7 +32,7 @@ Libraries for Pluggable Components
 
 The picture below presents dependencies between the OpenVINO Runtime core and pluggable libraries:
 
-.. image:: deployment_full.png
+.. image:: ./_assets/deployment_full.png
 
 Libraries for Compute Devices
 -----------------------------
@@ -147,7 +150,12 @@ The ``HETERO``, ``MULTI``, ``BATCH`` and ``AUTO`` execution modes can also be us
 
 * If :ref:`AUTO <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` is used explicitly in the application or ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` is used without specifying a device, put ``openvino_auto_plugin`` to the distribution.
 
-.. note:: Automatic Device Selection relies on :ref:`inference device plugins <doxid-openvino_docs__o_v__u_g__working_with_devices>`. If you are not sure about what inference devices are available on target system, put all the inference plugin libraries to the distribution. If ``:ref:`ov::device::priorities <doxid-group__ov__runtime__cpp__prop__api_1gae88af90a18871677f39739cb0ef0101e>``` is used for ``AUTO`` to specify a limited device list, grab the corresponding device plugins only.
+.. note:: Automatic Device Selection relies on 
+   :ref:`inference device plugins <doxid-openvino_docs__o_v__u_g__working_with_devices>`. 
+   If you are not sure about what inference devices are available on target system, 
+   put all the inference plugin libraries to the distribution. If 
+   ``:ref:`ov::device::priorities <doxid-group__ov__runtime__cpp__prop__api_1gae88af90a18871677f39739cb0ef0101e>``` 
+   is used for ``AUTO`` to specify a limited device list, grab the corresponding device plugins only.
 
 
 
@@ -172,7 +180,10 @@ OpenVINO Runtime uses frontend libraries dynamically to read models in different
 
 Depending on the model format types that are used in the application in ``:ref:`ov::Core::read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>```, pick up the appropriate libraries.
 
-.. note:: To optimize the size of final distribution package, you are recommended to convert models to OpenVINO IR by using :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`. This way you don't have to keep ONNX, PaddlePaddle, and other frontend libraries in the distribution package.
+.. note:: To optimize the size of final distribution package, you are recommended 
+   to convert models to OpenVINO IR by using 
+   :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`. 
+   This way you don't have to keep ONNX, PaddlePaddle, and other frontend libraries in the distribution package.
 
 
 
@@ -181,7 +192,9 @@ Depending on the model format types that are used in the application in ``:ref:`
 (Legacy) Preprocessing via G-API
 --------------------------------
 
-.. note:: :ref:`G-API <doxid-openvino_docs_gapi_gapi_intro>` preprocessing is a legacy functionality, use :ref:`preprocessing capabilities from OpenVINO 2.0 <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` which do not require any additional libraries.
+.. note:: :ref:`G-API <doxid-openvino_docs_gapi_gapi_intro>` preprocessing is a legacy 
+   functionality, use :ref:`preprocessing capabilities from OpenVINO 2.0 <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` 
+   which do not require any additional libraries.
 
 
 

@@ -49,7 +49,7 @@ Documentation
 
    ./documentation/openvino-deployment-introduction
    ./documentation/openvino-runtime-user-guide
-   openvino_deployment_guide
+   ./documentation/openvino-deployment-guide
    openvino_inference_engine_tools_compile_tool_README
 
 

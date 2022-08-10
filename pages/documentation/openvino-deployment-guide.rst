@@ -15,8 +15,8 @@ Deploying Your Applications with OpenVINO™
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_install_guides_deployment_manager_tool
-   openvino_docs_deploy_local_distribution
+   ./openvino-deployment-guide/deployment-manager-tool
+   ./openvino-deployment-guide/local-distribution
 
 Once the :ref:`OpenVINO™ application development <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>` has been finished, application developers usually need to deploy their applications to end users. There are several ways to achieve that:
 
@@ -63,7 +63,7 @@ Granularity of Major Distribution Types
 
 The granularity of OpenVINO packages may vary for different distribution types. For example, the PyPI distribution of OpenVINO has a `single 'openvino' package <https://pypi.org/project/openvino/>`__ that contains all the runtime libraries and plugins, while a :ref:`local distribution <doxid-openvino_docs_deploy_local_distribution>` is a more configurable type providing higher granularity. Below are important details of the set of libraries included in the OpenVINO Runtime package:
 
-.. image:: deployment_simplified.png
+.. image:: ./_assets/deployment_simplified.png
 
 * The main library ``openvino`` is used by users' C++ applications to link against with. The library provides all OpenVINO Runtime public APIs, including both API 2.0 and the previous Inference Engine and nGraph APIs. For C language applications, ``openvino_c`` is additionally required for distribution.
 
@@ -75,5 +75,9 @@ Here the term "optional" means that if the application does not use the capabili
 
 Building a local distribution will require more detailed information, and you will find it in the dedicated :ref:`Libraries for Local Distribution <doxid-openvino_docs_deploy_local_distribution>` article.
 
-.. note:: Depending on your target OpenVINO devices, the following configurations might be needed for deployed machines: :ref:`Configurations for GPU <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`, :ref:`Configurations for GNA <doxid-openvino_docs_install_guides_configurations_for_intel_gna>`, :ref:`Configurations for NCS2 <doxid-openvino_docs_install_guides_configurations_for_ncs2>`, :ref:`Configurations for VPU <doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu>`.
+.. note:: Depending on your target OpenVINO devices, the following configurations 
+   might be needed for deployed machines: :ref:`Configurations for GPU <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`, 
+   :ref:`Configurations for GNA <doxid-openvino_docs_install_guides_configurations_for_intel_gna>`, 
+   :ref:`Configurations for NCS2 <doxid-openvino_docs_install_guides_configurations_for_ncs2>`, 
+   :ref:`Configurations for VPU <doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu>`.
 

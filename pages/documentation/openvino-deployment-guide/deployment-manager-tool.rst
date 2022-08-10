@@ -78,14 +78,14 @@ To launch the Deployment Manager in interactive mode, open a new terminal window
 
 The target device selection dialog is displayed:
 
-.. image:: selection_dialog.png
+.. image:: ./_assets/selection_dialog.png
 	:alt: Deployment Manager selection dialog
 
 Use the options provided on the screen to complete the selection of the target devices, and press **Enter** to proceed to the package generation dialog. To interrupt the generation process and exit the program, type **q** and press **Enter**.
 
 Once the selection is accepted, the package generation dialog will appear:
 
-.. image:: configuration_dialog.png
+.. image:: ./_assets/configuration_dialog.png
 	:alt: Deployment Manager configuration dialog
 
 The target devices selected in the previous step appear on the screen. To go back and change the selection, type **b** and press **Enter**. Use the default settings, or use the following options to configure the generation process:
