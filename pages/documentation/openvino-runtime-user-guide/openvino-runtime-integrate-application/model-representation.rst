@@ -23,26 +23,21 @@ OpenVINO™ Runtime enables you to use different approaches to work with model i
 * The ``:ref:`ov::Model::input() <doxid-classov_1_1_model_1a5deeced6688795bc6cdad9ce74d972e7>``` and ``:ref:`ov::Model::output() <doxid-classov_1_1_model_1a54c76c98bc7dd8fb04e866d06134efc7>``` methods can be used with the index of inputs or outputs from the framework model to get specific ports by index.
 
 * You can use the tensor name of input or output from the original framework model together with the ``:ref:`ov::Model::input() <doxid-classov_1_1_model_1a5deeced6688795bc6cdad9ce74d972e7>``` or ``:ref:`ov::Model::output() <doxid-classov_1_1_model_1a54c76c98bc7dd8fb04e866d06134efc7>``` methods to get specific ports. It means that you do not need to have any additional mapping of names from framework to OpenVINO as it was before. OpenVINO™ Runtime allows the usage of native framework tensor names, for example:
-  
-  .. code-block:: cpp
-  
-  	\n\xmlonly<sphinxtabset></sphinxtabset>\endxmlonly\n
-  
-  	\n\xmlonly<sphinxtab>C++</sphinxtab>\endxmlonly\n
-  
-  	@snippet docs/snippets/ov_model_snippets.cpp all_inputs_ouputs
-  
-  	\n\xmlonly<endsphinxtab></endsphinxtab>\endxmlonly\n
-  
-  	\n\xmlonly<sphinxtab>Python</sphinxtab>\endxmlonly\n
-  
-  	@snippet docs/snippets/ov_model_snippets.py all_inputs_ouputs
-  
-  	\n\xmlonly<endsphinxtab></endsphinxtab>\endxmlonly\n
-  
-  	\n\xmlonly<endsphinxtabset></endsphinxtabset>\endxmlonly\n
-  
-  For details on how to build a model in OpenVINO™ Runtime, see the :ref:`Build a Model in OpenVINO™ Runtime <doxid-openvino_docs__o_v__u_g__model__representation_1ov_ug_build_model>` section.
+
+.. tab:: C++
+
+   .. doxygensnippet:: ../../../snippets/ov_model_snippets.cpp
+      :language: cpp
+      :fragment: all_inputs_ouputs
+
+.. tab:: Python
+
+   .. doxygensnippet:: ../../../snippets/ov_model_snippets.py
+      :language: python
+      :fragment: all_inputs_ouputs
+
+
+For details on how to build a model in OpenVINO™ Runtime, see the :ref:`Build a Model in OpenVINO™ Runtime <doxid-openvino_docs__o_v__u_g__model__representation_1ov_ug_build_model>` section.
 
 OpenVINO™ Runtime model representation uses special classes to work with model data types and shapes. The ``:ref:`ov::element::Type <doxid-classov_1_1element_1_1_type>``` is used for data types. See the section below for representation of shapes.
 

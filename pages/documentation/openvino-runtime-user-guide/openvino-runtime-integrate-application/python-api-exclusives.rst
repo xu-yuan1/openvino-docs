@@ -242,7 +242,12 @@ Some functions in Python API release the Global Lock Interpreter (GIL) while run
 	# running the inference
 	request.infer(input_data)
 
-.. note:: While GIL is released, functions can still modify and/or operate on Python objects in C++. Hence, there is no reference counting. You should pay attention to thread safety in case sharing of these objects with another thread occurs. It might affect code only if multiple threads are spawned in Python.
+.. note::
+
+   While GIL is released, functions can still modify and/or operate on Python 
+   objects in C++. Hence, there is no reference counting. You should pay attention 
+   to thread safety in case sharing of these objects with another thread occurs. 
+   It might affect code only if multiple threads are spawned in Python.
 
 
 

@@ -412,7 +412,12 @@ When you are running several inference requests in parallel, a device can proces
 
    </div>
 
-.. note:: Use weak reference of infer_request (``:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>`\*``, ``:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>`&``, ``std::weal_ptr<:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>`>``, etc.) in the callback. It is necessary to avoid cyclic references.
+.. note::
+
+   Use weak reference of infer_request (``:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>`\*``, 
+   ``:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>`&``, 
+   ``std::weal_ptr<:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>`>``, 
+   etc.) in the callback. It is necessary to avoid cyclic references.
 
 
 
