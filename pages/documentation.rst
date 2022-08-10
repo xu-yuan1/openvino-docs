@@ -47,7 +47,7 @@ Documentation
    :caption: Deploying Inference
    :hidden:
 
-   openvino_docs_deployment_guide_introduction
+   ./documentation/openvino-deployment-introduction
    ./documentation/openvino-runtime-user-guide
    openvino_deployment_guide
    openvino_inference_engine_tools_compile_tool_README
