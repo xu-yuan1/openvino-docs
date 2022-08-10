@@ -14,17 +14,17 @@ OpenVINO™ Deep Learning Workbench Overview
    :maxdepth: 1
    :hidden:
 
-   workbench_docs_Workbench_DG_Install
-   workbench_docs_Workbench_DG_Work_with_Models_and_Sample_Datasets
-   Tutorials <workbench_docs_Workbench_DG_Tutorials>
-   User Guide <workbench_docs_Workbench_DG_User_Guide>
-   workbench_docs_Workbench_DG_Troubleshooting
+   ./workbench-overview/workbench-install
+   ./workbench-overview/workbench-get-started
+   Tutorials <./workbench-overview/workbench-tutorials>
+   User Guide <./workbench-overview/workbench-user-guide>
+   ./workbench-overview/workbench-troubleshooting
 
 Deep Learning Workbench (DL Workbench) is an official OpenVINO™ graphical interface designed to make the production of pretrained deep learning Computer Vision and Natural Language Processing models significantly easier.
 
 Minimize the inference-to-deployment workflow timing for neural models right in your browser: import a model, analyze its performance and accuracy, visualize the outputs, optimize and make the final model deployment-ready in a matter of minutes. DL Workbench takes you through the full OpenVINO™ workflow, providing the opportunity to learn about various toolkit components.
 
-.. image:: openvino_dl_wb.png
+.. image:: ./_assets/openvino_dl_wb.png
 
 .. link-button:: workbench_docs_Workbench_DG_Start_DL_Workbench_in_DevCloud
     :type: ref
@@ -73,11 +73,11 @@ General Workflow
 
 The diagram below illustrates the typical DL Workbench workflow. Click to see the full-size image:
 
-.. image:: openvino_dl_wb_diagram_overview.svg
+.. image:: ./_assets/dl_wb_diagram_overview.svg
 
 Get a quick overview of the workflow in the DL Workbench User Interface:
 
-.. image:: openvino_dl_wb_workflow.gif
+.. image:: ./_assets/openvino_dl_wb_workflow.gif
 
 OpenVINO™ Toolkit Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,7 +118,7 @@ Contact Us
 
 Minimize the inference-to-deployment workflow timing for neural models right in your browser: import a model, analyze its performance and accuracy, visualize the outputs, optimize and make the final model deployment-ready in a matter of minutes. DL Workbench takes you through the full OpenVINO™ workflow, providing the opportunity to learn about various toolkit components.
 
-.. image:: openvino_dl_wb.png
+.. image:: ./_assets/openvino_dl_wb.png
 
 .. link-button:: workbench_docs_Workbench_DG_Install
     :type: ref
@@ -167,11 +167,11 @@ General Workflow
 
 The diagram below illustrates the typical DL Workbench workflow. Click to see the full-size image:
 
-.. image:: dl_wb_diagram_overview.svg
+.. image:: ./_assets/dl_wb_diagram_overview.svg
 
 Get a quick overview of the workflow in the DL Workbench User Interface:
 
-.. image:: workflow_DL_Workbench.gif
+.. image:: ./_assets/workflow_DL_Workbench.gif
 
 OpenVINO™ Toolkit Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

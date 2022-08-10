@@ -60,10 +60,10 @@ Documentation
 
    openvino_ecosystem
    ovms_what_is_openvino_model_server
-   ovsa_get_started
+   ./documentation/openvino-security-add-on
    ovtf_integration
    ote_documentation
-   workbench_docs_Workbench_DG_Introduction
+   ./documentation/workbench-overview
 
 
 .. toctree::

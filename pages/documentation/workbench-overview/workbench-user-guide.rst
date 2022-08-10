@@ -15,18 +15,18 @@ OpenVINO™ Deep Learning Workbench User Guide
    :maxdepth: 1
    :hidden:
 
-   workbench_docs_Workbench_DG_Select_Models
-   workbench_docs_Workbench_DG_Generate_Datasets
-   workbench_docs_Workbench_DG_Select_Environment
-   Optimize Model Performance <workbench_docs_Workbench_DG_Int_8_Quantization>
-   Explore Inference Configurations <workbench_docs_Workbench_DG_Run_Inference>
-   Visualize Model Output <workbench_docs_Workbench_DG_Visualize_Accuracy>
-   workbench_docs_Workbench_DG_Measure_Accuracy
-   Create Deployment Package <workbench_docs_Workbench_DG_Deployment_Package>
-   workbench_docs_Workbench_DG_Export_Project
-   Learn OpenVINO in DL Workbench <workbench_docs_Workbench_DG_Jupyter_Notebooks_CLI>
-   Restore DL Workbench State <workbench_docs_Workbench_DG_Persist_Database>
-   Run DL Workbench Securely <workbench_docs_security_Workbench>
+   ../../workbench_docs_Workbench_DG_Select_Models
+   ../../workbench_docs_Workbench_DG_Generate_Datasets
+   ../../workbench_docs_Workbench_DG_Select_Environment
+   ../../Optimize Model Performance <workbench_docs_Workbench_DG_Int_8_Quantization>
+   ../../Explore Inference Configurations <workbench_docs_Workbench_DG_Run_Inference>
+   ../../Visualize Model Output <workbench_docs_Workbench_DG_Visualize_Accuracy>
+   ../../workbench_docs_Workbench_DG_Measure_Accuracy
+   ../../Create Deployment Package <workbench_docs_Workbench_DG_Deployment_Package>
+   ../../workbench_docs_Workbench_DG_Export_Project
+   ../../Learn OpenVINO in DL Workbench <workbench_docs_Workbench_DG_Jupyter_Notebooks_CLI>
+   ../../Restore DL Workbench State <workbench_docs_Workbench_DG_Persist_Database>
+   ../../Run DL Workbench Securely <workbench_docs_security_Workbench>
 
 .. panels::
 

@@ -15,7 +15,7 @@ Troubleshooting
    :maxdepth: 1
    :hidden:
 
-   workbench_docs_Workbench_DG_DC_Troubleshooting
+   ../../workbench_docs_Workbench_DG_DC_Troubleshooting
 
 If you encounter an issue when running the DL Workbench, follow the steps below:
 
@@ -36,7 +36,7 @@ To learn more about an error, download a ``.txt`` file with server logs. Click t
 
 
 
-.. image:: download_logs.png
+.. image:: ./_assets/download_logs.png
 
 .. note:: Server logs contain sensitive information like data on your models. If you do not wish to share this information, attach only the ``RUN COMMAND`` part.
 
@@ -145,13 +145,13 @@ To resolve the problem, follow the steps below:
 Incompatible Model and Dataset
 ------------------------------
 
-.. image:: troubleshooting_model_dataset_01-b.png
+.. image:: ./_assets/troubleshooting_model_dataset_01-b.png
 
 This error appears due to model and dataset type incompatibility.
 
 * Make sure you select a correct model task in the :ref:`Accuracy Settings step <doxid-workbench_docs__workbench__d_g__configure__accuracy__settings>`.
 
-.. image:: configurator_usage-b.png
+.. image:: ./_assets/configurator_usage-b.png
 
 Also, check that you do not select a VOC Object-Detection dataset for a Classification model, or an ImageNet Classification dataset for an Object-Detection model.
 
@@ -171,7 +171,7 @@ Nginx Fails to Start
 
 The error shown below may appear due to incorrect user permissions set for an SSL key and/or SSL certificate.
 
-.. image:: ssl_files_permissions.png
+.. image:: ./_assets/ssl_files_permissions.png
 
 Check the key and certificate permissions. They must have at least \*\*4 mode, which means reading for ``others`` group.
 
@@ -239,7 +239,7 @@ If the automatic setup of GPU drivers fails, install dependencies on the remote 
 Remote Target Failure: Authentication Error
 -------------------------------------------
 
-.. image:: authenticationerror.png
+.. image:: ./_assets/authenticationerror.png
 
 Check the following parameters if you can not authenticate to the remote machine:
 
