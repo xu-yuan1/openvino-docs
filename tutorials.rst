@@ -14,8 +14,8 @@ Tutorials
    :caption: Notebooks
    :hidden:
 
-   notebook-installation
-   notebooks/*
+   notebooks-installation
+
 
 This collection of Python tutorials are written for running on Jupyter notebooks. 
 The tutorials provide an introduction to the OpenVINO™ toolkit and explain how to 
