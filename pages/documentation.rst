@@ -24,7 +24,7 @@ Documentation
    :caption: Converting and Preparing Models
    :hidden:
 
-   model-processing
+   ./documentation/model-processing
    ./documentation/converting-models-with-model-optimizer
    omz_tools_downloader
 

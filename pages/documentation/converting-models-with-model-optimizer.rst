@@ -30,7 +30,7 @@ Converting Models with Model Optimizer
    ./converting-models-with-model-optimizer/converting-caffe-model-with-model-optimizer
    ./converting-models-with-model-optimizer/converting-kaldi-model-with-model-optimizer
    ./converting-models-with-model-optimizer/convert-model-tutorials
-   ../openvino_docs_MO_DG_prepare_model_Model_Optimizer_FAQ
+   ./converting-models-with-model-optimizer/faq-model-optimizer
 
 Model Optimizer is a cross-platform command-line tool that facilitates the transition between training and deployment environments, performs static model analysis, and adjusts deep learning models for optimal execution on end-point target devices.
 
