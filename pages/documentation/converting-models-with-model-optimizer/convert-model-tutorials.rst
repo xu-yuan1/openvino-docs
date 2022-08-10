@@ -40,9 +40,9 @@ Model Conversion Tutorials
    ./convert-model-tutorials/converting-pytorch-rcan-model
    ./convert-model-tutorials/converting-pytorch-rnn-t-model
    ./convert-model-tutorials/converting-pytorch-yolact-model
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_GluonCV_Models
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_mxnet_specific_Convert_Style_Transfer_From_MXNet
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_kaldi_specific_Aspire_Tdnn_Model
+   ./convert-model-tutorials/converting-mxnet-gluoncv-models
+   ./convert-model-tutorials/converting-mxnet-style-transfer-model
+   ./convert-model-tutorials/converting-kaldi-aspire-chain-tdnn-model
 
 This section provides a set of tutorials that demonstrate conversion methods for specific TensorFlow, ONNX, PyTorch, MXNet, and Kaldi models, that unnecessarily cover your case. Before studying the tutorials, try to convert the model out-of-the-box by specifying only the ``--input_model`` parameter in the command line.
 
