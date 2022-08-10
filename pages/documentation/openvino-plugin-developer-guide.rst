@@ -16,14 +16,14 @@ Overview of Inference Engine Plugin Library
    :caption: Converting and Preparing Models
    :hidden:
 
-   Implement Plugin Functionality <openvino_docs_ie_plugin_dg_plugin>
-   Implement Executable Network Functionality <openvino_docs_ie_plugin_dg_executable_network>
-   Implement Synchronous Inference Request <openvino_docs_ie_plugin_dg_infer_request>
-   Implement Asynchronous Inference Request <openvino_docs_ie_plugin_dg_async_infer_request>
-   openvino_docs_ie_plugin_dg_plugin_build
-   openvino_docs_ie_plugin_dg_plugin_testing
-   openvino_docs_ie_plugin_detailed_guides
-   openvino_docs_ie_plugin_api_references
+   ./openvino-plugin-developer-guide/openvino-custom-plugins
+   ./openvino-plugin-developer-guide/executable-network-class-in-custom-plugins
+   ./openvino-plugin-developer-guide/synchronous-inference-request
+   ./openvino-plugin-developer-guide/asynchronous-inference-request
+   ./openvino-plugin-developer-guide/building-custom-plugins-with-cmake
+   ./openvino-plugin-developer-guide/testing-custom-openvino-plugins
+   ../openvino_docs_ie_plugin_detailed_guides
+   ../openvino_docs_ie_plugin_api_references
 
 The plugin architecture of the Inference Engine allows to develop and plug independent inference solutions dedicated to different devices. Physically, a plugin is represented as a dynamic library exporting the single ``CreatePluginEngine`` function that allows to create a new plugin instance.
 
@@ -60,11 +60,7 @@ Inference Engine plugin dynamic library consists of several main components:
    
    * Wraps the :ref:`Inference Request <doxid-openvino_docs_ie_plugin_dg_infer_request>` class and runs pipeline stages in parallel on several task executors based on a device-specific pipeline structure.
 
-.. note:: This documentation is written based on the ``Template`` plugin, which demonstrates plugin
-
-
-
-development details. Find the complete code of the ``Template``, which is fully compilable and up-to-date, at ``<dldt source dir>/docs/template_plugin``.
+.. note:: This documentation is written based on the ``Template`` plugin, which demonstrates plugin development details. Find the complete code of the ``Template``, which is fully compilable and up-to-date, at ``<dldt source dir>/docs/template_plugin``.
 
 Detailed guides
 ~~~~~~~~~~~~~~~

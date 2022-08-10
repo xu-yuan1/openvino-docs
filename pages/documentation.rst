@@ -84,7 +84,7 @@ Documentation
 
    ./documentation/openvino-extensibility-mechanism
    ./documentation/openvino-transformation-api
-   OpenVINO Plugin Developer Guide <openvino_docs_ie_plugin_dg_overview>
+   ./documentation/openvino-plugin-developer-guide
 
 .. toctree::
    :maxdepth: 1
