@@ -30,7 +30,7 @@ Converting a TensorFlow Neural Collaborative Filtering Model
 
 #. Convert the model to the OpenVINO format. If you look at your frozen model, you can see that it has one input that is split into four ``ResourceGather`` layers. (Click image to zoom in.)
 
-.. image:: NCF_start.png
+.. image:: ./_assets/NCF_start.png
 	:alt: NCF model beginning
 
 However, as the Model Optimizer does not support such data feeding, you should skip it. Cut the edges incoming in ``ResourceGather`` port 1:

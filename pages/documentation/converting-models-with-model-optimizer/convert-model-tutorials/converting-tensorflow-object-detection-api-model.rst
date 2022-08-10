@@ -20,7 +20,11 @@ Converting a Model
 
 You can download TensorFlow Object Detection API models from the `TensorFlow 1 Detection Model Zoo <https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md>`__ or `TensorFlow 2 Detection Model Zoo <https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md>`__.
 
-.. note:: Before converting, make sure you have configured Model Optimizer. For configuration steps, refer to the :ref:`Configuring Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
+.. note::
+
+   Before converting, make sure you have configured Model Optimizer. 
+   For configuration steps, refer to the 
+   :ref:`Configuring Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
 
 
 
@@ -88,7 +92,15 @@ To convert a TensorFlow Object Detection API model, run the ``mo`` command with 
 
 * ``--input_shape`` (optional) A custom input image shape. For more information how the ``--input_shape`` parameter is handled for the TensorFlow Object Detection API models, refer to the `Custom Input Shape <#custom-input-shape>`__ guide.
 
-.. note:: The color channel order (RGB or BGR) of an input data should match the channel order of the model training dataset. If they are different, perform the ``RGB<->BGR`` conversion specifying the command-line parameter: ``--reverse_input_channels``. Otherwise, inference results may be incorrect. If you convert a TensorFlow Object Detection API model to use with the OpenVINO sample applications, you must specify the ``--reverse_input_channels`` parameter. For more information about the parameter, refer to the **When to Reverse Input Channels** section of the :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
+.. note::
+
+   The color channel order (RGB or BGR) of an input data should match the channel order 
+   of the model training dataset. If they are different, perform the ``RGB<->BGR`` conversion 
+   specifying the command-line parameter: ``--reverse_input_channels``. Otherwise, 
+   inference results may be incorrect. If you convert a TensorFlow Object Detection API model 
+   to use with the OpenVINO sample applications, you must specify the ``--reverse_input_channels`` 
+   parameter. For more information about the parameter, refer to the **When to Reverse Input Channels** 
+   section of the :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
 
 
 
@@ -183,9 +195,10 @@ The ``--input_shape`` command line parameter should be specified only if the "pa
 
 Models with ``keep_aspect_ratio_resizer`` were trained to recognize object in real aspect ratio, in contrast with most of the classification topologies trained to recognize objects stretched vertically and horizontally as well. By default, Model Optimizer converts topologies with ``keep_aspect_ratio_resizer`` to consume a square input image. If the non-square image is provided as input, it is stretched without keeping aspect ratio that results to object detection quality decrease.
 
-.. note:: It is highly recommended to specify the ``--input_shape`` command line parameter for the models with ``keep_aspect_ratio_resizer``, if the input image dimensions are known in advance.
+.. note::
 
-
+   It is highly recommended to specify the ``--input_shape`` command line parameter 
+   for the models with ``keep_aspect_ratio_resizer``, if the input image dimensions are known in advance.
 
 
 

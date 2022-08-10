@@ -9,7 +9,7 @@ Converting TensorFlow FaceNet Models
 
 There are two inputs in this network: boolean ``phase_train`` which manages state of the graph (train/infer) and ``batch_size`` which is a part of batch joining pattern.
 
-.. image:: FaceNet.png
+.. image:: ./_assets/FaceNet.png
 	:alt: FaceNet model view
 
 Converting a TensorFlow FaceNet Model to the IR

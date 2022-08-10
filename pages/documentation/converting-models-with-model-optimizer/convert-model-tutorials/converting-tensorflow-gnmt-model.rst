@@ -150,7 +150,9 @@ Before converting the model, you need to create a patch file for the repository.
 Converting a GNMT Model to the IR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: Use TensorFlow version 1.13 or lower.
+.. note::
+
+   Use TensorFlow version 1.13 or lower.
 
 
 
@@ -239,7 +241,9 @@ For more information about model cutting, refer to the :ref:`Cutting Off Parts o
 Using a GNMT Model
 ~~~~~~~~~~~~~~~~~~
 
-.. note:: This step assumes you have converted a model to the Intermediate Representation.
+.. note::
+
+   This step assumes you have converted a model to the Intermediate Representation.
 
 
 
@@ -255,7 +259,7 @@ Outputs of the model:
   
   ``dynamic_seq2seq/decoder/decoder/GatherTree`` tensor with shape ``[max_sequence_length \* 2, batch, beam_size]``, that contains ``beam_size`` best translations for every sentence from input (also decoded as indices of words in vocabulary).
   
-  .. note:: The shape of this tensor in TensorFlow can be different: instead of ``max_sequence_length \* 2``, it can be any value less than that, because OpenVINO does not support dynamic shapes of outputs, while TensorFlow can stop decoding iterations when ``eos`` symbol is generated.
+  .. note::   The shape of this tensor in TensorFlow can be different: instead of ``max_sequence_length \* 2``, it can be any value less than that, because OpenVINO does not support dynamic shapes of outputs, while TensorFlow can stop decoding iterations when ``eos`` symbol is generated.
   
   
   
@@ -272,9 +276,11 @@ Outputs of the model:
 
 #. With OpenVINO Runtime Python API:
 
-.. note:: Before running the example, insert a path to your GNMT ``.xml`` and ``.bin`` files into ``MODEL_PATH`` and ``WEIGHTS_PATH``, and fill ``input_data_tensor`` and ``seq_lengths`` tensors according to your input data.
+.. note::
 
-
+   Before running the example, insert a path to your GNMT ``.xml`` 
+   and ``.bin`` files into ``MODEL_PATH`` and ``WEIGHTS_PATH``, 
+   and fill ``input_data_tensor`` and ``seq_lengths`` tensors according to your input data.
 
 
 

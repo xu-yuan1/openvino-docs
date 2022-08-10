@@ -81,7 +81,7 @@ Once you have downloaded the pretrained model files, you will have the ``lm_1b``
 	        ckpt-softmax7
 	        ckpt-softmax8
 
-.. image:: lm_1b.png
+.. image:: ./_assets/lm_1b.png
 	:alt: lm_1b model view
 
 The frozen model still has two variables: ``Variable`` and ``Variable_1``. It means that the model keeps training those variables at each inference.

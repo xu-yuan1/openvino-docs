@@ -60,7 +60,7 @@ The first is that the model contains an input with sequence length. So the model
 
 The second is that the frozen model still has two variables: ``previous_state_c`` and ``previous_state_h``, figure with the frozen \*.pb model is below. It means that the model keeps training these variables at each inference.
 
-.. image:: DeepSpeech-0.8.2.png
+.. image:: ./_assets/DeepSpeech-0.8.2.png
 	:alt: DeepSpeech model view
 
 At the first inference, the variables are initialized with zero tensors. After execution, the results of the BlockLSTM are assigned to cell state and hidden state, which are these two variables.

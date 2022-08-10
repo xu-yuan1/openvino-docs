@@ -16,20 +16,20 @@ Model Conversion Tutorials
    :hidden:
 
    ./convert-model-tutorials/converting-tensorflow-attention-ocr-model
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_BERT_From_Tensorflow
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_CRNN_From_Tensorflow
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_DeepSpeech_From_Tensorflow
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_EfficientDet_Models
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_FaceNet_From_Tensorflow
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_GNMT_From_Tensorflow
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_lm_1b_From_Tensorflow
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_NCF_From_Tensorflow
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_Object_Detection_API_Models
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_RetinaNet_From_Tensorflow
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_Slim_Library_Models
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_WideAndDeep_Family_Models
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_XLNet_From_Tensorflow
-   ../../openvino_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_YOLO_From_Tensorflow
+   ./convert-model-tutorials/converting-tensorflow-bert-model
+   ./convert-model-tutorials/converting-tensorflow-crnn-model
+   ./convert-model-tutorials/converting-tensorflow-deepspeech-model
+   ./convert-model-tutorials/converting-tensorflow-efficientdet-model
+   ./convert-model-tutorials/converting-tensorflow-facenet-model
+   ./convert-model-tutorials/converting-tensorflow-gnmt-model
+   ./convert-model-tutorials/converting-tensorflow-language-model-on-billion-word-benchmark
+   ./convert-model-tutorials/converting-tensorflow-ncf-model
+   ./convert-model-tutorials/converting-tensorflow-object-detection-api-model
+   ./convert-model-tutorials/converting-tensorflow-retinanet-model
+   ./convert-model-tutorials/converting-tensorflow-slim-library-models
+   ./convert-model-tutorials/converting-tensorflow-wide-and-deep-family-models
+   ./convert-model-tutorials/converting-tensorflow-xlnet-model
+   ./convert-model-tutorials/converting-tensorflow-yolo-models
    ./convert-model-tutorials/converting-onnx-faster-r-cnn-model
    ./convert-model-tutorials/converting-onnx-gpt-2-model
    ./convert-model-tutorials/converting-onnx-mask-r-cnn-model

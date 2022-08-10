@@ -62,10 +62,10 @@ This section explains how to convert the YOLOv4 Keras model from the `repository
 
 #. Run Model Optimizer to converter the model from the TensorFlow 2 format to an IR:
 
-.. note:: Before you run the conversion, make sure you have installed all the Model Optimizer dependencies for TensorFlow 2.
+.. note::
 
-
-
+   Before you run the conversion, make sure you have installed all 
+   the Model Optimizer dependencies for TensorFlow 2.
 
 
 .. ref-code-block:: cpp
@@ -220,7 +220,13 @@ where:
 
 * ``--transformations_config`` adds missing ``Region`` layers to the model. In the IR, the ``Region`` layer has name ``RegionYolo``.
 
-.. note:: The color channel order (RGB or BGR) of an input data should match the channel order of the model training dataset. If they are different, perform the ``RGB<->BGR`` conversion specifying the command-line parameter: ``--reverse_input_channels``. Otherwise, inference results may be incorrect. For more information about the parameter, refer to the **When to Reverse Input Channels** section of the :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
+.. note::
+   The color channel order (RGB or BGR) of an input data should match the channel 
+   order of the model training dataset. If they are different, perform the ``RGB<->BGR`` 
+   conversion specifying the command-line parameter: ``--reverse_input_channels``. 
+   Otherwise, inference results may be incorrect. For more information about the parameter, 
+   refer to the **When to Reverse Input Channels** section of the 
+   :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
 
 
 
@@ -334,5 +340,11 @@ where:
 
 * ``--transformations_config`` adds missing ``Region`` layers to the model. In the IR, the ``Region`` layer has name ``RegionYolo``. For other applicable parameters, refer to the :ref:`Convert Model from TensorFlow <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>` guide.
 
-.. note:: The color channel order (RGB or BGR) of an input data should match the channel order of the model training dataset. If they are different, perform the ``RGB<->BGR`` conversion specifying the command-line parameter: ``--reverse_input_channels``. Otherwise, inference results may be incorrect. For more information about the parameter, refer to the **When to Reverse Input Channels** section of the :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
+.. note::
+   The color channel order (RGB or BGR) of an input data should match the channel 
+   order of the model training dataset. If they are different, perform the ``RGB<->BGR`` 
+   conversion specifying the command-line parameter: ``--reverse_input_channels``. 
+   Otherwise, inference results may be incorrect. For more information about the parameter, 
+   refer to the **When to Reverse Input Channels** section of the 
+   :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
 
