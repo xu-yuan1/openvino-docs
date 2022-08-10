@@ -32,7 +32,7 @@ Examples of Networks with States
 
 To get a model with states ready for inference, convert a model from another framework to IR with Model Optimizer or create an nGraph function. (For more information, refer to the :ref:`Build OpenVINO Model section <doxid-openvino_docs__o_v__u_g__model__representation>`). Below is the graph in both forms:
 
-.. image:: state_network_example.png
+.. image::  ./_assets/state_network_example.png
 
 Example of IR with State
 ------------------------
@@ -288,7 +288,7 @@ Example of Applying the LowLatency2 Transformation:
 
 :target:`doxid-openvino_docs__o_v__u_g_network_state_intro_1example-of-applying-lowlatency2-transformation`
 
-.. image:: applying_low_latency_2.png
+.. image::  ./_assets/applying_low_latency_2.png
 	:alt: applying_low_latency_2_example
 
 After applying the transformation, the ``ReadValue`` operations can receive other operations as an input, as shown in the picture above. These inputs should set the initial value for initialization of the ``ReadValue`` operations. However, such initialization is not supported in the current State API implementation. Input values are ignored and the initial values for the ``ReadValue`` operations are set to 0 unless otherwise specified by the user via `State API <#openvino-state-api>`__.
@@ -334,7 +334,7 @@ By default, the LowLatency2 transformation inserts a constant subgraph of the sa
 
 	:ref:`InferenceEngine::lowLatency2 <doxid-namespace_inference_engine_1a472a46b52ae2ae5d4fe42de27031c0b5>`(cnnNetwork, false);
 
-.. image:: llt2_use_const_initializer.png
+.. image::  ./_assets/llt2_use_const_initializer.png
 	:alt: use_const_initializer_example
 
 **State naming rule:** A name of a state is a concatenation of names: original ``TensorIterator`` operation, parameter of the body, and additional suffix ``variable_`` + ``id`` (0-base indexing, new indexing for each ``TensorIterator``). Use these rules to predict the name of the inserted state after the transformation is applied. For example:
@@ -373,7 +373,7 @@ Known Limitations
    
    The only way to change the number iterations of ``TensorIterator`` / ``Loop`` layer is to use the ``Reshape`` feature. However, networks can be non-reshapable. The most common reason is that the value of shapes is hardcoded in a constant somewhere in the network.
 
-.. image:: low_latency_limitation_2.png
+.. image::  ./_assets/low_latency_limitation_2.png
 	:alt: low_latency_limitation_2
 
 **Current solution:** Trim non-reshapable layers via :ref:`ModelOptimizer CLI <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` : the ``--input`` and ``--output`` parameters. For example, the parameter and the problematic constant in the picture above can be trimmed using the ``--input Reshape_layer_name`` command-line option. The problematic constant can also be replaced using ngraph, as shown in the example below.
@@ -404,7 +404,7 @@ Known Limitations
 
 The LowLatency transformation changes the structure of the network containing :ref:`TensorIterator <doxid-openvino_docs_ops_infrastructure__tensor_iterator_1>` and :ref:`Loop <doxid-openvino_docs_ops_infrastructure__loop_5>` operations by adding the ability to work with the state, inserting the ``Assign`` / ``ReadValue`` layers, as shown in the picture below.
 
-.. image:: applying_low_latency.png
+.. image::  ./_assets/applying_low_latency.png
 	:alt: applying_low_latency_example
 
 After applying the transformation, ``ReadValue`` operations can receive other operations as an input, as shown in the picture above. These inputs should set the initial value for initialization of ``ReadValue`` operations. However, such initialization is not supported in the current State API implementation. Input values are ignored and the initial values for the ``ReadValue`` operations are set to 0 unless otherwise specified by the user via `State API <#openvino-state-api>`__.
@@ -478,7 +478,7 @@ Known Limitations for the LowLatency [DEPRECATED]
    
    Unnecessary parameters may remain on the graph after applying the transformation. The automatic handling of this case inside the transformation is currently not possible. Such parameters should be removed manually from ``:ref:`ngraph::Function <doxid-classngraph_1a14d7fe7c605267b52c145579e12d2a5f>``` or replaced with a constant.
 
-.. image:: low_latency_limitation_1.png
+.. image::  ./_assets/low_latency_limitation_1.png
 	:alt: low_latency_limitation_1
 
 **Current solutions:**
@@ -507,7 +507,7 @@ Unable to execute reshape precondition to apply the transformation correctly.
 
 Networks can be non-reshapable. The most common reason is that the value of shapes is hardcoded in the constant somewhere in the network.
 
-.. image:: low_latency_limitation_2.png
+.. image::  ./_assets/low_latency_limitation_2.png
 	:alt: low_latency_limitation_2
 
 **Current solutions:**

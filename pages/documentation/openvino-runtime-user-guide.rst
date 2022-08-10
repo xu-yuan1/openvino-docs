@@ -27,7 +27,7 @@ Performing Inference with OpenVINO Runtime
    ./openvino-runtime-user-guide/heterogeneous-execution-mode
    ./openvino-runtime-user-guide/performance-hints
    ./openvino-runtime-user-guide/automatic-batching
-   ../openvino_docs_OV_UG_network_state_intro
+   ./openvino-runtime-user-guide/stateful-models
    ../ONNX_Format_Support
 
 OpenVINO Runtime is a set of C++ libraries with C and Python bindings providing a common API to deliver inference solutions on the platform of your choice. Use the OpenVINO Runtime API to read an Intermediate Representation (IR), ONNX, or PaddlePaddle model and execute it on preferred devices.
