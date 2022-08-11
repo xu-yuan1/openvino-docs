@@ -15,8 +15,8 @@ Plugin API Reference
    :maxdepth: 1
    :hidden:
 
-   ../groupie_dev_api
-   ../groupie_transformation_api
+   ../../../groupie_dev_api
+   ../../../groupie_transformation_api
 
 The guides below provides extra API references needed for OpenVINO plugin development:
 
