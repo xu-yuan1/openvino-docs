@@ -71,9 +71,9 @@ Documentation
    :hidden:
    :caption: Media Processing and Computer Vision Libraries
 
-   Intel® Deep Learning Streamer <openvino_docs_dlstreamer>
-   openvino_docs_gapi_gapi_intro
-   OpenCV* Developer Guide <https://docs.opencv.org/master/>
+   ./documentation/intel-deep-learning-streamer
+   ./documentation/opencv-graph-api
+   OpenCV Developer Guide <https://docs.opencv.org/master/>
    OpenCL™ Developer Guide <https://software.intel.com/en-us/openclsdk-devguide>   
 
 

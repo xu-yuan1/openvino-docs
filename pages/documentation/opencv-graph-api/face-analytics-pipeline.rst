@@ -21,7 +21,7 @@ Prerequisites
 
 This sample requires:
 
-* PC with GNU/Linux\* or Microsoft Windows\* (Apple macOS\* is supported but was not tested)
+* PC with GNU/Linux or Microsoft Windows (Apple macOS is supported but was not tested)
 
 * OpenCV 4.2 or higher built with `Intel® Distribution of OpenVINO™ Toolkit <https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html>`__ (building with `Intel® TBB <https://www.threadingbuildingblocks.org/intel-tbb-tutorial>`__
 
@@ -57,7 +57,7 @@ Our sample application is based on Interactive Face Detection demo from Open Mod
 
 #. Visualization
 
-.. image:: gapi_face_analytics_pipeline.png
+.. image:: ./_assets/gapi_face_analytics_pipeline.png
 	:alt: Face Analytics Pipeline Overview
 
 
@@ -226,11 +226,12 @@ Once networks are defined and custom kernels are implemented, the pipeline is co
 
 ``cv::GComputation::compileStreaming()`` triggers a special video-oriented form of graph compilation where G-API is trying to optimize throughput. Result of this compilation is an object of special type ``cv::GStreamingCompiled`` – in contrast to a traditional callable ``cv::GCompiled``, these objects are closer to media players in their semantics.
 
-.. note:: There is no need to pass metadata arguments describing the format of the input video stream in ``cv::GComputation::compileStreaming()`` – G-API figures automatically what are the formats of the input vector and adjusts the pipeline to these formats on-the-fly. User still can pass metadata there as with regular ``cv::GComputation::compile()`` in order to fix the pipeline to the specific input format.
-
-
-
-
+.. note:: There is no need to pass metadata arguments describing the format of 
+   the input video stream in ``cv::GComputation::compileStreaming()`` – G-API 
+   figures automatically what are the formats of the input vector and adjusts 
+   the pipeline to these formats on-the-fly. User still can pass metadata there 
+   as with regular ``cv::GComputation::compile()`` in order to fix the pipeline 
+   to the specific input format.
 
 .. _doxid-openvino_docs_gapi_gapi_face_analytics_pipeline_1gapi_ifd_running:
 

@@ -2,10 +2,12 @@
 .. _doxid-openvino_docs_dlstreamer:
 
 
-Intel® Deep Learning Streamer (Intel® DL Streamer)
-====================================================
+Intel® Deep Learning Streamer
+=============================
 
-:target:`doxid-openvino_docs_dlstreamer_1md_openvino_docs_dlstreamer` Intel® DL Streamer is a streaming media analytics framework, based on GStreamer\* multimedia framework, for creating complex media analytics pipelines.
+:target:`doxid-openvino_docs_dlstreamer_1md_openvino_docs_dlstreamer` 
+
+Intel® Deep Learning Streamer (Intel® DL Streamer) is a streaming media analytics framework, based on GStreamer\* multimedia framework, for creating complex media analytics pipelines.
 
 Intel® DL Streamer makes Media analytics easy:
 

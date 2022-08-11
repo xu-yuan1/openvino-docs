@@ -11,7 +11,7 @@ This idea can be achieved by separating kernel interface from its implementation
 
 Kernel-implementation hierarchy may look like:
 
-.. image:: gapi_kernel_implementation_hierarchy.png
+.. image:: ./_assets/gapi_kernel_implementation_hierarchy.png
 	:alt: Kernel API/implementation hierarchy example
 
 A pipeline itself then can be expressed only in terms of ``A``, ``B``, and so on, and choosing which implementation to use in execution becomes an external parameter.

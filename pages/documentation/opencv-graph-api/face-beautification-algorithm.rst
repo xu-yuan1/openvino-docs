@@ -40,7 +40,7 @@ Face Beautification Algorithm
 
 We will implement a simple face beautification algorithm using a combination of modern Deep Learning techniques and traditional Computer Vision. The general idea behind the algorithm is to make face skin smoother while preserving face features like eyes or a mouth contrast. The algorithm identifies parts of the face using a DNN inference, applies different filters to the parts found, and then combines it into the final result using basic image arithmetics:
 
-.. image:: gapi_face_beautification_algorithm.png
+.. image:: ./_assets/gapi_face_beautification_algorithm.png
 	:alt: Face Beautification Algorithm
 
 Briefly the algorithm is described as follows:
@@ -525,7 +525,7 @@ The tutorial has two goals: to show the use of brand new features of G-API intro
 
 The result of the algorithm application:
 
-.. image:: gapi_face_beautification_example.jpg
+.. image:: ./_assets/gapi_face_beautification_example.jpg
 	:alt: Face Beautification example
 
 On the test machine (Intel® Core™ i7-8700) the G-API-optimized video pipeline outperforms its serial (non-pipelined) version by a factor of 2.7 – meaning that for such a non-trivial graph, the proper pipelining can bring almost 3x increase in performance.

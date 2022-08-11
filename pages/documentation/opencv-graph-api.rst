@@ -2,22 +2,18 @@
 .. _doxid-openvino_docs_gapi_gapi_intro:
 
 
-Introduction to OpenCV Graph API (G-API)
-========================================
+Introduction to OpenCV Graph API
+================================
 
 :target:`doxid-openvino_docs_gapi_gapi_intro_1md_openvino_docs_gapi_gapi_intro`
-
-
-
-
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_gapi_kernel_api
-   openvino_docs_gapi_face_beautification
-   openvino_docs_gapi_gapi_face_analytics_pipeline
+   ./opencv-graph-api/graph-api-kernel
+   ./opencv-graph-api/face-beautification-algorithm
+   ./opencv-graph-api/face-analytics-pipeline
 
 OpenCV Graph API (G-API) is an OpenCV module targeted to make regular image and video processing fast and portable. G-API is a special module in OpenCV – in contrast with the majority of other main modules, this one acts as a framework rather than some specific CV algorithm.
 
@@ -27,10 +23,9 @@ G-API provides means to define CV operations, construct graphs (in form of expre
 
 The idea behind G-API is that if an algorithm can be expressed in a special embedded language (currently in C++), the framework can catch its sense and apply a number of optimizations to the whole thing automatically. Particular optimizations are selected based on which :ref:`kernels <doxid-openvino_docs_gapi_kernel_api>` and `backends <https://docs.opencv.org/4.5.0/dc/d1c/group__gapi__std__backends.html>`__ are involved in the graph compilation process, for example, the graph can be offloaded to GPU via the OpenCL backend, or optimized for memory consumption with the Fluid backend. Kernels, backends, and their settings are parameters to the graph compilation, so the graph itself does not depend on any platform-specific details and can be ported easily.
 
-.. note:: Graph API (G-API) was introduced in the most recent major OpenCV 4.0 release and now is being actively developed. The API is volatile at the moment and there may be minor but compatibility-breaking changes in the future.
-
-
-
+.. note:: Graph API (G-API) was introduced in the most recent major OpenCV 4.0 
+   release and now is being actively developed. The API is volatile at the moment 
+   and there may be minor but compatibility-breaking changes in the future.
 
 
 G-API Concepts
@@ -69,7 +64,7 @@ G-API supports graph compilation for two execution modes, *regular* and *streami
 
 The overall process for the regular case is summarized in the diagram below:
 
-.. image:: gapi_programming_model.png
+.. image:: ./_assets/gapi_programming_model.png
 	:alt: G-API Programming Model
 
 The graph is built with operations so having operations defined (**0**) is a basic prerequisite; a constructed expression graph (**1**) forms a ``cv::GComputation`` object; kernels (**2**) which implement operations are the basic requirement to the graph compilation (**3**); the actual execution (**4**) is handled by a ``cv::GCompiled`` object with takes input and produces output data.
@@ -79,7 +74,7 @@ Development Workflow
 
 One of the ways to organize a G-API development workflow is presented in the diagram below:
 
-.. image:: gapi_development_workflow.png
+.. image:: ./_assets/gapi_development_workflow.png
 	:alt: G-API development workflow
 
 Basically, it is a derivative from the programming model illustrated in the previous chapter. You start with an algorithm or a data flow in mind (**0**), mapping it to a graph model (**1**), then identifying what operations you need (**2**) to construct this graph. These operations may already exist in G-API or be missing, in the latter case we implement the missing ones as kernels (**3**). Then decide which execution model fits our case better, pass kernels and DL networks as arguments to the compilation process (**4**), and finally switch to the execution (**5**). The process is iterative, so if you want to change anything based on the execution results, get back to steps (**0**) or (**1**) (a dashed line).
