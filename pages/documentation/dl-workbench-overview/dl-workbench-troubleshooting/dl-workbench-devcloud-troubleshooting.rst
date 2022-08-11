@@ -35,7 +35,7 @@ Intel® DevCloud for the Edge Is Not Responding
 
 When you see the message as in the image below:
 
-.. image:: devcloud_not_responding-1.png
+.. image:: ./_assets/devcloud_not_responding-1.png
 
 #. Refresh the page.
 
@@ -50,7 +50,7 @@ Server is Collecting Performance Data for Too Long
 
 When the **Server is Collecting Performance Data** banner is hanging on the page for too long:
 
-.. image:: devcloud_hanging.png
+.. image:: ./_assets/devcloud_hanging.png
 
 #. Refresh the page.
 
@@ -67,7 +67,7 @@ A DL Workbench session in the DevCloud is limited to four hours. Remaining sessi
 
 
 
-.. image:: devcloud_time.png
+.. image:: ./_assets/devcloud_time.png
 
 All data is autosaved in the DevCloud. To use the DL Workbench again, start a new session as described in the **Start a New DL Workbench Session in the Intel® DevCloud for the Edge** section of :ref:`Run DL Workbench in the DevCloud <doxid-workbench_docs__workbench__d_g__start__d_l__workbench_in__dev_cloud>`.
 
@@ -92,7 +92,7 @@ Accidentally Closed the DL Workbench Tab in the DevCloud
 
 If you accidentally closed the tab with the DL Workbench, go to the Jupyter notebook tab and click the **Return to DL Workbench session** link under the **Stop Application** button.
 
-.. image:: devcloud_two_links.png
+.. image:: ./_assets/devcloud_two_links.png
 
 .. _report-devcloud:
 
@@ -101,11 +101,11 @@ Obtain Logs
 
 To obtain server logs, open the root folder:
 
-.. image:: devcloud_logs_folder.png
+.. image:: ./_assets/devcloud_logs_folder.png
 
 Download log.zip files:
 
-.. image:: dv_logs.png
+.. image:: ./_assets/dv_logs.png
 
 .. _report-devcloud:
 
@@ -120,11 +120,11 @@ To report an issue that occurred when you run the DL Workbench in the DevCloud:
    
    
    
-   .. image:: devcloud_link.png
+   .. image:: ./_assets/devcloud_link.png
 
 #. Go to the Jupyter notebook tab and find the job ID under the **Start Application** button:
    
-   .. image:: devcloud_two_links.png
+   .. image:: ./_assets/devcloud_two_links.png
 
 #. Go to the `Intel® DevCloud for the Edge forum <https://community.intel.com/t5/Intel-DevCloud-for-Edge/bd-p/devcloud-edge>`__. Describe your issue providing the details necessary to reproduce it and attach your user ID, job ID, and the screenshots.
 

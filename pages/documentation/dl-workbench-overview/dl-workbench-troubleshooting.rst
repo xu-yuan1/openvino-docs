@@ -15,7 +15,7 @@ Troubleshooting
    :maxdepth: 1
    :hidden:
 
-   ../../workbench_docs_Workbench_DG_DC_Troubleshooting
+   ./dl-workbench-troubleshooting/dl-workbench-devcloud-troubleshooting
 
 If you encounter an issue when running the DL Workbench, follow the steps below:
 
