@@ -15,15 +15,15 @@ Available Operations Sets
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_ops_opset9
-   openvino_docs_ops_opset8
-   openvino_docs_ops_opset7
-   openvino_docs_ops_opset6
-   openvino_docs_ops_opset5
-   openvino_docs_ops_opset4
-   openvino_docs_ops_opset3
-   openvino_docs_ops_opset2
-   openvino_docs_ops_opset1
+   ./openvino-operation-sets/openvino-opset9
+   ./openvino-operation-sets/openvino-opset8
+   ./openvino-operation-sets/openvino-opset7
+   ./openvino-operation-sets/openvino-opset6
+   ./openvino-operation-sets/openvino-opset5
+   ./openvino-operation-sets/openvino-opset4
+   ./openvino-operation-sets/openvino-opset3
+   ./openvino-operation-sets/openvino-opset2
+   ./openvino-operation-sets/openvino-opset1
 
 According to capabilities of supported deep learning frameworks and hardware capabilities of a target inference device, all operations are combined into operations sets each fully supported in a specific version of OpenVINO™ toolkit.
 

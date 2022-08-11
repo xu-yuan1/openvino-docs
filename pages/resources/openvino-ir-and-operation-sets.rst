@@ -7,6 +7,19 @@ Deep Learning Network Intermediate Representation and Operation Sets in OpenVINO
 
 :target:`doxid-openvino_docs__m_o__d_g__i_r_and_opsets_1md_openvino_docs_mo_dg_ir_and_opsets` This article provides essential information on the format used for representation of deep learning models in OpenVINO toolkit and supported operation sets.
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: OpenVINO IR and Operation Sets
+   :hidden:
+
+   ./openvino-ir-and-operation-sets/broadcast-rules-for-elementwise-operations.rst
+   ./openvino-ir-and-operation-sets/IR-for-int8-inference.rst
+   ./openvino-ir-and-operation-sets/openvino-operation-sets.rst
+   ./openvino-ir-and-operation-sets/openvino-operation-specifications
+
+
+
 Overview of Artificial Neural Networks Representation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -14,7 +27,7 @@ A deep learning network is usually represented as a directed graph describing th
 
 Here is an illustration of a small graph representing a model that consists of a single Convolutional layer and activation function:
 
-.. image:: small_IR_graph_demonstration.png
+.. image:: _assets/small_IR_graph_demonstration.png
 
 Vertices in the graph represent layers or operation instances such as convolution, pooling, and element-wise operations with tensors. The terms of "layer" and "operation" are used interchangeably within OpenVINO documentation and define how input data is processed to produce output data for a node in a graph. An operation node in a graph may consume data at one or multiple input ports. For example, an element-wise addition operation has two input ports which accept tensors that are to be summed. Some operations do not have any input ports, for example the ``Const`` operation, which knows the data to be produced without any input. An edge between operations represents data flow or data dependency implied from one operation node to another.
 

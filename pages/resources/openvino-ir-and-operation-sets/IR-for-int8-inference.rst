@@ -22,7 +22,7 @@ For an operation to be executed in INT8, it must have ``FakeQuantize`` operation
 
 To execute the ``Convolution`` operation in INT8 on CPU, both data and weight inputs should have ``FakeQuantize`` as an input operation:
 
-.. image:: expanded_int8_Convolution_weights.png
+.. image:: _assets/expanded_int8_Convolution_weights.png
 
 Low precision IR is also suitable for FP32 and FP16 inference if a chosen plugin supports all operations of the IR. The only difference between a Low Precision IR and FP16 or FP32 IR is the existence of ``FakeQuantize`` in the Low Precision IR. Plugins that support Low Precision Inference recognize these sub-graphs and quantize them during inference. The ones that do not, execute all operations, including ``FakeQuantize``, as is in the FP32 or FP16 precision.
 
@@ -35,7 +35,7 @@ Weighted operations, such as ``Convolution`` and ``MatMul``, store weights as th
 
 See the visualization of ``Convolution`` with the compressed weights:
 
-.. image:: compressed_int8_Convolution_weights.png
+.. image:: _assets/compressed_int8_Convolution_weights.png
 
 Both Model Optimizer and Post-Training Optimization tool generate a compressed IR by default.
 
