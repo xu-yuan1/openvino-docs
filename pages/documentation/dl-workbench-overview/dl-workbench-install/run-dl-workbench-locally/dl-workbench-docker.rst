@@ -122,7 +122,7 @@ For full instructions on running a container and description of the arguments in
 
 Once the command executes, open the link `https://127.0.0.1:5665 <https://127.0.0.1:5665>`__ in your browser, and the DL Workbench **Start Page** appears:
 
-.. image:: start_page_crop.png
+.. image:: ./_assets/start_page_crop.png
 
 .. _copy:
 

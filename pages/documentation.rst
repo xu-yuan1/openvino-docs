@@ -63,7 +63,7 @@ Documentation
    ./documentation/openvino-security-add-on
    ovtf_integration
    ote_documentation
-   ./documentation/workbench-overview
+   ./documentation/dl-workbench-overview
 
 
 .. toctree::

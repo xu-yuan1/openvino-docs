@@ -26,13 +26,13 @@ Use these requirements to make sure all features are available.
     :header-rows: 1
 
     * - Prerequisite
-      - Linux\*
-      - Windows\*
-      - macOS\*
+      - Linux
+      - Windows
+      - macOS
     * - Operating system
-      - Ubuntu\* 18.04
-      - Windows\* 10
-      - macOS\* 10.15 Catalina
+      - Ubuntu 18.04
+      - Windows 10
+      - macOS 10.15 Catalina
     * - Available RAM space
       - 8 GB\*\*
       - 8 GB\*\*
@@ -41,14 +41,14 @@ Use these requirements to make sure all features are available.
       - 10 GB + space for imported artifacts
       - 10 GB + space for imported artifacts
       - 10 GB + space for imported artifacts
-    * - Docker\*
+    * - Docker
       - Docker CE 18.06.1
       - Docker Desktop 2.3.0.3
       - Docker CE 18.06.1
-    * - Browser\*
-      - Google Chrome\* 88
-      - Google Chrome\* 88
-      - Google Chrome\* 88
+    * - Browser
+      - Google Chrome 88
+      - Google Chrome 88
+      - Google Chrome 88
 
 .. _proxy:
 
@@ -56,10 +56,10 @@ Use these requirements to make sure all features are available.
 
 
 
-.. note:: Windows\*, Linux\* and MacOS\* support CPU targets. GPU, Intel® Neural Compute Stick 2 and Intel® Vision Accelerator Design with Intel® Movidius™ VPUs are supported only for Linux\*.
+.. note::
 
-
-
+   Windows, Linux and MacOS support CPU targets. GPU, Intel® Neural Compute Stick 2 and 
+   Intel® Vision Accelerator Design with Intel® Movidius™ VPUs are supported only for Linux.
 
 
 Set Proxy
@@ -85,7 +85,7 @@ Set proxy for macOS and Windows
 
 #. Press *Apply settings*.
    
-   .. image:: docker-proxy_1.png
+   .. image:: ./_assets/docker-proxy_1.png
 
 See Also
 ~~~~~~~~

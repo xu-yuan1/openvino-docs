@@ -92,7 +92,11 @@ Python Starter arguments:
    
    #. ``sudo usermod -a -G 5665 <USERNAME>``
 
-.. note:: ``--enable-myriad`` and ``--enable-hddl`` cannot be set simultaneously because Intel® Neural Compute Stick 2 and Intel® Vision Accelerator Design with Intel® Movidius™ VPUs are incompatible and cannot be used in the DL Workbench together.
+.. note::
+
+   ``--enable-myriad`` and ``--enable-hddl`` cannot be set simultaneously because 
+   Intel® Neural Compute Stick 2 and Intel® Vision Accelerator Design with Intel® Movidius™ 
+   VPUs are incompatible and cannot be used in the DL Workbench together.
 
 .. raw:: html
 

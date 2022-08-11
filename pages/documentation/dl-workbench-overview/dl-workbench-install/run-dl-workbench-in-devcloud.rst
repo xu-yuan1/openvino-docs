@@ -30,7 +30,7 @@ When running the DL Workbench in the DevCloud, you can use the following DL Work
       - Yes
     * - Deployment package creation
       - Yes
-    * - JupyterLab\* learning environment
+    * - JupyterLab learning environment
       - No
 
 \*\* *In the DevCloud, you are connecting only to remote machines that are available in it. You cannot work with your local workstation or connect to other machines in your local network.*
@@ -57,35 +57,35 @@ Start the DL Workbench in the Intel® DevCloud for the Edge
 
 #. Select **Optimize** tab and click **Go There** button to access DL Workbench.
    
-   .. image:: devcloud_main_page.png
+   .. image:: ./_assets/devcloud_main_page.png
 
-#. The Jupyter\* notebook called ``DLWorkbenchLauncher.ipynb`` opens:
+#. The Jupyter notebook called ``DLWorkbenchLauncher.ipynb`` opens:
    
-   .. image:: jupyterlab_open.png
+   .. image:: ./_assets/jupyterlab_open.png
 
 #. Run **Launch DL Workbench** cell:
    
-   .. image:: devcloud_launch.png
+   .. image:: ./_assets/devcloud_launch.png
 
 #. The **Start Application** button appears.
    
-   .. image:: devcloud_cell_2-1.png
+   .. image:: ./_assets/devcloud_cell_2-1.png
 
 #. Once you click the button, the DevCloud starts initializing and loading the DL Workbench.
    
-   .. image:: devcloud_cell_3-1.png
+   .. image:: ./_assets/devcloud_cell_3-1.png
 
 #. In about a minute, the link appears under the cell:
    
-   .. image:: devcloud_cell_4-1.png
+   .. image:: ./_assets/devcloud_cell_4-1.png
 
 Click this link to open the DL Workbench. Make sure your browser does not block pop-up windows as it prevents the tab from opening:
 
-.. image:: start_page_crop.png
+.. image:: ./_assets/start_page_crop.png
 
 You have started the DL Workbench in the DevCloud. A DL Workbench session in the DevCloud is limited to four hours. Remaining session time is indicated in the upper-right corner of the interface:
 
-.. image:: devcloud_time.png
+.. image:: ./_assets/devcloud_time.png
 
 After four hours, the Docker container with the DL Workbench stops, but your data is autosaved in the DevCloud. To continue working with the DL Workbench, restart the session.
 

@@ -15,8 +15,8 @@ Run the DL Workbench Locally
    :maxdepth: 1
    :hidden:
 
-   workbench_docs_Workbench_DG_Advanced_Configurations
-   workbench_docs_Workbench_DG_Docker_Container
+   ./run-dl-workbench-locally/dl-workbench-cofigurations
+   ./run-dl-workbench-locally/dl-workbench-docker
 
 This section contains instructions on how to run DL Workbench. Select your options and run the commands on your local machine. Ensure that you have met the :ref:`prerequisites <doxid-workbench_docs__workbench__d_g__prerequisites>`.
 
@@ -26,7 +26,7 @@ This section contains instructions on how to run DL Workbench. Select your optio
 
 Wait for the DL Workbench to set up for about a minute. Once it is done, open the `http://127.0.0.1:5665 <http://127.0.0.1:5665>`__ link.
 
-.. image:: start_page_crop.png
+.. image:: ./_assets/start_page_crop.png
 
 Video
 ~~~~~

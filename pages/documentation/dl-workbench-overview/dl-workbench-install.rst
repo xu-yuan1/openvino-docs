@@ -15,9 +15,9 @@ Installation
    :maxdepth: 1
    :hidden:
 
-   ../../workbench_docs_Workbench_DG_Prerequisites
-   ../../workbench_docs_Workbench_DG_Run_Locally
-   ../../workbench_docs_Workbench_DG_Start_DL_Workbench_in_DevCloud
+   ./dl-workbench-install/dl-workbench-install-prerequisites
+   ./dl-workbench-install/run-dl-workbench-locally
+   ./dl-workbench-install/run-dl-workbench-in-devcloud
 
 .. panels::
 
