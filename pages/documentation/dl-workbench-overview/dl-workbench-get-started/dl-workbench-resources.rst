@@ -15,7 +15,7 @@ Educational Resources about DL Workbench
    :maxdepth: 1
    :hidden:
 
-   workbench_docs_Workbench_DG_Key_Concepts
+   ./dl-workbench-resources/dl-workbench-key-concepts
 
 Publications
 ~~~~~~~~~~~~

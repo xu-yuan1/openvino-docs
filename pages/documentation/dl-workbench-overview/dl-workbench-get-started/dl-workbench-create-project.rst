@@ -26,7 +26,7 @@ Select Environment
 
 Target is a machine that hosts one or several accelerators. Device is a hardware accelerator on which a model is executed. By default, your Local Target is selected. If you want to learn detailed information about different environment configurations, see the :ref:`Select Environment <doxid-workbench_docs__workbench__d_g__select__environment>` page. If you have a remote machine, you can learn how to register and work with it at the `Remote Target <https://docs.openvinotoolkit.org/latest/workbench_docs_Workbench_DG_Remote_Profiling.html>`__ documentation page.
 
-.. image:: select_environment.png
+.. image:: ./_assets/select_environment.png
 
 Import Dataset
 ~~~~~~~~~~~~~~
@@ -35,19 +35,22 @@ Validation datasets can be either annotated or not annotated. This document, unl
 
 On the **Create Project** page, go to the **Select a Validation Dataset** tab and click **Import Dataset** :
 
-.. image:: dataset_import.png
+.. image:: ./_assets/dataset_import.png
 
 You will see the **Create Dataset** page where you can add your own images and specify the dataset name:
 
-.. image:: import_dataset_page.png
+.. image:: ./_assets/import_dataset_page.png
 
-.. note:: Not annotated dataset cannot be used to measure accuracy of your models. If measuring accuracy and accuracy related tasks are critical for you, it is recommended to import an annotated dataset.
+.. note::
+
+   Not annotated dataset cannot be used to measure accuracy of your models. If measuring accuracy 
+   and accuracy related tasks are critical for you, it is recommended to import an annotated dataset.
 
 
 
 After clicking **Import**, you are redirected to the **Create Project** page where you can check the import status and proceed by creating a project.
 
-.. image:: custom_dataset_imported.png
+.. image:: ./_assets/custom_dataset_imported.png
 
 Measure Performance
 ~~~~~~~~~~~~~~~~~~~
@@ -56,7 +59,7 @@ Make sure you have selected all the necessary elements of the project.
 
 At the bottom of the page click **Create Project** to measure the model performance. Once this stage is complete, the **Projects** page opens automatically.
 
-.. image:: project_page.png
+.. image:: ./_assets/project_page.png
 
 Now you can successfully proceed to explore different DL Workbench features.
 
@@ -65,7 +68,7 @@ Next Step: Analyze Performance
 
 Scroll to the **Analyze** tab, where you can see the performance improvement tip.
 
-.. image:: performance_improvement_tip.png
+.. image:: ./_assets/performance_improvement_tip.png
 
 One of the recommended ways to accelerate your model performance is to perform 8-bit integer (INT8) calibration. A model in INT8 precision takes up less memory and has higher throughput capacity. Often this performance boost is achieved at the cost of a small accuracy reduction.
 
