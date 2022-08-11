@@ -15,14 +15,14 @@ OpenVINO™ Deep Learning Workbench Tutorials
    :maxdepth: 1
    :hidden:
 
-   Object Detection Model (YOLOv4) <../../workbench_docs_Workbench_DG_Tutorial_Import_YOLO>
-   Object Detection Model (SSD_mobilenet) <../../workbench_docs_Workbench_DG_Measure_Accuracy_Object_detection>
-   Classification Model (mobilenet) <../../workbench_docs_Workbench_DG_Tutorial_Classification>
-   Classification Model (squeezenet) <../../workbench_docs_Workbench_DG_Measure_Accuracy_Classification>
-   Instance Segmentation Model (mask R-cnn) <../../workbench_docs_Workbench_DG_Tutorial_Instance_Segmentation>
-   Semantic Segmentation Model (deeplab) <../../workbench_docs_Workbench_DG_Tutorial_Semantic_Segmentation>
-   Style Transfer Model (fast-nst-onnx) <../../workbench_docs_Workbench_DG_Tutorial_Style_Transfer>
-   NLP Model (BERT) <../../workbench_docs_Workbench_DG_Tutorial_NLP>
+   Object Detection Model (YOLOv4) <./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_Import_YOLO>
+   Object Detection Model (SSD_mobilenet) <./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Measure_Accuracy_Object_detection>
+   Classification Model (mobilenet) <./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_Classification>
+   Classification Model (squeezenet) <./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Measure_Accuracy_Classification>
+   Instance Segmentation Model (mask R-cnn) <./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_Instance_Segmentation>
+   Semantic Segmentation Model (deeplab) <./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_Semantic_Segmentation>
+   Style Transfer Model (fast-nst-onnx) <./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_Style_Transfer>
+   NLP Model (BERT) <./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_NLP>
 
 Get started with step-by-step tutorials to enhance your model performance.
 
