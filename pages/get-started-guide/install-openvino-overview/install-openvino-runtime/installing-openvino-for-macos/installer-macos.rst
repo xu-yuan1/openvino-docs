@@ -79,7 +79,7 @@ Step 1: Install the Intel® Distribution of OpenVINO™ Toolkit Core Components
 
 #. Follow the instructions on your screen. During the installation you will be asked to accept the license agreement. Your acceptance is required to continue.
    
-   .. image:: openvino-install-macos-run-boostrapper-script.gif
+   .. image:: ./_assets/openvino-install-macos-run-boostrapper-script.gif
    
    Click on the image to see the details.
    

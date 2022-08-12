@@ -121,7 +121,7 @@ Step 1: Install the Intel® Distribution of OpenVINO™ Toolkit
 
 #. Follow the instructions on your screen. During the installation you will be asked to accept the license agreement. Your acceptance is required to continue. Check the installation process on the image below:
 
-.. image:: openvino-install-linux-run-boostrapper-script.gif
+.. image:: ./_assets/openvino-install-linux-run-boostrapper-script.gif
 
 Click on the image to see the details.
 

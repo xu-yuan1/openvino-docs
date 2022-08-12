@@ -87,7 +87,7 @@ Step 1: Install the Intel® Distribution of OpenVINO™ toolkit Core Components
    
    
    
-   .. image:: openvino-install-win-run-boostrapper-script.gif
+   .. image:: ./_assets/openvino-install-win-run-boostrapper-script.gif
    
    Click on the image to see the details.
    

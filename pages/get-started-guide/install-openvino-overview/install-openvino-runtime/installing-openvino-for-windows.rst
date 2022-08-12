@@ -15,10 +15,10 @@ Install and Configure Intel® Distribution of OpenVINO™ toolkit for Windows
    :maxdepth: 3
    :hidden:
 
-   Using Installer <openvino_docs_install_guides_installing_openvino_windows>
-   From PyPI <openvino_docs_install_guides_installing_openvino_pip>
-   From Anaconda Cloud <openvino_docs_install_guides_installing_openvino_conda>
-   Using Docker <openvino_docs_install_guides_installing_openvino_docker_windows>
+   Using Installer <./installing-openvino-for-windows/installer-windows>
+   From PyPI <./installing-openvino-shared/installing-from-pypi>
+   From Anaconda Cloud <./installing-openvino-shared/intalling-from-anaconda>
+   Using Docker <./installing-openvino-for-windows/docker-windows>
 
 If you want to install Intel® Distribution of OpenVINO™ toolkit on Windows, you have the following options:
 

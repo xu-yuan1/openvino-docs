@@ -15,10 +15,10 @@ Installing Intel® Distribution of OpenVINO™ Toolkit
    :maxdepth: 3
    :hidden:
 
-   OpenVINO Runtime <../openvino_docs_install_guides_install_runtime>
-   OpenVINO Development Tools <../openvino_docs_install_guides_install_dev_tools>
+   OpenVINO Runtime <./install-openvino-overview/install-openvino-runtime>
+   OpenVINO Development Tools <./install-openvino-overview/install-openvino-dev-tools>
    Build from Source <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>
-   Creating a Yocto Image <../openvino_docs_install_guides_installing_openvino_yocto>
+   Creating a Yocto Image <./install-openvino-overview/creating-yocto-image>
 
 Intel® Distribution of OpenVINO™ toolkit is a comprehensive toolkit for developing applications and solutions based on deep learning tasks, such as: emulation of human vision, automatic speech recognition, natural language processing, recommendation systems, etc. It provides high-performance and rich deployment options, from edge to cloud. Some of its advantages are:
 

@@ -15,8 +15,8 @@ Troubleshooting Guide for OpenVINO™ Installation & Configuration
    :maxdepth: 2
    :hidden:
 
-   Troubleshooting Steps <openvino_docs_get_started_guide_troubleshooting_steps>
-   Issues & Solutions <openvino_docs_get_started_guide_troubleshooting_issues>
+   Troubleshooting Steps <./openvino_docs_get_started_guide_troubleshooting_steps>
+   Issues & Solutions <./openvino_docs_get_started_guide_troubleshooting_issues>
 
 .. _troubleshooting guide for install:
 
