@@ -18,7 +18,7 @@ After a model is optimized by the OpenVINO Model Optimizer, it's deployed to tar
 
 Encrypting and optimizing model before deploying it to the edge device can be used to protect deep-learning models. The edge device should keep the stored model protected all the time and have the model decrypted **in runtime only** for use by the OpenVINO Runtime.
 
-.. image:: deploy_encrypted_model.png
+.. image:: ./_assets/deploy_encrypted_model.png
 	:alt: deploy_encrypted_model
 
 Loading Encrypted Models

@@ -91,10 +91,10 @@ Documentation
    :hidden:
    :caption: Use OpenVINO™ Toolkit Securely
 
-   openvino_docs_security_guide_introduction
-   openvino_docs_security_guide_workbench
-   openvino_docs_OV_UG_protecting_model_guide
-   ovsa_get_started
+   ./documentation/openvino-security-introduction
+   ./documentation/openvino-dl-workbench-security
+   ./documentation/using-encrypted-models-with-openvino
+   ./documentation/openvino-security-add-on
 
 This section provides reference documents that guide you through the OpenVINO toolkit workflow, from obtaining models, optimizing them, to deploying them in your own deep learning applications.
 
