@@ -38,7 +38,7 @@ If you have installed OpenVINO Runtime via the installer, APT, or YUM, follow th
    
    The script compares the driver version on the system to the current version. If the driver version on the system is higher or equal to the current version, the script does not install a new driver. If the version of the driver is lower than the current version, the script uninstalls the lower version and installs the current version with your permission:
    
-   .. image:: NEO_check_agreement.png
+   .. image::  ./_assets/NEO_check_agreement.png
    
    Higher hardware versions require a higher driver version, namely 20.35 instead of 19.41. If the script fails to uninstall the driver, uninstall it manually. During the script execution, you may see the following command line output:
    
@@ -71,13 +71,13 @@ To check if you have this driver installed:
 
 #. Click the drop-down arrow to view the **Display adapters**. You can see the adapter that is installed in your computer:
    
-   .. image:: DeviceManager.PNG
+   .. image::  ./_assets/DeviceManager.PNG
 
 #. Right-click the adapter name and select **Properties**.
 
 #. Click the **Driver** tab to see the driver version.
    
-   .. image:: DeviceDriverVersion.PNG
+   .. image::  ./_assets/DeviceDriverVersion.PNG
 
 You are done updating your device driver and are ready to use your GPU. Proceed to the `Start Using the Toolkit <openvino_docs_install_guides_installing_openvino_windows.html#get-started>`__ section to learn the basic OpenVINO™ toolkit workflow and run code samples and demo applications.
 
