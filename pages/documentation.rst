@@ -38,8 +38,8 @@ Documentation
    ./documentation/getting-performance-numbers
    ./documentation/model-optimization-guide
    ./documentation/runtime-inference-optimizations
-   openvino_docs_tuning_utilities
-   openvino_docs_performance_benchmarks
+   ./documentation/tuning-utilities
+   ./documentation/performance-benchmarks
 
 
 .. toctree::

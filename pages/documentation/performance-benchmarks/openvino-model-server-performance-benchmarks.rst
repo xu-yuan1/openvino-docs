@@ -7,7 +7,7 @@ OpenVINO™ Model Server Benchmark Results
 
 :target:`doxid-openvino_docs_performance_benchmarks_ovms_1md_openvino_docs_benchmarks_performance_benchmarks_ovms` OpenVINO™ Model Server is an open-source, production-grade inference platform that exposes a set of models via a convenient inference API over gRPC or HTTP/REST. It employs the OpenVINO™ Runtime libraries from the Intel® Distribution of OpenVINO™ toolkit to extend workloads across Intel® hardware including CPU, GPU and others.
 
-.. image:: performance_benchmarks_ovms_01.png
+.. image:: ./_assets/performance_benchmarks_ovms_01.png
 	:alt: OpenVINO™ Model Server
 
 Measurement Methodology
@@ -15,7 +15,7 @@ Measurement Methodology
 
 OpenVINO™ Model Server is measured in a multiple-client-single-server configuration using two hardware platforms connected by an ethernet network. The network bandwidth depends on the platforms as well as models under investigation, and it is set not to be a bottleneck for workload intensity. This connection is dedicated only to the performance measurements. The benchmark setup consists of four main parts:
 
-.. image:: performance_benchmarks_ovms_02.png
+.. image:: ./_assets/performance_benchmarks_ovms_02.png
 	:alt: OVMS Benchmark Setup Diagram
 
 * **OpenVINO™ Model Server** It is launched as a docker container on the server platform and it listens, and answers to, requests from clients. It is run on the same system as the OpenVINO™ toolkit benchmark application in corresponding benchmarking. Models served by it are placed in a local file system mounted into the docker container. The OpenVINO™ Model Server instance communicates with other components via ports over a dedicated docker network.
@@ -29,62 +29,62 @@ OpenVINO™ Model Server is measured in a multiple-client-single-server configur
 resnet-50-TF (INT8)
 ~~~~~~~~~~~~~~~~~~~
 
-.. image:: throughput_ovms_resnet50_int8.png
+.. image:: ./_assets/throughput_ovms_resnet50_int8.png
 
 resnet-50-TF (FP32)
 ~~~~~~~~~~~~~~~~~~~
 
-.. image:: throughput_ovms_resnet50_fp32_bs_1.png
+.. image:: ./_assets/throughput_ovms_resnet50_fp32_bs_1.png
 
 googlenet-v4-TF (FP32)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: throughput_ovms_googlenet4_fp32.png
+.. image:: ./_assets/throughput_ovms_googlenet4_fp32.png
 
 yolo-v3-tf (FP32)
 ~~~~~~~~~~~~~~~~~
 
-.. image:: throughput_ovms_yolo3_fp32.png
+.. image:: ./_assets/throughput_ovms_yolo3_fp32.png
 
 yolo-v4-tf (FP32)
 ~~~~~~~~~~~~~~~~~
 
-.. image:: throughput_ovms_yolo4_fp32.png
+.. image:: ./_assets/throughput_ovms_yolo4_fp32.png
 
 brain-tumor-segmentation-0002
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: throughput_ovms_braintumorsegmentation.png
+.. image:: ./_assets/throughput_ovms_braintumorsegmentation.png
 
 alexnet
 ~~~~~~~
 
-.. image:: throughput_ovms_alexnet.png
+.. image:: ./_assets/throughput_ovms_alexnet.png
 
 mobilenet-v3-large-1.0-224-TF (FP32)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: throughput_ovms_mobilenet3large_fp32.png
+.. image:: ./_assets/throughput_ovms_mobilenet3large_fp32.png
 
 deeplabv3 (FP32)
 ~~~~~~~~~~~~~~~~
 
-.. image:: throughput_ovms_deeplabv3_fp32.png
+.. image:: ./_assets/throughput_ovms_deeplabv3_fp32.png
 
 bert-small-uncased-whole-word-masking-squad-int8-0002 (INT8)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: throughput_ovms_bertsmall_int8.png
+.. image:: ./_assets/throughput_ovms_bertsmall_int8.png
 
 bert-small-uncased-whole-word-masking-squad-0002 (FP32)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: throughput_ovms_bertsmall_fp32.png
+.. image:: ./_assets/throughput_ovms_bertsmall_fp32.png
 
 3D U-Net (FP32)
 ~~~~~~~~~~~~~~~
 
-.. image:: throughput_ovms_3dunet.png
+.. image:: ./_assets/throughput_ovms_3dunet.png
 
 Image Compression for Improved Throughput
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -123,17 +123,17 @@ Supported Image Formats for OVMS Compression
 googlenet-v4-tf (FP32)
 ----------------------
 
-.. image:: throughput_ovms_1gbps_googlenet4_fp32.png
+.. image:: ./_assets/throughput_ovms_1gbps_googlenet4_fp32.png
 
 resnet-50-tf (INT8)
 -------------------
 
-.. image:: throughput_ovms_1gbps_resnet50_int8.png
+.. image:: ./_assets/throughput_ovms_1gbps_resnet50_int8.png
 
 resnet-50-tf (FP32)
 -------------------
 
-.. image:: throughput_ovms_1gbps_resnet50_fp32.png
+.. image:: ./_assets/throughput_ovms_1gbps_resnet50_fp32.png
 
 Platform Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~

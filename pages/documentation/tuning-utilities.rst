@@ -15,7 +15,7 @@ Tuning Utilities
    :maxdepth: 1
    :caption: Tuning Utilities
 
-   omz_tools_accuracy_checker
-   omz_data_datasets
-   openvino_inference_engine_tools_cross_check_tool_README
+   .. omz_tools_accuracy_checker
+   .. omz_data_datasets
+   ./tuning-utilities/cross-check-tool
 
