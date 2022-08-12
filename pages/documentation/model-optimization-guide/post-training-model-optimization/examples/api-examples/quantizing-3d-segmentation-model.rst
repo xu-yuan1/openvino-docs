@@ -2,8 +2,8 @@
 .. _doxid-pot_example_3d_segmentation__r_e_a_d_m_e:
 
 
-Quantizatiing 3D Segmentation Model
-===================================
+Quantizing 3D Segmentation Model
+================================
 
 :target:`doxid-pot_example_3d_segmentation__r_e_a_d_m_e_1md_openvino_tools_pot_openvino_tools_pot_api_samples_3d_segmentation_readme` This example demonstrates the use of the :ref:`Post-training Optimization Tool API <doxid-pot_compression_api__r_e_a_d_m_e>` for the task of quantizing a 3D segmentation model. The `Brain Tumor Segmentation <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/brain-tumor-segmentation-0002/brain-tumor-segmentation-0002.md>`__ model from PyTorch\* is used for this purpose. A custom ``DataLoader`` is created to load images in NIfTI format from `Medical Segmentation Decathlon BRATS 2017 <http://medicaldecathlon.com/>`__ dataset for 3D semantic segmentation task and the implementation of Dice Index metric is used for the model evaluation. In addition, this example demonstrates how one can use image metadata obtained during image reading and preprocessing to post-process the model raw output. The code of the example is available on `GitHub <https://github.com/openvinotoolkit/openvino/tree/master/tools/pot/openvino/tools/pot/api/samples/3d_segmentation>`__.
 

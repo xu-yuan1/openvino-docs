@@ -32,23 +32,19 @@ In general, most throughput-oriented inference applications should:
 * Decompose the data flow into a collection of concurrent inference requests that are aggressively scheduled to be executed in parallel:
   
   * Setup the configuration for the *device* (for example, as parameters of the ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>```) via either previously introduced :ref:`low-level explicit options <doxid-openvino_docs_deployment_optimization_guide_tput_advanced>` or :ref:`OpenVINO performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` (**preferable**):
-    
-    
-    
-    
-    
-       .. tab:: C++
-    
-          .. doxygensnippet:: docs/snippets/ov_auto_batching.cpp
-             :language: cpp
-             :fragment: [compile_model]
-    
-       .. tab:: Python
-    
-          .. doxygensnippet:: docs/snippets/ov_auto_batching.py
-             :language: python
-             :fragment: [compile_model]
-  
+
+    .. tab:: C++
+
+       .. doxygensnippet:: ../../snippets/ov_auto_batching.cpp
+          :language: cpp
+          :fragment: [compile_model]
+
+    .. tab:: Python
+
+       .. doxygensnippet:: ../../snippets/ov_auto_batching.py
+          :language: python
+          :fragment: [compile_model]
+
   * Query the ``:ref:`ov::optimal_number_of_infer_requests <doxid-group__ov__runtime__cpp__prop__api_1ga087c6da667f7c3d8374aec5f6cbba027>``` from the ``:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>``` (resulted from a compilation of the model for the device) to create the number of the requests required to saturate the device.
 
 * Use the Async API with callbacks, to avoid any dependency on the completion order of the requests and possible device starvation, as explained in the :ref:`common-optimizations section <doxid-openvino_docs_deployment_optimization_guide_common>`.
@@ -64,5 +60,7 @@ OpenVINO offers the automatic, scalable :ref:`multi-device inference mode <doxid
 
 Keep in mind that the resulting performance is usually a fraction of the "ideal" (plain sum) value, when the devices compete for certain resources such as the memory-bandwidth, which is shared between CPU and iGPU.
 
-.. note:: While the legacy approach of optimizing the parameters of each device separately works, the :ref:`OpenVINO performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` allow configuring all devices (that are part of the specific multi-device configuration) at once.
+.. note:: While the legacy approach of optimizing the parameters of each device 
+   separately works, the :ref:`OpenVINO performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` 
+   allow configuring all devices (that are part of the specific multi-device configuration) at once.
 

@@ -2,10 +2,12 @@
 .. _doxid-pot_configs_examples__r_e_a_d_m_e:
 
 
-End-to-end Command-line Interface Example
-=========================================
+Command-line Interface Example
+==============================
 
-:target:`doxid-pot_configs_examples__r_e_a_d_m_e_1md_openvino_tools_pot_docs_e2eexample` This tutorial describes an example of running post-training quantization for **MobileNet v2 model from PyTorch** framework, particularly by the DefaultQuantization algorithm. The example covers the following steps:
+:target:`doxid-pot_configs_examples__r_e_a_d_m_e_1md_openvino_tools_pot_docs_e2eexample` 
+
+This tutorial describes an example of running post-training quantization for **MobileNet v2 model from PyTorch** framework, particularly by the DefaultQuantization algorithm. The example covers the following steps:
 
 * Environment setup
 

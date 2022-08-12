@@ -2,8 +2,8 @@
 .. _doxid-pot_saturation_issue:
 
 
-Saturation (overflow) Issue Workaround
-======================================
+Saturation Issue
+================
 
 :target:`doxid-pot_saturation_issue_1md_openvino_tools_pot_docs_saturationissue`
 
@@ -17,7 +17,7 @@ Saturation Problem Detection
 
 The only way to detect the saturation issue is to run inference on a CPU that allows it and then on one that does not (for example, a VNNI-based CPU). A significant difference in accuracy (more than 1%) will be the main indicator of the saturation issue impact.
 
-Saturation Issue Workaround
+Saturation (overflow) Issue Workaround
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While quantizing activations use the full range of 8-bit data types, there is a workaround using only 7 bits to represent weights (of Convolutional or Fully-Connected layers). Using this algorithm for the first layer can help mitigate the saturation issue for many models. However, this can lead to lower accuracy due to reduced representation of weights.

@@ -2,10 +2,19 @@
 .. _doxid-pot_example_object_detection__r_e_a_d_m_e:
 
 
-Quantizing Object Detection Model with Accuracy Control
-=======================================================
+Quantizing with Accuracy Control
+================================
 
-:target:`doxid-pot_example_object_detection__r_e_a_d_m_e_1md_openvino_tools_pot_openvino_tools_pot_api_samples_object_detection_readme` This example demonstrates the use of the :ref:`Post-training Optimization Toolkit API <doxid-pot_compression_api__r_e_a_d_m_e>` to quantize an object detection model in the :ref:`accuracy-aware mode <doxid-accuracy_aware__r_e_a_d_m_e>`. The `MobileNetV1 FPN <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/ssd_mobilenet_v1_fpn_coco/ssd_mobilenet_v1_fpn_coco.md>`__ model from TensorFlow\* for object detection task is used for this purpose. A custom ``DataLoader`` is created to load the `COCO <https://cocodataset.org/>`__ dataset for object detection task and the implementation of mAP COCO is used for the model evaluation. The code of the example is available on `GitHub <https://github.com/openvinotoolkit/openvino/tree/master/tools/pot/openvino/tools/pot/api/samples/object_detection>`__.
+:target:`doxid-pot_example_object_detection__r_e_a_d_m_e_1md_openvino_tools_pot_openvino_tools_pot_api_samples_object_detection_readme` 
+
+This example demonstrates the use of the :ref:`Post-training Optimization Toolkit API <doxid-pot_compression_api__r_e_a_d_m_e>` 
+to quantize an object detection model in the :ref:`accuracy-aware mode <doxid-accuracy_aware__r_e_a_d_m_e>`. 
+The `MobileNetV1 FPN <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/ssd_mobilenet_v1_fpn_coco/ssd_mobilenet_v1_fpn_coco.md>`__ 
+model from TensorFlow for object detection task is used for this purpose. A custom 
+``DataLoader`` is created to load the `COCO <https://cocodataset.org/>`__ dataset 
+for object detection task and the implementation of mAP COCO is used for the model 
+evaluation. The code of the example is available on 
+`GitHub <https://github.com/openvinotoolkit/openvino/tree/master/tools/pot/openvino/tools/pot/api/samples/object_detection>`__.
 
 How to prepare the data
 ~~~~~~~~~~~~~~~~~~~~~~~

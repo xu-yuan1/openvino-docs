@@ -34,10 +34,10 @@ Documentation
    :caption: Optimization and Performance
    :hidden:
 
-   openvino_docs_optimization_guide_dldt_optimization_guide
-   openvino_docs_MO_DG_Getting_Performance_Numbers
-   openvino_docs_model_optimization_guide
-   openvino_docs_deployment_optimization_guide_dldt_optimization_guide
+   ./documentation/performance-optimization
+   ./documentation/getting-performance-numbers
+   ./documentation/model-optimization-guide
+   ./documentation/runtime-inference-optimizations
    openvino_docs_tuning_utilities
    openvino_docs_performance_benchmarks
 

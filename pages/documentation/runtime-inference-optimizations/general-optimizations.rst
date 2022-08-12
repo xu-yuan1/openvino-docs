@@ -29,9 +29,10 @@ The API of the inference requests offers Sync and Async execution. While the ``:
 
 A typical use case for the ``:ref:`ov::InferRequest::infer() <doxid-classov_1_1_infer_request_1abcb7facc9f7c4b9226a1fd343e56958d>``` is running a dedicated application thread per source of inputs (e.g. a camera), so that every step (frame capture, processing, parsing the results, and associated logic) is kept serial within the thread. In contrast, the ``:ref:`ov::InferRequest::start_async() <doxid-classov_1_1_infer_request_1a5a05ae4352f804c865e11f5d68b983d5>``` and ``:ref:`ov::InferRequest::wait() <doxid-classov_1_1_infer_request_1ab0e0739da45789d816f8b5584a0b5691>``` allow the application to continue its activities and poll or wait for the inference completion when really needed. Therefore, one reason for using an asynchronous code is "efficiency".
 
-.. note:: Although the Synchronous API can be somewhat easier to start with, prefer to use the Asynchronous (callbacks-based, below) API in the production code. The reason is that it is the most general and scalable way to implement the flow control for any possible number of requests (and hence both latency and throughput scenarios).
-
-
+.. note:: Although the Synchronous API can be somewhat easier to start with, prefer 
+   to use the Asynchronous (callbacks-based, below) API in the production code. 
+   The reason is that it is the most general and scalable way to implement the 
+   flow control for any possible number of requests (and hence both latency and throughput scenarios).
 
 The key advantage of the Async approach is that when a device is busy with the inference, the application can do other things in parallel (e.g. populating inputs or scheduling other requests) rather than wait for the current inference to complete first.
 
@@ -50,7 +51,7 @@ Below are example-codes for the regular and async-based approaches to compare:
 	    // display CURRENT result
 	}
 
-.. image:: vtune_regular.png
+.. image:: ./_assets/vtune_regular.png
 	:alt: Intel VTune screenshot
 
 * In the "true" async mode, the ``NEXT`` request is populated in the main (application) thread, while the ``CURRENT`` request is processed:
@@ -67,15 +68,12 @@ Below are example-codes for the regular and async-based approaches to compare:
 	    // swap CURRENT and NEXT InferRequests
 	}
 
-.. image:: vtune_async.png
+.. image:: ./_assets/vtune_async.png
 	:alt: Intel VTune screenshot
 
 The technique can be generalized to any available parallel slack. For example, you can do inference and simultaneously encode the resulting or previous frames or run further inference, like emotion detection on top of the face detection results. Refer to the Object Detection С++ Demo, Object Detection Python Demo(latency-oriented Async API showcase) and :ref:`Benchmark App Sample <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` for complete examples of the Async API in action.
 
 .. note:: Using the Asynchronous API is a must for :ref:`throughput-oriented scenarios <doxid-openvino_docs_deployment_optimization_guide_tput>`.
-
-
-
 
 
 Notes on Callbacks

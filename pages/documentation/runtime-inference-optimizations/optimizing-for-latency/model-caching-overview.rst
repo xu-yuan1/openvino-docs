@@ -35,13 +35,13 @@ To enable model caching, the application must specify a folder to store cached b
 
 .. tab:: C++
 
-      .. doxygensnippet:: docs/snippets/ov_caching.cpp
+      .. doxygensnippet:: ../../../snippets/ov_caching.cpp
          :language: cpp
          :fragment: [ov:caching:part0]
 
 .. tab:: Python
 
-      .. doxygensnippet:: docs/snippets/ov_caching.py
+      .. doxygensnippet:: ../../../snippets/ov_caching.py
          :language: python
          :fragment: [ov:caching:part0]
 
@@ -49,7 +49,7 @@ With this code, if the device specified by ``device_name`` supports import/expor
 
 Depending on your device, total time for compiling model on application startup can be significantly reduced. Also note that the very first ``compile_model`` (when cache is not yet created) takes slightly longer time to "export" the compiled blob into a cache file:
 
-.. image:: caching_enabled.png
+.. image:: ./_assets/caching_enabled.png
 
 Even faster: use compile_model(modelPath)
 -----------------------------------------
@@ -58,13 +58,13 @@ In some cases, applications do not need to customize inputs and outputs every ti
 
 .. tab:: C++
 
-      .. doxygensnippet:: docs/snippets/ov_caching.cpp
+      .. doxygensnippet:: ../../../snippets/ov_caching.cpp
          :language: cpp
          :fragment: [ov:caching:part1]
 
 .. tab:: Python
 
-      .. doxygensnippet:: docs/snippets/ov_caching.py
+      .. doxygensnippet:: ../../../snippets/ov_caching.py
          :language: python
          :fragment: [ov:caching:part1]
 
@@ -72,17 +72,17 @@ With model caching enabled, total load time is even smaller, if ``read_model`` i
 
 .. tab:: C++
 
-      .. doxygensnippet:: docs/snippets/ov_caching.cpp
+      .. doxygensnippet:: ../../../snippets/ov_caching.cpp
          :language: cpp
          :fragment: [ov:caching:part2]
 
 .. tab:: Python
 
-      .. doxygensnippet:: docs/snippets/ov_caching.py
+      .. doxygensnippet:: ../../../snippets/ov_caching.py
          :language: python
          :fragment: [ov:caching:part2]
 
-.. image:: caching_times.png
+.. image:: ./_assets/caching_times.png
 
 Advanced Examples
 -----------------
@@ -91,13 +91,13 @@ Not every device supports network import/export capability. For those that don't
 
 .. tab:: C++
 
-      .. doxygensnippet:: docs/snippets/ov_caching.cpp
+      .. doxygensnippet:: ../../../snippets/ov_caching.cpp
          :language: cpp
          :fragment: [ov:caching:part3]
 
 .. tab:: Python
 
-      .. doxygensnippet:: docs/snippets/ov_caching.py
+      .. doxygensnippet:: ../../../snippets/ov_caching.py
          :language: python
          :fragment: [ov:caching:part3]
 

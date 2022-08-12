@@ -2,8 +2,8 @@
 .. _doxid-openvino_docs_deployment_optimization_guide_internals:
 
 
-Further Low-Level Implementation Details
-========================================
+Further Low-Level Implementation
+================================
 
 :target:`doxid-openvino_docs_deployment_optimization_guide_internals_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_internals`
 
@@ -12,11 +12,11 @@ Throughput on the CPU: Internals
 
 As explained in the :ref:`throughput-related section <doxid-openvino_docs_deployment_optimization_guide_tput>`, the OpenVINO streams is a mean of running multiple requests in parallel. In order to best serve multiple inference requests executed simultaneously, the inference threads are grouped/pinned to the particular CPU cores, constituting the "CPU" streams. This provides much better performance for the networks than batching, especially for the multiple-core systems:
 
-.. image:: cpu_streams_explained_1.png
+.. image:: ./_assets/cpu_streams_explained_1.png
 
 Compared to the batching, the parallelism is somewhat transposed (i.e., performed over inputs with much less synchronization within CNN ops):
 
-.. image:: cpu_streams_explained.png
+.. image:: ./_assets/cpu_streams_explained.png
 
 Keep in mind that :ref:`high-level performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` allow the implementation to select the optimal number of streams depending on model's compute demands and CPU capabilities, including :ref:`int8 inference <doxid-openvino_docs_model_optimization_guide>` hardware acceleration, number of cores, etc.
 
@@ -25,7 +25,7 @@ Automatic Batching Internals
 
 :ref:`Automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` performs on-the-fly grouping of inference requests to improve device utilization. It relaxes the requirement for an application to saturate devices such as GPU by "explicitly" using a large batch. It performs transparent input gathering from individual inference requests followed by the actual batched execution, with no programming effort from the user:
 
-.. image:: BATCH_device.PNG
+.. image:: ./_assets/BATCH_device.png
 
 Essentially, Automatic Batching shifts asynchronicity from individual requests to groups of requests that constitute the batches. Furthermore, for the execution to be efficient, it is very important that the requests arrive timely, without causing a batching timeout. Normally, the timeout should never be hit. It is rather a graceful way to handle the application exit (when the inputs are not arriving anymore, so the full batch is not possible to collect).
 

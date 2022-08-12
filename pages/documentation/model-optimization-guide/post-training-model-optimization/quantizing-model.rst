@@ -8,18 +8,15 @@ Quantizing Model
 :target:`doxid-pot_default_quantization_usage_1md_openvino_tools_pot_docs_defaultquantizationusage`
 
 
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   DefaultQuantization Method <pot_compression_algorithms_quantization_default_README>
+   ./quantizing-model/default-quantization-algorithm
 
 This guide describes how to apply model quantization with the Default Quantization method without accuracy control, using an unannotated dataset. To use this method, you need to create a Python script using an API of Post-Training Optimization Tool (POT) and implement data preparation logic and quantization pipeline. If you are not familiar with Python, try :ref:`command-line interface <doxid-pot_compression_cli__r_e_a_d_m_e>` of POT which is designed to quantize models from OpenVINO `Model Zoo <https://github.com/openvinotoolkit/open_model_zoo>`__. The figure below shows the common workflow of the quantization script implemented with POT API.
 
-.. image:: default_quantization_flow.png
+.. image:: ./_assets/default_quantization_flow.png
 
 The script should include three basic steps:
 
@@ -44,7 +41,11 @@ In most cases, it is required to implement only the ``openvino.tools.pot.DataLoa
 
 Framework data loading classes can be wrapped by the ``openvino.tools.pot.DataLoader`` interface which is usually straightforward. For example, the ``torch.utils.data.Dataset`` has a similar interface as the ``openvino.tools.pot.DataLoader``, so that its TorchVision implementations can be easily wrapped by POT API.
 
-.. note:: Model-specific preprocessing (for example, mean/scale normalization), can be embedded into the model at the conversion step, using Model Optimizer component. This should be considered during the implementation of the DataLoader interface to avoid "double" normalization, which can lead to the loss of accuracy after optimization.
+.. note:: Model-specific preprocessing (for example, mean/scale normalization), 
+   can be embedded into the model at the conversion step, using Model Optimizer 
+   component. This should be considered during the implementation of the DataLoader 
+   interface to avoid "double" normalization, which can lead to the loss of accuracy 
+   after optimization.
 
 
 

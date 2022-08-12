@@ -8,22 +8,21 @@ Post-Training Quantization Best Practices
 :target:`doxid-pot_docs__best_practices_1md_openvino_tools_pot_docs_bestpractices`
 
 
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   Saturation Issue <pot_saturation_issue>
+   ./best-practices/saturation-issue
 
 The :ref:`Default Quantization <doxid-pot_default_quantization_usage>` of the Post-training Optimization Tool (POT) is the fastest and easiest way to get a quantized model. It requires only some unannotated representative dataset to be provided in most cases. Therefore, it is recommended to use it as a starting point when it comes to model optimization. However, it can lead to significant accuracy deviation in some cases. The purpose of this article is to provide tips to address this issue.
 
-.. note:: POT uses inference on the CPU during model optimization. It means that ability to infer the original floating-point model is essential for model optimization. It is also worth mentioning that in case of the 8-bit quantization, it is recommended to run POT on the same CPU architecture when optimizing for CPU or VNNI-based CPU when quantizing for a non-CPU device, such as GPU, VPU, or GNA. It should help to avoid the impact of the :ref:`saturation issue <doxid-pot_saturation_issue>` that occurs on AVX and SSE based CPU devices.
-
-
-
-
+.. note:: POT uses inference on the CPU during model optimization. It means that 
+   ability to infer the original floating-point model is essential for model 
+   optimization. It is also worth mentioning that in case of the 8-bit quantization, 
+   it is recommended to run POT on the same CPU architecture when optimizing for 
+   CPU or VNNI-based CPU when quantizing for a non-CPU device, such as GPU, VPU, 
+   or GNA. It should help to avoid the impact of the :ref:`saturation issue <doxid-pot_saturation_issue>` 
+   that occurs on AVX and SSE based CPU devices.
 
 Improving accuracy after the Default Quantization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

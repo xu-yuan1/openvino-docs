@@ -2,28 +2,30 @@
 .. _doxid-pot_compression_cli__r_e_a_d_m_e:
 
 
-Use Post-Training Optimization Tool Command-Line Interface (Model Zoo flow)
-===========================================================================
+Command-Line Interface (Model Zoo flow)
+=======================================
 
 :target:`doxid-pot_compression_cli__r_e_a_d_m_e_1md_openvino_tools_pot_docs_cli`
-
-
-
 
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   Simplified Mode <pot_docs_simplified_mode>
-   pot_configs_README
+   ./command-line-interface/simplified-mode
+   ./command-line-interface/configuration-file
 
 Introduction
 ~~~~~~~~~~~~
 
-POT command-line interface (CLI) is aimed at optimizing models that are similar to the models from OpenVINO `Model Zoo <https://github.com/openvinotoolkit/open_model_zoo>`__ or if there is a valid AccuracyChecker Tool configuration file for the model. Examples of AccuracyChecker configuration files can be found on `GitHub <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public>`__. Each model folder contains YAML configuration file that can be used with POT as is.
+Post-Training Optimization Tool command-line interface (CLI) is aimed at optimizing models that are similar to the models from OpenVINO `Model Zoo <https://github.com/openvinotoolkit/open_model_zoo>`__ or if there is a valid AccuracyChecker Tool configuration file for the model. Examples of AccuracyChecker configuration files can be found on `GitHub <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public>`__. Each model folder contains YAML configuration file that can be used with POT as is.
 
-.. note:: There is also the so-called :ref:`Simplified mode <doxid-pot_docs_simplified_mode>` aimed at optimizatoin of models from the Computer Vision domain and has a simple dataset preprocessing, like image resize and crop. In this case, you can also use POT CLI for optimization. However, the accuracy results are not guaranteed in this case. Moreover, you are also limited in the optimization methods choice since the accuracy measurement is not available.
+.. note:: There is also the so-called :ref:`Simplified mode <doxid-pot_docs_simplified_mode>` 
+   aimed at optimization of models from the Computer Vision domain and has a simple 
+   dataset preprocessing, like image resize and crop. In this case, you can also 
+   use POT CLI for optimization. However, the accuracy results are not guaranteed 
+   in this case. Moreover, you are also limited in the optimization methods choice 
+   since the accuracy measurement is not available.
 
 Run POT CLI
 ~~~~~~~~~~~

@@ -9,7 +9,7 @@ Neural Network Compression Framework
 
 NNCF is distributed as a separate tool but is closely aligned with OpenVINO in terms of supported optimization features and models. It is open source and available on `GitHub <https://github.com/openvinotoolkit/nncf>`__. The diagram below shows the model optimization workflow, using NNCF.
 
-.. image:: nncf_workflow.png
+.. image:: ./_assets/nncf_workflow.png
 
 Features
 --------

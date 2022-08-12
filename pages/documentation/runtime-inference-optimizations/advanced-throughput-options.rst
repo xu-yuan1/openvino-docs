@@ -2,8 +2,8 @@
 .. _doxid-openvino_docs_deployment_optimization_guide_tput_advanced:
 
 
-Using Advanced Throughput Options: Streams and Batching
-=======================================================
+Advanced Throughput Options
+===========================
 
 :target:`doxid-openvino_docs_deployment_optimization_guide_tput_advanced_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_tput_advanced`
 
@@ -12,15 +12,14 @@ OpenVINO Streams
 
 As explained in the :ref:`common-optimizations section <doxid-openvino_docs_deployment_optimization_guide_common>`, running multiple inference requests asynchronously is important for general application efficiency. Internally, every device implements a queue, which acts as a buffer, storing the inference requests until retrieved by the device at its own pace. The devices may actually process multiple inference requests in parallel in order to improve the device utilization and overall throughput. This configurable method of this device-side parallelism is commonly referred as **streams**.
 
-.. note:: Be aware that streams are **really executing the requests in parallel, but not in the lock step** (as the batching does), which makes the streams fully compatible with :ref:`dynamically-shaped inputs <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`, while individual requests can have different shapes.
+.. note:: Be aware that streams are **really executing the requests in parallel, but 
+   not in the lock step** (as the batching does), which makes the streams fully compatible 
+   with :ref:`dynamically-shaped inputs <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`, 
+   while individual requests can have different shapes.
 
-
-
-
-
-.. note:: Most OpenVINO devices (including CPU, GPU and VPU) support the streams, yet the *optimal* number of the streams is deduced very differently. More information on this topic can be found in the section :ref:`below <doxid-openvino_docs_deployment_optimization_guide_tput_advanced_1stream_considerations>`.
-
-
+.. note:: Most OpenVINO devices (including CPU, GPU and VPU) support the streams, yet the 
+   *optimal* number of the streams is deduced very differently. More information on this topic 
+   can be found in the section :ref:`below <doxid-openvino_docs_deployment_optimization_guide_tput_advanced_1stream_considerations>`.
 
 A few general considerations:
 
@@ -66,14 +65,12 @@ Different devices behave differently with the batch sizes. The optimal batch siz
 
 One possible throughput optimization strategy is to **set an upper bound for latency and then increase the batch size and/or number of the streams until that tail latency is met (or the throughput is not growing anymore)**. Consider :ref:`OpenVINO Deep Learning Workbench <doxid-workbench_docs__workbench__d_g__introduction>` that builds handy latency vs throughput charts, iterating over possible values of the batch size and number of streams.
 
-.. note:: When playing with :ref:`dynamically-shaped inputs <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`, use only the streams (no batching), as they tolerate individual requests having different shapes.
+.. note:: When playing with :ref:`dynamically-shaped inputs <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`, 
+   use only the streams (no batching), as they tolerate individual requests having different shapes.
 
-
-
-
-
-.. note:: Using the :ref:`High-Level Performance Hints <doxid-openvino_docs__o_v__u_g__performance__hints>` is the alternative, portable and future-proof option, allowing OpenVINO to find the best combination of streams and batching for a given scenario and a model.
-
+.. note:: Using the :ref:`High-Level Performance Hints <doxid-openvino_docs__o_v__u_g__performance__hints>` 
+   is the alternative, portable and future-proof option, allowing OpenVINO to find 
+   the best combination of streams and batching for a given scenario and a model.
 
 
 :target:`doxid-openvino_docs_deployment_optimization_guide_tput_advanced_1stream_considerations`

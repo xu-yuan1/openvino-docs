@@ -5,7 +5,9 @@
 Getting Performance Numbers
 ===========================
 
-:target:`doxid-openvino_docs__m_o__d_g__getting__performance__numbers_1md_openvino_docs_mo_dg_prepare_model_getting_performance_numbers` This guide introduces things to notice and how to use the benchmark_app to get performance numbers. It also explains how the performance numbers are reflected through internal inference performance counters and execution graphs. In the last section, it includes information on using ITT and Intel® VTune™ Profiler to get performance insights.
+:target:`doxid-openvino_docs__m_o__d_g__getting__performance__numbers_1md_openvino_docs_mo_dg_prepare_model_getting_performance_numbers` 
+
+This guide introduces things to notice and how to use the benchmark_app to get performance numbers. It also explains how the performance numbers are reflected through internal inference performance counters and execution graphs. In the last section, it includes information on using ITT and Intel® VTune™ Profiler to get performance insights.
 
 Tip 1: Select Proper Set of Operations to Measure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -16,10 +18,10 @@ When evaluating the performance of a model with OpenVINO Runtime, it is required
 
 * Track operations that occur outside OpenVINO Runtime (such as video decoding) separately.
 
-.. note:: Some image pre-processing can be baked into OpenVINO IR and accelerated accordingly. For more information, refer to :ref:`Embedding the Pre-processing <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>` and `General Runtime Optimizations <../../optimization_guide/dldt_deployment_optimization_common>`__.
-
-
-
+.. note:: Some image pre-processing can be baked into OpenVINO IR and accelerated 
+   accordingly. For more information, refer to 
+   :ref:`Embedding the Pre-processing <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>` 
+   and `General Runtime Optimizations <../../optimization_guide/dldt_deployment_optimization_common>`__.
 
 
 Tip 2: Try to Get Credible Data

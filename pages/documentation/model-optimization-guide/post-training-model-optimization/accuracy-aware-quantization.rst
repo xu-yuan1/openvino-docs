@@ -8,21 +8,21 @@ Quantizing Model with Accuracy Control
 :target:`doxid-pot_accuracyaware_usage_1md_openvino_tools_pot_docs_accuracyawarequantizationusage`
 
 
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   AccuracyAwareQuantization Method <accuracy_aware_README>
+   ./accuracy-aware-quantization/accuracy-aware-quantization-algorithm
 
 The Accuracy-aware Quantization algorithm allows to perform quantization while maintaining accuracy within a pre-defined range. Note that it should be used only if the :ref:`Default Quantization <doxid-pot_default_quantization_usage>` introduces a significant accuracy degradation. The reason for it not being the primary choice is its potential for performance degradation, due to some layers getting reverted to the original precision.
 
 To proceed with this article, make sure you have read how to use :ref:`Default Quantization <doxid-pot_default_quantization_usage>`.
 
-.. note:: The Accuracy-aware Quantization algorithm's behavior is different for the GNA ``target_device``. In this case it searches for the best configuration and selects between INT8 and INT16 precisions for weights of each layer. The algorithm works for the ``performance`` preset only. It is not useful for the ``accuracy`` preset, since the whole model is already in INT16 precision.
-
+.. note:: The Accuracy-aware Quantization algorithm's behavior is different for 
+   the GNA ``target_device``. In this case it searches for the best configuration 
+   and selects between INT8 and INT16 precisions for weights of each layer. The 
+   algorithm works for the ``performance`` preset only. It is not useful for the 
+   ``accuracy`` preset, since the whole model is already in INT16 precision.
 
 
 A script for Accuracy-aware Quantization includes four steps:

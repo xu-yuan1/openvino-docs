@@ -2,10 +2,22 @@
 .. _doxid-pot_example_face_detection__r_e_a_d_m_e:
 
 
-Quantizing Cascaded Face detection Model
-========================================
+Quantizing Face Detection Model
+===============================
 
-:target:`doxid-pot_example_face_detection__r_e_a_d_m_e_1md_openvino_tools_pot_openvino_tools_pot_api_samples_face_detection_readme` This example demonstrates the use of the :ref:`Post-training Optimization Tool API <doxid-pot_compression_api__r_e_a_d_m_e>` for the task of quantizing a face detection model. The `MTCNN <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/mtcnn/mtcnn.md>`__ model from Caffe\* is used for this purpose. A custom ``DataLoader`` is created to load `WIDER FACE <http://shuoyang1213.me/WIDERFACE/>`__ dataset for a face detection task and the implementation of Recall metric is used for the model evaluation. In addition, this example demonstrates how one can implement an engine to infer a cascaded (composite) model that is represented by multiple submodels in an OpenVino Intermediate Representation (IR) and has a complex staged inference pipeline. The code of the example is available on `GitHub <https://github.com/openvinotoolkit/openvino/tree/master/tools/pot/openvino/tools/pot/api/samples/face_detection>`__.
+:target:`doxid-pot_example_face_detection__r_e_a_d_m_e_1md_openvino_tools_pot_openvino_tools_pot_api_samples_face_detection_readme` 
+
+This example demonstrates the use of the :ref:`Post-training Optimization Tool API <doxid-pot_compression_api__r_e_a_d_m_e>` 
+for the task of quantizing a face detection model. 
+The `MTCNN <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/mtcnn/mtcnn.md>`__ 
+model from Caffe is used for this purpose. A custom ``DataLoader`` is created 
+to load `WIDER FACE <http://shuoyang1213.me/WIDERFACE/>`__ dataset for a face 
+detection task and the implementation of Recall metric is used for the model 
+evaluation. In addition, this example demonstrates how one can implement an engine 
+to infer a cascaded (composite) model that is represented by multiple submodels in 
+an OpenVino Intermediate Representation (IR) and has a complex staged inference 
+pipeline. The code of the example is available on 
+`GitHub <https://github.com/openvinotoolkit/openvino/tree/master/tools/pot/openvino/tools/pot/api/samples/face_detection>`__.
 
 How to prepare the data
 ~~~~~~~~~~~~~~~~~~~~~~~

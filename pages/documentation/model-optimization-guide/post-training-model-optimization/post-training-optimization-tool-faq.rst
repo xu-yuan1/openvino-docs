@@ -2,10 +2,14 @@
 .. _doxid-pot_docs__frequently_asked_questions:
 
 
-Post-training Optimization Tool Frequently Asked Questions
-==========================================================
+Post-training Optimization Tool FAQ
+===================================
 
-:target:`doxid-pot_docs__frequently_asked_questions_1md_openvino_tools_pot_docs_frequentlyaskedquestions` If your question is not covered below, use the `OpenVINO™ Community Forum page <https://community.intel.com/t5/Intel-Distribution-of-OpenVINO/bd-p/distribution-openvino-toolkit>`__, where you can participate freely.
+:target:`doxid-pot_docs__frequently_asked_questions_1md_openvino_tools_pot_docs_frequentlyaskedquestions` 
+
+If your question is not covered below, use the 
+`OpenVINO™ Community Forum page <https://community.intel.com/t5/Intel-Distribution-of-OpenVINO/bd-p/distribution-openvino-toolkit>`__, 
+where you can participate freely.
 
 * `Is the Post-training Optimization Tool opensourced? <#opensourced>`__
 
@@ -63,7 +67,7 @@ The POT accepts models in the OpenVINO Intermediate Representation (IR) format o
 I'd like to quantize a model and I've converted it to IR but I don't have the Accuracy Checker config. What can I do?
 ---------------------------------------------------------------------------------------------------------------------
 
-#. Try quantization using Python\* API of the Post-training Optimization Tool. For more details see [Default Quantization](:ref:`Quantizing Model <doxid-pot_default_quantization_usage>`.
+#. Try quantization using Python API of the Post-training Optimization Tool. For more details see [Default Quantization](:ref:`Quantizing Model <doxid-pot_default_quantization_usage>`.
 
 #. If you consider command-line usage only refer to Accuracy Checker documentation to create the Accuracy Checker configuration file, and try to find the configuration file for your model among the ones available in the Accuracy Checker examples.
 

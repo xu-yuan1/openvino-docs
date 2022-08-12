@@ -7,19 +7,15 @@ Runtime Inference Optimizations
 
 :target:`doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_guide`
 
-
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_deployment_optimization_guide_common
-   openvino_docs_deployment_optimization_guide_latency
-   openvino_docs_deployment_optimization_guide_tput
-   openvino_docs_deployment_optimization_guide_tput_advanced
-   openvino_docs_deployment_optimization_guide_internals
+   ./runtime-inference-optimizations/general-optimizations
+   ./runtime-inference-optimizations/optimizing-for-latency
+   ./runtime-inference-optimizations/optimizing-for-throughput
+   ./runtime-inference-optimizations/advanced-throughput-options
+   ./runtime-inference-optimizations/further-low-level-implementation
 
 Runtime optimizations, or deployment optimizations, focus on tuning inference parameters and execution means (e.g., the optimum number of requests executed simultaneously). Unlike model-level optimizations, they are highly specific to the hardware and case they are used for, and often come at a cost. ``:ref:`ov::hint::inference_precision <doxid-group__ov__runtime__cpp__prop__api_1gad605a888f3c9b7598ab55023fbf44240>``` is a "typical runtime configuration" which trades accuracy for performance, allowing ``fp16/bf16`` execution for the layers that remain in ``fp32`` after quantization of the original ``fp32`` model.
 

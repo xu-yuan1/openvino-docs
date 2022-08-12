@@ -7,15 +7,11 @@ Optimizing for the Latency
 
 :target:`doxid-openvino_docs_deployment_optimization_guide_latency_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_latency`
 
-
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_OV_UG_Model_caching_overview
+   ./optimizing-for-latency/model-caching-overview
 
 A significant portion of deep learning use cases involve applications loading a single model and using a single input at a time, which is the of typical "consumer" scenario. While an application can create more than one request if needed, for example to support :ref:`asynchronous inputs population <doxid-openvino_docs_deployment_optimization_guide_common_1async_api>`, its **inference performance depends on how many requests are being inferenced in parallel** on a device.
 
@@ -25,7 +21,8 @@ However, some conventional "root" devices (i.e., CPU or GPU) can be in fact inte
 
 Typically, human expertise is required to get more "throughput" out of the device, even in the inherently latency-oriented cases. OpenVINO can take this configuration burden via :ref:`high-level performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>`, the ``:ref:`ov::hint::PerformanceMode::LATENCY <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a501069dd75f76384ba18f133fdce99c2>``` specified for the ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` property for the ``compile_model``.
 
-.. note:: :ref:`OpenVINO performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` is a recommended way for performance configuration, which is both device-agnostic and future-proof.
+.. note:: :ref:`OpenVINO performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` 
+   is a recommended way for performance configuration, which is both device-agnostic and future-proof.
 
 
 

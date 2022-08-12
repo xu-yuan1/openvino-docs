@@ -7,21 +7,17 @@ Optimizing models post-training
 
 :target:`doxid-pot_introduction_1md_openvino_tools_pot_docs_introduction`
 
-
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   Quantizing Model <pot_default_quantization_usage>
-   Quantizing Model with Accuracy Control <pot_accuracyaware_usage>
-   Quantization Best Practices <pot_docs_BestPractices>
-   API Reference <pot_compression_api_README>
-   Command-line Interface <pot_compression_cli_README>
-   Examples <pot_examples_description>
-   pot_docs_FrequentlyAskedQuestions
+   ./post-training-model-optimization/quantizing-model
+   ./post-training-model-optimization/accuracy-aware-quantization
+   ./post-training-model-optimization/best-practices
+   ./post-training-model-optimization/api-reference
+   ./post-training-model-optimization/command-line-interface
+   ./post-training-model-optimization/examples
+   ./post-training-model-optimization/post-training-optimization-tool-faq
 
 Post-training model optimization is the process of applying special methods without model retraining or fine-tuning. Therefore, it does not require either a training dataset or a training pipeline in the source DL framework. In OpenVINO, post-training methods, such as post-training 8-bit quantization, require:
 
@@ -35,7 +31,7 @@ OpenVINO provides a Post-training Optimization Tool (POT) that supports the unif
 
 The figure below shows the optimization workflow with POT:
 
-.. image:: workflow_simple.png
+.. image:: ./_assets/workflow_simple.png
 
 Quantizing models with POT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,7 +44,8 @@ Depending on your needs and requirements, POT provides two main quantization met
 
 Different hardware platforms support different integer precisions and quantization parameters. For example, 8-bit is used by CPU, GPU, VPU, and 16-bit by GNA. POT abstracts this complexity by introducing a concept of the "target device" used to set quantization settings, specific to the device.
 
-.. note:: There is a special ``target_device: "ANY"`` which leads to portable quantized models compatible with CPU, GPU, and VPU devices. GNA-quantized models are compatible only with CPU.
+.. note:: There is a special ``target_device: "ANY"`` which leads to portable 
+   quantized models compatible with CPU, GPU, and VPU devices. GNA-quantized models are compatible only with CPU.
 
 
 

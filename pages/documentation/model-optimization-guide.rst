@@ -8,16 +8,13 @@ Model Optimization Guide
 :target:`doxid-openvino_docs_model_optimization_guide_1md_openvino_docs_optimization_guide_model_optimization_guide`
 
 
-
-
-
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   pot_introduction
-   docs_nncf_introduction
-   (Experimental) Protecting Model <pot_range_supervision_README>
+   ./model-optimization-guide/post-training-model-optimization
+   ./model-optimization-guide/neural-network-compression-framework
+   ./model-optimization-guide/experimental-protecting-model
 
 Model optimization is an optional offline step of improving final model performance by applying special optimization methods, such as quantization, pruning, preprocessing optimization, etc. OpenVINO provides several tools to optimize models at different steps of model development:
 
@@ -30,11 +27,11 @@ Model optimization is an optional offline step of improving final model performa
 Detailed workflow:
 ~~~~~~~~~~~~~~~~~~
 
-.. image:: DEVELOPMENT_FLOW_V3_crunch.svg
+.. image:: ./_assets/DEVELOPMENT_FLOW_V3_crunch.svg
 
 The diagram below will help you understand which development optimization tool you need to use:
 
-.. image:: WHAT_TO_USE.svg
+.. image:: ./_assets/WHAT_TO_USE.svg
 
 Post-training methods are limited in terms of achievable accuracy, which may degrade for certain scenarios. In such cases, training-time optimization with NNCF may give better results.
 
