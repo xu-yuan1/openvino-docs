@@ -2,7 +2,7 @@
 .. _doxid-openvino_inference_engine_ie_bridges_python_sample_hello_query_device__r_e_a_d_m_e:
 
 
-Hello Query Device Python\* Sample
+Hello Query Device Python Sample
 ==================================
 
 :target:`doxid-openvino_inference_engine_ie_bridges_python_sample_hello_query_device__r_e_a_d_m_e_1md_openvino_samples_python_hello_query_device_readme` This sample demonstrates how to show OpenVINO™ Runtime devices and prints their metrics and default configuration values using :ref:`Query Device API feature <doxid-openvino_docs__o_v__u_g_query_api>`.

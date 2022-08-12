@@ -2,12 +2,12 @@
 .. _doxid-openvino_inference_engine_ie_bridges_python_sample_speech_sample__r_e_a_d_m_e:
 
 
-Automatic Speech Recognition Python\* Sample
+Automatic Speech Recognition Python Sample
 ============================================
 
-:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_speech_sample__r_e_a_d_m_e_1md_openvino_samples_python_speech_sample_readme` This sample demonstrates how to do a Synchronous Inference of acoustic model based on Kaldi\* neural models and speech feature vectors.
+:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_speech_sample__r_e_a_d_m_e_1md_openvino_samples_python_speech_sample_readme` This sample demonstrates how to do a Synchronous Inference of acoustic model based on Kaldi neural models and speech feature vectors.
 
-The sample works with Kaldi ARK or Numpy\* uncompressed NPZ files, so it does not cover an end-to-end speech recognition scenario (speech to text), requiring additional preprocessing (feature extraction) to get a feature vector from a speech signal, as well as postprocessing (decoding) to produce text from scores.
+The sample works with Kaldi ARK or Numpy uncompressed NPZ files, so it does not cover an end-to-end speech recognition scenario (speech to text), requiring additional preprocessing (feature extraction) to get a feature vector from a speech signal, as well as postprocessing (decoding) to produce text from scores.
 
 Automatic Speech Recognition Python sample application demonstrates how to use the following Python API in applications:
 
@@ -36,7 +36,7 @@ Automatic Speech Recognition Python sample application demonstrates how to use t
       - [openvino.runtime.InferRequest.profiling_info], [openvino.runtime.ProfilingInfo.real_time]
       - Get infer request profiling info
 
-Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python\* Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e>`.
+Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e>`.
 
 .. list-table::
     :header-rows: 1
@@ -44,7 +44,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python\* 
     * - Options
       - Values
     * - Validated Models
-      - Acoustic model based on Kaldi\* neural models (see `Model Preparation <#model-preparation>`__ section)
+      - Acoustic model based on Kaldi neural models (see `Model Preparation <#model-preparation>`__ section)
     * - Model Format
       - OpenVINO™ toolkit Intermediate Representation (.xml + .bin)
     * - Supported devices
@@ -77,11 +77,9 @@ The ``-qb`` flag provides a hint to the GNA plugin regarding the preferred targe
 
 For example, when ``-qb 8`` is specified, the plugin will use 8-bit weights wherever possible in the model.
 
-.. note:: * It is not always possible to use 8-bit weights due to GNA hardware limitations. For example, convolutional layers always use 16-bit weights (GNA hardware version 1 and 2). This limitation will be removed in GNA hardware version 3 and higher.
-
-
-
-
+.. note:: * It is not always possible to use 8-bit weights due to GNA hardware 
+   limitations. For example, convolutional layers always use 16-bit weights (GNA 
+   hardware version 1 and 2). This limitation will be removed in GNA hardware version 3 and higher.
 
 Execution Modes
 ---------------
@@ -111,7 +109,7 @@ The GNA plugin supports loading and saving of the GNA-optimized model (non-IR) v
 
 Thereby, it is possible to avoid the cost of full model quantization at run time.
 
-The GNA plugin also supports export of firmware-compatible embedded model images for the Intel® Speech Enabling Developer Kit and Amazon Alexa\* Premium Far-Field Voice Development Kit via the ``-we`` flag (save only).
+The GNA plugin also supports export of firmware-compatible embedded model images for the Intel® Speech Enabling Developer Kit and Amazon Alexa Premium Far-Field Voice Development Kit via the ``-we`` flag (save only).
 
 In addition to performing inference directly from a GNA model file, these options make it possible to:
 

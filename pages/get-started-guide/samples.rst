@@ -2,14 +2,10 @@
 .. _doxid-openvino_docs__o_v__u_g__samples__overview:
 
 
-OpenVINO Samples
-================
+Samples
+=======
 
 :target:`doxid-openvino_docs__o_v__u_g__samples__overview_1md_openvino_docs_ov_runtime_ug_samples_overview`
-
-
-
-
 
 .. _code samples:
 
@@ -17,24 +13,24 @@ OpenVINO Samples
    :maxdepth: 1
    :hidden:
 
-   Basic OpenVINO Workflow <openvino_docs_get_started_get_started_demos>
-   openvino_inference_engine_samples_classification_sample_async_README
-   openvino_inference_engine_ie_bridges_python_sample_classification_sample_async_README
-   openvino_inference_engine_samples_hello_classification_README
-   openvino_inference_engine_ie_bridges_c_samples_hello_classification_README
-   openvino_inference_engine_ie_bridges_python_sample_hello_classification_README
-   openvino_inference_engine_samples_hello_reshape_ssd_README
-   openvino_inference_engine_ie_bridges_python_sample_hello_reshape_ssd_README
-   openvino_inference_engine_samples_hello_nv12_input_classification_README
-   openvino_inference_engine_ie_bridges_c_samples_hello_nv12_input_classification_README
-   openvino_inference_engine_samples_hello_query_device_README
-   openvino_inference_engine_ie_bridges_python_sample_hello_query_device_README
-   openvino_inference_engine_samples_model_creation_sample_README
-   openvino_inference_engine_ie_bridges_python_sample_model_creation_sample_README
-   openvino_inference_engine_samples_speech_sample_README
-   openvino_inference_engine_ie_bridges_python_sample_speech_sample_README
-   openvino_inference_engine_samples_benchmark_app_README
-   openvino_inference_engine_tools_benchmark_tool_README
+   ./samples/basic-openvino-workflow
+   ./samples/cpp-sample-image-classification
+   ./samples/python-sample-image-classification
+   ./samples/cpp-sample-hello-classification
+   ./samples/c-sample-hello-classification
+   ./samples/python-sample-hello-classification
+   ./samples/cpp-sample-hello-reshape-ssd
+   ./samples/python-sample-hello-reshape-ssd
+   ./samples/cpp-sample-hello-nv12-input-classification
+   ./samples/c-sample-hello-nv12-input-classification
+   ./samples/cpp-sample-hello-query-device
+   ./samples/python-sample-hello-query-device
+   ./samples/cpp-sample-model-creation
+   ./samples/python-sample-model-creation
+   ./samples/cpp-sample-automatic-speech-recognition.rst
+   ./samples/python-sample-automatic-speech-recognition
+   ./samples/cpp-benchmark-tool
+   ./samples/python-benchmark-tool
 
 The OpenVINO samples are simple console applications that show how to utilize specific OpenVINO API capabilities within an application. They can assist you in executing specific tasks such as loading a model, running inference, querying specific device capabilities, etc.
 
@@ -98,7 +94,8 @@ The applications include:
   
   Note that the Python version of the benchmark tool is currently available only through the :ref:`OpenVINO Development Tools installation <doxid-openvino_docs_install_guides_install_dev_tools>`. It is not created in the samples directory but can be launched with the following command: ``benchmark_app -m <model> -i <input> -d <device>`` For more information, check the :ref:`Benchmark Python Tool <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` documentation.
 
-.. note:: All C++ samples support input paths containing only ASCII characters, except for the Hello Classification Sample, that supports Unicode.
+.. note:: All C++ samples support input paths containing only ASCII characters, 
+   except for the Hello Classification Sample, that supports Unicode.
 
 
 
@@ -130,7 +127,8 @@ The officially supported Linux\* build environment is the following:
 
 * CMake\* version 3.10 or higher
 
-.. note:: For building samples from the open-source version of OpenVINO™ toolkit, see the `build instructions on GitHub <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>`__.
+.. note:: For building samples from the open-source version of OpenVINO™ toolkit, 
+   see the `build instructions on GitHub <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>`__.
 
 
 
@@ -148,7 +146,8 @@ Once the build is completed, you can find sample binaries in the following folde
 
 You can also build the sample applications manually:
 
-.. note:: If you have installed the product as a root user, switch to root mode before you continue: ``sudo -i``
+.. note:: If you have installed the product as a root user, switch to root mode 
+   before you continue: ``sudo -i``
 
 
 
@@ -162,7 +161,8 @@ You can also build the sample applications manually:
    
    
    
-   .. note:: If you run the Image Classification verification script during the installation, the C++ samples build directory is created in your home directory: ``~/inference_engine_cpp_samples_build/``
+   .. note:: If you run the Image Classification verification script during the 
+      installation, the C++ samples build directory is created in your home directory: ``~/inference_engine_cpp_samples_build/``
 
 #. Go to the created directory:
    
@@ -205,7 +205,8 @@ The recommended Windows build environment is the following:
 
 * CMake version 3.10 or higher
 
-.. note::  If you want to use Microsoft Visual Studio 2019, you are required to install CMake 3.14 or higher.
+.. note:: If you want to use Microsoft Visual Studio 2019, you are required to 
+   install CMake 3.14 or higher.
 
 
 
@@ -238,7 +239,8 @@ The officially supported macOS\* build environment is the following:
 
 * CMake\* version 3.13 or higher
 
-.. note:: For building samples from the open-source version of OpenVINO™ toolkit, see the `build instructions on GitHub <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>`__.
+.. note:: For building samples from the open-source version of OpenVINO™ toolkit, 
+   see the `build instructions on GitHub <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>`__.
 
 
 
@@ -256,13 +258,15 @@ Once the build is completed, you can find sample binaries in the following folde
 
 You can also build the sample applications manually:
 
-.. note:: If you have installed the product as a root user, switch to root mode before you continue: ``sudo -i``
+.. note:: If you have installed the product as a root user, switch to root mode 
+   before you continue: ``sudo -i``
 
 
 
 
 
-.. note:: Before proceeding, make sure you have OpenVINO™ environment set correctly. This can be done manually by
+.. note:: Before proceeding, make sure you have OpenVINO™ environment set correctly. 
+   This can be done manually by
 
 
 
@@ -281,7 +285,8 @@ You can also build the sample applications manually:
    
    
    
-   .. note:: If you ran the Image Classification verification script during the installation, the C++ samples build directory was already created in your home directory: ``~/inference_engine_cpp_samples_build/``
+   .. note:: If you ran the Image Classification verification script during the 
+      installation, the C++ samples build directory was already created in your home directory: ``~/inference_engine_cpp_samples_build/``
 
 #. Go to the created directory:
    

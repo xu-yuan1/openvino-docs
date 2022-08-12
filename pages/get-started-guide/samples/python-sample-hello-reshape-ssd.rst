@@ -2,7 +2,7 @@
 .. _doxid-openvino_inference_engine_ie_bridges_python_sample_hello_reshape_ssd__r_e_a_d_m_e:
 
 
-Hello Reshape SSD Python\* Sample
+Hello Reshape SSD Python Sample
 =================================
 
 :target:`doxid-openvino_inference_engine_ie_bridges_python_sample_hello_reshape_ssd__r_e_a_d_m_e_1md_openvino_samples_python_hello_reshape_ssd_readme` This sample demonstrates how to do synchronous inference of object detection models using :ref:`Shape Inference feature <doxid-openvino_docs__o_v__u_g__shape_inference>`.
@@ -21,7 +21,7 @@ The following Python API is used in the application:
       - [openvino.runtime.Model.reshape], `openvino.runtime.Model.input <[openvino.runtime.Output.get_any_name]:>`__ , [openvino.runtime.Output.get_any_name], [openvino.runtime.PartialShape]
       - Managing of model
 
-Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python\* Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e>`.
+Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e>`.
 
 .. list-table::
     :header-rows: 1

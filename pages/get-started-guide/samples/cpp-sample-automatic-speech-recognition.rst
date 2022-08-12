@@ -5,9 +5,9 @@
 Automatic Speech Recognition C++ Sample
 =======================================
 
-:target:`doxid-openvino_inference_engine_samples_speech_sample__r_e_a_d_m_e_1md_openvino_samples_cpp_speech_sample_readme` This sample demonstrates how to execute an Asynchronous Inference of acoustic model based on Kaldi\* neural networks and speech feature vectors.
+:target:`doxid-openvino_inference_engine_samples_speech_sample__r_e_a_d_m_e_1md_openvino_samples_cpp_speech_sample_readme` This sample demonstrates how to execute an Asynchronous Inference of acoustic model based on Kaldi neural networks and speech feature vectors.
 
-The sample works with Kaldi ARK or Numpy\* uncompressed NPZ files, so it does not cover an end-to-end speech recognition scenario (speech to text), requiring additional preprocessing (feature extraction) to get a feature vector from a speech signal, as well as postprocessing (decoding) to produce text from scores.
+The sample works with Kaldi ARK or Numpy uncompressed NPZ files, so it does not cover an end-to-end speech recognition scenario (speech to text), requiring additional preprocessing (feature extraction) to get a feature vector from a speech signal, as well as postprocessing (decoding) to produce text from scores.
 
 The following C++ API is used in the application:
 
@@ -50,7 +50,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sampl
     * - Options
       - Values
     * - Validated Models
-      - Acoustic model based on Kaldi\* neural networks (see `Model Preparation <#model-preparation>`__ section)
+      - Acoustic model based on Kaldi neural networks (see `Model Preparation <#model-preparation>`__ section)
     * - Model Format
       - OpenVINO™ toolkit Intermediate Representation (\*.xml + \*.bin)
     * - Supported devices
@@ -81,7 +81,9 @@ If the GNA device is selected (for example, using the ``-d`` GNA flag), the GNA 
 
 The ``-qb`` flag provides a hint to the GNA plugin regarding the preferred target weight resolution for all layers. For example, when ``-qb 8`` is specified, the plugin will use 8-bit weights wherever possible in the network.
 
-.. note:: * It is not always possible to use 8-bit weights due to GNA hardware limitations. For example, convolutional layers always use 16-bit weights (GNA hardware version 1 and 2). This limitation will be removed in GNA hardware version 3 and higher.
+.. note:: * It is not always possible to use 8-bit weights due to GNA hardware 
+   limitations. For example, convolutional layers always use 16-bit weights (GNA 
+   hardware version 1 and 2). This limitation will be removed in GNA hardware version 3 and higher.
 
 
 
@@ -111,7 +113,7 @@ Several execution modes are supported via the ``-d`` flag:
 Loading and Saving Models
 +++++++++++++++++++++++++
 
-The GNA plugin supports loading and saving of the GNA-optimized model (non-IR) via the ``-rg`` and ``-wg`` flags. Thereby, it is possible to avoid the cost of full model quantization at run time. The GNA plugin also supports export of firmware-compatible embedded model images for the Intel® Speech Enabling Developer Kit and Amazon Alexa\* Premium Far-Field Voice Development Kit via the ``-we`` flag (save only).
+The GNA plugin supports loading and saving of the GNA-optimized model (non-IR) via the ``-rg`` and ``-wg`` flags. Thereby, it is possible to avoid the cost of full model quantization at run time. The GNA plugin also supports export of firmware-compatible embedded model images for the Intel® Speech Enabling Developer Kit and Amazon Alexa Premium Far-Field Voice Development Kit via the ``-we`` flag (save only).
 
 In addition to performing inference directly from a GNA model file, these combinations of options make it possible to:
 
@@ -256,7 +258,7 @@ The sample application logs each step in a standard output stream.
 	
 	[ INFO ] Execution successful
 
-Use of Sample in Kaldi\* Speech Recognition Pipeline
+Use of Sample in Kaldi Speech Recognition Pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Wall Street Journal DNN model used in this example was prepared using the Kaldi s5 recipe and the Kaldi Nnet (nnet1) framework. It is possible to recognize speech by substituting the ``speech_sample`` for Kaldi's nnet-forward command. Since the ``speech_sample`` does not yet use pipes, it is necessary to use temporary files for speaker-transformed feature vectors and scores when running the Kaldi speech recognition pipeline. The following operations assume that feature extraction was already performed according to the ``s5`` recipe and that the working directory within the Kaldi source tree is ``egs/wsj/s5``.

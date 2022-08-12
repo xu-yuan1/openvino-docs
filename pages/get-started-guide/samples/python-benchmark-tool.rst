@@ -2,10 +2,10 @@
 .. _doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e:
 
 
-Benchmark Python\* Tool
+Benchmark Python Tool
 =======================
 
-:target:`doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e_1md_openvino_tools_benchmark_tool_readme` This topic demonstrates how to run the Benchmark Python\* Tool, which performs inference using convolutional networks. Performance can be measured for two inference modes: latency- and throughput-oriented.
+:target:`doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e_1md_openvino_tools_benchmark_tool_readme` This topic demonstrates how to run the Benchmark Python Tool, which performs inference using convolutional networks. Performance can be measured for two inference modes: latency- and throughput-oriented.
 
 .. note:: This topic describes usage of Python implementation of the Benchmark Tool. For the C++ implementation, refer to :ref:`Benchmark C++ Tool <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`.
 
@@ -18,7 +18,13 @@ How It Works
 
 Upon start-up, the application reads command-line parameters and loads a network and inputs (images/binary files) to the specified device. Device-specific execution parameters (number of streams, threads, and so on) can be either explicitly specified through the command line or left default. In the latter case, the sample logic will select the values for the optimal throughput. While further experimenting with individual parameters (like number of streams and requests, batch size, etc) allows to find the performance sweet spot, usually, the resulting values are not very performance-portable, so the values from one machine or device are not necessarily optimal for another. From this perspective, the most portable way is experimenting only the performance hints. To learn more, refer to the section below.
 
-.. note:: By default, OpenVINO samples, tools and demos expect input with BGR channels order. If you trained your model to work with RGB order, you need to manually rearrange the default channels order in the sample or demo application or reconvert your model using the Model Optimizer tool with ``--reverse_input_channels`` argument specified. For more information about the argument, refer to **When to Reverse Input Channels** section of :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`.
+.. note:: By default, OpenVINO samples, tools and demos expect input with BGR 
+   channels order. If you trained your model to work with RGB order, you need 
+   to manually rearrange the default channels order in the sample or demo 
+   application or reconvert your model using the Model Optimizer tool with 
+   ``--reverse_input_channels`` argument specified. For more information about 
+   the argument, refer to **When to Reverse Input Channels** section of 
+   :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`.
 
 
 
@@ -171,7 +177,9 @@ Application supports topologies with one or more inputs. If a topology is not da
 
 To run the tool, you can use public or Intel's pre-trained models from the Open Model Zoo. The models can be downloaded using the Model Downloader.
 
-.. note:: Before running the tool with a trained model, make sure the model is converted to the OpenVINO format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
+.. note:: Before running the tool with a trained model, make sure the model is 
+   converted to the OpenVINO format (\*.xml + \*.bin) using the 
+   :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
 
 
 
@@ -182,13 +190,15 @@ Examples of Running the Tool
 
 This section provides step-by-step instructions on how to run the Benchmark Tool with the ``googlenet-v1`` public model on CPU or GPU devices. The `dog.bmp <https://storage.openvinotoolkit.org/data/test_data/images/224x224/dog.bmp>`__ file is used as an input.
 
-.. note:: The Internet access is required to execute the following steps successfully. If you have access to the Internet through the proxy server only, please make sure that it is configured in your OS environment.
+.. note:: The Internet access is required to execute the following steps successfully. 
+   If you have access to the Internet through the proxy server only, please make 
+   sure that it is configured in your OS environment.
 
 
 
 
 
-#. Install OpenVINO Development Tools to work with Caffe\* models:
+#. Install OpenVINO Development Tools to work with Caffe models:
    
    .. ref-code-block:: cpp
    

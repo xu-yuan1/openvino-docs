@@ -408,7 +408,9 @@ The following commands run the Image Classification Code Sample using the `dog.b
 
 **GPU:**
 
-.. note:: Running inference on Intel® Processor Graphics (GPU) requires :ref:`additional hardware configuration steps <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`, as described earlier on this page. Running on GPU is not compatible with macOS\*.
+.. note:: Running inference on Intel® Processor Graphics (GPU) requires 
+   :ref:`additional hardware configuration steps <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`, 
+   as described earlier on this page. Running on GPU is not compatible with macOS\*.
 
 
 
@@ -431,7 +433,10 @@ The following commands run the Image Classification Code Sample using the `dog.b
 
 **MYRIAD:**
 
-.. note:: Running inference on VPU devices (Intel® Movidius™ Neural Compute Stick or Intel® Neural Compute Stick 2) with the MYRIAD plugin requires :ref:`additional hardware configuration steps <doxid-openvino_docs_install_guides_configurations_for_ncs2>`, as described earlier on this page.
+.. note:: Running inference on VPU devices (Intel® Movidius™ Neural Compute Stick 
+   or Intel® Neural Compute Stick 2) with the MYRIAD plugin requires 
+   :ref:`additional hardware configuration steps <doxid-openvino_docs_install_guides_configurations_for_ncs2>`, 
+   as described earlier on this page.
 
 
 

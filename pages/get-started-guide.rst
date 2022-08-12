@@ -24,7 +24,7 @@ Get Started
    :caption: Get Started Guides
 
    Interactive Tutorials (Python) <../tutorials>
-   Samples <../openvino_docs_OV_UG_Samples_Overview>
+   ./get-started-guide/samples
 
 .. raw:: html
 

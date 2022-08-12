@@ -2,7 +2,7 @@
 .. _doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e:
 
 
-Hello Classification Python\* Sample
+Hello Classification Python Sample
 ====================================
 
 :target:`doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e_1md_openvino_samples_python_hello_classification_readme` This sample demonstrates how to do inference of image classification models using Synchronous Inference Request API.

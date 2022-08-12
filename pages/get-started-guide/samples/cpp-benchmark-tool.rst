@@ -7,7 +7,7 @@ Benchmark C++ Tool
 
 :target:`doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e_1md_openvino_samples_cpp_benchmark_app_readme` This topic demonstrates how to use the Benchmark C++ Tool to estimate deep learning inference performance on supported devices. Performance can be measured for two inference modes: latency- and throughput-oriented.
 
-.. note:: This topic describes usage of C++ implementation of the Benchmark Tool. For the Python\* implementation, refer to :ref:`Benchmark Python\* Tool <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>`.
+.. note:: This topic describes usage of C++ implementation of the Benchmark Tool. For the Python implementation, refer to :ref:`Benchmark Python Tool <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>`.
 
 How It Works
 ~~~~~~~~~~~~
@@ -152,7 +152,9 @@ Application supports topologies with one or more inputs. If a topology is not da
 
 To run the tool, you can use public or Intel's pre-trained models from the Open Model Zoo. The models can be downloaded using the Model Downloader.
 
-.. note:: Before running the tool with a trained model, make sure the model is converted to the OpenVINO IR (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
+.. note:: Before running the tool with a trained model, make sure the model is 
+   converted to the OpenVINO IR (\*.xml + \*.bin) using the 
+   :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
 
 The sample accepts models in ONNX format (.onnx) that do not require preprocessing.
 
@@ -165,13 +167,15 @@ Examples of Running the Tool
 
 This section provides step-by-step instructions on how to run the Benchmark Tool with the ``googlenet-v1`` public model on CPU or GPU devices. The `dog.bmp <https://storage.openvinotoolkit.org/data/test_data/images/224x224/dog.bmp>`__ file is used as an input.
 
-.. note:: The Internet access is required to execute the following steps successfully. If you have access to the Internet through the proxy server only, please make sure that it is configured in your OS environment.
+.. note:: The Internet access is required to execute the following steps successfully. 
+   If you have access to the Internet through the proxy server only, please make 
+   sure that it is configured in your OS environment.
 
 
 
 
 
-#. Install OpenVINO Development Tools to work with Caffe\* models:
+#. Install OpenVINO Development Tools to work with Caffe models:
    
    .. ref-code-block:: cpp
    
