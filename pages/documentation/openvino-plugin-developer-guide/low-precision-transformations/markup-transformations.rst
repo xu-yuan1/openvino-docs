@@ -67,7 +67,7 @@ Common markup transformations can be decomposed into simpler utility markup tran
 
 Let's explore all transformations and their relations in detail, using one and the same model:
 
-.. image:: step2_markup_original.png
+.. image::  ./_assets/step2_markup_original.png
 
 The original model key features:
 
@@ -111,7 +111,7 @@ Changes in the example model after ``MarkupCanBeQuantized`` transformation:
 
 Result model:
 
-.. image:: step2_markup1.png
+.. image::  ./_assets/step2_markup1.png
 	:alt: MarkupCanBeQuantized
 
 Model display features (here and below):
@@ -137,7 +137,7 @@ No attributes are required before the transformation. Changes in the example mod
 
 Result model:
 
-.. image:: step2_markup2.png
+.. image::  ./_assets/step2_markup2.png
 	:alt: MarkupPrecisions result
 
 3. MarkupPerTensorQuantization
@@ -151,7 +151,7 @@ Changes in the example model after ``MarkupPerTensorQuantization`` transformatio
 
 Result model:
 
-.. image:: step2_markup3.png
+.. image::  ./_assets/step2_markup3.png
 	:alt: MarkupPerTensorQuantization result
 
 4. MarkupAvgPoolPrecisionPreserved
@@ -171,7 +171,7 @@ Changes in the example model after ``MarkupAvgPoolPrecisionPreserved`` transform
 
 Result model:
 
-.. image:: step2_markup4.png
+.. image::  ./_assets/step2_markup4.png
 	:alt: MarkupAvgPoolPrecisionPreserved
 
 5. PropagatePrecisions
@@ -193,7 +193,7 @@ Changes in the example model after ``PropagatePrecisions`` transformation:
 
 Result model:
 
-.. image:: step2_markup5.png
+.. image::  ./_assets/step2_markup5.png
 	:alt: PropagatePrecisions
 
 .. note:: ``AlignQuantizationIntervals`` and ``AlignQuantizationParameters`` transformations are required if the model has quantized concatenation operations.
@@ -217,7 +217,7 @@ Changes in the example model after ``AlignQuantizationIntervals`` transformation
 
 Result model:
 
-.. image:: step2_markup6.png
+.. image::  ./_assets/step2_markup6.png
 	:alt: AlignQuantizationIntervals
 
 7. AlignQuantizationParameters
@@ -237,6 +237,6 @@ Changes in the example model after ``AlignQuantizationParameters`` transformatio
 
 Final model:
 
-.. image:: step2_markup7.png
+.. image::  ./_assets/step2_markup7.png
 	:alt: AlignQuantizationParameters
 

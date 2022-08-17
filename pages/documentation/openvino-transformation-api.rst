@@ -159,7 +159,7 @@ OpenVINO™ Runtime has three main transformation types:
 
 * :ref:`Graph rewrite pass <doxid-openvino_docs__extensibility__u_g_graph_rewrite_pass>` - container for matcher passes needed for efficient execution
 
-.. image:: transformations_structure.png
+.. image:: ./_assets/transformations_structure.png
 
 Transformation conditional compilation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

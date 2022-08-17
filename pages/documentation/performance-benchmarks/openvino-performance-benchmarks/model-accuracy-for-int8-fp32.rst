@@ -455,6 +455,6 @@ The table below illustrates the speed-up factor for the performance gain by swit
       </tr>
     </table>
 
-.. image:: int8vsfp32.png
+.. image:: ./_assets/int8vsfp32.png
 	:alt: INT8 vs FP32 Comparison
 

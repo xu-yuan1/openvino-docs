@@ -32,7 +32,7 @@ Quantized weights in low precision with dequantization operations
 
 The subgraph with quantized ``Convolution`` before transformation with quantized weights in low precision constant and dequantization operations:
 
-.. image:: fq_and_convolution.common.png
+.. image:: ./_assets/fq_and_convolution.common.png
 	:alt: Convolution before
 
 Weights in original precision with FakeQuantize operation
@@ -40,7 +40,7 @@ Weights in original precision with FakeQuantize operation
 
 The subgraph with quantized ``Convolution`` before transformation with weights in original precision and ``FakeQuantize`` operation:
 
-.. image:: fq_fq_and_convolution.common.png
+.. image:: ./_assets/fq_fq_and_convolution.common.png
 	:alt: Convolution before
 
 Subgraph after transformation
@@ -48,6 +48,6 @@ Subgraph after transformation
 
 The subgraph with ``Convolution`` operation after the transformation:
 
-.. image:: fq_and_convolution.transformed.png
+.. image:: ./_assets/fq_and_convolution.transformed.png
 	:alt: Convolution after
 

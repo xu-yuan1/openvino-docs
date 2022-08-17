@@ -42,7 +42,7 @@ The subgraph with quantized ``Add`` operation before transformation:
 
 	y_{ch,i}=(scale1_{ch} \* (x1_{ch,i} - shift1_{ch})) + (scale2_{ch} \* (x2_{ch,i} - shift2_{ch}))
 
-.. image:: add.common.png
+.. image:: ./_assets/add.common.png
 	:alt: Add before
 
 Subgraph after transformation
@@ -64,6 +64,6 @@ where:
 
 	shift1_{ch}' = shift1_{ch} + scale2_{ch} \* shift2_{ch} / scale1_{ch}
 
-.. image:: add.transformed.png
+.. image:: ./_assets/add.transformed.png
 	:alt: Add before
 

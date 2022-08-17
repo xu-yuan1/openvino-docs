@@ -142,5 +142,5 @@ With Intel® VTune™ Profiler installed you can configure your analysis with th
    .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img05-vtunebottomup.png
       :align: center
 
-   .. image:: ./OV_UG_supported_plugins_AUTO_debugging-img05-vtunebottomup.png
+   .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img05-vtunebottomup.png
       :align: center

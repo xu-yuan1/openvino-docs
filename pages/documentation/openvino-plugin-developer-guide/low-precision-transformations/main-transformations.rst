@@ -69,12 +69,12 @@ Step 3. Main Transformations
 
 Let's explore some main transformations on the example model. Original model:
 
-.. image:: step3_original.png
+.. image:: ./_assets/step3_original.png
 	:alt: Original model
 
 Result model after main transformations:
 
-.. image:: step3_transformed.png
+.. image:: ./_assets/step3_transformed.png
 	:alt: Original model
 
 Changes in the example model after main transformation:
