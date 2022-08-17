@@ -42,7 +42,7 @@ For PIP, make sure that you have installed the latest version. To check and upgr
 Check if required external dependencies are installed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Ubuntu and RHEL 8 systems, if you installed OpenVINO Runtime via the installer, APT, or YUM repository, and decided to :ref:`install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`, make sure that you `Install External Software Dependencies <openvino_docs_install_guides_installing_openvino_linux.html#install-external-dependencies>`__ first.
+For Ubuntu and RHEL 8 systems, if you installed OpenVINO Runtime via the installer, APT, or YUM repository, and decided to :ref:`install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`, make sure that you :ref:`Install External Software Dependencies <install-external-dependencies>` first.
 
 For C++ developers with Windows systems, make sure that Microsoft Visual Studio 2019 with MSBuild and CMake 3.14 or higher (64-bit) are installed. While installing Microsoft Visual Studio 2019, make sure that you have selected \*\*Desktop development with C++\*\* in the \*\*Workloads\*\* tab. If not, launch the installer again to select that option. For more information on modifying the installation options for Microsoft Visual Studio, see its `official support page <https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2019>`__.
 
@@ -96,5 +96,5 @@ Make sure that your firewall and network settings are configured correctly. For 
 
       pip install --proxy http://address:port --trusted-host pypi.org openvino
 
-For specific issues, see `Errors with Installing via PIP for Users in China <openvino_docs_get_started_guide_troubleshooting_issues.html#install-for-prc>`__ and `proxy issues with installing OpenVINO on Linux from Docker <openvino_docs_get_started_guide_troubleshooting_issues.html#proxy-issues>`__.
+For specific issues, see :ref:`Errors with Installing via PIP for Users in China <install-for-prc>` and :ref:`proxy issues with installing OpenVINO on Linux from Docker <proxy-issues>`.
 
