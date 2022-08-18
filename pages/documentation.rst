@@ -16,7 +16,7 @@ Documentation
    :caption: API 2.0
    :hidden:
 
-   api-2.0-transition
+   ./documentation/api-2.0-transition
 
 
 .. toctree::
@@ -24,8 +24,8 @@ Documentation
    :caption: Converting and Preparing Models
    :hidden:
 
-   openvino_docs_model_processing_introduction
-   openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide
+   ./documentation/model-processing
+   ./documentation/converting-models-with-model-optimizer
    omz_tools_downloader
 
 
@@ -34,12 +34,12 @@ Documentation
    :caption: Optimization and Performance
    :hidden:
 
-   openvino_docs_optimization_guide_dldt_optimization_guide
-   openvino_docs_MO_DG_Getting_Performance_Numbers
-   openvino_docs_model_optimization_guide
-   openvino_docs_deployment_optimization_guide_dldt_optimization_guide
-   openvino_docs_tuning_utilities
-   openvino_docs_performance_benchmarks
+   ./documentation/performance-optimization
+   ./documentation/getting-performance-numbers
+   ./documentation/model-optimization-guide
+   ./documentation/runtime-inference-optimizations
+   ./documentation/tuning-utilities
+   ./documentation/performance-benchmarks
 
 
 .. toctree::
@@ -47,10 +47,10 @@ Documentation
    :caption: Deploying Inference
    :hidden:
 
-   openvino_docs_deployment_guide_introduction
-   openvino_docs_OV_UG_OV_Runtime_User_Guide
-   openvino_deployment_guide
-   openvino_inference_engine_tools_compile_tool_README
+   ./documentation/openvino-deployment-introduction
+   ./documentation/openvino-runtime-user-guide
+   ./documentation/openvino-deployment-guide
+   ./documentation/compile-tool
 
 
 .. toctree::
@@ -60,10 +60,10 @@ Documentation
 
    openvino_ecosystem
    ovms_what_is_openvino_model_server
-   ovsa_get_started
+   ./documentation/openvino-security-add-on
    ovtf_integration
    ote_documentation
-   workbench_docs_Workbench_DG_Introduction
+   ./documentation/dl-workbench-overview
 
 
 .. toctree::
@@ -71,9 +71,9 @@ Documentation
    :hidden:
    :caption: Media Processing and Computer Vision Libraries
 
-   Intel® Deep Learning Streamer <openvino_docs_dlstreamer>
-   openvino_docs_gapi_gapi_intro
-   OpenCV* Developer Guide <https://docs.opencv.org/master/>
+   ./documentation/intel-deep-learning-streamer
+   ./documentation/opencv-graph-api
+   OpenCV Developer Guide <https://docs.opencv.org/master/>
    OpenCL™ Developer Guide <https://software.intel.com/en-us/openclsdk-devguide>   
 
 
@@ -82,19 +82,19 @@ Documentation
    :caption: OpenVINO Extensibility
    :hidden:
 
-   openvino_docs_Extensibility_UG_Intro
-   openvino_docs_transformations
-   OpenVINO Plugin Developer Guide <openvino_docs_ie_plugin_dg_overview>
+   ./documentation/openvino-extensibility-mechanism
+   ./documentation/openvino-transformation-api
+   ./documentation/openvino-plugin-developer-guide
 
 .. toctree::
    :maxdepth: 1
    :hidden:
    :caption: Use OpenVINO™ Toolkit Securely
 
-   openvino_docs_security_guide_introduction
-   openvino_docs_security_guide_workbench
-   openvino_docs_OV_UG_protecting_model_guide
-   ovsa_get_started
+   ./documentation/openvino-security-introduction
+   ./documentation/openvino-dl-workbench-security
+   ./documentation/using-encrypted-models-with-openvino
+   ./documentation/openvino-security-add-on
 
 This section provides reference documents that guide you through the OpenVINO toolkit workflow, from obtaining models, optimizing them, to deploying them in your own deep learning applications.
 

@@ -103,7 +103,6 @@ OpenVINO™ Documentation
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :glob:
    
    pages/get-started-guide
    pages/documentation

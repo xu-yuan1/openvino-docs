@@ -17,10 +17,10 @@ Additional Configurations For Hardware
    :maxdepth: 2
    :hidden:
 
-   For GPU <../openvino_docs_install_guides_configurations_for_intel_gpu>
-   For NCS2 <../openvino_docs_install_guides_configurations_for_ncs2>
-   For VPU <../openvino_docs_install_guides_installing_openvino_ivad_vpu>
-   For GNA <../openvino_docs_install_guides_configurations_for_intel_gna>
+   For GPU <./install-additional-configurations/configuration-for-intel-gpu>
+   For NCS2 <./install-additional-configurations/configuration-for-ncs2>
+   For VPU <./install-additional-configurations/configuration-for-vpu>
+   For GNA <./install-additional-configurations/configuration-for-intel-gna>
 
 After you have installed Intel® Distribution of OpenVINO™ toolkit, you may also need do some additional configurations for your device to work with OpenVINO. See the following pages:
 
