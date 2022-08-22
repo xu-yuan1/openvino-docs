@@ -130,7 +130,7 @@ Representation of Operation Sets
 
 An operation set (opset) is a collection of operations that can be used to construct a model. The ``:ref:`ov::OpSet <doxid-classov_1_1_op_set>``` class provides the functionality to work with operation sets. For each operation set, OpenVINO™ Runtime provides a separate namespace, for example ``opset8``.
 
-Each OpenVINO™ Release introduces new operations and adds them to new operation sets, within which the new operations would change the behavior of previous operations. Using operation sets helps you avoid changing your application when new operations are introduced. For a complete list of operation sets supported in OpenVINO™ toolkit, see the :ref:`Available Operations Sets <doxid-openvino_docs_ops_opset>`. To add the support for custom operations, see :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>`.
+Each OpenVINO™ Release introduces new operations and adds them to new operation sets, within which the new operations would change the behavior of previous operations. Using operation sets helps you avoid changing your application when new operations are introduced. For a complete list of operation sets supported in OpenVINO™ toolkit, see the :ref:`Available Operations Sets <doxid-openvino_docs_ops_opset>`. To add the support for custom operations, see :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>`.
 
 
 
@@ -579,7 +579,7 @@ OpenVINO™ provides several debug capabilities:
 
 :ref:`Available Operation Sets <doxid-openvino_docs_ops_opset>`
 
-* :ref:`OpenVINO™ Runtime Extensibility Developer Guide <doxid-openvino_docs__extensibility__u_g__intro>`
+* :ref:`OpenVINO™ Runtime Extensibility Developer Guide <extensibility_api_introduction>`
 
 * :ref:`Transformations Developer Guide <doxid-openvino_docs_transformations>`.
 

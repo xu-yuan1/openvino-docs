@@ -1,13 +1,18 @@
 .. index:: pair: page; OpenVINO Extensibility Mechanism
-.. _doxid-openvino_docs__extensibility__u_g__intro:
+.. _extensibility_api_introduction:
+
+.. meta::
+   :description: Extensibility API allows adding support for custom operations and using one 
+                 implementation for Model Optimizer and OpenVINO™ Runtime.
+   :keywords: extensibility, extensibility api, neural network model, framework, custom operations,
+              model optimizer, OpenVINO Runtime, mapping, import, frontend, load extension,
+              OpenVINO IR, identity, python api, load model, extension library 
 
 
 OpenVINO Extensibility Mechanism
 ================================
 
-:target:`doxid-openvino_docs__extensibility__u_g__intro_1md_openvino_docs_extensibility_ug_intro`
-
-
+:target:`extensibility_api_1md_openvino_docs_extensibility_ug_intro`
 
 
 

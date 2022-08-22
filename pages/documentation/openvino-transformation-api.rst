@@ -316,5 +316,5 @@ See Also
 
 * :ref:`OpenVINO™ Model Representation <doxid-openvino_docs__o_v__u_g__model__representation>`
 
-* :ref:`OpenVINO™ Extensions <doxid-openvino_docs__extensibility__u_g__intro>`
+* :ref:`OpenVINO™ Extensions <extensibility_api_introduction>`
 

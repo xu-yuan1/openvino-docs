@@ -294,7 +294,7 @@ One of the layers in the specified topology might not have inputs or values. Mak
 23. What does the message "Part of the nodes was not translated to IE. Stopped" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Some of the operations are not supported by OpenVINO Runtime and cannot be translated to OpenVINO Intermediate Representation. You can extend Model Optimizer by allowing generation of new types of operations and implement these operations in the dedicated OpenVINO plugins. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+Some of the operations are not supported by OpenVINO Runtime and cannot be translated to OpenVINO Intermediate Representation. You can extend Model Optimizer by allowing generation of new types of operations and implement these operations in the dedicated OpenVINO plugins. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>` guide.
 
 .. _question-24:
 
@@ -387,7 +387,7 @@ Model Optimizer tried to write an event file in the specified directory but fail
 36. What does the message "There is no registered 'infer' function for node  with op = .. . Please implement this function in the extensions" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Most likely, you tried to extend Model Optimizer with a new primitive, but you did not specify an infer function. For more information on extensions, see the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+Most likely, you tried to extend Model Optimizer with a new primitive, but you did not specify an infer function. For more information on extensions, see the :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>` guide.
 
 .. _question-37:
 
@@ -443,7 +443,7 @@ Most likely, there is a problem with the specified file for the model. The file 
 44. What does the message "Found custom layer. Model Optimizer does not support this layer. Please, register it in CustomLayersMapping.xml or implement extension" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This means that the layer ``{layer_name}`` is not supported in Model Optimizer. You will find a list of all unsupported layers in the corresponding section. You should implement the extensions for this layer. See :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` for more information.
+This means that the layer ``{layer_name}`` is not supported in Model Optimizer. You will find a list of all unsupported layers in the corresponding section. You should implement the extensions for this layer. See :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>` for more information.
 
 .. _question-45:
 
@@ -457,7 +457,7 @@ A path to the custom replacement configuration file was provided with the ``--tr
 46. What does the message "Extractors collection have case insensitive duplicates" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-When extending Model Optimizer with new primitives, keep in mind that their names are case-insensitive. Most likely, another operation with the same name is already defined. For more information, see the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+When extending Model Optimizer with new primitives, keep in mind that their names are case-insensitive. Most likely, another operation with the same name is already defined. For more information, see the :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>` guide.
 
 .. _question-47:
 
@@ -513,7 +513,7 @@ Make sure inputs are defined and have correct shapes. You can use ``--input_shap
 54. What does the message "Attempt to register of custom name for the second time as class. Note that custom names are case-insensitive" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-When extending Model Optimizer with new primitives, keep in mind that their names are case-insensitive. Most likely, another operation with the same name is already defined. For more information, see the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+When extending Model Optimizer with new primitives, keep in mind that their names are case-insensitive. Most likely, another operation with the same name is already defined. For more information, see the :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>` guide.
 
 .. _question-55:
 
@@ -748,7 +748,7 @@ Model Optimizer for Apache MXNet supports only ``.params`` and ``.nd`` files for
 85. What does the message "Operation ... not supported. Please register it as custom op" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Model Optimizer tried to load the model that contains some unsupported operations. If you want to convert model that contains unsupported operations, you need to prepare extension for all such operations. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+Model Optimizer tried to load the model that contains some unsupported operations. If you want to convert model that contains unsupported operations, you need to prepare extension for all such operations. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>` guide.
 
 .. _question-86:
 
@@ -796,7 +796,7 @@ It is mandatory to call two functions right after the implementation of that cla
 
 Note that the first call ``register_caffe_python_extractor(ProposalPythonExampleOp, 'rpn.proposal_layer.ProposalLayer')`` registers an extension of the layer in Model Optimizer, which will be found by the specific name (mandatory to join module name and layer name): ``rpn.proposal_layer.ProposalLayer``.
 
-The second call prevents Model Optimizer from using this extension as if it is an extension for a layer with type ``Proposal``. Otherwise, this layer can be chosen as an implementation of extension that can lead to potential issues. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+The second call prevents Model Optimizer from using this extension as if it is an extension for a layer with type ``Proposal``. Otherwise, this layer can be chosen as an implementation of extension that can lead to potential issues. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>` guide.
 
 .. _question-87:
 
@@ -838,7 +838,7 @@ There are multiple reasons why Model Optimizer does not accept a counts file, in
 92. What does the message "For legacy MXNet models Model Optimizer does not support conversion of old MXNet models (trained with 1.0.0 version of MXNet and lower) with custom layers." mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This message means that if you have a model with custom layers and its JSON file has been generated with Apache MXNet version lower than 1.0.0, Model Optimizer does not support such topologies. If you want to convert it, you have to rebuild MXNet with unsupported layers or generate a new JSON file with Apache MXNet version 1.0.0 or higher. You also need to implement OpenVINO extension to use custom layers. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+This message means that if you have a model with custom layers and its JSON file has been generated with Apache MXNet version lower than 1.0.0, Model Optimizer does not support such topologies. If you want to convert it, you have to rebuild MXNet with unsupported layers or generate a new JSON file with Apache MXNet version 1.0.0 or higher. You also need to implement OpenVINO extension to use custom layers. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>` guide.
 
 .. _question-93:
 
@@ -857,7 +857,7 @@ For all frameworks:
 
 #. :ref:`Replace cycle containing Sub-graph in Model Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`
 
-#. See :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>`
+#. See :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>`
 
 or
 

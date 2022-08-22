@@ -1175,7 +1175,7 @@ See Also
 
 * :ref:`OpenVINO Model Representation <doxid-openvino_docs__o_v__u_g__model__representation>`
 
-* :ref:`OpenVINO™ Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>`
+* :ref:`OpenVINO™ Extensibility Mechanism <extensibility_api_introduction>`
 
 * :ref:`Extending Model Optimizer with Caffe Python Layers <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__extending__model__optimizer__with__caffe__python__layers>`
 

@@ -114,7 +114,7 @@ The table below demonstrates support of key features by OpenVINO device plugins.
       - No
       - Yes
       - No
-    * - :ref:`Extensibility <doxid-openvino_docs__extensibility__u_g__intro>`
+    * - :ref:`Extensibility <extensibility_api_introduction>`
       - Yes
       - Yes
       - No

@@ -5,7 +5,7 @@
 Frontend Extensions
 ===================
 
-:target:`doxid-openvino_docs__extensibility__u_g__frontend__extensions_1md_openvino_docs_extensibility_ug_frontend_extensions` The goal of this chapter is to explain how to use Frontend extension classes to facilitate mapping of custom operations from framework model representation to OpenVINO representation. Refer to :ref:`Introduction to OpenVINO Extension <doxid-openvino_docs__extensibility__u_g__intro>` to understand entire flow.
+:target:`doxid-openvino_docs__extensibility__u_g__frontend__extensions_1md_openvino_docs_extensibility_ug_frontend_extensions` The goal of this chapter is to explain how to use Frontend extension classes to facilitate mapping of custom operations from framework model representation to OpenVINO representation. Refer to :ref:`Introduction to OpenVINO Extension <extensibility_api_introduction>` to understand entire flow.
 
 This API is applicable for new frontends only, which exist for ONNX and PaddlePaddle. If a different model format is used, follow legacy :ref:`Model Optimizer Extensions <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
 
@@ -60,7 +60,7 @@ Extension objects, like just constructed ``extension`` can be used to add to the
 	core.:ref:`add_extension <doxid-classov_1_1_core_1a68d0dea1cbcd42a67bea32780e32acea>`(:ref:`ov::frontend::OpExtension\<TemplateExtension::Identity> <doxid-classov_1_1frontend_1_1_op_extension_base>`());
 	core.:ref:`read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>`("/path/to/model.onnx");
 
-Or extensions can be constructed in a separately compiled shared library. Separately compiled library can be used in Model Optimizer or ``benchmark_app``. Read about how to build and load such library in chapter “Create library with extensions” in :ref:`Introduction to OpenVINO Extension <doxid-openvino_docs__extensibility__u_g__intro>`.
+Or extensions can be constructed in a separately compiled shared library. Separately compiled library can be used in Model Optimizer or ``benchmark_app``. Read about how to build and load such library in chapter “Create library with extensions” in :ref:`Introduction to OpenVINO Extension <extensibility_api_introduction>`.
 
 If operation have multiple inputs and/or outputs they will be mapped in order. The type of elements in input/output tensors should match expected types in the surrounding operations. For example, if custom operation produces ``f32`` data type then operation that consumes this output should also support ``f32``. Otherwise, model conversion fails with an error, there are no automatic type conversion happens.
 

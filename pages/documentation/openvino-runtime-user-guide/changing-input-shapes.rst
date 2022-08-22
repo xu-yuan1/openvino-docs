@@ -142,7 +142,7 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
 Extensibility
 -------------
 
-OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <doxid-openvino_docs__extensibility__u_g__intro>`
+OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <extensibility_api_introduction>`
 
 Introduction (Python)
 ~~~~~~~~~~~~~~~~~~~~~
@@ -282,5 +282,5 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
 Extensibility
 -------------
 
-OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <doxid-openvino_docs__extensibility__u_g__intro>`
+OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <extensibility_api_introduction>`
 
