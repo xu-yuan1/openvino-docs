@@ -32,7 +32,7 @@ Run POT CLI
 
 There are two ways how to run POT via command line:
 
-* **Basic usage for DefaultQuantization**. In this case you can run POT with basic setting just specifying all the options via command line. ``-q default`` stands for :ref:`DefaultQuantization <doxid-pot_compression_algorithms_quantization_default__r_e_a_d_m_e>` algorithm:
+* **Basic usage for DefaultQuantization**. In this case you can run POT with basic setting just specifying all the options via command line. ``-q default`` stands for :ref:`DefaultQuantization <default_quantization_algorithm>` algorithm:
   
   .. ref-code-block:: cpp
   

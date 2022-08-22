@@ -14,9 +14,9 @@ Quantizing Model with Accuracy Control
 
    ./accuracy-aware-quantization/accuracy-aware-quantization-algorithm
 
-The Accuracy-aware Quantization algorithm allows to perform quantization while maintaining accuracy within a pre-defined range. Note that it should be used only if the :ref:`Default Quantization <doxid-pot_default_quantization_usage>` introduces a significant accuracy degradation. The reason for it not being the primary choice is its potential for performance degradation, due to some layers getting reverted to the original precision.
+The Accuracy-aware Quantization algorithm allows to perform quantization while maintaining accuracy within a pre-defined range. Note that it should be used only if the :ref:`Default Quantization <default_model_quantization>` introduces a significant accuracy degradation. The reason for it not being the primary choice is its potential for performance degradation, due to some layers getting reverted to the original precision.
 
-To proceed with this article, make sure you have read how to use :ref:`Default Quantization <doxid-pot_default_quantization_usage>`.
+To proceed with this article, make sure you have read how to use :ref:`Default Quantization <default_model_quantization>`.
 
 .. note:: The Accuracy-aware Quantization algorithm's behavior is different for 
    the GNA ``target_device``. In this case it searches for the best configuration 
@@ -38,7 +38,7 @@ A script for Accuracy-aware Quantization includes four steps:
 Prepare data and dataset interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This step is the same as in :ref:`Default Quantization <doxid-pot_default_quantization_usage>`. The only difference is that ``__getitem__()`` should return ``(data, annotation)`` or ``(data, annotation, metadata)``. The ``annotation`` is required and its format should correspond to the expectations of the ``Metric`` class. The ``metadata`` is an optional field that can be used to store additional information required for post-processing.
+This step is the same as in :ref:`Default Quantization <default_model_quantization>`. The only difference is that ``__getitem__()`` should return ``(data, annotation)`` or ``(data, annotation, metadata)``. The ``annotation`` is required and its format should correspond to the expectations of the ``Metric`` class. The ``metadata`` is an optional field that can be used to store additional information required for post-processing.
 
 Define accuracy metric
 ~~~~~~~~~~~~~~~~~~~~~~

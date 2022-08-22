@@ -61,7 +61,7 @@ The main parameter is ``"type"`` which can take two possible options: ``"accurac
 Compression Parameters
 ~~~~~~~~~~~~~~~~~~~~~~
 
-For more details about parameters of the concrete optimization algorithm, see descriptions of :ref:`Default Quantization <doxid-pot_compression_algorithms_quantization_default__r_e_a_d_m_e>` and :ref:`Accuracy-aware Quantizatoin <doxid-accuracy_aware__r_e_a_d_m_e>` methods.
+For more details about parameters of the concrete optimization algorithm, see descriptions of :ref:`Default Quantization <default_quantization_algorithm>` and :ref:`Accuracy-aware Quantizatoin <doxid-accuracy_aware__r_e_a_d_m_e>` methods.
 
 Examples of the Configuration File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

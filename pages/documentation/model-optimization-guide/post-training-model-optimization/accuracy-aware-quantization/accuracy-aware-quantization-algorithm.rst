@@ -10,12 +10,12 @@ AccuracyAwareQuantization Algorithm
 Introduction
 ~~~~~~~~~~~~
 
-The purpose of AccuracyAwareQuantization Algorithm is performing precise quantization, while keeping model accuracy within a pre-defined range. In comparison to :ref:`DefaultQuantization <doxid-pot_compression_algorithms_quantization_default__r_e_a_d_m_e>` algorithm this may cause a degradation in performance because some layers can be reverted back to the original precision.
+The purpose of AccuracyAwareQuantization Algorithm is performing precise quantization, while keeping model accuracy within a pre-defined range. In comparison to :ref:`DefaultQuantization <default_quantization_algorithm>` algorithm this may cause a degradation in performance because some layers can be reverted back to the original precision.
 
 Parameters
 ~~~~~~~~~~
 
-Since the :ref:`DefaultQuantization <doxid-pot_compression_algorithms_quantization_default__r_e_a_d_m_e>` algorithm is used as an initialization, all its parameters are also valid and can be specified. Below is an example of the ``AccuracyAwareQuantization`` method and its parameters:
+Since the :ref:`DefaultQuantization <default_quantization_algorithm>` algorithm is used as an initialization, all its parameters are also valid and can be specified. Below is an example of the ``AccuracyAwareQuantization`` method and its parameters:
 
 .. ref-code-block:: cpp
 

@@ -55,7 +55,7 @@ Can I quantize my model without a dataset?
 
 In general, you should have a dataset. The dataset should be annotated if you 
 want to validate the accuracy. If your dataset is not annotated, you can use 
-:ref:`Default Quantization <doxid-pot_default_quantization_usage>` to quantize 
+:ref:`Default Quantization <default_model_quantization>` to quantize 
 the model or command-line interface with :ref:`Simplified mode <doxid-pot_docs_simplified_mode>`.
 
 .. _framework:
@@ -73,7 +73,7 @@ I'd like to quantize a model and I've converted it to IR but I don't have the Ac
 ---------------------------------------------------------------------------------------------------------------------
 
 #. Try quantization using Python API of the Post-training Optimization Tool. For 
-   more details see :ref:`Quantizing Model <doxid-pot_default_quantization_usage>`.
+   more details see :ref:`Quantizing Model <default_model_quantization>`.
 
 #. If you consider command-line usage only refer to Accuracy Checker documentation 
    to create the Accuracy Checker configuration file, and try to find the 
@@ -105,7 +105,7 @@ which can be done with the following steps:
    value with your reference.
 
 #. Run your compression pipeline with a single compression algorithm 
-   (:ref:`Default Quantization <doxid-pot_default_quantization_usage>` 
+   (:ref:`Default Quantization <default_model_quantization>` 
    or :ref:`Accuracy-aware Quantization <doxid-pot_accuracyaware_usage>`) 
    without any parameter values specified in the config (except for ``preset`` 
    and ``stat_subset_size``). Make sure you get the desirable accuracy 
@@ -161,7 +161,7 @@ It can happen due to the following reasons:
   Checker configuration file could lead to this problem. Refer to Accuracy 
   Checker documentation for more information.
 
-* If :ref:`Default Quantization <doxid-pot_default_quantization_usage>` was 
+* If :ref:`Default Quantization <default_model_quantization>` was 
   used for quantization you can also try :ref:`Accuracy-aware Quantization <doxid-pot_accuracyaware_usage>` 
   method that allows controlling maximum accuracy deviation.
 
@@ -172,7 +172,7 @@ The quantization process of my model takes a lot of time. Can it be decreased so
 
 Quantization time depends on multiple factors such as the size of the model 
 and the dataset. It also depends on the algorithm: the 
-:ref:`Default Quantization <doxid-pot_default_quantization_usage>` algorithm 
+:ref:`Default Quantization <default_model_quantization>` algorithm 
 takes less time than the :ref:`Accuracy-aware Quantization <doxid-pot_accuracyaware_usage>` 
 algorithm. The following configuration parameters also impact the quantization 
 time duration (see details in :ref:`Post-Training Optimization Best Practices <doxid-pot_docs__best_practices>`):

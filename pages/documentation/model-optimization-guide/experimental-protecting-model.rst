@@ -77,7 +77,7 @@ This means that any activation layer of one of the above types, that the model u
 Usage
 ~~~~~
 
-RangeSupervision protection can be used the same way as :ref:`DefaultQuantization <doxid-pot_default_quantization_usage>` method.
+RangeSupervision protection can be used the same way as :ref:`DefaultQuantization <default_model_quantization>` method.
 
 Algorithm configuration
 -----------------------

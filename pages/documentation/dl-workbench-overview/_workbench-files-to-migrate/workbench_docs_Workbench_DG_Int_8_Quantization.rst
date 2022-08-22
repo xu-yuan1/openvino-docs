@@ -171,7 +171,7 @@ For the AccuracyAware option, specify the **Maximum Accuracy Drop** to instruct 
 Select Calibration Scheme (Advanced)
 ------------------------------------
 
-Calibration scheme is a collection of optimization algorithm parameters that improve a certain metric of an algorithm. See :ref:`optimization parameters <doxid-pot_compression_algorithms_quantization_default__r_e_a_d_m_e>` for details.
+Calibration scheme is a collection of optimization algorithm parameters that improve a certain metric of an algorithm. See :ref:`optimization parameters <default_quantization_algorithm>` for details.
 
 .. image:: calibration_scheme.png
 

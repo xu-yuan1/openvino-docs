@@ -57,10 +57,10 @@ Quantizing models with POT
 Depending on your needs and requirements, POT provides two main quantization 
 methods that can be used:
 
-* :ref:`Default Quantization <doxid-pot_default_quantization_usage>` a recommended 
+* :ref:`Default Quantization <default_model_quantization>` a recommended 
   method that provides fast and accurate results in most cases. It requires only 
   an unannotated dataset for quantization. For more details, see the 
-  :ref:`Default Quantization algorithm <doxid-pot_compression_algorithms_quantization_default__r_e_a_d_m_e>` 
+  :ref:`Default Quantization algorithm <default_quantization_algorithm>` 
   documentation.
 
 * :ref:`Accuracy-aware Quantization <doxid-pot_accuracyaware_usage>` an advanced 
