@@ -19,7 +19,7 @@ POT API Examples
    ./api-examples/quantizing-3d-segmentation-model
    ./api-examples/quantizing-for-gna-device
 
-The Post-training Optimization Tool contains multiple examples that demonstrate how to use its :ref:`API <doxid-pot_compression_api__r_e_a_d_m_e>` to optimize DL models. All available examples can be found on `GitHub <https://github.com/openvinotoolkit/openvino/tree/master/tools/pot/openvino/tools/pot/api/samples>`__.
+The Post-training Optimization Tool contains multiple examples that demonstrate how to use its :ref:`API <pot_api_reference>` to optimize DL models. All available examples can be found on `GitHub <https://github.com/openvinotoolkit/openvino/tree/master/tools/pot/openvino/tools/pot/api/samples>`__.
 
 The following examples demonstrate the implementation of ``Engine``, ``Metric``, and ``DataLoader`` interfaces for various use cases:
 

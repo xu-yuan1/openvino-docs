@@ -24,7 +24,7 @@ Optimizing models post-training
    ./post-training-model-optimization/quantizing-model
    ./post-training-model-optimization/accuracy-aware-quantization
    ./post-training-model-optimization/best-practices
-   ./post-training-model-optimization/api-reference
+   ./post-training-model-optimization/pot-api
    ./post-training-model-optimization/command-line-interface
    ./post-training-model-optimization/examples
    ./post-training-model-optimization/post-training-optimization-tool-faq

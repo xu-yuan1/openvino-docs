@@ -7,7 +7,7 @@ Quantizing Face Detection Model
 
 :target:`doxid-pot_example_face_detection__r_e_a_d_m_e_1md_openvino_tools_pot_openvino_tools_pot_api_samples_face_detection_readme` 
 
-This example demonstrates the use of the :ref:`Post-training Optimization Tool API <doxid-pot_compression_api__r_e_a_d_m_e>` 
+This example demonstrates the use of the :ref:`Post-training Optimization Tool API <pot_api_reference>` 
 for the task of quantizing a face detection model. 
 The `MTCNN <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/mtcnn/mtcnn.md>`__ 
 model from Caffe is used for this purpose. A custom ``DataLoader`` is created 

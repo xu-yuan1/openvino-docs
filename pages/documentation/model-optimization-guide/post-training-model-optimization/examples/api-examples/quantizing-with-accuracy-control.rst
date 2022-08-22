@@ -7,8 +7,9 @@ Quantizing with Accuracy Control
 
 :target:`doxid-pot_example_object_detection__r_e_a_d_m_e_1md_openvino_tools_pot_openvino_tools_pot_api_samples_object_detection_readme` 
 
-This example demonstrates the use of the :ref:`Post-training Optimization Toolkit API <doxid-pot_compression_api__r_e_a_d_m_e>` 
+This example demonstrates the use of the :ref:`Post-training Optimization Toolkit API <pot_api_reference>` 
 to quantize an object detection model in the :ref:`accuracy-aware mode <accuracy_aware_quantization_algorithm>`. 
+
 The `MobileNetV1 FPN <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/ssd_mobilenet_v1_fpn_coco/ssd_mobilenet_v1_fpn_coco.md>`__ 
 model from TensorFlow for object detection task is used for this purpose. A custom 
 ``DataLoader`` is created to load the `COCO <https://cocodataset.org/>`__ dataset 
@@ -20,8 +21,6 @@ How to prepare the data
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 To run this example, you will need to download the validation part of the `COCO <https://cocodataset.org/>`__. The images should be placed in a separate folder, which will be later referred to as ``<IMAGES_DIR>`` and the annotation file ``instances_val2017.json`` later referred to as ``<ANNOTATION_FILE>``.
-
-
 
 How to Run the example
 ~~~~~~~~~~~~~~~~~~~~~~
