@@ -106,7 +106,7 @@ With Model Downloader and :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__
 Optimization and Performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this section you will find resources on :ref:`how to test inference performance <doxid-openvino_docs__m_o__d_g__getting__performance__numbers>` and :ref:`how to increase it <performance_optimization_guide_introduction>`. It can be achieved by :ref:`optimizing the model <doxid-openvino_docs_model_optimization_guide>` or :ref:`optimizing inference at runtime <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`.
+In this section you will find resources on :ref:`how to test inference performance <getting_performance_numbers>` and :ref:`how to increase it <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`. It can be achieved by :ref:`optimizing the model <doxid-openvino_docs_model_optimization_guide>` or :ref:`optimizing inference at runtime <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`.
 
 Deploying Inference
 ~~~~~~~~~~~~~~~~~~~
