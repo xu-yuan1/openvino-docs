@@ -86,5 +86,5 @@ Additional Resources
 
 * `Lower Numerical Precision Deep Learning Inference and Training blogpost <https://www.intel.com/content/www/us/en/developer/articles/technical/lower-numerical-precision-deep-learning-inference-and-training.html>`__
 
-* :ref:`Configuration file description <doxid-pot_configs__r_e_a_d_m_e>`
+* :ref:`Configuration file description <pot_configuration_file>`
 

@@ -56,7 +56,7 @@ Can I quantize my model without a dataset?
 In general, you should have a dataset. The dataset should be annotated if you 
 want to validate the accuracy. If your dataset is not annotated, you can use 
 :ref:`Default Quantization <default_model_quantization>` to quantize 
-the model or command-line interface with :ref:`Simplified mode <doxid-pot_docs_simplified_mode>`.
+the model or command-line interface with :ref:`Simplified mode <pot_simplified_mode>`.
 
 .. _framework:
 
