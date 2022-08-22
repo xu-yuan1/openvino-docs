@@ -1,6 +1,17 @@
 .. index:: pair: page; Post-training Optimization Tool API Examples
 .. _pot_api_examples:
 
+.. meta::
+   :description: The examples demonstrate how to use Post-training Optimization 
+                 Tool API to quantize models from different domains.
+   :keywords: Post-training Optimization Tool, Post-training Optimization Tool API,
+              POT, POT API, quantizing models, post-training quantization,
+              3D segmentation model, Brain Tumor Segmentation, Tensorflow,
+              Pytorch, Medical Segmentation Decathlon BRATS 2017, segmentation model,
+              Kaldi, Caffe, image classification model, object detection model, 
+              cascaded model, quantizing cascaded model, quantizing for GNA, GNA,
+              OpenVino Intermediate Representation (IR), OpenVINO IR, 
+              DefaultQuantization, AccuracyAwareQuantization
 
 POT API Examples
 ================

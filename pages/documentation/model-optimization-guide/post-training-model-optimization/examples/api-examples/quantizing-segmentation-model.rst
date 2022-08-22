@@ -1,6 +1,16 @@
 .. index:: pair: page; Quantizing Semantic Segmentation Model
 .. _pot_api_example_segmentation:
 
+.. meta::
+   :description: The example demonstrates how to use Post-training Optimization 
+                 Tool API to quantize a DeepLabV3 segmentation model 
+                 from Tensorflow framework.
+   :keywords: Post-training Optimization Tool, Post-training Optimization Tool API,
+              POT, POT API, quantizing models, post-training quantization, Model Downloader,
+              Open Model Zoo, Model Converter, omz_converter, omz_downloader, 
+              OpenVINO IR, OpenVINO Intermediate Representation, converting models,
+              segmentation, segmentation model, DeepLabV3, Tensorflow, Pascal VOC 2012
+
 
 Quantizing Semantic Segmentation Model
 ======================================

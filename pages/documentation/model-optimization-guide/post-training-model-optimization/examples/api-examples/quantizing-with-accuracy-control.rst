@@ -1,6 +1,15 @@
 .. index:: pair: page; Quantizing Object Detection Model with Accuracy Control
 .. _pot_api_example_accuracy:
 
+.. meta::
+   :description: The example demonstrates how to use Post-training Optimization 
+                 Tool API to quantize an object detection model from Tensorflow 
+                 in the accuracy-aware mode.
+   :keywords: Post-training Optimization Tool, Post-training Optimization Tool API,
+              POT, POT API, quantizing models, post-training quantization, Model Downloader,
+              Open Model Zoo, Model Converter, omz_converter, omz_downloader, 
+              OpenVINO IR, OpenVINO Intermediate Representation, converting models,
+              object detection, object detection model, MobileNetV1 FPN, Tensorflow
 
 Quantizing with Accuracy Control
 ================================

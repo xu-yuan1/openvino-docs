@@ -1,6 +1,16 @@
 .. index:: pair: page; Configuration File Description
 .. _pot_configuration_file:
 
+.. meta::
+   :description: Post-training Optimization Tool requires a configuration JSON 
+                 file that stores three groups of parameters for optimization: 
+                 model, engine, and compression. 
+   :keywords: Post-training Optimization Tool, Post-training Optimization Tool 
+              Command-line API, POT, POT CLI API, quantizing models, configuration, 
+              configuration file, quantization, model quantization, 8-bit quantization, 
+              model parameters, engine parameters, compression parameters, DefaultQuantization,
+              default quantization, DefaultQuantization algorithm, accuracy checker,
+              Deep Learning Accuracy Validation Framework
 
 Configuration File Description
 ==============================
@@ -56,7 +66,7 @@ Engine Parameters
        }
 
 The main parameter is ``"type"`` which can take two possible options: 
-``"accuracy_checher"`` (default) or ``"simplified"``. It specifies the engine 
+``"accuracy_checker"`` (default) or ``"simplified"``. It specifies the engine 
 used for model inference and validation (if supported):
 
 * **Simplified mode** engines. These engines can be used only with 

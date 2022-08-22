@@ -1,6 +1,16 @@
 .. index:: pair: page; Quantizing for GNA Device
 .. _pot_api_example_gna:
 
+.. meta::
+   :description: The example demonstrates how to use DefaultQuantization algorithm
+                 in Post-training Optimization Tool API to quantize a speech 
+                 model from Kaldi for GNA device.
+   :keywords: Post-training Optimization Tool, Post-training Optimization Tool API,
+              POT, POT API, quantizing models, post-training quantization, Model Downloader,
+              Open Model Zoo, Model Converter, omz_converter, omz_downloader, 
+              OpenVINO IR, OpenVINO Intermediate Representation, converting models,
+              speech, speech model, Kaldi, GNA, Intel® Gaussian & Neural Accelerator
+
 
 Quantizing for GNA Device
 =========================

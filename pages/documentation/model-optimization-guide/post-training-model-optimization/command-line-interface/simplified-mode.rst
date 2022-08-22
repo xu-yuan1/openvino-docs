@@ -1,6 +1,13 @@
 .. index:: pair: page; Optimization with Simplified Mode
 .. _pot_simplified_mode:
 
+.. meta::
+   :description: Running optimization in Simplified Mode involves implementation 
+                 of Engine interface from POT API. Simplified Mode cannot be 
+                 used with accuracy-aware methods.
+   :keywords: Post-training Optimization Tool, Post-training Optimization Tool Command-line API,
+              POT, POT CLI API, quantizing models, simplified mode, quantization, model quantization,
+              8-bit quantization
 
 Optimization in Simplified Mode
 ===============================
@@ -14,7 +21,7 @@ Simplified mode is designed to make data preparation for the model
 optimization process easier. The mode is represented by an implementation of 
 Engine interface from the POT API. It allows reading the data from an arbitrary 
 folder specified by the user. For more details about POT API, refer to the 
-corresponding [description](pot_compression_api_README). Currently, Simplified 
+corresponding :ref:`description <pot_api_reference>`. Currently, Simplified 
 mode is available only for image data in PNG or JPEG formats, stored in a single folder.
 
 .. note:: This mode cannot be used with accuracy-aware methods. There is no 

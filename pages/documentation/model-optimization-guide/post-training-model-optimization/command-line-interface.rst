@@ -1,6 +1,16 @@
 .. index:: pair: page; Use Post-Training Optimization Tool Command-Line Interface (Model Zoo flow)
 .. _pot_cli:
 
+.. meta::
+   :description: In Post-Training Optimization Tool Command-line Interface you 
+                 specify basic options directly via command-line or advanced 
+                 options in a configuration file.
+   :keywords: Post-training Optimization Tool, Post-training Optimization Tool 
+              Command-Line Interface, POT, POT CLI, DefaultQuantization, 
+              default quantization, quantizing models, AccuracyAwareQuantization, 
+              accuracy-aware quantization, accuracy checker, full-precision model,
+              post-training quantization, AccuracyChecker, Open Model Zoo, 
+              command-line interface, configuration file, Simplified Mode
 
 POT Command-line Interface
 ==========================
@@ -47,7 +57,7 @@ There are two ways how to run POT via command line:
 
      pot -q default -m <path_to_xml> -w <path_to_bin> --ac-config <path_to_AC_config_yml>
 
-* **Basic usage for AccuracyAwareQauntization**. You can also run 
+* **Basic usage for AccuracyAwareQuantization**. You can also run 
   :ref:`AccuracyAwareQuantization <accuracy_aware_quantization_algorithm>` method 
   with basic options. ``--max-drop 0.01`` option defines maximum accuracy 
   deviation to 1 absolute percent from the original model:

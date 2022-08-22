@@ -1,6 +1,16 @@
 .. index:: pair: page; Quantizing Cascaded Face detection Model
 .. _pot_api_example_face_detection:
 
+.. meta::
+   :description: The example demonstrates how to infer a cascaded model and
+                 use Post-training Optimization Tool API to quantize MTCNN 
+                 face detection model from Caffe.
+   :keywords: Post-training Optimization Tool, Post-training Optimization Tool API,
+              POT, POT API, quantizing models, post-training quantization, Model Downloader,
+              Open Model Zoo, Model Converter, omz_converter, omz_downloader, 
+              OpenVINO IR, OpenVINO Intermediate Representation, converting models,
+              face detection, face detection model, MTCNN, Caffe, WIDER FACE,
+              WIDER FACE dataset, cascaded model
 
 Quantizing Face Detection Model
 ===============================

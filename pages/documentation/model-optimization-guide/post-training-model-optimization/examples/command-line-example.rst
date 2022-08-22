@@ -1,6 +1,17 @@
 .. index:: pair: page; End-to-end Command-line Interface Example
 .. _pot_cli_example:
 
+.. meta::
+   :description: The example of post-training quantization with DefaultQuantization 
+                 algorithm for a MobileNet v2 model from Pytorch framework and 
+                 running performance benchmark.
+   :keywords: Post-training Optimization Tool, Post-training Optimization Tool Command-Line Interface,
+              POT, POT CLI, DefaultQuantization, default quantization, quantizing models, 
+              OpenVINO IR, OpenVINO Intermediate Representation, IR, Pytorch, Pytorch 
+              framework, benchmark_app, performance benchmark, converting model, 
+              Model Downloader, Open Model Zoo, accuracy checker, full-precision model,
+              post-training quantization, Model Converter
+
 
 Command-line Interface Example
 ==============================

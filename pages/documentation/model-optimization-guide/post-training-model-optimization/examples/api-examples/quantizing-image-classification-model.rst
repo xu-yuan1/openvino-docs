@@ -1,10 +1,19 @@
 .. index:: pair: page; Quantizing Image Classification Model
 .. _pot_api_example_classification:
 
+.. meta::
+   :description: The example demonstrates how to use Post-training Optimization 
+                 Tool API to quantize MobilenetV2 image classification model 
+                 from Tensorflow framework.
+   :keywords: Post-training Optimization Tool, Post-training Optimization Tool API,
+              POT, POT API, quantizing models, post-training quantization, Model Downloader,
+              Open Model Zoo, Model Converter, omz_converter, omz_downloader, 
+              OpenVINO IR, OpenVINO Intermediate Representation, converting models,
+              image classification, image classification model, MobileNetV2, Tensorflow,
+              ImageNet
 
 Quantizing Image Classification Model
 =====================================
-
 
 :target:`pot_api_example_classification_1md_openvino_tools_pot_openvino_tools_pot_api_samples_classification_readme` 
 

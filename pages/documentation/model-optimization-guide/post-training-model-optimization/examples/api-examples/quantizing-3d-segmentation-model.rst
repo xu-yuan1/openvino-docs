@@ -1,6 +1,16 @@
 .. index:: pair: page; Quantizatiing 3D Segmentation Model
 .. _pot_api_example_3d_segmentation:
 
+.. meta::
+   :description: The example demonstrates how to use Post-training Optimization 
+                 Tool API to quantize a 3D Brain Tumor Segmentation model 
+                 from Pytorch framework.
+   :keywords: Post-training Optimization Tool, Post-training Optimization Tool API,
+              POT, POT API, quantizing models, post-training quantization, Model Downloader,
+              Open Model Zoo, Model Converter, omz_converter, omz_downloader, 
+              OpenVINO IR, OpenVINO Intermediate Representation, converting models,
+              3d segmentation, 3D segmentation model, Brain Tumor Segmentation,
+              Pytorch, Medical Segmentation Decathlon BRATS 2017
 
 Quantizing 3D Segmentation Model
 ================================
@@ -16,7 +26,7 @@ model from PyTorch is used for this purpose. A custom ``DataLoader`` is created
 to load images in NIfTI format from `Medical Segmentation Decathlon BRATS 2017 <http://medicaldecathlon.com/>`__ 
 dataset for 3D semantic segmentation task and the implementation of Dice Index 
 metric is used for the model evaluation. In addition, this example demonstrates 
-how one can use image metadata obtained during image reading and preprocessing 
+how to use image metadata obtained during image reading and preprocessing 
 to post-process the model raw output. The code of the example is available on 
 `GitHub <https://github.com/openvinotoolkit/openvino/tree/master/tools/pot/openvino/tools/pot/api/samples/3d_segmentation>`__.
 
