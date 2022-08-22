@@ -10,7 +10,7 @@ Intermediate Representation Suitable for INT8 Inference
 Introduction
 ~~~~~~~~~~~~
 
-OpenVINO Runtime CPU and GPU devices can infer models in low precision. For more details, refer to the :ref:`Model Optimization Guide <doxid-openvino_docs_model_optimization_guide>`.
+OpenVINO Runtime CPU and GPU devices can infer models in low precision. For more details, refer to the :ref:`Model Optimization Guide <model_optimization_guide>`.
 
 Intermediate Representation should be specifically formed to be suitable for low precision inference. Such a model is called a Low Precision IR and can be generated in two ways:
 

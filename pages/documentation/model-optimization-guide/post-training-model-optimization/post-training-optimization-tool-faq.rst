@@ -116,7 +116,7 @@ try to compress your model using the
 `Neural Network Compression Framework (NNCF) <https://github.com/openvinotoolkit/nncf_pytorch>`__. 
 Note that NNCF usage requires you to have a PyTorch or TensorFlow 2 based 
 training pipeline of your model to perform Quantization-aware Training. 
-See :ref:`Model Optimization Guide <doxid-openvino_docs_model_optimization_guide>` 
+See :ref:`Model Optimization Guide <model_optimization_guide>` 
 for more details.
 
 .. _memory:

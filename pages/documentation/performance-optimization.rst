@@ -56,7 +56,7 @@ with OpenVINO: model- and runtime-level optimizations. They are **fully compatib
 
 * **Model optimizations** include model modifications, such as quantization, 
   pruning, optimization of preprocessing, etc. For more details, refer to this 
-  :ref:`document <doxid-openvino_docs_model_optimization_guide>`.
+  :ref:`document <model_optimization_guide>`.
   
   * The model optimizations directly improve the inference time, even without 
     runtime parameters tuning (described below).

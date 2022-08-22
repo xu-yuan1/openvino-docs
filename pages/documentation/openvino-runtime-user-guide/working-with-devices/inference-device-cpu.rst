@@ -78,7 +78,7 @@ quantization primitives, and available hardware capabilities. The ``u1/u8/i8`` d
 types are used for quantized operations only, i.e., those are not selected 
 automatically for non-quantized operations.
 
-See the :ref:`low-precision optimization guide <doxid-openvino_docs_model_optimization_guide>` 
+See the :ref:`low-precision optimization guide <model_optimization_guide>` 
 for more details on how to get a quantized model.
 
 .. note:: 

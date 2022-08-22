@@ -118,7 +118,7 @@ There are several supported quantization approaches on activations and on weight
 Low precision tools
 -------------------
 
-For more details on how to get a quantized model, refer to :ref:`Model Optimization <doxid-openvino_docs_model_optimization_guide>` document.
+For more details on how to get a quantized model, refer to :ref:`Model Optimization <model_optimization_guide>` document.
 
 Quantization approaches
 ~~~~~~~~~~~~~~~~~~~~~~~

@@ -147,7 +147,7 @@ quantization primitives, and available hardware capabilities. The ``u1`` /
 ``u8`` / ``i8`` data types are used for quantized operations only, which means 
 that they are not selected automatically for non-quantized operations. For more 
 details on how to get a quantized model, refer to the 
-:ref:`Model Optimization guide <doxid-openvino_docs_model_optimization_guide>`.
+:ref:`Model Optimization guide <model_optimization_guide>`.
 
 Floating-point precision of a GPU primitive is selected based on operation 
 precision in the OpenVINO IR, except for the 
