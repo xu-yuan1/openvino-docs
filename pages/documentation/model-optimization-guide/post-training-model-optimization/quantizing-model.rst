@@ -317,7 +317,7 @@ them. POT API provides the ``Engine`` interface for this purpose, which allows
 customization of the inference logic. However, it is recommended to inherit from 
 ``IEEngine`` helper class that already contains all the logic required to do the 
 inference based on OpenVINO Python API. For more details, see the following 
-:ref:`example <doxid-pot_example_face_detection__r_e_a_d_m_e>`.
+:ref:`example <pot_api_example_face_detection>`.
 
 Examples
 ~~~~~~~~

@@ -169,7 +169,7 @@ GNA plugin supports the ``i16`` and ``i8`` quantized data types as inference pre
 
 :ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>` can be used to print out supported data types for all detected devices.
 
-:ref:`POT API Usage sample for GNA <doxid-pot_example_speech__r_e_a_d_m_e>` demonstrates how a model can be quantized for GNA, using POT API in two modes:
+:ref:`POT API Usage sample for GNA <pot_api_example_gna>` demonstrates how a model can be quantized for GNA, using POT API in two modes:
 
 * Accuracy (i16 weights)
 

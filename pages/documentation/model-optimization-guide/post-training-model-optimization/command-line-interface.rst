@@ -73,7 +73,7 @@ By default, the results are dumped into the separate output subfolder inside
 the ``./results`` folder that is created in the same directory where the tool 
 is run from. Use the ``-e`` option to evaluate the accuracy directly from the tool.
 
-See also the :ref:`End-to-end example <doxid-pot_configs_examples__r_e_a_d_m_e>` 
+See also the :ref:`End-to-end example <pot_cli_example>` 
 about how to run a particular example of 8-bit quantization with the POT.
 
 Command-Line Arguments
