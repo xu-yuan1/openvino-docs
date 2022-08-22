@@ -181,7 +181,7 @@ Q7: Where can I purchase the specific hardware used in the benchmarking?
 Q8: How can I optimize my models for better performance or accuracy?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-**A** : Set of guidelines and recommendations to optimize models are available in the :ref:`optimization guide <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`. Join the conversation in the `Community Forum <https://software.intel.com/en-us/forums/intel-distribution-of-openvino-toolkit>`__ for further support.
+**A** : Set of guidelines and recommendations to optimize models are available in the :ref:`optimization guide <performance_optimization_guide_introduction>`. Join the conversation in the `Community Forum <https://software.intel.com/en-us/forums/intel-distribution-of-openvino-toolkit>`__ for further support.
 
 Q9: Why are INT8 optimized models used for benchmarking on CPUs with no VNNI support?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

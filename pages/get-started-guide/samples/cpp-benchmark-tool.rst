@@ -59,9 +59,9 @@ Note that the benchmark_app usually produces optimal performance for any device 
 
 	./benchmark_app -m <model> -i <input> -d CPU
 
-But it is still may be sub-optimal for some cases, especially for very small networks. More details can read in :ref:`Performance Optimization Guide <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`.
+But it is still may be sub-optimal for some cases, especially for very small networks. More details can read in :ref:`Performance Optimization Guide <performance_optimization_guide_introduction>`.
 
-As explained in the :ref:`Performance Optimization Guide <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>` section, for all devices, including new :ref:`MULTI device <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` it is preferable to use the FP16 IR for the model. Also if latency of the CPU inference on the multi-socket machines is of concern, please refer to the same :ref:`Performance Optimization Guide <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`.
+As explained in the :ref:`Performance Optimization Guide <performance_optimization_guide_introduction>` section, for all devices, including new :ref:`MULTI device <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` it is preferable to use the FP16 IR for the model. Also if latency of the CPU inference on the multi-socket machines is of concern, please refer to the same :ref:`Performance Optimization Guide <performance_optimization_guide_introduction>`.
 
 Running the application with the ``-h`` option yields the following usage message:
 

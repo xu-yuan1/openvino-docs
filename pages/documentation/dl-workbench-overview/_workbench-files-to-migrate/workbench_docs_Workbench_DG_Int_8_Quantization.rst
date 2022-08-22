@@ -228,7 +228,7 @@ See Also
 
 * :ref:`Compare Performance between Two Versions of a Model <doxid-workbench_docs__workbench__d_g__compare__performance_between__two__versions_of__models>`
 
-* :ref:`Optimization Guide <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`
+* :ref:`Optimization Guide <performance_optimization_guide_introduction>`
 
 * :ref:`Post-Training Optimization Tool <doxid-pot_introduction>`
 

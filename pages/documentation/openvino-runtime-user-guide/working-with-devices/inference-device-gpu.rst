@@ -537,6 +537,6 @@ Additional Resources
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 
-* :ref:`Optimization guide <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`
+* :ref:`Optimization guide <performance_optimization_guide_introduction>`
 
 * `GPU plugin developers documentation <https://github.com/openvinotoolkit/openvino/wiki/GPUPluginDevelopersDocs>`__
