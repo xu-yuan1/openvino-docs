@@ -7,7 +7,7 @@ INT8 Calibration
 
 :target:`doxid-workbench_docs__workbench__d_g__int_8__quantization_1md_openvino_workbench_docs_workbench_dg_int_8_quantization` DL Workbench can lower the precision of a model from FP32 to INT8 with a process called calibration. Calibration accelerates the performance of certain models on hardware that supports INT8. A model in INT8 precision takes up less memory and has higher throughput capacity. Often this performance boost is achieved at the cost of a small accuracy reduction. With the DL Workbench, you can calibrate your model locally, on a `remote target <#remote-calibration>`__, or in the `Intel® DevCloud for the Edge <#devcloud-calibration>`__.
 
-To read more about INT8 inference, see :ref:`Using Low-Precision INT8 Integer Inference <model_optimization_guide>` and :ref:`Post-Training Optimization Toolkit <doxid-pot_introduction>`.
+To read more about INT8 inference, see :ref:`Using Low-Precision INT8 Integer Inference <model_optimization_guide>` and :ref:`Post-Training Optimization Toolkit <pot_tool_introduction>`.
 
 .. note:: INT8 calibration is **not** available in the following cases:
 
@@ -230,7 +230,7 @@ See Also
 
 * :ref:`Optimization Guide <performance_optimization_guide_introduction>`
 
-* :ref:`Post-Training Optimization Tool <doxid-pot_introduction>`
+* :ref:`Post-Training Optimization Tool <pot_tool_introduction>`
 
 * :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
 

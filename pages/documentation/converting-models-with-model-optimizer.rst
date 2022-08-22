@@ -47,7 +47,7 @@ where IR is a pair of files describing the model:
 
 * ``.bin`` - Contains the weights and biases binary data.
 
-The generated IR can be additionally optimized for inference by :ref:`Post-training optimization <doxid-pot_introduction>`	that applies post-training quantization methods.
+The generated IR can be additionally optimized for inference by :ref:`Post-training optimization <pot_tool_introduction>`	that applies post-training quantization methods.
 
 
 

@@ -107,5 +107,5 @@ Additional Resources
 
 * `NNCF in HuggingFace Optimum <https://github.com/openvinotoolkit/openvino_contrib/tree/master/modules/optimum>`__
 
-* :ref:`Post-training optimization <doxid-pot_introduction>`
+* :ref:`Post-training optimization <pot_tool_introduction>`
 

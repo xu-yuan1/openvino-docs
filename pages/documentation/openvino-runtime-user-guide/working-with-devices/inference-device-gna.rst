@@ -161,7 +161,7 @@ Supported Inference Data Types
 
 Intel® GNA essentially operates in the low-precision mode which represents a mix of 8-bit (``i8``), 16-bit (``i16``), and 32-bit (``i32``) integer computations.
 
-GNA plugin users are encouraged to use the :ref:`Post-Training Optimization Tool <doxid-pot_introduction>` to get a model with quantization hints based on statistics for the provided dataset.
+GNA plugin users are encouraged to use the :ref:`Post-Training Optimization Tool <pot_tool_introduction>` to get a model with quantization hints based on statistics for the provided dataset.
 
 Unlike other plugins supporting low-precision execution, the GNA plugin can calculate quantization factors at the model loading time. Therefore, a model can be run without calibration. However, this mode may not provide satisfactory accuracy because the internal quantization algorithm is based on heuristics, the efficiency of which depends on the model and dynamic range of input data. This mode is going to be deprecated soon.
 

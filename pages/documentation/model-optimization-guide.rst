@@ -35,7 +35,7 @@ optimize models at different steps of model development:
   vs BGR input channels, and other parameters to speed up preprocess of a model 
   (:ref:`Embedding Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`).
 
-* **Post-training Optimization tool** :ref:`(POT) <doxid-pot_introduction>` is 
+* **Post-training Optimization tool** :ref:`(POT) <pot_tool_introduction>` is 
   designed to optimize inference of deep learning models by applying post-training 
   methods that do not require model retraining or fine-tuning, for example, 
   post-training 8-bit quantization.
@@ -65,7 +65,7 @@ for inference using the regular OpenVINO inference workflow. No changes to the
 code are required.
 
 If you are not familiar with model optimization methods, refer to 
-:ref:`post-training methods <doxid-pot_introduction>`.
+:ref:`post-training methods <pot_tool_introduction>`.
 
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~

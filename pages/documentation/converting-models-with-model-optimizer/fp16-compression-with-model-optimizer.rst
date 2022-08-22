@@ -19,5 +19,5 @@ To compress the model, use the ``--data_type`` option:
 
 The resulting model will occupy about twice as less space in the file system, but it may have some accuracy drop. The resulting model will occupy about half of the previous space in the file system, but lose some of its accuracy. For most models, the accuracy drop is negligible. For details on how plugins handle compressed ``FP16`` models, see :ref:`Working with devices <doxid-openvino_docs__o_v__u_g__working_with_devices>`.
 
-.. note:: ``FP16`` compression is sometimes used as the initial step for ``INT8`` quantization. Refer to the :ref:`Post-training optimization <doxid-pot_introduction>` guide for more information about that.
+.. note:: ``FP16`` compression is sometimes used as the initial step for ``INT8`` quantization. Refer to the :ref:`Post-training optimization <pot_tool_introduction>` guide for more information about that.
 
