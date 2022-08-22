@@ -85,7 +85,7 @@ for more details on how to get a quantized model.
 
    Platforms that do not support Intel® AVX512-VNNI have a known "saturation issue" 
    that may lead to reduced computational accuracy for ``u8/i8`` precision calculations. 
-   See the :ref:`saturation (overflow) issue section <doxid-pot_saturation_issue>` to 
+   See the :ref:`saturation (overflow) issue section <pot_saturation_issue>` to 
    get more information on how to detect such issues and possible workarounds.
 
 

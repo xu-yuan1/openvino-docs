@@ -110,5 +110,5 @@ See Also
 
 * :ref:`Optimization with Simplified mode <doxid-pot_docs_simplified_mode>`
 
-* :ref:`Post-Training Optimization Best Practices <doxid-pot_docs__best_practices>`
+* :ref:`Post-Training Optimization Best Practices <pot_quantization_best_practices>`
 

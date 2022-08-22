@@ -140,7 +140,7 @@ a possibility to increase your RAM size, one of the following options can help:
 * Set ``use_fast_bias`` parameter to ``false``. In that case the POT will switch 
   from the FastBiasCorrection algorithm to the full BiasCorrection algorithm 
   which is usually more accurate and takes more time but requires less memory. 
-  See :ref:`Post-Training Optimization Best Practices <doxid-pot_docs__best_practices>` 
+  See :ref:`Post-Training Optimization Best Practices <pot_quantization_best_practices>` 
   for more details.
 
 * Reshape your model to a lower resolution and resize the size of images in the 
@@ -175,7 +175,7 @@ and the dataset. It also depends on the algorithm: the
 :ref:`Default Quantization <default_model_quantization>` algorithm 
 takes less time than the :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>` 
 algorithm. The following configuration parameters also impact the quantization 
-time duration (see details in :ref:`Post-Training Optimization Best Practices <doxid-pot_docs__best_practices>`):
+time duration (see details in :ref:`Post-Training Optimization Best Practices <pot_quantization_best_practices>`):
 
 * ``use_fast_bias`` : when set to ``false``, it increases the quantization time
 

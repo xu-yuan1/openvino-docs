@@ -26,7 +26,7 @@ Parameters
 
 DefaultQuantization Algorithm has mandatory and optional parameters. For more 
 details on how to use these parameters, refer to 
-:ref:`Best Practices <doxid-pot_docs__best_practices>` article. Below is an 
+:ref:`Best Practices <pot_quantization_best_practices>` article. Below is an 
 example of the DefaultQuantization method and its parameters:
 
 .. ref-code-block:: cpp
