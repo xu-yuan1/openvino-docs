@@ -93,7 +93,7 @@ Find the possible options and their description in the ``configs/default_quantiz
 Accuracy-aware Quantization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the steps above do not result in an accurate quantized model, you may use the so-called :ref:`Accuracy-aware Quantization <doxid-pot_accuracyaware_usage>` algorithm, which produces mixed-precision models. Here is a fragment of Accuracy-aware Quantization configuration with default settings:
+If the steps above do not result in an accurate quantized model, you may use the so-called :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>` algorithm, which produces mixed-precision models. Here is a fragment of Accuracy-aware Quantization configuration with default settings:
 
 .. ref-code-block:: cpp
 

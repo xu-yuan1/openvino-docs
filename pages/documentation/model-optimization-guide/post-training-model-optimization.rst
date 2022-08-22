@@ -63,12 +63,12 @@ methods that can be used:
   :ref:`Default Quantization algorithm <default_quantization_algorithm>` 
   documentation.
 
-* :ref:`Accuracy-aware Quantization <doxid-pot_accuracyaware_usage>` an advanced 
+* :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>` an advanced 
   method that allows keeping accuracy at a predefined range, at the cost of 
   performance improvement, when ``Default Quantization`` cannot guarantee it. 
   This method requires an annotated representative dataset and may require more 
   time for quantization. For more details, see the 
-  :ref:`Accuracy-aware Quantization algorithm <doxid-accuracy_aware__r_e_a_d_m_e>` 
+  :ref:`Accuracy-aware Quantization algorithm <accuracy_aware_quantization_algorithm>` 
   documentation.
 
 Different hardware platforms support different integer precisions and quantization 

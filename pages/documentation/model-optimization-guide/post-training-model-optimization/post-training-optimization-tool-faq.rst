@@ -106,7 +106,7 @@ which can be done with the following steps:
 
 #. Run your compression pipeline with a single compression algorithm 
    (:ref:`Default Quantization <default_model_quantization>` 
-   or :ref:`Accuracy-aware Quantization <doxid-pot_accuracyaware_usage>`) 
+   or :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>`) 
    without any parameter values specified in the config (except for ``preset`` 
    and ``stat_subset_size``). Make sure you get the desirable accuracy 
    drop/performance gain in this case.
@@ -162,7 +162,7 @@ It can happen due to the following reasons:
   Checker documentation for more information.
 
 * If :ref:`Default Quantization <default_model_quantization>` was 
-  used for quantization you can also try :ref:`Accuracy-aware Quantization <doxid-pot_accuracyaware_usage>` 
+  used for quantization you can also try :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>` 
   method that allows controlling maximum accuracy deviation.
 
 .. _longtime:
@@ -173,7 +173,7 @@ The quantization process of my model takes a lot of time. Can it be decreased so
 Quantization time depends on multiple factors such as the size of the model 
 and the dataset. It also depends on the algorithm: the 
 :ref:`Default Quantization <default_model_quantization>` algorithm 
-takes less time than the :ref:`Accuracy-aware Quantization <doxid-pot_accuracyaware_usage>` 
+takes less time than the :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>` 
 algorithm. The following configuration parameters also impact the quantization 
 time duration (see details in :ref:`Post-Training Optimization Best Practices <doxid-pot_docs__best_practices>`):
 

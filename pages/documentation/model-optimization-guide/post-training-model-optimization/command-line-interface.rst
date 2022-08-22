@@ -38,7 +38,7 @@ There are two ways how to run POT via command line:
   
   	pot -q default -m <path_to_xml> -w <path_to_bin> --ac-config <path_to_AC_config_yml>
 
-* **Basic usage for AccuracyAwareQauntization**. You can also run :ref:`AccuracyAwareQuantization <doxid-accuracy_aware__r_e_a_d_m_e>` method with basic options. ``--max-drop 0.01`` option defines maximum accuracy deviation to 1 absolute percent from the original model:
+* **Basic usage for AccuracyAwareQauntization**. You can also run :ref:`AccuracyAwareQuantization <accuracy_aware_quantization_algorithm>` method with basic options. ``--max-drop 0.01`` option defines maximum accuracy deviation to 1 absolute percent from the original model:
   
   .. ref-code-block:: cpp
   

@@ -305,7 +305,7 @@ in the same way as the original full-precision model.
 If high degradation of accuracy occurs after applying the Default Quantization 
 method, it is recommended to follow the tips from 
 :ref:`Quantization Best Practices <doxid-pot_docs__best_practices>` article or 
-use :ref:`Accuracy-aware Quantization <doxid-pot_accuracyaware_usage>` method.
+use :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>` method.
 
 Quantizing cascaded models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
