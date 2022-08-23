@@ -45,7 +45,7 @@ The example has been verified in Ubuntu 18.04 Operating System with
 Python 3.6 installed.
 
 In case of issues while running the example, refer to 
-:ref:`POT Frequently Asked Questions <doxid-pot_docs__frequently_asked_questions>` 
+:ref:`POT Frequently Asked Questions <pot_faq>` 
 for help.
 
 Model Preparation
@@ -53,8 +53,8 @@ Model Preparation
 
 #. Navigate to ``<EXAMPLE_DIR>``.
 
-#. Download the MobileNet v2 PyTorch model using Model Downloader tool from 
-   the Open Model Zoo repository:
+#. Download the MobileNet v2 PyTorch model using `Model Downloader <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md>`__ 
+   tool from the Open Model Zoo repository:
 
    .. ref-code-block:: cpp
 
@@ -64,7 +64,8 @@ Model Preparation
    ``<EXAMPLE_DIR>/public/mobilenet-v2-pytorch/``.
 
 #. Convert the model to the OpenVINO™ Intermediate Representation (IR) format 
-   using Model Converter tool:
+   using `Model Converter <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md#model-converter-usage>`__ 
+   tool:
 
    .. ref-code-block:: cpp
 
@@ -267,4 +268,3 @@ machine. On a machine with Intel Core i9-10920X CPU @ 3.50GHz it is like:
 
    Latency:    1.54 ms
    Throughput: 3814.18 FPS
-

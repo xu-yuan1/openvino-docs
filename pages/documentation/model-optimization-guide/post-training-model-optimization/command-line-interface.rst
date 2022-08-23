@@ -2,9 +2,9 @@
 .. _pot_cli:
 
 .. meta::
-   :description: In Post-Training Optimization Tool Command-line Interface you 
-                 specify basic options directly via command-line or advanced 
-                 options in a configuration file.
+   :description: In Post-Training Optimization Tool Command-line Interface 
+                 basic options are specified directly via command-line and 
+                 advanced options in a configuration file.
    :keywords: Post-training Optimization Tool, Post-training Optimization Tool 
               Command-Line Interface, POT, POT CLI, DefaultQuantization, 
               default quantization, quantizing models, AccuracyAwareQuantization, 

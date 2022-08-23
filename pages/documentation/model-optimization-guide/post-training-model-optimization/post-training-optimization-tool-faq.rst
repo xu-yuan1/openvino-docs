@@ -1,11 +1,21 @@
 .. index:: pair: page; Post-training Optimization Tool Frequently Asked Questions
-.. _doxid-pot_docs__frequently_asked_questions:
+.. _pot_faq:
 
+.. meta::
+   :description: This FAQ section covers the key issues regarding the use of 
+                 Post-training Optimization Tool in OpenVINO, as well as 
+                 solutions to problems that might occur.
+   :keywords: Post-training Optimization Tool,  API, POT API, POT CLI, Simplified 
+              Mode, OpenVINO Intermediate Representation, OpenVINO IR,
+              default quantization, quantizing models, AccuracyAwareQuantization, 
+              accuracy-aware quantization, accuracy checker, full-precision model,
+              post-training quantization, AccuracyChecker, INT8, FP32
+              command-line interface, configuration file, converting models
 
 Post-training Optimization Tool FAQ
 ===================================
 
-:target:`doxid-pot_docs__frequently_asked_questions_1md_openvino_tools_pot_docs_frequentlyaskedquestions` 
+:target:`pot_faq_1md_openvino_tools_pot_docs_frequentlyaskedquestions` 
 
 If your question is not covered below, use the 
 `OpenVINO™ Community Forum page <https://community.intel.com/t5/Intel-Distribution-of-OpenVINO/bd-p/distribution-openvino-toolkit>`__, 
