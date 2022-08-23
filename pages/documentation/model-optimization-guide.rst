@@ -70,4 +70,4 @@ If you are not familiar with model optimization methods, refer to
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Deployment optimization <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`
+* :ref:`Deployment optimization <runtime_inference_optimizations>`

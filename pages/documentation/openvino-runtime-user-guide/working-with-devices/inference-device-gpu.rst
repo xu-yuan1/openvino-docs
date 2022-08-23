@@ -266,7 +266,7 @@ application. The reason for this is that the implementation of streams in the
 GPU plugin supports weight memory sharing across streams, thus, memory 
 consumption may be lower, compared to the other approaches.
 
-For more details, see the :ref:`optimization guide <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`.
+For more details, see the :ref:`optimization guide <runtime_inference_optimizations>`.
 
 Dynamic Shapes
 --------------

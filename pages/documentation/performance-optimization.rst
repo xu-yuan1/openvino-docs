@@ -40,7 +40,7 @@ Similarly, the input-preprocessing contributes significantly to the inference ti
 
 Another specific case is **first-inference latency** (for example, when a fast application start-up is required), where the resulting performance may be well dominated by the model loading time. :ref:`Model caching <doxid-openvino_docs__o_v__u_g__model_caching_overview>` may be considered as a way to improve model loading/compilation time.
 
-Finally, **memory footprint** restriction is another possible concern when designing an application. While this is a motivation for the use of the *model* optimization techniques, keep in mind that the throughput-oriented execution is usually much more memory consuming. For more details, see the :ref:`Runtime Inference Optimizations guide <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`.
+Finally, **memory footprint** restriction is another possible concern when designing an application. While this is a motivation for the use of the *model* optimization techniques, keep in mind that the throughput-oriented execution is usually much more memory consuming. For more details, see the :ref:`Runtime Inference Optimizations guide <runtime_inference_optimizations>`.
 
 .. note:: To get performance numbers for OpenVINO, along with the tips on how 
    to measure and compare it with a native framework, see the 
@@ -63,7 +63,7 @@ with OpenVINO: model- and runtime-level optimizations. They are **fully compatib
 
 * **Runtime (Deployment) optimizations** includes tuning of model *execution* 
   parameters. Fore more details, see the 
-  :ref:`Runtime Inference Optimizations guide <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`.
+  :ref:`Runtime Inference Optimizations guide <runtime_inference_optimizations>`.
 
 Performance benchmarks
 ~~~~~~~~~~~~~~~~~~~~~~

@@ -216,7 +216,7 @@ Multi-stream Execution
 
 If either ``ov::num_streams(n_streams)`` with ``n_streams > 1`` or ``ov::hint::performance_mode(ov::hint::PerformanceMode::THROUGHPUT)`` property is set for CPU plugin, then multiple streams are created for the model. In case of CPU plugin, each stream has its own host thread, which means that incoming infer requests can be processed simultaneously. Each stream is pinned to its own group of physical cores with respect to NUMA nodes physical memory usage to minimize overhead on data transfer between NUMA nodes.
 
-For more details, see the :ref:`optimization guide <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`.
+For more details, see the :ref:`optimization guide <runtime_inference_optimizations>`.
 
 .. note:: 
 
