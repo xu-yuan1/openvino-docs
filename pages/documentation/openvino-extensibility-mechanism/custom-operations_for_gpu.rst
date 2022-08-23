@@ -1,13 +1,23 @@
 .. index:: pair: page; How to Implement Custom GPU Operations
-.. _doxid-openvino_docs__extensibility__u_g__g_p_u:
+.. _extensibility_gpu:
+
+.. meta::
+   :description: Description of custom kernel support for the GPU device to 
+                 enable operations not supported by OpenVINO.
+   :keywords: custom gpu operations, custom kernels, extension, performance numbers, custom operations,
+              CustomLayer, Sub-Node Structure, kernel node, source node, define node, buffers node,
+              data node, tensor node, CompilerOptions, work-sizes node
 
 
 How to Implement Custom Operations for GPU 
 ======================================
 
-:target:`doxid-openvino_docs__extensibility__u_g__g_p_u_1md_openvino_docs_extensibility_ug_gpu_extensibility` To enable operations not supported by OpenVINO out of the box, you may need an extension for an OpenVINO operation set, and a custom kernel for the device you will target. This page describes custom kernel support for the GPU device.
+:target:`extensibility_gpu_1md_openvino_docs_extensibility_ug_gpu_extensibility` To enable operations not supported by OpenVINO 
+out of the box, you may need an extension for an OpenVINO operation set, and a custom kernel for the device you will target. 
+This page describes custom kernel support for the GPU device.
 
-The GPU codepath abstracts many details about OpenCL. You need to provide the kernel code in OpenCL C and an XML configuration file that connects the kernel and its parameters to the parameters of the operation.
+The GPU codepath abstracts many details about OpenCL. You need to provide the kernel code in OpenCL C and an XML configuration 
+file that connects the kernel and its parameters to the parameters of the operation.
 
 There are two options for using the custom operation configuration file:
 
@@ -86,7 +96,9 @@ There are two options for using the custom operation configuration file:
 
 
 
-All OpenVINO samples, except the trivial ``hello_classification``, and most Open Model Zoo demos feature a dedicated command-line option ``-c`` to load custom kernels. For example, to load custom operations for the classification sample, run the command below:
+All OpenVINO samples, except the trivial ``hello_classification``, and most Open Model Zoo demos feature a dedicated 
+command-line option ``-c`` to load custom kernels. For example, to load custom operations for the classification sample, 
+run the command below:
 
 .. ref-code-block:: cpp
 
@@ -98,7 +110,8 @@ All OpenVINO samples, except the trivial ``hello_classification``, and most Open
 Configuration File Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The configuration file is expected to follow the ``.xml`` file structure with a node of the ``CustomLayer`` type for every custom operation you provide.
+The configuration file is expected to follow the ``.xml`` file structure with a node of the ``CustomLayer`` type for every 
+custom operation you provide.
 
 The definitions described in the sections below use the following notations:
 
@@ -344,7 +357,8 @@ For an example, see `Example Kernel <#example-kernel>`__.
     * - ``<TENSOR>_OFFSET``
       - The number of elements from the start of the tensor to the first valid element, bypassing the lower padding.
 
-All ``<TENSOR>`` values are automatically defined for every tensor bound to this operation, such as ``INPUT0``, ``INPUT1``, and ``OUTPUT0``, as shown in the following example:
+All ``<TENSOR>`` values are automatically defined for every tensor bound to this operation, such as 
+``INPUT0``, ``INPUT1``, and ``OUTPUT0``, as shown in the following example:
 
 .. ref-code-block:: cpp
 
@@ -379,7 +393,9 @@ Example Kernel
 
 .. _debugging-tips:
 
-.. note:: As described in the previous section, all items like ``INPUT0_TYPE`` are actually defined as OpenCL (pre-)compiler inputs by OpenVINO for efficiency reasons. See `Debugging Tips <#debugging-tips>`__ for information on debugging the results.
+.. note:: 
+   As described in the previous section, all items like ``INPUT0_TYPE`` are actually defined as OpenCL (pre-)compiler 
+   inputs by OpenVINO for efficiency reasons. See `Debugging Tips <#debugging-tips>`__ for information on debugging the results.
 
 
 
