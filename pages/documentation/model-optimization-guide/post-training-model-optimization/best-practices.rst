@@ -165,4 +165,4 @@ precision. Note that this may impact the overall quantization time, though.
 
 If the Accuracy-aware Quantization algorithm does not provide the desired 
 accuracy and performance or you need an accurate, fully-quantized model, use 
-:ref:`NNCF <doxid-docs_nncf_introduction>` for Quantization-Aware Training.
+:ref:`NNCF <nncf_introduction>` for Quantization-Aware Training.

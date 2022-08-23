@@ -242,7 +242,7 @@ on demand is also available in the ``Pipeline`` object.
 
 In case when Accuracy-aware Quantization does not allow achieving the desired 
 accuracy-performance trade-off, it is recommended to try Quantization-aware 
-Training from :ref:`NNCF <doxid-docs_nncf_introduction>`.
+Training from :ref:`NNCF <nncf_introduction>`.
 
 Examples
 ~~~~~~~~

@@ -40,7 +40,7 @@ optimize models at different steps of model development:
   methods that do not require model retraining or fine-tuning, for example, 
   post-training 8-bit quantization.
 
-* **Neural Network Compression Framework** :ref:`(NNCF) <doxid-docs_nncf_introduction>` 
+* **Neural Network Compression Framework** :ref:`(NNCF) <nncf_introduction>` 
   provides a suite of advanced methods for training-time model optimization within 
   the DL framework, such as PyTorch and TensorFlow. It supports methods, like 
   Quantization-aware Training and Filter Pruning. NNCF-optimized models can be 
