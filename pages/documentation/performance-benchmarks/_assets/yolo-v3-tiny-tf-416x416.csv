@@ -1,27 +1,35 @@
-Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
-yolo-v3-tiny-tf-416x416,atom,Intel® Atom™ x5-E3940,12.4,5.39,5.4,0.364,1.305,82.63
-yolo-v3-tiny-tf-416x416,atom,Intel® Atom™ x6425RE CPU-only,16.06,6.37,6.33,0.272,1.338,63.49
-yolo-v3-tiny-tf-416x416,atom,Intel® Atom™ x6425RE iGPU-only,35.44,20.11,36.66,0.6,2.953,29.81
-yolo-v3-tiny-tf-416x416,atom,Intel® Atom™ x6425RE CPU+iGPU,50.02,25.42,41.7,0.847,4.168,
-yolo-v3-tiny-tf-416x416,atom,Intel® Celeron 6305E CPU-only,57.12,17.95,17.96,0.533,3.808,17.33
-yolo-v3-tiny-tf-416x416,atom,Intel® Celeron 6305E iGPU-only,286.05,87.26,157.04,2.673,19.07,4.44
-yolo-v3-tiny-tf-416x416,atom,Intel® Celeron 6305E CPU+iGPU,324.06,101.68,172.04,3.028,21.604,
-yolo-v3-tiny-tf-416x416,core,Intel® Core™ i3-8100,113.57,65.23,65.15,0.97,1.747,9.02
-yolo-v3-tiny-tf-416x416,core,Intel® Core™ i5-8500,165.21,92.12,93.12,0.86,2.541,6.18
-yolo-v3-tiny-tf-416x416,core,Intel® Core™ i7-8700T,186.68,107.19,107.29,0.616,5.333,5.94
-yolo-v3-tiny-tf-416x416,core,Intel® Core™ i9-10920X,980.11,294.09,296.68,1.4,5.94,1.41
-yolo-v3-tiny-tf-416x416,core,Intel® Core™ i7-1185G7 CPU-only,243.75,71.37,72,0.572,8.705,4.31
-yolo-v3-tiny-tf-416x416,core,Intel® Core™ i7-1185G7 iGPU-only,552.02,167.33,296.46,1.295,19.715,2.29
-yolo-v3-tiny-tf-416x416,core,Intel® Core™ i7-1185G7 CPU+iGPU,639.87,187.5,301.73,1.502,22.852,
-yolo-v3-tiny-tf-416x416,core,Intel® Core™ i7-11850HE CPU-only,402.16,96.01,96.33,1.018,8.936,2.32
-yolo-v3-tiny-tf-416x416,core,Intel® Core™ i7-11850HE iGPU-only,230.56,70.02,131.41,0.583,5.123,5.06
-yolo-v3-tiny-tf-416x416,core,Intel® Core™ i7-11850HE CPU+iGPU,521.54,157.18,218.2,1.32,11.589,
-yolo-v3-tiny-tf-416x416,core,Intel® Core™ i5-10500TE ,167.08,94.32,94.5,0.856,4.773,6.77
-yolo-v3-tiny-tf-416x416,xeon,Intel® Xeon® W1290P,314.32,162,162.91,0.583,2.514,3.45
-yolo-v3-tiny-tf-416x416,xeon,Intel® Xeon® E-2124G,129.59,74.51,75.17,0.608,1.825,7.87
-yolo-v3-tiny-tf-416x416,xeon,Intel® Xeon® Silver 4216R,1048.66,315.12,314.88,1.046,4.194,2.07
-yolo-v3-tiny-tf-416x416,xeon,Intel® Xeon® Gold 5218T,1102.29,335.83,335.29,0.817,5.249,2
-yolo-v3-tiny-tf-416x416,xeon,Intel® Xeon® Platinum 8270,3038.67,875.71,878.17,0.41,7.411,1.74
-yolo-v3-tiny-tf-416x416,xeon,Intel® Xeon® Platinum 8380,4710.75,1087.79,1096.75,0.581,8.723,0.8
-yolo-v3-tiny-tf-416x416,accel,Intel® Neural Compute Stick 2,,,45.84,0.664,18.336,
-yolo-v3-tiny-tf-416x416,accel,Intel® Movidius™ VPUs (Uzel* UI-AR8),,,369.96,0.87,12.332,
+﻿Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
+yolo-v3-tiny-tf [416x416],atom,Intel® Atom™ x5-E3940,12.35,6.21,6.2,0.363,1.3,12090
+yolo-v3-tiny-tf [416x416],atom,Intel® Atom™ x6425E CPU-only,,,,#VALUE!,#VALUE!,0
+yolo-v3-tiny-tf [416x416],atom,Intel® Atom™ x6425E iGPU-only,,,,#VALUE!,#VALUE!,0
+yolo-v3-tiny-tf [416x416],atom,Intel® Atom™ x6425E CPU+iGPU,,,,#VALUE!,#VALUE!,
+yolo-v3-tiny-tf [416x416],atom,Intel® Celeron 6305E CPU-only,,,,0,0,
+yolo-v3-tiny-tf [416x416],atom,Intel® Celeron 6305E iGPU-only,,,,0,0,
+yolo-v3-tiny-tf [416x416],atom,Intel® Celeron 6305E CPU+iGPU,,,,0,0,
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i3-8100,114.59,64.53,64.28,0.979,1.762,110850
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i5-8500,176.93,95.69,97.11,0.921,2.722,170640
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i7-8700T,139.73,77.35,78.05,0.461,3.992,132240
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i9-10900TE,153.31,78.42,79.28,0.345,4.38,118960
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i9-12900HK CPU-only,387.67,126.22,126.25,0.61,8.614,298390
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i9-12900HK iGPU-only,596.52,183.68,285.69,0.939,13.255,448470
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i9-12900HK CPU+iGPU,780.73,236.57,327.07,1.229,17.349,
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i9-12900K CPU-only,603.26,207.31,209.46,1.024,4.826,298390
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i9-12900K iGPU-only,277.52,88.07,150.15,0.471,2.22,245300
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i9-12900K CPU+iGPU,814.98,204.28,259.18,1.383,6.519,
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i7-11800H CPU-only,490.84,138.96,140.48,1.242,14.023,462780
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i7-11800H iGPU-only,254.82,79.52,134.07,0.645,7.28,222580
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i7-11800H CPU+iGPU,656.79,186.95,234.87,1.662,18.765,
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i7-1185G7 CPU-only,275.41,80.74,81.39,0.646,9.835,258190
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i7-1185G7 iGPU-only,629.76,168.41,267.95,1.478,22.491,313150
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i7-1185G7 CPU+iGPU,700.91,199.55,272.16,1.645,25.032,
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i7-1185GRE CPU-only,187.67,57.37,55.54,0.383,6.702,205360
+yolo-v3-tiny-tf [416x416],core,Intel® Core™ i5-10500TE ,153.31,78.42,79.28,0.786,4.38,149550
+yolo-v3-tiny-tf [416x416],xeon,Intel® Xeon® W1290P,355.31,172.03,172.76,0.659,2.842,323670
+yolo-v3-tiny-tf [416x416],xeon,Intel® Xeon® E-2124G,108.74,64.51,64.2,0.51,1.531,105480
+yolo-v3-tiny-tf [416x416],xeon,Intel® Xeon® Silver 4216R,1061.08,318.02,317.12,0.529,4.244,853670
+yolo-v3-tiny-tf [416x416],xeon,Intel® Xeon® Silver 4316,,,,0,0,
+yolo-v3-tiny-tf [416x416],xeon,Intel® Xeon® Gold 5218T,1106.7,334.13,334.26,0.41,5.27,888020
+yolo-v3-tiny-tf [416x416],xeon,Intel® Xeon® Platinum 8270,3039.64,874.32,872.52,0.205,7.413,1700900
+yolo-v3-tiny-tf [416x416],xeon,Intel® Xeon® Platinum 8380,,,,0,0,
+yolo-v3-tiny-tf [416x416],accel,Intel® Neural Compute Stick 2,,,34.19,0.495,13.676,
+yolo-v3-tiny-tf [416x416],accel,Intel® Movidius™ VPUs (Uzel* UI-AR8),,,,0,0,

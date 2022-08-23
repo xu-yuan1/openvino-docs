@@ -1,27 +1,35 @@
-Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
-mobilenet-ssd-CF-300x300,atom,Intel® Atom™ x5-E3940,27.79,12.82,12.83,0.817,2.925,37.83
-mobilenet-ssd-CF-300x300,atom,Intel® Atom™ x6425RE CPU-only,34.59,17.02,17.12,0.586,2.882,30.17
-mobilenet-ssd-CF-300x300,atom,Intel® Atom™ x6425RE iGPU-only,58.46,35.23,59.53,0.99,4.871,20.69
-mobilenet-ssd-CF-300x300,atom,Intel® Atom™ x6425RE CPU+iGPU,88.65,49.33,74.78,1.502,7.387,
-mobilenet-ssd-CF-300x300,atom,Intel® Celeron 6305E CPU-only,108.25,39.38,39.54,1.011,7.216,9.14
-mobilenet-ssd-CF-300x300,atom,Intel® Celeron 6305E iGPU-only,244.89,153.85,242.19,2.288,16.326,6.1
-mobilenet-ssd-CF-300x300,atom,Intel® Celeron 6305E CPU+iGPU,319.71,173.45,254.27,2.987,21.314,
-mobilenet-ssd-CF-300x300,core,Intel® Core™ i3-8100,240.77,142.7,142.58,2.057,3.704,4.53
-mobilenet-ssd-CF-300x300,core,Intel® Core™ i5-8500,347.75,209.68,210.23,1.811,5.35,3.12
-mobilenet-ssd-CF-300x300,core,Intel® Core™ i7-8700T,400.12,243.02,241.42,1.32,11.432,2.98
-mobilenet-ssd-CF-300x300,core,Intel® Core™ i9-10920X,2103.11,484.67,488.43,3.004,12.746,0.99
-mobilenet-ssd-CF-300x300,core,Intel® Core™ i7-1185G7 CPU-only,479.99,153.25,154.85,1.126,17.142,2.28
-mobilenet-ssd-CF-300x300,core,Intel® Core™ i7-1185G7 iGPU-only,536.2,284.27,382.08,1.258,19.15,2.52
-mobilenet-ssd-CF-300x300,core,Intel® Core™ i7-1185G7 CPU+iGPU,710.28,322.29,430.06,1.667,25.367,
-mobilenet-ssd-CF-300x300,core,Intel® Core™ i7-11850HE CPU-only,911.41,260.6,282.74,2.307,20.253,1.19
-mobilenet-ssd-CF-300x300,core,Intel® Core™ i7-11850HE iGPU-only,409.56,137.83,221.12,1.036,9.101,3.61
-mobilenet-ssd-CF-300x300,core,Intel® Core™ i7-11850HE CPU+iGPU,967.23,315.05,399.13,2.448,21.494,
-mobilenet-ssd-CF-300x300,core,Intel® Core™ i5-10500TE ,358.93,213.8,213.6,1.84,10.255,3.31
-mobilenet-ssd-CF-300x300,xeon,Intel® Xeon® W1290P,678.24,347.63,350.72,1.258,5.425,1.73
-mobilenet-ssd-CF-300x300,xeon,Intel® Xeon® E-2124G,276.14,171.63,171.88,1.296,3.889,3.89
-mobilenet-ssd-CF-300x300,xeon,Intel® Xeon® Silver 4216R,2105.34,660.96,665.84,2.101,8.421,1.7
-mobilenet-ssd-CF-300x300,xeon,Intel® Xeon® Gold 5218T,2230.65,707.19,705.83,1.653,10.622,1.6
-mobilenet-ssd-CF-300x300,xeon,Intel® Xeon® Platinum 8270,6548.73,1787.46,1745.69,0.884,15.972,1.82
-mobilenet-ssd-CF-300x300,xeon,Intel® Xeon® Platinum 8380,10701.2,2780.15,2790.75,1.321,19.817,0.89
-mobilenet-ssd-CF-300x300,accel,Intel® Neural Compute Stick 2,,,57.96,0.84,23.184,
-mobilenet-ssd-CF-300x300,accel,Intel® Movidius™ VPUs (Uzel* UI-AR8),,,455.36,1.071,15.178,
+﻿Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
+mobilenet-ssd-CF [300x300],atom,Intel® Atom™ x5-E3940,28.39,12.76,12.81,0.834,2.987,26280
+mobilenet-ssd-CF [300x300],atom,Intel® Atom™ x6425E CPU-only,,,,#VALUE!,#VALUE!,0
+mobilenet-ssd-CF [300x300],atom,Intel® Atom™ x6425E iGPU-only,,,,#VALUE!,#VALUE!,0
+mobilenet-ssd-CF [300x300],atom,Intel® Atom™ x6425E CPU+iGPU,,,,#VALUE!,#VALUE!,
+mobilenet-ssd-CF [300x300],atom,Intel® Celeron 6305E CPU-only,,,,0,0,
+mobilenet-ssd-CF [300x300],atom,Intel® Celeron 6305E iGPU-only,,,,0,0,
+mobilenet-ssd-CF [300x300],atom,Intel® Celeron 6305E CPU+iGPU,,,,0,0,
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i3-8100,247.35,141.48,140.91,2.114,3.805,224840
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i5-8500,367.18,215.16,219.37,1.912,5.648,355100
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i7-8700T,310.09,179,181.57,1.023,8.859,279440
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i9-10900TE,334.86,182.34,183.89,0.754,9.567,255980
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i9-12900HK CPU-only,817.61,261.78,264.77,1.287,18.169,497450
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i9-12900HK iGPU-only,781.19,292.57,425.88,1.23,17.359,256090
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i9-12900HK CPU+iGPU,1019.96,411.74,513.29,1.606,22.665,
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i9-12900K CPU-only,1333.65,435.27,448.98,2.264,10.669,497450
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i9-12900K iGPU-only,515.15,154.89,252.59,0.874,4.121,364430
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i9-12900K CPU+iGPU,1131.27,419.65,497.46,1.92,9.05,
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i7-11800H CPU-only,1057.1,325.41,326.78,2.676,30.202,814820
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i7-11800H iGPU-only,453.72,142.03,221.05,1.148,12.963,342660
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i7-11800H CPU+iGPU,1238.97,299.47,360.94,3.136,35.399,
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i7-1185G7 CPU-only,582.66,178.6,180.54,1.367,20.809,531590
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i7-1185G7 iGPU-only,334.12,267.26,299.77,0.784,11.932,211640
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i7-1185G7 CPU+iGPU,962.26,323.87,412.23,2.258,34.366,
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i7-1185GRE CPU-only,409.45,108.88,109.39,0.835,14.623,339550
+mobilenet-ssd-CF [300x300],core,Intel® Core™ i5-10500TE ,334.86,182.34,183.89,1.717,9.567,307190
+mobilenet-ssd-CF [300x300],xeon,Intel® Xeon® W1290P,786.94,351.53,354.33,1.459,6.295,639560
+mobilenet-ssd-CF [300x300],xeon,Intel® Xeon® E-2124G,235.56,147.68,147.87,1.105,3.317,217160
+mobilenet-ssd-CF [300x300],xeon,Intel® Xeon® Silver 4216R,2269.39,675.53,674.37,1.132,9.077,1280150
+mobilenet-ssd-CF [300x300],xeon,Intel® Xeon® Silver 4316,,,,0,0,
+mobilenet-ssd-CF [300x300],xeon,Intel® Xeon® Gold 5218T,2383.92,701.38,700.06,0.883,11.352,1330400
+mobilenet-ssd-CF [300x300],xeon,Intel® Xeon® Platinum 8270,6849.59,1680.01,1646.85,0.462,16.706,2101610
+mobilenet-ssd-CF [300x300],xeon,Intel® Xeon® Platinum 8380,,,,0,0,
+mobilenet-ssd-CF [300x300],accel,Intel® Neural Compute Stick 2,,,58.17,0.843,23.268,
+mobilenet-ssd-CF [300x300],accel,Intel® Movidius™ VPUs (Uzel* UI-AR8),,,,0,0,
