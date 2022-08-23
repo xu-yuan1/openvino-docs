@@ -407,7 +407,7 @@ Extensibility
 -------------
 
 For information on this subject, see the 
-:ref:`GPU Extensibility <doxid-openvino_docs__extensibility__u_g__g_p_u>`.
+:ref:`GPU Extensibility <extensibility_gpu>`.
 
 GPU Context and Memory Sharing via RemoteTensor API
 ---------------------------------------------------
