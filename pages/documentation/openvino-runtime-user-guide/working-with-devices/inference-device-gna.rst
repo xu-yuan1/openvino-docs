@@ -187,7 +187,7 @@ Models Caching
 
 Due to import/export functionality support (see below), cache for GNA plugin may be enabled via common ``:ref:`ov::cache_dir <doxid-group__ov__runtime__cpp__prop__api_1ga3276fc4ed7cc7d0bbdcf0ae12063728d>``` property of OpenVINO™.
 
-For more details, see the :ref:`Model caching overview <doxid-openvino_docs__o_v__u_g__model_caching_overview>`.
+For more details, see the :ref:`Model caching overview <model_caching_overview>`.
 
 Import/Export
 -------------

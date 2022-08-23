@@ -223,7 +223,7 @@ Consider the example, where an original ONNX model takes one ``float32`` input w
 Application Code - Load Model to Target Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After this, the application code can load a saved file and stop preprocessing. In this case, enable :ref:`model caching <doxid-openvino_docs__o_v__u_g__model_caching_overview>` to minimize load time when the cached model is available.
+After this, the application code can load a saved file and stop preprocessing. In this case, enable :ref:`model caching <model_caching_overview>` to minimize load time when the cached model is available.
 
 .. raw:: html
 
@@ -302,7 +302,7 @@ Additional Resources
 
 * :ref:`Model Optimizer - Optimize Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`
 
-* :ref:`Model Caching Overview <doxid-openvino_docs__o_v__u_g__model_caching_overview>`
+* :ref:`Model Caching Overview <model_caching_overview>`
 
 * The ``:ref:`ov::preprocess::PrePostProcessor <doxid-classov_1_1preprocess_1_1_pre_post_processor>``` C++ class documentation
 

@@ -340,7 +340,7 @@ will be skipped. These transformations take a significant amount of time during 
 compilation, so caching this representation reduces time spent for subsequent compilations 
 of the model, thereby reducing first inference latency (FIL).
 
-For more details, see the :ref:`model caching <doxid-openvino_docs__o_v__u_g__model_caching_overview>` overview.
+For more details, see the :ref:`model caching <model_caching_overview>` overview.
 
 Extensibility
 -------------

@@ -50,16 +50,16 @@ For more information on this topic, see the following articles:
 
 * :ref:`feature support by device <doxid-openvino_docs__o_v__u_g__working_with_devices_1features_support_matrix>`,
 
-* :ref:`Inputs Pre-processing with the OpenVINO <doxid-openvino_docs_deployment_optimization_guide_common_1inputs_pre_processing>`.
+* :ref:`Inputs Pre-processing with the OpenVINO <deployment_general_optimizations_1inputs_pre_processing>`.
 
-* :ref:`Async API <doxid-openvino_docs_deployment_optimization_guide_common_1async_api>`.
+* :ref:`Async API <deployment_general_optimizations_1async_api>`.
 
-* :ref:`The 'get_tensor' Idiom <doxid-openvino_docs_deployment_optimization_guide_common_1tensor_idiom>`.
+* :ref:`The 'get_tensor' Idiom <deployment_general_optimizations_1tensor_idiom>`.
 
 * For variably-sized inputs, consider :ref:`dynamic shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
 
-See the :ref:`latency <doxid-openvino_docs_deployment_optimization_guide_latency>` 
-and :ref:`throughput <doxid-openvino_docs_deployment_optimization_guide_tput>` optimization guides, for **use-case-specific optimizations**
+See the :ref:`latency <deployment_optimizing_for_latency>` 
+and :ref:`throughput <deployment_optimizing_for_throughput>` optimization guides, for **use-case-specific optimizations**
 
 Writing Performance-Portable Inference Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +75,7 @@ result in different performance when used under different conditions.
 For example:
 
 * both the CPU and GPU support the notion of 
-  :ref:`streams <doxid-openvino_docs_deployment_optimization_guide_tput_advanced>`, 
+  :ref:`streams <deployment_throughput_advanced>`, 
   yet they deduce their optimal number very differently.
 
 * Even among devices of the same type, different execution configurations can 
@@ -89,7 +89,7 @@ For example:
 * Execution "scheduling" impacts performance strongly and is highly 
   device-specific, for example, GPU-oriented optimizations like batching, 
   combining multiple inputs to achieve the optimal throughput, 
-  :ref:`do not always map well to the CPU <doxid-openvino_docs_deployment_optimization_guide_internals>`.
+  :ref:`do not always map well to the CPU <deployment_low_level_implementation>`.
 
 To make the configuration process much easier and its performance optimization 
 more portable, the option of :ref:`Performance Hints <doxid-openvino_docs__o_v__u_g__performance__hints>` 
@@ -104,12 +104,12 @@ requests for different input sources
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Using Async API and running multiple inference requests in parallel to leverage throughput <doxid-openvino_docs_deployment_optimization_guide_tput_1throughput_app_design>`.
+* :ref:`Using Async API and running multiple inference requests in parallel to leverage throughput <deployment_optimizing_for_throughput_1throughput_app_design>`.
 
-* :ref:`The throughput approach implementation details for specific devices <doxid-openvino_docs_deployment_optimization_guide_internals>`
+* :ref:`The throughput approach implementation details for specific devices <deployment_low_level_implementation>`
 
-* :ref:`Details on throughput <doxid-openvino_docs_deployment_optimization_guide_tput>`
+* :ref:`Details on throughput <deployment_optimizing_for_throughput>`
 
-* :ref:`Details on latency <doxid-openvino_docs_deployment_optimization_guide_latency>`
+* :ref:`Details on latency <deployment_optimizing_for_latency>`
 
 * :ref:`API examples and details <doxid-openvino_docs__o_v__u_g__performance__hints>`.

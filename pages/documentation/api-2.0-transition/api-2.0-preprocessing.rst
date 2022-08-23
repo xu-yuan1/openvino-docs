@@ -26,7 +26,7 @@ Having preprocessing operations as a part of an OpenVINO opset makes it possible
 
 More importantly, API 2.0 does not assume any default layouts as Inference Engine did. For example, both ``{ 1, 224, 224, 3 }`` and ``{ 1, 3, 224, 224 }`` shapes are supposed to be in the ``NCHW`` layout, while only the latter is. Therefore, some preprocessing capabilities in the API require layouts to be set explicitly. To learn how to do it, refer to the :ref:`Layout overview <doxid-openvino_docs__o_v__u_g__layout__overview>`. For example, to perform image scaling by partial dimensions ``H`` and ``W``, preprocessing needs to know what dimensions ``H`` and ``W`` are.
 
-.. note:: Use Model Optimizer preprocessing capabilities to insert preprocessing operations in your model for optimization. Thus, the application does not need to read the model and set preprocessing repeatedly. You can use the :ref:`model caching feature <doxid-openvino_docs__o_v__u_g__model_caching_overview>` to improve the time-to-inference.
+.. note:: Use Model Optimizer preprocessing capabilities to insert preprocessing operations in your model for optimization. Thus, the application does not need to read the model and set preprocessing repeatedly. You can use the :ref:`model caching feature <model_caching_overview>` to improve the time-to-inference.
 
 
 

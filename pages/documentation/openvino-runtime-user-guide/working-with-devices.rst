@@ -84,12 +84,12 @@ The table below demonstrates support of key features by OpenVINO device plugins.
       - Yes
       - No
       - No
-    * - :ref:`Multi-stream execution <doxid-openvino_docs_deployment_optimization_guide_tput>`
+    * - :ref:`Multi-stream execution <deployment_optimizing_for_throughput>`
       - Yes
       - Yes
       - No
       - Yes
-    * - :ref:`Models caching <doxid-openvino_docs__o_v__u_g__model_caching_overview>`
+    * - :ref:`Models caching <model_caching_overview>`
       - Yes
       - Partial
       - Yes

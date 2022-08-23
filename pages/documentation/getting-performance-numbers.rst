@@ -207,12 +207,12 @@ but in the form of plugin-specific `Netron-viewable <https://netron.app/>`__
 graph to the specified file.
 
 Especially when performance-debugging the 
-:ref:`latency <doxid-openvino_docs_deployment_optimization_guide_latency>`, 
+:ref:`latency <deployment_optimizing_for_latency>`, 
 note that the counters do not reflect the time spent in the 
 ``plugin/device/driver/etc`` queues. If the sum of the counters is too different 
 from the latency of an inference request, consider testing with less inference 
 requests. For example, running single 
-:ref:`OpenVINO stream <doxid-openvino_docs_deployment_optimization_guide_tput>` 
+:ref:`OpenVINO stream <deployment_optimizing_for_throughput>` 
 with multiple requests would produce nearly identical counters as running a 
 single inference request, while the actual latency can be quite different.
 

@@ -401,7 +401,7 @@ is a bottleneck in the model loading process, a significant load time reduction
 can be achieved with the ``:ref:`ov::cache_dir <doxid-group__ov__runtime__cpp__prop__api_1ga3276fc4ed7cc7d0bbdcf0ae12063728d>``` 
 property enabled.
 
-For more details, see the :ref:`Model caching overview <doxid-openvino_docs__o_v__u_g__model_caching_overview>`.
+For more details, see the :ref:`Model caching overview <model_caching_overview>`.
 
 Extensibility
 -------------
@@ -515,7 +515,7 @@ general OpenCL tips apply:
 * Try to group individual infer jobs by using 
   :ref:`automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>`.
 
-* Consider :ref:`caching <doxid-openvino_docs__o_v__u_g__model_caching_overview>` 
+* Consider :ref:`caching <model_caching_overview>` 
   to minimize model load time.
 
 * If your application performs inference on the CPU alongside the GPU, or otherwise 
