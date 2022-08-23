@@ -12,7 +12,7 @@
 OpenVINO Extensibility Mechanism
 ================================
 
-:target:`extensibility_api_1md_openvino_docs_extensibility_ug_intro`
+:target:`extensibility_api_introduction_1md_openvino_docs_extensibility_ug_intro`
 
 
 
@@ -49,7 +49,7 @@ Definition of Operation Semantics
 
 If the custom operation can be mathematically represented as a combination of exiting OpenVINO operations and such decomposition gives desired performance, then low-level operation implementation is not required. When deciding feasibility of such decomposition refer to the latest OpenVINO operation set. You can use any valid combination of exiting operations. How to map a custom operation is described in the next section of this document.
 
-If such decomposition is not possible or appears too bulky with lots of consisting operations that are not performing well, then a new class for the custom operation should be implemented as described in the :ref:`Custom Operation Guide <doxid-openvino_docs__extensibility__u_g_add_openvino_ops>`.
+If such decomposition is not possible or appears too bulky with lots of consisting operations that are not performing well, then a new class for the custom operation should be implemented as described in the :ref:`Custom Operation Guide <extensibility_custom_operations>`.
 
 Prefer implementing a custom operation class if you already have a generic C++ implementation of operation kernel. Otherwise try to decompose the operation first as described above and then after verifying correctness of inference and resulting performance, optionally invest to implementing bare metal C++ implementation.
 
@@ -156,7 +156,7 @@ Extensions can be loaded from code with ``:ref:`ov::Core::add_extension <doxid-c
 
 
 
-``Identity`` is custom operation class defined in :ref:`Custom Operation Guide <doxid-openvino_docs__extensibility__u_g_add_openvino_ops>`. This is enough to enable reading IR which uses ``Identity`` extension operation emitted by Model Optimizer. To be able to load original model directly to the runtime, you need to add also a mapping extension:
+``Identity`` is custom operation class defined in :ref:`Custom Operation Guide <extensibility_custom_operations>`. This is enough to enable reading IR which uses ``Identity`` extension operation emitted by Model Optimizer. To be able to load original model directly to the runtime, you need to add also a mapping extension:
 
 .. tab:: C++
 

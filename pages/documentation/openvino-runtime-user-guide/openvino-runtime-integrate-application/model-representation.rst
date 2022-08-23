@@ -123,7 +123,7 @@ However, in most cases, before getting static shape using the ``get_shape()`` me
 Representation of Operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``ov::Op`` class represents any abstract operation in the model representation. Use this class to create :ref:`custom operations <doxid-openvino_docs__extensibility__u_g_add_openvino_ops>`.
+The ``ov::Op`` class represents any abstract operation in the model representation. Use this class to create :ref:`custom operations <extensibility_custom_operations>`.
 
 Representation of Operation Sets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
