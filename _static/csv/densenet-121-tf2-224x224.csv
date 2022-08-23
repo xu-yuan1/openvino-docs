@@ -1,0 +1,35 @@
+﻿Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
+densenet-121-tf2 [224x224],atom,Intel® Atom™ x5-E3940,13.46,5.99,6,0.395,1.416,12440
+densenet-121-tf2 [224x224],atom,Intel® Atom™ x6425E CPU-only,,,,#VALUE!,#VALUE!,0
+densenet-121-tf2 [224x224],atom,Intel® Atom™ x6425E iGPU-only,,,,#VALUE!,#VALUE!,0
+densenet-121-tf2 [224x224],atom,Intel® Atom™ x6425E CPU+iGPU,,,,#VALUE!,#VALUE!,
+densenet-121-tf2 [224x224],atom,Intel® Celeron 6305E CPU-only,,,,0,0,
+densenet-121-tf2 [224x224],atom,Intel® Celeron 6305E iGPU-only,,,,0,0,
+densenet-121-tf2 [224x224],atom,Intel® Celeron 6305E CPU+iGPU,,,,0,0,
+densenet-121-tf2 [224x224],core,Intel® Core™ i3-8100,118.63,66.54,66.47,1.013,1.825,104390
+densenet-121-tf2 [224x224],core,Intel® Core™ i5-8500,180.09,98.98,100.81,0.937,2.77,159660
+densenet-121-tf2 [224x224],core,Intel® Core™ i7-8700T,144.17,80.5,81.37,0.475,4.119,127560
+densenet-121-tf2 [224x224],core,Intel® Core™ i9-10900TE,154.81,81.65,83.62,0.348,4.423,109730
+densenet-121-tf2 [224x224],core,Intel® Core™ i9-12900HK CPU-only,402.57,119.62,121.26,0.633,8.946,248040
+densenet-121-tf2 [224x224],core,Intel® Core™ i9-12900HK iGPU-only,462.98,154.4,210.72,0.729,10.288,96340
+densenet-121-tf2 [224x224],core,Intel® Core™ i9-12900HK CPU+iGPU,681.44,213.11,258.16,1.073,15.143,
+densenet-121-tf2 [224x224],core,Intel® Core™ i9-12900K CPU-only,613.65,201.09,204.96,1.041,4.909,248040
+densenet-121-tf2 [224x224],core,Intel® Core™ i9-12900K iGPU-only,228.64,71.22,113.94,0.388,1.829,146520
+densenet-121-tf2 [224x224],core,Intel® Core™ i9-12900K CPU+iGPU,787.76,199.82,238.94,1.337,6.302,
+densenet-121-tf2 [224x224],core,Intel® Core™ i7-11800H CPU-only,481.04,144.78,145.8,1.217,13.743,342510
+densenet-121-tf2 [224x224],core,Intel® Core™ i7-11800H iGPU-only,206.98,64.18,106.55,0.524,5.913,125000
+densenet-121-tf2 [224x224],core,Intel® Core™ i7-11800H CPU+iGPU,581.31,177.16,201.24,1.471,16.608,
+densenet-121-tf2 [224x224],core,Intel® Core™ i7-1185G7 CPU-only,264.79,78.5,79.36,0.621,9.456,60140
+densenet-121-tf2 [224x224],core,Intel® Core™ i7-1185G7 iGPU-only,283.32,47.18,142.35,0.665,10.118,129010
+densenet-121-tf2 [224x224],core,Intel® Core™ i7-1185G7 CPU+iGPU,565.02,160.7,212.31,1.326,20.179,
+densenet-121-tf2 [224x224],core,Intel® Core™ i7-1185GRE CPU-only,196.36,54.56,53.63,0.4,7.012,152250
+densenet-121-tf2 [224x224],core,Intel® Core™ i5-10500TE ,154.81,81.65,83.62,0.793,4.423,138750
+densenet-121-tf2 [224x224],xeon,Intel® Xeon® W1290P,362.1,179.4,182.55,0.671,2.896,266960
+densenet-121-tf2 [224x224],xeon,Intel® Xeon® E-2124G,113.35,66.67,66.67,0.532,1.596,98790
+densenet-121-tf2 [224x224],xeon,Intel® Xeon® Silver 4216R,1084.89,292.68,293.66,0.541,4.339,473490
+densenet-121-tf2 [224x224],xeon,Intel® Xeon® Silver 4316,,,,0,0,
+densenet-121-tf2 [224x224],xeon,Intel® Xeon® Gold 5218T,1132.42,309.78,308.91,0.419,5.392,489000
+densenet-121-tf2 [224x224],xeon,Intel® Xeon® Platinum 8270,3206.64,801.36,789.27,0.216,7.821,664830
+densenet-121-tf2 [224x224],xeon,Intel® Xeon® Platinum 8380,,,,0,0,
+densenet-121-tf2 [224x224],accel,Intel® Neural Compute Stick 2,,,37.06,0.537,14.824,
+densenet-121-tf2 [224x224],accel,Intel® Movidius™ VPUs (Uzel* UI-AR8),,,,0,0,

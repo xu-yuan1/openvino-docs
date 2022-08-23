@@ -1,0 +1,33 @@
+﻿Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],atom,Intel® Atom™ x5-E3940,0.26,0.13,0.13,0.007,0.027,240
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],atom,Intel® Atom™ x6425E CPU-only,,,,#VALUE!,#VALUE!,0
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],atom,Intel® Atom™ x6425E iGPU-only,,,,#VALUE!,#VALUE!,0
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],atom,Intel® Atom™ x6425E CPU+iGPU,,,,#VALUE!,#VALUE!,
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],atom,Intel® Celeron 6305E CPU-only,,,,0,0,
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],atom,Intel® Celeron 6305E iGPU-only,,,,0,0,
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],atom,Intel® Celeron 6305E CPU+iGPU,,,,0,0,
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i3-8100,2.03,1.29,1.28,0.017,0.031,2040
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i5-8500,3.23,1.93,1.94,0.016,0.049,3240
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i7-8700T,2.68,1.54,1.56,0.008,0.076,2630
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i9-10900TE,2.73,1.58,1.58,0.006,0.078,2340
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i9-12900HK CPU-only,6.55,2.55,2.57,0.01,0.145,5250
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i9-12900HK iGPU-only,11.15,4.76,7.8,0.017,0.247,10710
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i9-12900HK CPU+iGPU,12.12,5.07,8.01,0.019,0.269,
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i9-12900K CPU-only,10.82,4.37,4.37,0.018,0.086,5250
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i9-12900K iGPU-only,5.18,2.09,3.47,0.008,0.041,5100
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i9-12900K CPU+iGPU,11.17,4.56,5.92,0.018,0.089,
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i7-11800H CPU-only,8.59,2.52,2.55,0.021,0.245,8840
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i7-11800H iGPU-only,4.66,1.89,3.19,0.011,0.133,4610
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i7-11800H CPU+iGPU,8.57,3.37,4.66,0.021,0.244,
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i7-1185G7 CPU-only,4.74,1.39,1.4,0.011,0.169,4720
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i7-1185G7 iGPU-only,9.22,4.36,7.57,0.021,0.329,2930
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i7-1185G7 CPU+iGPU,9.62,4.17,6.97,0.022,0.343,
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i7-1185GRE CPU-only,3.11,0.99,1.01,0.006,0.11,2960
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],core,Intel® Core™ i5-10500TE ,2.73,1.58,1.58,0.014,0.078,2830
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],xeon,Intel® Xeon® W1290P,4.76,2.68,2.65,0.008,0.038,5510
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],xeon,Intel® Xeon® E-2124G,2.09,1.33,1.32,0.009,0.029,2070
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],xeon,Intel® Xeon® Silver 4216R,18.92,4.6,4.58,0.009,0.075,17740
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],xeon,Intel® Xeon® Silver 4316,,,,0,0,
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],xeon,Intel® Xeon® Gold 5218T,19.92,4.57,4.56,0.007,0.094,18410
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],xeon,Intel® Xeon® Platinum 8270,45.22,14.96,14.93,0.003,0.11,38770
+bert-large-uncased-whole-word-masking-squad-int8-0001 [384],xeon,Intel® Xeon® Platinum 8380,,,,0,0,

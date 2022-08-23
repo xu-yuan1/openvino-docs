@@ -1,0 +1,35 @@
+﻿Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
+ssd-resnet34-1200-onnx [1200x1200],atom,Intel® Atom™ x5-E3940,0.18,0.08,0.08,0.005,0.018,180
+ssd-resnet34-1200-onnx [1200x1200],atom,Intel® Atom™ x6425E CPU-only,,,,#VALUE!,#VALUE!,0
+ssd-resnet34-1200-onnx [1200x1200],atom,Intel® Atom™ x6425E iGPU-only,,,,#VALUE!,#VALUE!,0
+ssd-resnet34-1200-onnx [1200x1200],atom,Intel® Atom™ x6425E CPU+iGPU,,,,#VALUE!,#VALUE!,
+ssd-resnet34-1200-onnx [1200x1200],atom,Intel® Celeron 6305E CPU-only,,,,0,0,
+ssd-resnet34-1200-onnx [1200x1200],atom,Intel® Celeron 6305E iGPU-only,,,,0,0,
+ssd-resnet34-1200-onnx [1200x1200],atom,Intel® Celeron 6305E CPU+iGPU,,,,0,0,
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i3-8100,1.63,0.97,0.97,0.013,0.025,1600
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i5-8500,1.98,1.11,1.13,0.01,0.03,2490
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i7-8700T,1.98,1.11,1.13,0.006,0.056,1870
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i9-10900TE,2.07,1.2,1.23,0.004,0.059,1880
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i9-12900HK CPU-only,5.52,1.82,1.86,0.008,0.122,3930
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i9-12900HK iGPU-only,10.55,3.19,5.55,0.016,0.234,9890
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i9-12900HK CPU+iGPU,,,,#VALUE!,#VALUE!,
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i9-12900K CPU-only,9.8,3.1,3.12,0.016,0.078,3930
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i9-12900K iGPU-only,4.47,1.29,2.31,0.007,0.035,4370
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i9-12900K CPU+iGPU,,,,#VALUE!,#VALUE!,
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i7-11800H CPU-only,7.74,1.81,1.95,0.019,0.221,7690
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i7-11800H iGPU-only,4.05,1.2,2.12,0.01,0.115,3940
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i7-11800H CPU+iGPU,,,,#VALUE!,#VALUE!,
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i7-1185G7 CPU-only,3.99,0.98,0.99,0.009,0.142,3890
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i7-1185G7 iGPU-only,3.18,0.99,1.49,0.007,0.113,3120
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i7-1185G7 CPU+iGPU,,,,#VALUE!,#VALUE!,
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i7-1185GRE CPU-only,2.82,0.66,0.69,0.005,0.1,2350
+ssd-resnet34-1200-onnx [1200x1200],core,Intel® Core™ i5-10500TE ,2.07,1.2,1.23,0.01,0.059,2050
+ssd-resnet34-1200-onnx [1200x1200],xeon,Intel® Xeon® W1290P,5.04,2.94,2.96,0.009,0.04,4390
+ssd-resnet34-1200-onnx [1200x1200],xeon,Intel® Xeon® E-2124G,1.57,0.93,0.93,0.007,0.022,1560
+ssd-resnet34-1200-onnx [1200x1200],xeon,Intel® Xeon® Silver 4216R,15.61,4.3,4.3,0.007,0.062,15320
+ssd-resnet34-1200-onnx [1200x1200],xeon,Intel® Xeon® Silver 4316,,,,0,0,
+ssd-resnet34-1200-onnx [1200x1200],xeon,Intel® Xeon® Gold 5218T,16.36,4.52,4.52,0.006,0.077,16070
+ssd-resnet34-1200-onnx [1200x1200],xeon,Intel® Xeon® Platinum 8270,44.17,13.69,13.81,0.002,0.107,42840
+ssd-resnet34-1200-onnx [1200x1200],xeon,Intel® Xeon® Platinum 8380,,,,0,0,
+ssd-resnet34-1200-onnx [1200x1200],accel,Intel® Neural Compute Stick 2,,,0.7,0.01,0.28,
+ssd-resnet34-1200-onnx [1200x1200],accel,Intel® Movidius™ VPUs (Uzel* UI-AR8),,,,0,0,

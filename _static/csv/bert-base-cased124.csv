@@ -1,0 +1,33 @@
+﻿Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
+bert-base-cased[124],atom,Intel® Atom™ x5-E3940,0.86,0.43,0.43,0.025,0.09,800
+bert-base-cased[124],atom,Intel® Atom™ x6425E CPU-only,,,,#VALUE!,#VALUE!,0
+bert-base-cased[124],atom,Intel® Atom™ x6425E iGPU-only,,,,#VALUE!,#VALUE!,0
+bert-base-cased[124],atom,Intel® Atom™ x6425E CPU+iGPU,,,,#VALUE!,#VALUE!,
+bert-base-cased[124],atom,Intel® Celeron 6305E CPU-only,,,,0,0,
+bert-base-cased[124],atom,Intel® Celeron 6305E iGPU-only,,,,0,0,
+bert-base-cased[124],atom,Intel® Celeron 6305E CPU+iGPU,,,,0,0,
+bert-base-cased[124],core,Intel® Core™ i3-8100,5.99,4.2,4.2,0.051,0.092,5670
+bert-base-cased[124],core,Intel® Core™ i5-8500,9.64,6.6,6.71,0.05,0.148,8870
+bert-base-cased[124],core,Intel® Core™ i7-8700T,8.3,5.36,5.46,0.027,0.237,7440
+bert-base-cased[124],core,Intel® Core™ i9-10900TE,8.19,5.38,5.39,0.018,0.233,6550
+bert-base-cased[124],core,Intel® Core™ i9-12900HK CPU-only,20.42,8.53,8.68,0.032,0.453,17640
+bert-base-cased[124],core,Intel® Core™ i9-12900HK iGPU-only,36.17,15.14,21.74,0.056,0.803,33300
+bert-base-cased[124],core,Intel® Core™ i9-12900HK CPU+iGPU,43.02,17.09,24.14,0.067,0.955,
+bert-base-cased[124],core,Intel® Core™ i9-12900K CPU-only,33.27,15.17,15.32,0.056,0.266,22190
+bert-base-cased[124],core,Intel® Core™ i9-12900K iGPU-only,17.93,6.8,10.45,0.03,0.143,17330
+bert-base-cased[124],core,Intel® Core™ i9-12900K CPU+iGPU,36.9,15.48,19.16,0.062,0.295,
+bert-base-cased[124],core,Intel® Core™ i7-11800H CPU-only,27.39,9.08,9.45,0.069,0.782,27960
+bert-base-cased[124],core,Intel® Core™ i7-11800H iGPU-only,16.45,6.17,9.47,0.041,0.469,15900
+bert-base-cased[124],core,Intel® Core™ i7-11800H CPU+iGPU,29.82,11.34,15,0.075,0.851,
+bert-base-cased[124],core,Intel® Core™ i7-1185G7 CPU-only,15.75,5.17,5.24,0.036,0.562,14790
+bert-base-cased[124],core,Intel® Core™ i7-1185G7 iGPU-only,35.04,14.25,21.74,0.082,1.251,10320
+bert-base-cased[124],core,Intel® Core™ i7-1185G7 CPU+iGPU,37.09,14.8,21.17,0.087,1.324,
+bert-base-cased[124],core,Intel® Core™ i7-1185GRE CPU-only,10.28,3.6,3.82,0.02,0.367,10610
+bert-base-cased[124],core,Intel® Core™ i5-10500TE ,8.19,5.38,5.39,0.041,0.233,7540
+bert-base-cased[124],xeon,Intel® Xeon® W1290P,13.71,9.75,9.64,0.025,0.109,14240
+bert-base-cased[124],xeon,Intel® Xeon® E-2124G,6.04,4.44,4.45,0.028,0.085,5700
+bert-base-cased[124],xeon,Intel® Xeon® Silver 4216R,52.97,19.36,19.52,0.026,0.211,48090
+bert-base-cased[124],xeon,Intel® Xeon® Silver 4316,,,,0,0,
+bert-base-cased[124],xeon,Intel® Xeon® Gold 5218T,55.63,18.76,18.78,0.02,0.264,50310
+bert-base-cased[124],xeon,Intel® Xeon® Platinum 8270,119.71,59.62,60.33,0.008,0.291,96350
+bert-base-cased[124],xeon,Intel® Xeon® Platinum 8380,,,,0,0,

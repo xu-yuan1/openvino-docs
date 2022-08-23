@@ -1,0 +1,35 @@
+﻿Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
+mobilenet-v2-pytorch [224x224],atom,Intel® Atom™ x5-E3940,,45.6,45.58,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],atom,Intel® Atom™ x6425E CPU-only,,,,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],atom,Intel® Atom™ x6425E iGPU-only,,,,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],atom,Intel® Atom™ x6425E CPU+iGPU,,,,#VALUE!,#VALUE!,
+mobilenet-v2-pytorch [224x224],atom,Intel® Celeron 6305E CPU-only,,,,0,0,
+mobilenet-v2-pytorch [224x224],atom,Intel® Celeron 6305E iGPU-only,,,,0,0,
+mobilenet-v2-pytorch [224x224],atom,Intel® Celeron 6305E CPU+iGPU,,,,0,0,
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i3-8100,,462.09,461.31,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i5-8500,,667.77,689.02,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i7-8700T,,535.77,543.37,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i9-10900TE,,562.2,559.42,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i9-12900HK CPU-only,,867.75,842.54,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i9-12900HK iGPU-only,,702.53,1159.57,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i9-12900HK CPU+iGPU,,1050,1347.5,#VALUE!,#VALUE!,
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i9-12900K CPU-only,,1503.52,1517.84,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i9-12900K iGPU-only,,427.45,902.76,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i9-12900K CPU+iGPU,,1189.82,1519.86,#VALUE!,#VALUE!,
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i7-11800H CPU-only,,972.93,962.11,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i7-11800H iGPU-only,,389.76,801.03,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i7-11800H CPU+iGPU,,819,1070.59,#VALUE!,#VALUE!,
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i7-1185G7 CPU-only,,549.77,549.98,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i7-1185G7 iGPU-only,,613.38,1020.86,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i7-1185G7 CPU+iGPU,,762.09,1015.39,#VALUE!,#VALUE!,
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i7-1185GRE CPU-only,,290.29,294.2,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],core,Intel® Core™ i5-10500TE ,,562.2,559.42,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],xeon,Intel® Xeon® W1290P,,928.08,947.94,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],xeon,Intel® Xeon® E-2124G,,485.14,485.87,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],xeon,Intel® Xeon® Silver 4216R,,1858.79,1854.91,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],xeon,Intel® Xeon® Silver 4316,,,,0,0,
+mobilenet-v2-pytorch [224x224],xeon,Intel® Xeon® Gold 5218T,,1941.99,1942.2,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],xeon,Intel® Xeon® Platinum 8270,,4203.09,4190.4,#VALUE!,#VALUE!,0
+mobilenet-v2-pytorch [224x224],xeon,Intel® Xeon® Platinum 8380,,,,0,0,
+mobilenet-v2-pytorch [224x224],accel,Intel® Neural Compute Stick 2,,,90.73,1.314,36.292,
+mobilenet-v2-pytorch [224x224],accel,Intel® Movidius™ VPUs (Uzel* UI-AR8),,,,0,0,
