@@ -1,11 +1,17 @@
 .. index:: pair: page; Extending Model Optimizer with Caffe Python Layers
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__extending__model__optimizer__with__caffe__python__layers:
+.. _extending_model_optimizer_caffe_python_layers:
 
- 
+.. meta::
+  :description: Description of a procedure on how to extract operator attributes in Model Optimizer 
+                to support a custom Caffe operation written only in Python.
+  :keywords: model otpimizer, extending model, custom operation, caffe, python, layers,
+             extract operator attributes, extractor, module
+
+
 Extending Model Optimizer with Caffe Python Layers
 ==================================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__extending__model__optimizer__with__caffe__python__layers_1md_openvino_docs_mo_dg_prepare_model_customize_model_optimizer_extending_model_optimizer_with_caffe_python_layers` This article provides instructions on how to support a custom Caffe operation written only in Python. For example, the `Faster-R-CNN model <http://dl.dropboxusercontent.com/s/o6ii098-bu51d139/faster_rcnn_models.tgz?dl=0>`__ implemented in Caffe contains a custom proposal layer written in Python. The layer is described in the `Faster-R-CNN prototxt <https://raw.githubusercontent.com/rbgirshick/py-faster-rcnn/master/models/pascal_voc/VGG16/faster_rcnn_end2end/test.prototxt>`__ in the following way:
+:target:`extending_model_optimizer_caffe_python_layers_1md_openvino_docs_mo_dg_prepare_model_customize_model_optimizer_extending_model_optimizer_with_caffe_python_layers` This article provides instructions on how to support a custom Caffe operation written only in Python. For example, the `Faster-R-CNN model <http://dl.dropboxusercontent.com/s/o6ii098-bu51d139/faster_rcnn_models.tgz?dl=0>`__ implemented in Caffe contains a custom proposal layer written in Python. The layer is described in the `Faster-R-CNN prototxt <https://raw.githubusercontent.com/rbgirshick/py-faster-rcnn/master/models/pascal_voc/VGG16/faster_rcnn_end2end/test.prototxt>`__ in the following way:
 
 .. ref-code-block:: cpp
 

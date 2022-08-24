@@ -704,7 +704,7 @@ There are several types of Model Optimizer extractor extensions:
 
 #. The generic one, which is described in this section.
 
-#. The special extractor for Caffe models with Python layers. This kind of extractor is described in the :ref:`Extending Model Optimizer with Caffe Python Layers <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__extending__model__optimizer__with__caffe__python__layers>` guide.
+#. The special extractor for Caffe models with Python layers. This kind of extractor is described in the :ref:`Extending Model Optimizer with Caffe Python Layers <extending_model_optimizer_caffe_python_layers>` guide.
 
 This section is focused on the option #1, which provides a generic mechanism for the operation extractor applicable for all 
 frameworks. Model Optimizer provides the ``mo.front.extractor.FrontExtractorOp`` class as a base class to implement the extractor. 
@@ -1449,5 +1449,5 @@ See Also
 
 * :ref:`OpenVINO™ Extensibility Mechanism <extensibility_api_introduction>`
 
-* :ref:`Extending Model Optimizer with Caffe Python Layers <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__extending__model__optimizer__with__caffe__python__layers>`
+* :ref:`Extending Model Optimizer with Caffe Python Layers <extending_model_optimizer_caffe_python_layers>`
 
