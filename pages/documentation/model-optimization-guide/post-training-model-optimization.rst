@@ -81,7 +81,7 @@ to set quantization settings, specific to the device.
    models are compatible only with CPU.
 
 For benchmarking results collected for the models optimized with the POT tool, 
-refer to the :ref:`INT8 vs FP32 Comparison on Select Networks and Platforms <doxid-openvino_docs_performance_int8_vs_fp32>`.
+refer to the :ref:`INT8 vs FP32 Comparison on Select Networks and Platforms <performance_int8_vs_fp32>`.
 
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~

@@ -70,4 +70,4 @@ Performance benchmarks
 
 A wide range of public models for estimating performance and comparing the 
 numbers (measured on various supported devices) are available in the 
-:ref:`Performance benchmarks section <doxid-openvino_docs_performance_benchmarks>`.
+:ref:`Performance benchmarks section <performance_benchmarks>`.

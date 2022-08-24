@@ -1,11 +1,20 @@
 .. index:: pair: page; Performance Benchmarks
-.. _doxid-openvino_docs_performance_benchmarks:
+.. _performance_benchmarks:
+
+.. meta::
+   :description: The benchmark results demonstrate performance on multiple 
+                 Intel® CPUs, GPUs and VPUs, which helps to decide which 
+                 hardware is best for the applications.
+   :keyword: benchmark application, performance benchmarks, benchmark_app, 
+             Intel CPU, Intel GPU, Intel VPU, Intel® DevCloud for the Edge, 
+             deep learning inference, inference, neural networks, benchmark 
+             results, AI
 
 
 Performance Benchmarks
 ======================
 
-:target:`doxid-openvino_docs_performance_benchmarks_1md_openvino_docs_benchmarks_performance_benchmarks`
+:target:`performance_benchmarks_1md_openvino_docs_benchmarks_performance_benchmarks`
 
 .. toctree::
    :maxdepth: 1
@@ -26,9 +35,9 @@ included in your solutions.
 
 The following benchmarks are available:
 
-* :ref:`Intel® Distribution of OpenVINO™ toolkit Benchmark Results <doxid-openvino_docs_performance_benchmarks_openvino>`.
+* :ref:`Intel® Distribution of OpenVINO™ toolkit Benchmark Results <openvino_benchmarks>`.
 
-* :ref:`OpenVINO™ Model Server Benchmark Results <doxid-openvino_docs_performance_benchmarks_ovms>`.
+* :ref:`OpenVINO™ Model Server Benchmark Results <ovms_benchmarks>`.
 
 Performance of a particular application can also be evaluated virtually using 
 `Intel® DevCloud for the Edge <https://devcloud.intel.com/edge/>`__. It is a 

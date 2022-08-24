@@ -99,7 +99,7 @@ I'd like to quantize a model and I've converted it to IR but I don't have the Ac
 What is a tradeoff when you go to low precision?
 ------------------------------------------------
 
-The tradeoff is between the accuracy drop and performance. When a model is in low precision, it is usually performed compared to the same model in full precision but the accuracy might be worse. You can find some benchmarking results in :ref:`INT8 vs FP32 Comparison on Select Networks and Platforms <doxid-openvino_docs_performance_int8_vs_fp32>`. The other benefit of having a model in low precision is its smaller size.
+The tradeoff is between the accuracy drop and performance. When a model is in low precision, it is usually performed compared to the same model in full precision but the accuracy might be worse. You can find some benchmarking results in :ref:`INT8 vs FP32 Comparison on Select Networks and Platforms <performance_int8_vs_fp32>`. The other benefit of having a model in low precision is its smaller size.
 
 .. _nncf:
 
