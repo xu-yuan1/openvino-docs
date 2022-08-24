@@ -48,8 +48,6 @@ jobs:
         ./install_dependencies.sh
         sphinx-build -b html . _build/html
         touch _build/html/.nojekyll
-        mkdir -p _build/html/pages/documentation/performance-benchmarks/_assets
-        cp -r pages/documentation/performance-benchmarks/_assets/*.csv _build/html/pages/documentation/performance-benchmarks/_assets/
     - name: Push the docs
       uses: peaceiris/actions-gh-pages@v3
       with:
