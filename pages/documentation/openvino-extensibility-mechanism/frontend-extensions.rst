@@ -17,7 +17,7 @@ explain how to use Frontend extension classes to facilitate mapping of custom op
 OpenVINO representation. Refer to :ref:`Introduction to OpenVINO Extension <extensibility_api_introduction>` to understand entire flow.
 
 This API is applicable for new frontends only, which exist for ONNX and PaddlePaddle. If a different model format is used, 
-follow legacy :ref:`Model Optimizer Extensions <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+follow legacy :ref:`Model Optimizer Extensions <model_optimizer_extensibility>` guide.
 
 .. note:: 
    This documentation is written based on the 

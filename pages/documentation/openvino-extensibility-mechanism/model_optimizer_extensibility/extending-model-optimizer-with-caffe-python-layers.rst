@@ -23,7 +23,7 @@ Extending Model Optimizer with Caffe Python Layers
 	  }
 	}
 
-This article describes only a procedure on how to extract operator attributes in Model Optimizer. The rest of the operation enabling pipeline and information on how to support other Caffe operations (written in C++) is described in the :ref:`Customize_Model_Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+This article describes only a procedure on how to extract operator attributes in Model Optimizer. The rest of the operation enabling pipeline and information on how to support other Caffe operations (written in C++) is described in the :ref:`Customize_Model_Optimizer <model_optimizer_extensibility>` guide.
 
 Writing Extractor for Caffe Python Layer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,5 +81,5 @@ The sample code uses operation ``ProposalOp`` which corresponds to ``Proposal`` 
 See Also
 ~~~~~~~~
 
-* :ref:`Customize_Model_Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`
+* :ref:`Customize_Model_Optimizer <model_optimizer_extensibility>`
 

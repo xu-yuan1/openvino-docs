@@ -45,7 +45,7 @@ For example, to add the description of the ``CustomReshape`` layer, which is an 
 
 #. Now, Model Optimizer is able to load the model into memory and start working with your extensions if there are any.
 
-However, since your model has custom layers, you must register them as custom. To learn more about it, refer to :ref:`Custom Layers in Model Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`.
+However, since your model has custom layers, you must register them as custom. To learn more about it, refer to :ref:`Custom Layers in Model Optimizer <model_optimizer_extensibility>`.
 
 .. _question-2:
 
@@ -68,7 +68,7 @@ You need the Caffe Python interface. In this case, do the following:
 3. What does the message "[ ERROR ]: Unable to create ports for node with id" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Most likely, Model Optimizer does not know how to infer output shapes of some layers in the given topology. To lessen the scope, compile the list of layers that are custom for Model Optimizer: present in the topology, absent in the :ref:`list of supported layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` for the target framework. Then, refer to available options in the corresponding section in the :ref:`Custom Layers in Model Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` page.
+Most likely, Model Optimizer does not know how to infer output shapes of some layers in the given topology. To lessen the scope, compile the list of layers that are custom for Model Optimizer: present in the topology, absent in the :ref:`list of supported layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` for the target framework. Then, refer to available options in the corresponding section in the :ref:`Custom Layers in Model Optimizer <model_optimizer_extensibility>` page.
 
 .. _question-4:
 
@@ -224,7 +224,7 @@ Model Optimizer tried to infer a specified layer via the Caffe framework. Howeve
 13. What does the message "Cannot infer shapes due to exception in Caffe" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Model Optimizer tried to infer a custom layer via the Caffe framework, but the model could not be inferred using Caffe. This might happen if you try to convert the model with some noise weights and biases, which conflict with layers that have dynamic shapes. You should write your own extension for every custom layer your topology might have. For more details, refer to the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` page.
+Model Optimizer tried to infer a custom layer via the Caffe framework, but the model could not be inferred using Caffe. This might happen if you try to convert the model with some noise weights and biases, which conflict with layers that have dynamic shapes. You should write your own extension for every custom layer your topology might have. For more details, refer to the :ref:`Model Optimizer Extensibility <model_optimizer_extensibility>` page.
 
 .. _question-14:
 
@@ -359,7 +359,7 @@ You might have provided only one shape for the placeholder, while there are none
 32. What does the message "The amount of input nodes for port is not equal to 1" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This error occurs when the ``SubgraphMatch.single_input_node`` function is used for an input port that supplies more than one node in a sub-graph. The ``single_input_node`` function can be used only for ports that has a single consumer inside the matching sub-graph. When multiple nodes are connected to the port, use the ``input_nodes`` function or ``node_by_pattern`` function instead of ``single_input_node``. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+This error occurs when the ``SubgraphMatch.single_input_node`` function is used for an input port that supplies more than one node in a sub-graph. The ``single_input_node`` function can be used only for ports that has a single consumer inside the matching sub-graph. When multiple nodes are connected to the port, use the ``input_nodes`` function or ``node_by_pattern`` function instead of ``single_input_node``. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <model_optimizer_extensibility>` guide.
 
 .. _question-33:
 
@@ -373,7 +373,7 @@ This error occurs when the ``SubgraphMatch._add_output_node`` function is called
 34. What does the message "Unsupported match kind.... Match kinds "points" or "scope" are supported only" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-While using configuration file to implement a TensorFlow front replacement extension, an incorrect match kind was used. Only ``points`` or ``scope`` match kinds are supported. For more details, refer to the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+While using configuration file to implement a TensorFlow front replacement extension, an incorrect match kind was used. Only ``points`` or ``scope`` match kinds are supported. For more details, refer to the :ref:`Model Optimizer Extensibility <model_optimizer_extensibility>` guide.
 
 .. _question-35:
 
@@ -606,14 +606,14 @@ A replacement defined in the configuration file for sub-graph replacement, using
 65. What does the message "No instance(s) is(are) defined for the custom replacement" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-A replacement defined in the configuration file for sub-graph replacement, using node names patterns or start/end nodes, has the ``instances`` attribute. This attribute is mandatory. This error will occur if the attribute is missing. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+A replacement defined in the configuration file for sub-graph replacement, using node names patterns or start/end nodes, has the ``instances`` attribute. This attribute is mandatory. This error will occur if the attribute is missing. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <model_optimizer_extensibility>` guide.
 
 .. _question-66:
 
 66. What does the message "The instance must be a single dictionary for the custom replacement with id .." mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-A replacement defined in the configuration file for sub-graph replacement, using start/end nodes, has the ``instances`` attribute. For this type of replacement, the instance must be defined with a dictionary with two keys ``start_points`` and ``end_points``. Values for these keys are lists with the start and end node names, respectively. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+A replacement defined in the configuration file for sub-graph replacement, using start/end nodes, has the ``instances`` attribute. For this type of replacement, the instance must be defined with a dictionary with two keys ``start_points`` and ``end_points``. Values for these keys are lists with the start and end node names, respectively. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <model_optimizer_extensibility>` guide.
 
 .. _question-67:
 
@@ -669,7 +669,7 @@ This error occurs when you try to make a sub-graph match. It is detected that be
 74. What does the message "Sub-graph contains network input node .." mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The start or end node for the sub-graph replacement using start/end nodes is specified incorrectly. Model Optimizer finds internal nodes of the sub-graph strictly "between" the start and end nodes, and then adds all input nodes to the sub-graph (and the inputs of their inputs, etc.) for these "internal" nodes. This error reports that Model Optimizer reached input node during this phase. This means that the start/end points are specified incorrectly in the configuration file. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+The start or end node for the sub-graph replacement using start/end nodes is specified incorrectly. Model Optimizer finds internal nodes of the sub-graph strictly "between" the start and end nodes, and then adds all input nodes to the sub-graph (and the inputs of their inputs, etc.) for these "internal" nodes. This error reports that Model Optimizer reached input node during this phase. This means that the start/end points are specified incorrectly in the configuration file. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <model_optimizer_extensibility>` guide.
 
 .. _question-75:
 
@@ -690,7 +690,7 @@ This message may appear when the ``--data_type=FP16`` command-line option is use
 77. What does the message "The amount of nodes matched pattern ... is not equal to 1" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This error occurs when the ``SubgraphMatch.node_by_pattern`` function is used with a pattern that does not uniquely identify a single node in a sub-graph. Try to extend the pattern string to make unambiguous match to a single sub-graph node. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+This error occurs when the ``SubgraphMatch.node_by_pattern`` function is used with a pattern that does not uniquely identify a single node in a sub-graph. Try to extend the pattern string to make unambiguous match to a single sub-graph node. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <model_optimizer_extensibility>` guide.
 
 .. _question-78:
 
@@ -855,7 +855,7 @@ For Tensorflow:
 
 For all frameworks:
 
-#. :ref:`Replace cycle containing Sub-graph in Model Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`
+#. :ref:`Replace cycle containing Sub-graph in Model Optimizer <model_optimizer_extensibility>`
 
 #. See :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>`
 

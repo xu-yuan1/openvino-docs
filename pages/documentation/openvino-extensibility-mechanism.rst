@@ -60,7 +60,7 @@ Depending on model format used for import, mapping of custom operation is implem
 
 #. If model is represented in ONNX (including models exported from Pytorch in ONNX) or PaddlePaddle formats, then one of the classes from :ref:`Frontend Extension API <extensibility_frontend_extensions>` should be used. It consists of several classes available in C++ which can be used with Model Optimizer ``--extensions`` option or when model is imported directly to OpenVINO run-time using read_model method. Python API is also available for run-time model importing.
 
-#. If model is represented in TensorFlow, Caffe, Kaldi or MXNet formats, then :ref:`Model Optimizer Extensions <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` should be used. This approach is available for model conversion in Model Optimizer only.
+#. If model is represented in TensorFlow, Caffe, Kaldi or MXNet formats, then :ref:`Model Optimizer Extensions <model_optimizer_extensibility>` should be used. This approach is available for model conversion in Model Optimizer only.
 
 Existing of two approaches simultaneously is explained by two different types of frontends used for model conversion in OpenVINO: new frontends (ONNX, PaddlePaddle) and legacy frontends (TensorFlow, Caffe, Kaldi and Apache MXNet). Model Optimizer can use both front-ends in contrast to the direct import of model with ``read_model`` method which can use new frontends only. Follow one of the appropriate guides referenced above to implement mappings depending on framework frontend.
 

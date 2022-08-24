@@ -133,7 +133,7 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
 .. image:: ./_assets/batch_relaxation.png
 	:alt: batch_relaxed
 
-* transform the model during Model Optimizer conversion on the back phase. For more information, see the :ref:`Model Optimizer extension <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`.
+* transform the model during Model Optimizer conversion on the back phase. For more information, see the :ref:`Model Optimizer extension <model_optimizer_extensibility>`.
 
 * transform OpenVINO Model during the runtime. For more information, see :ref:`OpenVINO Runtime Transformations <doxid-openvino_docs_transformations>`.
 
@@ -273,7 +273,7 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
 .. image:: ./_assets/batch_relaxation.png
 	:alt: batch_relaxed
 
-* transform the model during Model Optimizer conversion on the back phase. See :ref:`Model Optimizer extension <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`.
+* transform the model during Model Optimizer conversion on the back phase. See :ref:`Model Optimizer extension <model_optimizer_extensibility>`.
 
 * transform OpenVINO Model during the runtime. See :ref:`OpenVINO Runtime Transformations <doxid-openvino_docs_transformations>`.
 
