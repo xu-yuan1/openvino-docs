@@ -56,5 +56,5 @@ Using ``:ref:`ov::pass::ModelPass <doxid-classov_1_1pass_1_1_model_pass>```, you
 See Also
 ~~~~~~~~
 
-* :ref:`OpenVINO™ Transformations <doxid-openvino_docs_transformations>`
+* :ref:`OpenVINO™ Transformations <transformations_overview>`
 

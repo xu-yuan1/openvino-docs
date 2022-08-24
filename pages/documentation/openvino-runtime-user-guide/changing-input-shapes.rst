@@ -135,7 +135,7 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
 
 * transform the model during Model Optimizer conversion on the back phase. For more information, see the :ref:`Model Optimizer extension <model_optimizer_extensibility>`.
 
-* transform OpenVINO Model during the runtime. For more information, see :ref:`OpenVINO Runtime Transformations <doxid-openvino_docs_transformations>`.
+* transform OpenVINO Model during the runtime. For more information, see :ref:`OpenVINO Runtime Transformations <transformations_overview>`.
 
 * modify the original model with the help of the original framework.
 
@@ -275,7 +275,7 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
 
 * transform the model during Model Optimizer conversion on the back phase. See :ref:`Model Optimizer extension <model_optimizer_extensibility>`.
 
-* transform OpenVINO Model during the runtime. See :ref:`OpenVINO Runtime Transformations <doxid-openvino_docs_transformations>`.
+* transform OpenVINO Model during the runtime. See :ref:`OpenVINO Runtime Transformations <transformations_overview>`.
 
 * modify the original model with the help of the original framework.
 

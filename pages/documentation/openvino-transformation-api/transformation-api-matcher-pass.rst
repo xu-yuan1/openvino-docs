@@ -281,4 +281,4 @@ This example shows how to use predicate to construct a pattern. Also it shows ho
 See Also
 ~~~~~~~~
 
-* :ref:`OpenVINO™ Transformations <doxid-openvino_docs_transformations>`
+* :ref:`OpenVINO™ Transformations <transformations_overview>`

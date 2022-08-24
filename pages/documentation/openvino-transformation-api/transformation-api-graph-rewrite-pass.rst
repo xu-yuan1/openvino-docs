@@ -38,5 +38,5 @@ But it is not really efficient when you have a lot of registered passes. So firs
 See Also
 ~~~~~~~~
 
-* :ref:`OpenVINO™ Transformations <doxid-openvino_docs_transformations>`
+* :ref:`OpenVINO™ Transformations <transformations_overview>`
 

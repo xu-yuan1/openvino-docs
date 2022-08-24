@@ -180,7 +180,7 @@ The function accepts a const shared pointer to ``:ref:`ov::Model <doxid-classov_
 
 #. Deep copies a const object to a local object, which can later be modified.
 
-#. Applies common and plugin-specific transformations on a copied graph to make the graph more friendly to hardware operations. For details how to write custom plugin-specific transformation, please, refer to :ref:`Writing OpenVINO™ transformations <doxid-openvino_docs_transformations>` guide. See detailed topics about network representation:
+#. Applies common and plugin-specific transformations on a copied graph to make the graph more friendly to hardware operations. For details how to write custom plugin-specific transformation, please, refer to :ref:`Writing OpenVINO™ transformations <transformations_overview>` guide. See detailed topics about network representation:
    
    * `Intermediate Representation and Operation Sets <../_docs_MO_DG_IR_and_opsets.html>`__
    

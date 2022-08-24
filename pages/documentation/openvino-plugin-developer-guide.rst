@@ -83,7 +83,7 @@ Detailed guides
 
 * :ref:`Low precision transformations <doxid-openvino_docs__o_v__u_g_lpt>` guide
 
-* :ref:`Writing OpenVINO™ transformations <doxid-openvino_docs_transformations>` guide
+* :ref:`Writing OpenVINO™ transformations <transformations_overview>` guide
 
 API References
 ~~~~~~~~~~~~~~

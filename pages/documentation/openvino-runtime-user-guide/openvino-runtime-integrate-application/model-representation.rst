@@ -581,5 +581,5 @@ OpenVINO™ provides several debug capabilities:
 
 * :ref:`OpenVINO™ Runtime Extensibility Developer Guide <extensibility_api_introduction>`
 
-* :ref:`Transformations Developer Guide <doxid-openvino_docs_transformations>`.
+* :ref:`Transformations Developer Guide <transformations_overview>`.
 

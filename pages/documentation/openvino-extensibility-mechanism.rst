@@ -301,7 +301,7 @@ After the build you can use path to your extension library to load your extensio
 See Also
 ~~~~~~~~
 
-* :ref:`OpenVINO Transformations <doxid-openvino_docs_transformations>`
+* :ref:`OpenVINO Transformations <transformations_overview>`
 
 * :ref:`Using OpenVINO Runtime Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
 
