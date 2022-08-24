@@ -1,11 +1,18 @@
 .. index:: pair: page; OpenVINO Model Pass
-.. _doxid-openvino_docs__extensibility__u_g_model_pass:
+.. _extensibility_model_pass:
+
+.. meta::
+   :description: Model Pass is transformations that take entire ov::Model 
+                 as an input and process it.
+   :keywords: model pass, transformations, OpenVINO
+              
 
 
 OpenVINO Model Pass
 ===================
 
-:target:`doxid-openvino_docs__extensibility__u_g_model_pass_1md_openvino_docs_extensibility_ug_model_pass` ``:ref:`ov::pass::ModelPass <doxid-classov_1_1pass_1_1_model_pass>``` is used for transformations that take entire ``:ref:`ov::Model <doxid-classov_1_1_model>``` as an input and process it.
+:target:`extensibility_model_pass_1md_openvino_docs_extensibility_ug_model_pass` ``:ref:`ov::pass::ModelPass <doxid-classov_1_1pass_1_1_model_pass>``` 
+is used for transformations that take entire ``:ref:`ov::Model <doxid-classov_1_1_model>``` as an input and process it.
 
 Template for ModelPass transformation class
 
@@ -51,7 +58,11 @@ Template for ModelPass transformation class
 	    return false;
 	}
 
-Using ``:ref:`ov::pass::ModelPass <doxid-classov_1_1pass_1_1_model_pass>```, you need to override the ``run_on_model`` method where you will write the transformation code. Return value is ``true`` if the original model has changed during transformation (new operation was added, or operations replacement was made, or node attributes were changed); otherwise, it is ``false``. Also ``:ref:`ov::pass::ModelPass <doxid-classov_1_1pass_1_1_model_pass>``` based transformations can be executed via ``:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>```.
+Using ``:ref:`ov::pass::ModelPass <doxid-classov_1_1pass_1_1_model_pass>```, you need to override the ``run_on_model`` method 
+where you will write the transformation code. Return value is ``true`` if the original model has changed during transformation 
+(new operation was added, or operations replacement was made, or node attributes were changed); otherwise, it is ``false``. 
+Also ``:ref:`ov::pass::ModelPass <doxid-classov_1_1pass_1_1_model_pass>``` based transformations can be executed via 
+``:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>```.
 
 See Also
 ~~~~~~~~

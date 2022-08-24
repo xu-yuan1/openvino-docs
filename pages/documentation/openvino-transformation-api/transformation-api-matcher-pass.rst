@@ -1,11 +1,17 @@
 .. index:: pair: page; OpenVINO Matcher Pass
-.. _doxid-openvino_docs__extensibility__u_g_matcher_pass:
+.. _extensibility_matcher_pass:
+
+.. meta::
+   :description: Description of steps used for pattern-based transformations.
+   :keywords: matcher pass, pattern-based transformations, callback implementation, pattern creation,
+              pattern operations, pattern matching, matcher register
 
 
 OpenVINO Matcher Pass
 =====================
 
-:target:`doxid-openvino_docs__extensibility__u_g_matcher_pass_1md_openvino_docs_extensibility_ug_matcher_pass` ``:ref:`ov::pass::MatcherPass <doxid-classov_1_1pass_1_1_matcher_pass>``` is used for pattern-based transformations.
+:target:`extensibility_matcher_pass_1md_openvino_docs_extensibility_ug_matcher_pass` ``:ref:`ov::pass::MatcherPass <doxid-classov_1_1pass_1_1_matcher_pass>``` 
+is used for pattern-based transformations.
 
 Template for MatcherPass transformation class
 
@@ -80,9 +86,13 @@ So let's go through each of these steps.
 Create a pattern
 ~~~~~~~~~~~~~~~~
 
-Pattern is a single root ``:ref:`ov::Model <doxid-classov_1_1_model>```. But the only difference is that you do not need to create a model object, you just need to create and connect opset or special pattern operations. Then you need to take the last created operation and put it as a root of the pattern. This root node will be used as a root node in pattern matching.
+Pattern is a single root ``:ref:`ov::Model <doxid-classov_1_1_model>```. But the only difference is that you do not 
+need to create a model object, you just need to create and connect opset or special pattern operations. Then you 
+need to take the last created operation and put it as a root of the pattern. This root node will be used as a root node 
+in pattern matching.
 
-.. note:: Any nodes in a pattern that have no consumers and are not registered as root will not be used in pattern matching.
+.. note::
+   Any nodes in a pattern that have no consumers and are not registered as root will not be used in pattern matching.
 
 
 
@@ -97,14 +107,16 @@ Pattern is a single root ``:ref:`ov::Model <doxid-classov_1_1_model>```. But the
 	// Create Matcher with Parameter->ShapeOf pattern
 	auto m = std::make_shared<ov::pass::pattern::Matcher>(shapeof, "MyPatternBasedTransformation");
 
-The ``Parameter`` operation in the example above has type and shape specified. These attributes are needed only to create Parameter operation class and will not be used in pattern matching.
+The ``Parameter`` operation in the example above has type and shape specified. These attributes are needed only to create 
+Parameter operation class and will not be used in pattern matching.
 
 For more pattern examples, refer to the `pattern matching <#pattern_matching>`__ section.
 
 Implement callback
 ~~~~~~~~~~~~~~~~~~
 
-Callback is an action applied to every pattern entrance. In general, callback is the lambda function that takes Matcher object with detected subgraph.
+Callback is an action applied to every pattern entrance. In general, callback is the lambda function that takes Matcher object 
+with detected subgraph.
 
 .. ref-code-block:: cpp
 
@@ -119,13 +131,21 @@ Callback is an action applied to every pattern entrance. In general, callback is
 	    return false;
 	};
 
-The example above shows the callback structure and how Matcher can be used for accessing nodes detected by pattern. Callback return value is ``true`` if root node was replaced and another pattern cannot be applied to the same root node; otherwise, it is ``false``.
+The example above shows the callback structure and how Matcher can be used for accessing nodes detected by pattern. Callback 
+return value is ``true`` if root node was replaced and another pattern cannot be applied to the same root node; otherwise, 
+it is ``false``.
 
-.. note:: It is not recommended to manipulate with nodes that are under root node. This may affect GraphRewrite execution as it is expected that all nodes that come after root node in topological order are valid and can be used in pattern matching.
+.. note::
+   It is not recommended to manipulate with nodes that are under root node. This may affect GraphRewrite execution 
+   as it is expected that all nodes that come after root node in topological order are valid and can be used in pattern matching.
 
 
 
-MatcherPass also provides functionality that allows reporting of the newly created nodes that can be used in additional pattern matching. If MatcherPass was registered in ``:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>``` or ``:ref:`ov::pass::GraphRewrite <doxid-classov_1_1pass_1_1_graph_rewrite>```, these registered nodes will be added for additional pattern matching. That means that matcher passes registered in ``:ref:`ov::pass::GraphRewrite <doxid-classov_1_1pass_1_1_graph_rewrite>``` will be applied to these nodes.
+MatcherPass also provides functionality that allows reporting of the newly created nodes that can be used in additional 
+pattern matching. If MatcherPass was registered in ``:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>``` or 
+``:ref:`ov::pass::GraphRewrite <doxid-classov_1_1pass_1_1_graph_rewrite>```, these registered nodes will be added for 
+additional pattern matching. That means that matcher passes registered in 
+``:ref:`ov::pass::GraphRewrite <doxid-classov_1_1pass_1_1_graph_rewrite>``` will be applied to these nodes.
 
 The example below shows how single MatcherPass can fuse sequence of operations using the ``register_new_node`` method.
 
@@ -163,7 +183,9 @@ The example below shows how single MatcherPass can fuse sequence of operations u
 	    register_matcher(m, callback);
 	}
 
-.. note:: If you register multiple nodes, please add them in topological order. We do not topologically sort these nodes as it is a time-consuming operation.
+.. note::
+   If you register multiple nodes, please add them in topological order. We do not topologically sort these nodes as 
+   it is a time-consuming operation.
 
 
 
@@ -174,7 +196,8 @@ Register pattern and Matcher
 
 The last step is to register Matcher and callback inside the MatcherPass pass. To do this, call the ``register_matcher`` method.
 
-.. note:: Only one matcher can be registered for a single MatcherPass class.
+.. note::
+   Only one matcher can be registered for a single MatcherPass class.
 
 
 
@@ -226,7 +249,10 @@ MatcherPass has multiple ways to be executed:
 Pattern Matching
 ~~~~~~~~~~~~~~~~
 
-Sometimes patterns cannot be expressed via regular operations or it is too complicated. For example, if you want to detect **Convolution->Add** sub-graph without specifying particular input type for Convolution operation or you want to create a pattern where some of operations can have different types. And for these cases OpenVINO™ provides additional helpers to construct patterns for GraphRewrite transformations.
+Sometimes patterns cannot be expressed via regular operations or it is too complicated. For example, if you 
+want to detect **Convolution->Add** sub-graph without specifying particular input type for Convolution operation or 
+you want to create a pattern where some of operations can have different types. And for these cases OpenVINO™ provides 
+additional helpers to construct patterns for GraphRewrite transformations.
 
 There are two main helpers:
 
@@ -236,11 +262,15 @@ There are two main helpers:
 
 Let's go through the example to have better understanding of how it works:
 
-.. note:: Node attributes do not participate in pattern matching and are needed only for operations creation. Only operation types participate in pattern matching.
+.. note::
+   Node attributes do not participate in pattern matching and are needed only for operations creation. Only 
+   operation types participate in pattern matching.
 
 
 
-The example below shows basic usage of ``ov::passpattern::any_input``. Here we construct Multiply pattern with arbitrary first input and Constant as a second input. Also as Multiply is commutative operation, it does not matter in which order we set inputs (any_input/Constant or Constant/any_input) because both cases will be matched.
+The example below shows basic usage of ``ov::passpattern::any_input``. Here we construct Multiply pattern with arbitrary 
+first input and Constant as a second input. Also as Multiply is commutative operation, it does not matter in which order 
+we set inputs (any_input/Constant or Constant/any_input) because both cases will be matched.
 
 .. ref-code-block:: cpp
 
@@ -272,7 +302,8 @@ This example shows how to use predicate to construct a pattern. Also it shows ho
 	    // Successfully matched
 	}
 
-.. note:: Be careful with manual matching because Matcher object holds matched nodes. To clear a match, use the m->clear_state() method.
+.. note::
+   Be careful with manual matching because Matcher object holds matched nodes. To clear a match, use the m->clear_state() method.
 
 
 

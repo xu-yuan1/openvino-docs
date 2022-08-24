@@ -172,11 +172,11 @@ Transformations types
 
 OpenVINO™ Runtime has three main transformation types:
 
-* :ref:`Model pass <doxid-openvino_docs__extensibility__u_g_model_pass>` - straightforward way to work with ``:ref:`ov::Model <doxid-classov_1_1_model>``` directly
+* :ref:`Model pass <extensibility_model_pass>` - straightforward way to work with ``:ref:`ov::Model <doxid-classov_1_1_model>``` directly
 
-* :ref:`Matcher pass <doxid-openvino_docs__extensibility__u_g_matcher_pass>` - pattern-based transformation approach
+* :ref:`Matcher pass <extensibility_matcher_pass>` - pattern-based transformation approach
 
-* :ref:`Graph rewrite pass <doxid-openvino_docs__extensibility__u_g_graph_rewrite_pass>` - container for matcher passes needed for efficient execution
+* :ref:`Graph rewrite pass <extensibility_graph_rewrite_pass>` - container for matcher passes needed for efficient execution
 
 .. image:: ./_assets/transformations_structure.png
 
