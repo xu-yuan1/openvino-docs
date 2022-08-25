@@ -26,7 +26,7 @@ To view information about latency, throughput, batch, and parallel requests of a
 
 .. image:: deployment_package_02.png
 
-For details, read :ref:`Integrate the OpenVINO™ Runtime New Request API with Your Application <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>`.
+For details, read :ref:`Integrate the OpenVINO™ Runtime New Request API with Your Application <openvino_integrate_application>`.
 
 Integrate Optimal Combination into Sample Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

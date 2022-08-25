@@ -57,7 +57,7 @@ See Also
 
 * :ref:`View Inference Results <doxid-workbench_docs__workbench__d_g__view__inference__results>`
 
-* :ref:`OpenVINO™ Runtime documentation <doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide>`
+* :ref:`OpenVINO™ Runtime documentation <openvino_runtime_user_guide>`
 
 * :ref:`Benchmark Tool <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>`
 

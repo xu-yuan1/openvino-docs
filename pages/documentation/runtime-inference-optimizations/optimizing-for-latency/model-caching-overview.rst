@@ -17,7 +17,7 @@ Model Caching Overview
 Introduction
 ~~~~~~~~~~~~
 
-As described in the :ref:`Integrate OpenVINO™ with Your Application <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>`, 
+As described in the :ref:`Integrate OpenVINO™ with Your Application <openvino_integrate_application>`, 
 a common application flow consists of the following steps:
 
 #. **Create a Core object** : First step to manage available devices and read model objects

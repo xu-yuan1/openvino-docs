@@ -49,7 +49,7 @@ How It Works
 
 Upon the start-up the sample application reads command line parameters, loads specified network and image to the Inference Engine plugin. Then, the sample creates an synchronous inference request object. When inference is done, the application creates output image and output data to the standard output stream.
 
-You can see the explicit description of each sample step at :ref:`Integration Steps <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
+You can see the explicit description of each sample step at :ref:`Integration Steps <openvino_integrate_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
 
 Building
 ~~~~~~~~
@@ -144,7 +144,7 @@ The application renders an image with detected objects enclosed in rectangles. I
 See Also
 ~~~~~~~~
 
-* :ref:`Integrate the OpenVINO™ Runtime with Your Application <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>`
+* :ref:`Integrate the OpenVINO™ Runtime with Your Application <openvino_integrate_application>`
 
 * :ref:`Using OpenVINO™ Toolkit Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
 

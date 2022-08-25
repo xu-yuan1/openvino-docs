@@ -111,7 +111,7 @@ In this section you will find resources on :ref:`how to test inference performan
 Deploying Inference
 ~~~~~~~~~~~~~~~~~~~
 
-This section explains the process of creating your own inference application using :ref:`OpenVINO™ Runtime <doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide>` and documents the `OpenVINO Runtime API <./api_references.html>`__ for both Python and C++. It also provides a :ref:`guide on deploying applications with OpenVINO <doxid-openvino_deployment_guide>` and directs you to other sources on this topic.
+This section explains the process of creating your own inference application using :ref:`OpenVINO™ Runtime <openvino_runtime_user_guide>` and documents the `OpenVINO Runtime API <./api_references.html>`__ for both Python and C++. It also provides a :ref:`guide on deploying applications with OpenVINO <doxid-openvino_deployment_guide>` and directs you to other sources on this topic.
 
 OpenVINO Ecosystem
 ~~~~~~~~~~~~~~~~~~

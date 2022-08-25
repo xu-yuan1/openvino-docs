@@ -57,7 +57,7 @@ How It Works
 
 At startup, the sample application reads command-line parameters, loads a specified model and input data to the OpenVINO™ Runtime plugin, performs synchronous inference on all speech utterances stored in the input file, logging each step in a standard output stream.
 
-You can see the explicit description of each sample step at :ref:`Integration Steps <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
+You can see the explicit description of each sample step at :ref:`Integration Steps <openvino_integrate_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
 
 GNA-specific details
 ~~~~~~~~~~~~~~~~~~~~
@@ -382,7 +382,7 @@ The sample application logs each step in a standard output stream.
 See Also
 ~~~~~~~~
 
-* :ref:`Integrate the OpenVINO™ Runtime with Your Application <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>`
+* :ref:`Integrate the OpenVINO™ Runtime with Your Application <openvino_integrate_application>`
 
 * :ref:`Using OpenVINO™ Toolkit Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
 

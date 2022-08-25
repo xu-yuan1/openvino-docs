@@ -256,7 +256,7 @@ Supported Output Layout
       - NC
       - C
 
-For setting relevant configuration, refer to the :ref:`Integrate with Customer Application <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>` topic (step 3 "Configure input and output").
+For setting relevant configuration, refer to the :ref:`Integrate with Customer Application <openvino_integrate_application>` topic (step 3 "Configure input and output").
 
 Supported Layers
 ----------------

@@ -419,4 +419,4 @@ list above.
 See Also
 ~~~~~~~~
 
-* :ref:`OpenVINO™ Runtime User Guide <doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide>`
+* :ref:`OpenVINO™ Runtime User Guide <openvino_runtime_user_guide>`

@@ -18,7 +18,7 @@ Deploying Your Applications with OpenVINO™
    ./openvino-deployment-guide/deployment-manager-tool
    ./openvino-deployment-guide/local-distribution
 
-Once the :ref:`OpenVINO™ application development <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>` has been finished, application developers usually need to deploy their applications to end users. There are several ways to achieve that:
+Once the :ref:`OpenVINO™ application development <openvino_integrate_application>` has been finished, application developers usually need to deploy their applications to end users. There are several ways to achieve that:
 
 * Set a dependency on the existing prebuilt packages, also called "centralized distribution":
   

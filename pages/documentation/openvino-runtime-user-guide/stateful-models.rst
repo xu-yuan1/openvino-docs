@@ -298,7 +298,7 @@ Steps to Apply the LowLatency2 Transformation
 
 #. Get CNNNetwork. Either way is acceptable:
    
-   * :ref:`from IR or ONNX model <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>`
+   * :ref:`from IR or ONNX model <openvino_integrate_application>`
    
    * :ref:`from ov::Model <doxid-openvino_docs__o_v__u_g__model__representation>`
 
@@ -414,7 +414,7 @@ Steps to Apply LowLatency Transformation
 
 #. Get CNNNetwork. Either way is acceptable:
    
-   * :ref:`from IR or ONNX model <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>`
+   * :ref:`from IR or ONNX model <openvino_integrate_application>`
    
    * :ref:`from ov::Model <doxid-openvino_docs__o_v__u_g__model__representation>`
 

@@ -80,7 +80,7 @@ Additional Resources
 
 * Model Optimizer :ref:`Developer Guide <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
 
-* :ref:`OpenVINO™ Runtime User Guide <doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide>`.
+* :ref:`OpenVINO™ Runtime User Guide <openvino_runtime_user_guide>`.
 
 * For more information on Sample Applications, see the :ref:`OpenVINO Samples Overview <doxid-openvino_docs__o_v__u_g__samples__overview>`
 

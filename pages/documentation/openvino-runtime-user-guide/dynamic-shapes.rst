@@ -249,7 +249,7 @@ If the lower and upper bounds for a dimension are known, it is recommended to sp
 Setting Input Tensors
 ---------------------
 
-Preparing a model with the ``reshape`` method is the first step. The second step is passing a tensor with an appropriate shape to infer request. This is similar to the :ref:`regular steps <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>`. However, tensors can now be passed with different shapes for the same executable model and even for the same inference request:
+Preparing a model with the ``reshape`` method is the first step. The second step is passing a tensor with an appropriate shape to infer request. This is similar to the :ref:`regular steps <openvino_integrate_application>`. However, tensors can now be passed with different shapes for the same executable model and even for the same inference request:
 
 .. raw:: html
 

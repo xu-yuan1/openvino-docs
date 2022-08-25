@@ -290,7 +290,7 @@ See Also
 
 * :ref:`Deployment Manager Guide <doxid-openvino_docs_install_guides_deployment_manager_tool>`
 
-* :ref:`Integrate the OpenVINO™ Runtime with Your Application <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>`
+* :ref:`Integrate the OpenVINO™ Runtime with Your Application <openvino_integrate_application>`
 
 * :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
 
