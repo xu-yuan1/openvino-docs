@@ -5,7 +5,7 @@
 Model Creation C++ Sample
 =========================
 
-:target:`doxid-openvino_inference_engine_samples_model_creation_sample__r_e_a_d_m_e_1md_openvino_samples_cpp_model_creation_sample_readme` This sample demonstrates how to execute an synchronous inference using :ref:`model <doxid-openvino_docs__o_v__u_g__model__representation>` built on the fly which uses weights from LeNet classification model, which is known to work well on digit classification tasks.
+:target:`doxid-openvino_inference_engine_samples_model_creation_sample__r_e_a_d_m_e_1md_openvino_samples_cpp_model_creation_sample_readme` This sample demonstrates how to execute an synchronous inference using :ref:`model <openvino_model_representation>` built on the fly which uses weights from LeNet classification model, which is known to work well on digit classification tasks.
 
 You do not need an XML file to create a model. The API of :ref:`ov::Model <doxid-classov_1_1_model>` allows creating a model on the fly from the source code.
 
@@ -61,7 +61,7 @@ At startup, the sample application does the following:
 
 * Reads command line parameters
 
-* :ref:`Build a Model <doxid-openvino_docs__o_v__u_g__model__representation>` and passed weights file
+* :ref:`Build a Model <openvino_model_representation>` and passed weights file
 
 * Loads the model and input data to the OpenVINO™ Runtime plugin
 

@@ -42,7 +42,7 @@ The ``:ref:`ov::set_batch <doxid-namespaceov_1a3314e2ff91fcc9ffec05b1a77c37862b>
 
 Once the input shape of ``:ref:`ov::Model <doxid-classov_1_1_model>``` is set, call the ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` method to get an ``:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>``` object for inference with updated shapes.
 
-There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`ov::Model creation <doxid-openvino_docs__o_v__u_g__model__representation>`.
+There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`ov::Model creation <openvino_model_representation>`.
 
 Dynamic Shape Notice
 --------------------
@@ -180,7 +180,7 @@ The meaning of the model batch may vary depending on the model design. In order 
 
 Once the input shape of `Model <api/ie_python_api/_autosummary/openvino.runtime.Model.html>`__ is set, call the `compile_model <api/ie_python_api/_autosummary/openvino.runtime.compile_model.html>`__ method to get a `CompiledModel <api/ie_python_api/_autosummary/openvino.runtime.CompiledModel.html>`__ object for inference with updated shapes.
 
-There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`Model creation <doxid-openvino_docs__o_v__u_g__model__representation>`.
+There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`Model creation <openvino_model_representation>`.
 
 Dynamic Shape Notice
 --------------------

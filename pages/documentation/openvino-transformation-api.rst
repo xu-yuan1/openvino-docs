@@ -36,7 +36,7 @@ Working with Model
 
 Before the moving to transformation part it is needed to say several words about functions which allow 
 to modify ``:ref:`ov::Model <doxid-classov_1_1_model>```. This chapter extends 
-the :ref:`model representation guide <doxid-openvino_docs__o_v__u_g__model__representation>` and shows an API that 
+the :ref:`model representation guide <openvino_model_representation>` and shows an API that 
 allows us to manipulate with ``:ref:`ov::Model <doxid-classov_1_1_model>```.
 
 Working with node input and output ports
@@ -354,7 +354,7 @@ by using the following environment variables:
 See Also
 ~~~~~~~~
 
-* :ref:`OpenVINO™ Model Representation <doxid-openvino_docs__o_v__u_g__model__representation>`
+* :ref:`OpenVINO™ Model Representation <openvino_model_representation>`
 
 * :ref:`OpenVINO™ Extensions <extensibility_api_introduction>`
 

@@ -616,7 +616,7 @@ There are a number of common attributes used in the operations. Below is the lis
 
 * ``type`` — type of the operation according to the :ref:`opset specification <doxid-openvino_docs_ops_opset>`. For the internal Model Optimizer operations, this attribute should be set to ``None``. The model conversion fails if an operation with ``type`` equal to ``None`` comes to the IR emitting phase. **Mandatory**.
 
-* ``version`` — the operation set (opset) name the operation belongs to. If not specified, Model Optimizer sets it equal to ``experimental``. For more information about operation sets, refer to :ref:`OpenVINO Model Representation <doxid-openvino_docs__o_v__u_g__model__representation>` section. **Mandatory**.
+* ``version`` — the operation set (opset) name the operation belongs to. If not specified, Model Optimizer sets it equal to ``experimental``. For more information about operation sets, refer to :ref:`OpenVINO Model Representation <openvino_model_representation>` section. **Mandatory**.
 
 * ``op`` — Model Optimizer type of the operation. In many cases, the value of ``type`` is equal to the value of ``op``. However, when Model Optimizer cannot instantiate the opset operation during model loading, it creates an instance of an internal operation. Thus, the attribute ``op`` is used as a type of this internal operation. Later in the pipeline, the node created from an internal operation will be replaced during front, middle or back phase with node(s) created from the opset.
 
@@ -1445,7 +1445,7 @@ See Also
 
 * :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`
 
-* :ref:`OpenVINO Model Representation <doxid-openvino_docs__o_v__u_g__model__representation>`
+* :ref:`OpenVINO Model Representation <openvino_model_representation>`
 
 * :ref:`OpenVINO™ Extensibility Mechanism <extensibility_api_introduction>`
 

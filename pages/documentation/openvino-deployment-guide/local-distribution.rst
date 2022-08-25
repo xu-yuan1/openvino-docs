@@ -231,7 +231,7 @@ In this example, the application is written in C++, performs inference :ref:`sim
 
 **Auto-Device Selection between HDDL and CPU**
 
-In this example, the application is written in C++, performs inference with the :ref:`Automatic Device Selection <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` mode, limiting device list to HDDL and CPU, and reads models :ref:`created using C++ code <doxid-openvino_docs__o_v__u_g__model__representation>`. The following libraries are used:
+In this example, the application is written in C++, performs inference with the :ref:`Automatic Device Selection <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` mode, limiting device list to HDDL and CPU, and reads models :ref:`created using C++ code <openvino_model_representation>`. The following libraries are used:
 
 * The ``openvino`` library is a main dependency of the application. It links against this library.
 

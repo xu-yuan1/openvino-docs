@@ -30,7 +30,7 @@ For more details on these operations, refer to the :ref:`ReadValue specification
 Examples of Networks with States
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To get a model with states ready for inference, convert a model from another framework to IR with Model Optimizer or create an nGraph function. (For more information, refer to the :ref:`Build OpenVINO Model section <doxid-openvino_docs__o_v__u_g__model__representation>`). Below is the graph in both forms:
+To get a model with states ready for inference, convert a model from another framework to IR with Model Optimizer or create an nGraph function. (For more information, refer to the :ref:`Build OpenVINO Model section <openvino_model_representation>`). Below is the graph in both forms:
 
 .. image::  ./_assets/state_network_example.png
 
@@ -300,7 +300,7 @@ Steps to Apply the LowLatency2 Transformation
    
    * :ref:`from IR or ONNX model <openvino_integrate_application>`
    
-   * :ref:`from ov::Model <doxid-openvino_docs__o_v__u_g__model__representation>`
+   * :ref:`from ov::Model <openvino_model_representation>`
 
 #. Change the number of iterations inside ``TensorIterator`` / ``Loop`` nodes in the network, using the :ref:`Reshape <doxid-openvino_docs__o_v__u_g__shape_inference>` feature.
 
@@ -416,7 +416,7 @@ Steps to Apply LowLatency Transformation
    
    * :ref:`from IR or ONNX model <openvino_integrate_application>`
    
-   * :ref:`from ov::Model <doxid-openvino_docs__o_v__u_g__model__representation>`
+   * :ref:`from ov::Model <openvino_model_representation>`
 
 #. :ref:`Reshape <doxid-openvino_docs__o_v__u_g__shape_inference>` the CNNNetwork network if necessary. An example of such a **necessary case** is when the ``sequence_lengths`` dimension of input > 1, and it means that ``TensorIterator`` layer will have ``number_iterations``> 1. The inputs of the network should be reshaped to set ``sequence_dimension`` to exactly 1.
 

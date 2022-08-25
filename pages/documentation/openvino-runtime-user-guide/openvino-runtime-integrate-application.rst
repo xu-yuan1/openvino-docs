@@ -150,7 +150,7 @@ Compile the model for a specific device using
 
 The ``:ref:`ov::Model <doxid-classov_1_1_model>``` object represents any models 
 inside the OpenVINO™ Runtime. For more details please read article about 
-:ref:`OpenVINO™ Model representation <doxid-openvino_docs__o_v__u_g__model__representation>`.
+:ref:`OpenVINO™ Model representation <openvino_model_representation>`.
 
 The code above creates a compiled model associated with a single hardware 
 device from the model object. It is possible to create as many compiled 
@@ -161,7 +161,7 @@ hardware resources). To learn how to change the device configuration, read the
 Step 3. Create an Inference Request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>``` class provides methods for model inference in OpenVINO™ Runtime. Create an infer request using the following code (see :ref:`InferRequest detailed documentation <doxid-openvino_docs__o_v__u_g__infer_request>` for more details):
+``:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>``` class provides methods for model inference in OpenVINO™ Runtime. Create an infer request using the following code (see :ref:`InferRequest detailed documentation <openvino_inference_request>` for more details):
 
 .. tab:: C++
 
@@ -230,7 +230,7 @@ to wait for the inference results:
 
 This section demonstrates a simple pipeline. To get more information about 
 other ways to perform inference, read the "Run inference" section in dedicated 
-:ref:`OpenVINO™ Inference Request <doxid-openvino_docs__o_v__u_g__infer_request>` article.
+:ref:`OpenVINO™ Inference Request <openvino_inference_request>` article.
 
 Step 6. Process the Inference Results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
