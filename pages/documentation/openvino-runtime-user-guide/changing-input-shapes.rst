@@ -1,11 +1,20 @@
 .. index:: pair: page; Changing Input Shapes
-.. _doxid-openvino_docs__o_v__u_g__shape_inference:
+.. _openvino_shape_inference:
 
+.. meta::
+   :description: OpenVINO™ ensures a capability to change model input shape during 
+                 the runtime when provided input has a different size than model 
+                 input shape.
+   :keywords: OpenVINO™, input shape, shape inference, changing input shape, reshape 
+              method, model shape, changing shape of a model, batch size, set_batch, 
+              set_batch method, non-reshape-able model, extensibility, inference, 
+              model inference, Reshape operation, MatMul operation, static model, 
+              dynamic model, static shape, dynamic shape
 
 Changing Input Shapes
 =====================
 
-:target:`doxid-openvino_docs__o_v__u_g__shape_inference_1md_openvino_docs_ov_runtime_ug_shapeinference`
+:target:`openvino_shape_inference_1md_openvino_docs_ov_runtime_ug_shapeinference`
 
 .. raw:: html
 
@@ -96,7 +105,7 @@ The usage scenarios of the ``reshape`` feature can be found in :ref:`OpenVINO Sa
 
 In practice, some models are not ready to be reshaped. In such cases, a new input shape cannot be set with Model Optimizer or the ``:ref:`ov::Model::reshape <doxid-classov_1_1_model_1aa21aff80598d5089d591888a4c7f33ae>``` method.
 
-:target:`doxid-openvino_docs__o_v__u_g__shape_inference_1troubleshooting_reshape_errors`
+:target:`openvino_shape_inference_1troubleshooting_reshape_errors`
 
 Troubleshooting Reshape Errors
 ------------------------------
@@ -115,7 +124,7 @@ Model structure and logic should not change significantly after model reshaping.
 
 * Changing the model input shape may significantly affect its accuracy. For example, Object Detection models from TensorFlow have resizing restrictions by design. To keep the model valid after the reshape, choose a new input shape that satisfies conditions listed in the ``pipeline.config`` file. For details, refer to the :ref:`Tensorflow Object Detection API models resizing techniques <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__object__detection__a_p_i__models_1custom-input-shape>`.
 
-:target:`doxid-openvino_docs__o_v__u_g__shape_inference_1how-to-fix-non-reshape-able-model`
+:target:`openvino_shape_inference_1how-to-fix-non-reshape-able-model`
 
 How To Fix Non-Reshape-able Model
 ---------------------------------

@@ -196,7 +196,7 @@ performing the following (when ``axis`` is not equal to 0 and 1):
 #. Use the concatenated value as the second input to the ``Reshape`` operation.
 
 It is highly recommended to write shape-agnostic transformations to avoid model reshape-ability issues. For more information 
-related to the reshaping of a model, refer to the :ref:`Using Shape Inference <doxid-openvino_docs__o_v__u_g__shape_inference>` 
+related to the reshaping of a model, refer to the :ref:`Using Shape Inference <openvino_shape_inference>` 
 guide.
 
 More information on how to develop front phase transformations and dedicated API description is provided in the 
@@ -217,7 +217,7 @@ may be defined as a mathematical expression using the :ref:`ShapeOf <doxid-openv
    Model Optimizer does not fold sub-graphs starting from the :ref:`ShapeOf <doxid-openvino_docs_ops_shape__shape_of_3>` operation 
    by default because this leads to a model non-reshape-ability (the command-line parameter ``--static_shape`` can override this 
    behavior). For more information related to reshaping of a model, refer to the 
-   :ref:`Using Shape Inference <doxid-openvino_docs__o_v__u_g__shape_inference>` guide.
+   :ref:`Using Shape Inference <openvino_shape_inference>` guide.
 
 
 

@@ -5,7 +5,7 @@
 Hello Reshape SSD C++ Sample
 ============================
 
-:target:`doxid-openvino_inference_engine_samples_hello_reshape_ssd__r_e_a_d_m_e_1md_openvino_samples_cpp_hello_reshape_ssd_readme` This sample demonstrates how to do synchronous inference of object detection models using :ref:`input reshape feature <doxid-openvino_docs__o_v__u_g__shape_inference>`. Models with only one input and output are supported.
+:target:`doxid-openvino_inference_engine_samples_hello_reshape_ssd__r_e_a_d_m_e_1md_openvino_samples_cpp_hello_reshape_ssd_readme` This sample demonstrates how to do synchronous inference of object detection models using :ref:`input reshape feature <openvino_shape_inference>`. Models with only one input and output are supported.
 
 The following C++ API is used in the application:
 

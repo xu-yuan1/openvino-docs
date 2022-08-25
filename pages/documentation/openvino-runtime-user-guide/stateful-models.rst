@@ -302,7 +302,7 @@ Steps to Apply the LowLatency2 Transformation
    
    * :ref:`from ov::Model <openvino_model_representation>`
 
-#. Change the number of iterations inside ``TensorIterator`` / ``Loop`` nodes in the network, using the :ref:`Reshape <doxid-openvino_docs__o_v__u_g__shape_inference>` feature.
+#. Change the number of iterations inside ``TensorIterator`` / ``Loop`` nodes in the network, using the :ref:`Reshape <openvino_shape_inference>` feature.
 
 For example, when the ``sequence_lengths`` dimension of input of the network > 1, the ``TensorIterator`` layer has ``number_iterations``> 1. You can reshape the inputs of the network to set ``sequence_dimension`` to 1.
 
@@ -369,7 +369,7 @@ By default, the LowLatency2 transformation inserts a constant subgraph of the sa
 Known Limitations
 -----------------
 
-#. Unable to execute the :ref:`Reshape <doxid-openvino_docs__o_v__u_g__shape_inference>` feature to change the number iterations of ``TensorIterator`` / ``Loop`` layers to apply the transformation correctly.
+#. Unable to execute the :ref:`Reshape <openvino_shape_inference>` feature to change the number iterations of ``TensorIterator`` / ``Loop`` layers to apply the transformation correctly.
    
    The only way to change the number iterations of ``TensorIterator`` / ``Loop`` layer is to use the ``Reshape`` feature. However, networks can be non-reshapable. The most common reason is that the value of shapes is hardcoded in a constant somewhere in the network.
 
@@ -418,7 +418,7 @@ Steps to Apply LowLatency Transformation
    
    * :ref:`from ov::Model <openvino_model_representation>`
 
-#. :ref:`Reshape <doxid-openvino_docs__o_v__u_g__shape_inference>` the CNNNetwork network if necessary. An example of such a **necessary case** is when the ``sequence_lengths`` dimension of input > 1, and it means that ``TensorIterator`` layer will have ``number_iterations``> 1. The inputs of the network should be reshaped to set ``sequence_dimension`` to exactly 1.
+#. :ref:`Reshape <openvino_shape_inference>` the CNNNetwork network if necessary. An example of such a **necessary case** is when the ``sequence_lengths`` dimension of input > 1, and it means that ``TensorIterator`` layer will have ``number_iterations``> 1. The inputs of the network should be reshaped to set ``sequence_dimension`` to exactly 1.
 
 Usually, the following exception, which occurs after applying a transform when trying to infer the network in a plugin, indicates the need to apply the reshape feature: ``C++ exception with description "Function is incorrect. The Assign and ReadValue operations must be used in pairs in the network."`` This means that there are several pairs of ``Assign`` / ``ReadValue`` operations with the same ``variable_id`` in the network and operations were inserted into each iteration of the ``TensorIterator``.
 

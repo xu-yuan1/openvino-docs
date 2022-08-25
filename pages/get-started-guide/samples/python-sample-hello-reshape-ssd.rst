@@ -5,7 +5,7 @@
 Hello Reshape SSD Python Sample
 =================================
 
-:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_hello_reshape_ssd__r_e_a_d_m_e_1md_openvino_samples_python_hello_reshape_ssd_readme` This sample demonstrates how to do synchronous inference of object detection models using :ref:`Shape Inference feature <doxid-openvino_docs__o_v__u_g__shape_inference>`.
+:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_hello_reshape_ssd__r_e_a_d_m_e_1md_openvino_samples_python_hello_reshape_ssd_readme` This sample demonstrates how to do synchronous inference of object detection models using :ref:`Shape Inference feature <openvino_shape_inference>`.
 
 Models with only 1 input and output are supported.
 

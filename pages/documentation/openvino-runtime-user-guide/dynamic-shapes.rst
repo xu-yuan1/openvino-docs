@@ -13,7 +13,7 @@ Dynamic Shapes
 
    ./dynamic-shapes/dynamic-shapes-not-applicable
 
-As it was demonstrated in the :ref:`Changing Input Shapes <doxid-openvino_docs__o_v__u_g__shape_inference>` article, there are models that support changing input shapes before model compilation in ``Core::compile_model``. Reshaping models provides an ability to customize the model input shape for the exact size required in the end application. This article explains how the ability of model to reshape can further be leveraged in more dynamic scenarios.
+As it was demonstrated in the :ref:`Changing Input Shapes <openvino_shape_inference>` article, there are models that support changing input shapes before model compilation in ``Core::compile_model``. Reshaping models provides an ability to customize the model input shape for the exact size required in the end application. This article explains how the ability of model to reshape can further be leveraged in more dynamic scenarios.
 
 Applying Dynamic Shapes
 ~~~~~~~~~~~~~~~~~~~~~~~
