@@ -36,7 +36,7 @@ To see the list of supported networks for the HDDL plugin, refer to the list on 
 Supported Configuration Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For information on VPU common configuration parameters, see the :ref:`VPU Plugins <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>`. When specifying key values as raw strings (when using the Python API), omit the ``KEY_`` prefix.
+For information on VPU common configuration parameters, see the :ref:`VPU Plugins <deploy_infer__vpu_device>`. When specifying key values as raw strings (when using the Python API), omit the ``KEY_`` prefix.
 
 In addition to common parameters for both VPU plugins, the HDDL plugin accepts the following options:
 
@@ -77,7 +77,7 @@ Additional Resources
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 
-* :ref:`VPU Plugins <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>`
+* :ref:`VPU Plugins <deploy_infer__vpu_device>`
 
 * :ref:`MYRIAD Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d>`
 

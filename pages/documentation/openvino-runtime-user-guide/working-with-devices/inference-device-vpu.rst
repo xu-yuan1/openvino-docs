@@ -1,11 +1,23 @@
 .. index:: pair: page; VPU Devices
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u:
+.. _deploy_infer__vpu_device:
+
+.. meta::
+   :description:  Plugins that support Intel® Neural Compute Stick 2 powered 
+                  by the Intel® Movidius™ Myriad™ X and Intel® Vision 
+                  Accelerator Design with Intel® Movidius™ VPUs. 
+   :keywords: OpenVINO™, OpenVINO™ Runtime plugin, inference, deep learning 
+              model, model inference, VPU Plugin, VPU device, inference device, 
+              MYRIAD plugin, HDDL plugin, Intel® Neural Compute Stick 2, 
+              Intel® Movidius™ Myriad™ X, Intel® Vision Accelerator Design, 
+              Intel® Movidius™ VPU, layer fusion, layer decomposition, 
+              Convolution, ReLU, Eltwise, VPU configuration, VPU configuration 
+              parameters, MYRIAD, HDDL
 
 
 VPU Devices
 ===========
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u_1md_openvino_docs_ov_runtime_ug_supported_plugins_vpu`
+:target:`deploy_infer__vpu_device_1md_openvino_docs_ov_runtime_ug_supported_plugins_vpu`
 
 .. toctree::
    :maxdepth: 1

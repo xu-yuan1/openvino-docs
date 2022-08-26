@@ -28,7 +28,7 @@ To configure your Intel® Vision Accelerator Design With Intel® Movidius™ on 
 Supported Configuration Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For information on the VPU common configuration parameters, see the :ref:`VPU Plugins <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>`. When specifying key values as raw strings (when using the Python API), omit the ``KEY_`` prefix.
+For information on the VPU common configuration parameters, see the :ref:`VPU Plugins <deploy_infer__vpu_device>`. When specifying key values as raw strings (when using the Python API), omit the ``KEY_`` prefix.
 
 In addition to common parameters, the MYRIAD plugin accepts the following options:
 
@@ -68,7 +68,7 @@ See Also
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 
-* :ref:`VPU Plugins <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>`
+* :ref:`VPU Plugins <deploy_infer__vpu_device>`
 
 * `Intel Neural Compute Stick 2 Get Started <https://software.intel.com/en-us/neural-compute-stick/get-started>`__
 

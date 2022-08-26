@@ -47,7 +47,7 @@ following device types with corresponding plugins:
     * - :ref:`GPU <deploy_infer__gpu_device>`
       - Intel® Graphics, including Intel® HD Graphics, Intel® UHD Graphics, 
         Intel® Iris® Graphics, Intel® Xe Graphics, Intel® Xe MAX Graphics
-    * - :ref:`VPUs <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>`
+    * - :ref:`VPUs <deploy_infer__vpu_device>`
       - Intel® Neural Compute Stick 2 powered by the Intel® Movidius™ Myriad™ X, 
         Intel® Vision Accelerator Design with Intel® Movidius™ VPUs
     * - :ref:`GNA <doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a>`
