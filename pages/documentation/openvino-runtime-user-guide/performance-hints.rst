@@ -5,7 +5,7 @@
 High-level Performance Hints
 ============================
 
-:target:`doxid-openvino_docs__o_v__u_g__performance__hints_1md_openvino_docs_ov_runtime_ug_performance_hints` Even though all :ref:`supported devices <doxid-openvino_docs__o_v__u_g__working_with_devices>` in OpenVINO™ offer low-level performance settings, utilizing them is not recommended outside of very few cases. The preferred way to configure performance in OpenVINO Runtime is using performance hints. This is a future-proof solution fully compatible with the :ref:`automatic device selection inference mode <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` and designed with *portability* in mind.
+:target:`doxid-openvino_docs__o_v__u_g__performance__hints_1md_openvino_docs_ov_runtime_ug_performance_hints` Even though all :ref:`supported devices <working_with_devices>` in OpenVINO™ offer low-level performance settings, utilizing them is not recommended outside of very few cases. The preferred way to configure performance in OpenVINO Runtime is using performance hints. This is a future-proof solution fully compatible with the :ref:`automatic device selection inference mode <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` and designed with *portability* in mind.
 
 The hints also set the direction of the configuration in the right order. Instead of mapping the application needs to the low-level performance settings, and keeping an associated application logic to configure each possible device separately, the hints express a target scenario with a single config key and let the *device* configure itself in response.
 
@@ -25,7 +25,7 @@ Keep in mind that a typical model may take significantly more time to load with 
 Performance Hints: How It Works
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Internally, every device "translates" the value of the hint to the actual performance settings. For example, the ``:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>``` selects the number of CPU or GPU streams. Additionally, the optimal batch size is selected for the GPU and the :ref:`automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` is applied whenever possible. To check whether the device supports it, refer to the :ref:`devices/features support matrix <doxid-openvino_docs__o_v__u_g__working_with_devices>` article.
+Internally, every device "translates" the value of the hint to the actual performance settings. For example, the ``:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>``` selects the number of CPU or GPU streams. Additionally, the optimal batch size is selected for the GPU and the :ref:`automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` is applied whenever possible. To check whether the device supports it, refer to the :ref:`devices/features support matrix <working_with_devices>` article.
 
 The resulting (device-specific) settings can be queried back from the instance of the ``ov:Compiled_Model``.
 

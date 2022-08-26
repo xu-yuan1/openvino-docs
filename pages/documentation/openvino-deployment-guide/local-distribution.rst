@@ -151,7 +151,7 @@ The ``HETERO``, ``MULTI``, ``BATCH`` and ``AUTO`` execution modes can also be us
 * If :ref:`AUTO <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` is used explicitly in the application or ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` is used without specifying a device, put ``openvino_auto_plugin`` to the distribution.
 
 .. note:: Automatic Device Selection relies on 
-   :ref:`inference device plugins <doxid-openvino_docs__o_v__u_g__working_with_devices>`. 
+   :ref:`inference device plugins <working_with_devices>`. 
    If you are not sure about what inference devices are available on target system, 
    put all the inference plugin libraries to the distribution. If 
    ``:ref:`ov::device::priorities <doxid-group__ov__runtime__cpp__prop__api_1gae88af90a18871677f39739cb0ef0101e>``` 

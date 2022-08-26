@@ -10,7 +10,7 @@ Preprocessing
 How Preprocessing Works in API 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Inference Engine API contains preprocessing capabilities in the ``:ref:`InferenceEngine::CNNNetwork <doxid-class_inference_engine_1_1_c_n_n_network>``` class. Such preprocessing information is not a part of the main inference graph executed by :ref:`OpenVINO devices <doxid-openvino_docs__o_v__u_g__working_with_devices>`. Therefore, it is stored and executed separately before the inference stage:
+Inference Engine API contains preprocessing capabilities in the ``:ref:`InferenceEngine::CNNNetwork <doxid-class_inference_engine_1_1_c_n_n_network>``` class. Such preprocessing information is not a part of the main inference graph executed by :ref:`OpenVINO devices <working_with_devices>`. Therefore, it is stored and executed separately before the inference stage:
 
 * Preprocessing operations are executed on the CPU for most OpenVINO inference plugins. Thus, instead of occupying accelerators, they keep the CPU busy with computational tasks.
 

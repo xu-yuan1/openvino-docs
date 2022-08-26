@@ -5,7 +5,7 @@
 Compile Tool
 ============
 
-:target:`doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e_1md_openvino_tools_compile_tool_readme` Compile tool is a C++ application that enables you to compile a model for inference on a specific device and export the compiled representation to a binary file. With this tool, you can compile a model using supported OpenVINO Runtime devices on a machine that does not have the physical device connected, and then transfer a generated file to any machine with the target inference device available. To learn which device supports the import / export functionality, see the :ref:`feature support matrix <doxid-openvino_docs__o_v__u_g__working_with_devices>`.
+:target:`doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e_1md_openvino_tools_compile_tool_readme` Compile tool is a C++ application that enables you to compile a model for inference on a specific device and export the compiled representation to a binary file. With this tool, you can compile a model using supported OpenVINO Runtime devices on a machine that does not have the physical device connected, and then transfer a generated file to any machine with the target inference device available. To learn which device supports the import / export functionality, see the :ref:`feature support matrix <working_with_devices>`.
 
 The tool compiles networks for the following target devices using a corresponding OpenVINO Runtime plugin: Intel® Neural Compute Stick 2 (MYRIAD plugin).
 

@@ -165,7 +165,7 @@ See the following code for using AUTO and specifying devices:
 
 Note that OpenVINO Runtime lets you use “GPU” as an alias for “GPU.0” in function 
 calls. More details on enumerating devices can be found in 
-:ref:`Working with devices <doxid-openvino_docs__o_v__u_g__working_with_devices>`.
+:ref:`Working with devices <working_with_devices>`.
 
 Checking Available Devices
 ++++++++++++++++++++++++++
