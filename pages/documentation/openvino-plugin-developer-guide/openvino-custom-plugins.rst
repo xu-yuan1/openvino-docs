@@ -1,11 +1,18 @@
 .. index:: pair: page; Plugin
-.. _doxid-openvino_docs_ie_plugin_dg_plugin:
+.. _plugin_functionality:
+
+.. meta::
+   :description: Guide to implementation of Inference Engine Plugin with description
+                 of its class.
+   :keywords: Inference Engine Plugin, plugin class, backend, constructor, Inference Engine Plugin API,
+              plugin api, plugin development, plugin configuration, engine constructor, OpenVINO transformation passes,
 
 
 Plugin
 ======
 
-:target:`doxid-openvino_docs_ie_plugin_dg_plugin_1md_openvino_docs_ie_plugin_dg_plugin` Inference Engine Plugin usually represents a wrapper around a backend. Backends can be:
+:target:`plugin_functionality_1md_openvino_docs_ie_plugin_dg_plugin` Inference Engine Plugin usually represents a wrapper 
+around a backend. Backends can be:
 
 * OpenCL-like backend (e.g. clDNN library) for GPU devices.
 
@@ -19,9 +26,10 @@ The responsibility of Inference Engine Plugin:
 
 * Provides information about devices enabled by a particular backend, e.g. how many devices, their properties and so on.
 
-* Loads or imports :ref:`executable network <doxid-openvino_docs_ie_plugin_dg_executable_network>` objects.
+* Loads or imports :ref:`executable network <executable_network_functionality>` objects.
 
-In addition to the Inference Engine Public API, the Inference Engine provides the Plugin API, which is a set of functions and helper classes that simplify new plugin development:
+In addition to the Inference Engine Public API, the Inference Engine provides the Plugin API, which is a set of functions 
+and helper classes that simplify new plugin development:
 
 * header files in the ``inference_engine/src/plugin_api`` directory
 
@@ -29,12 +37,15 @@ In addition to the Inference Engine Public API, the Inference Engine provides th
 
 * symbols in the Inference Engine Core shared library
 
-To build an Inference Engine plugin with the Plugin API, see the :ref:`Inference Engine Plugin Building <doxid-openvino_docs_ie_plugin_dg_plugin_build>` guide.
+To build an Inference Engine plugin with the Plugin API, see the 
+:ref:`Inference Engine Plugin Building <doxid-openvino_docs_ie_plugin_dg_plugin_build>` guide.
 
 Plugin Class
 ~~~~~~~~~~~~
 
-Inference Engine Plugin API provides the helper :ref:`InferenceEngine::IInferencePlugin <doxid-class_inference_engine_1_1_i_inference_plugin>` class recommended to use as a base class for a plugin. Based on that, declaration of a plugin class can look as follows:
+Inference Engine Plugin API provides the helper 
+:ref:`InferenceEngine::IInferencePlugin <doxid-class_inference_engine_1_1_i_inference_plugin>` class recommended to use 
+as a base class for a plugin. Based on that, declaration of a plugin class can look as follows:
 
 .. ref-code-block:: cpp
 
@@ -115,14 +126,17 @@ As an example, a plugin configuration has three value parameters:
 
 * ``deviceId`` - particular device ID to work with. Applicable if a plugin supports more than one ``Template`` device. In this case, some plugin methods, like ``SetConfig``, ``QueryNetwork``, and ``LoadNetwork``, must support the :ref:`CONFIG_KEY(KEY_DEVICE_ID) <doxid-ie__plugin__config_8hpp_1aad09cfba062e8ec9fb7ab9383f656ec7>` parameter.
 
-* ``perfCounts`` - boolean value to identify whether to collect performance counters during :ref:`Inference Request <doxid-openvino_docs_ie_plugin_dg_infer_request>` execution.
+* ``perfCounts`` - boolean value to identify whether to collect performance counters during :ref:`Inference Request <synchronous_inference_request>` execution.
 
 * ``_streamsExecutorConfig`` - configuration of ``:ref:`InferenceEngine::IStreamsExecutor <doxid-class_inference_engine_1_1_i_streams_executor>``` to handle settings of multi-threaded context.
 
 Engine Constructor
 ------------------
 
-A plugin constructor must contain code that checks the ability to work with a device of the ``Template`` type. For example, if some drivers are required, the code must check driver availability. If a driver is not available (for example, OpenCL runtime is not installed in case of a GPU device or there is an improper version of a driver is on a host machine), an exception must be thrown from a plugin constructor.
+A plugin constructor must contain code that checks the ability to work with a device of the ``Template`` type. 
+For example, if some drivers are required, the code must check driver availability. If a driver is not available 
+(for example, OpenCL runtime is not installed in case of a GPU device or there is an improper version 
+of a driver is on a host machine), an exception must be thrown from a plugin constructor.
 
 A plugin must define a device name enabled via the ``_pluginName`` field of a base class:
 
@@ -143,7 +157,8 @@ A plugin must define a device name enabled via the ``_pluginName`` field of a ba
 
 **Implementation details:** The base :ref:`InferenceEngine::IInferencePlugin <doxid-class_inference_engine_1_1_i_inference_plugin>` class provides a common implementation of the public :ref:`InferenceEngine::IInferencePlugin::LoadNetwork <doxid-class_inference_engine_1_1_i_inference_plugin_1addf67bb7bae8f00cad65545d5a5a0d51>` method that calls plugin-specific ``LoadExeNetworkImpl``, which is defined in a derived class.
 
-This is the most important function of the ``Plugin`` class and creates an instance of compiled ``ExecutableNetwork``, which holds a backend-dependent compiled graph in an internal representation:
+This is the most important function of the ``Plugin`` class and creates an instance of compiled ``ExecutableNetwork``, 
+which holds a backend-dependent compiled graph in an internal representation:
 
 .. ref-code-block:: cpp
 
@@ -162,16 +177,20 @@ This is the most important function of the ``Plugin`` class and creates an insta
 	                                               std::static_pointer_cast<Plugin>(shared_from_this()));
 	}
 
-Before a creation of an ``ExecutableNetwork`` instance via a constructor, a plugin may check if a provided :ref:`InferenceEngine::ICNNNetwork <doxid-class_inference_engine_1_1_i_c_n_n_network>` object is supported by a device. In the example above, the plugin checks precision information.
+Before a creation of an ``ExecutableNetwork`` instance via a constructor, a plugin may check if a provided 
+:ref:`InferenceEngine::ICNNNetwork <doxid-class_inference_engine_1_1_i_c_n_n_network>` object is supported by a device. 
+In the example above, the plugin checks precision information.
 
-The very important part before creation of ``ExecutableNetwork`` instance is to call ``TransformNetwork`` method which applies OpenVINO™ transformation passes.
+The very important part before creation of ``ExecutableNetwork`` instance is to call ``TransformNetwork`` method which 
+applies OpenVINO™ transformation passes.
 
-Actual graph compilation is done in the ``ExecutableNetwork`` constructor. Refer to the :ref:`ExecutableNetwork Implementation Guide <doxid-openvino_docs_ie_plugin_dg_executable_network>` for details.
+Actual graph compilation is done in the ``ExecutableNetwork`` constructor. Refer to the 
+:ref:`ExecutableNetwork Implementation Guide <executable_network_functionality>` for details.
 
-.. note:: Actual configuration map used in ``ExecutableNetwork`` is constructed as a base plugin configuration set via ``Plugin::SetConfig``, where some values are overwritten with ``config`` passed to ``Plugin::LoadExeNetworkImpl``. Therefore, the config of ``Plugin::LoadExeNetworkImpl`` has a higher priority.
-
-
-
+.. note::
+   Actual configuration map used in ``ExecutableNetwork`` is constructed as a base plugin configuration set 
+   via ``Plugin::SetConfig``, where some values are overwritten with ``config`` passed to ``Plugin::LoadExeNetworkImpl``. 
+   Therefore, the config of ``Plugin::LoadExeNetworkImpl`` has a higher priority.
 
 
 .. rubric::
@@ -229,15 +248,24 @@ The function accepts a const shared pointer to ``:ref:`ov::Model <doxid-classov_
 	    return transformedNetwork;
 	}
 
-.. note:: After all these transformations, a ``:ref:`ov::Model <doxid-classov_1_1_model>``` object contains operations which can be perfectly mapped to backend kernels. E.g. if backend has kernel computing ``A + B`` operations at once, the ``TransformNetwork`` function should contain a pass which fuses operations ``A`` and ``B`` into a single custom operation ``A + B`` which fits backend kernels set.
-
-
-
+.. note::
+   After all these transformations, a ``:ref:`ov::Model <doxid-classov_1_1_model>``` object contains operations which can 
+   be perfectly mapped to backend kernels. E.g. if backend has kernel computing ``A + B`` operations at once, 
+   the ``TransformNetwork`` function should contain a pass which fuses operations ``A`` and ``B`` into a single 
+   custom operation ``A + B`` which fits backend kernels set.
 
 
 .. rubric::
 
-Use the method with the ``HETERO`` mode, which allows to distribute network execution between different devices based on the ``:ref:`ov::Node::get_rt_info() <doxid-classov_1_1_node_1a6941c753af92828d842297b74df1c45a>``` map, which can contain the ``"affinity"`` key. The ``QueryNetwork`` method analyzes operations of provided ``network`` and returns a list of supported operations via the :ref:`InferenceEngine::QueryNetworkResult <doxid-struct_inference_engine_1_1_query_network_result>` structure. The ``QueryNetwork`` firstly applies ``TransformNetwork`` passes to input ``:ref:`ov::Model <doxid-classov_1_1_model>``` argument. After this, the transformed network in ideal case contains only operations are 1:1 mapped to kernels in computational backend. In this case, it's very easy to analyze which operations is supposed (``_backend`` has a kernel for such operation or extensions for the operation is provided) and not supported (kernel is missed in ``_backend``):
+Use the method with the ``HETERO`` mode, which allows to distribute network execution between different devices based 
+on the ``:ref:`ov::Node::get_rt_info() <doxid-classov_1_1_node_1a6941c753af92828d842297b74df1c45a>``` map, which can 
+contain the ``"affinity"`` key. The ``QueryNetwork`` method analyzes operations of provided ``network`` and returns 
+a list of supported operations via the 
+:ref:`InferenceEngine::QueryNetworkResult <doxid-struct_inference_engine_1_1_query_network_result>` structure. 
+The ``QueryNetwork`` firstly applies ``TransformNetwork`` passes to input ``:ref:`ov::Model <doxid-classov_1_1_model>``` 
+argument. After this, the transformed network in ideal case contains only operations are 1:1 mapped to kernels in 
+computational backend. In this case, it's very easy to analyze which operations is supposed (``_backend`` has a kernel 
+for such operation or extensions for the operation is provided) and not supported (kernel is missed in ``_backend``):
 
 #. Store original names of all operations in input ``:ref:`ov::Model <doxid-classov_1_1_model>```
 
@@ -346,7 +374,9 @@ Use the method with the ``HETERO`` mode, which allows to distribute network exec
 
 .. rubric::
 
-Adds an extension of the :ref:`InferenceEngine::IExtensionPtr <doxid-namespace_inference_engine_1a7a4456ae150afbff5140be2d92680fa4>` type to a plugin. If a plugin does not support extensions, the method must throw an exception:
+Adds an extension of the 
+:ref:`InferenceEngine::IExtensionPtr <doxid-namespace_inference_engine_1a7a4456ae150afbff5140be2d92680fa4>` type to a plugin. 
+If a plugin does not support extensions, the method must throw an exception:
 
 .. ref-code-block:: cpp
 
@@ -365,13 +395,11 @@ Sets new values for plugin configuration keys:
 	    _cfg = Configuration{config, _cfg};
 	}
 
-In the snippet above, the ``Configuration`` class overrides previous configuration values with the new ones. All these values are used during backend specific graph compilation and execution of inference requests.
+In the snippet above, the ``Configuration`` class overrides previous configuration values with the new ones. All these 
+values are used during backend specific graph compilation and execution of inference requests.
 
-.. note:: The function must throw an exception if it receives an unsupported configuration key.
-
-
-
-
+.. note::
+   The function must throw an exception if it receives an unsupported configuration key.
 
 .. rubric::
 
@@ -385,17 +413,16 @@ Returns a current value for a specified configuration key:
 	    return _cfg.Get(name);
 	}
 
-The function is implemented with the ``Configuration::Get`` method, which wraps an actual configuration key value to the :ref:`InferenceEngine::Parameter <doxid-namespace_inference_engine_1aff2231f886c9f8fc9c226fd343026789>` and returns it.
+The function is implemented with the ``Configuration::Get`` method, which wraps an actual configuration key value 
+to the :ref:`InferenceEngine::Parameter <doxid-namespace_inference_engine_1aff2231f886c9f8fc9c226fd343026789>` and returns it.
 
-.. note:: The function must throw an exception if it receives an unsupported configuration key.
-
-
-
-
+.. note::
+   The function must throw an exception if it receives an unsupported configuration key.
 
 .. rubric::
 
-Returns a metric value for a metric with the name ``name``. A device metric is a static type of information from a plugin about its devices or device capabilities.
+Returns a metric value for a metric with the name ``name``. A device metric is a static type of information from a plugin 
+about its devices or device capabilities.
 
 Examples of metrics:
 
@@ -472,7 +499,8 @@ The snippet below provides an example of the implementation for ``GetMetric`` :
 	    }
 	}
 
-.. note:: If an unsupported metric key is passed to the function, it must throw an exception.
+.. note::
+   If an unsupported metric key is passed to the function, it must throw an exception.
 
 
 
@@ -480,9 +508,12 @@ The snippet below provides an example of the implementation for ``GetMetric`` :
 
 .. rubric::
 
-The importing network mechanism allows to import a previously exported backend specific graph and wrap it using an :ref:`ExecutableNetwork <doxid-openvino_docs_ie_plugin_dg_executable_network>` object. This functionality is useful if backend specific graph compilation takes significant time and/or cannot be done on a target host device due to other reasons.
+The importing network mechanism allows to import a previously exported backend specific graph and wrap it using 
+an :ref:`ExecutableNetwork <executable_network_functionality>` object. This functionality is useful 
+if backend specific graph compilation takes significant time and/or cannot be done on a target host device due to other reasons.
 
-During export of backend specific graph using ``ExecutableNetwork::Export``, a plugin may export any type of information it needs to import a compiled graph properly and check its correctness. For example, the export information may include:
+During export of backend specific graph using ``ExecutableNetwork::Export``, a plugin may export any type of information 
+it needs to import a compiled graph properly and check its correctness. For example, the export information may include:
 
 * Compilation options (state of ``Plugin::_cfg`` structure)
 
@@ -510,12 +541,13 @@ During export of backend specific graph using ``ExecutableNetwork::Export``, a p
 Create Instance of Plugin Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Inference Engine plugin library must export only one function creating a plugin instance using IE_DEFINE_PLUGIN_CREATE_FUNCTION macro:
+Inference Engine plugin library must export only one function creating a plugin instance using 
+IE_DEFINE_PLUGIN_CREATE_FUNCTION macro:
 
 .. ref-code-block:: cpp
 
 	static const :ref:`InferenceEngine::Version <doxid-struct_inference_engine_1_1_version>` version = {{2, 1}, CI_BUILD_NUMBER, "openvino_template_plugin"};
 	:ref:`IE_DEFINE_PLUGIN_CREATE_FUNCTION <doxid-group__ie__dev__api__plugin__api_1ga06b197cbe37f59f94b15a7d861e17d4e>`(Plugin, version)
 
-Next step in a plugin library implementation is the :ref:`ExecutableNetwork <doxid-openvino_docs_ie_plugin_dg_executable_network>` class.
+Next step in a plugin library implementation is the :ref:`ExecutableNetwork <executable_network_functionality>` class.
 

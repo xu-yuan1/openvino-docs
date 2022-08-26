@@ -1,11 +1,17 @@
 .. index:: pair: page; Executable Network
-.. _doxid-openvino_docs_ie_plugin_dg_executable_network:
+.. _executable_network_functionality:
+
+.. meta::
+   :description: Information regarding Executable Network functionality.
+   :keywords: executable network functionality, executable network, Inference Engine Plugin API,
+              executable network class
 
 
 Executable Network
 ==================
 
-:target:`doxid-openvino_docs_ie_plugin_dg_executable_network_1md_openvino_docs_ie_plugin_dg_executablenetwork` ``ExecutableNetwork`` class functionality:
+:target:`executable_network_functionality_1md_openvino_docs_ie_plugin_dg_executablenetwork` ``ExecutableNetwork`` class 
+functionality:
 
 * Compile an :ref:`InferenceEngine::ICNNNetwork <doxid-class_inference_engine_1_1_i_c_n_n_network>` instance to a backend specific graph representation
 
@@ -20,7 +26,10 @@ Executable Network
 Class
 ~~~~~
 
-Inference Engine Plugin API provides the helper :ref:`InferenceEngine::ExecutableNetworkThreadSafeDefault <doxid-class_inference_engine_1_1_executable_network_thread_safe_default>` class recommended to use as a base class for an executable network. Based on that, a declaration of an executable network class can look as follows:
+Inference Engine Plugin API provides the helper 
+:ref:`InferenceEngine::ExecutableNetworkThreadSafeDefault <doxid-class_inference_engine_1_1_executable_network_thread_safe_default>` 
+class recommended to use as a base class for an executable network. Based on that, a declaration of an executable network class 
+can look as follows:
 
 .. ref-code-block:: cpp
 
@@ -84,7 +93,9 @@ The example class has several fields:
 Constructor with
 ----------------
 
-This constructor accepts a generic representation of a neural network as an :ref:`InferenceEngine::ICNNNetwork <doxid-class_inference_engine_1_1_i_c_n_n_network>` reference and is compiled into a backend specific device graph:
+This constructor accepts a generic representation of a neural network as an 
+:ref:`InferenceEngine::ICNNNetwork <doxid-class_inference_engine_1_1_i_c_n_n_network>` reference and is compiled into a backend 
+specific device graph:
 
 .. ref-code-block:: cpp
 
@@ -115,7 +126,8 @@ The implementation ``CompileNetwork`` is fully device-specific.
 
 .. rubric::
 
-The function accepts a const shared pointer to ``:ref:`ngraph::Function <doxid-classngraph_1a14d7fe7c605267b52c145579e12d2a5f>``` object and performs the following steps:
+The function accepts a const shared pointer to ``:ref:`ngraph::Function <doxid-classngraph_1a14d7fe7c605267b52c145579e12d2a5f>``` 
+object and performs the following steps:
 
 #. Applies nGraph passes using ``TransformNetwork`` function, which defines plugin-specific conversion pipeline. To support low precision inference, the pipeline can include Low Precision Transformations. These transformations are usually hardware specific. You can find how to use and configure Low Precisions Transformations in :ref:`Low Precision Transformations <doxid-openvino_docs__o_v__u_g_lpt>` guide.
 
@@ -154,7 +166,8 @@ The function accepts a const shared pointer to ``:ref:`ngraph::Function <doxid-c
 	    // Perform any other steps like allocation and filling backend specific memory handles and so on
 	}
 
-.. note:: After all these steps, the backend specific graph is ready to create inference requests and perform inference.
+.. note::
+   After all these steps, the backend specific graph is ready to create inference requests and perform inference.
 
 
 
@@ -165,7 +178,8 @@ Constructor Importing from Stream
 
 This constructor creates a backend specific graph by importing from a stream object:
 
-.. note:: The export of backend specific graph is done in the ``Export`` method, and data formats must be the same for both import and export.
+.. note::
+   The export of backend specific graph is done in the ``Export`` method, and data formats must be the same for both import and export.
 
 
 
@@ -223,7 +237,8 @@ This constructor creates a backend specific graph by importing from a stream obj
 
 .. rubric::
 
-The implementation of the method should write all data to the ``model`` stream, which is required to import a backend specific graph later in the ``Plugin::Import`` method:
+The implementation of the method should write all data to the ``model`` stream, which is required to import a backend 
+specific graph later in the ``Plugin::Import`` method:
 
 .. ref-code-block:: cpp
 
@@ -254,9 +269,11 @@ The implementation of the method should write all data to the ``model`` stream, 
 
 .. rubric::
 
-The method creates an asynchronous inference request and returns it. While the public Inference Engine API has a single interface for inference request, which can be executed in synchronous and asynchronous modes, a plugin library implementation has two separate classes:
+The method creates an asynchronous inference request and returns it. While the public Inference Engine API has a single
+interface for inference request, which can be executed in synchronous and asynchronous modes, a plugin library implementation 
+has two separate classes:
 
-* :ref:`Synchronous inference request <doxid-openvino_docs_ie_plugin_dg_infer_request>`, which defines pipeline stages and runs them synchronously in the ``Infer`` method.
+* :ref:`Synchronous inference request <synchronous_inference_request>`, which defines pipeline stages and runs them synchronously in the ``Infer`` method.
 
 * :ref:`Asynchronous inference request <doxid-openvino_docs_ie_plugin_dg_async_infer_request>`, which is a wrapper for a synchronous inference request and can run a pipeline asynchronously. Depending on a device pipeline structure, it can has one or several stages:
   
@@ -264,7 +281,8 @@ The method creates an asynchronous inference request and returns it. While the p
   
   * For pipelines with multiple stages, such as performing some preprocessing on host, uploading input data to a device, running inference on a device, or downloading and postprocessing output data, schedule stages on several task executors to achieve better device use and performance. You can do it by creating a sufficient number of inference requests running in parallel. In this case, device stages of different inference requests are overlapped with preprocessing and postprocessing stage giving better performance.
     
-    .. warning:: It is up to you to decide how many task executors you need to optimally execute a device pipeline.
+    .. warning::
+	   It is up to you to decide how many task executors you need to optimally execute a device pipeline.
     
     
     
@@ -287,7 +305,9 @@ The method creates an asynchronous inference request and returns it. While the p
 
 .. rubric::
 
-This is a helper method used by ``CreateInferRequest`` to create a :ref:`synchronous inference request <doxid-openvino_docs_ie_plugin_dg_infer_request>`, which is later wrapped with the asynchronous inference request class:
+This is a helper method used by ``CreateInferRequest`` to create a 
+:ref:`synchronous inference request <synchronous_inference_request>`, which is later wrapped with 
+the asynchronous inference request class:
 
 .. ref-code-block:: cpp
 
@@ -309,7 +329,8 @@ This is a helper method used by ``CreateInferRequest`` to create a :ref:`synchro
 
 .. rubric::
 
-Returns a metric value for a metric with the name ``name``. A metric is a static type of information about an executable network. Examples of metrics:
+Returns a metric value for a metric with the name ``name``. A metric is a static type of information about an executable network. 
+Examples of metrics:
 
 * :ref:`EXEC_NETWORK_METRIC_KEY(NETWORK_NAME) <doxid-ie__plugin__config_8hpp_1adb48efa632ae9bacfa86b8a3a0d9541e>` - name of an executable network
 
@@ -347,11 +368,13 @@ Returns a metric value for a metric with the name ``name``. A metric is a static
 	    }
 	}
 
-The IE_SET_METRIC_RETURN helper macro sets metric value and checks that the actual metric type matches a type of the specified value.
+The IE_SET_METRIC_RETURN helper macro sets metric value and checks that the actual metric type matches a type of the specified 
+value.
 
 .. rubric::
 
-Returns a current value for a configuration key with the name ``name``. The method extracts configuration values an executable network is compiled with.
+Returns a current value for a configuration key with the name ``name``. The method extracts configuration values an executable 
+network is compiled with.
 
 .. ref-code-block:: cpp
 
@@ -359,7 +382,9 @@ Returns a current value for a configuration key with the name ``name``. The meth
 	    return _cfg.Get(name);
 	}
 
-This function is the only way to get configuration values when a network is imported and compiled by other developers and tools (for example, the `Compile tool <../_inference_engine_tools_compile_tool_README.html>`__).
+This function is the only way to get configuration values when a network is imported and compiled by other developers 
+and tools (for example, the `Compile tool <../_inference_engine_tools_compile_tool_README.html>`__).
 
-The next step in plugin library implementation is the :ref:`Synchronous Inference Request <doxid-openvino_docs_ie_plugin_dg_infer_request>` class.
+The next step in plugin library implementation is the 
+:ref:`Synchronous Inference Request <synchronous_inference_request>` class.
 
