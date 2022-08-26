@@ -1,5 +1,5 @@
 .. index:: pair: page; Changing Input Shapes
-.. _openvino_shape_inference:
+.. _deploy_infer__shape_inference:
 
 .. meta::
    :description: OpenVINO™ ensures a capability to change model input shape during 
@@ -14,7 +14,7 @@
 Changing Input Shapes
 =====================
 
-:target:`openvino_shape_inference_1md_openvino_docs_ov_runtime_ug_shapeinference`
+:target:`deploy_infer__shape_inference_1md_openvino_docs_ov_runtime_ug_shapeinference`
 
 .. raw:: html
 
@@ -51,7 +51,7 @@ The ``:ref:`ov::set_batch <doxid-namespaceov_1a3314e2ff91fcc9ffec05b1a77c37862b>
 
 Once the input shape of ``:ref:`ov::Model <doxid-classov_1_1_model>``` is set, call the ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` method to get an ``:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>``` object for inference with updated shapes.
 
-There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`ov::Model creation <openvino_model_representation>`.
+There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`ov::Model creation <deploy_infer__model_representation>`.
 
 Dynamic Shape Notice
 --------------------
@@ -105,7 +105,7 @@ The usage scenarios of the ``reshape`` feature can be found in :ref:`OpenVINO Sa
 
 In practice, some models are not ready to be reshaped. In such cases, a new input shape cannot be set with Model Optimizer or the ``:ref:`ov::Model::reshape <doxid-classov_1_1_model_1aa21aff80598d5089d591888a4c7f33ae>``` method.
 
-:target:`openvino_shape_inference_1troubleshooting_reshape_errors`
+:target:`deploy_infer__shape_inference_1troubleshooting_reshape_errors`
 
 Troubleshooting Reshape Errors
 ------------------------------
@@ -124,7 +124,7 @@ Model structure and logic should not change significantly after model reshaping.
 
 * Changing the model input shape may significantly affect its accuracy. For example, Object Detection models from TensorFlow have resizing restrictions by design. To keep the model valid after the reshape, choose a new input shape that satisfies conditions listed in the ``pipeline.config`` file. For details, refer to the :ref:`Tensorflow Object Detection API models resizing techniques <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__object__detection__a_p_i__models_1custom-input-shape>`.
 
-:target:`openvino_shape_inference_1how-to-fix-non-reshape-able-model`
+:target:`deploy_infer__shape_inference_1how-to-fix-non-reshape-able-model`
 
 How To Fix Non-Reshape-able Model
 ---------------------------------
@@ -189,7 +189,7 @@ The meaning of the model batch may vary depending on the model design. In order 
 
 Once the input shape of `Model <api/ie_python_api/_autosummary/openvino.runtime.Model.html>`__ is set, call the `compile_model <api/ie_python_api/_autosummary/openvino.runtime.compile_model.html>`__ method to get a `CompiledModel <api/ie_python_api/_autosummary/openvino.runtime.CompiledModel.html>`__ object for inference with updated shapes.
 
-There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`Model creation <openvino_model_representation>`.
+There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`Model creation <deploy_infer__model_representation>`.
 
 Dynamic Shape Notice
 --------------------

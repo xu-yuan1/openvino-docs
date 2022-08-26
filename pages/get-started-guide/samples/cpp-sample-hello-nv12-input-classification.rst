@@ -48,7 +48,7 @@ How It Works
 
 At startup, the sample application reads command line parameters, loads the specified model and an image in the NV12 color format to an OpenVINO™ Runtime plugin. Then, the sample creates an synchronous inference request object. When inference is done, the application outputs data to the standard output stream. You can place labels in .labels file near the model to get pretty output.
 
-You can see the explicit description of each sample step at :ref:`Integration Steps <openvino_integrate_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
+You can see the explicit description of each sample step at :ref:`Integration Steps <deploy_infer__integrate_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
 
 Building
 ~~~~~~~~
@@ -154,7 +154,7 @@ The application outputs top-10 inference results.
 See Also
 ~~~~~~~~
 
-* :ref:`Integrate the OpenVINO™ Runtime with Your Application <openvino_integrate_application>`
+* :ref:`Integrate the OpenVINO™ Runtime with Your Application <deploy_infer__integrate_application>`
 
 * :ref:`Using OpenVINO™ Toolkit Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
 

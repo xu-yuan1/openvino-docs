@@ -15,7 +15,7 @@ Introduction to OpenVINO™ Deployment
 
 Once you have a model that meets both OpenVINO™ and your requirements, you can choose among several ways of deploying it with your application:
 
-* :ref:`Run inference and develop your app with OpenVINO™ Runtime <openvino_runtime_user_guide>`.
+* :ref:`Run inference and develop your app with OpenVINO™ Runtime <deploy_infer__openvino_runtime_user_guide>`.
 
 * :ref:`Deploy your application locally <doxid-openvino_deployment_guide>`.
 

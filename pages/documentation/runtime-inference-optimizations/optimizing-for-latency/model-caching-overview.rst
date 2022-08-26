@@ -17,7 +17,7 @@ Model Caching Overview
 Introduction
 ~~~~~~~~~~~~
 
-As described in the :ref:`Integrate OpenVINO™ with Your Application <openvino_integrate_application>`, 
+As described in the :ref:`Integrate OpenVINO™ with Your Application <deploy_infer__integrate_application>`, 
 a common application flow consists of the following steps:
 
 #. **Create a Core object** : First step to manage available devices and read model objects

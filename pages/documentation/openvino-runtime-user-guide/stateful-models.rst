@@ -30,7 +30,7 @@ For more details on these operations, refer to the :ref:`ReadValue specification
 Examples of Networks with States
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To get a model with states ready for inference, convert a model from another framework to IR with Model Optimizer or create an nGraph function. (For more information, refer to the :ref:`Build OpenVINO Model section <openvino_model_representation>`). Below is the graph in both forms:
+To get a model with states ready for inference, convert a model from another framework to IR with Model Optimizer or create an nGraph function. (For more information, refer to the :ref:`Build OpenVINO Model section <deploy_infer__model_representation>`). Below is the graph in both forms:
 
 .. image::  ./_assets/state_network_example.png
 
@@ -298,11 +298,11 @@ Steps to Apply the LowLatency2 Transformation
 
 #. Get CNNNetwork. Either way is acceptable:
    
-   * :ref:`from IR or ONNX model <openvino_integrate_application>`
+   * :ref:`from IR or ONNX model <deploy_infer__integrate_application>`
    
-   * :ref:`from ov::Model <openvino_model_representation>`
+   * :ref:`from ov::Model <deploy_infer__model_representation>`
 
-#. Change the number of iterations inside ``TensorIterator`` / ``Loop`` nodes in the network, using the :ref:`Reshape <openvino_shape_inference>` feature.
+#. Change the number of iterations inside ``TensorIterator`` / ``Loop`` nodes in the network, using the :ref:`Reshape <deploy_infer__shape_inference>` feature.
 
 For example, when the ``sequence_lengths`` dimension of input of the network > 1, the ``TensorIterator`` layer has ``number_iterations``> 1. You can reshape the inputs of the network to set ``sequence_dimension`` to 1.
 
@@ -369,7 +369,7 @@ By default, the LowLatency2 transformation inserts a constant subgraph of the sa
 Known Limitations
 -----------------
 
-#. Unable to execute the :ref:`Reshape <openvino_shape_inference>` feature to change the number iterations of ``TensorIterator`` / ``Loop`` layers to apply the transformation correctly.
+#. Unable to execute the :ref:`Reshape <deploy_infer__shape_inference>` feature to change the number iterations of ``TensorIterator`` / ``Loop`` layers to apply the transformation correctly.
    
    The only way to change the number iterations of ``TensorIterator`` / ``Loop`` layer is to use the ``Reshape`` feature. However, networks can be non-reshapable. The most common reason is that the value of shapes is hardcoded in a constant somewhere in the network.
 
@@ -414,11 +414,11 @@ Steps to Apply LowLatency Transformation
 
 #. Get CNNNetwork. Either way is acceptable:
    
-   * :ref:`from IR or ONNX model <openvino_integrate_application>`
+   * :ref:`from IR or ONNX model <deploy_infer__integrate_application>`
    
-   * :ref:`from ov::Model <openvino_model_representation>`
+   * :ref:`from ov::Model <deploy_infer__model_representation>`
 
-#. :ref:`Reshape <openvino_shape_inference>` the CNNNetwork network if necessary. An example of such a **necessary case** is when the ``sequence_lengths`` dimension of input > 1, and it means that ``TensorIterator`` layer will have ``number_iterations``> 1. The inputs of the network should be reshaped to set ``sequence_dimension`` to exactly 1.
+#. :ref:`Reshape <deploy_infer__shape_inference>` the CNNNetwork network if necessary. An example of such a **necessary case** is when the ``sequence_lengths`` dimension of input > 1, and it means that ``TensorIterator`` layer will have ``number_iterations``> 1. The inputs of the network should be reshaped to set ``sequence_dimension`` to exactly 1.
 
 Usually, the following exception, which occurs after applying a transform when trying to infer the network in a plugin, indicates the need to apply the reshape feature: ``C++ exception with description "Function is incorrect. The Assign and ReadValue operations must be used in pairs in the network."`` This means that there are several pairs of ``Assign`` / ``ReadValue`` operations with the same ``variable_id`` in the network and operations were inserted into each iteration of the ``TensorIterator``.
 

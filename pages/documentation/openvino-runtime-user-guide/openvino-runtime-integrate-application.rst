@@ -1,5 +1,5 @@
 .. index:: pair: page; Integrate OpenVINO™ with Your Application
-.. _openvino_integrate_application:
+.. _deploy_infer__integrate_application:
 
 .. meta::
    :description: This article demonstrates the steps of implementing a typical 
@@ -15,7 +15,7 @@
 Integrate OpenVINO™ with Your Application
 ===========================================
 
-:target:`openvino_integrate_application_1md_openvino_docs_ov_runtime_ug_integrate_with_your_application`
+:target:`deploy_infer__integrate_application_1md_openvino_docs_ov_runtime_ug_integrate_with_your_application`
 
 .. toctree::
    :maxdepth: 1
@@ -150,7 +150,7 @@ Compile the model for a specific device using
 
 The ``:ref:`ov::Model <doxid-classov_1_1_model>``` object represents any models 
 inside the OpenVINO™ Runtime. For more details please read article about 
-:ref:`OpenVINO™ Model representation <openvino_model_representation>`.
+:ref:`OpenVINO™ Model representation <deploy_infer__model_representation>`.
 
 The code above creates a compiled model associated with a single hardware 
 device from the model object. It is possible to create as many compiled 
@@ -161,7 +161,7 @@ hardware resources). To learn how to change the device configuration, read the
 Step 3. Create an Inference Request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>``` class provides methods for model inference in OpenVINO™ Runtime. Create an infer request using the following code (see :ref:`InferRequest detailed documentation <openvino_inference_request>` for more details):
+``:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>``` class provides methods for model inference in OpenVINO™ Runtime. Create an infer request using the following code (see :ref:`InferRequest detailed documentation <deploy_infer__inference_request>` for more details):
 
 .. tab:: C++
 
@@ -230,7 +230,7 @@ to wait for the inference results:
 
 This section demonstrates a simple pipeline. To get more information about 
 other ways to perform inference, read the "Run inference" section in dedicated 
-:ref:`OpenVINO™ Inference Request <openvino_inference_request>` article.
+:ref:`OpenVINO™ Inference Request <deploy_infer__inference_request>` article.
 
 Step 6. Process the Inference Results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

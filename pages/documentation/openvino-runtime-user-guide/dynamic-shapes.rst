@@ -13,7 +13,7 @@ Dynamic Shapes
 
    ./dynamic-shapes/dynamic-shapes-not-applicable
 
-As it was demonstrated in the :ref:`Changing Input Shapes <openvino_shape_inference>` article, there are models that support changing input shapes before model compilation in ``Core::compile_model``. Reshaping models provides an ability to customize the model input shape for the exact size required in the end application. This article explains how the ability of model to reshape can further be leveraged in more dynamic scenarios.
+As it was demonstrated in the :ref:`Changing Input Shapes <deploy_infer__shape_inference>` article, there are models that support changing input shapes before model compilation in ``Core::compile_model``. Reshaping models provides an ability to customize the model input shape for the exact size required in the end application. This article explains how the ability of model to reshape can further be leveraged in more dynamic scenarios.
 
 Applying Dynamic Shapes
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -242,14 +242,14 @@ Apart from a dynamic dimension, the lower and/or upper bounds can also be specif
 
 Information about bounds gives an opportunity for the inference plugin to apply additional optimizations. Using dynamic shapes assumes the plugins apply more flexible optimization approach during model compilation. It may require more time/memory for model compilation and inference. Therefore, providing any additional information, like bounds, can be beneficial. For the same reason, it is not recommended to leave dimensions as undefined, without the real need.
 
-When specifying bounds, the lower bound is not as important as the upper one. The upper bound allows inference devices to allocate memory for intermediate tensors more precisely. It also allows using a fewer number of tuned kernels for different sizes. More precisely, benefits of specifying the lower or upper bound is device dependent. Depending on the plugin, specifying the upper bounds can be required. For information about dynamic shapes support on different devices, refer to the :ref:`Features Support Matrix <working_with_devices_1features_support_matrix>`.
+When specifying bounds, the lower bound is not as important as the upper one. The upper bound allows inference devices to allocate memory for intermediate tensors more precisely. It also allows using a fewer number of tuned kernels for different sizes. More precisely, benefits of specifying the lower or upper bound is device dependent. Depending on the plugin, specifying the upper bounds can be required. For information about dynamic shapes support on different devices, refer to the :ref:`Features Support Matrix <deploy_infer__working_with_devices_1features_support_matrix>`.
 
 If the lower and upper bounds for a dimension are known, it is recommended to specify them, even if a plugin can execute a model without the bounds.
 
 Setting Input Tensors
 ---------------------
 
-Preparing a model with the ``reshape`` method is the first step. The second step is passing a tensor with an appropriate shape to infer request. This is similar to the :ref:`regular steps <openvino_integrate_application>`. However, tensors can now be passed with different shapes for the same executable model and even for the same inference request:
+Preparing a model with the ``reshape`` method is the first step. The second step is passing a tensor with an appropriate shape to infer request. This is similar to the :ref:`regular steps <deploy_infer__integrate_application>`. However, tensors can now be passed with different shapes for the same executable model and even for the same inference request:
 
 .. raw:: html
 

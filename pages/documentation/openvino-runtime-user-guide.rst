@@ -1,5 +1,5 @@
 .. index:: pair: page; Performing Inference with OpenVINO Runtime
-.. _openvino_runtime_user_guide:
+.. _deploy_infer__openvino_runtime_user_guide:
 
 .. meta::
    :description: OpenVINO Runtime is an API comprised of a set of C++ libraries 
@@ -12,7 +12,7 @@
 Performing Inference with OpenVINO Runtime
 ==========================================
 
-:target:`openvino_runtime_user_guide_1md_openvino_docs_ov_runtime_ug_openvino_intro`
+:target:`deploy_infer__openvino_runtime_user_guide_1md_openvino_docs_ov_runtime_ug_openvino_intro`
 
 .. _deep learning openvino runtime:
 

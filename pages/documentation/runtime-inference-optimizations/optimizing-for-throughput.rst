@@ -93,7 +93,7 @@ processes internally. Just like with other throughput-oriented scenarios, there
 are several major pre-requisites for optimal multi-device performance:
 
 * Using the :ref:`Asynchronous API <deployment_general_optimizations_1async_api>` 
-  and :ref:`callbacks <openvino_inference_request>` in particular.
+  and :ref:`callbacks <deploy_infer__inference_request>` in particular.
 
 * Providing the multi-device (and hence the underlying devices) with enough 
   data to crunch. As the inference requests are naturally independent data pieces, 

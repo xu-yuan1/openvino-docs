@@ -56,7 +56,7 @@ After that, you will get the pretrained frozen model file ``output_graph.pb`` in
 
 The main and most computationally expensive part of the model converts the preprocessed audio into text. There are two specificities with the supported part of the model.
 
-The first is that the model contains an input with sequence length. So the model can be converted with a fixed input length shape, thus the model is not reshapable. Refer to the :ref:`Using Shape Inference <openvino_shape_inference>` guide.
+The first is that the model contains an input with sequence length. So the model can be converted with a fixed input length shape, thus the model is not reshapable. Refer to the :ref:`Using Shape Inference <deploy_infer__shape_inference>` guide.
 
 The second is that the frozen model still has two variables: ``previous_state_c`` and ``previous_state_h``, figure with the frozen \*.pb model is below. It means that the model keeps training these variables at each inference.
 

@@ -5,7 +5,7 @@
 Hello Reshape SSD Python Sample
 =================================
 
-:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_hello_reshape_ssd__r_e_a_d_m_e_1md_openvino_samples_python_hello_reshape_ssd_readme` This sample demonstrates how to do synchronous inference of object detection models using :ref:`Shape Inference feature <openvino_shape_inference>`.
+:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_hello_reshape_ssd__r_e_a_d_m_e_1md_openvino_samples_python_hello_reshape_ssd_readme` This sample demonstrates how to do synchronous inference of object detection models using :ref:`Shape Inference feature <deploy_infer__shape_inference>`.
 
 Models with only 1 input and output are supported.
 
@@ -46,7 +46,7 @@ At startup, the sample application reads command-line parameters, prepares input
 
 As a result, the program creates an output image, logging each step in a standard output stream.
 
-You can see the explicit description of each sample step at :ref:`Integration Steps <openvino_integrate_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
+You can see the explicit description of each sample step at :ref:`Integration Steps <deploy_infer__integrate_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
 
 Running
 ~~~~~~~
@@ -117,7 +117,7 @@ The sample application logs each step in a standard output stream and creates an
 See Also
 ~~~~~~~~
 
-* :ref:`Integrate the OpenVINO™ Runtime with Your Application <openvino_integrate_application>`
+* :ref:`Integrate the OpenVINO™ Runtime with Your Application <deploy_infer__integrate_application>`
 
 * :ref:`Using OpenVINO™ Toolkit Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
 

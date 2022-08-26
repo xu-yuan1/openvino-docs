@@ -60,7 +60,7 @@ on separate devices for each of them. Finally, when multiple models are
 executed in parallel on a device, using additional 
 ``:ref:`ov::hint::model_priority <doxid-group__ov__runtime__cpp__prop__api_1ga3663a3976ff7c4bdc3ccdb9ce44945ce>``` 
 may help to define relative priorities of the models. Refer to the documentation 
-on the :ref:`matrix features support for OpenVINO devices <working_with_devices_1features_support_matrix>` 
+on the :ref:`matrix features support for OpenVINO devices <deploy_infer__working_with_devices_1features_support_matrix>` 
 to check if your device supports the feature.
 
 **First-Inference Latency and Model Load/Compile Time**

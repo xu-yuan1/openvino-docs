@@ -5,7 +5,7 @@
 High-level Performance Hints
 ============================
 
-:target:`doxid-openvino_docs__o_v__u_g__performance__hints_1md_openvino_docs_ov_runtime_ug_performance_hints` Even though all :ref:`supported devices <working_with_devices>` in OpenVINO™ offer low-level performance settings, utilizing them is not recommended outside of very few cases. The preferred way to configure performance in OpenVINO Runtime is using performance hints. This is a future-proof solution fully compatible with the :ref:`automatic device selection inference mode <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` and designed with *portability* in mind.
+:target:`doxid-openvino_docs__o_v__u_g__performance__hints_1md_openvino_docs_ov_runtime_ug_performance_hints` Even though all :ref:`supported devices <deploy_infer__working_with_devices>` in OpenVINO™ offer low-level performance settings, utilizing them is not recommended outside of very few cases. The preferred way to configure performance in OpenVINO Runtime is using performance hints. This is a future-proof solution fully compatible with the :ref:`automatic device selection inference mode <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` and designed with *portability* in mind.
 
 The hints also set the direction of the configuration in the right order. Instead of mapping the application needs to the low-level performance settings, and keeping an associated application logic to configure each possible device separately, the hints express a target scenario with a single config key and let the *device* configure itself in response.
 
@@ -25,7 +25,7 @@ Keep in mind that a typical model may take significantly more time to load with 
 Performance Hints: How It Works
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Internally, every device "translates" the value of the hint to the actual performance settings. For example, the ``:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>``` selects the number of CPU or GPU streams. Additionally, the optimal batch size is selected for the GPU and the :ref:`automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` is applied whenever possible. To check whether the device supports it, refer to the :ref:`devices/features support matrix <working_with_devices>` article.
+Internally, every device "translates" the value of the hint to the actual performance settings. For example, the ``:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>``` selects the number of CPU or GPU streams. Additionally, the optimal batch size is selected for the GPU and the :ref:`automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` is applied whenever possible. To check whether the device supports it, refer to the :ref:`devices/features support matrix <deploy_infer__working_with_devices>` article.
 
 The resulting (device-specific) settings can be queried back from the instance of the ``ov:Compiled_Model``.
 
@@ -113,7 +113,7 @@ Keep in mind that ``:ref:`ov::hint::PerformanceMode::LATENCY <doxid-group__ov__r
 Prefer Async API
 ~~~~~~~~~~~~~~~~
 
-The API of the inference requests offers Sync and Async execution. The ``:ref:`ov::InferRequest::infer() <doxid-classov_1_1_infer_request_1abcb7facc9f7c4b9226a1fd343e56958d>``` is inherently synchronous and simple to operate (as it serializes the execution flow in the current application thread). The Async "splits" the ``infer()`` into ``:ref:`ov::InferRequest::start_async() <doxid-classov_1_1_infer_request_1a5a05ae4352f804c865e11f5d68b983d5>``` and ``:ref:`ov::InferRequest::wait() <doxid-classov_1_1_infer_request_1ab0e0739da45789d816f8b5584a0b5691>``` (or callbacks). For more information, refer to the :ref:`API examples <openvino_inference_request>`. Although the Synchronous API can be somewhat easier to start with, it is recommended to use the Asynchronous (callbacks-based) API in the production code. It is the most general and scalable way to implement the flow control for any possible number of requests (and thus both latency and throughput scenarios).
+The API of the inference requests offers Sync and Async execution. The ``:ref:`ov::InferRequest::infer() <doxid-classov_1_1_infer_request_1abcb7facc9f7c4b9226a1fd343e56958d>``` is inherently synchronous and simple to operate (as it serializes the execution flow in the current application thread). The Async "splits" the ``infer()`` into ``:ref:`ov::InferRequest::start_async() <doxid-classov_1_1_infer_request_1a5a05ae4352f804c865e11f5d68b983d5>``` and ``:ref:`ov::InferRequest::wait() <doxid-classov_1_1_infer_request_1ab0e0739da45789d816f8b5584a0b5691>``` (or callbacks). For more information, refer to the :ref:`API examples <deploy_infer__inference_request>`. Although the Synchronous API can be somewhat easier to start with, it is recommended to use the Asynchronous (callbacks-based) API in the production code. It is the most general and scalable way to implement the flow control for any possible number of requests (and thus both latency and throughput scenarios).
 
 Combining the Hints and Individual Low-Level Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -5,7 +5,7 @@
 Model Creation Python Sample
 ==============================
 
-:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_model_creation_sample__r_e_a_d_m_e_1md_openvino_samples_python_model_creation_sample_readme` This sample demonstrates how to run inference using a :ref:`model <openvino_model_representation>` built on the fly that uses weights from the LeNet classification model, which is known to work well on digit classification tasks. You do not need an XML file, the model is created from the source code on the fly.
+:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_model_creation_sample__r_e_a_d_m_e_1md_openvino_samples_python_model_creation_sample_readme` This sample demonstrates how to run inference using a :ref:`model <deploy_infer__model_representation>` built on the fly that uses weights from the LeNet classification model, which is known to work well on digit classification tasks. You do not need an XML file, the model is created from the source code on the fly.
 
 The following OpenVINO Python API is used in the application:
 
@@ -45,13 +45,13 @@ At startup, the sample application does the following:
 
 * Reads command line parameters
 
-* :ref:`Build a Model <openvino_model_representation>` and passed weights file
+* :ref:`Build a Model <deploy_infer__model_representation>` and passed weights file
 
 * Loads the model and input data to the OpenVINO™ Runtime plugin
 
 * Performs synchronous inference and processes output data, logging each step in a standard output stream
 
-You can see the explicit description of each sample step at :ref:`Integration Steps <openvino_integrate_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
+You can see the explicit description of each sample step at :ref:`Integration Steps <deploy_infer__integrate_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
 
 Running
 ~~~~~~~
@@ -153,7 +153,7 @@ The sample application logs each step in a standard output stream and outputs 10
 See Also
 ~~~~~~~~
 
-* :ref:`Integrate the OpenVINO™ Runtime with Your Application <openvino_integrate_application>`
+* :ref:`Integrate the OpenVINO™ Runtime with Your Application <deploy_infer__integrate_application>`
 
 * :ref:`Using OpenVINO™ Toolkit Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
 

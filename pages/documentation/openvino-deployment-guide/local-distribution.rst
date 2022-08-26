@@ -151,7 +151,7 @@ The ``HETERO``, ``MULTI``, ``BATCH`` and ``AUTO`` execution modes can also be us
 * If :ref:`AUTO <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` is used explicitly in the application or ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` is used without specifying a device, put ``openvino_auto_plugin`` to the distribution.
 
 .. note:: Automatic Device Selection relies on 
-   :ref:`inference device plugins <working_with_devices>`. 
+   :ref:`inference device plugins <deploy_infer__working_with_devices>`. 
    If you are not sure about what inference devices are available on target system, 
    put all the inference plugin libraries to the distribution. If 
    ``:ref:`ov::device::priorities <doxid-group__ov__runtime__cpp__prop__api_1gae88af90a18871677f39739cb0ef0101e>``` 
@@ -231,7 +231,7 @@ In this example, the application is written in C++, performs inference :ref:`sim
 
 **Auto-Device Selection between HDDL and CPU**
 
-In this example, the application is written in C++, performs inference with the :ref:`Automatic Device Selection <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` mode, limiting device list to HDDL and CPU, and reads models :ref:`created using C++ code <openvino_model_representation>`. The following libraries are used:
+In this example, the application is written in C++, performs inference with the :ref:`Automatic Device Selection <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` mode, limiting device list to HDDL and CPU, and reads models :ref:`created using C++ code <deploy_infer__model_representation>`. The following libraries are used:
 
 * The ``openvino`` library is a main dependency of the application. It links against this library.
 

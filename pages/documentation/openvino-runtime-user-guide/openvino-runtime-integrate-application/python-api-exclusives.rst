@@ -1,5 +1,5 @@
 .. index:: pair: page; OpenVINO™ Python API Exclusives
-.. _python_api_exclusives:
+.. _deploy_infer__python_api_exclusives:
 
 .. meta::
    :description: OpenVINO™ Runtime Python API includes additional features to 
@@ -15,7 +15,7 @@
 OpenVINO™ Python API Exclusives
 =================================
 
-:target:`python_api_exclusives_1md_openvino_docs_ov_runtime_ug_python_api_exclusives` 
+:target:`deploy_infer__python_api_exclusives_1md_openvino_docs_ov_runtime_ug_python_api_exclusives` 
 
 OpenVINO™ Runtime Python API offers additional features and helpers to enhance 
 user experience. The main goal of Python API is to provide user-friendly and 

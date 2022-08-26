@@ -63,7 +63,7 @@ At startup, the sample application reads command-line parameters, loads a specif
 
 If the ``-r`` option is given, error statistics are provided for each speech utterance as shown above.
 
-You can see the explicit description of each sample step at :ref:`Integration Steps <openvino_integrate_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
+You can see the explicit description of each sample step at :ref:`Integration Steps <deploy_infer__integrate_application>` section of "Integrate OpenVINO™ Runtime with Your Application" guide.
 
 GNA-specific details
 --------------------
@@ -294,7 +294,7 @@ All of mentioned files can be downloaded from `https://storage.openvinotoolkit.o
 See Also
 ~~~~~~~~
 
-* :ref:`Integrate the OpenVINO™ Runtime with Your Application <openvino_integrate_application>`
+* :ref:`Integrate the OpenVINO™ Runtime with Your Application <deploy_infer__integrate_application>`
 
 * :ref:`Using OpenVINO™ Toolkit Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
 

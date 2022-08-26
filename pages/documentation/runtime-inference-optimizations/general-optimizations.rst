@@ -53,7 +53,7 @@ is inherently synchronous and executes immediately (effectively serializing the
 execution flow in the current application thread), the Async "splits" the 
 ``infer()`` into ``:ref:`ov::InferRequest::start_async() <doxid-classov_1_1_infer_request_1a5a05ae4352f804c865e11f5d68b983d5>``` 
 and ``:ref:`ov::InferRequest::wait() <doxid-classov_1_1_infer_request_1ab0e0739da45789d816f8b5584a0b5691>```. 
-For more information, see the :ref:`API examples <openvino_inference_request>`.
+For more information, see the :ref:`API examples <deploy_infer__inference_request>`.
 
 A typical use case for the 
 ``:ref:`ov::InferRequest::infer() <doxid-classov_1_1_infer_request_1abcb7facc9f7c4b9226a1fd343e56958d>``` 
@@ -177,5 +177,5 @@ input/output tensors of the requests are still device-friendly. To sum it up:
   zero-copy way to proceed. For more details, see the 
   :ref:`GPU device Remote tensors API <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>`.
 
-Consider the :ref:`API examples <openvino_inference_request_1in_out_tensors>` 
+Consider the :ref:`API examples <deploy_infer__inference_request_1in_out_tensors>` 
 for the ``get_tensor`` and ``set_tensor``.

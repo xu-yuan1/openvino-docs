@@ -187,7 +187,7 @@ by using more verbose and less automated ``ConversionExtension`` class. It enabl
 a single framework operation by multiple connected OpenVINO operations constructing dependency graph of any complexity.
 
 ``ConversionExtension`` maps a single operation to a function which builds a graph using OpenVINO operation classes. 
-Follow chapter :ref:`Build a Model in OpenVINO Runtime <openvino_model_representation_1ov_ug_build_model>` 
+Follow chapter :ref:`Build a Model in OpenVINO Runtime <deploy_infer__model_representation_1ov_ug_build_model>` 
 to learn how to use OpenVINO operation classes to build a fragment of model for replacement.
 
 The next example illustrates using ``ConversionExtension`` for conversion of “ThresholdedRelu” from ONNX according to 

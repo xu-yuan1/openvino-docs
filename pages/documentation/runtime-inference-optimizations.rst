@@ -48,7 +48,7 @@ be orchestrated to save workload devoted to fetching and preparing input data.
 
 For more information on this topic, see the following articles:
 
-* :ref:`feature support by device <working_with_devices_1features_support_matrix>`,
+* :ref:`feature support by device <deploy_infer__working_with_devices_1features_support_matrix>`,
 
 * :ref:`Inputs Pre-processing with the OpenVINO <deployment_general_optimizations_1inputs_pre_processing>`.
 

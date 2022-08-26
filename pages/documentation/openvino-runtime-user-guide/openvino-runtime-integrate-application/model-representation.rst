@@ -1,5 +1,5 @@
 .. index:: pair: page; Model Representation in OpenVINO™ Runtime
-.. _openvino_model_representation:
+.. _deploy_infer__model_representation:
 
 .. meta::
    :description: In OpenVINO™ Runtime a model is represented by special classes to work with model data types and shapes.
@@ -12,7 +12,7 @@
 Model Representation in OpenVINO™ Runtime
 ===========================================
 
-:target:`openvino_model_representation_1md_openvino_docs_ov_runtime_ug_model_representation` 
+:target:`deploy_infer__model_representation_1md_openvino_docs_ov_runtime_ug_model_representation` 
 
 In OpenVINO™ Runtime, a model is represented by the ``:ref:`ov::Model <doxid-classov_1_1_model>``` 
 class.
@@ -73,7 +73,7 @@ inputs/outputs:
 
 
 For details on how to build a model in OpenVINO™ Runtime, see the 
-:ref:`Build a Model in OpenVINO™ Runtime <openvino_model_representation_1ov_ug_build_model>` 
+:ref:`Build a Model in OpenVINO™ Runtime <deploy_infer__model_representation_1ov_ug_build_model>` 
 section.
 
 OpenVINO™ Runtime model representation uses special classes to work with model 
@@ -140,7 +140,7 @@ new operations are introduced. For a complete list of operation sets supported
 in OpenVINO™ toolkit, see the :ref:`Available Operations Sets <doxid-openvino_docs_ops_opset>`. 
 To add the support for custom operations, see :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>`.
 
-.. _openvino_model_representation_1ov_ug_build_model:
+.. _deploy_infer__model_representation_1ov_ug_build_model:
 
 Building a Model in OpenVINO™ Runtime
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

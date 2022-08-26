@@ -1,5 +1,5 @@
 .. index:: pair: page; OpenVINO™ Inference Request
-.. _openvino_inference_request:
+.. _deploy_infer__inference_request:
 
 .. meta::
    :description: Infer Request mechanism in OpenVINO™ Runtime allows inferring 
@@ -13,7 +13,7 @@
 OpenVINO™ Inference Request
 =============================
 
-:target:`openvino_inference_request_1md_openvino_docs_ov_runtime_ug_ov_infer_request` 
+:target:`deploy_infer__inference_request_1md_openvino_docs_ov_runtime_ug_ov_infer_request` 
 
 OpenVINO™ Runtime uses Infer Request mechanism which allows running models on 
 different devices in asynchronous or synchronous manners. The ``:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>``` 
@@ -172,7 +172,7 @@ method if you want to abort execution of the current inference request:
       infer_request.cancel()
 
 
-:target:`openvino_inference_request_1in_out_tensors`
+:target:`deploy_infer__inference_request_1in_out_tensors`
 
 Working with Input and Output tensors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

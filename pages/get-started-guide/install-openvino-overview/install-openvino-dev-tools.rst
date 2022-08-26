@@ -167,7 +167,7 @@ Now you may continue with the following tasks:
 
 * Try out OpenVINO via `OpenVINO Notebooks <https://docs.openvino.ai/latest/notebooks/notebooks.html>`__.
 
-* To write your own OpenVINO™ applications, see :ref:`OpenVINO Runtime User Guide <openvino_runtime_user_guide>`.
+* To write your own OpenVINO™ applications, see :ref:`OpenVINO Runtime User Guide <deploy_infer__openvino_runtime_user_guide>`.
 
 * See sample applications in :ref:`OpenVINO™ Toolkit Samples Overview <doxid-openvino_docs__o_v__u_g__samples__overview>`.
 

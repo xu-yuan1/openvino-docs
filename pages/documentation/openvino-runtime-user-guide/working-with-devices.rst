@@ -1,5 +1,5 @@
 .. index:: pair: page; Working with devices
-.. _working_with_devices:
+.. _deploy_infer__working_with_devices:
 
 .. meta::
    :description: The list of types of devices and corresponding plugins which 
@@ -16,7 +16,7 @@
 Working with devices
 ====================
 
-:target:`working_with_devices_1md_openvino_docs_ov_runtime_ug_supported_plugins_device_plugins`
+:target:`deploy_infer__working_with_devices_1md_openvino_docs_ov_runtime_ug_supported_plugins_device_plugins`
 
 .. toctree::
    :maxdepth: 1
@@ -83,7 +83,7 @@ of the Intel® Distribution of the OpenVINO™ Toolkit.
 `Learn more <https://devcloud.intel.com/edge/get_started/devcloud/>`__ or 
 `Register here <https://inteliot.force.com/DevcloudForEdge/s/>`__.
 
-:target:`working_with_devices_1features_support_matrix`
+:target:`deploy_infer__working_with_devices_1features_support_matrix`
 
 Feature Support Matrix
 ~~~~~~~~~~~~~~~~~~~~~~
