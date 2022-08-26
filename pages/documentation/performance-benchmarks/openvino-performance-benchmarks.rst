@@ -23,22 +23,12 @@ Intel® Distribution of OpenVINO™ toolkit Benchmark Results
    :hidden:
 
    ./openvino-performance-benchmarks/performance-benchmarks-faq
-   Download Performance Data Spreadsheet in MS Excel Format <https://docs.openvino.ai/downloads/benchmark_files/OV-2022.1-Download-Excel.xlsx>
    ./openvino-performance-benchmarks/model-accuracy-for-int8-fp32
 
 Features and benefits of Intel® technologies depend on system configuration and 
 may require enabled hardware, software or service activation. More information 
 on this subject may be obtained from the original equipment manufacturer (OEM), 
 official `Intel® web page <https://www.intel.com>`__ or retailer.
-
-Platform Configurations
-~~~~~~~~~~~~~~~~~~~~~~~
-
-:download:`A full list of HW platforms used for testing (along with their configuration)<../../../docs/benchmarks/files/Platform_list.pdf>`
-
-For more specific information, refer to the 
-`Configuration Details <https://docs.openvino.ai/resources/benchmark_files/system_configurations_2022.1.html>`__ 
-document.
 
 Benchmark Setup Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,6 +187,16 @@ yolo_v4-tf [608x608]
 .. raw:: html
 
     <div class="chart-block" data-loadcsv="../../../_static/benchmarks_csv/yolo_v4-tf-608x608.csv"></div>
+
+
+Platform Configurations
+~~~~~~~~~~~~~~~~~~~~~~~
+Download a full list of HW platforms and their configurations used for testing:
+:download:`HW platforms used for testing (PDF)<./_assets/Platform_list.pdf>`
+
+For more specific information, refer to 
+`Configuration Details <https://docs.openvino.ai/resources/benchmark_files/system_configurations_2022.1.html>`__ .
+
 
 © Intel Corporation. Intel, the Intel logo, and other Intel marks are 
 trademarks of Intel Corporation or its subsidiaries. Other names and brands 
