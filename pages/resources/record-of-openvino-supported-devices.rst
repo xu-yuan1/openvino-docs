@@ -26,7 +26,7 @@ The OpenVINO Runtime provides unique capabilities to infer deep learning models 
       - Intel Xeon with Intel® Advanced Vector Extensions 2 (Intel® AVX2), Intel® Advanced Vector Extensions 512 (Intel® AVX-512), and AVX512_BF16, Intel Core Processors with Intel AVX2, Intel Atom Processors with Intel® Streaming SIMD Extensions (Intel® SSE)
     * - :ref:`VPU plugins <deploy_infer__vpu_device>` (available in the Intel® Distribution of OpenVINO™ toolkit)
       - Intel® Neural Compute Stick 2 powered by the Intel® Movidius™ Myriad™ X, Intel® Vision Accelerator Design with Intel® Movidius™ VPUs
-    * - :ref:`GNA plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a>` (available in the Intel® Distribution of OpenVINO™ toolkit)
+    * - :ref:`GNA plugin <deploy_infer__gna_device>` (available in the Intel® Distribution of OpenVINO™ toolkit)
       - Intel Speech Enabling Developer Kit, Amazon Alexa\* Premium Far-Field Developer Kit, Intel Pentium Silver J5005 Processor, Intel Pentium Silver N5000 Processor, Intel Celeron J4005 Processor, Intel Celeron J4105 Processor, Intel Celeron Processor N4100, Intel Celeron Processor N4000, Intel Core i3-8121U Processor, Intel Core i7-1065G7 Processor, Intel Core i7-1060G7 Processor, Intel Core i5-1035G4 Processor, Intel Core i5-1035G7 Processor, Intel Core i5-1035G1 Processor, Intel Core i5-1030G7 Processor, Intel Core i5-1030G4 Processor, Intel Core i3-1005G1 Processor, Intel Core i3-1000G1 Processor, Intel Core i3-1000G4 Processor
     * - :ref:`Arm® CPU plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__a_r_m__c_p_u>` (unavailable in the Intel® Distribution of OpenVINO™ toolkit)
       - Raspberry Pi™ 4 Model B, Apple® Mac mini with M1 chip, NVIDIA® Jetson Nano™, Android™ devices

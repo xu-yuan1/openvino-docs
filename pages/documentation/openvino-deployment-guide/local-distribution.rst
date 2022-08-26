@@ -43,7 +43,7 @@ For each inference device, OpenVINO Runtime has its own plugin library:
 
 * ``openvino_intel_gpu_plugin`` for :ref:`Intel® GPU devices <deploy_infer__gpu_device>`.
 
-* ``openvino_intel_gna_plugin`` for :ref:`Intel® GNA devices <doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a>`.
+* ``openvino_intel_gna_plugin`` for :ref:`Intel® GNA devices <deploy_infer__gna_device>`.
 
 * ``openvino_intel_myriad_plugin`` for :ref:`Intel® MYRIAD devices <deploy_infer__vpu_myriad_device>`.
 

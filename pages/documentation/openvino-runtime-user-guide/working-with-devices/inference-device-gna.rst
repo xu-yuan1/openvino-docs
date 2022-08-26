@@ -1,11 +1,23 @@
 .. index:: pair: page; GNA Device
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a:
+.. _deploy_infer__gna_device:
 
+.. meta::
+   :description: The GNA plugin in OpenVINO™ Runtime enables running inference 
+                 on Intel® Gaussian & Neural Accelerator (GNA) and in the 
+                 software execution mode on CPU.
+   :keywords: OpenVINO™, GNA plugin, OpenVINO Runtime, GNA device, inference device, 
+              inference, model inference, software execution mode, CPU device, 
+              offload inference, Intel® Core™ Processors, GNA 2.0, Intel® GNA 
+              hardware, compile model, GNA 3.0, 2D convolution, interoperability,
+              software emulation mode, Windows GNA driver, i16 data type, i8 data 
+              type, Automatic QoS feature, noise reduction, stateful models, 
+              model caching, profiling, inference request, import model, 
+              Convolution, MatMul, Convolution layer, MatMul layer
 
 GNA Device
 ==========
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a_1md_openvino_docs_ov_runtime_ug_supported_plugins_gna` The Intel® Gaussian & Neural Accelerator (GNA) is a low-power neural coprocessor for continuous inference at the edge.
+:target:`deploy_infer__gna_device_1md_openvino_docs_ov_runtime_ug_supported_plugins_gna` The Intel® Gaussian & Neural Accelerator (GNA) is a low-power neural coprocessor for continuous inference at the edge.
 
 Intel® GNA is not intended to replace typical inference devices such as the CPU, graphics processing unit (GPU), or vision processing unit (VPU). It is designed for offloading continuous inference workloads including but not limited to noise reduction or speech recognition to save power and free CPU resources.
 

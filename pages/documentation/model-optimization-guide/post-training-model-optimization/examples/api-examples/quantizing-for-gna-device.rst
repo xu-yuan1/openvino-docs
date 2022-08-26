@@ -20,7 +20,7 @@ Quantizing for GNA Device
 
 This example demonstrates the use of the 
 :ref:`Post-training Optimization Tool API <pot_api_reference>` 
-for the task of quantizing a speech model for :ref:`GNA <doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a>` 
+for the task of quantizing a speech model for :ref:`GNA <deploy_infer__gna_device>` 
 device. Quantization for GNA is different from CPU quantization due to device 
 specific: GNA supports quantized inputs in INT16 and INT32 (for activations) 
 precision and quantized weights in INT8 and INT16 precision.
