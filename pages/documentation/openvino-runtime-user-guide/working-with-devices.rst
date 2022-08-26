@@ -37,14 +37,14 @@ following device types with corresponding plugins:
 
     * - Plugin
       - Device types
-    * - :ref:`CPU <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`
+    * - :ref:`CPU <deploy_infer__cpu_device>`
       - Intel® Xeon®, Intel® Core™ and Intel® Atom® processors with Intel® 
         Streaming SIMD Extensions (Intel® SSE4.2), Intel® Advanced Vector 
         Extensions 2 (Intel® AVX2), Intel® Advanced Vector Extensions 512 
         (Intel® AVX-512), Intel® Vector Neural Network Instructions (Intel® 
         AVX512-VNNI) and bfloat16 extension for AVX-512 (Intel® AVX-512_BF16 
         Extension)
-    * - :ref:`GPU <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>`
+    * - :ref:`GPU <deploy_infer__gpu_device>`
       - Intel® Graphics, including Intel® HD Graphics, Intel® UHD Graphics, 
         Intel® Iris® Graphics, Intel® Xe Graphics, Intel® Xe MAX Graphics
     * - :ref:`VPUs <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>`
@@ -94,8 +94,8 @@ The table below demonstrates support of key features by OpenVINO device plugins.
     :header-rows: 1
 
     * - Capability
-      - :ref:`CPU <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`
-      - :ref:`GPU <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>`
+      - :ref:`CPU <deploy_infer__cpu_device>`
+      - :ref:`GPU <deploy_infer__gpu_device>`
       - :ref:`GNA <doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a>`
       - :ref:`Arm® CPU <doxid-openvino_docs__o_v__u_g_supported_plugins__a_r_m__c_p_u>`
     * - :ref:`Heterogeneous execution <doxid-openvino_docs__o_v__u_g__hetero_execution>`

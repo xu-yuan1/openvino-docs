@@ -1,11 +1,24 @@
 .. index:: pair: page; GPU Device
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u:
+.. _deploy_infer__gpu_device:
 
+.. meta::
+   :description: The GPU plugin in the Intel® Distribution of OpenVINO™ toolkit 
+                 is is an OpenCL based plugin for inference of deep neural 
+                 networks on Intel® GPus.
+   :keywords: OpenVINO™, OpenVINO Runtime, GPU plugin, Intel GPU, inference, 
+              inference device, integrated Intel GPU, discrete Intel GPU, 
+              inference precision, f32 data type, f16 data type, bfloat16, 
+              u8 data type, i8 data type, u1 data type, FP32, FP32 precision, 
+              floating-point data type, FP16 precision, multi-device 
+              execution, multi-stream execution, dynamic shapes, preprocessing 
+              acceleration, model caching, extensibility, read-write 
+              properties, read-only properties, OpenVINO IR, OpenVINO 
+              Intermediate Representation, compile model, BATCH, BATCH plugin
 
 GPU Device
 ==========
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u_1md_openvino_docs_ov_runtime_ug_supported_plugins_gpu`
+:target:`deploy_infer__gpu_device_1md_openvino_docs_ov_runtime_ug_supported_plugins_gpu`
 
 .. toctree::
    :maxdepth: 1
@@ -384,7 +397,7 @@ With such preprocessing, GPU plugin will expect
 or ``:ref:`ov::InferRequest::set_tensors() <doxid-classov_1_1_infer_request_1a935a952c07cc7130a64614d0952db997>``` 
 methods.
 
-For usage examples, refer to the :ref:`RemoteTensor API <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>`.
+For usage examples, refer to the :ref:`RemoteTensor API <deploy_infer__gpu_device_remote_tensor>`.
 
 For more details, see the :ref:`preprocessing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
 
@@ -413,7 +426,7 @@ GPU Context and Memory Sharing via RemoteTensor API
 ---------------------------------------------------
 
 For information on this subject, see the 
-:ref:`RemoteTensor API of GPU Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>`.
+:ref:`RemoteTensor API of GPU Plugin <deploy_infer__gpu_device_remote_tensor>`.
 
 Supported Properties
 ~~~~~~~~~~~~~~~~~~~~
@@ -520,7 +533,7 @@ general OpenCL tips apply:
 
 * If your application performs inference on the CPU alongside the GPU, or otherwise 
   loads the host heavily, make sure that the OpenCL driver threads do not starve. 
-  :ref:`CPU configuration options <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>` 
+  :ref:`CPU configuration options <deploy_infer__cpu_device>` 
   can be used to limit the number of inference threads for the CPU plugin.
 
 * Even in the GPU-only scenario, a GPU driver might occupy a CPU core with 
@@ -530,7 +543,7 @@ general OpenCL tips apply:
   GPU streams or :ref:`throughput performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>`.
 
 * When operating media inputs, consider 
-  :ref:`remote tensors API of the GPU Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>`.
+  :ref:`remote tensors API of the GPU Plugin <deploy_infer__gpu_device_remote_tensor>`.
 
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~

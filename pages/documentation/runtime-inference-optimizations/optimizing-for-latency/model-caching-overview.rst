@@ -119,5 +119,5 @@ Not every device supports network import/export capability. For those that don't
          :language: python
          :fragment: [ov:caching:part3]
 
-.. note:: The GPU plugin does not have the EXPORT_IMPORT capability, and does not support model caching yet. However, the GPU plugin supports caching kernels (see the :ref:`GPU plugin documentation <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>`). Kernel caching for the GPU plugin can be accessed the same way as model caching: by setting the ``CACHE_DIR`` configuration key to a folder where the cache should be stored.
+.. note:: The GPU plugin does not have the EXPORT_IMPORT capability, and does not support model caching yet. However, the GPU plugin supports caching kernels (see the :ref:`GPU plugin documentation <deploy_infer__gpu_device>`). Kernel caching for the GPU plugin can be accessed the same way as model caching: by setting the ``CACHE_DIR`` configuration key to a folder where the cache should be stored.
 

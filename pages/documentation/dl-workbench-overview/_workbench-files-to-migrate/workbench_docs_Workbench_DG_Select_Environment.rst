@@ -44,10 +44,10 @@ Targets supported in the DL Workbench:
       - Plugin name in OpenVINO™ Runtime
       - Examples of devices
     * - CPU
-      - :ref:`CPU <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`
+      - :ref:`CPU <deploy_infer__cpu_device>`
       - Intel® Xeon® with Intel® AVX2 and AVX512, Intel® Core™ processors with Intel® AVX2, Intel Atom® processors with Intel® SSE
     * - GPU
-      - :ref:`GPU <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>`
+      - :ref:`GPU <deploy_infer__gpu_device>`
       - Intel® Processor Graphics, including Intel® HD Graphics and Intel® Iris® Graphics
     * - MYRIAD
       - :ref:`MYRIAD <doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d>`

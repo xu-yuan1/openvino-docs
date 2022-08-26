@@ -39,9 +39,9 @@ Libraries for Compute Devices
 
 For each inference device, OpenVINO Runtime has its own plugin library:
 
-* ``openvino_intel_cpu_plugin`` for :ref:`Intel® CPU devices <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`.
+* ``openvino_intel_cpu_plugin`` for :ref:`Intel® CPU devices <deploy_infer__cpu_device>`.
 
-* ``openvino_intel_gpu_plugin`` for :ref:`Intel® GPU devices <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>`.
+* ``openvino_intel_gpu_plugin`` for :ref:`Intel® GPU devices <deploy_infer__gpu_device>`.
 
 * ``openvino_intel_gna_plugin`` for :ref:`Intel® GNA devices <doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a>`.
 
@@ -225,7 +225,7 @@ In this example, the application is written in C++, performs inference :ref:`sim
 
 * ``openvino_auto_plugin`` is used for Multi-Device Execution.
 
-* ``openvino_auto_batch_plugin`` can be also put to the distribution to improve the saturation of :ref:`Intel® GPU <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>` device. If there is no such plugin, :ref:`Automatic Batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` is turned off.
+* ``openvino_auto_batch_plugin`` can be also put to the distribution to improve the saturation of :ref:`Intel® GPU <deploy_infer__gpu_device>` device. If there is no such plugin, :ref:`Automatic Batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` is turned off.
 
 * ``openvino_onnx_frontend`` is used to read source models.
 

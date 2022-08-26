@@ -1,11 +1,25 @@
 .. index:: pair: page; CPU Device
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u:
+.. _deploy_infer__cpu_device:
 
+.. meta::
+   :description: The CPU plugin in the Intel® Distribution of OpenVINO™ toolkit 
+                 is developed to achieve high performance inference of neural 
+                 networks on Intel® x86-64 CPUs.
+   :keywords: OpenVINO™, CPU plugin, Intel® x86-64 CPU, OpenVINO Runtime CPU plugin, 
+              device name, compile_model, NUMA node, inference device, inference, 
+              model inference, inference data types, floating-point data type, 
+              integer data type, quantized data type, f32, bf16, Bfloat16, i32, 
+              u8, i8, u1, AVX512_BF16, convert model, model precision, multi-device 
+              execution, multi-stream execution, dynamic shapes, preprocessing 
+              acceleration, model caching, extensibility, stateful models, read-write 
+              properties, read-only properties, denormals optimization, denormals, 
+              denormal number, FTZ, Flush-To-Zero, DAZ, Denormals-As-Zero, 
+              denormals_optimization
 
 CPU Device
 ==========
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u_1md_openvino_docs_ov_runtime_ug_supported_plugins_cpu` 
+:target:`deploy_infer__cpu_device_1md_openvino_docs_ov_runtime_ug_supported_plugins_cpu` 
 
 The CPU plugin is a part of the Intel® Distribution of OpenVINO™ toolkit. It is 
 developed to achieve high performance inference of neural networks on Intel® x86-64 

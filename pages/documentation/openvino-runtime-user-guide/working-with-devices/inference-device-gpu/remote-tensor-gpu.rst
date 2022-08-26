@@ -1,11 +1,25 @@
 .. index:: pair: page; Remote Tensor API of GPU Plugin
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i:
+.. _deploy_infer__gpu_device_remote_tensor:
 
+.. meta::
+   :description: The Remote Tensor API of GPU plugin in OpenVINO™ supports 
+                 interoperability with existing native APIs, such as OpenCL, 
+                 Microsoft DirectX, or VAAPI.
+   :keywords: OpenVINO™, GPU plugin, GPU device, inference, inference device, 
+              tensor, remote tensor, Remote Tensor API, ov::RemoteContext, 
+              ov::RemoteTensor, interoperability, OpenCL, GPU pipeline, 
+              ov::CompiledModel, context sharing, OpenCL context, native handle, 
+              create RemoteContext, memory sharing, NV12, NV12 input, queue 
+              sharing, shared context, Loop, TensorIterator, DetectionOutput, 
+              NonMaxSuppression, OpenCL Kernel, OpenCL Kernel execution, 
+              NV12 VAAPI, NV12 VAAPI Video Decoder Surface
 
 Remote Tensor API of GPU Plugin
 ===============================
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i_1md_openvino_docs_ov_runtime_ug_supported_plugins_gpu_remotetensor_api` The GPU plugin implementation of the ``:ref:`ov::RemoteContext <doxid-classov_1_1_remote_context>``` and ``:ref:`ov::RemoteTensor <doxid-classov_1_1_remote_tensor>``` interfaces supports GPU pipeline developers who need video memory sharing and interoperability with existing native APIs, such as OpenCL, Microsoft DirectX, or VAAPI. Using these interfaces allows you to avoid any memory copy overhead when plugging OpenVINO™ inference into an existing GPU pipeline. It also enables OpenCL kernels to participate in the pipeline to become native buffer consumers or producers of the OpenVINO™ inference.
+:target:`deploy_infer__gpu_device_remote_tensor_1md_openvino_docs_ov_runtime_ug_supported_plugins_gpu_remotetensor_api` 
+
+The GPU plugin implementation of the ``:ref:`ov::RemoteContext <doxid-classov_1_1_remote_context>``` and ``:ref:`ov::RemoteTensor <doxid-classov_1_1_remote_tensor>``` interfaces supports GPU pipeline developers who need video memory sharing and interoperability with existing native APIs, such as OpenCL, Microsoft DirectX, or VAAPI. Using these interfaces allows you to avoid any memory copy overhead when plugging OpenVINO™ inference into an existing GPU pipeline. It also enables OpenCL kernels to participate in the pipeline to become native buffer consumers or producers of the OpenVINO™ inference.
 
 There are two interoperability scenarios supported by the Remote Tensor API:
 

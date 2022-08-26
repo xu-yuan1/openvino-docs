@@ -58,7 +58,7 @@ Selecting **By Output Precision** means that each layer is colored corresponding
 Recommendations on Reading Model Graphs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To learn about graph optimization algorithms supported on different plugins, see the OpenVINO™ Runtime :ref:`CPU <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`, :ref:`Intel® Movidius™ Neural Compute Stick 2 <doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d>` and :ref:`Intel® Vision Accelerator Design with Intel® Movidius™ VPUs <doxid-openvino_docs__o_v__u_g_supported_plugins__h_d_d_l>` supported plugins documentation. For additional details on reading graphs of a model executed on a VPU plugin, see the section below.
+To learn about graph optimization algorithms supported on different plugins, see the OpenVINO™ Runtime :ref:`CPU <deploy_infer__cpu_device>`, :ref:`Intel® Movidius™ Neural Compute Stick 2 <doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d>` and :ref:`Intel® Vision Accelerator Design with Intel® Movidius™ VPUs <doxid-openvino_docs__o_v__u_g_supported_plugins__h_d_d_l>` supported plugins documentation. For additional details on reading graphs of a model executed on a VPU plugin, see the section below.
 
 Models Executed on a VPU Plugin
 -------------------------------

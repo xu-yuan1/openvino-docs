@@ -40,7 +40,7 @@ perform any unnecessary steps in the code:
   :ref:`Image Pre-processing and Conversion <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
 
 * Data which is already in the "on-device" memory can be input directly by 
-  using the :ref:`remote tensors API of the GPU Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>`.
+  using the :ref:`remote tensors API of the GPU Plugin <deploy_infer__gpu_device_remote_tensor>`.
 
 :target:`deployment_general_optimizations_1async_api`
 
@@ -175,7 +175,7 @@ input/output tensors of the requests are still device-friendly. To sum it up:
 * In contrast, when the input tensors are already in the **on-device memory** 
   (e.g. as a result of the video-decoding), prefer the ``set_tensor`` as a 
   zero-copy way to proceed. For more details, see the 
-  :ref:`GPU device Remote tensors API <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u__remote_tensor__a_p_i>`.
+  :ref:`GPU device Remote tensors API <deploy_infer__gpu_device_remote_tensor>`.
 
 Consider the :ref:`API examples <deploy_infer__inference_request_1in_out_tensors>` 
 for the ``get_tensor`` and ``set_tensor``.

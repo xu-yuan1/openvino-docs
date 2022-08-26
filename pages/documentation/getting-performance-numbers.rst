@@ -117,7 +117,7 @@ outputs internal execution breakdown.
 
 For example, the table shown below is the part of performance counters for quantized 
 `TensorFlow implementation of ResNet-50 <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/resnet-50-tf>`__ 
-model inference on :ref:`CPU Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`. 
+model inference on :ref:`CPU Plugin <deploy_infer__cpu_device>`. 
 Keep in mind that since the device is CPU, the ``realTime`` wall clock and the 
 ``cpu`` time layers are the same. Information about layer precision is also 
 stored in the performance counters.
@@ -197,7 +197,7 @@ suffixes. The layers could have the following marks:
 
 All ``Convolution`` layers are executed in ``int8`` precision. The rest of the 
 layers are fused into Convolutions using post-operation optimization, as described 
-in :ref:`CPU Device <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`. 
+in :ref:`CPU Device <deploy_infer__cpu_device>`. 
 This contains layer names (as seen in OpenVINO IR), type of the layer, and 
 execution statistics.
 

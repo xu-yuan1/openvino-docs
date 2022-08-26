@@ -20,9 +20,9 @@ The OpenVINO Runtime provides unique capabilities to infer deep learning models 
 
     * - Plugin
       - Device types
-    * - :ref:`GPU plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>`
+    * - :ref:`GPU plugin <deploy_infer__gpu_device>`
       - Intel Processor Graphics, including Intel HD Graphics and Intel Iris Graphics
-    * - :ref:`CPU plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`
+    * - :ref:`CPU plugin <deploy_infer__cpu_device>`
       - Intel Xeon with Intel® Advanced Vector Extensions 2 (Intel® AVX2), Intel® Advanced Vector Extensions 512 (Intel® AVX-512), and AVX512_BF16, Intel Core Processors with Intel AVX2, Intel Atom Processors with Intel® Streaming SIMD Extensions (Intel® SSE)
     * - :ref:`VPU plugins <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>` (available in the Intel® Distribution of OpenVINO™ toolkit)
       - Intel® Neural Compute Stick 2 powered by the Intel® Movidius™ Myriad™ X, Intel® Vision Accelerator Design with Intel® Movidius™ VPUs
