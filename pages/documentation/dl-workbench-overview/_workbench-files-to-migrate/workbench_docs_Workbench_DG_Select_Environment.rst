@@ -50,10 +50,10 @@ Targets supported in the DL Workbench:
       - :ref:`GPU <deploy_infer__gpu_device>`
       - Intel® Processor Graphics, including Intel® HD Graphics and Intel® Iris® Graphics
     * - MYRIAD
-      - :ref:`MYRIAD <doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d>`
+      - :ref:`MYRIAD <deploy_infer__vpu_myriad_device>`
       - Intel® Movidius™ Neural Compute Stick 2
     * - HDDL
-      - :ref:`HDDL <doxid-openvino_docs__o_v__u_g_supported_plugins__h_d_d_l>`
+      - :ref:`HDDL <deploy_infer__vpu_hddl_device>`
       - Intel® Vision Accelerator Design with Intel® Movidius™ VPUs
 
 See Also

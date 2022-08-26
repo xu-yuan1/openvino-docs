@@ -45,9 +45,9 @@ For each inference device, OpenVINO Runtime has its own plugin library:
 
 * ``openvino_intel_gna_plugin`` for :ref:`Intel® GNA devices <doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a>`.
 
-* ``openvino_intel_myriad_plugin`` for :ref:`Intel® MYRIAD devices <doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d>`.
+* ``openvino_intel_myriad_plugin`` for :ref:`Intel® MYRIAD devices <deploy_infer__vpu_myriad_device>`.
 
-* ``openvino_intel_hddl_plugin`` for :ref:`Intel® HDDL device <doxid-openvino_docs__o_v__u_g_supported_plugins__h_d_d_l>`.
+* ``openvino_intel_hddl_plugin`` for :ref:`Intel® HDDL device <deploy_infer__vpu_hddl_device>`.
 
 * ``openvino_arm_cpu_plugin`` for :ref:`ARM CPU devices <doxid-openvino_docs__o_v__u_g_supported_plugins__a_r_m__c_p_u>`.
 

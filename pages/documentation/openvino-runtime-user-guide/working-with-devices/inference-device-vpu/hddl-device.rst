@@ -1,11 +1,21 @@
 .. index:: pair: page; HDDL Device
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__h_d_d_l:
+.. _deploy_infer__vpu_hddl_device:
+
+.. meta::
+   :description:  The HDDL plugin in OpenVINO™ has been developed for 
+                 inference of neural networks on Intel® Vision Accelerator Design 
+                 with Intel® Movidius™ VPUs. 
+   :keywords: OpenVINO™, OpenVINO™ Runtime plugin, inference, deep learning 
+              model, model inference, VPU plugin, HDDL plugin, HDDL device, 
+              Intel® Vision Accelerator Design, Intel® Movidius™, Intel Movidius™ 
+              Vision Processing Units, VPU configuration, KEY_VPU_HDDL_DEVICE_TAG, 
+              VPU
 
 
 HDDL Device
 ===========
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__h_d_d_l_1md_openvino_docs_ov_runtime_ug_supported_plugins_hddl`
+:target:`deploy_infer__vpu_hddl_device_1md_openvino_docs_ov_runtime_ug_supported_plugins_hddl`
 
 Introducing the HDDL Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,7 +41,7 @@ To configure your Intel® Vision Accelerator Design With Intel® Movidius™ on 
 Supported networks
 ~~~~~~~~~~~~~~~~~~
 
-To see the list of supported networks for the HDDL plugin, refer to the list on the :ref:`MYRIAD Plugin page <doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d>`.
+To see the list of supported networks for the HDDL plugin, refer to the list on the :ref:`MYRIAD Plugin page <deploy_infer__vpu_myriad_device>`.
 
 Supported Configuration Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,5 +89,5 @@ Additional Resources
 
 * :ref:`VPU Plugins <deploy_infer__vpu_device>`
 
-* :ref:`MYRIAD Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d>`
+* :ref:`MYRIAD Plugin <deploy_infer__vpu_myriad_device>`
 

@@ -1,11 +1,20 @@
 .. index:: pair: page; MYRIAD Device
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d:
+.. _deploy_infer__vpu_myriad_device:
+
+.. meta::
+   :description: The MYRIAD plugin in OpenVINO™ has been developed for 
+                 inference of neural networks on Intel® Neural Compute Stick 2. 
+   :keywords: OpenVINO™, OpenVINO™ Runtime plugin, inference, deep learning 
+              model, model inference, VPU plugin, MYRIAD plugin, MYRIAD device, 
+              Intel® Vision Accelerator Design, Intel® Movidius™, VPU configuration, 
+              IExecutableNetwork, device allocation, KEY_VPU_MYRIAD_PROTOCOL, 
+              Intel Movidius™ Vision Processing Units, VPU
 
 
 MYRIAD Device
 =============
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d_1md_openvino_docs_ov_runtime_ug_supported_plugins_myriad`
+:target:`deploy_infer__vpu_myriad_device_1md_openvino_docs_ov_runtime_ug_supported_plugins_myriad`
 
 The OpenVINO Runtime MYRIAD plugin has been developed for inference of neural networks on Intel® Neural Compute Stick 2.
 
