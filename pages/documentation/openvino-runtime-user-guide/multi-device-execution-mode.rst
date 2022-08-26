@@ -80,7 +80,7 @@ Notice that MULTI allows you to **change device priorities on the fly**. You can
 
 One more thing you can define is the **number of requests to allocate for each device**. You can do it simply by adding the number to each device in parentheses, like this: ``"MULTI:CPU(2),GPU(2)"``. However, this method is not recommended as it is not performance-portable. The suggested approach is to configure individual devices and query the resulting number of requests to be used at the application level, as described in `Configuring Individual Devices and Creating MULTI On Top <#configuring-the-individual-devices-and-creating-the-multi-device-on-top>`__.
 
-To check what devices are present in the system, you can use the Device API. For information on how to do it, check :ref:`Query device properties and configuration <doxid-openvino_docs__o_v__u_g_query_api>`.
+To check what devices are present in the system, you can use the Device API. For information on how to do it, check :ref:`Query device properties and configuration <deploy_infer__query_device_properties>`.
 
 Configuring Individual Devices and Creating the Multi-Device On Top
 -------------------------------------------------------------------
@@ -104,7 +104,7 @@ Alternatively, you can combine all the individual device settings into a single 
 Querying the Optimal Number of Inference Requests
 -------------------------------------------------
 
-When using MULTI, you don't need to sum over included devices yourself, you can query the optimal number of requests directly, using the :ref:`configure devices <doxid-openvino_docs__o_v__u_g_query_api>` property:
+When using MULTI, you don't need to sum over included devices yourself, you can query the optimal number of requests directly, using the :ref:`configure devices <deploy_infer__query_device_properties>` property:
 
 .. tab:: C++
 

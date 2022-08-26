@@ -156,7 +156,7 @@ The code above creates a compiled model associated with a single hardware
 device from the model object. It is possible to create as many compiled 
 models as needed and use them simultaneously (up to the limitation of the 
 hardware resources). To learn how to change the device configuration, read the 
-:ref:`Query device properties <doxid-openvino_docs__o_v__u_g_query_api>` article.
+:ref:`Query device properties <deploy_infer__query_device_properties>` article.
 
 Step 3. Create an Inference Request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

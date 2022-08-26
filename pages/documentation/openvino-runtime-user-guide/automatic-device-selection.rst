@@ -172,7 +172,7 @@ Checking Available Devices
 
 To check what devices are present in the system, you can use Device API, as listed 
 below. For information on how to use it, see 
-:ref:`Query device properties and configuration <doxid-openvino_docs__o_v__u_g_query_api>`.
+:ref:`Query device properties and configuration <deploy_infer__query_device_properties>`.
 
 .. tab:: C++   
 

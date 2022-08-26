@@ -108,7 +108,7 @@ Using the ``bf16`` precision provides the following performance benefits:
 * Reduced memory consumption since ``bfloat16`` data half the size of 32-bit float.
 
 To check if the CPU device can support the ``bfloat16`` data type, use the 
-:ref:`query device properties interface <doxid-openvino_docs__o_v__u_g_query_api>` to query 
+:ref:`query device properties interface <deploy_infer__query_device_properties>` to query 
 ``:ref:`ov::device::capabilities <doxid-group__ov__runtime__cpp__prop__api_1gadb13d62787fc4485733329f044987294>``` 
 property, which should contain ``BF16`` in the list of CPU capabilities:
 
