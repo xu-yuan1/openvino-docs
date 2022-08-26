@@ -1,11 +1,17 @@
 .. index:: pair: page; Plugin Testing
-.. _doxid-openvino_docs_ie_plugin_dg_plugin_testing:
+.. _extensibility_plugin__testing:
+
+.. meta::
+   :description: Inference Engine tests infrastructure, which provides a predefined set of functional tests and utilities. 
+                 They are used to verify a plugin using the Inference Engine public API.
+   :keywords: Inference Engine tests, test infrastructure, Inference Engine Plugin, 
+              tests class declaration, tests class implementation, plugin development
 
 
 Plugin Testing
 ==============
 
-:target:`doxid-openvino_docs_ie_plugin_dg_plugin_testing_1md_openvino_docs_ie_plugin_dg_plugintesting` 
+:target:`extensibility_plugin__testing_1md_openvino_docs_ie_plugin_dg_plugintesting` 
 
 Inference Engine (IE) tests infrastructure provides a predefined set of functional 
 tests and utilities. They are used to verify a plugin using the Inference Engine 
@@ -14,7 +20,7 @@ public API. All the tests are written in the
 
 Inference Engine Plugin tests are included in the ``IE::funcSharedTests`` CMake 
 target which is built within the OpenVINO repository 
-(see :ref:`Build Plugin Using CMake <doxid-openvino_docs_ie_plugin_dg_plugin_build>` 
+(see :ref:`Build Plugin Using CMake <extensibility_plugin__cmake>` 
 guide). This library contains tests definitions (the tests bodies) which can be 
 parametrized and instantiated in plugins depending on whether a plugin supports 
 a particular feature, specific sets of parameters for test on supported operation 
@@ -156,7 +162,7 @@ parameters values.
    hardware or need to be extensively tested.
 
 To build test binaries together with other build artifacts, use the ``make all`` 
-command. For details, see :ref:`Build Plugin Using CMake <doxid-openvino_docs_ie_plugin_dg_plugin_build>`.
+command. For details, see :ref:`Build Plugin Using CMake <extensibility_plugin__cmake>`.
 
 How to Extend Inference Engine Plugin Tests
 -------------------------------------------

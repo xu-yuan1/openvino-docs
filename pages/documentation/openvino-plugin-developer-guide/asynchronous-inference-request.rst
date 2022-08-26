@@ -1,11 +1,19 @@
 .. index:: pair: page; Asynchronous Inference Request
-.. _doxid-openvino_docs_ie_plugin_dg_async_infer_request:
+.. _extensibility_plugin__async_infer_req:
+
+.. meta::
+   :description: Information about Asynchronous Inference Request functionality.
+   :keywords: Asynchronous Inference Request, inference pipeline, pipeline structure,
+              OpenVINO Runtime Plugin API, task executors
 
 
 Asynchronous Inference Request
 ==============================
 
-:target:`doxid-openvino_docs_ie_plugin_dg_async_infer_request_1md_openvino_docs_ie_plugin_dg_asyncinferrequest` Asynchronous Inference Request runs an inference pipeline asynchronously in one or several task executors depending on a device pipeline structure. OpenVINO Runtime Plugin API provides the base :ref:`InferenceEngine::AsyncInferRequestThreadSafeDefault <doxid-class_inference_engine_1_1_async_infer_request_thread_safe_default>` class:
+:target:`extensibility_plugin__async_infer_req_1md_openvino_docs_ie_plugin_dg_asyncinferrequest` Asynchronous Inference Request 
+runs an inference pipeline asynchronously in one or several task executors depending on a device pipeline structure. 
+OpenVINO Runtime Plugin API provides the base 
+:ref:`InferenceEngine::AsyncInferRequestThreadSafeDefault <doxid-class_inference_engine_1_1_async_infer_request_thread_safe_default>` class:
 
 * The class has the ``_pipeline`` field of ``std::vector<std::pair<ITaskExecutor::Ptr, Task> >``, which contains pairs of an executor and executed task.
 
@@ -16,7 +24,9 @@ Asynchronous Inference Request
 Class
 ~~~~~
 
-OpenVINO Runtime Plugin API provides the base :ref:`InferenceEngine::AsyncInferRequestThreadSafeDefault <doxid-class_inference_engine_1_1_async_infer_request_thread_safe_default>` class for a custom asynchronous inference request implementation:
+OpenVINO Runtime Plugin API provides the base 
+:ref:`InferenceEngine::AsyncInferRequestThreadSafeDefault <doxid-class_inference_engine_1_1_async_infer_request_thread_safe_default>` 
+class for a custom asynchronous inference request implementation:
 
 .. ref-code-block:: cpp
 
@@ -41,7 +51,9 @@ Class Fields
 
 * ``_waitExecutor`` - a task executor that waits for a response from a device about device tasks completion
 
-.. note:: If a plugin can work with several instances of a device, ``_waitExecutor`` must be device-specific. Otherwise, having a single task executor for several devices does not allow them to work in parallel.
+.. note::
+   If a plugin can work with several instances of a device, ``_waitExecutor`` must be device-specific. Otherwise, 
+   having a single task executor for several devices does not allow them to work in parallel.
 
 
 
@@ -49,7 +61,8 @@ Class Fields
 
 .. rubric::
 
-The main goal of the ``AsyncInferRequest`` constructor is to define a device pipeline ``_pipeline``. The example below demonstrates ``_pipeline`` creation with the following stages:
+The main goal of the ``AsyncInferRequest`` constructor is to define a device pipeline ``_pipeline``. The example below 
+demonstrates ``_pipeline`` creation with the following stages:
 
 * ``inferPreprocess`` is a CPU compute task.
 
@@ -103,15 +116,20 @@ The stages are distributed among two task executors in the following way:
 
 * ``waitPipeline`` is sent to ``_waitExecutor``, which works with the device.
 
-.. note:: ``callbackExecutor`` is also passed to the constructor and it is used in the base :ref:`InferenceEngine::AsyncInferRequestThreadSafeDefault <doxid-class_inference_engine_1_1_async_infer_request_thread_safe_default>` class, which adds a pair of ``callbackExecutor`` and a callback function set by the user to the end of the pipeline.
+.. note::
+   ``callbackExecutor`` is also passed to the constructor and it is used in the base 
+   :ref:`InferenceEngine::AsyncInferRequestThreadSafeDefault <doxid-class_inference_engine_1_1_async_infer_request_thread_safe_default>` 
+   class, which adds a pair of ``callbackExecutor`` and a callback function set by the user to the end of the pipeline.
 
 
 
-Inference request stages are also profiled using IE_PROFILING_AUTO_SCOPE, which shows how pipelines of multiple asynchronous inference requests are run in parallel via the `Intel® VTune™ Profiler <https://software.intel.com/en-us/vtune>`__ tool.
+Inference request stages are also profiled using IE_PROFILING_AUTO_SCOPE, which shows how pipelines of multiple asynchronous 
+inference requests are run in parallel via the `Intel® VTune™ Profiler <https://software.intel.com/en-us/vtune>`__ tool.
 
 .. rubric::
 
-In the asynchronous request destructor, it is necessary to wait for a pipeline to finish. It can be done using the :ref:`InferenceEngine::AsyncInferRequestThreadSafeDefault::StopAndWait <doxid-class_inference_engine_1_1_async_infer_request_thread_safe_default_1ad09f77f1467a13083e5f1a0eba1948b6>` method of the base class.
+In the asynchronous request destructor, it is necessary to wait for a pipeline to finish. It can be done using 
+the :ref:`InferenceEngine::AsyncInferRequestThreadSafeDefault::StopAndWait <doxid-class_inference_engine_1_1_async_infer_request_thread_safe_default_1ad09f77f1467a13083e5f1a0eba1948b6>` method of the base class.
 
 .. ref-code-block:: cpp
 

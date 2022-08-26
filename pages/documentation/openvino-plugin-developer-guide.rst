@@ -66,7 +66,7 @@ Inference Engine plugin dynamic library consists of several main components:
    
    * Can extract performance counters for an inference pipeline execution profiling.
 
-#. :ref:`Asynchronous Inference Request class <doxid-openvino_docs_ie_plugin_dg_async_infer_request>` :
+#. :ref:`Asynchronous Inference Request class <extensibility_plugin__async_infer_req>` :
    
    * Wraps the :ref:`Inference Request <synchronous_inference_request>` 
      class and runs pipeline stages in parallel on several task executors based 
@@ -81,9 +81,9 @@ Inference Engine plugin dynamic library consists of several main components:
 Detailed guides
 ~~~~~~~~~~~~~~~
 
-* :ref:`Build <doxid-openvino_docs_ie_plugin_dg_plugin_build>` a plugin library using CMake\*
+* :ref:`Build <extensibility_plugin__cmake>` a plugin library using CMake
 
-* Plugin and its components :ref:`testing <doxid-openvino_docs_ie_plugin_dg_plugin_testing>`
+* Plugin and its components :ref:`testing <extensibility_plugin__testing>`
 
 * :ref:`Quantized networks <doxid-openvino_docs_ie_plugin_dg_quantized_networks>`
 

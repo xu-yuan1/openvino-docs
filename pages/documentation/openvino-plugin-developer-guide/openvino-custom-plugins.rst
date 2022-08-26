@@ -38,7 +38,7 @@ and helper classes that simplify new plugin development:
 * symbols in the Inference Engine Core shared library
 
 To build an Inference Engine plugin with the Plugin API, see the 
-:ref:`Inference Engine Plugin Building <doxid-openvino_docs_ie_plugin_dg_plugin_build>` guide.
+:ref:`Inference Engine Plugin Building <extensibility_plugin__cmake>` guide.
 
 Plugin Class
 ~~~~~~~~~~~~

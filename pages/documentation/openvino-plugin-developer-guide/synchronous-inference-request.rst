@@ -14,7 +14,7 @@ Synchronous Inference Request
 
 * Allocate input and output blobs needed for a backend-dependent network inference.
 
-* Define functions for inference process stages (for example, ``preprocess``, ``upload``, ``infer``, ``download``, ``postprocess``). These functions can later be used to define an execution pipeline during :ref:`Asynchronous Inference Request <doxid-openvino_docs_ie_plugin_dg_async_infer_request>` implementation.
+* Define functions for inference process stages (for example, ``preprocess``, ``upload``, ``infer``, ``download``, ``postprocess``). These functions can later be used to define an execution pipeline during :ref:`Asynchronous Inference Request <extensibility_plugin__async_infer_req>` implementation.
 
 * Call inference stages one by one synchronously.
 
@@ -352,5 +352,5 @@ The method sets performance counters which were measured during pipeline stages 
 	}
 
 The next step in the plugin library implementation is the 
-:ref:`Asynchronous Inference Request <doxid-openvino_docs_ie_plugin_dg_async_infer_request>` class.
+:ref:`Asynchronous Inference Request <extensibility_plugin__async_infer_req>` class.
 

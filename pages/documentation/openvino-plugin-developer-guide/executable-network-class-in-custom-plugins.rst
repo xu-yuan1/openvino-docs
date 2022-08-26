@@ -275,7 +275,7 @@ has two separate classes:
 
 * :ref:`Synchronous inference request <synchronous_inference_request>`, which defines pipeline stages and runs them synchronously in the ``Infer`` method.
 
-* :ref:`Asynchronous inference request <doxid-openvino_docs_ie_plugin_dg_async_infer_request>`, which is a wrapper for a synchronous inference request and can run a pipeline asynchronously. Depending on a device pipeline structure, it can has one or several stages:
+* :ref:`Asynchronous inference request <extensibility_plugin__async_infer_req>`, which is a wrapper for a synchronous inference request and can run a pipeline asynchronously. Depending on a device pipeline structure, it can has one or several stages:
   
   * For single-stage pipelines, there is no need to define this method and create a class derived from :ref:`InferenceEngine::AsyncInferRequestThreadSafeDefault <doxid-class_inference_engine_1_1_async_infer_request_thread_safe_default>`. For single stage pipelines, a default implementation of this method creates :ref:`InferenceEngine::AsyncInferRequestThreadSafeDefault <doxid-class_inference_engine_1_1_async_infer_request_thread_safe_default>` wrapping a synchronous inference request and runs it asynchronously in the ``_taskExecutor`` executor.
   

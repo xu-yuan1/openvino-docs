@@ -1,11 +1,17 @@
-.. index:: pair: page; Build Plugin Using CMake\*
-.. _doxid-openvino_docs_ie_plugin_dg_plugin_build:
+.. index:: pair: page; Build Plugin with CMake
+.. _extensibility_plugin__cmake:
+
+.. meta::
+   :description: Information on how to set Inference Engine build infrastructure
+                 for plugin development.
+   :keywords: Inference Engine build infrastructure, cmake, plugin development,
+              Inference Engine Developer Package, OpenVINO, build plugin
 
 
-Build Plugin Using CMake\*
+Build Plugin Using CMake
 ==========================
 
-:target:`doxid-openvino_docs_ie_plugin_dg_plugin_build_1md_openvino_docs_ie_plugin_dg_building` 
+:target:`extensibility_plugin__cmake_1md_openvino_docs_ie_plugin_dg_building` 
 
 Inference Engine build infrastructure provides the Inference Engine Developer 
 Package for plugin development.
@@ -75,7 +81,8 @@ generated in the ``openvino-release-build`` folder. It consists of several files
 
     * ``IE::funcSharedTests`` - static library with common functional tests
 
-.. note:: It's enough just to run ``cmake --build . --target ie_dev_targets`` 
+.. note::
+   It's enough just to run ``cmake --build . --target ie_dev_targets`` 
    command to build only targets from the Inference Engine Developer package.
 
 Build Plugin using Inference Engine Developer Package
