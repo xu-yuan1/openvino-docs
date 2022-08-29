@@ -16,7 +16,7 @@ Inference Engine API contains preprocessing capabilities in the ``:ref:`Inferenc
 
 * Preprocessing information stored in ``:ref:`InferenceEngine::CNNNetwork <doxid-class_inference_engine_1_1_c_n_n_network>``` is lost when saving back to the OpenVINO IR file format.
 
-API 2.0 introduces a :ref:`new way of adding preprocessing operations to the model <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` - each preprocessing or post-processing operation is integrated directly into the model and compiled together with the inference graph:
+API 2.0 introduces a :ref:`new way of adding preprocessing operations to the model <deploy_infer__preprocessing_overview>` - each preprocessing or post-processing operation is integrated directly into the model and compiled together with the inference graph:
 
 * API 2.0 first adds preprocessing operations by using ``:ref:`ov::preprocess::PrePostProcessor <doxid-classov_1_1preprocess_1_1_pre_post_processor>```,
 

@@ -321,7 +321,7 @@ Preprocessing Acceleration
 
 CPU plugin supports a full set of the preprocessing operations, providing high performance implementations for them.
 
-For more details, see :ref:`preprocessing API guide <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
+For more details, see :ref:`preprocessing API guide <deploy_infer__preprocessing_overview>`.
 
 .. dropdown:: The CPU plugin support for handling tensor precision conversion is limited to the following ov::element types:
 

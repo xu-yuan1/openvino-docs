@@ -399,7 +399,7 @@ methods.
 
 For usage examples, refer to the :ref:`RemoteTensor API <deploy_infer__gpu_device_remote_tensor>`.
 
-For more details, see the :ref:`preprocessing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
+For more details, see the :ref:`preprocessing API <deploy_infer__preprocessing_overview>`.
 
 Model Caching
 -------------

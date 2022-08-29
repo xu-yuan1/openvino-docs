@@ -7,7 +7,7 @@ Embedding Preprocessing Computation
 
 :target:`doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases_1md_openvino_docs_mo_dg_prepare_model_additional_optimizations` Input data for inference can be different from the training dataset and requires additional preprocessing before inference. To accelerate the whole pipeline including preprocessing and inference, Model Optimizer provides special parameters such as ``--mean_values``,
 
-``--scale_values``, ``--reverse_input_channels``, and ``--layout``. Based on these parameters, Model Optimizer generates OpenVINO IR with additionally inserted sub-graphs to perform the defined preprocessing. This preprocessing block can perform mean-scale normalization of input data, reverting data along channel dimension, and changing the data layout. See the following sections for details on the parameters, or the :ref:`Overview of Preprocessing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` for the same functionality in OpenVINO Runtime.
+``--scale_values``, ``--reverse_input_channels``, and ``--layout``. Based on these parameters, Model Optimizer generates OpenVINO IR with additionally inserted sub-graphs to perform the defined preprocessing. This preprocessing block can perform mean-scale normalization of input data, reverting data along channel dimension, and changing the data layout. See the following sections for details on the parameters, or the :ref:`Overview of Preprocessing API <deploy_infer__preprocessing_overview>` for the same functionality in OpenVINO Runtime.
 
 Specifying Layout
 ~~~~~~~~~~~~~~~~~
@@ -108,5 +108,5 @@ in the command-line. Input values are *divided* by the scale value(s). If the ``
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Overview of Preprocessing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`
+* :ref:`Overview of Preprocessing API <deploy_infer__preprocessing_overview>`
 

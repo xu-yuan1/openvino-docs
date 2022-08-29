@@ -96,7 +96,7 @@ reference code, make sure that both versions are as similar as possible:
   For example, watch out for random values that can be used to populate the inputs.
 
 * In situations when any user-side pre-processing should be tracked separately, 
-  consider :ref:`image pre-processing and conversion <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
+  consider :ref:`image pre-processing and conversion <deploy_infer__preprocessing_overview>`.
 
 * When applicable, leverage the :ref:`Dynamic Shapes support <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
 

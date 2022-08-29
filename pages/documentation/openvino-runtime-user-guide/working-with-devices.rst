@@ -133,7 +133,7 @@ The table below demonstrates support of key features by OpenVINO device plugins.
       - No
       - Yes
       - No
-    * - :ref:`Preprocessing acceleration <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`
+    * - :ref:`Preprocessing acceleration <deploy_infer__preprocessing_overview>`
       - Yes
       - Yes
       - No

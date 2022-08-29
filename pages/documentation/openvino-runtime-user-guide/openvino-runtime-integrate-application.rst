@@ -309,7 +309,7 @@ Additional Resources
   page for specific examples of how OpenVINO pipelines are implemented for 
   applications like image classification, text prediction, and many others.
 
-* :ref:`OpenVINO™ Runtime Preprocessing <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`
+* :ref:`OpenVINO™ Runtime Preprocessing <deploy_infer__preprocessing_overview>`
 
 * :ref:`Using Encrypted Models with OpenVINO <security_encrypted_models>`
 

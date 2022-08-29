@@ -15,7 +15,7 @@ Below is a list of cases where input/output layout is important:
 
 * Performing model modification:
   
-  * Applying the :ref:`preprocessing <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` steps, such as subtracting means, dividing by scales, resizing an image, and converting ``RGB`` <-> ``BGR``.
+  * Applying the :ref:`preprocessing <deploy_infer__preprocessing_overview>` steps, such as subtracting means, dividing by scales, resizing an image, and converting ``RGB`` <-> ``BGR``.
   
   * Setting/getting a batch for a model.
 
@@ -327,7 +327,7 @@ A layout has some pre-defined dimension names, widely used in computer vision:
 
 * ``W`` / ``Width`` - width
 
-These names are used in :ref:`PreProcessing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`. There is a set of helper functions to get appropriate dimension index from a layout.
+These names are used in :ref:`PreProcessing API <deploy_infer__preprocessing_overview>`. There is a set of helper functions to get appropriate dimension index from a layout.
 
 .. raw:: html
 

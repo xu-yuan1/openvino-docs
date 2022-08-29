@@ -97,7 +97,7 @@ they are not accelerated:
 
   * i420 to BGR
 
-For more details, see the :ref:`preprocessing API guide <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
+For more details, see the :ref:`preprocessing API guide <deploy_infer__preprocessing_overview>`.
 
 Supported Properties
 ~~~~~~~~~~~~~~~~~~~~

@@ -41,7 +41,7 @@ Versions of OpenVINO prior to 2022.1 required changes in the application logic w
 
 OpenVINO™ 2022.1 has introduced API 2.0 (also called OpenVINO API v2) to align the logic of working with models as it is done in their origin frameworks - no layout and precision changes, operating with tensor names and indices to address inputs and outputs. OpenVINO Runtime has combined Inference Engine API used for inference and nGraph API targeted to work with models and operations. API 2.0 has a common structure, naming convention styles, namespaces, and removes duplicated structures. For more details, see the :ref:`Changes to Inference Pipeline in OpenVINO API v2 <doxid-openvino_2_0_inference_pipeline>`.
 
-.. note:: Your existing applications will continue to work with OpenVINO Runtime 2022.1, as normal. Although, migration to API 2.0 is strongly recommended. This will allow you to use additional features, such as :ref:`Preprocessing <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` and :ref:`Dynamic shapes support <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
+.. note:: Your existing applications will continue to work with OpenVINO Runtime 2022.1, as normal. Although, migration to API 2.0 is strongly recommended. This will allow you to use additional features, such as :ref:`Preprocessing <deploy_infer__preprocessing_overview>` and :ref:`Dynamic shapes support <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
 
 
 
@@ -84,7 +84,7 @@ Inference Engine and nGraph APIs do not become deprecated with the introduction 
 
 * :ref:`Working with dynamic shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`, which increases performance when working with compatible models such as NLP (Neural Language Processing) and super-resolution models.
 
-* :ref:`Preprocessing of the model <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`, which adds preprocessing operations to inference models and fully occupies the accelerator, freeing CPU resources.
+* :ref:`Preprocessing of the model <deploy_infer__preprocessing_overview>`, which adds preprocessing operations to inference models and fully occupies the accelerator, freeing CPU resources.
 
 To understand the differences between Inference Engine API and API 2.0, see the definitions of two types of behaviors first:
 

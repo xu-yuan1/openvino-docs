@@ -193,7 +193,7 @@ Depending on the model format types that are used in the application in ``:ref:`
 --------------------------------
 
 .. note:: :ref:`G-API <doxid-openvino_docs_gapi_gapi_intro>` preprocessing is a legacy 
-   functionality, use :ref:`preprocessing capabilities from OpenVINO 2.0 <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` 
+   functionality, use :ref:`preprocessing capabilities from OpenVINO 2.0 <deploy_infer__preprocessing_overview>` 
    which do not require any additional libraries.
 
 

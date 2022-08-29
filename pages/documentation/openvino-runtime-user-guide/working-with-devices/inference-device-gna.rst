@@ -508,7 +508,7 @@ Intel® GNA plugin supports the processing of context-windowed speech frames in 
 
 Refer to the :ref:`Layout API overview <doxid-openvino_docs__o_v__u_g__layout__overview>` to determine batch dimension.
 
-To set layout of model inputs in runtime, use the :ref:`Optimize Preprocessing <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` guide:
+To set layout of model inputs in runtime, use the :ref:`Optimize Preprocessing <deploy_infer__preprocessing_overview>` guide:
 
 .. raw:: html
 

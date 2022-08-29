@@ -37,7 +37,7 @@ perform any unnecessary steps in the code:
   :ref:`relevant Model Optimizer command-line options <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`.
 
 * Let OpenVINO accelerate other means of 
-  :ref:`Image Pre-processing and Conversion <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
+  :ref:`Image Pre-processing and Conversion <deploy_infer__preprocessing_overview>`.
 
 * Data which is already in the "on-device" memory can be input directly by 
   using the :ref:`remote tensors API of the GPU Plugin <deploy_infer__gpu_device_remote_tensor>`.

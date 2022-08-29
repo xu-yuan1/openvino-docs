@@ -39,7 +39,7 @@ Consider the code below to achieve that:
 Setting a New Batch Size with set_batch Method
 ----------------------------------------------
 
-The meaning of the model batch may vary depending on the model design. In order to change the batch dimension of the model, :ref:`set the ov::Layout <doxid-openvino_docs__o_v__u_g__preprocessing__overview_1declare_model_s_layout>` and call the ``:ref:`ov::set_batch <doxid-namespaceov_1a3314e2ff91fcc9ffec05b1a77c37862b>``` method.
+The meaning of the model batch may vary depending on the model design. In order to change the batch dimension of the model, :ref:`set the ov::Layout <deploy_infer__preprocessing_overview_1declare_model_s_layout>` and call the ``:ref:`ov::set_batch <doxid-namespaceov_1a3314e2ff91fcc9ffec05b1a77c37862b>``` method.
 
 .. ref-code-block:: cpp
 
@@ -73,7 +73,7 @@ The primary method of the feature is ``:ref:`ov::Model::reshape <doxid-classov_1
 	cv::Mat image = cv::imread("path/to/image");
 	:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`->reshape({1, 3, image.rows, image.cols});
 
-To do the opposite - resize input image to the input shapes of the model, use the :ref:`pre-processing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
+To do the opposite - resize input image to the input shapes of the model, use the :ref:`pre-processing API <deploy_infer__preprocessing_overview>`.
 
 2) Otherwise, you can express reshape plan via mapping of input and its new shape:
 
@@ -179,7 +179,7 @@ Consider the code below to achieve that:
 Setting a New Batch Size with the set_batch Method
 --------------------------------------------------
 
-The meaning of the model batch may vary depending on the model design. In order to change the batch dimension of the model, :ref:`set the layout <doxid-openvino_docs__o_v__u_g__preprocessing__overview_1declare_model_s_layout>` for inputs and call the `set_batch <api/ie_python_api/_autosummary/openvino.runtime.set_batch.html>`__ method.
+The meaning of the model batch may vary depending on the model design. In order to change the batch dimension of the model, :ref:`set the layout <deploy_infer__preprocessing_overview_1declare_model_s_layout>` for inputs and call the `set_batch <api/ie_python_api/_autosummary/openvino.runtime.set_batch.html>`__ method.
 
 .. doxygensnippet:: ../../snippets/ShapeInference.py
    :language: python
@@ -209,7 +209,7 @@ The primary method of the feature is `Model.reshape <api/ie_python_api/_autosumm
    :language: python
    :fragment: [simple_spatials_change]
 
-To do the opposite - resize input image to the input shapes of the model, use the :ref:`pre-processing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
+To do the opposite - resize input image to the input shapes of the model, use the :ref:`pre-processing API <deploy_infer__preprocessing_overview>`.
 
 2) Otherwise, you can express reshape plan via dictionary mapping input and its new shape: Dictionary keys could be:
 
