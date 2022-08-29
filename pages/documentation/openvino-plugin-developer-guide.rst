@@ -25,7 +25,7 @@ Overview of Inference Engine Plugin Library
    ./openvino-plugin-developer-guide/testing-custom-openvino-plugins
    ./openvino-plugin-developer-guide/quantized_network_support
    ./openvino-plugin-developer-guide/low-precision-transformations
-   ./custom-plugin-api-reference
+   ./openvino-plugin-developer-guide/custom-plugin-api-reference
 
 The plugin architecture of the Inference Engine allows to develop and plug 
 independent inference solutions dedicated to different devices. Physically, a 
