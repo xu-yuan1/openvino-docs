@@ -1,11 +1,18 @@
 .. index:: pair: page; Step 4. Cleanup Transformations
-.. _doxid-openvino_docs__o_v__u_g_lpt_step4_cleanup:
+.. _plugin_lpt__step4_cleanup:
+
+.. meta::
+   :description: Step 4 of low precision transformations. Feature a list of transforamtions used to 
+                 clean up the result model to avoid not handled dequantization operations.
+   :keywords: low precision transformations, lpt, Cleanup Transformations, FoldConvertTransformation, 
+              FoldFakeQuantizeTransformation, FuseConvertTransformation, FuseMultiplyToFakeQuantizeTransformation, 
+              FuseSubtractToFakeQuantizeTransformation, MultiplyToGroupConvolutionTransformation
 
 
 Step 4. Cleanup Transformations
 ===============================
 
-:target:`doxid-openvino_docs__o_v__u_g_lpt_step4_cleanup_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_pipeline_step4_cleanup`
+:target:`plugin_lpt__step4_cleanup_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_pipeline_step4_cleanup`
 
 * :ref:`FoldConvertTransformation <doxid-openvino_docs__o_v__u_g_lpt__fold_convert_transformation>`
 

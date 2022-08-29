@@ -1,13 +1,15 @@
 .. index:: pair: page; Plugin API Reference
-.. _doxid-openvino_docs_ie_plugin_api_references:
+.. _extensibility_plugin__api_references:
+
+.. meta::
+   :description: Introduction to extra API references for OpenVINO plugin development.
+   :keywords: API references, OpenVINO plugin development, plugin
 
 
 Plugin API Reference
 ====================
 
-:target:`doxid-openvino_docs_ie_plugin_api_references_1md_openvino_docs_ie_plugin_dg_dev_api_references`
-
-
+:target:`extensibility_plugin__api_references_1md_openvino_docs_ie_plugin_dg_dev_api_references`
 
 
 

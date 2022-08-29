@@ -129,7 +129,7 @@ The implementation ``CompileNetwork`` is fully device-specific.
 The function accepts a const shared pointer to ``:ref:`ngraph::Function <doxid-classngraph_1a14d7fe7c605267b52c145579e12d2a5f>``` 
 object and performs the following steps:
 
-#. Applies nGraph passes using ``TransformNetwork`` function, which defines plugin-specific conversion pipeline. To support low precision inference, the pipeline can include Low Precision Transformations. These transformations are usually hardware specific. You can find how to use and configure Low Precisions Transformations in :ref:`Low Precision Transformations <doxid-openvino_docs__o_v__u_g_lpt>` guide.
+#. Applies nGraph passes using ``TransformNetwork`` function, which defines plugin-specific conversion pipeline. To support low precision inference, the pipeline can include Low Precision Transformations. These transformations are usually hardware specific. You can find how to use and configure Low Precisions Transformations in :ref:`Low Precision Transformations <extensibility_plugin__lpt>` guide.
 
 #. Maps the transformed graph to a backend specific graph representation (for example, to CPU plugin internal graph representation).
 

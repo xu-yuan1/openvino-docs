@@ -1,11 +1,26 @@
 .. index:: pair: page; Step 3. Main Transformations
-.. _doxid-openvino_docs__o_v__u_g_lpt_step3_main:
+.. _plugin_lpt__step3_main_transformations:
+
+.. meta::
+   :description: Step 3 of low precision transformations. Feature a list of transforamtions used to 
+                 decomposition transformation and dequantization operations handling.
+   :keywords: low precision transformations, lpt, Main Transformations, decomposition transformation,
+              dequantization operation handling, AddTransformation, AvgPoolTransformation, 
+              ClampTransformation, ConcatTransformation, ConvolutionTransformation, 
+              ConvolutionBackpropDataTransformation, DepthToSpaceTransformation, 
+              FakeQuantizeDecompositionTransformation, FakeQuantizeTransformation, InterpolateTransformation,
+              GroupConvolutionTransformation, MatMulTransformation, MaxPoolTransformation, 
+              MultiplyTransformation, MVNTransformation, NormalizeL2Transformation, PReluTransformation, 
+              ReduceMaxTransformation, ReduceMeanTransformation, ReduceMinTransformation, ReduceSumTransformation, 
+              ReluTransformation, ReshapeTransformation, SqueezeTransformation, ShuffleChannelsTransformation, 
+              SplitTransformation, StridedSliceTransformation, TransposeTransformation, UnsqueezeTransformation, 
+              VariadicSplitTransformation, FakeQuantize
 
 
 Step 3. Main Transformations
 ============================
 
-:target:`doxid-openvino_docs__o_v__u_g_lpt_step3_main_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_pipeline_step3_main` Main transformations are the majority of low precision transformations. Transformations operate with dequantization operations. Main transformations include:
+:target:`plugin_lpt__step3_main_transformations_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_pipeline_step3_main` Main transformations are the majority of low precision transformations. Transformations operate with dequantization operations. Main transformations include:
 
 * :ref:`AddTransformation <doxid-openvino_docs__o_v__u_g_lpt__add_transformation>`
 
@@ -87,5 +102,9 @@ Changes in the example model after main transformation:
 
 * Dequantization operations were moved via precision preserved (``concat1`` and ``concat2``) and quantized (``convolution2``) operations.
 
-**Note:** the left branch (branch #1) does not require per-tensor quantization. As a result, the ``fakeQuantize1`` output interval is [0, 255]. But quantized ``convolution2`` requires per-tensor quantization on the right branch (branch #2). Then all connected ``FakeQuantize`` interval operations (``fakeQuantize1`` and ``fakeQuantize2``) are aligned to have per-tensor quantization after the concatenation (``concat2``) operation.
+.. note::
+   The left branch (branch #1) does not require per-tensor quantization. As a result, the ``fakeQuantize1`` output 
+   interval is [0, 255]. But quantized ``convolution2`` requires per-tensor quantization on the right branch (branch #2). 
+   Then all connected ``FakeQuantize`` interval operations (``fakeQuantize1`` and ``fakeQuantize2``) are aligned to have 
+   per-tensor quantization after the concatenation (``concat2``) operation.
 

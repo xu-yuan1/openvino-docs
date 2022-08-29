@@ -87,7 +87,7 @@ Detailed guides
 
 * :ref:`Quantized networks <extensibility_plugin__quantized_networks>`
 
-* :ref:`Low precision transformations <doxid-openvino_docs__o_v__u_g_lpt>` guide
+* :ref:`Low precision transformations <extensibility_plugin__lpt>` guide
 
 * :ref:`Writing OpenVINO™ transformations <transformations_overview>` guide
 
