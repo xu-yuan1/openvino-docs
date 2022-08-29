@@ -85,7 +85,7 @@ Detailed guides
 
 * Plugin and its components :ref:`testing <extensibility_plugin__testing>`
 
-* :ref:`Quantized networks <doxid-openvino_docs_ie_plugin_dg_quantized_networks>`
+* :ref:`Quantized networks <extensibility_plugin__quantized_networks>`
 
 * :ref:`Low precision transformations <doxid-openvino_docs__o_v__u_g_lpt>` guide
 

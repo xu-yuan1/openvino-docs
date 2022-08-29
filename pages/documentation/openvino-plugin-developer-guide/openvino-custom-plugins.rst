@@ -203,7 +203,7 @@ The function accepts a const shared pointer to ``:ref:`ov::Model <doxid-classov_
    
    * `Intermediate Representation and Operation Sets <../_docs_MO_DG_IR_and_opsets.html>`__
    
-   * :ref:`Quantized networks <doxid-openvino_docs_ie_plugin_dg_quantized_networks>`.
+   * :ref:`Quantized networks <extensibility_plugin__quantized_networks>`.
 
 .. ref-code-block:: cpp
 
