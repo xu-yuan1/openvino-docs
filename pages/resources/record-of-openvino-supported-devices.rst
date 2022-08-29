@@ -28,7 +28,7 @@ The OpenVINO Runtime provides unique capabilities to infer deep learning models 
       - Intel® Neural Compute Stick 2 powered by the Intel® Movidius™ Myriad™ X, Intel® Vision Accelerator Design with Intel® Movidius™ VPUs
     * - :ref:`GNA plugin <deploy_infer__gna_device>` (available in the Intel® Distribution of OpenVINO™ toolkit)
       - Intel Speech Enabling Developer Kit, Amazon Alexa\* Premium Far-Field Developer Kit, Intel Pentium Silver J5005 Processor, Intel Pentium Silver N5000 Processor, Intel Celeron J4005 Processor, Intel Celeron J4105 Processor, Intel Celeron Processor N4100, Intel Celeron Processor N4000, Intel Core i3-8121U Processor, Intel Core i7-1065G7 Processor, Intel Core i7-1060G7 Processor, Intel Core i5-1035G4 Processor, Intel Core i5-1035G7 Processor, Intel Core i5-1035G1 Processor, Intel Core i5-1030G7 Processor, Intel Core i5-1030G4 Processor, Intel Core i3-1005G1 Processor, Intel Core i3-1000G1 Processor, Intel Core i3-1000G4 Processor
-    * - :ref:`Arm® CPU plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__a_r_m__c_p_u>` (unavailable in the Intel® Distribution of OpenVINO™ toolkit)
+    * - :ref:`Arm® CPU plugin <deploy_infer__arm_cpu_device>` (unavailable in the Intel® Distribution of OpenVINO™ toolkit)
       - Raspberry Pi™ 4 Model B, Apple® Mac mini with M1 chip, NVIDIA® Jetson Nano™, Android™ devices
     * - :ref:`Multi-Device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`
       - Multi-Device execution enables simultaneous inference of the same model on several devices in parallel

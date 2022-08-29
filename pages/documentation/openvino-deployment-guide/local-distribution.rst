@@ -49,7 +49,7 @@ For each inference device, OpenVINO Runtime has its own plugin library:
 
 * ``openvino_intel_hddl_plugin`` for :ref:`Intel® HDDL device <deploy_infer__vpu_hddl_device>`.
 
-* ``openvino_arm_cpu_plugin`` for :ref:`ARM CPU devices <doxid-openvino_docs__o_v__u_g_supported_plugins__a_r_m__c_p_u>`.
+* ``openvino_arm_cpu_plugin`` for :ref:`ARM CPU devices <deploy_infer__arm_cpu_device>`.
 
 Depending on what devices are used in the app, the appropriate libraries need to be put to the distribution package.
 
