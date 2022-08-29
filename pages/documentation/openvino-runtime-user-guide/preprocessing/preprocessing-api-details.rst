@@ -1,11 +1,25 @@
 .. index:: pair: page; Preprocessing API - details
-.. _doxid-openvino_docs__o_v__u_g__preprocessing__details:
+.. _deploy_infer__preprocessing_api:
 
+.. meta::
+   :description: This article presents detailed information on capabilities of 
+                 pre-processing API and post-processing.
+   :keywords: pre-processing, pre-processing API, tensor, input tensor, output 
+              tensor, PrePostProcessor, InputTensorInfo, OutputTensorInfo, 
+              data normalization, Computer Vision, convert precision, precision 
+              conversion, execution graph, convert layout, layout conversion, 
+              transpose, deep learning model, inference, model inference, model 
+              layout, resize image, convert color, color conversion, YUV, YUV 
+              color model, NV12, I420, NV12 color format, I420 color format, 
+              user tensor, model input, steps, convert layout, convert element 
+              type, customize operations, 
 
-Preprocessing API - details
-===========================
+Preprocessing API
+=================
 
-:target:`doxid-openvino_docs__o_v__u_g__preprocessing__details_1md_openvino_docs_ov_runtime_ug_preprocessing_details` The purpose of this article is to present details on preprocessing API, such as its capabilities and post-processing.
+:target:`deploy_infer__preprocessing_api_1md_openvino_docs_ov_runtime_ug_preprocessing_details` 
+
+The purpose of this article is to present details on preprocessing API, such as its capabilities and post-processing.
 
 Pre-processing Capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

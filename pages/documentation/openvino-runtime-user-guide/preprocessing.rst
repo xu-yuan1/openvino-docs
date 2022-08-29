@@ -260,7 +260,7 @@ passed to the model without any data manipulation in the application.
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Preprocessing Details <doxid-openvino_docs__o_v__u_g__preprocessing__details>`
+* :ref:`Preprocessing Details <deploy_infer__preprocessing_api>`
 
 * :ref:`Layout API overview <doxid-openvino_docs__o_v__u_g__layout__overview>`
 

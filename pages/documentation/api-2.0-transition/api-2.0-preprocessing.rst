@@ -664,7 +664,7 @@ Converting Color Space
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Preprocessing details <doxid-openvino_docs__o_v__u_g__preprocessing__details>`
+* :ref:`Preprocessing details <deploy_infer__preprocessing_api>`
 
 * :ref:`NV12 classification sample <doxid-openvino_inference_engine_samples_hello_nv12_input_classification__r_e_a_d_m_e>`
 
