@@ -123,7 +123,7 @@ The table below demonstrates support of key features by OpenVINO device plugins.
       - Partial
       - Yes
       - No
-    * - :ref:`Dynamic shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`
+    * - :ref:`Dynamic shapes <deploy_infer__dynamic_shapes>`
       - Yes
       - Partial
       - No

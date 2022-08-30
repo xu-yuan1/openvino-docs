@@ -56,7 +56,7 @@ For more information on this topic, see the following articles:
 
 * :ref:`The 'get_tensor' Idiom <deployment_general_optimizations_1tensor_idiom>`.
 
-* For variably-sized inputs, consider :ref:`dynamic shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
+* For variably-sized inputs, consider :ref:`dynamic shapes <deploy_infer__dynamic_shapes>`.
 
 See the :ref:`latency <deployment_optimizing_for_latency>` 
 and :ref:`throughput <deployment_optimizing_for_throughput>` optimization guides, for **use-case-specific optimizations**

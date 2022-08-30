@@ -56,7 +56,7 @@ There are other approaches to change model input shapes during the stage of :ref
 Dynamic Shape Notice
 --------------------
 
-Shape-changing functionality could be used to turn dynamic model input into a static one and vice versa. It is recommended to always set static shapes when the shape of data is not going to change from one inference to another. Setting static shapes can avoid possible functional limitations, memory, and runtime overheads for dynamic shapes which may vary depending on hardware plugin and model used. To learn more about dynamic shapes in OpenVINO, see the :ref:`Dynamic Shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>` page.
+Shape-changing functionality could be used to turn dynamic model input into a static one and vice versa. It is recommended to always set static shapes when the shape of data is not going to change from one inference to another. Setting static shapes can avoid possible functional limitations, memory, and runtime overheads for dynamic shapes which may vary depending on hardware plugin and model used. To learn more about dynamic shapes in OpenVINO, see the :ref:`Dynamic Shapes <deploy_infer__dynamic_shapes>` page.
 
 .. _usage_of_reshape_method:
 
@@ -194,7 +194,7 @@ There are other approaches to change model input shapes during the stage of :ref
 Dynamic Shape Notice
 --------------------
 
-Shape-changing functionality could be used to turn dynamic model input into a static one and vice versa. It is recommended to always set static shapes when the shape of data is not going to change from one inference to another. Setting static shapes can avoid possible functional limitations, memory, and runtime overheads for dynamic shapes which may vary depending on hardware plugin and used model. To learn more about dynamic shapes in OpenVINO, see the :ref:`Dynamic Shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>` article.
+Shape-changing functionality could be used to turn dynamic model input into a static one and vice versa. It is recommended to always set static shapes when the shape of data is not going to change from one inference to another. Setting static shapes can avoid possible functional limitations, memory, and runtime overheads for dynamic shapes which may vary depending on hardware plugin and used model. To learn more about dynamic shapes in OpenVINO, see the :ref:`Dynamic Shapes <deploy_infer__dynamic_shapes>` article.
 
 .. _usage_of_reshape_method:
 

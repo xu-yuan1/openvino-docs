@@ -41,7 +41,7 @@ Versions of OpenVINO prior to 2022.1 required changes in the application logic w
 
 OpenVINO™ 2022.1 has introduced API 2.0 (also called OpenVINO API v2) to align the logic of working with models as it is done in their origin frameworks - no layout and precision changes, operating with tensor names and indices to address inputs and outputs. OpenVINO Runtime has combined Inference Engine API used for inference and nGraph API targeted to work with models and operations. API 2.0 has a common structure, naming convention styles, namespaces, and removes duplicated structures. For more details, see the :ref:`Changes to Inference Pipeline in OpenVINO API v2 <doxid-openvino_2_0_inference_pipeline>`.
 
-.. note:: Your existing applications will continue to work with OpenVINO Runtime 2022.1, as normal. Although, migration to API 2.0 is strongly recommended. This will allow you to use additional features, such as :ref:`Preprocessing <deploy_infer__preprocessing_overview>` and :ref:`Dynamic shapes support <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
+.. note:: Your existing applications will continue to work with OpenVINO Runtime 2022.1, as normal. Although, migration to API 2.0 is strongly recommended. This will allow you to use additional features, such as :ref:`Preprocessing <deploy_infer__preprocessing_overview>` and :ref:`Dynamic shapes support <deploy_infer__dynamic_shapes>`.
 
 
 
@@ -50,7 +50,7 @@ OpenVINO™ 2022.1 has introduced API 2.0 (also called OpenVINO API v2) to align
 The New OpenVINO IR v11
 -----------------------
 
-To support these features, OpenVINO has introduced OpenVINO IR v11, which is now the default version for Model Optimizer. The model represented in OpenVINO IR v11 fully matches the original model in the original framework format in terms of inputs and outputs. It is also not required to specify input shapes during conversion, which results in OpenVINO IR v11 containing ``-1`` to denote undefined dimensions. For more details on how to fully utilize this feature, see :ref:`Working with dynamic shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`. For information on how to reshape to static shapes in application, see :ref:`Changing input shapes <deploy_infer__shape_inference>`.
+To support these features, OpenVINO has introduced OpenVINO IR v11, which is now the default version for Model Optimizer. The model represented in OpenVINO IR v11 fully matches the original model in the original framework format in terms of inputs and outputs. It is also not required to specify input shapes during conversion, which results in OpenVINO IR v11 containing ``-1`` to denote undefined dimensions. For more details on how to fully utilize this feature, see :ref:`Working with dynamic shapes <deploy_infer__dynamic_shapes>`. For information on how to reshape to static shapes in application, see :ref:`Changing input shapes <deploy_infer__shape_inference>`.
 
 OpenVINO IR v11 is fully compatible with applications written with the Inference Engine API used by older versions of OpenVINO. This backward compatibility is allowed thanks to additional runtime information included in OpenVINO IR v11. This means that when OpenVINO IR v11 is read by an application based on Inference Engine, it is internally converted to OpenVINO IR v10.
 
@@ -82,7 +82,7 @@ Differences in API 2.0 and Inference Engine API Behaviors
 
 Inference Engine and nGraph APIs do not become deprecated with the introduction of the new API, and they can still be used in applications. However, it is highly recommended to migrate to API 2.0, as it offers more features (further extended in future releases), such as:
 
-* :ref:`Working with dynamic shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`, which increases performance when working with compatible models such as NLP (Neural Language Processing) and super-resolution models.
+* :ref:`Working with dynamic shapes <deploy_infer__dynamic_shapes>`, which increases performance when working with compatible models such as NLP (Neural Language Processing) and super-resolution models.
 
 * :ref:`Preprocessing of the model <deploy_infer__preprocessing_overview>`, which adds preprocessing operations to inference models and fully occupies the accelerator, freeing CPU resources.
 

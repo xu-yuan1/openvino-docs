@@ -98,7 +98,7 @@ reference code, make sure that both versions are as similar as possible:
 * In situations when any user-side pre-processing should be tracked separately, 
   consider :ref:`image pre-processing and conversion <deploy_infer__preprocessing_overview>`.
 
-* When applicable, leverage the :ref:`Dynamic Shapes support <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
+* When applicable, leverage the :ref:`Dynamic Shapes support <deploy_infer__dynamic_shapes>`.
 
 * If possible, demand the same accuracy. For example, TensorFlow allows ``FP16`` 
   execution, so when comparing to that, make sure to test the OpenVINO Runtime with the ``FP16`` as well.
@@ -218,7 +218,7 @@ single inference request, while the actual latency can be quite different.
 
 Lastly, the performance statistics with both performance counters and execution 
 graphs are averaged, so such data for the 
-:ref:`inputs of dynamic shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>` 
+:ref:`inputs of dynamic shapes <deploy_infer__dynamic_shapes>` 
 should be measured carefully, preferably by isolating the specific shape and 
 executing multiple times in a loop, to gather the reliable data.
 

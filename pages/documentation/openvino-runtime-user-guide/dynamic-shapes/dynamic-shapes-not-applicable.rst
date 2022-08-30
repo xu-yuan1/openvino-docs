@@ -5,7 +5,7 @@
 When Dynamic Shapes API is Not Applicable
 =========================================
 
-:target:`doxid-openvino_docs__o_v__u_g__no_dynamic_shapes_1md_openvino_docs_ov_runtime_ug_ov_without_dynamic_shapes` Several approaches to emulate dynamic shapes are considered in this article. Apply the following methods only if the :ref:`native dynamic shape API <doxid-openvino_docs__o_v__u_g__dynamic_shapes>` does not work or does not perform as expected.
+:target:`doxid-openvino_docs__o_v__u_g__no_dynamic_shapes_1md_openvino_docs_ov_runtime_ug_ov_without_dynamic_shapes` Several approaches to emulate dynamic shapes are considered in this article. Apply the following methods only if the :ref:`native dynamic shape API <deploy_infer__dynamic_shapes>` does not work or does not perform as expected.
 
 Padding
 ~~~~~~~

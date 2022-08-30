@@ -1,11 +1,22 @@
 .. index:: pair: page; Dynamic Shapes
-.. _doxid-openvino_docs__o_v__u_g__dynamic_shapes:
+.. _deploy_infer__dynamic_shapes:
 
+.. meta::
+   :description: The Reshape method in OpenVINO Runtime API can handle dynamic 
+                 shapes of models that support changing input shapes before 
+                 model compilation.
+   :keywords: OpenVINO, OpenVINO Runtime API, inference, model inference, model 
+              shape, input shape, dynamic shape, dynamic dimensions, sequence 
+              length, ov::Dimension, ov.Dimension, lower bounds, upper bounds, 
+              reshape model, reshape method, compile_model method, spatial dimensions, 
+              batch dimension, undefined dimensions, OpenVINO IR, model optimizer, 
+              get_input_tensor, set_input_tensor, set_shape, tensor, partial shape, 
+              partial_shape, get_partial_shape
 
 Dynamic Shapes
 ==============
 
-:target:`doxid-openvino_docs__o_v__u_g__dynamic_shapes_1md_openvino_docs_ov_runtime_ug_ov_dynamic_shapes`
+:target:`deploy_infer__dynamic_shapes_1md_openvino_docs_ov_runtime_ug_ov_dynamic_shapes`
 
 .. toctree::
    :maxdepth: 1

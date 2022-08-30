@@ -29,7 +29,7 @@ This configurable method of this device-side parallelism is commonly referred as
 
 .. note:: Be aware that streams are **really executing the requests in parallel, but 
    not in the lock step** (as the batching does), which makes the streams fully compatible 
-   with :ref:`dynamically-shaped inputs <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`, 
+   with :ref:`dynamically-shaped inputs <deploy_infer__dynamic_shapes>`, 
    while individual requests can have different shapes.
 
 .. note:: Most OpenVINO devices (including CPU, GPU and VPU) support the streams, yet the 
@@ -111,7 +111,7 @@ maximize the throughput.
 
 One possible throughput optimization strategy is to **set an upper bound for latency and then increase the batch size and/or number of the streams until that tail latency is met (or the throughput is not growing anymore)**. Consider :ref:`OpenVINO Deep Learning Workbench <doxid-workbench_docs__workbench__d_g__introduction>` that builds handy latency vs throughput charts, iterating over possible values of the batch size and number of streams.
 
-.. note:: When playing with :ref:`dynamically-shaped inputs <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`, 
+.. note:: When playing with :ref:`dynamically-shaped inputs <deploy_infer__dynamic_shapes>`, 
    use only the streams (no batching), as they tolerate individual requests 
    having different shapes.
 

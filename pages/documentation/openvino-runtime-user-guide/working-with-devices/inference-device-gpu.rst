@@ -349,7 +349,7 @@ The code snippet below demonstrates how to use dynamic batching in simple scenar
       infer_request.infer([input_tensor])
 
 
-For more details, see the :ref:`dynamic shapes guide <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
+For more details, see the :ref:`dynamic shapes guide <deploy_infer__dynamic_shapes>`.
 
 Preprocessing Acceleration
 --------------------------

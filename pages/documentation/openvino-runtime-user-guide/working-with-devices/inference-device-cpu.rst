@@ -313,7 +313,7 @@ the static input shape to get the best performance.
       model.reshape([10, 20, 30, 40])
 
 
-For more details, see the :ref:`dynamic shapes guide <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
+For more details, see the :ref:`dynamic shapes guide <deploy_infer__dynamic_shapes>`.
 
 
 Preprocessing Acceleration
