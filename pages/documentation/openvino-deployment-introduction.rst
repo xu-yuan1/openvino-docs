@@ -17,6 +17,6 @@ Once you have a model that meets both OpenVINO™ and your requirements, you can
 
 * :ref:`Run inference and develop your app with OpenVINO™ Runtime <deploy_infer__openvino_runtime_user_guide>`.
 
-* :ref:`Deploy your application locally <doxid-openvino_deployment_guide>`.
+* :ref:`Deploy your application locally <deploy_infer__deploy_app_intro>`.
 
 * Deploy your model online with the OpenVINO Model Server.

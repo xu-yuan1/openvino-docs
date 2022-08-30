@@ -1,15 +1,23 @@
 .. index:: pair: page; Deploying Your Applications with OpenVINO™
-.. _doxid-openvino_deployment_guide:
+.. _deploy_infer__deploy_app_intro:
 
+.. meta::
+   :description: There are several ways of deploying OpenVINO™ application once 
+                 its development has been finished.
+   :keywords: OpenVINO™, OpenVINO™ application, deploy application, centralized 
+              distribution, OpenVINO Deployment Manager, distribution type, 
+              local distribution, RPM packages, Docker images, PIP, PIP package 
+              manager, PYPI, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, 64-bit, 
+              build OpenVINO statically, operating system, granularity, 
+              OpenVINO package, plugin libraries, openvino_intel_cpu_plugin, 
+              openvino_ir_frontend, openvino_c, Red Hat Enterprise Linux 8, 
+              Windows Server Core base LTSC 2019, Windows 10 64-bit, 
+              version 20H2, OpenVINO IR, PaddlePaddle, ONNX
 
 Deploying Your Applications with OpenVINO™
 ============================================
 
-:target:`doxid-openvino_deployment_guide_1md_openvino_docs_ov_runtime_ug_deployment_deployment_intro`
-
-
-
-
+:target:`deploy_infer__deploy_app_intro_1md_openvino_docs_ov_runtime_ug_deployment_deployment_intro`
 
 .. toctree::
    :maxdepth: 1
