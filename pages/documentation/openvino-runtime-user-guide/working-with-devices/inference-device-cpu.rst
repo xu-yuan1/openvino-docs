@@ -361,10 +361,10 @@ Extensibility
 
 CPU plugin supports fallback on ``ov::Op`` reference implementation if the plugin do 
 not have its own implementation for such operation. That means that 
-:ref:`OpenVINO™ Extensibility Mechanism <extensibility_api_introduction>` 
+:ref:`OpenVINO™ Extensibility Mechanism <extensibility__api_introduction>` 
 can be used for the plugin extension as well. Enabling fallback on a custom operation 
 implementation is possible by overriding the ``ov::Op::evaluate`` method in the derived operation class 
-(see :ref:`custom OpenVINO™ operations <extensibility_custom_operations>` for details).
+(see :ref:`custom OpenVINO™ operations <extensibility__custom_operations>` for details).
 
 .. note:: 
 

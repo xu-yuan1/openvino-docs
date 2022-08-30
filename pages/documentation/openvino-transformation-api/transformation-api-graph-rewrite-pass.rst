@@ -1,5 +1,5 @@
 .. index:: pair: page; OpenVINO Graph Rewrite Pass
-.. _extensibility_graph_rewrite_pass:
+.. _extensibility_transformations__graph_rewrite_pass:
 
 .. meta::
    :description: Graph Rewrite serves for running multiple matcher passes on 
@@ -11,7 +11,7 @@
 OpenVINO Graph Rewrite Pass
 ===========================
 
-:target:`extensibility_graph_rewrite_pass_1md_openvino_docs_extensibility_ug_graph_rewrite_pass` 
+:target:`extensibility_transformations__graph_rewrite_pass_1md_openvino_docs_extensibility_ug_graph_rewrite_pass` 
 ``:ref:`ov::pass::GraphRewrite <doxid-classov_1_1pass_1_1_graph_rewrite>``` serves for running multiple matcher passes 
 on ``:ref:`ov::Model <doxid-classov_1_1_model>``` in a single graph traversal. Example:
 
@@ -53,5 +53,5 @@ map from registered MatcherPasses. That helps to avoid additional cost of applyi
 See Also
 ~~~~~~~~
 
-* :ref:`OpenVINO™ Transformations <transformations_overview>`
+* :ref:`OpenVINO™ Transformations <extensibility_transformations__overview>`
 

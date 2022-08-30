@@ -1,5 +1,5 @@
 .. index:: pair: page; Plugin
-.. _plugin_functionality:
+.. _extensibility_plugin__functionality:
 
 .. meta::
    :description: Guide to implementation of Inference Engine Plugin with description
@@ -11,7 +11,7 @@
 Plugin
 ======
 
-:target:`plugin_functionality_1md_openvino_docs_ie_plugin_dg_plugin` Inference Engine Plugin usually represents a wrapper 
+:target:`extensibility_plugin__functionality_1md_openvino_docs_ie_plugin_dg_plugin` Inference Engine Plugin usually represents a wrapper 
 around a backend. Backends can be:
 
 * OpenCL-like backend (e.g. clDNN library) for GPU devices.
@@ -26,7 +26,7 @@ The responsibility of Inference Engine Plugin:
 
 * Provides information about devices enabled by a particular backend, e.g. how many devices, their properties and so on.
 
-* Loads or imports :ref:`executable network <executable_network_functionality>` objects.
+* Loads or imports :ref:`executable network <extensibility_plugin__executable_network_functionality>` objects.
 
 In addition to the Inference Engine Public API, the Inference Engine provides the Plugin API, which is a set of functions 
 and helper classes that simplify new plugin development:
@@ -126,7 +126,7 @@ As an example, a plugin configuration has three value parameters:
 
 * ``deviceId`` - particular device ID to work with. Applicable if a plugin supports more than one ``Template`` device. In this case, some plugin methods, like ``SetConfig``, ``QueryNetwork``, and ``LoadNetwork``, must support the :ref:`CONFIG_KEY(KEY_DEVICE_ID) <doxid-ie__plugin__config_8hpp_1aad09cfba062e8ec9fb7ab9383f656ec7>` parameter.
 
-* ``perfCounts`` - boolean value to identify whether to collect performance counters during :ref:`Inference Request <synchronous_inference_request>` execution.
+* ``perfCounts`` - boolean value to identify whether to collect performance counters during :ref:`Inference Request <extensibility_plugin__synch_inf_req>` execution.
 
 * ``_streamsExecutorConfig`` - configuration of ``:ref:`InferenceEngine::IStreamsExecutor <doxid-class_inference_engine_1_1_i_streams_executor>``` to handle settings of multi-threaded context.
 
@@ -185,7 +185,7 @@ The very important part before creation of ``ExecutableNetwork`` instance is to 
 applies OpenVINO™ transformation passes.
 
 Actual graph compilation is done in the ``ExecutableNetwork`` constructor. Refer to the 
-:ref:`ExecutableNetwork Implementation Guide <executable_network_functionality>` for details.
+:ref:`ExecutableNetwork Implementation Guide <extensibility_plugin__executable_network_functionality>` for details.
 
 .. note::
    Actual configuration map used in ``ExecutableNetwork`` is constructed as a base plugin configuration set 
@@ -199,7 +199,7 @@ The function accepts a const shared pointer to ``:ref:`ov::Model <doxid-classov_
 
 #. Deep copies a const object to a local object, which can later be modified.
 
-#. Applies common and plugin-specific transformations on a copied graph to make the graph more friendly to hardware operations. For details how to write custom plugin-specific transformation, please, refer to :ref:`Writing OpenVINO™ transformations <transformations_overview>` guide. See detailed topics about network representation:
+#. Applies common and plugin-specific transformations on a copied graph to make the graph more friendly to hardware operations. For details how to write custom plugin-specific transformation, please, refer to :ref:`Writing OpenVINO™ transformations <extensibility_transformations__overview>` guide. See detailed topics about network representation:
    
    * `Intermediate Representation and Operation Sets <../_docs_MO_DG_IR_and_opsets.html>`__
    
@@ -509,7 +509,7 @@ The snippet below provides an example of the implementation for ``GetMetric`` :
 .. rubric::
 
 The importing network mechanism allows to import a previously exported backend specific graph and wrap it using 
-an :ref:`ExecutableNetwork <executable_network_functionality>` object. This functionality is useful 
+an :ref:`ExecutableNetwork <extensibility_plugin__executable_network_functionality>` object. This functionality is useful 
 if backend specific graph compilation takes significant time and/or cannot be done on a target host device due to other reasons.
 
 During export of backend specific graph using ``ExecutableNetwork::Export``, a plugin may export any type of information 
@@ -549,5 +549,5 @@ IE_DEFINE_PLUGIN_CREATE_FUNCTION macro:
 	static const :ref:`InferenceEngine::Version <doxid-struct_inference_engine_1_1_version>` version = {{2, 1}, CI_BUILD_NUMBER, "openvino_template_plugin"};
 	:ref:`IE_DEFINE_PLUGIN_CREATE_FUNCTION <doxid-group__ie__dev__api__plugin__api_1ga06b197cbe37f59f94b15a7d861e17d4e>`(Plugin, version)
 
-Next step in a plugin library implementation is the :ref:`ExecutableNetwork <executable_network_functionality>` class.
+Next step in a plugin library implementation is the :ref:`ExecutableNetwork <extensibility_plugin__executable_network_functionality>` class.
 

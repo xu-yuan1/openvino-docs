@@ -1139,7 +1139,7 @@ The following layers are supported by the plugins:
 
 \*- support is limited to the specific parameters. Refer to "Known Layers Limitation" section for the device :ref:`from the list of supported <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`.
 
-\*\*- support is implemented via :ref:`Extensibility mechanism <extensibility_api_introduction>`.
+\*\*- support is implemented via :ref:`Extensibility mechanism <extensibility__api_introduction>`.
 
 \*\*\*- supports NCDHW layout.
 

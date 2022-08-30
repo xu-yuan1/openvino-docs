@@ -420,7 +420,7 @@ Extensibility
 -------------
 
 For information on this subject, see the 
-:ref:`GPU Extensibility <extensibility_gpu>`.
+:ref:`GPU Extensibility <extensibility__gpu>`.
 
 GPU Context and Memory Sharing via RemoteTensor API
 ---------------------------------------------------

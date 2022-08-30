@@ -142,16 +142,16 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
 .. image:: ./_assets/batch_relaxation.png
 	:alt: batch_relaxed
 
-* transform the model during Model Optimizer conversion on the back phase. For more information, see the :ref:`Model Optimizer extension <model_optimizer_extensibility>`.
+* transform the model during Model Optimizer conversion on the back phase. For more information, see the :ref:`Model Optimizer extension <extensibility__model_optimizer>`.
 
-* transform OpenVINO Model during the runtime. For more information, see :ref:`OpenVINO Runtime Transformations <transformations_overview>`.
+* transform OpenVINO Model during the runtime. For more information, see :ref:`OpenVINO Runtime Transformations <extensibility_transformations__overview>`.
 
 * modify the original model with the help of the original framework.
 
 Extensibility
 -------------
 
-OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <extensibility_api_introduction>`
+OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <extensibility__api_introduction>`
 
 Introduction (Python)
 ~~~~~~~~~~~~~~~~~~~~~
@@ -282,14 +282,14 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
 .. image:: ./_assets/batch_relaxation.png
 	:alt: batch_relaxed
 
-* transform the model during Model Optimizer conversion on the back phase. See :ref:`Model Optimizer extension <model_optimizer_extensibility>`.
+* transform the model during Model Optimizer conversion on the back phase. See :ref:`Model Optimizer extension <extensibility__model_optimizer>`.
 
-* transform OpenVINO Model during the runtime. See :ref:`OpenVINO Runtime Transformations <transformations_overview>`.
+* transform OpenVINO Model during the runtime. See :ref:`OpenVINO Runtime Transformations <extensibility_transformations__overview>`.
 
 * modify the original model with the help of the original framework.
 
 Extensibility
 -------------
 
-OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <extensibility_api_introduction>`
+OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <extensibility__api_introduction>`
 

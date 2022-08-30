@@ -1,5 +1,5 @@
 .. index:: pair: page; Model Optimizer Extensibility
-.. _model_optimizer_extensibility:
+.. _extensibility__model_optimizer:
 
 .. meta::
    :description: Model Optimizer extensibility mechanism s a core part of Model Optimizer.
@@ -13,7 +13,7 @@
 Model Optimizer Extensibility
 =============================
 
-:target:`model_optimizer_extensibility_1md_openvino_docs_mo_dg_prepare_model_customize_model_optimizer_customize_model_optimizer`
+:target:`extensibility__model_optimizer_1md_openvino_docs_mo_dg_prepare_model_customize_model_optimizer_customize_model_optimizer`
 
 
 
@@ -24,7 +24,7 @@ Model Optimizer Extensibility
 
    ./model_optimizer_extensibility/extending-model-optimizer-with-caffe-python-layers
 
-:target:`model_optimizer_extensibility_1model-optimizer-extensibility` Model Optimizer extensibility mechanism enables support of 
+:target:`extensibility__model_optimizer_1model-optimizer-extensibility` Model Optimizer extensibility mechanism enables support of 
 new operations and custom transformations to generate the optimized intermediate representation (IR) as described 
 in the :ref:`Deep Learning Network Intermediate Representation and Operation Sets in OpenVINO™ <doxid-openvino_docs__m_o__d_g__i_r_and_opsets>`. 
 This mechanism is a core part of Model Optimizer, as a huge set of examples showing how to add custom logic to support your model.
@@ -704,7 +704,7 @@ There are several types of Model Optimizer extractor extensions:
 
 #. The generic one, which is described in this section.
 
-#. The special extractor for Caffe models with Python layers. This kind of extractor is described in the :ref:`Extending Model Optimizer with Caffe Python Layers <extending_model_optimizer_caffe_python_layers>` guide.
+#. The special extractor for Caffe models with Python layers. This kind of extractor is described in the :ref:`Extending Model Optimizer with Caffe Python Layers <extensibility_mo__caffe_python_layers>` guide.
 
 This section is focused on the option #1, which provides a generic mechanism for the operation extractor applicable for all 
 frameworks. Model Optimizer provides the ``mo.front.extractor.FrontExtractorOp`` class as a base class to implement the extractor. 
@@ -1447,7 +1447,7 @@ See Also
 
 * :ref:`OpenVINO Model Representation <deploy_infer__model_representation>`
 
-* :ref:`OpenVINO™ Extensibility Mechanism <extensibility_api_introduction>`
+* :ref:`OpenVINO™ Extensibility Mechanism <extensibility__api_introduction>`
 
-* :ref:`Extending Model Optimizer with Caffe Python Layers <extending_model_optimizer_caffe_python_layers>`
+* :ref:`Extending Model Optimizer with Caffe Python Layers <extensibility_mo__caffe_python_layers>`
 

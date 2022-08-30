@@ -47,7 +47,7 @@ class for a custom asynchronous inference request implementation:
 Class Fields
 ++++++++++++
 
-* ``_inferRequest`` - a reference to the :ref:`synchronous inference request <synchronous_inference_request>` implementation. Its methods are reused in the ``AsyncInferRequest`` constructor to define a device pipeline.
+* ``_inferRequest`` - a reference to the :ref:`synchronous inference request <extensibility_plugin__synch_inf_req>` implementation. Its methods are reused in the ``AsyncInferRequest`` constructor to define a device pipeline.
 
 * ``_waitExecutor`` - a task executor that waits for a response from a device about device tasks completion
 

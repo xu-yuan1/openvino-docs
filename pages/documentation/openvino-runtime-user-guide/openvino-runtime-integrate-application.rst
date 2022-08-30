@@ -311,7 +311,7 @@ Additional Resources
 
 * :ref:`OpenVINO™ Runtime Preprocessing <deploy_infer__preprocessing_overview>`
 
-* :ref:`Using Encrypted Models with OpenVINO <security_encrypted_models>`
+* :ref:`Using Encrypted Models with OpenVINO <security__encrypted_models>`
 
 * :ref:`OpenVINO Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
 

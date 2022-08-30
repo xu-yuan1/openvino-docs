@@ -1,5 +1,5 @@
 .. index:: pair: page; Overview of Transformations API
-.. _transformations_overview:
+.. _extensibility_transformations__overview:
 
 .. meta::
    :description: Description of all necessary information required to start implementing 
@@ -12,7 +12,7 @@
 Overview of Transformations API
 ===============================
 
-:target:`transformations_overview_1md_openvino_docs_extensibility_ug_ov_transformations`
+:target:`extensibility_transformations__overview_1md_openvino_docs_extensibility_ug_ov_transformations`
 
 
 
@@ -172,11 +172,11 @@ Transformations types
 
 OpenVINO™ Runtime has three main transformation types:
 
-* :ref:`Model pass <extensibility_model_pass>` - straightforward way to work with ``:ref:`ov::Model <doxid-classov_1_1_model>``` directly
+* :ref:`Model pass <extensibility_transformations__model_pass>` - straightforward way to work with ``:ref:`ov::Model <doxid-classov_1_1_model>``` directly
 
-* :ref:`Matcher pass <extensibility_matcher_pass>` - pattern-based transformation approach
+* :ref:`Matcher pass <extensibility_transformations__matcher_pass>` - pattern-based transformation approach
 
-* :ref:`Graph rewrite pass <extensibility_graph_rewrite_pass>` - container for matcher passes needed for efficient execution
+* :ref:`Graph rewrite pass <extensibility_transformations__graph_rewrite_pass>` - container for matcher passes needed for efficient execution
 
 .. image:: ./_assets/transformations_structure.png
 
@@ -356,5 +356,5 @@ See Also
 
 * :ref:`OpenVINO™ Model Representation <deploy_infer__model_representation>`
 
-* :ref:`OpenVINO™ Extensions <extensibility_api_introduction>`
+* :ref:`OpenVINO™ Extensions <extensibility__api_introduction>`
 

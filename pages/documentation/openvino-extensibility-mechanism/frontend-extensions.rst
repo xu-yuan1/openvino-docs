@@ -1,5 +1,5 @@
 .. index:: pair: page; Frontend Extensions
-.. _extensibility_frontend_extensions:
+.. _extensibility__frontend_extensions:
 
 .. meta::
    :description:  Frontend extension classes are used to facilitate mapping of custom operations from 
@@ -12,12 +12,12 @@
 Frontend Extensions
 ===================
 
-:target:`extensibility_frontend_extensions_1md_openvino_docs_extensibility_ug_frontend_extensions` The goal of this chapter is to 
+:target:`extensibility__frontend_extensions_1md_openvino_docs_extensibility_ug_frontend_extensions` The goal of this chapter is to 
 explain how to use Frontend extension classes to facilitate mapping of custom operations from framework model representation to 
-OpenVINO representation. Refer to :ref:`Introduction to OpenVINO Extension <extensibility_api_introduction>` to understand entire flow.
+OpenVINO representation. Refer to :ref:`Introduction to OpenVINO Extension <extensibility__api_introduction>` to understand entire flow.
 
 This API is applicable for new frontends only, which exist for ONNX and PaddlePaddle. If a different model format is used, 
-follow legacy :ref:`Model Optimizer Extensions <model_optimizer_extensibility>` guide.
+follow legacy :ref:`Model Optimizer Extensions <extensibility__model_optimizer>` guide.
 
 .. note:: 
    This documentation is written based on the 
@@ -77,7 +77,7 @@ that contains custom operations:
 
 Or extensions can be constructed in a separately compiled shared library. Separately compiled library can be used in 
 Model Optimizer or ``benchmark_app``. Read about how to build and load such library in chapter “Create library with extensions” 
-in :ref:`Introduction to OpenVINO Extension <extensibility_api_introduction>`.
+in :ref:`Introduction to OpenVINO Extension <extensibility__api_introduction>`.
 
 If operation have multiple inputs and/or outputs they will be mapped in order. The type of elements in input/output tensors should 
 match expected types in the surrounding operations. For example, if custom operation produces ``f32`` data type then operation 

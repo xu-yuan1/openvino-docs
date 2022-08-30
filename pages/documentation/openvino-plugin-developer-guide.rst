@@ -1,5 +1,5 @@
 .. index:: pair: page; Overview of Inference Engine Plugin Library
-.. _plugin_developer_guide_overview:
+.. _extensibility_plugin__overview:
 
 .. meta::
    :description: Overview of the plugin architecture of the Inference Engine.
@@ -10,7 +10,7 @@
 Overview of Inference Engine Plugin Library
 ===========================================
 
-:target:`plugin_developer_guide_overview_1md_openvino_docs_ie_plugin_dg_intro`
+:target:`extensibility_plugin__overview_1md_openvino_docs_ie_plugin_dg_intro`
 
 .. toctree::
    :maxdepth: 1
@@ -41,26 +41,26 @@ Inference Engine plugin dynamic library consists of several main components:
 
    * Provides information about devices of a specific type.
 
-   * Can create an :ref:`executable network <executable_network_functionality>` 
+   * Can create an :ref:`executable network <extensibility_plugin__executable_network_functionality>` 
      instance which represents a Neural Network backend specific graph structure 
      for a particular device in opposite to the 
      :ref:`InferenceEngine::ICNNNetwork <doxid-class_inference_engine_1_1_i_c_n_n_network>` 
      interface which is backend-independent.
 
    * Can import an already compiled graph structure from an input stream to an 
-     :ref:`executable network <executable_network_functionality>` object.
+     :ref:`executable network <extensibility_plugin__executable_network_functionality>` object.
 
-#. :ref:`Executable Network class <executable_network_functionality>` :
+#. :ref:`Executable Network class <extensibility_plugin__executable_network_functionality>` :
    
    * Is an execution configuration compiled for a particular device and takes into account its capabilities.
    
    * Holds a reference to a particular device and a task executor for this device.
    
-   * Can create several instances of :ref:`Inference Request <synchronous_inference_request>`.
+   * Can create several instances of :ref:`Inference Request <extensibility_plugin__synch_inf_req>`.
    
    * Can export an internal backend specific graph structure to an output stream.
 
-#. :ref:`Inference Request class <synchronous_inference_request>` :
+#. :ref:`Inference Request class <extensibility_plugin__synch_inf_req>` :
    
    * Runs an inference pipeline serially.
    
@@ -68,7 +68,7 @@ Inference Engine plugin dynamic library consists of several main components:
 
 #. :ref:`Asynchronous Inference Request class <extensibility_plugin__async_infer_req>` :
    
-   * Wraps the :ref:`Inference Request <synchronous_inference_request>` 
+   * Wraps the :ref:`Inference Request <extensibility_plugin__synch_inf_req>` 
      class and runs pipeline stages in parallel on several task executors based 
      on a device-specific pipeline structure.
 
@@ -89,7 +89,7 @@ Detailed guides
 
 * :ref:`Low precision transformations <extensibility_plugin__lpt>` guide
 
-* :ref:`Writing OpenVINO™ transformations <transformations_overview>` guide
+* :ref:`Writing OpenVINO™ transformations <extensibility_transformations__overview>` guide
 
 API References
 ~~~~~~~~~~~~~~

@@ -1,5 +1,5 @@
 .. index:: pair: page; OpenVINO™ Security Add-on
-.. _security_add_on:
+.. _security__add_on:
 
 .. meta::
    :description: Instructions on how to use the OpenVINO™ Security Add-on 
@@ -11,7 +11,7 @@
 OpenVINO™ Security Add-on
 ===========================
 
-:target:`security_add_on_1md_openvino_docs_ovsa_ovsa_get_started` This guide provides instructions for people who use 
+:target:`security__add_on_1md_openvino_docs_ovsa_ovsa_get_started` This guide provides instructions for people who use 
 the OpenVINO™ Security Add-on to create, distribute, and use models that are created with the OpenVINO™ toolkit:
 
 * **Model Developer** : The Model Developer interacts with the Independent Software Vendor to control the User access to models. This document shows you how to setup hardware and virtual machines to use the OpenVINO™ Security Add-on to define access control to your OpenVINO™ models and then provide the access controlled models to the users.

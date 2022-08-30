@@ -1,5 +1,5 @@
 .. index:: pair: page; How to Implement Custom GPU Operations
-.. _extensibility_gpu:
+.. _extensibility__gpu:
 
 .. meta::
    :description: Description of custom kernel support for the GPU device to 
@@ -12,7 +12,7 @@
 How to Implement Custom Operations for GPU 
 ======================================
 
-:target:`extensibility_gpu_1md_openvino_docs_extensibility_ug_gpu_extensibility` To enable operations not supported by OpenVINO 
+:target:`extensibility__gpu_1md_openvino_docs_extensibility_ug_gpu_extensibility` To enable operations not supported by OpenVINO 
 out of the box, you may need an extension for an OpenVINO operation set, and a custom kernel for the device you will target. 
 This page describes custom kernel support for the GPU device.
 

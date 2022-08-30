@@ -143,7 +143,7 @@ The table below demonstrates support of key features by OpenVINO device plugins.
       - No
       - Yes
       - No
-    * - :ref:`Extensibility <extensibility_api_introduction>`
+    * - :ref:`Extensibility <extensibility__api_introduction>`
       - Yes
       - Yes
       - No

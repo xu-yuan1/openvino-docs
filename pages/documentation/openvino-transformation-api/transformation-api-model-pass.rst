@@ -1,5 +1,5 @@
 .. index:: pair: page; OpenVINO Model Pass
-.. _extensibility_model_pass:
+.. _extensibility_transformations__model_pass:
 
 .. meta::
    :description: Model Pass is transformations that take entire ov::Model 
@@ -11,7 +11,7 @@
 OpenVINO Model Pass
 ===================
 
-:target:`extensibility_model_pass_1md_openvino_docs_extensibility_ug_model_pass` ``:ref:`ov::pass::ModelPass <doxid-classov_1_1pass_1_1_model_pass>``` 
+:target:`extensibility_transformations__model_pass_1md_openvino_docs_extensibility_ug_model_pass` ``:ref:`ov::pass::ModelPass <doxid-classov_1_1pass_1_1_model_pass>``` 
 is used for transformations that take entire ``:ref:`ov::Model <doxid-classov_1_1_model>``` as an input and process it.
 
 Template for ModelPass transformation class
@@ -67,5 +67,5 @@ Also ``:ref:`ov::pass::ModelPass <doxid-classov_1_1pass_1_1_model_pass>``` based
 See Also
 ~~~~~~~~
 
-* :ref:`OpenVINO™ Transformations <transformations_overview>`
+* :ref:`OpenVINO™ Transformations <extensibility_transformations__overview>`
 

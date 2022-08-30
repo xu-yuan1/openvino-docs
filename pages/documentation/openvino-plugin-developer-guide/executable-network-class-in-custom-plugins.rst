@@ -1,5 +1,5 @@
 .. index:: pair: page; Executable Network
-.. _executable_network_functionality:
+.. _extensibility_plugin__executable_network_functionality:
 
 .. meta::
    :description: Information regarding Executable Network functionality.
@@ -10,7 +10,7 @@
 Executable Network
 ==================
 
-:target:`executable_network_functionality_1md_openvino_docs_ie_plugin_dg_executablenetwork` ``ExecutableNetwork`` class 
+:target:`extensibility_plugin__executable_network_functionality_1md_openvino_docs_ie_plugin_dg_executablenetwork` ``ExecutableNetwork`` class 
 functionality:
 
 * Compile an :ref:`InferenceEngine::ICNNNetwork <doxid-class_inference_engine_1_1_i_c_n_n_network>` instance to a backend specific graph representation
@@ -273,7 +273,7 @@ The method creates an asynchronous inference request and returns it. While the p
 interface for inference request, which can be executed in synchronous and asynchronous modes, a plugin library implementation 
 has two separate classes:
 
-* :ref:`Synchronous inference request <synchronous_inference_request>`, which defines pipeline stages and runs them synchronously in the ``Infer`` method.
+* :ref:`Synchronous inference request <extensibility_plugin__synch_inf_req>`, which defines pipeline stages and runs them synchronously in the ``Infer`` method.
 
 * :ref:`Asynchronous inference request <extensibility_plugin__async_infer_req>`, which is a wrapper for a synchronous inference request and can run a pipeline asynchronously. Depending on a device pipeline structure, it can has one or several stages:
   
@@ -306,7 +306,7 @@ has two separate classes:
 .. rubric::
 
 This is a helper method used by ``CreateInferRequest`` to create a 
-:ref:`synchronous inference request <synchronous_inference_request>`, which is later wrapped with 
+:ref:`synchronous inference request <extensibility_plugin__synch_inf_req>`, which is later wrapped with 
 the asynchronous inference request class:
 
 .. ref-code-block:: cpp
@@ -386,5 +386,5 @@ This function is the only way to get configuration values when a network is impo
 and tools (for example, the `Compile tool <../_inference_engine_tools_compile_tool_README.html>`__).
 
 The next step in plugin library implementation is the 
-:ref:`Synchronous Inference Request <synchronous_inference_request>` class.
+:ref:`Synchronous Inference Request <extensibility_plugin__synch_inf_req>` class.
 

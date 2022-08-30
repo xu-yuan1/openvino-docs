@@ -123,7 +123,7 @@ Representation of Operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``ov::Op`` class represents any abstract operation in the model 
-representation. Use this class to create :ref:`custom operations <extensibility_custom_operations>`.
+representation. Use this class to create :ref:`custom operations <extensibility__custom_operations>`.
 
 Representation of Operation Sets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -138,7 +138,7 @@ sets, within which the new operations would change the behavior of previous
 operations. Using operation sets helps you avoid changing your application when 
 new operations are introduced. For a complete list of operation sets supported 
 in OpenVINO™ toolkit, see the :ref:`Available Operations Sets <doxid-openvino_docs_ops_opset>`. 
-To add the support for custom operations, see :ref:`OpenVINO Extensibility Mechanism <extensibility_api_introduction>`.
+To add the support for custom operations, see :ref:`OpenVINO Extensibility Mechanism <extensibility__api_introduction>`.
 
 .. _deploy_infer__model_representation_1ov_ug_build_model:
 
@@ -354,6 +354,6 @@ See Also
 
 :ref:`Available Operation Sets <doxid-openvino_docs_ops_opset>`
 
-* :ref:`OpenVINO™ Runtime Extensibility Developer Guide <extensibility_api_introduction>`
+* :ref:`OpenVINO™ Runtime Extensibility Developer Guide <extensibility__api_introduction>`
 
-* :ref:`Transformations Developer Guide <transformations_overview>`.
+* :ref:`Transformations Developer Guide <extensibility_transformations__overview>`.

@@ -1,5 +1,5 @@
 .. index:: pair: page; Using Encrypted Models with OpenVINO
-.. _security_encrypted_models:
+.. _security__encrypted_models:
 
 .. meta::
    :description: Description of securing and loading encrypted models along with
@@ -11,7 +11,7 @@
 Using Encrypted Models with OpenVINO
 ====================================
 
-:target:`security_encrypted_models_1md_openvino_docs_ov_runtime_ug_protecting_model_guide` Deploying deep-learning capabilities 
+:target:`security__encrypted_models_1md_openvino_docs_ov_runtime_ug_protecting_model_guide` Deploying deep-learning capabilities 
 to edge devices can present security challenges like ensuring inference integrity, or providing copyright protection of your 
 deep-learning models.
 

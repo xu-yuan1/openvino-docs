@@ -1,5 +1,5 @@
 .. index:: pair: page; Custom OpenVINO™ Operations
-.. _extensibility_custom_operations:
+.. _extensibility__custom_operations:
 
 .. meta::
    :description: Extension API allows registering custom operations to support models with operations
@@ -11,7 +11,7 @@
 Custom OpenVINO™ Operations
 =============================
 
-:target:`extensibility_custom_operations_1md_openvino_docs_extensibility_ug_add_openvino_ops` OpenVINO™ Extension API allows you to register custom operations to support models with operations which OpenVINO™ does not support out-of-the-box.
+:target:`extensibility__custom_operations_1md_openvino_docs_extensibility_ug_add_openvino_ops` OpenVINO™ Extension API allows you to register custom operations to support models with operations which OpenVINO™ does not support out-of-the-box.
 
 Operation Class
 ~~~~~~~~~~~~~~~

@@ -1,5 +1,5 @@
 .. index:: pair: page; Synchronous Inference Request
-.. _synchronous_inference_request:
+.. _extensibility_plugin__synch_inf_req:
 
 .. meta::
    :description: Information about Synchronous Inference Request functionality.
@@ -10,7 +10,7 @@
 Synchronous Inference Request
 =============================
 
-:target:`synchronous_inference_request_1md_openvino_docs_ie_plugin_dg_inferrequest` ``InferRequest`` class functionality:
+:target:`extensibility_plugin__synch_inf_req_1md_openvino_docs_ie_plugin_dg_inferrequest` ``InferRequest`` class functionality:
 
 * Allocate input and output blobs needed for a backend-dependent network inference.
 

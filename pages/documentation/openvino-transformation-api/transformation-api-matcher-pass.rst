@@ -1,5 +1,5 @@
 .. index:: pair: page; OpenVINO Matcher Pass
-.. _extensibility_matcher_pass:
+.. _extensibility_transformations__matcher_pass:
 
 .. meta::
    :description: Description of steps used for pattern-based transformations.
@@ -10,7 +10,7 @@
 OpenVINO Matcher Pass
 =====================
 
-:target:`extensibility_matcher_pass_1md_openvino_docs_extensibility_ug_matcher_pass` ``:ref:`ov::pass::MatcherPass <doxid-classov_1_1pass_1_1_matcher_pass>``` 
+:target:`extensibility_transformations__matcher_pass_1md_openvino_docs_extensibility_ug_matcher_pass` ``:ref:`ov::pass::MatcherPass <doxid-classov_1_1pass_1_1_matcher_pass>``` 
 is used for pattern-based transformations.
 
 Template for MatcherPass transformation class
@@ -312,4 +312,4 @@ This example shows how to use predicate to construct a pattern. Also it shows ho
 See Also
 ~~~~~~~~
 
-* :ref:`OpenVINO™ Transformations <transformations_overview>`
+* :ref:`OpenVINO™ Transformations <extensibility_transformations__overview>`

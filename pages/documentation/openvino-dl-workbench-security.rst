@@ -1,5 +1,5 @@
 .. index:: pair: page; Deep Learning Workbench Security
-.. _security_dl_workbench:
+.. _security__dl_workbench:
 
 .. meta::
    :description: Description of DL Workbench, how to run it and how it is secured.
@@ -10,7 +10,7 @@
 Deep Learning Workbench Security
 ================================
 
-:target:`security_dl_workbench_1md_openvino_docs_security_guide_workbench` Deep Learning Workbench (DL Workbench) 
+:target:`security__dl_workbench_1md_openvino_docs_security_guide_workbench` Deep Learning Workbench (DL Workbench) 
 is a web application running within a Docker container.
 
 Run DL Workbench
