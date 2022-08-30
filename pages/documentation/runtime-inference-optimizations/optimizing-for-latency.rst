@@ -47,12 +47,12 @@ preserving the single-tile latency.
 
 Typically, human expertise is required to get more "throughput" out of the 
 device, even in the inherently latency-oriented cases. OpenVINO can take this 
-configuration burden via :ref:`high-level performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>`, 
+configuration burden via :ref:`high-level performance hints <deploy_infer__performance_hints>`, 
 the ``:ref:`ov::hint::PerformanceMode::LATENCY <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a501069dd75f76384ba18f133fdce99c2>``` 
 specified for the ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` 
 property for the ``compile_model``.
 
-.. note:: :ref:`OpenVINO performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` 
+.. note:: :ref:`OpenVINO performance hints <deploy_infer__performance_hints>` 
    is a recommended way for performance configuration, which is both device-agnostic and future-proof.
 
 When multiple models are to be used simultaneously, consider running inference 

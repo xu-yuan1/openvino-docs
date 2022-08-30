@@ -540,7 +540,7 @@ general OpenCL tips apply:
   spin-loop polling for completion. If CPU load is a concern, consider the 
   dedicated ``queue_throttle`` property mentioned previously. Note that this 
   option may increase inference latency, so consider combining it with multiple 
-  GPU streams or :ref:`throughput performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>`.
+  GPU streams or :ref:`throughput performance hints <deploy_infer__performance_hints>`.
 
 * When operating media inputs, consider 
   :ref:`remote tensors API of the GPU Plugin <deploy_infer__gpu_device_remote_tensor>`.

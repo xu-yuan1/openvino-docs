@@ -32,7 +32,7 @@ Basic and Advanced Ways of Leveraging Throughput
 
 There are two ways of leveraging throughput with individual devices:
 
-* **Basic (high-level)** flow with :ref:`OpenVINO performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` 
+* **Basic (high-level)** flow with :ref:`OpenVINO performance hints <deploy_infer__performance_hints>` 
   which is inherently **portable and future-proof**.
 
 * **Advanced (low-level)** approach of explicit **batching** and **streams**. 
@@ -57,7 +57,7 @@ In general, most throughput-oriented inference applications should:
   * Setup the configuration for the *device* (for example, as parameters of 
     the ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>```) 
     via either previously introduced :ref:`low-level explicit options <deployment_throughput_advanced>` 
-    or :ref:`OpenVINO performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` (**preferable**):
+    or :ref:`OpenVINO performance hints <deploy_infer__performance_hints>` (**preferable**):
 
     .. tab:: C++
 
@@ -105,5 +105,5 @@ Keep in mind that the resulting performance is usually a fraction of the
 as the memory-bandwidth, which is shared between CPU and iGPU.
 
 .. note:: While the legacy approach of optimizing the parameters of each device 
-   separately works, the :ref:`OpenVINO performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` 
+   separately works, the :ref:`OpenVINO performance hints <deploy_infer__performance_hints>` 
    allow configuring all devices (that are part of the specific multi-device configuration) at once.

@@ -238,7 +238,7 @@ For more details, see the :ref:`optimization guide <runtime_inference_optimizati
    platform may introduce additional overheads on data transfer between NUMA nodes. 
    In that case it is better to use the 
    ``:ref:`ov::hint::PerformanceMode::LATENCY <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a501069dd75f76384ba18f133fdce99c2>``` 
-   performance hint. For more details see the :ref:`performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` overview.
+   performance hint. For more details see the :ref:`performance hints <deploy_infer__performance_hints>` overview.
 
 
 Dynamic Shapes

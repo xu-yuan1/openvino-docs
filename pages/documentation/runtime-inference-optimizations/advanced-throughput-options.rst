@@ -115,7 +115,7 @@ One possible throughput optimization strategy is to **set an upper bound for lat
    use only the streams (no batching), as they tolerate individual requests 
    having different shapes.
 
-.. note:: Using the :ref:`High-Level Performance Hints <doxid-openvino_docs__o_v__u_g__performance__hints>` 
+.. note:: Using the :ref:`High-Level Performance Hints <deploy_infer__performance_hints>` 
    is the alternative, portable and future-proof option, allowing OpenVINO to find 
    the best combination of streams and batching for a given scenario and a model.
 

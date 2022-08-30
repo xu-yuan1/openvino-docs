@@ -34,7 +34,7 @@ performed over inputs with much less synchronization within CNN ops):
 
 .. image:: ./_assets/cpu_streams_explained.png
 
-Keep in mind that :ref:`high-level performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` 
+Keep in mind that :ref:`high-level performance hints <deploy_infer__performance_hints>` 
 allow the implementation to select the optimal number of streams depending on 
 model's compute demands and CPU capabilities, including :ref:`int8 inference <model_optimization_guide>` 
 hardware acceleration, number of cores, etc.

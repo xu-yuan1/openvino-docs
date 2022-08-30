@@ -1,13 +1,27 @@
 .. index:: pair: page; High-level Performance Hints
-.. _doxid-openvino_docs__o_v__u_g__performance__hints:
+.. _deploy_infer__performance_hints:
 
+.. meta::
+   :description: OpenVINO Runtime offers two dedicated high-level performance 
+                 hints, namely throughput and latency, that help to configure 
+                 an inference device.
+   :keywords: OpenVINO Runtime, performance hints, high-level performance hints,
+              device configuration, inference device, inference, model inference, 
+              performance mode, latency, throughput, analyze performance, 
+              increase performance, benchmark_app, device-specific configuration, 
+              Compiled_Model, basic API, performance settings, batch size, 
+              device configuration, Intel CPU, Intel GPU, latency hint, 
+              throughput hint, num_requests, parallel inference requests,
+              Async API, Asynchronous API, portability
 
 High-level Performance Hints
 ============================
 
-:target:`doxid-openvino_docs__o_v__u_g__performance__hints_1md_openvino_docs_ov_runtime_ug_performance_hints` Even though all :ref:`supported devices <deploy_infer__working_with_devices>` in OpenVINO™ offer low-level performance settings, utilizing them is not recommended outside of very few cases. The preferred way to configure performance in OpenVINO Runtime is using performance hints. This is a future-proof solution fully compatible with the :ref:`automatic device selection inference mode <deploy_infer__auto_plugin>` and designed with *portability* in mind.
+:target:`deploy_infer__performance_hints_1md_openvino_docs_ov_runtime_ug_performance_hints` 
 
-The hints also set the direction of the configuration in the right order. Instead of mapping the application needs to the low-level performance settings, and keeping an associated application logic to configure each possible device separately, the hints express a target scenario with a single config key and let the *device* configure itself in response.
+Even though all :ref:`supported devices <deploy_infer__working_with_devices>` in OpenVINO™ offer low-level performance settings, utilizing them is not recommended outside of very few cases. The preferred way to configure performance in OpenVINO Runtime is using performance hints. This is a future-proof solution fully compatible with the :ref:`automatic device selection inference mode <deploy_infer__auto_plugin>` and designed with *portability* in mind.
+
+The hints also set the direction of the configuration in the right order. Instead of mapping the application needs to the low-level performance settings, and keeping an associated application logic to configure each possible device separately, the hints express a target scenario with a single config key and let the *device* configure itself in response.
 
 Previously, a certain level of automatic configuration was the result of the *default* values of the parameters. For example, the number of CPU streams was deduced from the number of CPU cores, when ``:ref:`ov::streams::AUTO <doxid-group__ov__runtime__cpp__prop__api_1gaddb29425af71fbb6ad3379c59342ff0e>``` (``CPU_THROUGHPUT_AUTO`` in the pre-API 2.0 terminology) was set. However, the resulting number of streams did not account for actual compute requirements of the model to be inferred. The hints, in contrast, respect the actual model, so the parameters for optimal throughput are calculated for each model individually (based on its compute versus memory bandwidth requirements and capabilities of the device).
 

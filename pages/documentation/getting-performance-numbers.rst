@@ -74,7 +74,7 @@ to measure the performance of the model on the GPU. Or
 
 to execute on the CPU instead.
 
-Each of the :ref:`OpenVINO supported devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` offers performance settings that contain command-line equivalents in the :ref:`Benchmark app <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`. While these settings provide really low-level control and allow leveraging the optimal model performance on the *specific* device, it is recommended to always start the performance evaluation with the :ref:`OpenVINO High-Level Performance Hints <doxid-openvino_docs__o_v__u_g__performance__hints>` first:
+Each of the :ref:`OpenVINO supported devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` offers performance settings that contain command-line equivalents in the :ref:`Benchmark app <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`. While these settings provide really low-level control and allow leveraging the optimal model performance on the *specific* device, it is recommended to always start the performance evaluation with the :ref:`OpenVINO High-Level Performance Hints <deploy_infer__performance_hints>` first:
 
 * benchmark_app **-hint tput** -d 'device' -m 'path to your model'
 

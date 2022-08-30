@@ -92,7 +92,7 @@ For example:
   :ref:`do not always map well to the CPU <deployment_low_level_implementation>`.
 
 To make the configuration process much easier and its performance optimization 
-more portable, the option of :ref:`Performance Hints <doxid-openvino_docs__o_v__u_g__performance__hints>` 
+more portable, the option of :ref:`Performance Hints <deploy_infer__performance_hints>` 
 has been introduced. It comprises two high-level "presets" focused on either 
 **latency** or **throughput** and, essentially, makes execution specifics irrelevant.
 
@@ -112,4 +112,4 @@ Additional Resources
 
 * :ref:`Details on latency <deployment_optimizing_for_latency>`
 
-* :ref:`API examples and details <doxid-openvino_docs__o_v__u_g__performance__hints>`.
+* :ref:`API examples and details <deploy_infer__performance_hints>`.
