@@ -1,11 +1,22 @@
 .. index:: pair: page; Heterogeneous execution
-.. _doxid-openvino_docs__o_v__u_g__hetero_execution:
+.. _deploy_infer__hetero_plugin:
 
+.. meta::
+   :description: Heterogeneous execution mode in OpenVINO Runtime enables 
+                 inference of one model on several computing devices.
+   :keywords: OpenVINO Runtime, inference, model inference, inference request, 
+              heterogeneous execution mode, Heterogeneous device, HETERO plugin, 
+              HETERO, Intel CPU, model subgraph, affinity, query_model, 
+              define HETERO device, configure HETERO device, manual mode, 
+              automatic mode, affinity for operation, get_rt_info, Intel GPU, 
+              MYRIAD device, fallback device, device-specific configuration, 
+              set affinities, HDDL device, OPENVINO_HETERO_VISUALIZE, GraphViz, 
+              heterogeneous execution, analyze performance
 
 Heterogeneous execution
 =======================
 
-:target:`doxid-openvino_docs__o_v__u_g__hetero_execution_1md_openvino_docs_ov_runtime_ug_hetero_execution` Heterogeneous execution enables executing inference of one model on several devices. Its purpose is to:
+:target:`deploy_infer__hetero_plugin_1md_openvino_docs_ov_runtime_ug_hetero_execution` Heterogeneous execution enables executing inference of one model on several devices. Its purpose is to:
 
 * Utilize the power of accelerators to process the heaviest parts of the model and to execute unsupported operations on fallback devices, like the CPU.
 

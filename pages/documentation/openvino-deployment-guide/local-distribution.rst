@@ -163,7 +163,7 @@ The ``HETERO``, ``MULTI``, ``BATCH`` and ``AUTO`` execution modes can also be us
 
 * If :ref:`MULTI <deploy_infer__multi_plugin>` is used explicitly, put ``openvino_auto_plugin`` to the distribution.
 
-* If :ref:`HETERO <doxid-openvino_docs__o_v__u_g__hetero_execution>` is either used explicitly or ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` is used with GPU, put ``openvino_hetero_plugin`` to the distribution.
+* If :ref:`HETERO <deploy_infer__hetero_plugin>` is either used explicitly or ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` is used with GPU, put ``openvino_hetero_plugin`` to the distribution.
 
 * If :ref:`BATCH <doxid-openvino_docs__o_v__u_g__automatic__batching>` is either used explicitly or ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` is used with GPU, put ``openvino_batch_plugin`` to the distribution.
 

@@ -69,7 +69,7 @@ OpenVINO Runtime also has several execution capabilities which work on top of ot
     * - :ref:`Auto-Device selection <deploy_infer__auto_plugin>`
       - Auto-Device selection enables selecting Intel device for inference 
         automatically.
-    * - :ref:`Heterogeneous execution <doxid-openvino_docs__o_v__u_g__hetero_execution>`
+    * - :ref:`Heterogeneous execution <deploy_infer__hetero_plugin>`
       - Heterogeneous execution enables automatic inference splitting between 
         several devices (for example if a device doesn't `support certain operation <#supported-layers>`__ ).
     * - :ref:`Automatic Batching <doxid-openvino_docs__o_v__u_g__automatic__batching>`
@@ -98,7 +98,7 @@ The table below demonstrates support of key features by OpenVINO device plugins.
       - :ref:`GPU <deploy_infer__gpu_device>`
       - :ref:`GNA <deploy_infer__gna_device>`
       - :ref:`Arm® CPU <deploy_infer__arm_cpu_device>`
-    * - :ref:`Heterogeneous execution <doxid-openvino_docs__o_v__u_g__hetero_execution>`
+    * - :ref:`Heterogeneous execution <deploy_infer__hetero_plugin>`
       - Yes
       - Yes
       - No

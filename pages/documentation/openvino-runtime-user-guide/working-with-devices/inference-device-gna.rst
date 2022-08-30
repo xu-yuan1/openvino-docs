@@ -664,7 +664,7 @@ Increasing batch size only improves efficiency of ``MatMul`` layers.
 Compatibility with Heterogeneous mode
 -------------------------------------
 
-:ref:`Heterogeneous execution <doxid-openvino_docs__o_v__u_g__hetero_execution>` is currently not supported by GNA plugin.
+:ref:`Heterogeneous execution <deploy_infer__hetero_plugin>` is currently not supported by GNA plugin.
 
 See Also
 ~~~~~~~~
