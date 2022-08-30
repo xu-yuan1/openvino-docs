@@ -41,7 +41,7 @@ Below are several examples of dimensions that can be naturally dynamic:
 
 * Arbitrary number of detections in object detection models output
 
-There are various methods to address input dynamic dimensions through combining multiple pre-reshaped models and input data padding. The methods are sensitive to model internals, do not always give optimal performance and are cumbersome. For a short overview of the methods, refer to the :ref:`When Dynamic Shapes API is Not Applicable <doxid-openvino_docs__o_v__u_g__no_dynamic_shapes>` page. Apply those methods only if native dynamic shape API described in the following sections does not work or does not perform as expected.
+There are various methods to address input dynamic dimensions through combining multiple pre-reshaped models and input data padding. The methods are sensitive to model internals, do not always give optimal performance and are cumbersome. For a short overview of the methods, refer to the :ref:`When Dynamic Shapes API is Not Applicable <deploy_infer__no_dynamic_shapes>` page. Apply those methods only if native dynamic shape API described in the following sections does not work or does not perform as expected.
 
 The decision about using dynamic shapes should be based on proper benchmarking of a real application with real data. Unlike statically shaped models, dynamically shaped ones require different inference time, depending on input data shape or input tensor content. Furthermore, using the dynamic shapes can bring more overheads in memory and running time of each inference call depending on hardware plugin and model used.
 
