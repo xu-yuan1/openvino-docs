@@ -18,7 +18,7 @@ First, the application reads command-line parameters and loads a model to the Op
 
 Also, the Compile tool supports the following capabilities:
 
-* Embedding :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` and precision conversions (for more details, see the :ref:`Optimize Preprocessing <deploy_infer__preprocessing_overview>`). To compile the model with advanced preprocessing capabilities, refer to the :ref:`Use Case - Integrate and Save Preprocessing Steps Into OpenVINO IR <doxid-openvino_docs__o_v__u_g__preprocess__usecase_save>`, which shows how to have all the preprocessing in the compiled blob.
+* Embedding :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` and precision conversions (for more details, see the :ref:`Optimize Preprocessing <deploy_infer__preprocessing_overview>`). To compile the model with advanced preprocessing capabilities, refer to the :ref:`Use Case - Integrate and Save Preprocessing Steps Into OpenVINO IR <deploy_infer__preprocessing_use_case>`, which shows how to have all the preprocessing in the compiled blob.
 
 * Compiling blobs for OpenVINO Runtime API 2.0 by default or for Inference Engine API with explicit option ``-ov_api_1_0``.
 

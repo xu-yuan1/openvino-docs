@@ -1,11 +1,22 @@
 .. index:: pair: page; Use Case - Integrate and Save Preprocessing Steps Into IR
-.. _doxid-openvino_docs__o_v__u_g__preprocess__usecase_save:
+.. _deploy_infer__preprocessing_use_case:
 
+.. meta::
+   :description: Once a model is read, the preprocessing/ postprocessing steps 
+                 can be added and then the resulting model can be saved to 
+                 OpenVINO Intermediate Representation.
+   :keywords: OpenVINO, OpenVINO Intermediate Representation, OpenVINO IR, 
+              preprocessing, preprocessing steps, postprocessing, Model 
+              Optimizer, command-line options, YUV to RGB, FP32, float32, 
+              model caching, model shape, inference, model inference, 
+              ov::runtime::Core::read_model, read_model, batch size, change 
+              batch size, throughput, increase throughput, model layout, 
+              layout conversion, PrePostProcessor
 
-Use Case - Integrate and Save Preprocessing Steps Into IR
-=========================================================
+Preprocessing - Use Case
+========================
 
-:target:`doxid-openvino_docs__o_v__u_g__preprocess__usecase_save_1md_openvino_docs_ov_runtime_ug_preprocessing_usecase_save`
+:target:`deploy_infer__preprocessing_use_case_1md_openvino_docs_ov_runtime_ug_preprocessing_usecase_save`
 
 Previous sections covered the topic of the :ref:`preprocessing steps <deploy_infer__preprocessing_api>` and the overview of :ref:`Layout <doxid-openvino_docs__o_v__u_g__layout__overview>` API.
 
