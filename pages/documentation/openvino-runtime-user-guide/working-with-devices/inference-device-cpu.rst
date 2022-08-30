@@ -378,7 +378,7 @@ Stateful Models
 
 The CPU plugin supports stateful models without any limitations.
 
-For details, see :ref:`stateful models guide <doxid-openvino_docs__o_v__u_g_network_state_intro>`.
+For details, see :ref:`stateful models guide <deploy_infer__stateful_models>`.
 
 Supported Properties
 ~~~~~~~~~~~~~~~~~~~~

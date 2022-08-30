@@ -39,7 +39,7 @@ Keep in mind that a typical model may take significantly more time to load with 
 Performance Hints: How It Works
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Internally, every device "translates" the value of the hint to the actual performance settings. For example, the ``:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>``` selects the number of CPU or GPU streams. Additionally, the optimal batch size is selected for the GPU and the :ref:`automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` is applied whenever possible. To check whether the device supports it, refer to the :ref:`devices/features support matrix <deploy_infer__working_with_devices>` article.
+Internally, every device "translates" the value of the hint to the actual performance settings. For example, the ``:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>``` selects the number of CPU or GPU streams. Additionally, the optimal batch size is selected for the GPU and the :ref:`automatic batching <deploy_infer__automatic_batching>` is applied whenever possible. To check whether the device supports it, refer to the :ref:`devices/features support matrix <deploy_infer__working_with_devices>` article.
 
 The resulting (device-specific) settings can be queried back from the instance of the ``ov:Compiled_Model``.
 

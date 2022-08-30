@@ -341,7 +341,7 @@ To compile a model, use either :ref:`compile Tool <doxid-openvino_inference_engi
 Stateful Models
 ---------------
 
-GNA plugin natively supports stateful models. For more details on such models, refer to the :ref:`Stateful models <doxid-openvino_docs__o_v__u_g_network_state_intro>`.
+GNA plugin natively supports stateful models. For more details on such models, refer to the :ref:`Stateful models <deploy_infer__stateful_models>`.
 
 .. note::
 

@@ -165,7 +165,7 @@ The ``HETERO``, ``MULTI``, ``BATCH`` and ``AUTO`` execution modes can also be us
 
 * If :ref:`HETERO <deploy_infer__hetero_plugin>` is either used explicitly or ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` is used with GPU, put ``openvino_hetero_plugin`` to the distribution.
 
-* If :ref:`BATCH <doxid-openvino_docs__o_v__u_g__automatic__batching>` is either used explicitly or ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` is used with GPU, put ``openvino_batch_plugin`` to the distribution.
+* If :ref:`BATCH <deploy_infer__automatic_batching>` is either used explicitly or ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` is used with GPU, put ``openvino_batch_plugin`` to the distribution.
 
 Frontend Libraries for Reading Models
 -------------------------------------
@@ -225,7 +225,7 @@ In this example, the application is written in C++, performs inference :ref:`sim
 
 * ``openvino_auto_plugin`` is used for Multi-Device Execution.
 
-* ``openvino_auto_batch_plugin`` can be also put to the distribution to improve the saturation of :ref:`Intel® GPU <deploy_infer__gpu_device>` device. If there is no such plugin, :ref:`Automatic Batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` is turned off.
+* ``openvino_auto_batch_plugin`` can be also put to the distribution to improve the saturation of :ref:`Intel® GPU <deploy_infer__gpu_device>` device. If there is no such plugin, :ref:`Automatic Batching <deploy_infer__automatic_batching>` is turned off.
 
 * ``openvino_onnx_frontend`` is used to read source models.
 

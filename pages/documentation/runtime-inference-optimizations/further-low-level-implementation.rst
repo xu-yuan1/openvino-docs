@@ -42,7 +42,7 @@ hardware acceleration, number of cores, etc.
 Automatic Batching Internals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`Automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` 
+:ref:`Automatic batching <deploy_infer__automatic_batching>` 
 performs on-the-fly grouping of inference requests to improve device 
 utilization. It relaxes the requirement for an application to saturate devices 
 such as GPU by "explicitly" using a large batch. It performs transparent input 

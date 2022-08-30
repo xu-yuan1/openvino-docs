@@ -72,7 +72,7 @@ OpenVINO Runtime also has several execution capabilities which work on top of ot
     * - :ref:`Heterogeneous execution <deploy_infer__hetero_plugin>`
       - Heterogeneous execution enables automatic inference splitting between 
         several devices (for example if a device doesn't `support certain operation <#supported-layers>`__ ).
-    * - :ref:`Automatic Batching <doxid-openvino_docs__o_v__u_g__automatic__batching>`
+    * - :ref:`Automatic Batching <deploy_infer__automatic_batching>`
       - Auto-Batching plugin enables the batching (on top of the specified 
         device) that is completely transparent to the application.
 
@@ -108,7 +108,7 @@ The table below demonstrates support of key features by OpenVINO device plugins.
       - Yes
       - Partial
       - Yes
-    * - :ref:`Automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>`
+    * - :ref:`Automatic batching <deploy_infer__automatic_batching>`
       - No
       - Yes
       - No
@@ -138,7 +138,7 @@ The table below demonstrates support of key features by OpenVINO device plugins.
       - Yes
       - No
       - Partial
-    * - :ref:`Stateful models <doxid-openvino_docs__o_v__u_g_network_state_intro>`
+    * - :ref:`Stateful models <deploy_infer__stateful_models>`
       - Yes
       - No
       - Yes

@@ -315,7 +315,7 @@ The ``ov::hint::PerformanceMode::THROUGHPUT`` mode and the
 (for example, for the GPU device) by default. You can disable it by setting 
 ``ov::hint::allow_auto_batching(false)``, or change the default timeout value to a 
 large number, e.g. ``ov::auto_batch_timeout(1000)``. 
-See :ref:`Automatic Batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` 
+See :ref:`Automatic Batching <deploy_infer__automatic_batching>` 
 for more details.
 
 

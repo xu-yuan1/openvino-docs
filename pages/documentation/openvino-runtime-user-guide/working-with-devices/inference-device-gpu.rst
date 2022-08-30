@@ -257,7 +257,7 @@ for example ``BATCH:GPU``.
          compiled_model = core.compile_model(model, "GPU", {"PERFORMANCE_HINT": "THROUGHPUT"})
 
 
-For more details, see the :ref:`Automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>`.
+For more details, see the :ref:`Automatic batching <deploy_infer__automatic_batching>`.
 
 Multi-stream Execution
 ----------------------
@@ -526,7 +526,7 @@ general OpenCL tips apply:
   the `Post-training Optimization Tool <https://docs.openvino.ai/latest/pot_introduction.html>`__.
 
 * Try to group individual infer jobs by using 
-  :ref:`automatic batching <doxid-openvino_docs__o_v__u_g__automatic__batching>`.
+  :ref:`automatic batching <deploy_infer__automatic_batching>`.
 
 * Consider :ref:`caching <model_caching_overview>` 
   to minimize model load time.

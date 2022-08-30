@@ -87,7 +87,7 @@ performance:
     approach requires redesigning the application logic.
 
 * **Sending individual requests**, while configuring OpenVINO to collect and 
-perform inference on the requests in batch :ref:`automatically <doxid-openvino_docs__o_v__u_g__automatic__batching>`.
+perform inference on the requests in batch :ref:`automatically <deploy_infer__automatic_batching>`.
 
 In both cases, the optimal batch size is very device-specific. As explained 
 below, the optimal batch size also depends on the model, inference 
