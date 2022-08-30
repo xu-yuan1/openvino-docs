@@ -66,7 +66,7 @@ OpenVINO Runtime also has several execution capabilities which work on top of ot
     * - :ref:`Multi-Device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`
       - Multi-Device enables simultaneous inference of the same model on 
         several devices in parallel.
-    * - :ref:`Auto-Device selection <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>`
+    * - :ref:`Auto-Device selection <deploy_infer__auto_plugin>`
       - Auto-Device selection enables selecting Intel device for inference 
         automatically.
     * - :ref:`Heterogeneous execution <doxid-openvino_docs__o_v__u_g__hetero_execution>`

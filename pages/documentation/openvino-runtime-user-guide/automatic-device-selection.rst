@@ -1,12 +1,22 @@
 .. index:: pair: page; Automatic Device Selection
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o:
+.. _deploy_infer__auto_plugin:
 
+.. meta::
+   :description: The Automatic Device Selection mode in OpenVINO™ Runtime 
+                 detects available devices and selects the optimal processing 
+                 unit for inference automatically.
+   :keywords: OpenVINO™ Runtime, Automatic Device Selection, Automatic Device 
+              Selection mode, AUTO device, AUTO plugin, inference, model inference, 
+              processing unit, input model, precision, model precision, FP32, 
+              FP16, FP16 precision, INT8, INT8 precision, BIN, dGPU, iGPU, 
+              Intel® Movidius™ Myriad™ X VPU, Intel® CPU, device candidate list, 
+              performance hints, throughput, latency, cumulative_throughput, 
+              model priority, disable auto-batching, benchmark_app
 
 Automatic Device Selection
 ==========================
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o_1md_openvino_docs_ov_runtime_ug_auto_device_selection`
-
+:target:`deploy_infer__auto_plugin_1md_openvino_docs_ov_runtime_ug_auto_device_selection`
 
 .. toctree::
    :maxdepth: 1
@@ -385,7 +395,7 @@ or :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m
 Additional Resources
 ~~~~~~~~
 
-* :ref:`Debugging AUTO <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o_debugging>`
+* :ref:`Debugging AUTO <deploy_infer__debugging_auto_plugin>`
 
 * :ref:`Running on Multiple Devices Simultaneously <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`
 

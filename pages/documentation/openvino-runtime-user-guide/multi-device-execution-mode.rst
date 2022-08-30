@@ -149,7 +149,7 @@ See Also
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 
-* :ref:`Automatic Device Selection <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>`
+* :ref:`Automatic Device Selection <deploy_infer__auto_plugin>`
 
 .. raw:: html
 

@@ -79,7 +79,7 @@ caching is not possible, for example, it may require write permissions for the
 application, the CPU offers the fastest model load time almost every time.
 
 Another way of dealing with first-inference latency is using the 
-:ref:`AUTO device selection inference mode <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>`. 
+:ref:`AUTO device selection inference mode <deploy_infer__auto_plugin>`. 
 It starts inference on the CPU, while waiting for the actual accelerator to 
 load the model. At that point, it shifts to the new device seamlessly.
 

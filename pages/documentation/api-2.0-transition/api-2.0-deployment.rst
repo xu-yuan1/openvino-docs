@@ -183,7 +183,7 @@ Below are detailed comparisons of the library structure between OpenVINO 2022.1 
   
   * ``openvino_intel_gpu_plugin`` is used for :ref:`GPU <deploy_infer__gpu_device>` device instead of ``clDNNPlugin``.
   
-  * ``openvino_auto_plugin`` is used for :ref:`Auto-Device Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>`.
+  * ``openvino_auto_plugin`` is used for :ref:`Auto-Device Plugin <deploy_infer__auto_plugin>`.
 
 * The plugins for reading and converting models have been changed as follows:
   

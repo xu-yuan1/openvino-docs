@@ -5,7 +5,7 @@
 High-level Performance Hints
 ============================
 
-:target:`doxid-openvino_docs__o_v__u_g__performance__hints_1md_openvino_docs_ov_runtime_ug_performance_hints` Even though all :ref:`supported devices <deploy_infer__working_with_devices>` in OpenVINO™ offer low-level performance settings, utilizing them is not recommended outside of very few cases. The preferred way to configure performance in OpenVINO Runtime is using performance hints. This is a future-proof solution fully compatible with the :ref:`automatic device selection inference mode <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` and designed with *portability* in mind.
+:target:`doxid-openvino_docs__o_v__u_g__performance__hints_1md_openvino_docs_ov_runtime_ug_performance_hints` Even though all :ref:`supported devices <deploy_infer__working_with_devices>` in OpenVINO™ offer low-level performance settings, utilizing them is not recommended outside of very few cases. The preferred way to configure performance in OpenVINO Runtime is using performance hints. This is a future-proof solution fully compatible with the :ref:`automatic device selection inference mode <deploy_infer__auto_plugin>` and designed with *portability* in mind.
 
 The hints also set the direction of the configuration in the right order. Instead of mapping the application needs to the low-level performance settings, and keeping an associated application logic to configure each possible device separately, the hints express a target scenario with a single config key and let the *device* configure itself in response.
 

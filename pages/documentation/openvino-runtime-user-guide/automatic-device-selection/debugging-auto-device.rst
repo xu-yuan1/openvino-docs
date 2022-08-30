@@ -1,11 +1,20 @@
 .. index:: pair: page; Debugging Auto-Device Plugin
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o_debugging:
+.. _deploy_infer__debugging_auto_plugin:
 
+.. meta::
+   :description: Auto-Device plugin provides information on exceptions and 
+                 error values when execution problems occur.
+   :keywords: OpenVINO™ Runtime, Automatic Device Selection, Automatic Device 
+              Selection mode, AUTO device, AUTO plugin, inference, model inference, 
+              OPENVINO_LOG_LEVEL, debugging, debug auto-device, auto-device plugin, 
+              Instrumentation and Tracing Technology, ITT API, Intel® VTune™ 
+              Profiler, instrumentation, code performance, code performance 
+              analysis
 
 Debugging Auto-Device Plugin
 ============================
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o_debugging_1md_openvino_docs_ov_runtime_ug_autoplugin_debugging`
+:target:`deploy_infer__debugging_auto_plugin_1md_openvino_docs_ov_runtime_ug_autoplugin_debugging`
 
 Using Debug Log
 ~~~~~~~~~~~~~~~
@@ -61,7 +70,8 @@ The property returns information in the following format:
 
    [time]LOG_LEVEL[file] [PLUGIN]: message
 
-in which the ``LOG_LEVEL`` is represented by the first letter of its name (ERROR being an exception and using its full name). For example:
+in which the ``LOG_LEVEL`` is represented by the first letter of its name 
+(ERROR being an exception and using its full name). For example:
 
 .. code-block:: sh
 
@@ -95,7 +105,7 @@ With Intel® VTune™ Profiler installed you can configure your analysis with th
 #. Open Intel® VTune™ Profiler GUI on the host machine with the following command:
 
    .. code-block:: sh
-   
+
       cd /vtune install dir/intel/oneapi/vtune/2021.6.0/env
       source vars.sh
       vtune-gui
@@ -103,42 +113,36 @@ With Intel® VTune™ Profiler installed you can configure your analysis with th
 #. select **Configure Analysis**
 
 #. In the **where** pane, select **Local Host**
-   
-   
-   
-   
+
    .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img01-localhost.png
       :align: center
 
 #. In the **what** pane, specify your target application/script on the local system.
-   
-   
-   
-   
+
    .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img02-launch.png
       :align: center
 
-#. In the **how** pane, choose and configure the analysis type you want to perform, for example, **Hotspots Analysis** : identify the most time-consuming functions and drill down to see time spent on each line of source code. Focus optimization efforts on hot code for the greatest performance impact.
-   
-   
-   
-   
+#. In the **how** pane, choose and configure the analysis type you want to 
+   perform, for example, **Hotspots Analysis** : identify the most 
+   time-consuming functions and drill down to see time spent on each line of 
+   source code. Focus optimization efforts on hot code for the greatest 
+   performance impact.
+
    .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img03-hotspots.png
       :align: center
 
-#. Start the analysis by clicking the start button. When it is done, you will get a summary of the run, including top hotspots and top tasks in your application:
-   
-   
-   
-   
+#. Start the analysis by clicking the start button. When it is done, you will 
+   get a summary of the run, including top hotspots and top tasks in your 
+   application:
+
    .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img04-vtunesummary.png
       :align: center
 
-#. To analyze ITT info related to the Auto plugin, click on the **Bottom-up** tab, choose the **Task Domain/Task Type/Function/Call Stack** from the dropdown list - Auto plugin-related ITT info is under the MULTIPlugin task domain:
-   
-   
-   
-   
+#. To analyze ITT info related to the Auto plugin, click on the **Bottom-up** 
+   tab, choose the **Task Domain/Task Type/Function/Call Stack** from the 
+   dropdown list - Auto plugin-related ITT info is under the MULTIPlugin 
+   task domain:
+
    .. image:: ./_assets/OV_UG_supported_plugins_AUTO_debugging-img05-vtunebottomup.png
       :align: center
 
