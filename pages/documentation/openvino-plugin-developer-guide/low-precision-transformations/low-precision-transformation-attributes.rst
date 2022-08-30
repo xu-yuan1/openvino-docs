@@ -1,14 +1,18 @@
 .. index:: pair: page; Attributes
-.. _doxid-openvino_docs__o_v__u_g_lpt_attributes:
+.. _extensibility_plugin__lpt_attributes:
+
+.. meta::
+   :description: List of attributes usage by transformation.
+   :keywords: lpt, low precision transformations, attributes, precision, quantization interval,
+              quantization alignment, quantization granularity, FakeQuantize decomposition,
+              PrecisionPreserved, AvgPoolPrecisionPreserved, PerTensorQuantization, 
+              IntervalsAlignment, QuantizationAlignment
 
 
 Low-Precision Transformation Attributes
 =========================================
 
-:target:`doxid-openvino_docs__o_v__u_g_lpt_attributes_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_lpt_attributes`
-
-
-
+:target:`extensibility_plugin__lpt_attributes_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_lpt_attributes`
 
 
 .. toctree::
@@ -34,27 +38,27 @@ Introduction
       - Target
       - Required
       - Mutable
-    * - :ref:`AvgPoolPrecisionPreserved <doxid-openvino_docs__o_v__u_g_lpt__avg_pool_precision_preserved>`
+    * - :ref:`AvgPoolPrecisionPreserved <lpt_attributes__avgpoolprecisionpreserved>`
       - Precision
       - No
       - Yes
-    * - :ref:`IntervalsAlignment <doxid-openvino_docs__o_v__u_g_lpt__intervals_alignment>`
+    * - :ref:`IntervalsAlignment <lpt_attributes__intervalsalignment>`
       - Quantization interval
       - Yes
       - Yes
-    * - :ref:`PrecisionPreserved <doxid-openvino_docs__o_v__u_g_lpt__precision_preserved>`
+    * - :ref:`PrecisionPreserved <lpt_attributes__precisionpreserved>`
       - Precision
       - Yes
       - Yes
-    * - :ref:`Precisions <doxid-openvino_docs__o_v__u_g_lpt__precisions>`
+    * - :ref:`Precisions <lpt_attributes__precisions>`
       - Precision
       - Yes
       - Yes
-    * - :ref:`QuantizationAlignment <doxid-openvino_docs__o_v__u_g_lpt__quantization_alignment>`
+    * - :ref:`QuantizationAlignment <lpt_attributes__quantizationalignment>`
       - Quantization granularity
       - Yes
       - Yes
-    * - :ref:`QuantizationGranularity <doxid-openvino_docs__o_v__u_g_lpt__quantization_granularity>`
+    * - :ref:`QuantizationGranularity <lpt_attributes__quantizationgranularity>`
       - Quantization granularity
       - Yes
       - No
@@ -110,5 +114,8 @@ Attributes usage by transformations:
       - AlignQuantizationParameters
       - FakeQuantizeDecompositionTransformation
 
-**Note:** the same type of attribute instances can be created in different transformations. This approach is the result of the transformation single-responsibility principle. For example, ``Precision`` attribute instances are created in ``MarkupCanBeQuantized`` and ``MarkupPrecisions`` transformations, but the reasons for their creation are different.
+.. note::
+   The same type of attribute instances can be created in different transformations. This approach is the result 
+   of the transformation single-responsibility principle. For example, ``Precision`` attribute instances are created 
+   in ``MarkupCanBeQuantized`` and ``MarkupPrecisions`` transformations, but the reasons for their creation are different.
 

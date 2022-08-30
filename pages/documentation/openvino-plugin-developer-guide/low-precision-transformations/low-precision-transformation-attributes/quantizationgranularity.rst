@@ -1,11 +1,17 @@
 .. index:: pair: page; QuantizationGranularity attribute
-.. _doxid-openvino_docs__o_v__u_g_lpt__quantization_granularity:
+.. _lpt_attributes__quantizationgranularity:
+
+.. meta::
+   :description: Information about QuantizationGranularity attribute.
+   :keywords: low precision transformation, lpt, low precision transformation attributes,
+              QuantizationGranularity
 
 
 QuantizationGranularity attribute
 =================================
 
-:target:`doxid-openvino_docs__o_v__u_g_lpt__quantization_granularity_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_attributes_quantization_granularity` ngraph::QuantizationAttribute class represents the ``QuantizationGranularity`` attribute.
+:target:`lpt_attributes__quantizationgranularity_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_attributes_quantization_granularity` 
+ngraph::QuantizationAttribute class represents the ``QuantizationGranularity`` attribute.
 
 The attribute defines quantization granularity of operation inputs.
 
