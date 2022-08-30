@@ -30,7 +30,7 @@ The OpenVINO Runtime provides unique capabilities to infer deep learning models 
       - Intel Speech Enabling Developer Kit, Amazon Alexa\* Premium Far-Field Developer Kit, Intel Pentium Silver J5005 Processor, Intel Pentium Silver N5000 Processor, Intel Celeron J4005 Processor, Intel Celeron J4105 Processor, Intel Celeron Processor N4100, Intel Celeron Processor N4000, Intel Core i3-8121U Processor, Intel Core i7-1065G7 Processor, Intel Core i7-1060G7 Processor, Intel Core i5-1035G4 Processor, Intel Core i5-1035G7 Processor, Intel Core i5-1035G1 Processor, Intel Core i5-1030G7 Processor, Intel Core i5-1030G4 Processor, Intel Core i3-1005G1 Processor, Intel Core i3-1000G1 Processor, Intel Core i3-1000G4 Processor
     * - :ref:`Arm® CPU plugin <deploy_infer__arm_cpu_device>` (unavailable in the Intel® Distribution of OpenVINO™ toolkit)
       - Raspberry Pi™ 4 Model B, Apple® Mac mini with M1 chip, NVIDIA® Jetson Nano™, Android™ devices
-    * - :ref:`Multi-Device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`
+    * - :ref:`Multi-Device execution <deploy_infer__multi_plugin>`
       - Multi-Device execution enables simultaneous inference of the same model on several devices in parallel
     * - :ref:`Auto-Device plugin <deploy_infer__auto_plugin>`
       - Auto-Device plugin enables selecting Intel device for inference automatically
@@ -118,7 +118,7 @@ Supported Model Formats
       - Supported
       - Supported (partially)
 
-For :ref:`Multi-Device <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` and :ref:`Heterogeneous <doxid-openvino_docs__o_v__u_g__hetero_execution>` executions the supported models formats depends on the actual underlying devices. *Generally, FP16 is preferable as it is most ubiquitous and performant*.
+For :ref:`Multi-Device <deploy_infer__multi_plugin>` and :ref:`Heterogeneous <doxid-openvino_docs__o_v__u_g__hetero_execution>` executions the supported models formats depends on the actual underlying devices. *Generally, FP16 is preferable as it is most ubiquitous and performant*.
 
 Supported Input Precision
 -------------------------
@@ -171,7 +171,7 @@ Supported Input Precision
 
 \* - Supported via ``SetBlob`` only, ``GetBlob`` returns FP32
 
-For :ref:`Multi-Device <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` and :ref:`Heterogeneous <doxid-openvino_docs__o_v__u_g__hetero_execution>` executions the supported input precision depends on the actual underlying devices. *Generally, U8 is preferable as it is most ubiquitous*.
+For :ref:`Multi-Device <deploy_infer__multi_plugin>` and :ref:`Heterogeneous <doxid-openvino_docs__o_v__u_g__hetero_execution>` executions the supported input precision depends on the actual underlying devices. *Generally, U8 is preferable as it is most ubiquitous*.
 
 Supported Output Precision
 --------------------------
@@ -198,7 +198,7 @@ Supported Output Precision
       - Supported
       - Supported
 
-For :ref:`Multi-Device <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` and :ref:`Heterogeneous <doxid-openvino_docs__o_v__u_g__hetero_execution>` executions the supported output precision depends on the actual underlying devices. *Generally, FP32 is preferable as it is most ubiquitous*.
+For :ref:`Multi-Device <deploy_infer__multi_plugin>` and :ref:`Heterogeneous <doxid-openvino_docs__o_v__u_g__hetero_execution>` executions the supported output precision depends on the actual underlying devices. *Generally, FP32 is preferable as it is most ubiquitous*.
 
 Supported Input Layout
 ----------------------

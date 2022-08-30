@@ -223,7 +223,7 @@ simultaneous usage of CPU and GPU.
       compiled_model = core.compile_model(model, "MULTI:CPU,GPU.0")
 
 
-For more details, see the :ref:`Multi-device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` article.
+For more details, see the :ref:`Multi-device execution <deploy_infer__multi_plugin>` article.
 
 Multi-stream Execution
 ----------------------

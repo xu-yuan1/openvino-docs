@@ -274,7 +274,7 @@ the network model to all available devices in the candidate list, and then runs
 inference on them based on the default or specified priority.
 
 ``CUMULATIVE_THROUGHPUT`` has similar behavior as 
-:ref:`the Multi-Device execution mode (MULTI) <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`. 
+:ref:`the Multi-Device execution mode (MULTI) <deploy_infer__multi_plugin>`. 
 The only difference is that ``CUMULATIVE_THROUGHPUT`` uses the devices specified by AUTO, 
 which means that it's not mandatory to add devices manually, while with MULTI, you 
 need to specify the devices before inference.
@@ -397,6 +397,6 @@ Additional Resources
 
 * :ref:`Debugging AUTO <deploy_infer__debugging_auto_plugin>`
 
-* :ref:`Running on Multiple Devices Simultaneously <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`
+* :ref:`Running on Multiple Devices Simultaneously <deploy_infer__multi_plugin>`
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`

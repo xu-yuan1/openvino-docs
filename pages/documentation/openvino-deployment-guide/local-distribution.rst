@@ -161,7 +161,7 @@ The ``HETERO``, ``MULTI``, ``BATCH`` and ``AUTO`` execution modes can also be us
 
 
 
-* If :ref:`MULTI <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` is used explicitly, put ``openvino_auto_plugin`` to the distribution.
+* If :ref:`MULTI <deploy_infer__multi_plugin>` is used explicitly, put ``openvino_auto_plugin`` to the distribution.
 
 * If :ref:`HETERO <doxid-openvino_docs__o_v__u_g__hetero_execution>` is either used explicitly or ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` is used with GPU, put ``openvino_hetero_plugin`` to the distribution.
 
@@ -217,7 +217,7 @@ In this example, the application is written in C language, performs inference on
 
 MULTI execution on GPU and MYRIAD in ``tput`` mode
 
-In this example, the application is written in C++, performs inference :ref:`simultaneously on GPU and MYRIAD devices <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` with the ``:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>``` property set, and reads models stored in the ONNX format. The following libraries are used:
+In this example, the application is written in C++, performs inference :ref:`simultaneously on GPU and MYRIAD devices <deploy_infer__multi_plugin>` with the ``:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>``` property set, and reads models stored in the ONNX format. The following libraries are used:
 
 * The ``openvino`` library is a main dependency of the application. It links against this library.
 

@@ -63,7 +63,7 @@ OpenVINO Runtime also has several execution capabilities which work on top of ot
 
     * - Capability
       - Description
-    * - :ref:`Multi-Device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`
+    * - :ref:`Multi-Device execution <deploy_infer__multi_plugin>`
       - Multi-Device enables simultaneous inference of the same model on 
         several devices in parallel.
     * - :ref:`Auto-Device selection <deploy_infer__auto_plugin>`
@@ -103,7 +103,7 @@ The table below demonstrates support of key features by OpenVINO device plugins.
       - Yes
       - No
       - Yes
-    * - :ref:`Multi-device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`
+    * - :ref:`Multi-device execution <deploy_infer__multi_plugin>`
       - Yes
       - Yes
       - Partial

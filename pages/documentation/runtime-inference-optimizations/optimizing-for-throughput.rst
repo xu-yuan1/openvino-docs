@@ -83,7 +83,7 @@ In general, most throughput-oriented inference applications should:
 Multi-Device Execution
 ~~~~~~~~~~~~~~~~~~~~~~
 
-OpenVINO offers the automatic, scalable :ref:`multi-device inference mode <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`, 
+OpenVINO offers the automatic, scalable :ref:`multi-device inference mode <deploy_infer__multi_plugin>`, 
 which is a simple *application-transparent* way to improve throughput. There 
 is no need to re-architecture existing applications for any explicit multi-device 
 support: no explicit network loading to each device, no separate per-device queues, 

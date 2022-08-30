@@ -46,7 +46,7 @@ a string name of ``AVAILABLE_DEVICES`` and a type of ``std::vector<std::string>`
    static constexpr Property<std::vector<std::string>, PropertyMutability::RO> available_devices{"AVAILABLE_DEVICES"};
 
 Refer to the :ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>` 
-sources and the :ref:`Multi-Device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` 
+sources and the :ref:`Multi-Device execution <deploy_infer__multi_plugin>` 
 documentation for examples of using setting and getting properties in user 
 applications.
 
@@ -307,7 +307,7 @@ Or the number of threads that would be used for inference on ``CPU`` device:
 Setting Properties for Compiled Model
 +++++++++++++++++++++++++++++++++++++
 
-The only mode that supports this method is :ref:`Multi-Device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` :
+The only mode that supports this method is :ref:`Multi-Device execution <deploy_infer__multi_plugin>` :
 
 .. tab:: C++
 

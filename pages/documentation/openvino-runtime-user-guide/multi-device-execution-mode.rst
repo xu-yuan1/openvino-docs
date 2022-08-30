@@ -1,15 +1,21 @@
 .. index:: pair: page; Running on Multiple Devices Simultaneously
-.. _doxid-openvino_docs__o_v__u_g__running_on_multiple_devices:
+.. _deploy_infer__multi_plugin:
 
+.. meta::
+   :description: The Multi-Device execution mode in OpenVINO Runtime assigns 
+                 multiple available computing devices to particular inference 
+                 requests to execute in parallel.
+   :keywords: inference, model inference, OpenVINO Runtime, Multi-Device, 
+              Multi-Device execution mode, MULTI device, MULTI plugin, MULTI, 
+              cumulative_throughput, GPU, Intel GPU, GPU 2.0, device priorities, 
+              inference request, configure device, HDDL device, Myriad device, 
+              benchmark_app, compiled_model, inference performance, improve 
+              throughput, performance stability, increase performance
 
 Running on Multiple Devices Simultaneously
 ==========================================
 
-:target:`doxid-openvino_docs__o_v__u_g__running_on_multiple_devices_1md_openvino_docs_ov_runtime_ug_multi_device`
-
-
-
-
+:target:`deploy_infer__multi_plugin_1md_openvino_docs_ov_runtime_ug_multi_device`
 
 To run inference on multiple devices, you can choose either of the following ways:
 

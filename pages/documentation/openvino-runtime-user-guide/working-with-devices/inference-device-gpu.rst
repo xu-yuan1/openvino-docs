@@ -205,7 +205,7 @@ is done by specifying ``MULTI:GPU.1,GPU.0`` as a target device.
       compiled_model = core.compile_model(model, "MULTI:GPU.1,GPU.0")
 
 
-For more details, see the :ref:`Multi-device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`.
+For more details, see the :ref:`Multi-device execution <deploy_infer__multi_plugin>`.
 
 Automatic Batching
 ------------------
