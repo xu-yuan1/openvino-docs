@@ -285,7 +285,7 @@ Dynamic Shapes
 --------------
 
 The GPU plugin supports dynamic shapes for batch dimension only (specified as 
-``N`` in the :ref:`layouts terms <doxid-openvino_docs__o_v__u_g__layout__overview>`) 
+``N`` in the :ref:`layouts terms <deploy_infer__layout_api_overview>`) 
 with a fixed upper bound. Any other dynamic dimensions are unsupported. Internally, 
 GPU plugin creates ``log2(N)`` (``N`` - is an upper bound for batch dimension 
 here) low-level execution graphs for batch sizes equal to powers of 2 to emulate 

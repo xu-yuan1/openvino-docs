@@ -16,7 +16,7 @@ You may need to set input layouts, as it is required by some preprocessing, for 
 
 Layout defines the meaning of dimensions in shape and can be specified for both inputs and outputs. Some preprocessing requires to set input layouts, for example, setting a batch, applying mean or scales, and reversing input channels (BGR<->RGB).
 
-For the layout syntax, check the :ref:`Layout API overview <doxid-openvino_docs__o_v__u_g__layout__overview>`. To specify the layout, you can use the ``--layout`` option followed by the layout value.
+For the layout syntax, check the :ref:`Layout API overview <deploy_infer__layout_api_overview>`. To specify the layout, you can use the ``--layout`` option followed by the layout value.
 
 For example, the following command specifies the ``NHWC`` layout for a Tensorflow ``nasnet_large`` model that was exported to the ONNX format:
 

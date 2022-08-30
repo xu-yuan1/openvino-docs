@@ -141,7 +141,7 @@ Glossary of terms used in the OpenVINO™
     * - OpenVINO™ ``Core``
       - OpenVINO™ Core is a software component that manages inference on certain Intel(R) hardware devices: CPU, GPU, MYRIAD, GNA, etc.
     * - ``:ref:`ov::Layout <doxid-classov_1_1_layout>```
-      - Image data layout refers to the representation of images batch. Layout shows a sequence of 4D or 5D tensor data in memory. A typical NCHW format represents pixel in horizontal direction, rows by vertical dimension, planes by channel and images into batch. See also :ref:`Layout API Overview <doxid-openvino_docs__o_v__u_g__layout__overview>`
+      - Image data layout refers to the representation of images batch. Layout shows a sequence of 4D or 5D tensor data in memory. A typical NCHW format represents pixel in horizontal direction, rows by vertical dimension, planes by channel and images into batch. See also :ref:`Layout API Overview <deploy_infer__layout_api_overview>`
     * - ``:ref:`ov::element::Type <doxid-classov_1_1element_1_1_type>```
       - Represents data element type. For example, f32 is 32-bit floating point, f16 is 16-bit floating point.
 

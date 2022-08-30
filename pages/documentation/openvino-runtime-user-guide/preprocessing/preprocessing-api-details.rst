@@ -304,7 +304,7 @@ Typical data normalization includes 2 operations for each data item: subtract me
 
 
 
-In Computer Vision area normalization is usually done separately for R, G, B values. To do this, :ref:`layout with 'C' dimension <doxid-openvino_docs__o_v__u_g__layout__overview>` shall be defined. Example:
+In Computer Vision area normalization is usually done separately for R, G, B values. To do this, :ref:`layout with 'C' dimension <deploy_infer__layout_api_overview>` shall be defined. Example:
 
 .. raw:: html
 
@@ -473,7 +473,7 @@ Converting layout (transposing)
 
 Transposing of matrices/tensors is a typical operation in Deep Learning - you may have a BMP image 640x480, which is an array of ``{480, 640, 3}`` elements, but Deep Learning model can require input with shape ``{1, 3, 480, 640}``.
 
-Conversion can be done implicitly, using the :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` of a user's tensor and the layout of an original model.
+Conversion can be done implicitly, using the :ref:`layout <deploy_infer__layout_api_overview>` of a user's tensor and the layout of an original model.
 
 .. raw:: html
 
@@ -545,7 +545,7 @@ Conversion can be done implicitly, using the :ref:`layout <doxid-openvino_docs__
 
    </div>
 
-For a manual transpose of axes without the use of a :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` in the code:
+For a manual transpose of axes without the use of a :ref:`layout <deploy_infer__layout_api_overview>` in the code:
 
 .. raw:: html
 
@@ -632,7 +632,7 @@ Resizing Image
 
 Resizing an image is a typical pre-processing step for computer vision tasks. With pre-processing API, this step can also be integrated into an execution graph and performed on a target device.
 
-To resize the input image, it is needed to define ``H`` and ``W`` dimensions of the :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>`
+To resize the input image, it is needed to define ``H`` and ``W`` dimensions of the :ref:`layout <deploy_infer__layout_api_overview>`
 
 .. raw:: html
 
@@ -1027,7 +1027,7 @@ Post-processing uses the reverse: **Model output** -> **Steps** -> **User tensor
 
 Compared to pre-processing, there are not as many operations needed for the post-processing stage. Currently, only the following post-processing operations are supported:
 
-* Convert a :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>`.
+* Convert a :ref:`layout <deploy_infer__layout_api_overview>`.
 
 * Convert an element type.
 

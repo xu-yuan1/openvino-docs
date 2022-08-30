@@ -31,7 +31,7 @@ Versions of OpenVINO prior to 2022.1 required changes in the application logic w
 
 * Model Optimizer changed input precisions for some inputs. For example, neural language processing models with ``I64`` inputs were changed to include ``I32`` ones.
 
-* Model Optimizer changed layouts for TensorFlow models (see the :ref:`Layouts in OpenVINO <doxid-openvino_docs__o_v__u_g__layout__overview>`). It lead to unusual requirement of using the input data with a different layout than that of the framework:
+* Model Optimizer changed layouts for TensorFlow models (see the :ref:`Layouts in OpenVINO <deploy_infer__layout_api_overview>`). It lead to unusual requirement of using the input data with a different layout than that of the framework:
   
   .. image:: ./_assets/api-2.0-transition-tf-openvino.png
 

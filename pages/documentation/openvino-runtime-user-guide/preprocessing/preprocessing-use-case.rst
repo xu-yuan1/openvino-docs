@@ -18,7 +18,7 @@ Preprocessing - Use Case
 
 :target:`deploy_infer__preprocessing_use_case_1md_openvino_docs_ov_runtime_ug_preprocessing_usecase_save`
 
-Previous sections covered the topic of the :ref:`preprocessing steps <deploy_infer__preprocessing_api>` and the overview of :ref:`Layout <doxid-openvino_docs__o_v__u_g__layout__overview>` API.
+Previous sections covered the topic of the :ref:`preprocessing steps <deploy_infer__preprocessing_api>` and the overview of :ref:`Layout <deploy_infer__layout_api_overview>` API.
 
 For many applications, it is also important to minimize read/load time of a model. Therefore, performing integration of preprocessing steps every time on application startup, after ``ov::runtime::Core::read_model``, may seem inconvenient. In such cases, once pre and postprocessing steps have been added, it can be useful to store new execution model to OpenVINO Intermediate Representation (OpenVINO IR, ``.xml`` format).
 
@@ -309,7 +309,7 @@ Additional Resources
 
 * :ref:`Preprocessing Details <deploy_infer__preprocessing_api>`
 
-* :ref:`Layout API overview <doxid-openvino_docs__o_v__u_g__layout__overview>`
+* :ref:`Layout API overview <deploy_infer__layout_api_overview>`
 
 * :ref:`Model Optimizer - Optimize Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`
 

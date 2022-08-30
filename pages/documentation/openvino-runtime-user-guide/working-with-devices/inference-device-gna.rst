@@ -506,7 +506,7 @@ Batch Size Limitation
 
 Intel® GNA plugin supports the processing of context-windowed speech frames in batches of 1-8 frames.
 
-Refer to the :ref:`Layout API overview <doxid-openvino_docs__o_v__u_g__layout__overview>` to determine batch dimension.
+Refer to the :ref:`Layout API overview <deploy_infer__layout_api_overview>` to determine batch dimension.
 
 To set layout of model inputs in runtime, use the :ref:`Optimize Preprocessing <deploy_infer__preprocessing_overview>` guide:
 

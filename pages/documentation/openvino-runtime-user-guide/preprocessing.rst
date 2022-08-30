@@ -70,14 +70,14 @@ Preprocessing API
 
 Intuitively, preprocessing API consists of the following parts:
 
-#. **Tensor** - declares user data format, like shape, :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>`, 
+#. **Tensor** - declares user data format, like shape, :ref:`layout <deploy_infer__layout_api_overview>`, 
    precision, color format from actual user's data.
 
 #. **Steps** - describes sequence of preprocessing steps which need to be 
    applied to user data.
 
 #. **Model** - specifies model data format. Usually, precision and shape are 
-   already known for model, only additional information, like :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` 
+   already known for model, only additional information, like :ref:`layout <deploy_infer__layout_api_overview>` 
    can be specified.
 
 .. note:: Graph modifications of a model shall be performed after the model is read 
@@ -144,7 +144,7 @@ Below is all the specified input information:
 
 * Data represents tensor with the ``{1,480,640,3}`` shape.
 
-* :ref:`Layout <doxid-openvino_docs__o_v__u_g__layout__overview>` is "NHWC". 
+* :ref:`Layout <deploy_infer__layout_api_overview>` is "NHWC". 
   It means: ``height=480``, ``width=640``, ``channels=3`` '.
 
 * Color format is ``BGR``.
@@ -156,7 +156,7 @@ Declaring Model Layout
 
 Model input already has information about precision and shape. Preprocessing 
 API is not intended to modify this. The only thing that may be specified is 
-input data :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>`
+input data :ref:`layout <deploy_infer__layout_api_overview>`
 
 .. tab:: C++
 
@@ -262,6 +262,6 @@ Additional Resources
 
 * :ref:`Preprocessing Details <deploy_infer__preprocessing_api>`
 
-* :ref:`Layout API overview <doxid-openvino_docs__o_v__u_g__layout__overview>`
+* :ref:`Layout API overview <deploy_infer__layout_api_overview>`
 
 * ``:ref:`ov::preprocess::PrePostProcessor <doxid-classov_1_1preprocess_1_1_pre_post_processor>``` C++ class documentation
