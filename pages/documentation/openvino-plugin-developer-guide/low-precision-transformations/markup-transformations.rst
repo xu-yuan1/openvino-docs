@@ -14,13 +14,13 @@ Step 2. Markup Transformations
 
 :target:`plugin_lpt__step2_markup_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_pipeline_step2_markup` This step defines the optimal ``FakeQuantize`` decomposition precisions for the best inference performance via operations markup with runtime attribute instances. Attributes are created for input and output ports and operations. Transformations do not change the operation output port precisions. A model markup low precision logic is decomposed and implemented into the following common markup transformations. The order of transformations is important:
 
-#. :ref:`MarkupCanBeQuantized <doxid-openvino_docs__o_v__u_g_lpt__markup_can_be_quantized>`
+#. :ref:`MarkupCanBeQuantized <lpt_transformations__markup_can_be_quantized>`
 
-#. :ref:`MarkupPrecisions <doxid-openvino_docs__o_v__u_g_lpt__markup_precisions>`
+#. :ref:`MarkupPrecisions <lpt_transformations__markup_precisions>`
 
-#. :ref:`MarkupPerTensorQuantization <doxid-openvino_docs__o_v__u_g_lpt__markup_per_tensor_quantization>`
+#. :ref:`MarkupPerTensorQuantization <lpt_transformations__markup_per_tensor_quantization>`
 
-#. :ref:`MarkupAvgPoolPrecisionPreserved <doxid-openvino_docs__o_v__u_g_lpt__markup_avg_pool_precision_preserved>`
+#. :ref:`MarkupAvgPoolPrecisionPreserved <lpt_transformations__markup_avg_pool_precision_preserved>`
 
 #. :ref:`PropagatePrecisions <doxid-openvino_docs__o_v__u_g_lpt__propagate_precisions>`
 

@@ -36,23 +36,23 @@ Step 3. Main Transformations
 
 * :ref:`DepthToSpaceTransformation <lpt_transformations__depth_to_space_transformation>`
 
-* :ref:`FakeQuantizeDecompositionTransformation <doxid-openvino_docs__o_v__u_g_lpt__fake_quantize_decomposition_transformation>`
+* :ref:`FakeQuantizeDecompositionTransformation <lpt_transformations__fake_quantize_decomposition_transformation>`
 
-* :ref:`FakeQuantizeTransformation <doxid-openvino_docs__o_v__u_g_lpt__fake_quantize_transformation>`
+* :ref:`FakeQuantizeTransformation <lpt_transformations__fake_quantize_transformation>`
 
-* :ref:`InterpolateTransformation <doxid-openvino_docs__o_v__u_g_lpt__interpolate_transformation>`
+* :ref:`InterpolateTransformation <lpt_transformations__interpolate_transformation>`
 
-* :ref:`GroupConvolutionTransformation <doxid-openvino_docs__o_v__u_g_lpt__group_convolution_transformation>`
+* :ref:`GroupConvolutionTransformation <lpt_transformations__group_convolution_transformation>`
 
-* :ref:`MatMulTransformation <doxid-openvino_docs__o_v__u_g_lpt__mat_mul_transformation>`
+* :ref:`MatMulTransformation <lpt_transformations__mat_mul_transformation>`
 
-* :ref:`MaxPoolTransformation <doxid-openvino_docs__o_v__u_g_lpt__max_pool_transformation>`
+* :ref:`MaxPoolTransformation <lpt_transformations__max_pool_transformation>`
 
-* :ref:`MultiplyTransformation <doxid-openvino_docs__o_v__u_g_lpt__multiply_transformation>`
+* :ref:`MultiplyTransformation <lpt_transformations__multiply_transformation>`
 
-* :ref:`MVNTransformation <doxid-openvino_docs__o_v__u_g_lpt__m_v_n_transformation>`
+* :ref:`MVNTransformation <lpt_transformations__mvn_transformation>`
 
-* :ref:`NormalizeL2Transformation <doxid-openvino_docs__o_v__u_g_lpt__normalize_l2_transformation>`
+* :ref:`NormalizeL2Transformation <lpt_transformations__normalize_l2_transformation>`
 
 * :ref:`PReluTransformation <doxid-openvino_docs__o_v__u_g_lpt__p_relu_transformation>`
 

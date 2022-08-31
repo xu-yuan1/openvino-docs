@@ -17,5 +17,5 @@ Step 1. Prerequisites Transformations
 
 * :ref:`PullTransposeThroughDequantization <doxid-openvino_docs__o_v__u_g_lpt__pull_transpose_through_dequantization>`
 
-* :ref:`LinOpSequenceFusion <doxid-openvino_docs__o_v__u_g_lpt__lin_op_sequence_fusion>`
+* :ref:`LinOpSequenceFusion <lpt_transformations__lin_op_sequence_fusion>`
 

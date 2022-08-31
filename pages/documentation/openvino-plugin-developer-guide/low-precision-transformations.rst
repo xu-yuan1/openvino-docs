@@ -222,7 +222,7 @@ This step fuses and propagates some operations in the model to prepare for the n
 
 * :ref:`PullTransposeThroughDequantization <doxid-openvino_docs__o_v__u_g_lpt__pull_transpose_through_dequantization>`
 
-* :ref:`LinOpSequenceFusion <doxid-openvino_docs__o_v__u_g_lpt__lin_op_sequence_fusion>`
+* :ref:`LinOpSequenceFusion <lpt_transformations__lin_op_sequence_fusion>`
 
 The model on this step is changed. There are more details in developer guide :ref:`Prerequisites transformations <plugin_lpt__step1_prerequisites>`.
 
@@ -231,13 +231,13 @@ Step 2. Markup
 
 This step creates runtime attributes for operations. These attributes will be used in next step. Transformations:
 
-* :ref:`MarkupCanBeQuantized <doxid-openvino_docs__o_v__u_g_lpt__markup_can_be_quantized>`
+* :ref:`MarkupCanBeQuantized <lpt_transformations__markup_can_be_quantized>`
 
-* :ref:`MarkupPrecisions <doxid-openvino_docs__o_v__u_g_lpt__markup_precisions>`
+* :ref:`MarkupPrecisions <lpt_transformations__markup_precisions>`
 
-* :ref:`MarkupPerTensorQuantization <doxid-openvino_docs__o_v__u_g_lpt__markup_per_tensor_quantization>`
+* :ref:`MarkupPerTensorQuantization <lpt_transformations__markup_per_tensor_quantization>`
 
-* :ref:`MarkupAvgPoolPrecisionPreserved <doxid-openvino_docs__o_v__u_g_lpt__markup_avg_pool_precision_preserved>`
+* :ref:`MarkupAvgPoolPrecisionPreserved <lpt_transformations__markup_avg_pool_precision_preserved>`
 
 * :ref:`PropagatePrecisions <doxid-openvino_docs__o_v__u_g_lpt__propagate_precisions>`
 
@@ -269,23 +269,23 @@ and dequantization operations handling. There are more details in developer guid
 
 * :ref:`DepthToSpaceTransformation <lpt_transformations__depth_to_space_transformation>`
 
-* :ref:`FakeQuantizeDecompositionTransformation <doxid-openvino_docs__o_v__u_g_lpt__fake_quantize_decomposition_transformation>`
+* :ref:`FakeQuantizeDecompositionTransformation <lpt_transformations__fake_quantize_decomposition_transformation>`
 
-* :ref:`FakeQuantizeTransformation <doxid-openvino_docs__o_v__u_g_lpt__fake_quantize_transformation>`
+* :ref:`FakeQuantizeTransformation <lpt_transformations__fake_quantize_transformation>`
 
-* :ref:`InterpolateTransformation <doxid-openvino_docs__o_v__u_g_lpt__interpolate_transformation>`
+* :ref:`InterpolateTransformation <lpt_transformations__interpolate_transformation>`
 
-* :ref:`GroupConvolutionTransformation <doxid-openvino_docs__o_v__u_g_lpt__group_convolution_transformation>`
+* :ref:`GroupConvolutionTransformation <lpt_transformations__group_convolution_transformation>`
 
-* :ref:`MatMulTransformation <doxid-openvino_docs__o_v__u_g_lpt__mat_mul_transformation>`
+* :ref:`MatMulTransformation <lpt_transformations__mat_mul_transformation>`
 
-* :ref:`MaxPoolTransformation <doxid-openvino_docs__o_v__u_g_lpt__max_pool_transformation>`
+* :ref:`MaxPoolTransformation <lpt_transformations__max_pool_transformation>`
 
-* :ref:`MultiplyTransformation <doxid-openvino_docs__o_v__u_g_lpt__multiply_transformation>`
+* :ref:`MultiplyTransformation <lpt_transformations__multiply_transformation>`
 
-* :ref:`MVNTransformation <doxid-openvino_docs__o_v__u_g_lpt__m_v_n_transformation>`
+* :ref:`MVNTransformation <lpt_transformations__mvn_transformation>`
 
-* :ref:`NormalizeL2Transformation <doxid-openvino_docs__o_v__u_g_lpt__normalize_l2_transformation>`
+* :ref:`NormalizeL2Transformation <lpt_transformations__normalize_l2_transformation>`
 
 * :ref:`PReluTransformation <doxid-openvino_docs__o_v__u_g_lpt__p_relu_transformation>`
 
@@ -365,17 +365,17 @@ LPT cleanup transformations is final stage in LPT pipeline. In this step LPT tra
 to avoid not handled dequantization operations: fuse dequantization operations if possible (fuse at least ``Convert`` 
 operations if not) to other model operations to cleanup result model. Transformations:
 
-* :ref:`FoldConvertTransformation <doxid-openvino_docs__o_v__u_g_lpt__fold_convert_transformation>`
+* :ref:`FoldConvertTransformation <lpt_transformations__fold_convert_transformation>`
 
-* :ref:`FoldFakeQuantizeTransformation <doxid-openvino_docs__o_v__u_g_lpt__fold_fake_quantize_transformation>`
+* :ref:`FoldFakeQuantizeTransformation <lpt_transformations__fold_fake_quantize_transformation>`
 
-* :ref:`FuseConvertTransformation <doxid-openvino_docs__o_v__u_g_lpt__fuse_convert_transformation>`
+* :ref:`FuseConvertTransformation <lpt_transformations__fuse_convert_transformation>`
 
-* :ref:`FuseMultiplyToFakeQuantizeTransformation <doxid-openvino_docs__o_v__u_g_lpt__fuse_multiply_to_fake_quantize_transformation>`
+* :ref:`FuseMultiplyToFakeQuantizeTransformation <lpt_transformations__fuse_multiply_to_fake_quantize_transformation>`
 
-* :ref:`FuseSubtractToFakeQuantizeTransformation <doxid-openvino_docs__o_v__u_g_lpt__fuse_subtract_to_fake_quantize_transformation>`
+* :ref:`FuseSubtractToFakeQuantizeTransformation <lpt_transformations__fuse_subtract_to_fake_quantize_transformation>`
 
-* :ref:`MultiplyToGroupConvolutionTransformation <doxid-openvino_docs__o_v__u_g_lpt__multiply_to_group_convolution_transformation>`
+* :ref:`MultiplyToGroupConvolutionTransformation <lpt_transformations__multiply_to_group_convolution_transformation>`
 
 There are more details in developer guide :ref:`Cleanup transformations <plugin_lpt__step4_cleanup>`.
 
