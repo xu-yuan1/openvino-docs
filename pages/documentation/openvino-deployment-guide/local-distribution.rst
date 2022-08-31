@@ -1,22 +1,34 @@
 .. index:: pair: page; Libraries for Local Distribution
-.. _doxid-openvino_docs_deploy_local_distribution:
+.. _deploy_infer__deploy_local_distribution:
 
+.. meta::
+   :description: A local distribution will have its own copies of OpenVINO 
+                 Runtime binaries along with a set of required libraries 
+                 needed to deploy the application.
+   :keywords: OpenVINO Runtime, OpenVINO toolkit, deployment, deployment 
+              package, distribution, local distribution, OpenVINO binaries, 
+              Intel® Distribution of OpenVINO™ toolkit, openvino_c library, 
+              openvino_c, pluggable components, compute devices, inference 
+              execution mode, HETERO plugin, AUTO plugin, MULTI plugin, 
+              Automatic Device Selection, Multi-Device execution, frontend 
+              libraries, read model, distribution package, inference, 
+              G-API preprocessing, OpenVINO IR, Intel CPU, Intel GPU, Intel 
+              GNA, HDDL device, MYRIAD device, Arm® CPU, C++ application, 
+              inference device, plugin library, 
 
 Libraries for Local Distribution
 ================================
 
-:target:`doxid-openvino_docs_deploy_local_distribution_1md_openvino_docs_ov_runtime_ug_deployment_local_distribution` With a local distribution, each C or C++ application/installer will have its own copies of OpenVINO Runtime binaries. However, OpenVINO has a scalable plugin-based architecture, which means that some components can be loaded in runtime only when they are really needed. Therefore, it is important to understand which minimal set of libraries is really needed to deploy the application. This guide helps you to achieve that goal.
+:target:`deploy_infer__deploy_local_distribution_1md_openvino_docs_ov_runtime_ug_deployment_local_distribution` 
 
-Local dsitribution is also appropriate for OpenVINO binaries built from sources using `Build instructions <https://github.com/openvinotoolkit/openvino/wiki#how-to-build>`__, but the guide below supposes OpenVINO Runtime is built dynamically. For case of `Static OpenVINO Runtime <https://github.com/openvinotoolkit/openvino/wiki/StaticLibraries>`__ select the required OpenVINO capabilities on CMake configuration stage using `CMake Options for Custom Compilation <https://github.com/openvinotoolkit/openvino/wiki/CMakeOptionsForCustomCompilation>`__, the build and link the OpenVINO components into the final application.
+With a local distribution, each C or C++ application/installer will have its own copies of OpenVINO Runtime binaries. However, OpenVINO has a scalable plugin-based architecture, which means that some components can be loaded in runtime only when they are really needed. Therefore, it is important to understand which minimal set of libraries is really needed to deploy the application. This guide helps you to achieve that goal.
+
+Local distribution is also appropriate for OpenVINO binaries built from sources using `Build instructions <https://github.com/openvinotoolkit/openvino/wiki#how-to-build>`__, but the guide below supposes OpenVINO Runtime is built dynamically. For case of `Static OpenVINO Runtime <https://github.com/openvinotoolkit/openvino/wiki/StaticLibraries>`__ select the required OpenVINO capabilities on CMake configuration stage using `CMake Options for Custom Compilation <https://github.com/openvinotoolkit/openvino/wiki/CMakeOptionsForCustomCompilation>`__, the build and link the OpenVINO components into the final application.
 
 .. note:: The steps below are operating system independent and refer to a library 
    file name without any prefixes (like ``lib`` on Unix systems) or suffixes (like 
    ``.dll`` on Windows OS). Do not put ``.lib`` files on Windows OS to the distribution, 
    because such files are needed only on a linker stage.
-
-
-
-
 
 Library Requirements for C++ and C Languages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
