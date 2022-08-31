@@ -30,7 +30,7 @@ The structure of the OpenVINO 2022.1 installer package has been organized as fol
 
 * The ``runtime`` folder includes headers, libraries and CMake interfaces.
 
-* The ``tools`` folder contains :ref:`the compile tool <doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e>`, :ref:`deployment manager <doxid-openvino_docs_install_guides_deployment_manager_tool>`, and a set of ``requirements.txt`` files with links to the corresponding versions of the ``openvino-dev`` package.
+* The ``tools`` folder contains :ref:`the compile tool <doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e>`, :ref:`deployment manager <deploy_infer__deploy_manager>`, and a set of ``requirements.txt`` files with links to the corresponding versions of the ``openvino-dev`` package.
 
 * The ``python`` folder contains the Python version for OpenVINO Runtime.
 

@@ -38,7 +38,7 @@ Once the :ref:`OpenVINO™ application development <deploy_infer__integrate_appl
 
 * Grab a necessary functionality of OpenVINO together with your application, also called "local distribution":
   
-  * using :ref:`OpenVINO Deployment Manager <doxid-openvino_docs_install_guides_deployment_manager_tool>` - providing a convenient way for creating a distribution package;
+  * using :ref:`OpenVINO Deployment Manager <deploy_infer__deploy_manager>` - providing a convenient way for creating a distribution package;
   
   * using the advanced :ref:`local distribution <doxid-openvino_docs_deploy_local_distribution>` approach;
   
@@ -59,7 +59,7 @@ The table below shows which distribution type can be used for what target operat
       - Ubuntu 18.04 long-term support (LTS), 64-bit; Ubuntu 20.04 long-term support (LTS), 64-bit; Red Hat Enterprise Linux 8, 64-bit; Windows Server Core base LTSC 2019, 64-bit; Windows 10, version 20H2, 64-bit
     * - PyPI (PIP package manager)
       - See `https://pypi.org/project/openvino/ <https://pypi.org/project/openvino/>`__
-    * - :ref:`OpenVINO Deployment Manager <doxid-openvino_docs_install_guides_deployment_manager_tool>`
+    * - :ref:`OpenVINO Deployment Manager <deploy_infer__deploy_manager>`
       - All operating systems
     * - :ref:`Local distribution <doxid-openvino_docs_deploy_local_distribution>`
       - All operating systems

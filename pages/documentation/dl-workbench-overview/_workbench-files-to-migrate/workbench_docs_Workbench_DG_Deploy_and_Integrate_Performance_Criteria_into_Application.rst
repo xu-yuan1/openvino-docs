@@ -79,7 +79,7 @@ See Also
 
 * :ref:`Build Your Application with Deployment Package <doxid-workbench_docs__workbench__d_g__deployment__package>`
 
-* :ref:`Deployment Manager Guide <doxid-openvino_docs_install_guides_deployment_manager_tool>`
+* :ref:`Deployment Manager Guide <deploy_infer__deploy_manager>`
 
 * :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
 

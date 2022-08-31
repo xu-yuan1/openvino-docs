@@ -17,7 +17,7 @@ Build Your Application with Deployment Package
 
    workbench_docs_Workbench_DG_Deploy_and_Integrate_Performance_Criteria_into_Application
 
-When you find an optimal configuration for your model, the next step is to use this model with optimal parameters in your own application on a target device. OpenVINO™ toolkit includes all you need to run the application on the target. However, the target might have a limited drive space to store all OpenVINO™ components. OpenVINO™ :ref:`Deployment Manager <doxid-openvino_docs_install_guides_deployment_manager_tool>` available inside the DL Workbench extracts the minimum set of libraries required for a target device.
+When you find an optimal configuration for your model, the next step is to use this model with optimal parameters in your own application on a target device. OpenVINO™ toolkit includes all you need to run the application on the target. However, the target might have a limited drive space to store all OpenVINO™ components. OpenVINO™ :ref:`Deployment Manager <deploy_infer__deploy_manager>` available inside the DL Workbench extracts the minimum set of libraries required for a target device.
 
 .. warning:: Deployment Manager available inside the DL Workbench provides libraries compatible with Ubuntu 18.04 and 20.04.
 
@@ -288,7 +288,7 @@ See Also
 
 * :ref:`Deploy and Integrate Performance Criteria into Application <doxid-workbench_docs__workbench__d_g__deploy_and__integrate__performance__criteria_into__application>`
 
-* :ref:`Deployment Manager Guide <doxid-openvino_docs_install_guides_deployment_manager_tool>`
+* :ref:`Deployment Manager Guide <deploy_infer__deploy_manager>`
 
 * :ref:`Integrate the OpenVINO™ Runtime with Your Application <deploy_infer__integrate_application>`
 
