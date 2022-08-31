@@ -54,33 +54,33 @@ Step 3. Main Transformations
 
 * :ref:`NormalizeL2Transformation <lpt_transformations__normalize_l2_transformation>`
 
-* :ref:`PReluTransformation <doxid-openvino_docs__o_v__u_g_lpt__p_relu_transformation>`
+* :ref:`PReluTransformation <lpt_transformations__p_relu_transformation>`
 
-* :ref:`ReduceMaxTransformation <doxid-openvino_docs__o_v__u_g_lpt__reduce_max_transformation>`
+* :ref:`ReduceMaxTransformation <lpt_transformations__reduce_max_transformation>`
 
-* :ref:`ReduceMeanTransformation <doxid-openvino_docs__o_v__u_g_lpt__reduce_mean_transformation>`
+* :ref:`ReduceMeanTransformation <lpt_transformations__reduce_mean_transformation>`
 
-* :ref:`ReduceMinTransformation <doxid-openvino_docs__o_v__u_g_lpt__reduce_min_transformation>`
+* :ref:`ReduceMinTransformation <lpt_transformations__reduce_min_transformation>`
 
-* :ref:`ReduceSumTransformation <doxid-openvino_docs__o_v__u_g_lpt__reduce_sum_transformation>`
+* :ref:`ReduceSumTransformation <lpt_transformations__reduce_sum_transformation>`
 
-* :ref:`ReluTransformation <doxid-openvino_docs__o_v__u_g_lpt__relu_transformation>`
+* :ref:`ReluTransformation <lpt_transformations__relu_transformation>`
 
-* :ref:`ReshapeTransformation <doxid-openvino_docs__o_v__u_g_lpt__reshape_transformation>`
+* :ref:`ReshapeTransformation <lpt_transformations__reshape_transformation>`
 
-* :ref:`SqueezeTransformation <doxid-openvino_docs__o_v__u_g_lpt__squeeze_transformation>`
+* :ref:`SqueezeTransformation <lpt_transformations__squeeze_transformation>`
 
-* :ref:`ShuffleChannelsTransformation <doxid-openvino_docs__o_v__u_g_lpt__shuffle_channels_transformation>`
+* :ref:`ShuffleChannelsTransformation <lpt_transformations__shuffle_channels_transformation>`
 
-* :ref:`SplitTransformation <doxid-openvino_docs__o_v__u_g_lpt__split_transformation>`
+* :ref:`SplitTransformation <lpt_transformations__split_transformation>`
 
-* :ref:`StridedSliceTransformation <doxid-openvino_docs__o_v__u_g_lpt__strided_slice_transformation>`
+* :ref:`StridedSliceTransformation <lpt_transformations__strided_slice_transformation>`
 
-* :ref:`TransposeTransformation <doxid-openvino_docs__o_v__u_g_lpt__transpose_transformation>`
+* :ref:`TransposeTransformation <lpt_transformations__transpose_transformation>`
 
-* :ref:`UnsqueezeTransformation <doxid-openvino_docs__o_v__u_g_lpt__unsqueeze_transformation>`
+* :ref:`UnsqueezeTransformation <lpt_transformations__unsqueeze_transformation>`
 
-* :ref:`VariadicSplitTransformation <doxid-openvino_docs__o_v__u_g_lpt__variadic_split_transformation>`
+* :ref:`VariadicSplitTransformation <lpt_transformations__variadic_split_transformation>`
 
 Let's explore some main transformations on the example model. Original model:
 

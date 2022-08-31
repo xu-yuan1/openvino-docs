@@ -22,7 +22,7 @@ Step 2. Markup Transformations
 
 #. :ref:`MarkupAvgPoolPrecisionPreserved <lpt_transformations__markup_avg_pool_precision_preserved>`
 
-#. :ref:`PropagatePrecisions <doxid-openvino_docs__o_v__u_g_lpt__propagate_precisions>`
+#. :ref:`PropagatePrecisions <lpt_transformations__propagate_precisions>`
 
 #. :ref:`AlignQuantizationIntervals <lpt_transformations__align_quantization_intervals>`
 
@@ -70,11 +70,11 @@ utility transformations is not important:
 
 * :ref:`CreatePrecisionsDependentAttribute <lpt_transformations__create_precisions_dependent_attribute>`
 
-* :ref:`PropagateThroughPrecisionPreserved <doxid-openvino_docs__o_v__u_g_lpt__propagate_through_precision_preserved>`
+* :ref:`PropagateThroughPrecisionPreserved <lpt_transformations__propagate_through_precision_preserved>`
 
-* :ref:`PropagateToInput <doxid-openvino_docs__o_v__u_g_lpt__propagate_to_input>`
+* :ref:`PropagateToInput <lpt_transformations__propagate_to_input>`
 
-* :ref:`UpdateSharedPrecisionPreserved <doxid-openvino_docs__o_v__u_g_lpt__update_shared_precision_preserved>`
+* :ref:`UpdateSharedPrecisionPreserved <lpt_transformations__update_shared_precision_preserved>`
 
 Let's explore all transformations and their relations in detail, using one and the same model:
 
