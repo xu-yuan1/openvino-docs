@@ -24,9 +24,9 @@ Step 2. Markup Transformations
 
 #. :ref:`PropagatePrecisions <doxid-openvino_docs__o_v__u_g_lpt__propagate_precisions>`
 
-#. :ref:`AlignQuantizationIntervals <doxid-openvino_docs__o_v__u_g_lpt__align_quantization_intervals>`
+#. :ref:`AlignQuantizationIntervals <lpt_transformations__align_quantization_intervals>`
 
-#. :ref:`AlignQuantizationParameters <doxid-openvino_docs__o_v__u_g_lpt__align_quantization_parameters>`
+#. :ref:`AlignQuantizationParameters <lpt_transformations__align_quantization_parameters>`
 
 The table of transformations and used attributes:
 
@@ -66,9 +66,9 @@ The table of transformations and used attributes:
 Common markup transformations can be decomposed into simpler utility markup transformations. The order of Markup 
 utility transformations is not important:
 
-* :ref:`CreateAttribute <doxid-openvino_docs__o_v__u_g_lpt__create_attribute>`
+* :ref:`CreateAttribute <lpt_transformations__create_attribute>`
 
-* :ref:`CreatePrecisionsDependentAttribute <doxid-openvino_docs__o_v__u_g_lpt__create_precisions_dependent_attribute>`
+* :ref:`CreatePrecisionsDependentAttribute <lpt_transformations__create_precisions_dependent_attribute>`
 
 * :ref:`PropagateThroughPrecisionPreserved <doxid-openvino_docs__o_v__u_g_lpt__propagate_through_precision_preserved>`
 

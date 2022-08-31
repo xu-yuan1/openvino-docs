@@ -241,9 +241,9 @@ This step creates runtime attributes for operations. These attributes will be us
 
 * :ref:`PropagatePrecisions <doxid-openvino_docs__o_v__u_g_lpt__propagate_precisions>`
 
-* :ref:`AlignQuantizationIntervals <doxid-openvino_docs__o_v__u_g_lpt__align_quantization_intervals>`
+* :ref:`AlignQuantizationIntervals <lpt_transformations__align_quantization_intervals>`
 
-* :ref:`AlignQuantizationParameters <doxid-openvino_docs__o_v__u_g_lpt__align_quantization_parameters>`
+* :ref:`AlignQuantizationParameters <lpt_transformations__align_quantization_parameters>`
 
 The model on this step is changed: only new attributes are added to some operations. There are more details in developer 
 guide :ref:`Markup transformations <plugin_lpt__step2_markup>`.
@@ -255,19 +255,19 @@ This step has the most transformations. These transformations can be separated i
 and dequantization operations handling. There are more details in developer guide 
 :ref:`Main transformations <plugin_lpt__step3_main_transformations>`. Transformations:
 
-* :ref:`AddTransformation <doxid-openvino_docs__o_v__u_g_lpt__add_transformation>`
+* :ref:`AddTransformation <lpt_transformations__add_transformation>`
 
-* :ref:`AvgPoolTransformation <doxid-openvino_docs__o_v__u_g_lpt__avg_pool_transformation>`
+* :ref:`AvgPoolTransformation <lpt_transformations__avg_pool_transformation>`
 
-* :ref:`ClampTransformation <doxid-openvino_docs__o_v__u_g_lpt__avg_pool_transformation>`
+* :ref:`ClampTransformation <lpt_transformations__clamp_transformation>`
 
-* :ref:`ConcatTransformation <doxid-openvino_docs__o_v__u_g_lpt__concat_transformation>`
+* :ref:`ConcatTransformation <lpt_transformations__concat_transformation>`
 
-* :ref:`ConvolutionTransformation <doxid-openvino_docs__o_v__u_g_lpt__convolution_transformation>`
+* :ref:`ConvolutionTransformation <lpt_transformations__convolution_transformation>`
 
-* :ref:`ConvolutionBackpropDataTransformation <doxid-openvino_docs__o_v__u_g_lpt__convolution_backprop_data_transformation>`
+* :ref:`ConvolutionBackpropDataTransformation <lpt_transformations__convolution_backprop_data_transformation>`
 
-* :ref:`DepthToSpaceTransformation <doxid-openvino_docs__o_v__u_g_lpt__depth_to_space_transformation>`
+* :ref:`DepthToSpaceTransformation <lpt_transformations__depth_to_space_transformation>`
 
 * :ref:`FakeQuantizeDecompositionTransformation <doxid-openvino_docs__o_v__u_g_lpt__fake_quantize_decomposition_transformation>`
 

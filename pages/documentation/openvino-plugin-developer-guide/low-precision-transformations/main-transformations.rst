@@ -22,19 +22,19 @@ Step 3. Main Transformations
 
 :target:`plugin_lpt__step3_main_transformations_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_pipeline_step3_main` Main transformations are the majority of low precision transformations. Transformations operate with dequantization operations. Main transformations include:
 
-* :ref:`AddTransformation <doxid-openvino_docs__o_v__u_g_lpt__add_transformation>`
+* :ref:`AddTransformation <lpt_transformations__add_transformation>`
 
-* :ref:`AvgPoolTransformation <doxid-openvino_docs__o_v__u_g_lpt__avg_pool_transformation>`
+* :ref:`AvgPoolTransformation <lpt_transformations__avg_pool_transformation>`
 
-* :ref:`ClampTransformation <doxid-openvino_docs__o_v__u_g_lpt__avg_pool_transformation>`
+* :ref:`ClampTransformation <lpt_transformations__clamp_transformation>`
 
-* :ref:`ConcatTransformation <doxid-openvino_docs__o_v__u_g_lpt__concat_transformation>`
+* :ref:`ConcatTransformation <lpt_transformations__concat_transformation>`
 
-* :ref:`ConvolutionTransformation <doxid-openvino_docs__o_v__u_g_lpt__convolution_transformation>`
+* :ref:`ConvolutionTransformation <lpt_transformations__convolution_transformation>`
 
-* :ref:`ConvolutionBackpropDataTransformation <doxid-openvino_docs__o_v__u_g_lpt__convolution_backprop_data_transformation>`
+* :ref:`ConvolutionBackpropDataTransformation <lpt_transformations__convolution_backprop_data_transformation>`
 
-* :ref:`DepthToSpaceTransformation <doxid-openvino_docs__o_v__u_g_lpt__depth_to_space_transformation>`
+* :ref:`DepthToSpaceTransformation <lpt_transformations__depth_to_space_transformation>`
 
 * :ref:`FakeQuantizeDecompositionTransformation <doxid-openvino_docs__o_v__u_g_lpt__fake_quantize_decomposition_transformation>`
 
