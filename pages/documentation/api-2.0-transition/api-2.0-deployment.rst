@@ -30,7 +30,7 @@ The structure of the OpenVINO 2022.1 installer package has been organized as fol
 
 * The ``runtime`` folder includes headers, libraries and CMake interfaces.
 
-* The ``tools`` folder contains :ref:`the compile tool <doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e>`, :ref:`deployment manager <doxid-openvino_docs_install_guides_deployment_manager_tool>`, and a set of ``requirements.txt`` files with links to the corresponding versions of the ``openvino-dev`` package.
+* The ``tools`` folder contains :ref:`the compile tool <doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e>`, :ref:`deployment manager <deploy_infer__deploy_manager>`, and a set of ``requirements.txt`` files with links to the corresponding versions of the ``openvino-dev`` package.
 
 * The ``python`` folder contains the Python version for OpenVINO Runtime.
 
@@ -179,11 +179,11 @@ Below are detailed comparisons of the library structure between OpenVINO 2022.1 
 
 * The libraries of plugins have been renamed as follows:
   
-  * ``openvino_intel_cpu_plugin`` is used for :ref:`CPU <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>` device instead of ``MKLDNNPlugin``.
+  * ``openvino_intel_cpu_plugin`` is used for :ref:`CPU <deploy_infer__cpu_device>` device instead of ``MKLDNNPlugin``.
   
-  * ``openvino_intel_gpu_plugin`` is used for :ref:`GPU <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>` device instead of ``clDNNPlugin``.
+  * ``openvino_intel_gpu_plugin`` is used for :ref:`GPU <deploy_infer__gpu_device>` device instead of ``clDNNPlugin``.
   
-  * ``openvino_auto_plugin`` is used for :ref:`Auto-Device Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>`.
+  * ``openvino_auto_plugin`` is used for :ref:`Auto-Device Plugin <deploy_infer__auto_plugin>`.
 
 * The plugins for reading and converting models have been changed as follows:
   

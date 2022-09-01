@@ -182,7 +182,7 @@ Based on the steps, the following code demostrates how to change the application
 1.1 (Optional) Load Extensions
 ------------------------------
 
-To load a model with custom operations, you need to add extensions for these operations. It is highly recommended to use :ref:`OpenVINO Extensibility API <doxid-openvino_docs__extensibility__u_g__intro>` to write extensions. However, you can also load the old extensions to the new OpenVINO™ Runtime:
+To load a model with custom operations, you need to add extensions for these operations. It is highly recommended to use :ref:`OpenVINO Extensibility API <extensibility__api_introduction>` to write extensions. However, you can also load the old extensions to the new OpenVINO™ Runtime:
 
 **Inference Engine API**
 

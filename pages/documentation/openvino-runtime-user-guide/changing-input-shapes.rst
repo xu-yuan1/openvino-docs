@@ -1,11 +1,20 @@
 .. index:: pair: page; Changing Input Shapes
-.. _doxid-openvino_docs__o_v__u_g__shape_inference:
+.. _deploy_infer__shape_inference:
 
+.. meta::
+   :description: OpenVINO™ ensures a capability to change model input shape during 
+                 the runtime when provided input has a different size than model 
+                 input shape.
+   :keywords: OpenVINO™, input shape, shape inference, changing input shape, reshape 
+              method, model shape, changing shape of a model, batch size, set_batch, 
+              set_batch method, non-reshape-able model, extensibility, inference, 
+              model inference, Reshape operation, MatMul operation, static model, 
+              dynamic model, static shape, dynamic shape
 
 Changing Input Shapes
 =====================
 
-:target:`doxid-openvino_docs__o_v__u_g__shape_inference_1md_openvino_docs_ov_runtime_ug_shapeinference`
+:target:`deploy_infer__shape_inference_1md_openvino_docs_ov_runtime_ug_shapeinference`
 
 .. raw:: html
 
@@ -30,7 +39,7 @@ Consider the code below to achieve that:
 Setting a New Batch Size with set_batch Method
 ----------------------------------------------
 
-The meaning of the model batch may vary depending on the model design. In order to change the batch dimension of the model, :ref:`set the ov::Layout <doxid-openvino_docs__o_v__u_g__preprocessing__overview_1declare_model_s_layout>` and call the ``:ref:`ov::set_batch <doxid-namespaceov_1a3314e2ff91fcc9ffec05b1a77c37862b>``` method.
+The meaning of the model batch may vary depending on the model design. In order to change the batch dimension of the model, :ref:`set the ov::Layout <deploy_infer__preprocessing_overview_1declare_model_s_layout>` and call the ``:ref:`ov::set_batch <doxid-namespaceov_1a3314e2ff91fcc9ffec05b1a77c37862b>``` method.
 
 .. ref-code-block:: cpp
 
@@ -42,12 +51,12 @@ The ``:ref:`ov::set_batch <doxid-namespaceov_1a3314e2ff91fcc9ffec05b1a77c37862b>
 
 Once the input shape of ``:ref:`ov::Model <doxid-classov_1_1_model>``` is set, call the ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` method to get an ``:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>``` object for inference with updated shapes.
 
-There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`ov::Model creation <doxid-openvino_docs__o_v__u_g__model__representation>`.
+There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`ov::Model creation <deploy_infer__model_representation>`.
 
 Dynamic Shape Notice
 --------------------
 
-Shape-changing functionality could be used to turn dynamic model input into a static one and vice versa. It is recommended to always set static shapes when the shape of data is not going to change from one inference to another. Setting static shapes can avoid possible functional limitations, memory, and runtime overheads for dynamic shapes which may vary depending on hardware plugin and model used. To learn more about dynamic shapes in OpenVINO, see the :ref:`Dynamic Shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>` page.
+Shape-changing functionality could be used to turn dynamic model input into a static one and vice versa. It is recommended to always set static shapes when the shape of data is not going to change from one inference to another. Setting static shapes can avoid possible functional limitations, memory, and runtime overheads for dynamic shapes which may vary depending on hardware plugin and model used. To learn more about dynamic shapes in OpenVINO, see the :ref:`Dynamic Shapes <deploy_infer__dynamic_shapes>` page.
 
 .. _usage_of_reshape_method:
 
@@ -64,7 +73,7 @@ The primary method of the feature is ``:ref:`ov::Model::reshape <doxid-classov_1
 	cv::Mat image = cv::imread("path/to/image");
 	:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`->reshape({1, 3, image.rows, image.cols});
 
-To do the opposite - resize input image to the input shapes of the model, use the :ref:`pre-processing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
+To do the opposite - resize input image to the input shapes of the model, use the :ref:`pre-processing API <deploy_infer__preprocessing_overview>`.
 
 2) Otherwise, you can express reshape plan via mapping of input and its new shape:
 
@@ -96,7 +105,7 @@ The usage scenarios of the ``reshape`` feature can be found in :ref:`OpenVINO Sa
 
 In practice, some models are not ready to be reshaped. In such cases, a new input shape cannot be set with Model Optimizer or the ``:ref:`ov::Model::reshape <doxid-classov_1_1_model_1aa21aff80598d5089d591888a4c7f33ae>``` method.
 
-:target:`doxid-openvino_docs__o_v__u_g__shape_inference_1troubleshooting_reshape_errors`
+:target:`deploy_infer__shape_inference_1troubleshooting_reshape_errors`
 
 Troubleshooting Reshape Errors
 ------------------------------
@@ -115,7 +124,7 @@ Model structure and logic should not change significantly after model reshaping.
 
 * Changing the model input shape may significantly affect its accuracy. For example, Object Detection models from TensorFlow have resizing restrictions by design. To keep the model valid after the reshape, choose a new input shape that satisfies conditions listed in the ``pipeline.config`` file. For details, refer to the :ref:`Tensorflow Object Detection API models resizing techniques <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__object__detection__a_p_i__models_1custom-input-shape>`.
 
-:target:`doxid-openvino_docs__o_v__u_g__shape_inference_1how-to-fix-non-reshape-able-model`
+:target:`deploy_infer__shape_inference_1how-to-fix-non-reshape-able-model`
 
 How To Fix Non-Reshape-able Model
 ---------------------------------
@@ -133,16 +142,16 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
 .. image:: ./_assets/batch_relaxation.png
 	:alt: batch_relaxed
 
-* transform the model during Model Optimizer conversion on the back phase. For more information, see the :ref:`Model Optimizer extension <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`.
+* transform the model during Model Optimizer conversion on the back phase. For more information, see the :ref:`Model Optimizer extension <extensibility__model_optimizer>`.
 
-* transform OpenVINO Model during the runtime. For more information, see :ref:`OpenVINO Runtime Transformations <doxid-openvino_docs_transformations>`.
+* transform OpenVINO Model during the runtime. For more information, see :ref:`OpenVINO Runtime Transformations <extensibility_transformations__overview>`.
 
 * modify the original model with the help of the original framework.
 
 Extensibility
 -------------
 
-OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <doxid-openvino_docs__extensibility__u_g__intro>`
+OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <extensibility__api_introduction>`
 
 Introduction (Python)
 ~~~~~~~~~~~~~~~~~~~~~
@@ -170,7 +179,7 @@ Consider the code below to achieve that:
 Setting a New Batch Size with the set_batch Method
 --------------------------------------------------
 
-The meaning of the model batch may vary depending on the model design. In order to change the batch dimension of the model, :ref:`set the layout <doxid-openvino_docs__o_v__u_g__preprocessing__overview_1declare_model_s_layout>` for inputs and call the `set_batch <api/ie_python_api/_autosummary/openvino.runtime.set_batch.html>`__ method.
+The meaning of the model batch may vary depending on the model design. In order to change the batch dimension of the model, :ref:`set the layout <deploy_infer__preprocessing_overview_1declare_model_s_layout>` for inputs and call the `set_batch <api/ie_python_api/_autosummary/openvino.runtime.set_batch.html>`__ method.
 
 .. doxygensnippet:: ../../snippets/ShapeInference.py
    :language: python
@@ -180,12 +189,12 @@ The meaning of the model batch may vary depending on the model design. In order 
 
 Once the input shape of `Model <api/ie_python_api/_autosummary/openvino.runtime.Model.html>`__ is set, call the `compile_model <api/ie_python_api/_autosummary/openvino.runtime.compile_model.html>`__ method to get a `CompiledModel <api/ie_python_api/_autosummary/openvino.runtime.CompiledModel.html>`__ object for inference with updated shapes.
 
-There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`Model creation <doxid-openvino_docs__o_v__u_g__model__representation>`.
+There are other approaches to change model input shapes during the stage of :ref:`IR generation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes>` or :ref:`Model creation <deploy_infer__model_representation>`.
 
 Dynamic Shape Notice
 --------------------
 
-Shape-changing functionality could be used to turn dynamic model input into a static one and vice versa. It is recommended to always set static shapes when the shape of data is not going to change from one inference to another. Setting static shapes can avoid possible functional limitations, memory, and runtime overheads for dynamic shapes which may vary depending on hardware plugin and used model. To learn more about dynamic shapes in OpenVINO, see the :ref:`Dynamic Shapes <doxid-openvino_docs__o_v__u_g__dynamic_shapes>` article.
+Shape-changing functionality could be used to turn dynamic model input into a static one and vice versa. It is recommended to always set static shapes when the shape of data is not going to change from one inference to another. Setting static shapes can avoid possible functional limitations, memory, and runtime overheads for dynamic shapes which may vary depending on hardware plugin and used model. To learn more about dynamic shapes in OpenVINO, see the :ref:`Dynamic Shapes <deploy_infer__dynamic_shapes>` article.
 
 .. _usage_of_reshape_method:
 
@@ -200,7 +209,7 @@ The primary method of the feature is `Model.reshape <api/ie_python_api/_autosumm
    :language: python
    :fragment: [simple_spatials_change]
 
-To do the opposite - resize input image to the input shapes of the model, use the :ref:`pre-processing API <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
+To do the opposite - resize input image to the input shapes of the model, use the :ref:`pre-processing API <deploy_infer__preprocessing_overview>`.
 
 2) Otherwise, you can express reshape plan via dictionary mapping input and its new shape: Dictionary keys could be:
 
@@ -273,14 +282,14 @@ Some operators which prevent normal shape propagation can be fixed. To do so you
 .. image:: ./_assets/batch_relaxation.png
 	:alt: batch_relaxed
 
-* transform the model during Model Optimizer conversion on the back phase. See :ref:`Model Optimizer extension <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`.
+* transform the model during Model Optimizer conversion on the back phase. See :ref:`Model Optimizer extension <extensibility__model_optimizer>`.
 
-* transform OpenVINO Model during the runtime. See :ref:`OpenVINO Runtime Transformations <doxid-openvino_docs_transformations>`.
+* transform OpenVINO Model during the runtime. See :ref:`OpenVINO Runtime Transformations <extensibility_transformations__overview>`.
 
 * modify the original model with the help of the original framework.
 
 Extensibility
 -------------
 
-OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <doxid-openvino_docs__extensibility__u_g__intro>`
+OpenVINO provides a special mechanism that allows adding support of shape inference for custom operations. This mechanism is described in the :ref:`Extensibility documentation <extensibility__api_introduction>`
 

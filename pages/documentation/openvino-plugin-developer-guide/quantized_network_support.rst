@@ -1,13 +1,25 @@
 .. index:: pair: page; Quantized networks compute and restrictions
-.. _doxid-openvino_docs_ie_plugin_dg_quantized_networks:
+.. _extensibility_plugin__quantized_networks:
+
+.. meta::
+   :description: Description of Inference Enigne support of quantized networks. 
+   :keywords: Inference Engine, quantized networks, INT8, INT4, plugin, extensibility,
+              quantized networks restrictions, OpenVINO IR, low-precision model representation, 
+              FakeQuantize, low-precision transformations, LPT, Quantize, Dequantize, Requantize,
+              Post-training Optimization Tool, POT, channel quantization, mixed-precision models,
+              asymmetric quantization, symmetric quantization
+
 
 
 Quantized networks compute and restrictions
 ===========================================
 
-:target:`doxid-openvino_docs_ie_plugin_dg_quantized_networks_1md_openvino_docs_ie_plugin_dg_quantizednetworks` 
+:target:`extensibility_plugin__quantized_networks_1md_openvino_docs_ie_plugin_dg_quantizednetworks` 
 
-One of the features of Inference Engine is the support of quantized networks with different precisions: INT8, INT4, etc. However, it is up to the plugin to define what exact precisions are supported by the particular HW. All quantized networks which can be expressed in IR have a unified representation by means of *FakeQuantize* operation. For more details about low-precision model representation please refer to this :ref:`document <doxid-openvino_docs_ie_plugin_dg_lp_representation>`.
+One of the features of Inference Engine is the support of quantized networks with different precisions: INT8, INT4, etc. 
+However, it is up to the plugin to define what exact precisions are supported by the particular HW. All quantized networks 
+which can be expressed in IR have a unified representation by means of *FakeQuantize* operation. For more details about 
+low-precision model representation please refer to this :ref:`document <doxid-openvino_docs_ie_plugin_dg_lp_representation>`.
 
 Interpreting FakeQuantize at runtime
 ------------------------------------
@@ -18,7 +30,12 @@ During the model load each plugin can interpret quantization rules expressed in 
 
 * Using a special library of low-precision transformations (LPT) which applies common rules for generic operations, such as Convolution, Fully-Connected, Eltwise, etc., and translates "fake-quantized" models into models with low-precision operations.
 
-Here we provide only a high-level overview of the interpretation rules of FakeQuantize. At runtime each FakeQuantize can be split into two independent operations: **Quantize** and **Dequantize**. The former one is aimed to transform the input data into the target precision while the latter transforms the resulting values back to the original range and precision. In practice *Dequantize* operations can be propagated forward through the linear operations, such as *Convolution* or *Fully-Connected*, and in some cases fused with the following *Quantize* operation for the next layer into the so-called *Requantize* operation (see Fig. 1).
+Here we provide only a high-level overview of the interpretation rules of FakeQuantize. At runtime each FakeQuantize can 
+be split into two independent operations: **Quantize** and **Dequantize**. The former one is aimed to transform the input 
+data into the target precision while the latter transforms the resulting values back to the original range and precision. 
+In practice *Dequantize* operations can be propagated forward through the linear operations, such as *Convolution* 
+or *Fully-Connected*, and in some cases fused with the following *Quantize* operation for the next layer into the so-called 
+*Requantize* operation (see Fig. 1).
 
 .. image:: ./_assets/qdq_propagation.png
 
@@ -46,12 +63,17 @@ Thus we can define:
 
 * **Zero-point** as ``-output_low / (output_high - output_low) \* (levels-1)``
 
-**Note** : During the quantization process the values ``input_low``, ``input_high``, ``output_low``, ``output_high`` are selected so that to map a floating-point zero exactly to an integer value (zero-point) and vice versa.
+.. note:: 
+   During the quantization process the values ``input_low``, ``input_high``, ``output_low``, ``output_high`` are selected 
+   so that to map a floating-point zero exactly to an integer value (zero-point) and vice versa.
 
 Quantization specifics and restrictions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In general, OpenVINO can represent and execute quantized models from different sources. However, the Post-training Optimization Tool (POT) is considered the default way to get optimized models. Since the POT supports HW-aware quantization it means that specific rules can be implemented in it for the particular HW. However, it is reasonable to have compatibility with general-purpose HW such as CPU and GPU and support their quantization schemes. Below we define these rules as follows:
+In general, OpenVINO can represent and execute quantized models from different sources. However, the Post-training 
+Optimization Tool (POT) is considered the default way to get optimized models. Since the POT supports HW-aware quantization 
+it means that specific rules can be implemented in it for the particular HW. However, it is reasonable to have compatibility 
+with general-purpose HW such as CPU and GPU and support their quantization schemes. Below we define these rules as follows:
 
 * Support of mixed-precision models where some layers can be kept in the floating-point precision.
 

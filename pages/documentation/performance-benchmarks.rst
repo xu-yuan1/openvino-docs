@@ -1,11 +1,20 @@
 .. index:: pair: page; Performance Benchmarks
-.. _doxid-openvino_docs_performance_benchmarks:
+.. _performance_benchmarks:
+
+.. meta::
+   :description: The benchmark results demonstrate performance on multiple 
+                 Intel® CPUs, GPUs and VPUs, which helps to decide which 
+                 hardware is best for the applications.
+   :keyword: benchmark application, performance benchmarks, benchmark_app, 
+             Intel CPU, Intel GPU, Intel VPU, Intel® DevCloud for the Edge, 
+             deep learning inference, inference, neural networks, benchmark 
+             results, AI
 
 
 Performance Benchmarks
 ======================
 
-:target:`doxid-openvino_docs_performance_benchmarks_1md_openvino_docs_benchmarks_performance_benchmarks`
+:target:`performance_benchmarks_1md_openvino_docs_benchmarks_performance_benchmarks`
 
 .. toctree::
    :maxdepth: 1
@@ -18,17 +27,19 @@ The `Intel® Distribution of OpenVINO™ toolkit <https://software.intel.com/con
 helps accelerate deep learning inference across a variety of Intel® processors 
 and accelerators.
 
-The benchmark results below demonstrate high performance gains on several public 
-neural networks on multiple Intel® CPUs, GPUs and VPUs covering a broad performance 
-range. The results may be helpful when deciding which hardware is best for your 
-applications and solutions or to plan AI workload on the Intel computing already 
-included in your solutions.
+The benchmark results in this section demonstrate high performance gains on several public 
+neural networks on multiple Intel® CPUs, GPUs and VPUs, covering a broad performance 
+range. It may help to decide which hardware is best for your solutions or predict 
+the AI workload for the Intel hardware you already have.
 
 The following benchmarks are available:
 
-* :ref:`Intel® Distribution of OpenVINO™ toolkit Benchmark Results <doxid-openvino_docs_performance_benchmarks_openvino>`.
+* :ref:`Intel® Distribution of OpenVINO™ toolkit Benchmark Results <openvino_benchmarks>`.
 
-* :ref:`OpenVINO™ Model Server Benchmark Results <doxid-openvino_docs_performance_benchmarks_ovms>`.
+* :ref:`OpenVINO™ Model Server Benchmark Results <ovms_benchmarks>`.
+
+You can also download the full :download:`Performance Data Spreadsheet (XLSX) <./_assets/OVbenchmark_summary_2022.1.xlsx>`. 
+
 
 Performance of a particular application can also be evaluated virtually using 
 `Intel® DevCloud for the Edge <https://devcloud.intel.com/edge/>`__. It is a 

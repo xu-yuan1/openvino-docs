@@ -7,7 +7,7 @@ Configuring Devices
 
 :target:`doxid-openvino_2_0_configure_devices_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_configure_devices` Inference Engine API provides the `ability to configure devices <https://docs.openvino.ai/2021.4/openvino_docs_IE_DG_InferenceEngine_QueryAPI.html>`__ via configuration keys and `get device specific metrics <https://docs.openvino.ai/2021.4/openvino_docs_IE_DG_InferenceEngine_QueryAPI.html#getmetric>`__. The values taken from ``:ref:`InferenceEngine::Core::GetConfig <doxid-class_inference_engine_1_1_core_1a415077386694f95b57e4cccb0d334a55>``` are requested by the string name, while the return type is ``:ref:`InferenceEngine::Parameter <doxid-namespace_inference_engine_1aff2231f886c9f8fc9c226fd343026789>```, making users lost on what the actual type is stored in this parameter.
 
-API 2.0 solves these issues by introducing :ref:`properties <doxid-openvino_docs__o_v__u_g_query_api>`, which unify metrics and configuration key concepts. The main advantage is that they have the C++ type:
+API 2.0 solves these issues by introducing :ref:`properties <deploy_infer__query_device_properties>`, which unify metrics and configuration key concepts. The main advantage is that they have the C++ type:
 
 .. ref-code-block:: cpp
 

@@ -1,11 +1,29 @@
 .. index:: pair: page; OpenVINO™ Model Server Benchmark Results
-.. _doxid-openvino_docs_performance_benchmarks_ovms:
+.. _ovms_benchmarks:
 
+.. meta::
+   :description: Benchmarks on OpenVINO™ Model Server are run in a 
+                 multiple-client-single-server configuration using connection 
+                 dedicated only to the performance measurements.
+   :keyword: benchmark application, performance benchmarks, benchmark_app, 
+             Intel CPU, Intel GPU, OpenVINO™ Model Server, inference, 
+             benchmark results, benchmark performance results, benchmark setup, 
+             client platform, clients, load balancer, execution controller, 
+             docker container, image compression, improved throughput, 
+             OVMS, OVMS compression, Intel® Xeon® Gold 6252, Intel® Core™ 
+             i9-10920X, Intel® Core™ i7-8700T, Intel® Core™ i5-8500, Intel® 
+             Core™ i3-8100, OpenCV library
 
 OpenVINO™ Model Server Benchmark Results
 ==========================================
 
-:target:`doxid-openvino_docs_performance_benchmarks_ovms_1md_openvino_docs_benchmarks_performance_benchmarks_ovms` OpenVINO™ Model Server is an open-source, production-grade inference platform that exposes a set of models via a convenient inference API over gRPC or HTTP/REST. It employs the OpenVINO™ Runtime libraries from the Intel® Distribution of OpenVINO™ toolkit to extend workloads across Intel® hardware including CPU, GPU and others.
+:target:`ovms_benchmarks_1md_openvino_docs_benchmarks_performance_benchmarks_ovms` 
+
+OpenVINO™ Model Server is an open-source, production-grade inference platform 
+that exposes a set of models via a convenient inference API over gRPC or 
+HTTP/REST. It employs the OpenVINO™ Runtime libraries from the Intel® 
+Distribution of OpenVINO™ toolkit to extend workloads across Intel® hardware 
+including CPU, GPU and others.
 
 .. image:: ./_assets/performance_benchmarks_ovms_01.png
 	:alt: OpenVINO™ Model Server
@@ -13,18 +31,39 @@ OpenVINO™ Model Server Benchmark Results
 Measurement Methodology
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-OpenVINO™ Model Server is measured in a multiple-client-single-server configuration using two hardware platforms connected by an ethernet network. The network bandwidth depends on the platforms as well as models under investigation, and it is set not to be a bottleneck for workload intensity. This connection is dedicated only to the performance measurements. The benchmark setup consists of four main parts:
+OpenVINO™ Model Server is measured in a multiple-client-single-server 
+configuration using two hardware platforms connected by an ethernet network. 
+The network bandwidth depends on the platforms as well as models under 
+investigation, and it is set not to be a bottleneck for workload intensity. 
+This connection is dedicated only to the performance measurements. The 
+benchmark setup consists of four main parts:
 
 .. image:: ./_assets/performance_benchmarks_ovms_02.png
-	:alt: OVMS Benchmark Setup Diagram
+   :alt: OVMS Benchmark Setup Diagram
 
-* **OpenVINO™ Model Server** It is launched as a docker container on the server platform and it listens, and answers to, requests from clients. It is run on the same system as the OpenVINO™ toolkit benchmark application in corresponding benchmarking. Models served by it are placed in a local file system mounted into the docker container. The OpenVINO™ Model Server instance communicates with other components via ports over a dedicated docker network.
+* **OpenVINO™ Model Server** It is launched as a docker container on the 
+  server platform and it listens, and answers to, requests from clients. It is 
+  run on the same system as the OpenVINO™ toolkit benchmark application in 
+  corresponding benchmarking. Models served by it are placed in a local file 
+  system mounted into the docker container. The OpenVINO™ Model Server instance 
+  communicates with other components via ports over a dedicated docker network.
 
-* **Clients** - They are run in a separated physical system referred to as a client platform. Clients are implemented in the Python3 programming language based on the TensorFlow API and they work as parallel processes. Each client waits for a response from OpenVINO™ Model Server before it sends a new request. Clients also play a role in verification of responses.
+* **Clients** - They are run in a separated physical system referred to as a 
+  client platform. Clients are implemented in the Python3 programming language 
+  based on the TensorFlow API and they work as parallel processes. Each client 
+  waits for a response from OpenVINO™ Model Server before it sends a new 
+  request. Clients also play a role in verification of responses.
 
-* **Load Balancer** It works on the client platform in a docker container by using a HAProxy. It is mainly responsible for counting requests forwarded from clients to OpenVINO™ Model Server, estimating its latency, and sharing this information by Prometheus service. The reason for locating this part on the client site is to simulate a real life scenario that includes an impact of a physical network on reported metrics.
+* **Load Balancer** It works on the client platform in a docker container by 
+  using a HAProxy. It is mainly responsible for counting requests forwarded 
+  from clients to OpenVINO™ Model Server, estimating its latency, and sharing 
+  this information by Prometheus service. The reason for locating this part on 
+  the client site is to simulate a real life scenario that includes an impact 
+  of a physical network on reported metrics.
 
-* **Execution Controller** It is launched on the client platform. It is responsible for synchronization of the whole measurement process, downloading metrics from Load Balancer and presenting the final report of the execution.
+* **Execution Controller** It is launched on the client platform. It is 
+  responsible for synchronization of the whole measurement process, downloading 
+  metrics from Load Balancer and presenting the final report of the execution.
 
 resnet-50-TF (INT8)
 ~~~~~~~~~~~~~~~~~~~
@@ -89,7 +128,14 @@ bert-small-uncased-whole-word-masking-squad-0002 (FP32)
 Image Compression for Improved Throughput
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OpenVINO™ Model Server supports compressed binary input data (images in JPEG and PNG formats) for vision processing models. This feature improves overall performance on networks where the bandwidth constitutes a system bottleneck. Some examples of such a use case are: wireless 5G communication, a typical 1 Gbit/sec Ethernet network, and a scenario of multiple client machines issuing a high rate of inference requests to a single, central OpenVINO model server. Generally, performance improvement grows with increased compressibility of data/image. Decompression on the server side is performed by the OpenCV library.
+OpenVINO™ Model Server supports compressed binary input data (images in JPEG 
+and PNG formats) for vision processing models. This feature improves overall 
+performance on networks where the bandwidth constitutes a system bottleneck. 
+Some examples of such a use case are: wireless 5G communication, a typical 
+1 Gbit/sec Ethernet network, and a scenario of multiple client machines issuing 
+a high rate of inference requests to a single, central OpenVINO model server. 
+Generally, performance improvement grows with increased compressibility of 
+data/image. Decompression on the server side is performed by the OpenCV library.
 
 Supported Image Formats for OVMS Compression
 --------------------------------------------
@@ -138,7 +184,9 @@ resnet-50-tf (FP32)
 Platform Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-OpenVINO™ Model Server performance benchmark numbers are based on release 2021.4. Performance results are based on testing as of June 17, 2021 and may not reflect all publicly available updates.
+OpenVINO™ Model Server performance benchmark numbers are based on release 
+2021.4. Performance results are based on testing as of June 17, 2021 and may 
+not reflect all publicly available updates.
 
 Platform with Intel® Xeon® Platinum 8260M
 -------------------------------------------
@@ -545,4 +593,3 @@ Platform with Intel® Core™ i3-8100
       <td colspan="2" align="center">40 Gb/s</td>
     </tr>
     </table>
-

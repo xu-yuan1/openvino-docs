@@ -1,11 +1,23 @@
 .. index:: pair: page; GNA Device
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a:
+.. _deploy_infer__gna_device:
 
+.. meta::
+   :description: The GNA plugin in OpenVINO™ Runtime enables running inference 
+                 on Intel® Gaussian & Neural Accelerator (GNA) and in the 
+                 software execution mode on CPU.
+   :keywords: OpenVINO™, GNA plugin, OpenVINO Runtime, GNA device, inference device, 
+              inference, model inference, software execution mode, CPU device, 
+              offload inference, Intel® Core™ Processors, GNA 2.0, Intel® GNA 
+              hardware, compile model, GNA 3.0, 2D convolution, interoperability,
+              software emulation mode, Windows GNA driver, i16 data type, i8 data 
+              type, Automatic QoS feature, noise reduction, stateful models, 
+              model caching, profiling, inference request, import model, 
+              Convolution, MatMul, Convolution layer, MatMul layer
 
 GNA Device
 ==========
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a_1md_openvino_docs_ov_runtime_ug_supported_plugins_gna` The Intel® Gaussian & Neural Accelerator (GNA) is a low-power neural coprocessor for continuous inference at the edge.
+:target:`deploy_infer__gna_device_1md_openvino_docs_ov_runtime_ug_supported_plugins_gna` The Intel® Gaussian & Neural Accelerator (GNA) is a low-power neural coprocessor for continuous inference at the edge.
 
 Intel® GNA is not intended to replace typical inference devices such as the CPU, graphics processing unit (GPU), or vision processing unit (VPU). It is designed for offloading continuous inference workloads including but not limited to noise reduction or speech recognition to save power and free CPU resources.
 
@@ -161,7 +173,7 @@ Supported Inference Data Types
 
 Intel® GNA essentially operates in the low-precision mode which represents a mix of 8-bit (``i8``), 16-bit (``i16``), and 32-bit (``i32``) integer computations.
 
-GNA plugin users are encouraged to use the :ref:`Post-Training Optimization Tool <doxid-pot_introduction>` to get a model with quantization hints based on statistics for the provided dataset.
+GNA plugin users are encouraged to use the :ref:`Post-Training Optimization Tool <pot_tool_introduction>` to get a model with quantization hints based on statistics for the provided dataset.
 
 Unlike other plugins supporting low-precision execution, the GNA plugin can calculate quantization factors at the model loading time. Therefore, a model can be run without calibration. However, this mode may not provide satisfactory accuracy because the internal quantization algorithm is based on heuristics, the efficiency of which depends on the model and dynamic range of input data. This mode is going to be deprecated soon.
 
@@ -169,7 +181,7 @@ GNA plugin supports the ``i16`` and ``i8`` quantized data types as inference pre
 
 :ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>` can be used to print out supported data types for all detected devices.
 
-:ref:`POT API Usage sample for GNA <doxid-pot_example_speech__r_e_a_d_m_e>` demonstrates how a model can be quantized for GNA, using POT API in two modes:
+:ref:`POT API Usage sample for GNA <pot_api_example_gna>` demonstrates how a model can be quantized for GNA, using POT API in two modes:
 
 * Accuracy (i16 weights)
 
@@ -187,7 +199,7 @@ Models Caching
 
 Due to import/export functionality support (see below), cache for GNA plugin may be enabled via common ``:ref:`ov::cache_dir <doxid-group__ov__runtime__cpp__prop__api_1ga3276fc4ed7cc7d0bbdcf0ae12063728d>``` property of OpenVINO™.
 
-For more details, see the :ref:`Model caching overview <doxid-openvino_docs__o_v__u_g__model_caching_overview>`.
+For more details, see the :ref:`Model caching overview <model_caching_overview>`.
 
 Import/Export
 -------------
@@ -329,7 +341,7 @@ To compile a model, use either :ref:`compile Tool <doxid-openvino_inference_engi
 Stateful Models
 ---------------
 
-GNA plugin natively supports stateful models. For more details on such models, refer to the :ref:`Stateful models <doxid-openvino_docs__o_v__u_g_network_state_intro>`.
+GNA plugin natively supports stateful models. For more details on such models, refer to the :ref:`Stateful models <deploy_infer__stateful_models>`.
 
 .. note::
 
@@ -494,9 +506,9 @@ Batch Size Limitation
 
 Intel® GNA plugin supports the processing of context-windowed speech frames in batches of 1-8 frames.
 
-Refer to the :ref:`Layout API overview <doxid-openvino_docs__o_v__u_g__layout__overview>` to determine batch dimension.
+Refer to the :ref:`Layout API overview <deploy_infer__layout_api_overview>` to determine batch dimension.
 
-To set layout of model inputs in runtime, use the :ref:`Optimize Preprocessing <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` guide:
+To set layout of model inputs in runtime, use the :ref:`Optimize Preprocessing <deploy_infer__preprocessing_overview>` guide:
 
 .. raw:: html
 
@@ -652,7 +664,7 @@ Increasing batch size only improves efficiency of ``MatMul`` layers.
 Compatibility with Heterogeneous mode
 -------------------------------------
 
-:ref:`Heterogeneous execution <doxid-openvino_docs__o_v__u_g__hetero_execution>` is currently not supported by GNA plugin.
+:ref:`Heterogeneous execution <deploy_infer__hetero_plugin>` is currently not supported by GNA plugin.
 
 See Also
 ~~~~~~~~

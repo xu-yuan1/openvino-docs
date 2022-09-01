@@ -1,15 +1,18 @@
 .. index:: pair: page; Performing Inference with OpenVINO Runtime
-.. _doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide:
+.. _deploy_infer__openvino_runtime_user_guide:
 
+.. meta::
+   :description: OpenVINO Runtime is an API comprised of a set of C++ libraries 
+                 with C and Python bindings and it delivers inference solutions 
+                 on different platforms.
+   :keywords: OpenVINO Runtime, OpenVINO Runtime API, OpenVINO Intermediate 
+              Representation, OpenVINO IR, inference, ONNX, PaddlePaddle, 
+              ONNX model, PaddlePaddle model, Intel CPU, Intel GPU, Intel VPU
 
 Performing Inference with OpenVINO Runtime
 ==========================================
 
-:target:`doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide_1md_openvino_docs_ov_runtime_ug_openvino_intro`
-
-
-
-
+:target:`deploy_infer__openvino_runtime_user_guide_1md_openvino_docs_ov_runtime_ug_openvino_intro`
 
 .. _deep learning openvino runtime:
 
@@ -30,11 +33,19 @@ Performing Inference with OpenVINO Runtime
    ./openvino-runtime-user-guide/stateful-models
 
 
-OpenVINO Runtime is a set of C++ libraries with C and Python bindings providing a common API to deliver inference solutions on the platform of your choice. Use the OpenVINO Runtime API to read an Intermediate Representation (IR), ONNX, or PaddlePaddle model and execute it on preferred devices.
+OpenVINO Runtime is a set of C++ libraries with C and Python bindings providing 
+a common API to deliver inference solutions on the platform of your choice. Use 
+the OpenVINO Runtime API to read an Intermediate Representation (IR), ONNX, or 
+PaddlePaddle model and execute it on preferred devices.
 
-OpenVINO Runtime uses a plugin architecture. Its plugins are software components that contain complete implementation for inference on a particular Intel® hardware device: CPU, GPU, VPU, etc. Each plugin implements the unified API and provides additional hardware-specific APIs for configuring devices or API interoperability between OpenVINO Runtime and underlying plugin backend.
+OpenVINO Runtime uses a plugin architecture. Its plugins are software components 
+that contain complete implementation for inference on a particular Intel® 
+hardware device: CPU, GPU, VPU, etc. Each plugin implements the unified API and 
+provides additional hardware-specific APIs for configuring devices or API 
+interoperability between OpenVINO Runtime and underlying plugin backend.
 
-The scheme below illustrates the typical workflow for deploying a trained deep learning model:
+The scheme below illustrates the typical workflow for deploying a trained 
+deep learning model:
 
 .. image:: ./_assets/BASIC_FLOW_IE_C.svg
 
@@ -49,4 +60,3 @@ Video
            src="https://www.youtube.com/embed/e6R13V8nbak">
            </iframe>
    * - **OpenVINO Runtime Concept**. Duration: 3:43
-

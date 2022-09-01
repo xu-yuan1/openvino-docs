@@ -1,11 +1,25 @@
 .. index:: pair: page; Preprocessing API - details
-.. _doxid-openvino_docs__o_v__u_g__preprocessing__details:
+.. _deploy_infer__preprocessing_api:
 
+.. meta::
+   :description: This article presents detailed information on capabilities of 
+                 pre-processing API and post-processing.
+   :keywords: pre-processing, pre-processing API, tensor, input tensor, output 
+              tensor, PrePostProcessor, InputTensorInfo, OutputTensorInfo, 
+              data normalization, Computer Vision, convert precision, precision 
+              conversion, execution graph, convert layout, layout conversion, 
+              transpose, deep learning model, inference, model inference, model 
+              layout, resize image, convert color, color conversion, YUV, YUV 
+              color model, NV12, I420, NV12 color format, I420 color format, 
+              user tensor, model input, steps, convert layout, convert element 
+              type, customize operations, 
 
-Preprocessing API - details
-===========================
+Preprocessing API
+=================
 
-:target:`doxid-openvino_docs__o_v__u_g__preprocessing__details_1md_openvino_docs_ov_runtime_ug_preprocessing_details` The purpose of this article is to present details on preprocessing API, such as its capabilities and post-processing.
+:target:`deploy_infer__preprocessing_api_1md_openvino_docs_ov_runtime_ug_preprocessing_details` 
+
+The purpose of this article is to present details on preprocessing API, such as its capabilities and post-processing.
 
 Pre-processing Capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -290,7 +304,7 @@ Typical data normalization includes 2 operations for each data item: subtract me
 
 
 
-In Computer Vision area normalization is usually done separately for R, G, B values. To do this, :ref:`layout with 'C' dimension <doxid-openvino_docs__o_v__u_g__layout__overview>` shall be defined. Example:
+In Computer Vision area normalization is usually done separately for R, G, B values. To do this, :ref:`layout with 'C' dimension <deploy_infer__layout_api_overview>` shall be defined. Example:
 
 .. raw:: html
 
@@ -459,7 +473,7 @@ Converting layout (transposing)
 
 Transposing of matrices/tensors is a typical operation in Deep Learning - you may have a BMP image 640x480, which is an array of ``{480, 640, 3}`` elements, but Deep Learning model can require input with shape ``{1, 3, 480, 640}``.
 
-Conversion can be done implicitly, using the :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` of a user's tensor and the layout of an original model.
+Conversion can be done implicitly, using the :ref:`layout <deploy_infer__layout_api_overview>` of a user's tensor and the layout of an original model.
 
 .. raw:: html
 
@@ -531,7 +545,7 @@ Conversion can be done implicitly, using the :ref:`layout <doxid-openvino_docs__
 
    </div>
 
-For a manual transpose of axes without the use of a :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>` in the code:
+For a manual transpose of axes without the use of a :ref:`layout <deploy_infer__layout_api_overview>` in the code:
 
 .. raw:: html
 
@@ -618,7 +632,7 @@ Resizing Image
 
 Resizing an image is a typical pre-processing step for computer vision tasks. With pre-processing API, this step can also be integrated into an execution graph and performed on a target device.
 
-To resize the input image, it is needed to define ``H`` and ``W`` dimensions of the :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>`
+To resize the input image, it is needed to define ``H`` and ``W`` dimensions of the :ref:`layout <deploy_infer__layout_api_overview>`
 
 .. raw:: html
 
@@ -1013,7 +1027,7 @@ Post-processing uses the reverse: **Model output** -> **Steps** -> **User tensor
 
 Compared to pre-processing, there are not as many operations needed for the post-processing stage. Currently, only the following post-processing operations are supported:
 
-* Convert a :ref:`layout <doxid-openvino_docs__o_v__u_g__layout__overview>`.
+* Convert a :ref:`layout <deploy_infer__layout_api_overview>`.
 
 * Convert an element type.
 

@@ -1,22 +1,34 @@
 .. index:: pair: page; Libraries for Local Distribution
-.. _doxid-openvino_docs_deploy_local_distribution:
+.. _deploy_infer__deploy_local_distribution:
 
+.. meta::
+   :description: A local distribution will have its own copies of OpenVINO 
+                 Runtime binaries along with a set of required libraries 
+                 needed to deploy the application.
+   :keywords: OpenVINO Runtime, OpenVINO toolkit, deployment, deployment 
+              package, distribution, local distribution, OpenVINO binaries, 
+              Intel® Distribution of OpenVINO™ toolkit, openvino_c library, 
+              openvino_c, pluggable components, compute devices, inference 
+              execution mode, HETERO plugin, AUTO plugin, MULTI plugin, 
+              Automatic Device Selection, Multi-Device execution, frontend 
+              libraries, read model, distribution package, inference, 
+              G-API preprocessing, OpenVINO IR, Intel CPU, Intel GPU, Intel 
+              GNA, HDDL device, MYRIAD device, Arm® CPU, C++ application, 
+              inference device, plugin library, 
 
 Libraries for Local Distribution
 ================================
 
-:target:`doxid-openvino_docs_deploy_local_distribution_1md_openvino_docs_ov_runtime_ug_deployment_local_distribution` With a local distribution, each C or C++ application/installer will have its own copies of OpenVINO Runtime binaries. However, OpenVINO has a scalable plugin-based architecture, which means that some components can be loaded in runtime only when they are really needed. Therefore, it is important to understand which minimal set of libraries is really needed to deploy the application. This guide helps you to achieve that goal.
+:target:`deploy_infer__deploy_local_distribution_1md_openvino_docs_ov_runtime_ug_deployment_local_distribution` 
 
-Local dsitribution is also appropriate for OpenVINO binaries built from sources using `Build instructions <https://github.com/openvinotoolkit/openvino/wiki#how-to-build>`__, but the guide below supposes OpenVINO Runtime is built dynamically. For case of `Static OpenVINO Runtime <https://github.com/openvinotoolkit/openvino/wiki/StaticLibraries>`__ select the required OpenVINO capabilities on CMake configuration stage using `CMake Options for Custom Compilation <https://github.com/openvinotoolkit/openvino/wiki/CMakeOptionsForCustomCompilation>`__, the build and link the OpenVINO components into the final application.
+With a local distribution, each C or C++ application/installer will have its own copies of OpenVINO Runtime binaries. However, OpenVINO has a scalable plugin-based architecture, which means that some components can be loaded in runtime only when they are really needed. Therefore, it is important to understand which minimal set of libraries is really needed to deploy the application. This guide helps you to achieve that goal.
+
+Local distribution is also appropriate for OpenVINO binaries built from sources using `Build instructions <https://github.com/openvinotoolkit/openvino/wiki#how-to-build>`__, but the guide below supposes OpenVINO Runtime is built dynamically. For case of `Static OpenVINO Runtime <https://github.com/openvinotoolkit/openvino/wiki/StaticLibraries>`__ select the required OpenVINO capabilities on CMake configuration stage using `CMake Options for Custom Compilation <https://github.com/openvinotoolkit/openvino/wiki/CMakeOptionsForCustomCompilation>`__, the build and link the OpenVINO components into the final application.
 
 .. note:: The steps below are operating system independent and refer to a library 
    file name without any prefixes (like ``lib`` on Unix systems) or suffixes (like 
    ``.dll`` on Windows OS). Do not put ``.lib`` files on Windows OS to the distribution, 
    because such files are needed only on a linker stage.
-
-
-
-
 
 Library Requirements for C++ and C Languages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,17 +51,17 @@ Libraries for Compute Devices
 
 For each inference device, OpenVINO Runtime has its own plugin library:
 
-* ``openvino_intel_cpu_plugin`` for :ref:`Intel® CPU devices <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`.
+* ``openvino_intel_cpu_plugin`` for :ref:`Intel® CPU devices <deploy_infer__cpu_device>`.
 
-* ``openvino_intel_gpu_plugin`` for :ref:`Intel® GPU devices <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>`.
+* ``openvino_intel_gpu_plugin`` for :ref:`Intel® GPU devices <deploy_infer__gpu_device>`.
 
-* ``openvino_intel_gna_plugin`` for :ref:`Intel® GNA devices <doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a>`.
+* ``openvino_intel_gna_plugin`` for :ref:`Intel® GNA devices <deploy_infer__gna_device>`.
 
-* ``openvino_intel_myriad_plugin`` for :ref:`Intel® MYRIAD devices <doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d>`.
+* ``openvino_intel_myriad_plugin`` for :ref:`Intel® MYRIAD devices <deploy_infer__vpu_myriad_device>`.
 
-* ``openvino_intel_hddl_plugin`` for :ref:`Intel® HDDL device <doxid-openvino_docs__o_v__u_g_supported_plugins__h_d_d_l>`.
+* ``openvino_intel_hddl_plugin`` for :ref:`Intel® HDDL device <deploy_infer__vpu_hddl_device>`.
 
-* ``openvino_arm_cpu_plugin`` for :ref:`ARM CPU devices <doxid-openvino_docs__o_v__u_g_supported_plugins__a_r_m__c_p_u>`.
+* ``openvino_arm_cpu_plugin`` for :ref:`ARM CPU devices <deploy_infer__arm_cpu_device>`.
 
 Depending on what devices are used in the app, the appropriate libraries need to be put to the distribution package.
 
@@ -148,10 +160,10 @@ Libraries for Execution Modes
 
 The ``HETERO``, ``MULTI``, ``BATCH`` and ``AUTO`` execution modes can also be used explicitly or implicitly by the application. Use the following recommendation scheme to decide whether to put the appropriate libraries to the distribution package:
 
-* If :ref:`AUTO <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` is used explicitly in the application or ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` is used without specifying a device, put ``openvino_auto_plugin`` to the distribution.
+* If :ref:`AUTO <deploy_infer__auto_plugin>` is used explicitly in the application or ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` is used without specifying a device, put ``openvino_auto_plugin`` to the distribution.
 
 .. note:: Automatic Device Selection relies on 
-   :ref:`inference device plugins <doxid-openvino_docs__o_v__u_g__working_with_devices>`. 
+   :ref:`inference device plugins <deploy_infer__working_with_devices>`. 
    If you are not sure about what inference devices are available on target system, 
    put all the inference plugin libraries to the distribution. If 
    ``:ref:`ov::device::priorities <doxid-group__ov__runtime__cpp__prop__api_1gae88af90a18871677f39739cb0ef0101e>``` 
@@ -161,11 +173,11 @@ The ``HETERO``, ``MULTI``, ``BATCH`` and ``AUTO`` execution modes can also be us
 
 
 
-* If :ref:`MULTI <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` is used explicitly, put ``openvino_auto_plugin`` to the distribution.
+* If :ref:`MULTI <deploy_infer__multi_plugin>` is used explicitly, put ``openvino_auto_plugin`` to the distribution.
 
-* If :ref:`HETERO <doxid-openvino_docs__o_v__u_g__hetero_execution>` is either used explicitly or ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` is used with GPU, put ``openvino_hetero_plugin`` to the distribution.
+* If :ref:`HETERO <deploy_infer__hetero_plugin>` is either used explicitly or ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` is used with GPU, put ``openvino_hetero_plugin`` to the distribution.
 
-* If :ref:`BATCH <doxid-openvino_docs__o_v__u_g__automatic__batching>` is either used explicitly or ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` is used with GPU, put ``openvino_batch_plugin`` to the distribution.
+* If :ref:`BATCH <deploy_infer__automatic_batching>` is either used explicitly or ``:ref:`ov::hint::performance_mode <doxid-group__ov__runtime__cpp__prop__api_1ga2691fe27acc8aa1d1700ad40b6da3ba2>``` is used with GPU, put ``openvino_batch_plugin`` to the distribution.
 
 Frontend Libraries for Reading Models
 -------------------------------------
@@ -192,8 +204,8 @@ Depending on the model format types that are used in the application in ``:ref:`
 (Legacy) Preprocessing via G-API
 --------------------------------
 
-.. note:: :ref:`G-API <doxid-openvino_docs_gapi_gapi_intro>` preprocessing is a legacy 
-   functionality, use :ref:`preprocessing capabilities from OpenVINO 2.0 <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` 
+.. note:: :ref:`G-API <media_processing__gapi_intro>` preprocessing is a legacy 
+   functionality, use :ref:`preprocessing capabilities from OpenVINO 2.0 <deploy_infer__preprocessing_overview>` 
    which do not require any additional libraries.
 
 
@@ -217,7 +229,7 @@ In this example, the application is written in C language, performs inference on
 
 MULTI execution on GPU and MYRIAD in ``tput`` mode
 
-In this example, the application is written in C++, performs inference :ref:`simultaneously on GPU and MYRIAD devices <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` with the ``:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>``` property set, and reads models stored in the ONNX format. The following libraries are used:
+In this example, the application is written in C++, performs inference :ref:`simultaneously on GPU and MYRIAD devices <deploy_infer__multi_plugin>` with the ``:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>``` property set, and reads models stored in the ONNX format. The following libraries are used:
 
 * The ``openvino`` library is a main dependency of the application. It links against this library.
 
@@ -225,13 +237,13 @@ In this example, the application is written in C++, performs inference :ref:`sim
 
 * ``openvino_auto_plugin`` is used for Multi-Device Execution.
 
-* ``openvino_auto_batch_plugin`` can be also put to the distribution to improve the saturation of :ref:`Intel® GPU <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>` device. If there is no such plugin, :ref:`Automatic Batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` is turned off.
+* ``openvino_auto_batch_plugin`` can be also put to the distribution to improve the saturation of :ref:`Intel® GPU <deploy_infer__gpu_device>` device. If there is no such plugin, :ref:`Automatic Batching <deploy_infer__automatic_batching>` is turned off.
 
 * ``openvino_onnx_frontend`` is used to read source models.
 
 **Auto-Device Selection between HDDL and CPU**
 
-In this example, the application is written in C++, performs inference with the :ref:`Automatic Device Selection <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>` mode, limiting device list to HDDL and CPU, and reads models :ref:`created using C++ code <doxid-openvino_docs__o_v__u_g__model__representation>`. The following libraries are used:
+In this example, the application is written in C++, performs inference with the :ref:`Automatic Device Selection <deploy_infer__auto_plugin>` mode, limiting device list to HDDL and CPU, and reads models :ref:`created using C++ code <deploy_infer__model_representation>`. The following libraries are used:
 
 * The ``openvino`` library is a main dependency of the application. It links against this library.
 

@@ -1,11 +1,18 @@
 .. index:: pair: page; OpenVINO™ Low Precision Transformations
-.. _doxid-openvino_docs__o_v__u_g_lpt:
+.. _extensibility_plugin__lpt:
+
+.. meta::
+   :description: Guide to Low precision transformations, a set of nGraph 
+                 transformations combined in one library.
+   :keywords: low precision transformations, lpt, ngraph transformations, OpenVINO, quantized model,
+              FP16, FP32, INT8, low precision inference, OpenVINO plugin, FakeQuantize, 
+              operation input tensor precisions, plugin transformation pipeline
 
 
 OpenVINO™ Low Precision Transformations
 =========================================
 
-:target:`doxid-openvino_docs__o_v__u_g_lpt_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_lpt`
+:target:`extensibility_plugin__lpt_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_lpt`
 
 
 .. toctree::
@@ -23,9 +30,14 @@ OpenVINO™ Low Precision Transformations
 Introduction
 ~~~~~~~~~~~~
 
-Low precision transformations (known as LPT) are a set of nGraph transformations, which are combined in one library. The library is mandatory part of OpenVINO to infer quantized model in low precision with the maximum performance on Intel CPU, GPU and ARM platforms. The library includes more than 45 transformations and supports more then 30 operations. Some transformations are mandatory, some of them are optional and developed for specific device.
+Low precision transformations (known as LPT) are a set of nGraph transformations, which are combined in one library. 
+The library is mandatory part of OpenVINO to infer quantized model in low precision with the maximum performance 
+on Intel CPU, GPU and ARM platforms. The library includes more than 45 transformations and supports more then 30 operations. 
+Some transformations are mandatory, some of them are optional and developed for specific device.
 
-The goal of Low Precision Transformations (LPT) is to transform a quantized model from its original precision (FP16 or FP32) to a low precision (INT8: ``signed int8`` or ``unsigned int8``), so that it is prepared for low precision inference in OpenVINO™ plugin. It is achieved by two main principles:
+The goal of Low Precision Transformations (LPT) is to transform a quantized model from its original precision (FP16 or FP32) 
+to a low precision (INT8: ``signed int8`` or ``unsigned int8``), so that it is prepared for low precision inference 
+in OpenVINO™ plugin. It is achieved by two main principles:
 
 #. ``FakeQuantize`` operation decomposition to two parts:
    
@@ -37,9 +49,12 @@ The goal of Low Precision Transformations (LPT) is to transform a quantized mode
 
 #. Propagation of the dequantization operation through original model's operations. It is done to avoid dequantization operations before original model operations, thus the quantize operations with low precision output remain before the original model operations.
 
-As result, operation input tensor precisions will be changed from original to low precision and operations can be inferred by OpenVINO™ plugin in low precision.
+As result, operation input tensor precisions will be changed from original to low precision and operations can be 
+inferred by OpenVINO™ plugin in low precision.
 
-For a more detailed description on how to quantize a model, see the `Low precision tools <#low-precision-tools>`__ section below. For more information about model quantization, refer to **Brief History of Lower Precision in Deep Learning** section in `this whitepaper <https://software.intel.com/en-us/articles/lower-numerical-precision-deep-learning-inference-and-training>`__.
+For a more detailed description on how to quantize a model, see the `Low precision tools <#low-precision-tools>`__ section 
+below. For more information about model quantization, refer to **Brief History of Lower Precision in Deep Learning** section 
+in `this whitepaper <https://software.intel.com/en-us/articles/lower-numerical-precision-deep-learning-inference-and-training>`__.
 
 Input model requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,21 +119,25 @@ LPT transformations propagate dequantization operations through the following op
 
 * :ref:`VariadicSplit-1 <doxid-openvino_docs_ops_movement__variadic_split_1>`
 
-If operation is not supported by LPT then dequantization operation will not be propagated, input tensor precisions will not be changed to low precision and operation will be executed in original precision.
+If operation is not supported by LPT then dequantization operation will not be propagated, input tensor precisions 
+will not be changed to low precision and operation will be executed in original precision.
 
-For example, if you would like to infer a model with ``Convolution`` operation in low precision then the model can look as on picture below:
+For example, if you would like to infer a model with ``Convolution`` operation in low precision then the model can look 
+as on picture below:
 
 .. image:: ./_assets/model_fq_and_convolution.common.png
 	:alt: Quantized Convolution
 
-There are several supported quantization approaches on activations and on weights. All supported approaches are described in `Quantization approaches <#quantization-approaches>`__ section below. In demonstrated model `FakeQuantize operation quantization <#fakequantize-operation>`__ approach is used.
+There are several supported quantization approaches on activations and on weights. All supported approaches are described 
+in `Quantization approaches <#quantization-approaches>`__ section below. In demonstrated model 
+`FakeQuantize operation quantization <#fakequantize-operation>`__ approach is used.
 
 
 
 Low precision tools
 -------------------
 
-For more details on how to get a quantized model, refer to :ref:`Model Optimization <doxid-openvino_docs_model_optimization_guide>` document.
+For more details on how to get a quantized model, refer to :ref:`Model Optimization <model_optimization_guide>` document.
 
 Quantization approaches
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,7 +161,9 @@ In this case ``FakeQuantize`` operation is used on activations and quantized con
 Quantize and dequantization operations
 --------------------------------------
 
-In this case ``FakeQuantize`` operation and ``Convert`` are used as quantize operation and return quantized low precision tensor. After quantize operation on activations there are ``Convert`` and dequantization operations to compensate decomposition. Original input model:
+In this case ``FakeQuantize`` operation and ``Convert`` are used as quantize operation and return quantized low precision 
+tensor. After quantize operation on activations there are ``Convert`` and dequantization operations to compensate 
+decomposition. Original input model:
 
 .. image:: ./_assets/model_qdq_and_convolution.common.png
 	:alt: Original model with Q/DQ
@@ -167,128 +188,141 @@ LPT result model:
 Low precision transformations pipeline
 --------------------------------------
 
-LPT transformation pipeline has several steps. For each transformation inside one step pattern matcher is unique per transformation, but each operation can be assigned to several transformations.
+LPT transformation pipeline has several steps. For each transformation inside one step pattern matcher is unique per 
+transformation, but each operation can be assigned to several transformations.
 
 .. image:: ./_assets/low_precision_transformation_pipeline.png
 	:alt: Low precision transformations pipeline
 
-Inside each step LPT transformations handle input model operation by operation, applying transformation matching pattern for each transformation from the step to an operation, and execute transformation if pattern is matched. Decomposition transformation decomposes ``FakeQuantize`` to quantize and dequantization operations. Dequantization operations from previous transformation result is used for the current one and so on, until the end of the model is achieved.
+Inside each step LPT transformations handle input model operation by operation, applying transformation matching pattern 
+for each transformation from the step to an operation, and execute transformation if pattern is matched. Decomposition 
+transformation decomposes ``FakeQuantize`` to quantize and dequantization operations. Dequantization operations from 
+previous transformation result is used for the current one and so on, until the end of the model is achieved.
 
-As result, usually all operations are inferred by plugin in low precision. If plugin doesn't support an operation inference in low precision, then corresponding LPT transformation can be disabled, and input tensor precisions for the operation will not be changed. In this case the operation is inferred in the original precision.
+As result, usually all operations are inferred by plugin in low precision. If plugin doesn't support an operation inference 
+in low precision, then corresponding LPT transformation can be disabled, and input tensor precisions for the operation 
+will not be changed. In this case the operation is inferred in the original precision.
 
 Low precision transformations pipeline includes four steps:
 
-* :ref:`Step #1: Prerequisites <doxid-openvino_docs__o_v__u_g_lpt_step1_prerequisites>`
+* :ref:`Step #1: Prerequisites <plugin_lpt__step1_prerequisites>`
 
-* :ref:`Step #2: Markup transformations <doxid-openvino_docs__o_v__u_g_lpt_step2_markup>`
+* :ref:`Step #2: Markup transformations <plugin_lpt__step2_markup>`
 
-* :ref:`Step #3: Main transformations <doxid-openvino_docs__o_v__u_g_lpt_step3_main>`
+* :ref:`Step #3: Main transformations <plugin_lpt__step3_main_transformations>`
 
-* :ref:`Step #4: Cleanup transformations <doxid-openvino_docs__o_v__u_g_lpt_step4_cleanup>`
+* :ref:`Step #4: Cleanup transformations <plugin_lpt__step4_cleanup>`
 
 Step 1. Prerequisites
 ---------------------
 
 This step fuses and propagates some operations in the model to prepare for the next step. It is required for OpenVINO plugins. Transformations:
 
-* :ref:`PullReshapeThroughDequantization <doxid-openvino_docs__o_v__u_g_lpt__pull_reshape_through_dequantization>`
+* :ref:`PullReshapeThroughDequantization <lpt_transformations__pull_reshape_through_dequantization>`
 
-* :ref:`PullTransposeThroughDequantization <doxid-openvino_docs__o_v__u_g_lpt__pull_transpose_through_dequantization>`
+* :ref:`PullTransposeThroughDequantization <lpt_transformations__pull_transpose_through_dequantization>`
 
-* :ref:`LinOpSequenceFusion <doxid-openvino_docs__o_v__u_g_lpt__lin_op_sequence_fusion>`
+* :ref:`LinOpSequenceFusion <lpt_transformations__lin_op_sequence_fusion>`
 
-The model on this step is changed. There are more details in developer guide :ref:`Prerequisites transformations <doxid-openvino_docs__o_v__u_g_lpt_step1_prerequisites>`.
+The model on this step is changed. There are more details in developer guide :ref:`Prerequisites transformations <plugin_lpt__step1_prerequisites>`.
 
 Step 2. Markup
 --------------
 
 This step creates runtime attributes for operations. These attributes will be used in next step. Transformations:
 
-* :ref:`MarkupCanBeQuantized <doxid-openvino_docs__o_v__u_g_lpt__markup_can_be_quantized>`
+* :ref:`MarkupCanBeQuantized <lpt_transformations__markup_can_be_quantized>`
 
-* :ref:`MarkupPrecisions <doxid-openvino_docs__o_v__u_g_lpt__markup_precisions>`
+* :ref:`MarkupPrecisions <lpt_transformations__markup_precisions>`
 
-* :ref:`MarkupPerTensorQuantization <doxid-openvino_docs__o_v__u_g_lpt__markup_per_tensor_quantization>`
+* :ref:`MarkupPerTensorQuantization <lpt_transformations__markup_per_tensor_quantization>`
 
-* :ref:`MarkupAvgPoolPrecisionPreserved <doxid-openvino_docs__o_v__u_g_lpt__markup_avg_pool_precision_preserved>`
+* :ref:`MarkupAvgPoolPrecisionPreserved <lpt_transformations__markup_avg_pool_precision_preserved>`
 
-* :ref:`PropagatePrecisions <doxid-openvino_docs__o_v__u_g_lpt__propagate_precisions>`
+* :ref:`PropagatePrecisions <lpt_transformations__propagate_precisions>`
 
-* :ref:`AlignQuantizationIntervals <doxid-openvino_docs__o_v__u_g_lpt__align_quantization_intervals>`
+* :ref:`AlignQuantizationIntervals <lpt_transformations__align_quantization_intervals>`
 
-* :ref:`AlignQuantizationParameters <doxid-openvino_docs__o_v__u_g_lpt__align_quantization_parameters>`
+* :ref:`AlignQuantizationParameters <lpt_transformations__align_quantization_parameters>`
 
-The model on this step is changed: only new attributes are added to some operations. There are more details in developer guide :ref:`Markup transformations <doxid-openvino_docs__o_v__u_g_lpt_step2_markup>`.
+The model on this step is changed: only new attributes are added to some operations. There are more details in developer 
+guide :ref:`Markup transformations <plugin_lpt__step2_markup>`.
 
 Step 3. Main transformations, FakeQuantize decomposition and dequantization operations handling
 -----------------------------------------------------------------------------------------------
 
-This step has the most transformations. These transformations can be separated in two groups: decomposition transformation and dequantization operations handling. There are more details in developer guide :ref:`Main transformations <doxid-openvino_docs__o_v__u_g_lpt_step3_main>`. Transformations:
+This step has the most transformations. These transformations can be separated in two groups: decomposition transformation 
+and dequantization operations handling. There are more details in developer guide 
+:ref:`Main transformations <plugin_lpt__step3_main_transformations>`. Transformations:
 
-* :ref:`AddTransformation <doxid-openvino_docs__o_v__u_g_lpt__add_transformation>`
+* :ref:`AddTransformation <lpt_transformations__add_transformation>`
 
-* :ref:`AvgPoolTransformation <doxid-openvino_docs__o_v__u_g_lpt__avg_pool_transformation>`
+* :ref:`AvgPoolTransformation <lpt_transformations__avg_pool_transformation>`
 
-* :ref:`ClampTransformation <doxid-openvino_docs__o_v__u_g_lpt__avg_pool_transformation>`
+* :ref:`ClampTransformation <lpt_transformations__clamp_transformation>`
 
-* :ref:`ConcatTransformation <doxid-openvino_docs__o_v__u_g_lpt__concat_transformation>`
+* :ref:`ConcatTransformation <lpt_transformations__concat_transformation>`
 
-* :ref:`ConvolutionTransformation <doxid-openvino_docs__o_v__u_g_lpt__convolution_transformation>`
+* :ref:`ConvolutionTransformation <lpt_transformations__convolution_transformation>`
 
-* :ref:`ConvolutionBackpropDataTransformation <doxid-openvino_docs__o_v__u_g_lpt__convolution_backprop_data_transformation>`
+* :ref:`ConvolutionBackpropDataTransformation <lpt_transformations__convolution_backprop_data_transformation>`
 
-* :ref:`DepthToSpaceTransformation <doxid-openvino_docs__o_v__u_g_lpt__depth_to_space_transformation>`
+* :ref:`DepthToSpaceTransformation <lpt_transformations__depth_to_space_transformation>`
 
-* :ref:`FakeQuantizeDecompositionTransformation <doxid-openvino_docs__o_v__u_g_lpt__fake_quantize_decomposition_transformation>`
+* :ref:`FakeQuantizeDecompositionTransformation <lpt_transformations__fake_quantize_decomposition_transformation>`
 
-* :ref:`FakeQuantizeTransformation <doxid-openvino_docs__o_v__u_g_lpt__fake_quantize_transformation>`
+* :ref:`FakeQuantizeTransformation <lpt_transformations__fake_quantize_transformation>`
 
-* :ref:`InterpolateTransformation <doxid-openvino_docs__o_v__u_g_lpt__interpolate_transformation>`
+* :ref:`InterpolateTransformation <lpt_transformations__interpolate_transformation>`
 
-* :ref:`GroupConvolutionTransformation <doxid-openvino_docs__o_v__u_g_lpt__group_convolution_transformation>`
+* :ref:`GroupConvolutionTransformation <lpt_transformations__group_convolution_transformation>`
 
-* :ref:`MatMulTransformation <doxid-openvino_docs__o_v__u_g_lpt__mat_mul_transformation>`
+* :ref:`MatMulTransformation <lpt_transformations__mat_mul_transformation>`
 
-* :ref:`MaxPoolTransformation <doxid-openvino_docs__o_v__u_g_lpt__max_pool_transformation>`
+* :ref:`MaxPoolTransformation <lpt_transformations__max_pool_transformation>`
 
-* :ref:`MultiplyTransformation <doxid-openvino_docs__o_v__u_g_lpt__multiply_transformation>`
+* :ref:`MultiplyTransformation <lpt_transformations__multiply_transformation>`
 
-* :ref:`MVNTransformation <doxid-openvino_docs__o_v__u_g_lpt__m_v_n_transformation>`
+* :ref:`MVNTransformation <lpt_transformations__mvn_transformation>`
 
-* :ref:`NormalizeL2Transformation <doxid-openvino_docs__o_v__u_g_lpt__normalize_l2_transformation>`
+* :ref:`NormalizeL2Transformation <lpt_transformations__normalize_l2_transformation>`
 
-* :ref:`PReluTransformation <doxid-openvino_docs__o_v__u_g_lpt__p_relu_transformation>`
+* :ref:`PReluTransformation <lpt_transformations__p_relu_transformation>`
 
-* :ref:`ReduceMaxTransformation <doxid-openvino_docs__o_v__u_g_lpt__reduce_max_transformation>`
+* :ref:`ReduceMaxTransformation <lpt_transformations__reduce_max_transformation>`
 
-* :ref:`ReduceMeanTransformation <doxid-openvino_docs__o_v__u_g_lpt__reduce_mean_transformation>`
+* :ref:`ReduceMeanTransformation <lpt_transformations__reduce_mean_transformation>`
 
-* :ref:`ReduceMinTransformation <doxid-openvino_docs__o_v__u_g_lpt__reduce_min_transformation>`
+* :ref:`ReduceMinTransformation <lpt_transformations__reduce_min_transformation>`
 
-* :ref:`ReduceSumTransformation <doxid-openvino_docs__o_v__u_g_lpt__reduce_sum_transformation>`
+* :ref:`ReduceSumTransformation <lpt_transformations__reduce_sum_transformation>`
 
-* :ref:`ReluTransformation <doxid-openvino_docs__o_v__u_g_lpt__relu_transformation>`
+* :ref:`ReluTransformation <lpt_transformations__relu_transformation>`
 
-* :ref:`ReshapeTransformation <doxid-openvino_docs__o_v__u_g_lpt__reshape_transformation>`
+* :ref:`ReshapeTransformation <lpt_transformations__reshape_transformation>`
 
-* :ref:`SqueezeTransformation <doxid-openvino_docs__o_v__u_g_lpt__squeeze_transformation>`
+* :ref:`SqueezeTransformation <lpt_transformations__squeeze_transformation>`
 
-* :ref:`ShuffleChannelsTransformation <doxid-openvino_docs__o_v__u_g_lpt__shuffle_channels_transformation>`
+* :ref:`ShuffleChannelsTransformation <lpt_transformations__shuffle_channels_transformation>`
 
-* :ref:`SplitTransformation <doxid-openvino_docs__o_v__u_g_lpt__split_transformation>`
+* :ref:`SplitTransformation <lpt_transformations__split_transformation>`
 
-* :ref:`StridedSliceTransformation <doxid-openvino_docs__o_v__u_g_lpt__strided_slice_transformation>`
+* :ref:`StridedSliceTransformation <lpt_transformations__strided_slice_transformation>`
 
-* :ref:`TransposeTransformation <doxid-openvino_docs__o_v__u_g_lpt__transpose_transformation>`
+* :ref:`TransposeTransformation <lpt_transformations__transpose_transformation>`
 
-* :ref:`UnsqueezeTransformation <doxid-openvino_docs__o_v__u_g_lpt__unsqueeze_transformation>`
+* :ref:`UnsqueezeTransformation <lpt_transformations__unsqueeze_transformation>`
 
-* :ref:`VariadicSplitTransformation <doxid-openvino_docs__o_v__u_g_lpt__variadic_split_transformation>`
+* :ref:`VariadicSplitTransformation <lpt_transformations__variadic_split_transformation>`
 
 Decomposition transformations
 +++++++++++++++++++++++++++++
 
-Decomposition transformations decompose the ``FakeQuantize`` operation to: quantize (``FakeQuantize`` with low precision output) and dequantization operations (opposite to quantize, with low precision input and the original precision output). For dequantization operations LPT uses three operations: ``Convert``, ``Subtract`` and ``Multiply``. Element-wise operations ``Subtract`` and ``Multiply`` have constants on the second branches. If dequantization operations are not handled at the end of LPT pipeline, then they will be fused back to the ``FakeQuantize``.
+Decomposition transformations decompose the ``FakeQuantize`` operation to: quantize (``FakeQuantize`` with low precision 
+output) and dequantization operations (opposite to quantize, with low precision input and the original precision output). 
+For dequantization operations LPT uses three operations: ``Convert``, ``Subtract`` and ``Multiply``. Element-wise operations 
+``Subtract`` and ``Multiply`` have constants on the second branches. If dequantization operations are not handled 
+at the end of LPT pipeline, then they will be fused back to the ``FakeQuantize``.
 
 Original ``FakeQuantize`` :
 
@@ -307,7 +341,8 @@ Original ``FakeQuantize`` :
 Dequantization operations handling transformations
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-In this step, LPT transformations fuse dequantization operations or move them through existing model operations as much as possible.
+In this step, LPT transformations fuse dequantization operations or move them through existing 
+model operations as much as possible.
 
 Original ``Convolution`` operation in FP32 with dequantization operations before:
 
@@ -326,21 +361,23 @@ Original ``Convolution`` operation in FP32 with dequantization operations before
 Step 4: Cleanup of the result model
 -----------------------------------
 
-LPT cleanup transformations is final stage in LPT pipeline. In this step LPT transformations clean up the result model to avoid not handled dequantization operations: fuse dequantization operations if possible (fuse at least ``Convert`` operations if not) to other model operations to cleanup result model. Transformations:
+LPT cleanup transformations is final stage in LPT pipeline. In this step LPT transformations clean up the result model 
+to avoid not handled dequantization operations: fuse dequantization operations if possible (fuse at least ``Convert`` 
+operations if not) to other model operations to cleanup result model. Transformations:
 
-* :ref:`FoldConvertTransformation <doxid-openvino_docs__o_v__u_g_lpt__fold_convert_transformation>`
+* :ref:`FoldConvertTransformation <lpt_transformations__fold_convert_transformation>`
 
-* :ref:`FoldFakeQuantizeTransformation <doxid-openvino_docs__o_v__u_g_lpt__fold_fake_quantize_transformation>`
+* :ref:`FoldFakeQuantizeTransformation <lpt_transformations__fold_fake_quantize_transformation>`
 
-* :ref:`FuseConvertTransformation <doxid-openvino_docs__o_v__u_g_lpt__fuse_convert_transformation>`
+* :ref:`FuseConvertTransformation <lpt_transformations__fuse_convert_transformation>`
 
-* :ref:`FuseMultiplyToFakeQuantizeTransformation <doxid-openvino_docs__o_v__u_g_lpt__fuse_multiply_to_fake_quantize_transformation>`
+* :ref:`FuseMultiplyToFakeQuantizeTransformation <lpt_transformations__fuse_multiply_to_fake_quantize_transformation>`
 
-* :ref:`FuseSubtractToFakeQuantizeTransformation <doxid-openvino_docs__o_v__u_g_lpt__fuse_subtract_to_fake_quantize_transformation>`
+* :ref:`FuseSubtractToFakeQuantizeTransformation <lpt_transformations__fuse_subtract_to_fake_quantize_transformation>`
 
-* :ref:`MultiplyToGroupConvolutionTransformation <doxid-openvino_docs__o_v__u_g_lpt__multiply_to_group_convolution_transformation>`
+* :ref:`MultiplyToGroupConvolutionTransformation <lpt_transformations__multiply_to_group_convolution_transformation>`
 
-There are more details in developer guide :ref:`Cleanup transformations <doxid-openvino_docs__o_v__u_g_lpt_step4_cleanup>`.
+There are more details in developer guide :ref:`Cleanup transformations <plugin_lpt__step4_cleanup>`.
 
 ``FakeQuantize`` operation with not handled dequantization operations:
 
@@ -364,7 +401,11 @@ Typical transformation pipeline described below.
 Step 1. Common optimizations
 ----------------------------
 
-This step is optional for LPT but typically is presented in OpenVINO™ plugins. The step doesn't use any LPT transformation. Firstly, the step disables dequantization operations constant folding on constant subgraph on weights to prevent the lost of dequantization info on the next plugin transformations. After that, it optimizes nGraph function and convert operations to operation set 1. Typically, usage of this step is the simplest way to meet LPT requirements for the input quantized model. If plugin can guarantee that LPT input requirements are met, then this step can be skipped.
+This step is optional for LPT but typically is presented in OpenVINO™ plugins. The step doesn't use any LPT transformation. 
+Firstly, the step disables dequantization operations constant folding on constant subgraph on weights to prevent 
+the lost of dequantization info on the next plugin transformations. After that, it optimizes nGraph function and convert 
+operations to operation set 1. Typically, usage of this step is the simplest way to meet LPT requirements for the input 
+quantized model. If plugin can guarantee that LPT input requirements are met, then this step can be skipped.
 
 .. ref-code-block:: cpp
 
@@ -471,7 +512,9 @@ This step is optional. It modifies the nGraph function to a device-specific oper
 Result model overview
 ~~~~~~~~~~~~~~~~~~~~~
 
-Let's explore quantized `TensorFlow\* implementation of ResNet-50 <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/resnet-50-tf>`__ model. Use Model Downloader tool to download the ``fp16`` model from `OpenVINO™ Toolkit - Open Model Zoo repository <https://github.com/openvinotoolkit/open_model_zoo>`__ :
+Let's explore quantized `TensorFlow implementation of ResNet-50 <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/resnet-50-tf>`__ 
+model. Use Model Downloader tool to download the ``fp16`` model from 
+`OpenVINO™ Toolkit - Open Model Zoo repository <https://github.com/openvinotoolkit/open_model_zoo>`__ :
 
 .. ref-code-block:: cpp
 
@@ -486,13 +529,15 @@ After that you should quantize model by the Model Quantizer tool.
 Inference
 ---------
 
-The simplest way to infer the model and collect performance counters is :ref:`Benchmark Application <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`.
+The simplest way to infer the model and collect performance counters is 
+:ref:`Benchmark Application <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`.
 
 .. ref-code-block:: cpp
 
 	./benchmark_app -m resnet-50-tf.xml -d CPU -niter 1 -api sync -report_type average_counters  -report_folder pc_report_dir
 
-If you infer the model with the OpenVINO™ CPU plugin and collect performance counters, all operations (except last not quantized SoftMax) are executed in INT8 precision.
+If you infer the model with the OpenVINO™ CPU plugin and collect performance counters, all operations (except last not 
+quantized SoftMax) are executed in INT8 precision.
 
 Results analysis
 ----------------
@@ -503,7 +548,10 @@ Result model depends on different factors:
 
 * LPT customization and plugin supported operations. If plugin doesn't support INT8 inference for some operation then corresponding LPT transformation should be disabled and the operation will be inferred in original precision.
 
-Information about layer precision is stored in the performance counters that are available from the OpenVINO Runtime API. For example, the part of performance counters table for quantized `TensorFlow\* implementation of ResNet-50 <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/resnet-50-tf>`__ model inference on CPU Plugin looks as follows:
+Information about layer precision is stored in the performance counters that are available from the OpenVINO Runtime API. 
+For example, the part of performance counters table for quantized 
+`TensorFlow implementation of ResNet-50 <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/resnet-50-tf>`__ 
+model inference on CPU Plugin looks as follows:
 
 .. list-table::
     :header-rows: 1
@@ -575,12 +623,19 @@ The ``execType`` column of the table includes inference primitives with specific
 
 * Suffix ``FP32`` for layers computed in 32-bit precision
 
-As result all operations (except not quantized ``SoftMax`` at the end of the model) in OpenVINO™ CPU plugin are inferred in low precision. Note, please, in the result model there are ``FakeQuantize`` operations in FP32 but the plugin responsibility is fuse these operations with previous operations. OpenVINO™ CPU plugin achieves maximum optimized inference for all operations by fusing INT8 ``Convolution`` with FP32 output with ``FakeQuantize`` operation with FP32 input and INT8 output. In this case OpenVINO™ CPU plugin uses INT8 and FP32 vectorized instructions but reports about one INT8 kernel usage for inference, which is the most optimized for this case.
+As result all operations (except not quantized ``SoftMax`` at the end of the model) in OpenVINO™ CPU plugin are inferred 
+in low precision. Note, in the result model there are ``FakeQuantize`` operations in FP32 but the plugin 
+responsibility is fuse these operations with previous operations. OpenVINO™ CPU plugin achieves maximum optimized 
+inference for all operations by fusing INT8 ``Convolution`` with FP32 output with ``FakeQuantize`` operation with FP32 
+input and INT8 output. In this case OpenVINO™ CPU plugin uses INT8 and FP32 vectorized instructions but reports about one 
+INT8 kernel usage for inference, which is the most optimized for this case.
 
 Mixed precision
 ~~~~~~~~~~~~~~~
 
-If LPT input model operation output has ``fp16`` precision then dequantization computations still occurs in ``fp32`` precision. This approach is used to avoid accuracy loss in ``fp16`` arithmetic computations. The ultimate output of the dequantization operation will have the ``fp16`` precision, as expected.
+If LPT input model operation output has ``fp16`` precision then dequantization computations still occurs in ``fp32`` 
+precision. This approach is used to avoid accuracy loss in ``fp16`` arithmetic computations. The ultimate output 
+of the dequantization operation will have the ``fp16`` precision, as expected.
 
 Customization
 ~~~~~~~~~~~~~
@@ -598,7 +653,8 @@ Low Precision Transformations can be customizable. Build-in customization option
 Operation precision restrictions
 --------------------------------
 
-This option defines precisions which allowed for the operation input ports. The option value is passed as input argument for ``LowPrecision`` constructor. For example:
+This option defines precisions which allowed for the operation input ports. The option value is passed as input argument 
+for ``LowPrecision`` constructor. For example:
 
 .. ref-code-block:: cpp
 
@@ -613,12 +669,14 @@ This option defines precisions which allowed for the operation input ports. The 
 	lptManager.:ref:`register_pass <doxid-classov_1_1pass_1_1_manager_1a3c4834680de7b43557783e8500795da3>`<:ref:`ngraph::pass::low_precision::LowPrecision <doxid-classngraph_1_1pass_1_1low__precision_1_1_low_precision>`>(supportedPrecisions);
 	lptManager.run_passes(nGraphFunc);
 
-In provided example in result model ``Convolution`` operation inputs must have specific precisions: ``u8`` (unsigned int8) precision on input 0 (on activations) and ``i8`` (signed int8) precision on input 1 (on weights).
+In provided example in result model ``Convolution`` operation inputs must have specific precisions: ``u8`` (unsigned int8) 
+precision on input 0 (on activations) and ``i8`` (signed int8) precision on input 1 (on weights).
 
 Operation per tensor quantization restrictions
 ----------------------------------------------
 
-This option defines if operation supports per-tensor quantization only. The option value is passed as input argument for ``LowPrecision`` constructor. For example:
+This option defines if operation supports per-tensor quantization only. The option value is passed as input argument 
+for ``LowPrecision`` constructor. For example:
 
 .. ref-code-block:: cpp
 
@@ -639,12 +697,17 @@ In provided example in result model ``Convolution`` operations must have per-ten
 Update precisions
 -----------------
 
-This option defines if each LPT transformation updates precision or not. The option value is boolean and is passed as ``updatePrecisions`` member of ``LayerTransformation::Params`` which is input argument for ``LowPrecision`` constructor. All transformations are affected. If ``true`` then low precision transformations update precisions to low precision and doesn't if ``false``. Typically this option is used for plugin debugging.
+This option defines if each LPT transformation updates precision or not. The option value is boolean and is passed 
+as ``updatePrecisions`` member of ``LayerTransformation::Params`` which is input argument for ``LowPrecision`` constructor. 
+All transformations are affected. If ``true`` then low precision transformations update precisions to low precision 
+and doesn't if ``false``. Typically this option is used for plugin debugging.
 
 Typical customization use cases
 -------------------------------
 
-Plugin specific customization can be implemented via nGraph transformation callbacks. For example: asymmetric quantization support can be easily customizable via ``LayerTransformation::isAsymmetricQuantization`` and ``WeightableLayerTransformation::isAsymmetricOnWeights`` methods usage in callbacks. For example:
+Plugin specific customization can be implemented via nGraph transformation callbacks. For example: asymmetric quantization 
+support can be easily customizable via ``LayerTransformation::isAsymmetricQuantization`` and 
+``WeightableLayerTransformation::isAsymmetricOnWeights`` methods usage in callbacks. For example:
 
 .. ref-code-block:: cpp
 

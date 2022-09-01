@@ -101,7 +101,7 @@ See Also
 
 * `Accuracy Checker <https://docs.openvinotoolkit.org/latest/omz_tools_accuracy_checker.html>`__
 
-* :ref:`Post-Training Optimization Tool <doxid-pot_introduction>`
+* :ref:`Post-Training Optimization Tool <pot_tool_introduction>`
 
 * :ref:`Set Accuracy Configuration <doxid-workbench_docs__workbench__d_g__configure__accuracy__settings>`
 

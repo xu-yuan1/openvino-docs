@@ -5,7 +5,7 @@
 Hello Query Device C++ Sample
 =============================
 
-:target:`doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e_1md_openvino_samples_cpp_hello_query_device_readme` This sample demonstrates how to execute an query OpenVINO™ Runtime devices, prints their metrics and default configuration values, using :ref:`Properties API <doxid-openvino_docs__o_v__u_g_query_api>`.
+:target:`doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e_1md_openvino_samples_cpp_hello_query_device_readme` This sample demonstrates how to execute an query OpenVINO™ Runtime devices, prints their metrics and default configuration values, using :ref:`Properties API <deploy_infer__query_device_properties>`.
 
 The following C++ API is used in the application:
 
@@ -111,7 +111,7 @@ The application prints all available devices with their supported metrics and de
 See Also
 ~~~~~~~~
 
-* :ref:`Integrate the OpenVINO™ Runtime with Your Application <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>`
+* :ref:`Integrate the OpenVINO™ Runtime with Your Application <deploy_infer__integrate_application>`
 
 * :ref:`Using OpenVINO™ Toolkit Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
 

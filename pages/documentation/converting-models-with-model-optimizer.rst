@@ -33,7 +33,7 @@ Converting Models with Model Optimizer
 
 Model Optimizer is a cross-platform command-line tool that facilitates the transition between training and deployment environments, performs static model analysis, and adjusts deep learning models for optimal execution on end-point target devices.
 
-To use it, you need a pre-trained deep learning model in one of the supported formats: TensorFlow, PyTorch, PaddlePaddle, MXNet, Caffe, Kaldi, or ONNX. Model Optimizer converts the model to the OpenVINO Intermediate Representation format (IR), which you can infer later with :ref:`OpenVINO™ Runtime <doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide>`.
+To use it, you need a pre-trained deep learning model in one of the supported formats: TensorFlow, PyTorch, PaddlePaddle, MXNet, Caffe, Kaldi, or ONNX. Model Optimizer converts the model to the OpenVINO Intermediate Representation format (IR), which you can infer later with :ref:`OpenVINO™ Runtime <deploy_infer__openvino_runtime_user_guide>`.
 
 Note that Model Optimizer does not infer models.
 
@@ -47,7 +47,7 @@ where IR is a pair of files describing the model:
 
 * ``.bin`` - Contains the weights and biases binary data.
 
-The generated IR can be additionally optimized for inference by :ref:`Post-training optimization <doxid-pot_introduction>`	that applies post-training quantization methods.
+The generated IR can be additionally optimized for inference by :ref:`Post-training optimization <pot_tool_introduction>`	that applies post-training quantization methods.
 
 
 

@@ -1,0 +1,35 @@
+﻿Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
+deeplabv3-TF [513x513],atom,Intel® Atom™ x5-E3940,3.24,1.51,1.52,0.095,0.341,3150
+deeplabv3-TF [513x513],atom,Intel® Atom™ x6425E CPU-only,,,,#VALUE!,#VALUE!,0
+deeplabv3-TF [513x513],atom,Intel® Atom™ x6425E iGPU-only,,,,#VALUE!,#VALUE!,0
+deeplabv3-TF [513x513],atom,Intel® Atom™ x6425E CPU+iGPU,,,,#VALUE!,#VALUE!,
+deeplabv3-TF [513x513],atom,Intel® Celeron 6305E CPU-only,,,,0,0,
+deeplabv3-TF [513x513],atom,Intel® Celeron 6305E iGPU-only,,,,0,0,
+deeplabv3-TF [513x513],atom,Intel® Celeron 6305E CPU+iGPU,,,,0,0,
+deeplabv3-TF [513x513],core,Intel® Core™ i3-8100,25.87,15.56,15.49,0.221,0.397,25650
+deeplabv3-TF [513x513],core,Intel® Core™ i5-8500,40.93,22.73,23.22,0.213,0.629,40690
+deeplabv3-TF [513x513],core,Intel® Core™ i7-8700T,34.2,19.34,19.17,0.112,0.977,33220
+deeplabv3-TF [513x513],core,Intel® Core™ i9-10900TE,35.72,18.73,18.93,0.08,1.02,31140
+deeplabv3-TF [513x513],core,Intel® Core™ i9-12900HK CPU-only,84.26,31.62,31.72,0.132,1.872,47890
+deeplabv3-TF [513x513],core,Intel® Core™ i9-12900HK iGPU-only,84.26,31.62,31.72,0.132,1.872,118250
+deeplabv3-TF [513x513],core,Intel® Core™ i9-12900HK CPU+iGPU,148.8,50.23,62.98,0.234,3.306,
+deeplabv3-TF [513x513],core,Intel® Core™ i9-12900K CPU-only,140.27,49.8,50.84,0.238,1.122,47890
+deeplabv3-TF [513x513],core,Intel® Core™ i9-12900K iGPU-only,60.76,21.19,32.18,0.103,0.486,62790
+deeplabv3-TF [513x513],core,Intel® Core™ i9-12900K CPU+iGPU,135.2,51.72,64.49,0.229,1.081,
+deeplabv3-TF [513x513],core,Intel® Core™ i7-11800H CPU-only,115.77,27.94,27.53,0.293,3.307,108360
+deeplabv3-TF [513x513],core,Intel® Core™ i7-11800H iGPU-only,55.48,19.27,29.91,0.14,1.585,57460
+deeplabv3-TF [513x513],core,Intel® Core™ i7-11800H CPU+iGPU,112.08,34.13,45.92,0.283,3.202,
+deeplabv3-TF [513x513],core,Intel® Core™ i7-1185G7 CPU-only,62.94,17.49,17.68,0.147,2.247,60140
+deeplabv3-TF [513x513],core,Intel® Core™ i7-1185G7 iGPU-only,108.95,30.02,54.04,0.255,3.89,38990
+deeplabv3-TF [513x513],core,Intel® Core™ i7-1185G7 CPU+iGPU,124.53,29.8,54.09,0.292,4.447,
+deeplabv3-TF [513x513],core,Intel® Core™ i7-1185GRE CPU-only,35.1,8.54,9.63,0.071,1.253,39740
+deeplabv3-TF [513x513],core,Intel® Core™ i5-10500TE ,35.72,18.73,18.93,0.183,1.02,31140
+deeplabv3-TF [513x513],xeon,Intel® Xeon® W1290P,72.32,20.59,20.3,0.134,0.578,74080
+deeplabv3-TF [513x513],xeon,Intel® Xeon® E-2124G,24.91,16.57,16.5,0.116,0.35,24740
+deeplabv3-TF [513x513],xeon,Intel® Xeon® Silver 4216R,242.94,78.44,79.01,0.121,0.971,216690
+deeplabv3-TF [513x513],xeon,Intel® Xeon® Silver 4316,,,,0,0,
+deeplabv3-TF [513x513],xeon,Intel® Xeon® Gold 5218T,249.56,81.7,82.45,0.092,1.188,223840
+deeplabv3-TF [513x513],xeon,Intel® Xeon® Platinum 8270,617.9,151.71,152.05,0.041,1.507,484760
+deeplabv3-TF [513x513],xeon,Intel® Xeon® Platinum 8380,,,,0,0,
+deeplabv3-TF [513x513],accel,Intel® Neural Compute Stick 2,,,3.52,0.051,1.408,
+deeplabv3-TF [513x513],accel,Intel® Movidius™ VPUs (Uzel* UI-AR8),,,,0,0,

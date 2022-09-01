@@ -45,7 +45,7 @@ For example, to add the description of the ``CustomReshape`` layer, which is an 
 
 #. Now, Model Optimizer is able to load the model into memory and start working with your extensions if there are any.
 
-However, since your model has custom layers, you must register them as custom. To learn more about it, refer to :ref:`Custom Layers in Model Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`.
+However, since your model has custom layers, you must register them as custom. To learn more about it, refer to :ref:`Custom Layers in Model Optimizer <extensibility__model_optimizer>`.
 
 .. _question-2:
 
@@ -68,7 +68,7 @@ You need the Caffe Python interface. In this case, do the following:
 3. What does the message "[ ERROR ]: Unable to create ports for node with id" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Most likely, Model Optimizer does not know how to infer output shapes of some layers in the given topology. To lessen the scope, compile the list of layers that are custom for Model Optimizer: present in the topology, absent in the :ref:`list of supported layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` for the target framework. Then, refer to available options in the corresponding section in the :ref:`Custom Layers in Model Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` page.
+Most likely, Model Optimizer does not know how to infer output shapes of some layers in the given topology. To lessen the scope, compile the list of layers that are custom for Model Optimizer: present in the topology, absent in the :ref:`list of supported layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` for the target framework. Then, refer to available options in the corresponding section in the :ref:`Custom Layers in Model Optimizer <extensibility__model_optimizer>` page.
 
 .. _question-4:
 
@@ -196,7 +196,7 @@ However, if your model contains more than one input, Model Optimizer is able to 
 9. What does the message "Mean file for topologies with multiple inputs is not supported" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Model Optimizer does not support mean file processing for topologies with more than one input. In this case, you need to perform preprocessing of the inputs for a generated Intermediate Representation in OpenVINO Runtime to perform subtraction for every input of your multi-input model. See the :ref:`Overview of Preprocessing <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` for details.
+Model Optimizer does not support mean file processing for topologies with more than one input. In this case, you need to perform preprocessing of the inputs for a generated Intermediate Representation in OpenVINO Runtime to perform subtraction for every input of your multi-input model. See the :ref:`Overview of Preprocessing <deploy_infer__preprocessing_overview>` for details.
 
 .. _question-10:
 
@@ -224,7 +224,7 @@ Model Optimizer tried to infer a specified layer via the Caffe framework. Howeve
 13. What does the message "Cannot infer shapes due to exception in Caffe" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Model Optimizer tried to infer a custom layer via the Caffe framework, but the model could not be inferred using Caffe. This might happen if you try to convert the model with some noise weights and biases, which conflict with layers that have dynamic shapes. You should write your own extension for every custom layer your topology might have. For more details, refer to the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` page.
+Model Optimizer tried to infer a custom layer via the Caffe framework, but the model could not be inferred using Caffe. This might happen if you try to convert the model with some noise weights and biases, which conflict with layers that have dynamic shapes. You should write your own extension for every custom layer your topology might have. For more details, refer to the :ref:`Model Optimizer Extensibility <extensibility__model_optimizer>` page.
 
 .. _question-14:
 
@@ -294,7 +294,7 @@ One of the layers in the specified topology might not have inputs or values. Mak
 23. What does the message "Part of the nodes was not translated to IE. Stopped" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Some of the operations are not supported by OpenVINO Runtime and cannot be translated to OpenVINO Intermediate Representation. You can extend Model Optimizer by allowing generation of new types of operations and implement these operations in the dedicated OpenVINO plugins. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+Some of the operations are not supported by OpenVINO Runtime and cannot be translated to OpenVINO Intermediate Representation. You can extend Model Optimizer by allowing generation of new types of operations and implement these operations in the dedicated OpenVINO plugins. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <extensibility__api_introduction>` guide.
 
 .. _question-24:
 
@@ -359,7 +359,7 @@ You might have provided only one shape for the placeholder, while there are none
 32. What does the message "The amount of input nodes for port is not equal to 1" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This error occurs when the ``SubgraphMatch.single_input_node`` function is used for an input port that supplies more than one node in a sub-graph. The ``single_input_node`` function can be used only for ports that has a single consumer inside the matching sub-graph. When multiple nodes are connected to the port, use the ``input_nodes`` function or ``node_by_pattern`` function instead of ``single_input_node``. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+This error occurs when the ``SubgraphMatch.single_input_node`` function is used for an input port that supplies more than one node in a sub-graph. The ``single_input_node`` function can be used only for ports that has a single consumer inside the matching sub-graph. When multiple nodes are connected to the port, use the ``input_nodes`` function or ``node_by_pattern`` function instead of ``single_input_node``. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <extensibility__model_optimizer>` guide.
 
 .. _question-33:
 
@@ -373,7 +373,7 @@ This error occurs when the ``SubgraphMatch._add_output_node`` function is called
 34. What does the message "Unsupported match kind.... Match kinds "points" or "scope" are supported only" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-While using configuration file to implement a TensorFlow front replacement extension, an incorrect match kind was used. Only ``points`` or ``scope`` match kinds are supported. For more details, refer to the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+While using configuration file to implement a TensorFlow front replacement extension, an incorrect match kind was used. Only ``points`` or ``scope`` match kinds are supported. For more details, refer to the :ref:`Model Optimizer Extensibility <extensibility__model_optimizer>` guide.
 
 .. _question-35:
 
@@ -387,7 +387,7 @@ Model Optimizer tried to write an event file in the specified directory but fail
 36. What does the message "There is no registered 'infer' function for node  with op = .. . Please implement this function in the extensions" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Most likely, you tried to extend Model Optimizer with a new primitive, but you did not specify an infer function. For more information on extensions, see the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+Most likely, you tried to extend Model Optimizer with a new primitive, but you did not specify an infer function. For more information on extensions, see the :ref:`OpenVINO Extensibility Mechanism <extensibility__api_introduction>` guide.
 
 .. _question-37:
 
@@ -443,7 +443,7 @@ Most likely, there is a problem with the specified file for the model. The file 
 44. What does the message "Found custom layer. Model Optimizer does not support this layer. Please, register it in CustomLayersMapping.xml or implement extension" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This means that the layer ``{layer_name}`` is not supported in Model Optimizer. You will find a list of all unsupported layers in the corresponding section. You should implement the extensions for this layer. See :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` for more information.
+This means that the layer ``{layer_name}`` is not supported in Model Optimizer. You will find a list of all unsupported layers in the corresponding section. You should implement the extensions for this layer. See :ref:`OpenVINO Extensibility Mechanism <extensibility__api_introduction>` for more information.
 
 .. _question-45:
 
@@ -457,7 +457,7 @@ A path to the custom replacement configuration file was provided with the ``--tr
 46. What does the message "Extractors collection have case insensitive duplicates" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-When extending Model Optimizer with new primitives, keep in mind that their names are case-insensitive. Most likely, another operation with the same name is already defined. For more information, see the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+When extending Model Optimizer with new primitives, keep in mind that their names are case-insensitive. Most likely, another operation with the same name is already defined. For more information, see the :ref:`OpenVINO Extensibility Mechanism <extensibility__api_introduction>` guide.
 
 .. _question-47:
 
@@ -513,7 +513,7 @@ Make sure inputs are defined and have correct shapes. You can use ``--input_shap
 54. What does the message "Attempt to register of custom name for the second time as class. Note that custom names are case-insensitive" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-When extending Model Optimizer with new primitives, keep in mind that their names are case-insensitive. Most likely, another operation with the same name is already defined. For more information, see the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+When extending Model Optimizer with new primitives, keep in mind that their names are case-insensitive. Most likely, another operation with the same name is already defined. For more information, see the :ref:`OpenVINO Extensibility Mechanism <extensibility__api_introduction>` guide.
 
 .. _question-55:
 
@@ -606,14 +606,14 @@ A replacement defined in the configuration file for sub-graph replacement, using
 65. What does the message "No instance(s) is(are) defined for the custom replacement" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-A replacement defined in the configuration file for sub-graph replacement, using node names patterns or start/end nodes, has the ``instances`` attribute. This attribute is mandatory. This error will occur if the attribute is missing. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+A replacement defined in the configuration file for sub-graph replacement, using node names patterns or start/end nodes, has the ``instances`` attribute. This attribute is mandatory. This error will occur if the attribute is missing. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <extensibility__model_optimizer>` guide.
 
 .. _question-66:
 
 66. What does the message "The instance must be a single dictionary for the custom replacement with id .." mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-A replacement defined in the configuration file for sub-graph replacement, using start/end nodes, has the ``instances`` attribute. For this type of replacement, the instance must be defined with a dictionary with two keys ``start_points`` and ``end_points``. Values for these keys are lists with the start and end node names, respectively. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+A replacement defined in the configuration file for sub-graph replacement, using start/end nodes, has the ``instances`` attribute. For this type of replacement, the instance must be defined with a dictionary with two keys ``start_points`` and ``end_points``. Values for these keys are lists with the start and end node names, respectively. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <extensibility__model_optimizer>` guide.
 
 .. _question-67:
 
@@ -669,7 +669,7 @@ This error occurs when you try to make a sub-graph match. It is detected that be
 74. What does the message "Sub-graph contains network input node .." mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The start or end node for the sub-graph replacement using start/end nodes is specified incorrectly. Model Optimizer finds internal nodes of the sub-graph strictly "between" the start and end nodes, and then adds all input nodes to the sub-graph (and the inputs of their inputs, etc.) for these "internal" nodes. This error reports that Model Optimizer reached input node during this phase. This means that the start/end points are specified incorrectly in the configuration file. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+The start or end node for the sub-graph replacement using start/end nodes is specified incorrectly. Model Optimizer finds internal nodes of the sub-graph strictly "between" the start and end nodes, and then adds all input nodes to the sub-graph (and the inputs of their inputs, etc.) for these "internal" nodes. This error reports that Model Optimizer reached input node during this phase. This means that the start/end points are specified incorrectly in the configuration file. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <extensibility__model_optimizer>` guide.
 
 .. _question-75:
 
@@ -690,7 +690,7 @@ This message may appear when the ``--data_type=FP16`` command-line option is use
 77. What does the message "The amount of nodes matched pattern ... is not equal to 1" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This error occurs when the ``SubgraphMatch.node_by_pattern`` function is used with a pattern that does not uniquely identify a single node in a sub-graph. Try to extend the pattern string to make unambiguous match to a single sub-graph node. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` guide.
+This error occurs when the ``SubgraphMatch.node_by_pattern`` function is used with a pattern that does not uniquely identify a single node in a sub-graph. Try to extend the pattern string to make unambiguous match to a single sub-graph node. For more details, refer to the **Graph Transformation Extensions** section in the :ref:`Model Optimizer Extensibility <extensibility__model_optimizer>` guide.
 
 .. _question-78:
 
@@ -748,7 +748,7 @@ Model Optimizer for Apache MXNet supports only ``.params`` and ``.nd`` files for
 85. What does the message "Operation ... not supported. Please register it as custom op" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Model Optimizer tried to load the model that contains some unsupported operations. If you want to convert model that contains unsupported operations, you need to prepare extension for all such operations. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+Model Optimizer tried to load the model that contains some unsupported operations. If you want to convert model that contains unsupported operations, you need to prepare extension for all such operations. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <extensibility__api_introduction>` guide.
 
 .. _question-86:
 
@@ -796,7 +796,7 @@ It is mandatory to call two functions right after the implementation of that cla
 
 Note that the first call ``register_caffe_python_extractor(ProposalPythonExampleOp, 'rpn.proposal_layer.ProposalLayer')`` registers an extension of the layer in Model Optimizer, which will be found by the specific name (mandatory to join module name and layer name): ``rpn.proposal_layer.ProposalLayer``.
 
-The second call prevents Model Optimizer from using this extension as if it is an extension for a layer with type ``Proposal``. Otherwise, this layer can be chosen as an implementation of extension that can lead to potential issues. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+The second call prevents Model Optimizer from using this extension as if it is an extension for a layer with type ``Proposal``. Otherwise, this layer can be chosen as an implementation of extension that can lead to potential issues. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <extensibility__api_introduction>` guide.
 
 .. _question-87:
 
@@ -838,7 +838,7 @@ There are multiple reasons why Model Optimizer does not accept a counts file, in
 92. What does the message "For legacy MXNet models Model Optimizer does not support conversion of old MXNet models (trained with 1.0.0 version of MXNet and lower) with custom layers." mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This message means that if you have a model with custom layers and its JSON file has been generated with Apache MXNet version lower than 1.0.0, Model Optimizer does not support such topologies. If you want to convert it, you have to rebuild MXNet with unsupported layers or generate a new JSON file with Apache MXNet version 1.0.0 or higher. You also need to implement OpenVINO extension to use custom layers. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` guide.
+This message means that if you have a model with custom layers and its JSON file has been generated with Apache MXNet version lower than 1.0.0, Model Optimizer does not support such topologies. If you want to convert it, you have to rebuild MXNet with unsupported layers or generate a new JSON file with Apache MXNet version 1.0.0 or higher. You also need to implement OpenVINO extension to use custom layers. For more information, refer to the :ref:`OpenVINO Extensibility Mechanism <extensibility__api_introduction>` guide.
 
 .. _question-93:
 
@@ -855,9 +855,9 @@ For Tensorflow:
 
 For all frameworks:
 
-#. :ref:`Replace cycle containing Sub-graph in Model Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>`
+#. :ref:`Replace cycle containing Sub-graph in Model Optimizer <extensibility__model_optimizer>`
 
-#. See :ref:`OpenVINO Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>`
+#. See :ref:`OpenVINO Extensibility Mechanism <extensibility__api_introduction>`
 
 or
 

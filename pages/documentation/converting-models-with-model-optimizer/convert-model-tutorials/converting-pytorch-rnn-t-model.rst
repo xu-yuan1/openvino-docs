@@ -116,7 +116,7 @@ After completing this step, the files ``rnnt_encoder.onnx``, ``rnnt_prediction.o
 
    The hardcoded value for sequence length = 157 was taken from the MLCommons, 
    but conversion to IR preserves network 
-   :ref:`reshapeability <doxid-openvino_docs__o_v__u_g__shape_inference>`. 
+   :ref:`reshapeability <deploy_infer__shape_inference>`. 
    Therefore, input shapes can be changed manually to any value during either 
    conversion or inference.
 

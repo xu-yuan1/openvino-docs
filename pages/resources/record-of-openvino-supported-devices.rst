@@ -20,21 +20,21 @@ The OpenVINO Runtime provides unique capabilities to infer deep learning models 
 
     * - Plugin
       - Device types
-    * - :ref:`GPU plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>`
+    * - :ref:`GPU plugin <deploy_infer__gpu_device>`
       - Intel Processor Graphics, including Intel HD Graphics and Intel Iris Graphics
-    * - :ref:`CPU plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u>`
+    * - :ref:`CPU plugin <deploy_infer__cpu_device>`
       - Intel Xeon with Intel® Advanced Vector Extensions 2 (Intel® AVX2), Intel® Advanced Vector Extensions 512 (Intel® AVX-512), and AVX512_BF16, Intel Core Processors with Intel AVX2, Intel Atom Processors with Intel® Streaming SIMD Extensions (Intel® SSE)
-    * - :ref:`VPU plugins <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>` (available in the Intel® Distribution of OpenVINO™ toolkit)
+    * - :ref:`VPU plugins <deploy_infer__vpu_device>` (available in the Intel® Distribution of OpenVINO™ toolkit)
       - Intel® Neural Compute Stick 2 powered by the Intel® Movidius™ Myriad™ X, Intel® Vision Accelerator Design with Intel® Movidius™ VPUs
-    * - :ref:`GNA plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__g_n_a>` (available in the Intel® Distribution of OpenVINO™ toolkit)
+    * - :ref:`GNA plugin <deploy_infer__gna_device>` (available in the Intel® Distribution of OpenVINO™ toolkit)
       - Intel Speech Enabling Developer Kit, Amazon Alexa\* Premium Far-Field Developer Kit, Intel Pentium Silver J5005 Processor, Intel Pentium Silver N5000 Processor, Intel Celeron J4005 Processor, Intel Celeron J4105 Processor, Intel Celeron Processor N4100, Intel Celeron Processor N4000, Intel Core i3-8121U Processor, Intel Core i7-1065G7 Processor, Intel Core i7-1060G7 Processor, Intel Core i5-1035G4 Processor, Intel Core i5-1035G7 Processor, Intel Core i5-1035G1 Processor, Intel Core i5-1030G7 Processor, Intel Core i5-1030G4 Processor, Intel Core i3-1005G1 Processor, Intel Core i3-1000G1 Processor, Intel Core i3-1000G4 Processor
-    * - :ref:`Arm® CPU plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__a_r_m__c_p_u>` (unavailable in the Intel® Distribution of OpenVINO™ toolkit)
+    * - :ref:`Arm® CPU plugin <deploy_infer__arm_cpu_device>` (unavailable in the Intel® Distribution of OpenVINO™ toolkit)
       - Raspberry Pi™ 4 Model B, Apple® Mac mini with M1 chip, NVIDIA® Jetson Nano™, Android™ devices
-    * - :ref:`Multi-Device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`
+    * - :ref:`Multi-Device execution <deploy_infer__multi_plugin>`
       - Multi-Device execution enables simultaneous inference of the same model on several devices in parallel
-    * - :ref:`Auto-Device plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>`
+    * - :ref:`Auto-Device plugin <deploy_infer__auto_plugin>`
       - Auto-Device plugin enables selecting Intel device for inference automatically
-    * - :ref:`Heterogeneous plugin <doxid-openvino_docs__o_v__u_g__hetero_execution>`
+    * - :ref:`Heterogeneous plugin <deploy_infer__hetero_plugin>`
       - Heterogeneous execution enables automatic inference splitting between several devices (for example if a device doesn't `support certain operation <#supported-layers>`__ ).
 
 Devices similar to the ones we have used for benchmarking can be accessed using `Intel® DevCloud for the Edge <https://devcloud.intel.com/edge/>`__, a remote development environment with access to Intel® hardware and the latest versions of the Intel® Distribution of the OpenVINO™ Toolkit. `Learn more <https://devcloud.intel.com/edge/get_started/devcloud/>`__ or `Register here <https://inteliot.force.com/DevcloudForEdge/s/>`__.
@@ -118,7 +118,7 @@ Supported Model Formats
       - Supported
       - Supported (partially)
 
-For :ref:`Multi-Device <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` and :ref:`Heterogeneous <doxid-openvino_docs__o_v__u_g__hetero_execution>` executions the supported models formats depends on the actual underlying devices. *Generally, FP16 is preferable as it is most ubiquitous and performant*.
+For :ref:`Multi-Device <deploy_infer__multi_plugin>` and :ref:`Heterogeneous <deploy_infer__hetero_plugin>` executions the supported models formats depends on the actual underlying devices. *Generally, FP16 is preferable as it is most ubiquitous and performant*.
 
 Supported Input Precision
 -------------------------
@@ -171,7 +171,7 @@ Supported Input Precision
 
 \* - Supported via ``SetBlob`` only, ``GetBlob`` returns FP32
 
-For :ref:`Multi-Device <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` and :ref:`Heterogeneous <doxid-openvino_docs__o_v__u_g__hetero_execution>` executions the supported input precision depends on the actual underlying devices. *Generally, U8 is preferable as it is most ubiquitous*.
+For :ref:`Multi-Device <deploy_infer__multi_plugin>` and :ref:`Heterogeneous <deploy_infer__hetero_plugin>` executions the supported input precision depends on the actual underlying devices. *Generally, U8 is preferable as it is most ubiquitous*.
 
 Supported Output Precision
 --------------------------
@@ -198,7 +198,7 @@ Supported Output Precision
       - Supported
       - Supported
 
-For :ref:`Multi-Device <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` and :ref:`Heterogeneous <doxid-openvino_docs__o_v__u_g__hetero_execution>` executions the supported output precision depends on the actual underlying devices. *Generally, FP32 is preferable as it is most ubiquitous*.
+For :ref:`Multi-Device <deploy_infer__multi_plugin>` and :ref:`Heterogeneous <deploy_infer__hetero_plugin>` executions the supported output precision depends on the actual underlying devices. *Generally, FP32 is preferable as it is most ubiquitous*.
 
 Supported Input Layout
 ----------------------
@@ -256,7 +256,7 @@ Supported Output Layout
       - NC
       - C
 
-For setting relevant configuration, refer to the :ref:`Integrate with Customer Application <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>` topic (step 3 "Configure input and output").
+For setting relevant configuration, refer to the :ref:`Integrate with Customer Application <deploy_infer__integrate_application>` topic (step 3 "Configure input and output").
 
 Supported Layers
 ----------------
@@ -1139,7 +1139,7 @@ The following layers are supported by the plugins:
 
 \*- support is limited to the specific parameters. Refer to "Known Layers Limitation" section for the device :ref:`from the list of supported <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`.
 
-\*\*- support is implemented via :ref:`Extensibility mechanism <doxid-openvino_docs__extensibility__u_g__intro>`.
+\*\*- support is implemented via :ref:`Extensibility mechanism <extensibility__api_introduction>`.
 
 \*\*\*- supports NCDHW layout.
 

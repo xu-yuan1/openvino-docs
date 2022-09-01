@@ -1,12 +1,22 @@
 .. index:: pair: page; Automatic Device Selection
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o:
+.. _deploy_infer__auto_plugin:
 
+.. meta::
+   :description: The Automatic Device Selection mode in OpenVINO™ Runtime 
+                 detects available devices and selects the optimal processing 
+                 unit for inference automatically.
+   :keywords: OpenVINO™ Runtime, Automatic Device Selection, Automatic Device 
+              Selection mode, AUTO device, AUTO plugin, inference, model inference, 
+              processing unit, input model, precision, model precision, FP32, 
+              FP16, FP16 precision, INT8, INT8 precision, BIN, dGPU, iGPU, 
+              Intel® Movidius™ Myriad™ X VPU, Intel® CPU, device candidate list, 
+              performance hints, throughput, latency, cumulative_throughput, 
+              model priority, disable auto-batching, benchmark_app
 
 Automatic Device Selection
 ==========================
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o_1md_openvino_docs_ov_runtime_ug_auto_device_selection`
-
+:target:`deploy_infer__auto_plugin_1md_openvino_docs_ov_runtime_ug_auto_device_selection`
 
 .. toctree::
    :maxdepth: 1
@@ -165,14 +175,14 @@ See the following code for using AUTO and specifying devices:
 
 Note that OpenVINO Runtime lets you use “GPU” as an alias for “GPU.0” in function 
 calls. More details on enumerating devices can be found in 
-:ref:`Working with devices <doxid-openvino_docs__o_v__u_g__working_with_devices>`.
+:ref:`Working with devices <deploy_infer__working_with_devices>`.
 
 Checking Available Devices
 ++++++++++++++++++++++++++
 
 To check what devices are present in the system, you can use Device API, as listed 
 below. For information on how to use it, see 
-:ref:`Query device properties and configuration <doxid-openvino_docs__o_v__u_g_query_api>`.
+:ref:`Query device properties and configuration <deploy_infer__query_device_properties>`.
 
 .. tab:: C++   
 
@@ -264,7 +274,7 @@ the network model to all available devices in the candidate list, and then runs
 inference on them based on the default or specified priority.
 
 ``CUMULATIVE_THROUGHPUT`` has similar behavior as 
-:ref:`the Multi-Device execution mode (MULTI) <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`. 
+:ref:`the Multi-Device execution mode (MULTI) <deploy_infer__multi_plugin>`. 
 The only difference is that ``CUMULATIVE_THROUGHPUT`` uses the devices specified by AUTO, 
 which means that it's not mandatory to add devices manually, while with MULTI, you 
 need to specify the devices before inference.
@@ -305,7 +315,7 @@ The ``ov::hint::PerformanceMode::THROUGHPUT`` mode and the
 (for example, for the GPU device) by default. You can disable it by setting 
 ``ov::hint::allow_auto_batching(false)``, or change the default timeout value to a 
 large number, e.g. ``ov::auto_batch_timeout(1000)``. 
-See :ref:`Automatic Batching <doxid-openvino_docs__o_v__u_g__automatic__batching>` 
+See :ref:`Automatic Batching <deploy_infer__automatic_batching>` 
 for more details.
 
 
@@ -385,8 +395,8 @@ or :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m
 Additional Resources
 ~~~~~~~~
 
-* :ref:`Debugging AUTO <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o_debugging>`
+* :ref:`Debugging AUTO <deploy_infer__debugging_auto_plugin>`
 
-* :ref:`Running on Multiple Devices Simultaneously <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`
+* :ref:`Running on Multiple Devices Simultaneously <deploy_infer__multi_plugin>`
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`

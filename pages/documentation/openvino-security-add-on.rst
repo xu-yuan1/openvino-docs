@@ -1,11 +1,18 @@
 .. index:: pair: page; OpenVINO™ Security Add-on
-.. _doxid-ovsa_get_started:
+.. _security__add_on:
+
+.. meta::
+   :description: Instructions on how to use the OpenVINO™ Security Add-on 
+                 to create, distribute, and use models that are created with the OpenVINO™ toolkit.
+   :keywords: OpenVINO Security Add-on, security addon, Model Developer, Independent Software Vendor,
+              user, License Service, Runtime
 
 
 OpenVINO™ Security Add-on
 ===========================
 
-:target:`doxid-ovsa_get_started_1md_openvino_docs_ovsa_ovsa_get_started` This guide provides instructions for people who use the OpenVINO™ Security Add-on to create, distribute, and use models that are created with the OpenVINO™ toolkit:
+:target:`security__add_on_1md_openvino_docs_ovsa_ovsa_get_started` This guide provides instructions for people who use 
+the OpenVINO™ Security Add-on to create, distribute, and use models that are created with the OpenVINO™ toolkit:
 
 * **Model Developer** : The Model Developer interacts with the Independent Software Vendor to control the User access to models. This document shows you how to setup hardware and virtual machines to use the OpenVINO™ Security Add-on to define access control to your OpenVINO™ models and then provide the access controlled models to the users.
 
@@ -13,14 +20,22 @@ OpenVINO™ Security Add-on
 
 * **User** : This document includes instructions for end users who need to access and run access controlled models through the OpenVINO™ Security Add-on.
 
-In this release, one person performs the role of both the Model Developer and the Independent Software Vendor. Therefore, this document provides instructions to configure one system for these two roles and one system for the User role. This document also provides a way for the same person to play the role of the Model Developer, Independent Software Vendor, and User to let you see how the OpenVINO™ Security Add-on functions from the User perspective.
+In this release, one person performs the role of both the Model Developer and the Independent Software Vendor. Therefore, 
+this document provides instructions to configure one system for these two roles and one system for the User role. This document 
+also provides a way for the same person to play the role of the Model Developer, Independent Software Vendor, and User to let 
+you see how the OpenVINO™ Security Add-on functions from the User perspective.
 
 Overview
 ~~~~~~~~
 
-The OpenVINO™ Security Add-on works with the OpenVINO™ Model Server on Intel® architecture. Together, the OpenVINO™ Security Add-on and the OpenVINO™ Model Server provide a way for Model Developers and Independent Software Vendors to use secure packaging and secure model execution to enable access control to the OpenVINO™ models, and for model Users to run inference within assigned limits.
+The OpenVINO™ Security Add-on works with the OpenVINO™ Model Server on Intel® architecture. Together, the OpenVINO™ Security 
+Add-on and the OpenVINO™ Model Server provide a way for Model Developers and Independent Software Vendors to use secure packaging 
+and secure model execution to enable access control to the OpenVINO™ models, and for model Users to run inference within assigned 
+limits.
 
-The OpenVINO™ Security Add-on consists of three components that run in Kernel-based Virtual Machines (KVMs). These components provide a way to run security-sensitive operations in an isolated environment. A brief description of the three components are as follows. Click each triangled line for more information about each.
+The OpenVINO™ Security Add-on consists of three components that run in Kernel-based Virtual Machines (KVMs). These components 
+provide a way to run security-sensitive operations in an isolated environment. A brief description of the three components 
+are as follows. Click each triangled line for more information about each.
 
 .. raw:: html
 
@@ -54,7 +69,10 @@ The OpenVINO™ Security Add-on consists of three components that run in Kernel-
 
 Users host the OpenVINO™ Security Add-on Runtime component in a virtual machine.
 
-Externally from the OpenVINO™ Security Add-on, the User adds the access controlled model to the OpenVINO™ Model Server config file. The OpenVINO™ Model Server attempts to load the model in memory. At this time, the OpenVINO™ Security Add-on Runtime component validates the user's license for the access controlled model against information stored in the License Service provided by the Independent Software Vendor.
+Externally from the OpenVINO™ Security Add-on, the User adds the access controlled model to the OpenVINO™ Model Server config 
+file. The OpenVINO™ Model Server attempts to load the model in memory. At this time, the OpenVINO™ Security Add-on Runtime 
+component validates the user's license for the access controlled model against information stored in the License Service provided 
+by the Independent Software Vendor.
 
 After the license is successfully validated, the OpenVINO™ Model Server loads the model and services the inference requests.
 
@@ -67,12 +85,14 @@ After the license is successfully validated, the OpenVINO™ Model Server loads 
 .. image:: ./_assets/ovsa_diagram.png
 	:alt: Security Add-on Diagram
 
-The binding between SWTPM (vTPM used in guest VM) and HW TPM (TPM on the host) is explained in `this document <https://github.com/openvinotoolkit/security_addon/blob/release_2021_4/docs/fingerprint-changes.md>`__
+The binding between SWTPM (vTPM used in guest VM) and HW TPM (TPM on the host) is explained in 
+`this document <https://github.com/openvinotoolkit/security_addon/blob/release_2021_4/docs/fingerprint-changes.md>`__
 
 About the Installation
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The Model Developer, Independent Software Vendor, and User each must prepare one physical hardware machine and one Kernel-based Virtual Machine (KVM). In addition, each person must prepare a Guest Virtual Machine (Guest VM) for each role that person plays.
+The Model Developer, Independent Software Vendor, and User each must prepare one physical hardware machine and one Kernel-based 
+Virtual Machine (KVM). In addition, each person must prepare a Guest Virtual Machine (Guest VM) for each role that person plays.
 
 For example:
 
@@ -131,7 +151,11 @@ Step 1: Set up Packages on the Host Machine
 
 Begin this step on the Intel® Core™ or Xeon® processor machine that meets the `prerequisites <#prerequisites>`__.
 
-.. note:: As an alternative to manually following steps 1 - 11, you can run the script ``install_host_deps.sh`` in the ``Scripts/reference directory`` under the OpenVINO™ Security Add-on repository. The script stops with an error message if it identifies any issues. If the script halts due to an error, correct the issue that caused the error and restart the script. The script runs for several minutes and provides progress information.
+.. note::
+   As an alternative to manually following steps 1 - 11, you can run the script ``install_host_deps.sh`` in the 
+   ``Scripts/reference directory`` under the OpenVINO™ Security Add-on repository. The script stops with an error message 
+   if it identifies any issues. If the script halts due to an error, correct the issue that caused the error and restart 
+   the script. The script runs for several minutes and provides progress information.
 
 
 
@@ -206,7 +230,6 @@ Begin this step on the Intel® Core™ or Xeon® processor machine that meets th
 #. Install the `Docker packages <https://docs.docker.com/engine/install/ubuntu/>`__.
    
 .. note::
-
    Regardless of whether you used the ``install_host_deps.sh`` script, complete step 12 to finish setting up 
    the packages on the Host Machine.
 
@@ -231,7 +254,8 @@ You're ready to configure the Host Machine for networking.
 Step 2: Set up Networking on the Host Machine
 ---------------------------------------------
 
-This step is for the combined Model Developer and Independent Software Vendor roles. If Model User VM is running on different physical host, repeat the following steps for that host also.
+This step is for the combined Model Developer and Independent Software Vendor roles. If Model User VM is running on different 
+physical host, repeat the following steps for that host also.
 
 In this step you prepare two network bridges:
 
@@ -361,7 +385,8 @@ This example in this step uses the following names. Your configuration might use
 
 See the QEMU documentation for more information about the QEMU network configuration.
 
-Networking is set up on the Host Machine. Continue to the Step 3 to prepare a Guest VM for the combined role of Model Developer and Independent Software Vendor.
+Networking is set up on the Host Machine. Continue to the Step 3 to prepare a Guest VM for the combined role of Model Developer 
+and Independent Software Vendor.
 
 Step 3: Clone the OpenVINO™ Security Add-on
 ---------------------------------------------
@@ -373,11 +398,14 @@ Download the `OpenVINO™ Security Add-on <https://github.com/openvinotoolkit/se
 Step 4: Set Up one Guest VM for the combined roles of Model Developer and Independent Software Vendor
 -----------------------------------------------------------------------------------------------------
 
-For each separate role you play, you must prepare a virtual machine, called a Guest VM. Because in this release, the Model Developer and Independent Software Vendor roles are combined, these instructions guide you to set up one Guest VM, named ``ovsa_isv``.
+For each separate role you play, you must prepare a virtual machine, called a Guest VM. Because in this release, 
+the Model Developer and Independent Software Vendor roles are combined, these instructions guide you to set up one Guest VM, 
+named ``ovsa_isv``.
 
 Begin these steps on the Host Machine.
 
-As an option, you can use ``virsh`` and the virtual machine manager to create and bring up a Guest VM. See the ``libvirtd`` documentation for instructions if you'd like to do this.
+As an option, you can use ``virsh`` and the virtual machine manager to create and bring up a Guest VM. See the ``libvirtd`` 
+documentation for instructions if you'd like to do this.
 
 #. Download the `Ubuntu 18.04 server ISO image <https://releases.ubuntu.com/18.04/ubuntu-18.04.6-live-server-amd64.iso>`__
 
@@ -610,7 +638,6 @@ Step 5: Set Up one Guest VM for the User role
    	swtpm_setup --tpmstate /var/OVSA/vtpm/vtpm_runtime --create-ek-cert --create-platform-cert --overwrite --tpm2 --pcr-banks -
    
 .. note::
-
    For steps 3 and 4, you can copy and edit the script named ``start_ovsa_runtime_vm.sh`` in 
    the ``Scripts/reference`` directory in the OpenVINO™ Security Add-on repository instead of 
    manually running the commands. Edit the script to point to the correct directory locations 
@@ -668,7 +695,8 @@ Follow the below steps to build and Install OpenVINO™ Security Add-on on host 
 Step 1: Build the OpenVINO™ Model Server image
 ------------------------------------------------
 
-Building OpenVINO™ Security Add-on depends on OpenVINO™ Model Server docker containers. Download and build OpenVINO™ Model Server first on the host.
+Building OpenVINO™ Security Add-on depends on OpenVINO™ Model Server docker containers. Download and build 
+OpenVINO™ Model Server first on the host.
 
 #. Download the `OpenVINO™ Model Server software <https://github.com/openvinotoolkit/model_server>`__
 
@@ -739,7 +767,8 @@ If you are using more than one Host Machine repeat Step 3 on each.
 Step 4: Install the OpenVINO™ Security Add-on Model Developer / ISV Components
 --------------------------------------------------------------------------------
 
-This step is for the combined role of Model Developer and Independent Software Vendor. References to the Guest VM are to ``ovsa_isv_dev``.
+This step is for the combined role of Model Developer and Independent Software Vendor. References to the Guest VM are 
+to ``ovsa_isv_dev``.
 
 #. Log on to the Guest VM as ``<user>``.
 
@@ -790,7 +819,8 @@ Step 5: Install the OpenVINO™ Security Add-on Model Hosting Component
 
 This step is for the User. References to the Guest VM are to ``ovsa_runtime``.
 
-The Model Hosting components install the OpenVINO™ Security Add-on Runtime Docker container based on OpenVINO™ Model Server NGINX Docker to host a access controlled model.
+The Model Hosting components install the OpenVINO™ Security Add-on Runtime Docker container based on 
+OpenVINO™ Model Server NGINX Docker to host a access controlled model.
 
 #. Log on to the Guest VM as ``<user>``.
 
@@ -829,13 +859,16 @@ The Model Hosting components install the OpenVINO™ Security Add-on Runtime Doc
 How to Use the OpenVINO™ Security Add-on
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section requires interactions between the Model Developer/Independent Software vendor and the User. All roles must complete all applicable `set up steps <#setup-host>`__ and `installation steps <#ovsa-install>`__ before beginning this section.
+This section requires interactions between the Model Developer/Independent Software vendor and the User. All roles must 
+complete all applicable `set up steps <#setup-host>`__ and `installation steps <#ovsa-install>`__ before beginning this section.
 
 This document uses the face-detection-retail-0004 model as an example.
 
 The following figure describes the interactions between the Model Developer, Independent Software Vendor, and User.
 
-**Remember** : The Model Developer/Independent Software Vendor and User roles are related to virtual machine use and one person might fill the tasks required by multiple roles. In this document the tasks of Model Developer and Independent Software Vendor are combined and use the Guest VM named ``ovsa_isv``. It is possible to have all roles set up on the same Host Machine.
+**Remember** : The Model Developer/Independent Software Vendor and User roles are related to virtual machine use and one person 
+might fill the tasks required by multiple roles. In this document the tasks of Model Developer and Independent Software Vendor 
+are combined and use the Guest VM named ``ovsa_isv``. It is possible to have all roles set up on the same Host Machine.
 
 .. image:: ./_assets/ovsa_example.png
 	:alt: OpenVINO™ Security Add-on Example Diagram
@@ -843,7 +876,9 @@ The following figure describes the interactions between the Model Developer, Ind
 Model Developer Instructions
 ----------------------------
 
-The Model Developer creates model, defines access control and creates the user license. After the model is created, access control enabled, and the license is ready, the Model Developer provides the license details to the Independent Software Vendor before sharing to the Model User.
+The Model Developer creates model, defines access control and creates the user license. After the model is created, access 
+control enabled, and the license is ready, the Model Developer provides the license details to the Independent Software Vendor 
+before sharing to the Model User.
 
 References to the Guest VM are to ``ovsa_isv_dev``. Log on to the Guest VM as ``ovsa`` user.
 
@@ -888,7 +923,8 @@ Step 2: Create a key store and add a certificate to it
 Step 3: Create the model
 ++++++++++++++++++++++++
 
-This example uses ``curl`` to download the ``face-detection-retail-004`` model from the OpenVINO Model Zoo. If you are behind a firewall, check and set your proxy settings.
+This example uses ``curl`` to download the ``face-detection-retail-004`` model from the OpenVINO Model Zoo. If you are behind 
+a firewall, check and set your proxy settings.
 
 Download a model from the Model Zoo:
 
@@ -908,7 +944,8 @@ Define and enable the model access control and master license:
 	uuid=$(uuidgen)
 	/opt/ovsa/bin/ovsatool controlAccess -i model/face-detection-retail-0004.xml model/face-detection-retail-0004.bin -n "face detection" -d "face detection retail" -v 0004 -p face_detection_model.dat -m face_detection_model.masterlic -k isv_keystore -g $uuid
 
-The Intermediate Representation files for the ``face-detection-retail-0004`` model are encrypted as ``face_detection_model.dat`` and a master license is generated as ``face_detection_model.masterlic``
+The Intermediate Representation files for the ``face-detection-retail-0004`` model are encrypted as ``face_detection_model.dat`` 
+and a master license is generated as ``face_detection_model.masterlic``
 
 Step 5: Create a Runtime Reference TCB
 ++++++++++++++++++++++++++++++++++++++

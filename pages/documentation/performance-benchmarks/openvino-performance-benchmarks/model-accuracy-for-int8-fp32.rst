@@ -1,11 +1,24 @@
 .. index:: pair: page; Model Accuracy for INT8 and FP32 Precision
-.. _doxid-openvino_docs_performance_int8_vs_fp32:
+.. _performance_int8_vs_fp32:
+
+.. meta::
+   :description: The article presents accuracy difference between INT8 and FP32 representations of a model.
+   :keywords: inference performance, model accuracy, INT8, FP32, INT8 precision, 
+              FP32 precision, performance benchmark, OpenVINO, OpenVINO model, 
+              INT8 representation, FP32 representation, OpenVINO Benchmark, 
+              absolute accuracy drop, throughput speed-up, Intel® Core™ i7-8700T, 
+              Intel® Core™ i7-1185G7, Intel® Xeon® W-1290P, Intel® Xeon® Platinum 
+              8270, Intel® Core™ i9-10920X, Intel® Core™ i9-9820X, Intel® Core™ 
+              i7-6700K, Intel® Core™ i7-1185G7
 
 
 Model Accuracy for INT8 and FP32 Precision
 ==========================================
 
-:target:`doxid-openvino_docs_performance_int8_vs_fp32_1md_openvino_docs_benchmarks_performance_int8_vs_fp32` The following table presents the absolute accuracy drop calculated as the accuracy difference between FP32 and INT8 representations of a model:
+:target:`performance_int8_vs_fp32_1md_openvino_docs_benchmarks_performance_int8_vs_fp32` 
+
+The following table presents the absolute accuracy drop calculated as the 
+accuracy difference between FP32 and INT8 representations of a model:
 
 .. raw:: html
 
@@ -243,7 +256,9 @@ Model Accuracy for INT8 and FP32 Precision
       </tr>
     </table>
 
-The table below illustrates the speed-up factor for the performance gain by switching from an FP32 representation of an OpenVINO™ supported model to its INT8 representation:
+The table below illustrates the speed-up factor for the performance gain by 
+switching from an FP32 representation of an OpenVINO™ supported model to 
+its INT8 representation:
 
 .. raw:: html
 
@@ -455,6 +470,5 @@ The table below illustrates the speed-up factor for the performance gain by swit
       </tr>
     </table>
 
-.. image:: int8vsfp32.png
-	:alt: INT8 vs FP32 Comparison
-
+.. image:: ./_assets/int8vsfp32.png
+   :alt: INT8 vs FP32 Comparison

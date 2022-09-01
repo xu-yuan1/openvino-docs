@@ -1,32 +1,50 @@
 .. index:: pair: page; Model Caching Overview
-.. _doxid-openvino_docs__o_v__u_g__model_caching_overview:
+.. _model_caching_overview:
 
+.. meta::
+   :description: Enabling model caching to export compiled model 
+                 automatically and reusing it can significantly 
+                 reduce duration of model compilation on application startup.
+   :keywords: model caching, OpenVINO Intermediate Representation, OpenVINO IR,
+              input tensor, GPU plugin, compiling model, loading model, model 
+              inference, cache_dir, EXPORT_IMPORT
 
 Model Caching Overview
 ======================
 
-:target:`doxid-openvino_docs__o_v__u_g__model_caching_overview_1md_openvino_docs_ov_runtime_ug_model_caching_overview`
+:target:`model_caching_overview_1md_openvino_docs_ov_runtime_ug_model_caching_overview`
 
 Introduction
 ~~~~~~~~~~~~
 
-As described in the :ref:`Integrate OpenVINO™ with Your Application <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>`, a common application flow consists of the following steps:
+As described in the :ref:`Integrate OpenVINO™ with Your Application <deploy_infer__integrate_application>`, 
+a common application flow consists of the following steps:
 
 #. **Create a Core object** : First step to manage available devices and read model objects
 
-#. **Read the Intermediate Representation** : Read an Intermediate Representation file into an object of the ``:ref:`ov::Model <doxid-classov_1_1_model>```
+#. **Read the Intermediate Representation** : Read an Intermediate 
+   Representation file into an object of the ``:ref:`ov::Model <doxid-classov_1_1_model>```
 
-#. **Prepare inputs and outputs** : If needed, manipulate precision, memory layout, size or color format
+#. **Prepare inputs and outputs** : If needed, manipulate precision, 
+   memory layout, size or color format
 
 #. **Set configuration** : Pass device-specific loading configurations to the device
 
-#. **Compile and Load Network to device** : Use the ``:ref:`ov::Core::compile_model() <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` method with a specific device
+#. **Compile and Load Network to device** : Use the 
+   ``:ref:`ov::Core::compile_model() <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>``` 
+   method with a specific device
 
 #. **Set input data** : Specify input tensor
 
 #. **Execute** : Carry out inference and process results
 
-Step 5 can potentially perform several time-consuming device-specific optimizations and network compilations, and such delays can lead to a bad user experience on application startup. To avoid this, some devices offer import/export network capability, and it is possible to either use the :ref:`Compile tool <doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e>` or enable model caching to export compiled model automatically. Reusing cached model can significantly reduce compile model time.
+Step 5 can potentially perform several time-consuming device-specific 
+optimizations and network compilations, and such delays can lead to a bad user 
+experience on application startup. To avoid this, some devices offer 
+import/export network capability, and it is possible to either use the 
+:ref:`Compile tool <doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e>` 
+or enable model caching to export compiled model automatically. Reusing cached 
+model can significantly reduce compile model time.
 
 Set "cache_dir" config option to enable model caching
 -----------------------------------------------------
@@ -101,5 +119,5 @@ Not every device supports network import/export capability. For those that don't
          :language: python
          :fragment: [ov:caching:part3]
 
-.. note:: The GPU plugin does not have the EXPORT_IMPORT capability, and does not support model caching yet. However, the GPU plugin supports caching kernels (see the :ref:`GPU plugin documentation <doxid-openvino_docs__o_v__u_g_supported_plugins__g_p_u>`). Kernel caching for the GPU plugin can be accessed the same way as model caching: by setting the ``CACHE_DIR`` configuration key to a folder where the cache should be stored.
+.. note:: The GPU plugin does not have the EXPORT_IMPORT capability, and does not support model caching yet. However, the GPU plugin supports caching kernels (see the :ref:`GPU plugin documentation <deploy_infer__gpu_device>`). Kernel caching for the GPU plugin can be accessed the same way as model caching: by setting the ``CACHE_DIR`` configuration key to a folder where the cache should be stored.
 

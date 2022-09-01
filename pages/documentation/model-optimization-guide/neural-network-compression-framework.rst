@@ -1,13 +1,31 @@
 .. index:: pair: page; Neural Network Compression Framework
-.. _doxid-docs_nncf_introduction:
+.. _nncf_introduction:
 
+.. meta::
+   :description: Neural Network Compression Framework optimizes Deep Neural 
+                 Networks by using quantization and pruning methods that 
+                 require model fine-tuning or re-training.
+   :keywords: Neural Network Compression Framework, NNCF, Deep Neural Networks, 
+              DNN, quantization, model quantization, model pruning, model 
+              optimization, accuracy-aware model training, quantization-aware 
+              training, PyTorch, TensorFlow, image classification, object 
+              detection, semantic segmentation, quantizing models, open source,
+              model optimization workflow, compression algorithm 
 
 Neural Network Compression Framework
 ====================================
 
-:target:`doxid-docs_nncf_introduction_1md_openvino_docs_optimization_guide_nncf_introduction` The Neural Network Compression Framework (NNCF) aims at optimizing Deep Neural Networks (DNN) by means of methods such as quantization and pruning. It provides in-training optimization capabilities, which means that the optimization methods require model fine-tuning or even re-training.
+:target:`nncf_introduction_1md_openvino_docs_optimization_guide_nncf_introduction` 
 
-NNCF is distributed as a separate tool but is closely aligned with OpenVINO in terms of supported optimization features and models. It is open source and available on `GitHub <https://github.com/openvinotoolkit/nncf>`__. The diagram below shows the model optimization workflow, using NNCF.
+The Neural Network Compression Framework (NNCF) aims at optimizing Deep Neural 
+Networks (DNN) by means of methods such as quantization and pruning. It provides 
+in-training optimization capabilities, which means that the optimization methods 
+require model fine-tuning or even re-training.
+
+NNCF is distributed as a separate tool but is closely aligned with OpenVINO in 
+terms of supported optimization features and models. It is open source and 
+available on `GitHub <https://github.com/openvinotoolkit/nncf>`__. The diagram 
+below shows the model optimization workflow, using NNCF.
 
 .. image:: ./_assets/nncf_workflow.png
 
@@ -16,7 +34,8 @@ Features
 
 * Support for optimization of PyTorch and TensorFlow 2.x models.
 
-* Support for various optimization algorithms, applied during a model fine-tuning process to achieve a better trade-off between performance and accuracy:
+* Support for various optimization algorithms, applied during a model fine-tuning 
+  process to achieve a better trade-off between performance and accuracy:
 
 .. list-table::
     :header-rows: 1
@@ -45,25 +64,29 @@ Features
 * Support for `Accuracy-Aware model training <https://github.com/openvinotoolkit/nncf/blob/develop/docs/Usage.md#accuracy-aware-model-training>`__ pipelines via the `Adaptive Compression Level Training <https://github.com/openvinotoolkit/nncf/tree/develop/docs/accuracy_aware_model_training/AdaptiveCompressionLevelTraining.md>`__ and `Early Exit Training <https://github.com/openvinotoolkit/nncf/tree/develop/docs/accuracy_aware_model_training/EarlyExitTrainig.md>`__.
 
 * Automatic, configurable model graph transformation to obtain the compressed model.
-  
-  .. note:: Only models created using Sequential or Keras Functional API are supported. Support for TensorFlow models is limited.
-  
-  
-  
+
+  .. note:: Only models created using Sequential or Keras Functional API are 
+     supported. Support for TensorFlow models is limited.
+
   - GPU-accelerated layers for faster compressed model fine-tuning.
 
 * Distributed training support.
 
 * Examples of configuration files for each supported compression algorithm.
 
-* Exporting PyTorch compressed models to ONNX checkpoints and TensorFlow compressed models to SavedModel or Frozen Graph format, ready to use with `OpenVINO toolkit <https://github.com/openvinotoolkit/>`__.
+* Exporting PyTorch compressed models to ONNX checkpoints and TensorFlow 
+  compressed models to SavedModel or Frozen Graph format, ready to use with 
+  `OpenVINO toolkit <https://github.com/openvinotoolkit/>`__.
 
-* Git patches for prominent third-party repositories (`huggingface-transformers <https://github.com/huggingface/transformers>`__) demonstrating the process of integrating NNCF into custom training pipelines.
+* Git patches for prominent third-party repositories 
+  (`huggingface-transformers <https://github.com/huggingface/transformers>`__) 
+  demonstrating the process of integrating NNCF into custom training pipelines.
 
 Installation
 ~~~~~~~~~~~~
 
-NNCF provides the packages available for installation through the PyPI repository. To install the latest version via pip manager, run the following command:
+NNCF provides the packages available for installation through the PyPI 
+repository. To install the latest version via pip manager, run the following command:
 
 .. ref-code-block:: cpp
 
@@ -72,7 +95,8 @@ NNCF provides the packages available for installation through the PyPI repositor
 Usage examples
 ~~~~~~~~~~~~~~
 
-NNCF provides various examples and tutorials that demonstrate usage of optimization methods:
+NNCF provides various examples and tutorials that demonstrate usage of 
+optimization methods:
 
 Tutorials
 ---------
@@ -107,5 +131,4 @@ Additional Resources
 
 * `NNCF in HuggingFace Optimum <https://github.com/openvinotoolkit/openvino_contrib/tree/master/modules/optimum>`__
 
-* :ref:`Post-training optimization <doxid-pot_introduction>`
-
+* :ref:`Post-training optimization <pot_tool_introduction>`

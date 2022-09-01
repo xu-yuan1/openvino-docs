@@ -166,5 +166,5 @@ Run Model Optimizer with the following command line parameters to generate resha
 
 For other applicable parameters, refer to the :ref:`Convert Model from TensorFlow <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>` guide.
 
-For more information about reshape abilities, refer to the :ref:`Using Shape Inference <doxid-openvino_docs__o_v__u_g__shape_inference>` guide.
+For more information about reshape abilities, refer to the :ref:`Using Shape Inference <deploy_infer__shape_inference>` guide.
 

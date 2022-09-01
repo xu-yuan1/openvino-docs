@@ -1,13 +1,18 @@
 .. index:: pair: page; OpenVINO Extensibility Mechanism
-.. _doxid-openvino_docs__extensibility__u_g__intro:
+.. _extensibility__api_introduction:
+
+.. meta::
+   :description: Extensibility API allows adding support for custom operations and using one 
+                 implementation for Model Optimizer and OpenVINO™ Runtime.
+   :keywords: extensibility, extensibility api, neural network model, framework, custom operations,
+              model optimizer, OpenVINO Runtime, mapping, import, frontend, load extension,
+              OpenVINO IR, identity, python api, load model, extension library 
 
 
 OpenVINO Extensibility Mechanism
 ================================
 
-:target:`doxid-openvino_docs__extensibility__u_g__intro_1md_openvino_docs_extensibility_ug_intro`
-
-
+:target:`extensibility__api_introduction_1md_openvino_docs_extensibility_ug_intro`
 
 
 
@@ -33,7 +38,7 @@ Importing models with such operations requires additional steps. This guide illu
 
 Defining a new custom operation basically consist of two parts:
 
-#. Definition of operation semantics in OpenVINO, the code that describes how this operation should be inferred consuming input tensor(s) and producing output tensor(s). How to implement execution kernels for :ref:`GPU <doxid-openvino_docs__extensibility__u_g__g_p_u>` and :ref:`VPU <doxid-openvino_docs__extensibility__u_g__v_p_u__kernel>` is described in separate guides.
+#. Definition of operation semantics in OpenVINO, the code that describes how this operation should be inferred consuming input tensor(s) and producing output tensor(s). How to implement execution kernels for :ref:`GPU <extensibility__gpu>` and :ref:`VPU <extensibility__vpu>` is described in separate guides.
 
 #. Mapping rule that facilitates conversion of framework operation representation to OpenVINO defined operation semantics.
 
@@ -44,7 +49,7 @@ Definition of Operation Semantics
 
 If the custom operation can be mathematically represented as a combination of exiting OpenVINO operations and such decomposition gives desired performance, then low-level operation implementation is not required. When deciding feasibility of such decomposition refer to the latest OpenVINO operation set. You can use any valid combination of exiting operations. How to map a custom operation is described in the next section of this document.
 
-If such decomposition is not possible or appears too bulky with lots of consisting operations that are not performing well, then a new class for the custom operation should be implemented as described in the :ref:`Custom Operation Guide <doxid-openvino_docs__extensibility__u_g_add_openvino_ops>`.
+If such decomposition is not possible or appears too bulky with lots of consisting operations that are not performing well, then a new class for the custom operation should be implemented as described in the :ref:`Custom Operation Guide <extensibility__custom_operations>`.
 
 Prefer implementing a custom operation class if you already have a generic C++ implementation of operation kernel. Otherwise try to decompose the operation first as described above and then after verifying correctness of inference and resulting performance, optionally invest to implementing bare metal C++ implementation.
 
@@ -53,9 +58,9 @@ Mapping from Framework Operation
 
 Depending on model format used for import, mapping of custom operation is implemented differently, choose one of:
 
-#. If model is represented in ONNX (including models exported from Pytorch in ONNX) or PaddlePaddle formats, then one of the classes from :ref:`Frontend Extension API <doxid-openvino_docs__extensibility__u_g__frontend__extensions>` should be used. It consists of several classes available in C++ which can be used with Model Optimizer ``--extensions`` option or when model is imported directly to OpenVINO run-time using read_model method. Python API is also available for run-time model importing.
+#. If model is represented in ONNX (including models exported from Pytorch in ONNX) or PaddlePaddle formats, then one of the classes from :ref:`Frontend Extension API <extensibility__frontend_extensions>` should be used. It consists of several classes available in C++ which can be used with Model Optimizer ``--extensions`` option or when model is imported directly to OpenVINO run-time using read_model method. Python API is also available for run-time model importing.
 
-#. If model is represented in TensorFlow, Caffe, Kaldi or MXNet formats, then :ref:`Model Optimizer Extensions <doxid-openvino_docs__m_o__d_g_prepare_model_customize_model_optimizer__customize__model__optimizer>` should be used. This approach is available for model conversion in Model Optimizer only.
+#. If model is represented in TensorFlow, Caffe, Kaldi or MXNet formats, then :ref:`Model Optimizer Extensions <extensibility__model_optimizer>` should be used. This approach is available for model conversion in Model Optimizer only.
 
 Existing of two approaches simultaneously is explained by two different types of frontends used for model conversion in OpenVINO: new frontends (ONNX, PaddlePaddle) and legacy frontends (TensorFlow, Caffe, Kaldi and Apache MXNet). Model Optimizer can use both front-ends in contrast to the direct import of model with ``read_model`` method which can use new frontends only. Follow one of the appropriate guides referenced above to implement mappings depending on framework frontend.
 
@@ -151,7 +156,7 @@ Extensions can be loaded from code with ``:ref:`ov::Core::add_extension <doxid-c
 
 
 
-``Identity`` is custom operation class defined in :ref:`Custom Operation Guide <doxid-openvino_docs__extensibility__u_g_add_openvino_ops>`. This is enough to enable reading IR which uses ``Identity`` extension operation emitted by Model Optimizer. To be able to load original model directly to the runtime, you need to add also a mapping extension:
+``Identity`` is custom operation class defined in :ref:`Custom Operation Guide <extensibility__custom_operations>`. This is enough to enable reading IR which uses ``Identity`` extension operation emitted by Model Optimizer. To be able to load original model directly to the runtime, you need to add also a mapping extension:
 
 .. tab:: C++
 
@@ -296,7 +301,7 @@ After the build you can use path to your extension library to load your extensio
 See Also
 ~~~~~~~~
 
-* :ref:`OpenVINO Transformations <doxid-openvino_docs_transformations>`
+* :ref:`OpenVINO Transformations <extensibility_transformations__overview>`
 
 * :ref:`Using OpenVINO Runtime Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
 

@@ -1,11 +1,23 @@
 .. index:: pair: page; VPU Devices
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u:
+.. _deploy_infer__vpu_device:
+
+.. meta::
+   :description:  Plugins that support Intel® Neural Compute Stick 2 powered 
+                  by the Intel® Movidius™ Myriad™ X and Intel® Vision 
+                  Accelerator Design with Intel® Movidius™ VPUs. 
+   :keywords: OpenVINO™, OpenVINO™ Runtime plugin, inference, deep learning 
+              model, model inference, VPU Plugin, VPU device, inference device, 
+              MYRIAD plugin, HDDL plugin, Intel® Neural Compute Stick 2, 
+              Intel® Movidius™ Myriad™ X, Intel® Vision Accelerator Design, 
+              Intel® Movidius™ VPU, layer fusion, layer decomposition, 
+              Convolution, ReLU, Eltwise, VPU configuration, VPU configuration 
+              parameters, MYRIAD, HDDL
 
 
 VPU Devices
 ===========
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u_1md_openvino_docs_ov_runtime_ug_supported_plugins_vpu`
+:target:`deploy_infer__vpu_device_1md_openvino_docs_ov_runtime_ug_supported_plugins_vpu`
 
 .. toctree::
    :maxdepth: 1
@@ -16,9 +28,9 @@ VPU Devices
 
 This chapter provides information on the OpenVINO™ Runtime plugins that enable inference of deep learning models on the supported VPU devices:
 
-* Intel® Neural Compute Stick 2 powered by the Intel® Movidius™ Myriad™ X — Supported by the :ref:`MYRIAD Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d>`
+* Intel® Neural Compute Stick 2 powered by the Intel® Movidius™ Myriad™ X — Supported by the :ref:`MYRIAD Plugin <deploy_infer__vpu_myriad_device>`
 
-* Intel® Vision Accelerator Design with Intel® Movidius™ VPUs — Supported by the :ref:`HDDL Plugin <doxid-openvino_docs__o_v__u_g_supported_plugins__h_d_d_l>`
+* Intel® Vision Accelerator Design with Intel® Movidius™ VPUs — Supported by the :ref:`HDDL Plugin <deploy_infer__vpu_hddl_device>`
 
 .. note::
 
@@ -229,7 +241,7 @@ Troubleshooting
 
 **When running inference with the VPU plugin: "[VPU] Cannot convert layer <layer_name> due to unsupported layer type <layer_type>"**
 
-This means that the topology has a layer unsupported by the target VPU plugin. To resolve this issue, the custom layer can be implemented for the target device, using the :ref:`OpenVINO™ Extensibility mechanism <doxid-openvino_docs__extensibility__u_g__intro>`. To quickly get a working prototype, use the heterogeneous scenario with the default fallback policy (see the :ref:`Heterogeneous execution <doxid-openvino_docs__o_v__u_g__hetero_execution>` section). Use the HETERO mode with a fallback device that supports this layer, for example, CPU: ``HETERO:MYRIAD,CPU``. For a list of VPU-supported layers, see the **Supported Layers** section of the :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` page.
+This means that the topology has a layer unsupported by the target VPU plugin. To resolve this issue, the custom layer can be implemented for the target device, using the :ref:`OpenVINO™ Extensibility mechanism <extensibility__api_introduction>`. To quickly get a working prototype, use the heterogeneous scenario with the default fallback policy (see the :ref:`Heterogeneous execution <deploy_infer__hetero_plugin>` section). Use the HETERO mode with a fallback device that supports this layer, for example, CPU: ``HETERO:MYRIAD,CPU``. For a list of VPU-supported layers, see the **Supported Layers** section of the :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` page.
 
 Known Layers Limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~

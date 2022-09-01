@@ -1,11 +1,25 @@
 .. index:: pair: page; CPU Device
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u:
+.. _deploy_infer__cpu_device:
 
+.. meta::
+   :description: The CPU plugin in the Intel® Distribution of OpenVINO™ toolkit 
+                 is developed to achieve high performance inference of neural 
+                 networks on Intel® x86-64 CPUs.
+   :keywords: OpenVINO™, CPU plugin, Intel® x86-64 CPU, OpenVINO Runtime CPU plugin, 
+              device name, compile_model, NUMA node, inference device, inference, 
+              model inference, inference data types, floating-point data type, 
+              integer data type, quantized data type, f32, bf16, Bfloat16, i32, 
+              u8, i8, u1, AVX512_BF16, convert model, model precision, multi-device 
+              execution, multi-stream execution, dynamic shapes, preprocessing 
+              acceleration, model caching, extensibility, stateful models, read-write 
+              properties, read-only properties, denormals optimization, denormals, 
+              denormal number, FTZ, Flush-To-Zero, DAZ, Denormals-As-Zero, 
+              denormals_optimization
 
 CPU Device
 ==========
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__c_p_u_1md_openvino_docs_ov_runtime_ug_supported_plugins_cpu` 
+:target:`deploy_infer__cpu_device_1md_openvino_docs_ov_runtime_ug_supported_plugins_cpu` 
 
 The CPU plugin is a part of the Intel® Distribution of OpenVINO™ toolkit. It is 
 developed to achieve high performance inference of neural networks on Intel® x86-64 
@@ -78,14 +92,14 @@ quantization primitives, and available hardware capabilities. The ``u1/u8/i8`` d
 types are used for quantized operations only, i.e., those are not selected 
 automatically for non-quantized operations.
 
-See the :ref:`low-precision optimization guide <doxid-openvino_docs_model_optimization_guide>` 
+See the :ref:`low-precision optimization guide <model_optimization_guide>` 
 for more details on how to get a quantized model.
 
 .. note:: 
 
    Platforms that do not support Intel® AVX512-VNNI have a known "saturation issue" 
    that may lead to reduced computational accuracy for ``u8/i8`` precision calculations. 
-   See the :ref:`saturation (overflow) issue section <doxid-pot_saturation_issue>` to 
+   See the :ref:`saturation (overflow) issue section <pot_saturation_issue>` to 
    get more information on how to detect such issues and possible workarounds.
 
 
@@ -108,7 +122,7 @@ Using the ``bf16`` precision provides the following performance benefits:
 * Reduced memory consumption since ``bfloat16`` data half the size of 32-bit float.
 
 To check if the CPU device can support the ``bfloat16`` data type, use the 
-:ref:`query device properties interface <doxid-openvino_docs__o_v__u_g_query_api>` to query 
+:ref:`query device properties interface <deploy_infer__query_device_properties>` to query 
 ``:ref:`ov::device::capabilities <doxid-group__ov__runtime__cpp__prop__api_1gadb13d62787fc4485733329f044987294>``` 
 property, which should contain ``BF16`` in the list of CPU capabilities:
 
@@ -209,14 +223,14 @@ simultaneous usage of CPU and GPU.
       compiled_model = core.compile_model(model, "MULTI:CPU,GPU.0")
 
 
-For more details, see the :ref:`Multi-device execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>` article.
+For more details, see the :ref:`Multi-device execution <deploy_infer__multi_plugin>` article.
 
 Multi-stream Execution
 ----------------------
 
 If either ``ov::num_streams(n_streams)`` with ``n_streams > 1`` or ``ov::hint::performance_mode(ov::hint::PerformanceMode::THROUGHPUT)`` property is set for CPU plugin, then multiple streams are created for the model. In case of CPU plugin, each stream has its own host thread, which means that incoming infer requests can be processed simultaneously. Each stream is pinned to its own group of physical cores with respect to NUMA nodes physical memory usage to minimize overhead on data transfer between NUMA nodes.
 
-For more details, see the :ref:`optimization guide <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`.
+For more details, see the :ref:`optimization guide <runtime_inference_optimizations>`.
 
 .. note:: 
 
@@ -224,7 +238,7 @@ For more details, see the :ref:`optimization guide <doxid-openvino_docs_deployme
    platform may introduce additional overheads on data transfer between NUMA nodes. 
    In that case it is better to use the 
    ``:ref:`ov::hint::PerformanceMode::LATENCY <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a501069dd75f76384ba18f133fdce99c2>``` 
-   performance hint. For more details see the :ref:`performance hints <doxid-openvino_docs__o_v__u_g__performance__hints>` overview.
+   performance hint. For more details see the :ref:`performance hints <deploy_infer__performance_hints>` overview.
 
 
 Dynamic Shapes
@@ -299,7 +313,7 @@ the static input shape to get the best performance.
       model.reshape([10, 20, 30, 40])
 
 
-For more details, see the :ref:`dynamic shapes guide <doxid-openvino_docs__o_v__u_g__dynamic_shapes>`.
+For more details, see the :ref:`dynamic shapes guide <deploy_infer__dynamic_shapes>`.
 
 
 Preprocessing Acceleration
@@ -307,7 +321,7 @@ Preprocessing Acceleration
 
 CPU plugin supports a full set of the preprocessing operations, providing high performance implementations for them.
 
-For more details, see :ref:`preprocessing API guide <doxid-openvino_docs__o_v__u_g__preprocessing__overview>`.
+For more details, see :ref:`preprocessing API guide <deploy_infer__preprocessing_overview>`.
 
 .. dropdown:: The CPU plugin support for handling tensor precision conversion is limited to the following ov::element types:
 
@@ -340,17 +354,17 @@ will be skipped. These transformations take a significant amount of time during 
 compilation, so caching this representation reduces time spent for subsequent compilations 
 of the model, thereby reducing first inference latency (FIL).
 
-For more details, see the :ref:`model caching <doxid-openvino_docs__o_v__u_g__model_caching_overview>` overview.
+For more details, see the :ref:`model caching <model_caching_overview>` overview.
 
 Extensibility
 -------------
 
 CPU plugin supports fallback on ``ov::Op`` reference implementation if the plugin do 
 not have its own implementation for such operation. That means that 
-:ref:`OpenVINO™ Extensibility Mechanism <doxid-openvino_docs__extensibility__u_g__intro>` 
+:ref:`OpenVINO™ Extensibility Mechanism <extensibility__api_introduction>` 
 can be used for the plugin extension as well. Enabling fallback on a custom operation 
 implementation is possible by overriding the ``ov::Op::evaluate`` method in the derived operation class 
-(see :ref:`custom OpenVINO™ operations <doxid-openvino_docs__extensibility__u_g_add_openvino_ops>` for details).
+(see :ref:`custom OpenVINO™ operations <extensibility__custom_operations>` for details).
 
 .. note:: 
 
@@ -364,7 +378,7 @@ Stateful Models
 
 The CPU plugin supports stateful models without any limitations.
 
-For details, see :ref:`stateful models guide <doxid-openvino_docs__o_v__u_g_network_state_intro>`.
+For details, see :ref:`stateful models guide <deploy_infer__stateful_models>`.
 
 Supported Properties
 ~~~~~~~~~~~~~~~~~~~~
@@ -492,6 +506,6 @@ Additional Resources
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 
-* :ref:`Optimization guide <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`
+* :ref:`Optimization guide <performance_optimization_guide_introduction>`
 
 * `СPU plugin developers documentation <https://github.com/openvinotoolkit/openvino/wiki/CPUPluginDevelopersDocs>`__

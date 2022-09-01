@@ -1,11 +1,22 @@
 .. index:: pair: page; Dynamic Shapes
-.. _doxid-openvino_docs__o_v__u_g__dynamic_shapes:
+.. _deploy_infer__dynamic_shapes:
 
+.. meta::
+   :description: The Reshape method in OpenVINO Runtime API can handle dynamic 
+                 shapes of models that support changing input shapes before 
+                 model compilation.
+   :keywords: OpenVINO, OpenVINO Runtime API, inference, model inference, model 
+              shape, input shape, dynamic shape, dynamic dimensions, sequence 
+              length, ov::Dimension, ov.Dimension, lower bounds, upper bounds, 
+              reshape model, reshape method, compile_model method, spatial dimensions, 
+              batch dimension, undefined dimensions, OpenVINO IR, model optimizer, 
+              get_input_tensor, set_input_tensor, set_shape, tensor, partial shape, 
+              partial_shape, get_partial_shape
 
 Dynamic Shapes
 ==============
 
-:target:`doxid-openvino_docs__o_v__u_g__dynamic_shapes_1md_openvino_docs_ov_runtime_ug_ov_dynamic_shapes`
+:target:`deploy_infer__dynamic_shapes_1md_openvino_docs_ov_runtime_ug_ov_dynamic_shapes`
 
 .. toctree::
    :maxdepth: 1
@@ -13,7 +24,7 @@ Dynamic Shapes
 
    ./dynamic-shapes/dynamic-shapes-not-applicable
 
-As it was demonstrated in the :ref:`Changing Input Shapes <doxid-openvino_docs__o_v__u_g__shape_inference>` article, there are models that support changing input shapes before model compilation in ``Core::compile_model``. Reshaping models provides an ability to customize the model input shape for the exact size required in the end application. This article explains how the ability of model to reshape can further be leveraged in more dynamic scenarios.
+As it was demonstrated in the :ref:`Changing Input Shapes <deploy_infer__shape_inference>` article, there are models that support changing input shapes before model compilation in ``Core::compile_model``. Reshaping models provides an ability to customize the model input shape for the exact size required in the end application. This article explains how the ability of model to reshape can further be leveraged in more dynamic scenarios.
 
 Applying Dynamic Shapes
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,7 +41,7 @@ Below are several examples of dimensions that can be naturally dynamic:
 
 * Arbitrary number of detections in object detection models output
 
-There are various methods to address input dynamic dimensions through combining multiple pre-reshaped models and input data padding. The methods are sensitive to model internals, do not always give optimal performance and are cumbersome. For a short overview of the methods, refer to the :ref:`When Dynamic Shapes API is Not Applicable <doxid-openvino_docs__o_v__u_g__no_dynamic_shapes>` page. Apply those methods only if native dynamic shape API described in the following sections does not work or does not perform as expected.
+There are various methods to address input dynamic dimensions through combining multiple pre-reshaped models and input data padding. The methods are sensitive to model internals, do not always give optimal performance and are cumbersome. For a short overview of the methods, refer to the :ref:`When Dynamic Shapes API is Not Applicable <deploy_infer__no_dynamic_shapes>` page. Apply those methods only if native dynamic shape API described in the following sections does not work or does not perform as expected.
 
 The decision about using dynamic shapes should be based on proper benchmarking of a real application with real data. Unlike statically shaped models, dynamically shaped ones require different inference time, depending on input data shape or input tensor content. Furthermore, using the dynamic shapes can bring more overheads in memory and running time of each inference call depending on hardware plugin and model used.
 
@@ -242,14 +253,14 @@ Apart from a dynamic dimension, the lower and/or upper bounds can also be specif
 
 Information about bounds gives an opportunity for the inference plugin to apply additional optimizations. Using dynamic shapes assumes the plugins apply more flexible optimization approach during model compilation. It may require more time/memory for model compilation and inference. Therefore, providing any additional information, like bounds, can be beneficial. For the same reason, it is not recommended to leave dimensions as undefined, without the real need.
 
-When specifying bounds, the lower bound is not as important as the upper one. The upper bound allows inference devices to allocate memory for intermediate tensors more precisely. It also allows using a fewer number of tuned kernels for different sizes. More precisely, benefits of specifying the lower or upper bound is device dependent. Depending on the plugin, specifying the upper bounds can be required. For information about dynamic shapes support on different devices, refer to the :ref:`Features Support Matrix <doxid-openvino_docs__o_v__u_g__working_with_devices_1features_support_matrix>`.
+When specifying bounds, the lower bound is not as important as the upper one. The upper bound allows inference devices to allocate memory for intermediate tensors more precisely. It also allows using a fewer number of tuned kernels for different sizes. More precisely, benefits of specifying the lower or upper bound is device dependent. Depending on the plugin, specifying the upper bounds can be required. For information about dynamic shapes support on different devices, refer to the :ref:`Features Support Matrix <deploy_infer__working_with_devices_1features_support_matrix>`.
 
 If the lower and upper bounds for a dimension are known, it is recommended to specify them, even if a plugin can execute a model without the bounds.
 
 Setting Input Tensors
 ---------------------
 
-Preparing a model with the ``reshape`` method is the first step. The second step is passing a tensor with an appropriate shape to infer request. This is similar to the :ref:`regular steps <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>`. However, tensors can now be passed with different shapes for the same executable model and even for the same inference request:
+Preparing a model with the ``reshape`` method is the first step. The second step is passing a tensor with an appropriate shape to infer request. This is similar to the :ref:`regular steps <deploy_infer__integrate_application>`. However, tensors can now be passed with different shapes for the same executable model and even for the same inference request:
 
 .. raw:: html
 

@@ -1,15 +1,23 @@
 .. index:: pair: page; Deploying Your Applications with OpenVINO™
-.. _doxid-openvino_deployment_guide:
+.. _deploy_infer__deploy_app_intro:
 
+.. meta::
+   :description: There are several ways of deploying OpenVINO™ application once 
+                 its development has been finished.
+   :keywords: OpenVINO™, OpenVINO™ application, deploy application, centralized 
+              distribution, OpenVINO Deployment Manager, distribution type, 
+              local distribution, RPM packages, Docker images, PIP, PIP package 
+              manager, PYPI, Ubuntu 18.04 LTS, Ubuntu 20.04 LTS, 64-bit, 
+              build OpenVINO statically, operating system, granularity, 
+              OpenVINO package, plugin libraries, openvino_intel_cpu_plugin, 
+              openvino_ir_frontend, openvino_c, Red Hat Enterprise Linux 8, 
+              Windows Server Core base LTSC 2019, Windows 10 64-bit, 
+              version 20H2, OpenVINO IR, PaddlePaddle, ONNX
 
 Deploying Your Applications with OpenVINO™
 ============================================
 
-:target:`doxid-openvino_deployment_guide_1md_openvino_docs_ov_runtime_ug_deployment_deployment_intro`
-
-
-
-
+:target:`deploy_infer__deploy_app_intro_1md_openvino_docs_ov_runtime_ug_deployment_deployment_intro`
 
 .. toctree::
    :maxdepth: 1
@@ -18,7 +26,7 @@ Deploying Your Applications with OpenVINO™
    ./openvino-deployment-guide/deployment-manager-tool
    ./openvino-deployment-guide/local-distribution
 
-Once the :ref:`OpenVINO™ application development <doxid-openvino_docs__o_v__u_g__integrate__o_v_with_your_application>` has been finished, application developers usually need to deploy their applications to end users. There are several ways to achieve that:
+Once the :ref:`OpenVINO™ application development <deploy_infer__integrate_application>` has been finished, application developers usually need to deploy their applications to end users. There are several ways to achieve that:
 
 * Set a dependency on the existing prebuilt packages, also called "centralized distribution":
   
@@ -30,7 +38,7 @@ Once the :ref:`OpenVINO™ application development <doxid-openvino_docs__o_v__u_
 
 * Grab a necessary functionality of OpenVINO together with your application, also called "local distribution":
   
-  * using :ref:`OpenVINO Deployment Manager <doxid-openvino_docs_install_guides_deployment_manager_tool>` - providing a convenient way for creating a distribution package;
+  * using :ref:`OpenVINO Deployment Manager <deploy_infer__deploy_manager>` - providing a convenient way for creating a distribution package;
   
   * using the advanced :ref:`local distribution <doxid-openvino_docs_deploy_local_distribution>` approach;
   
@@ -51,7 +59,7 @@ The table below shows which distribution type can be used for what target operat
       - Ubuntu 18.04 long-term support (LTS), 64-bit; Ubuntu 20.04 long-term support (LTS), 64-bit; Red Hat Enterprise Linux 8, 64-bit; Windows Server Core base LTSC 2019, 64-bit; Windows 10, version 20H2, 64-bit
     * - PyPI (PIP package manager)
       - See `https://pypi.org/project/openvino/ <https://pypi.org/project/openvino/>`__
-    * - :ref:`OpenVINO Deployment Manager <doxid-openvino_docs_install_guides_deployment_manager_tool>`
+    * - :ref:`OpenVINO Deployment Manager <deploy_infer__deploy_manager>`
       - All operating systems
     * - :ref:`Local distribution <doxid-openvino_docs_deploy_local_distribution>`
       - All operating systems
@@ -67,7 +75,7 @@ The granularity of OpenVINO packages may vary for different distribution types. 
 
 * The main library ``openvino`` is used by users' C++ applications to link against with. The library provides all OpenVINO Runtime public APIs, including both API 2.0 and the previous Inference Engine and nGraph APIs. For C language applications, ``openvino_c`` is additionally required for distribution.
 
-* The "optional" plugin libraries like ``openvino_intel_cpu_plugin`` (matching the ``openvino_.+_plugin`` pattern) are used to provide inference capabilities on specific devices or additional capabilities like :ref:`Hetero Execution <doxid-openvino_docs__o_v__u_g__hetero_execution>` and :ref:`Multi-Device Execution <doxid-openvino_docs__o_v__u_g__running_on_multiple_devices>`.
+* The "optional" plugin libraries like ``openvino_intel_cpu_plugin`` (matching the ``openvino_.+_plugin`` pattern) are used to provide inference capabilities on specific devices or additional capabilities like :ref:`Hetero Execution <deploy_infer__hetero_plugin>` and :ref:`Multi-Device Execution <deploy_infer__multi_plugin>`.
 
 * The "optional" plugin libraries like ``openvino_ir_frontend`` (matching ``openvino_.+_frontend``) are used to provide capabilities to read models of different file formats such as OpenVINO IR, ONNX, and PaddlePaddle.
 

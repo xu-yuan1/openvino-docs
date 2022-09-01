@@ -10,13 +10,13 @@ Preprocessing
 How Preprocessing Works in API 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Inference Engine API contains preprocessing capabilities in the ``:ref:`InferenceEngine::CNNNetwork <doxid-class_inference_engine_1_1_c_n_n_network>``` class. Such preprocessing information is not a part of the main inference graph executed by :ref:`OpenVINO devices <doxid-openvino_docs__o_v__u_g__working_with_devices>`. Therefore, it is stored and executed separately before the inference stage:
+Inference Engine API contains preprocessing capabilities in the ``:ref:`InferenceEngine::CNNNetwork <doxid-class_inference_engine_1_1_c_n_n_network>``` class. Such preprocessing information is not a part of the main inference graph executed by :ref:`OpenVINO devices <deploy_infer__working_with_devices>`. Therefore, it is stored and executed separately before the inference stage:
 
 * Preprocessing operations are executed on the CPU for most OpenVINO inference plugins. Thus, instead of occupying accelerators, they keep the CPU busy with computational tasks.
 
 * Preprocessing information stored in ``:ref:`InferenceEngine::CNNNetwork <doxid-class_inference_engine_1_1_c_n_n_network>``` is lost when saving back to the OpenVINO IR file format.
 
-API 2.0 introduces a :ref:`new way of adding preprocessing operations to the model <doxid-openvino_docs__o_v__u_g__preprocessing__overview>` - each preprocessing or post-processing operation is integrated directly into the model and compiled together with the inference graph:
+API 2.0 introduces a :ref:`new way of adding preprocessing operations to the model <deploy_infer__preprocessing_overview>` - each preprocessing or post-processing operation is integrated directly into the model and compiled together with the inference graph:
 
 * API 2.0 first adds preprocessing operations by using ``:ref:`ov::preprocess::PrePostProcessor <doxid-classov_1_1preprocess_1_1_pre_post_processor>```,
 
@@ -24,9 +24,9 @@ API 2.0 introduces a :ref:`new way of adding preprocessing operations to the mod
 
 Having preprocessing operations as a part of an OpenVINO opset makes it possible to read and serialize a preprocessed model as the OpenVINO™ IR file format.
 
-More importantly, API 2.0 does not assume any default layouts as Inference Engine did. For example, both ``{ 1, 224, 224, 3 }`` and ``{ 1, 3, 224, 224 }`` shapes are supposed to be in the ``NCHW`` layout, while only the latter is. Therefore, some preprocessing capabilities in the API require layouts to be set explicitly. To learn how to do it, refer to the :ref:`Layout overview <doxid-openvino_docs__o_v__u_g__layout__overview>`. For example, to perform image scaling by partial dimensions ``H`` and ``W``, preprocessing needs to know what dimensions ``H`` and ``W`` are.
+More importantly, API 2.0 does not assume any default layouts as Inference Engine did. For example, both ``{ 1, 224, 224, 3 }`` and ``{ 1, 3, 224, 224 }`` shapes are supposed to be in the ``NCHW`` layout, while only the latter is. Therefore, some preprocessing capabilities in the API require layouts to be set explicitly. To learn how to do it, refer to the :ref:`Layout overview <deploy_infer__layout_api_overview>`. For example, to perform image scaling by partial dimensions ``H`` and ``W``, preprocessing needs to know what dimensions ``H`` and ``W`` are.
 
-.. note:: Use Model Optimizer preprocessing capabilities to insert preprocessing operations in your model for optimization. Thus, the application does not need to read the model and set preprocessing repeatedly. You can use the :ref:`model caching feature <doxid-openvino_docs__o_v__u_g__model_caching_overview>` to improve the time-to-inference.
+.. note:: Use Model Optimizer preprocessing capabilities to insert preprocessing operations in your model for optimization. Thus, the application does not need to read the model and set preprocessing repeatedly. You can use the :ref:`model caching feature <model_caching_overview>` to improve the time-to-inference.
 
 
 
@@ -664,7 +664,7 @@ Converting Color Space
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Preprocessing details <doxid-openvino_docs__o_v__u_g__preprocessing__details>`
+* :ref:`Preprocessing details <deploy_infer__preprocessing_api>`
 
 * :ref:`NV12 classification sample <doxid-openvino_inference_engine_samples_hello_nv12_input_classification__r_e_a_d_m_e>`
 

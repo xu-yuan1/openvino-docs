@@ -211,5 +211,5 @@ See Also
 
 * :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
 
-* :ref:`Deep Learning Workbench Security <doxid-openvino_docs_security_guide_workbench>`
+* :ref:`Deep Learning Workbench Security <security__dl_workbench>`
 

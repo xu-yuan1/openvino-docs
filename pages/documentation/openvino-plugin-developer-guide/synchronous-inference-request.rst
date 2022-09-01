@@ -1,22 +1,30 @@
 .. index:: pair: page; Synchronous Inference Request
-.. _doxid-openvino_docs_ie_plugin_dg_infer_request:
+.. _extensibility_plugin__synch_inf_req:
+
+.. meta::
+   :description: Information about Synchronous Inference Request functionality.
+   :keywords: Synchronous Inference Request, input blob, output blob, backend,
+              functions, inference process, inference stages, Inference Engine Plugin API
 
 
 Synchronous Inference Request
 =============================
 
-:target:`doxid-openvino_docs_ie_plugin_dg_infer_request_1md_openvino_docs_ie_plugin_dg_inferrequest` ``InferRequest`` class functionality:
+:target:`extensibility_plugin__synch_inf_req_1md_openvino_docs_ie_plugin_dg_inferrequest` ``InferRequest`` class functionality:
 
 * Allocate input and output blobs needed for a backend-dependent network inference.
 
-* Define functions for inference process stages (for example, ``preprocess``, ``upload``, ``infer``, ``download``, ``postprocess``). These functions can later be used to define an execution pipeline during :ref:`Asynchronous Inference Request <doxid-openvino_docs_ie_plugin_dg_async_infer_request>` implementation.
+* Define functions for inference process stages (for example, ``preprocess``, ``upload``, ``infer``, ``download``, ``postprocess``). These functions can later be used to define an execution pipeline during :ref:`Asynchronous Inference Request <extensibility_plugin__async_infer_req>` implementation.
 
 * Call inference stages one by one synchronously.
 
 Class
 ~~~~~
 
-Inference Engine Plugin API provides the helper :ref:`InferenceEngine::IInferRequestInternal <doxid-class_inference_engine_1_1_i_infer_request_internal>` class recommended to use as a base class for a synchronous inference request implementation. Based of that, a declaration of a synchronous request class can look as follows:
+Inference Engine Plugin API provides the helper 
+:ref:`InferenceEngine::IInferRequestInternal <doxid-class_inference_engine_1_1_i_infer_request_internal>` class recommended 
+to use as a base class for a synchronous inference request implementation. Based of that, a declaration of a synchronous request 
+class can look as follows:
 
 .. ref-code-block:: cpp
 
@@ -138,10 +146,13 @@ The constructor initializes helper fields and calls methods which allocate blobs
 	    allocateBlobs();
 	}
 
-.. note:: Call :ref:`InferenceEngine::CNNNetwork::getInputsInfo <doxid-class_inference_engine_1_1_c_n_n_network_1a76de2a6101fe8276f56b0dc0f99c7ff7>` and :ref:`InferenceEngine::CNNNetwork::getOutputsInfo <doxid-class_inference_engine_1_1_c_n_n_network_1af8a6200f549b15a895e2cfefd304a9c2>` to specify both layout and precision of blobs, which you can set with :ref:`InferenceEngine::InferRequest::SetBlob <doxid-class_inference_engine_1_1_infer_request_1a27fb179e3bae652d76076965fd2a5653>` and get with :ref:`InferenceEngine::InferRequest::GetBlob <doxid-class_inference_engine_1_1_infer_request_1a9601a4cda3f309181af34feedf1b914c>`. A plugin uses these hints to determine its internal layouts and precisions for input and output blobs if needed.
-
-
-
+.. note::
+   Call :ref:`InferenceEngine::CNNNetwork::getInputsInfo <doxid-class_inference_engine_1_1_c_n_n_network_1a76de2a6101fe8276f56b0dc0f99c7ff7>` 
+   and :ref:`InferenceEngine::CNNNetwork::getOutputsInfo <doxid-class_inference_engine_1_1_c_n_n_network_1af8a6200f549b15a895e2cfefd304a9c2>` 
+   to specify both layout and precision of blobs, which you can set with 
+   :ref:`InferenceEngine::InferRequest::SetBlob <doxid-class_inference_engine_1_1_infer_request_1a27fb179e3bae652d76076965fd2a5653>` 
+   and get with :ref:`InferenceEngine::InferRequest::GetBlob <doxid-class_inference_engine_1_1_infer_request_1a9601a4cda3f309181af34feedf1b914c>`. 
+   A plugin uses these hints to determine its internal layouts and precisions for input and output blobs if needed.
 
 
 Destructor
@@ -340,5 +351,6 @@ The method sets performance counters which were measured during pipeline stages 
 	    return perfMap;
 	}
 
-The next step in the plugin library implementation is the :ref:`Asynchronous Inference Request <doxid-openvino_docs_ie_plugin_dg_async_infer_request>` class.
+The next step in the plugin library implementation is the 
+:ref:`Asynchronous Inference Request <extensibility_plugin__async_infer_req>` class.
 

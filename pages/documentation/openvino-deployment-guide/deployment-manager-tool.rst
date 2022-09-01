@@ -1,11 +1,26 @@
 .. index:: pair: page; Deploying Your Application with Deployment Manager
-.. _doxid-openvino_docs_install_guides_deployment_manager_tool:
+.. _deploy_infer__deploy_manager:
 
+.. meta::
+   :description: OpenVINO™ Deployment Manager assembles the model, OpenVINO IR 
+                 files, your application, dependencies and creates a deployment 
+                 package for a target device.
+   :keywords: OpenVINO™, OpenVINO™ Deployment Manager, deployment, deployment 
+              manager, command-line tool, Python, deployment package, target 
+              device, additional dependencies, dependencies, Microsoft Visual 
+              C++ Redistributable, OpenVINO™ toolkit, device drivers, 
+              configuration, Intel® Processor Graphics, Intel® Neural Compute 
+              Stick 2, Intel® Vision Accelerator Design, create deployment 
+              package, Intel® Gaussian & Neural Accelerator, Intel CPU, 
+              Intel GPU, GNA, Intel GNA, OpenVINO runtime, interactive mode, 
+              deployment_manager, standard CLI mode, CLI mode
 
 Deploying Your Application with Deployment Manager
 ==================================================
 
-:target:`doxid-openvino_docs_install_guides_deployment_manager_tool_1md_openvino_docs_ov_runtime_ug_deployment_deployment_manager_tool` The OpenVINO™ Deployment Manager is a Python command-line tool that creates a deployment package by assembling the model, OpenVINO IR files, your application, and associated dependencies into a runtime package for your target device. This tool is delivered within the Intel® Distribution of OpenVINO™ toolkit for Linux, Windows and macOS release packages. It is available in the ``<INSTALL_DIR>/tools/deployment_manager`` directory after installation.
+:target:`deploy_infer__deploy_manager_1md_openvino_docs_ov_runtime_ug_deployment_deployment_manager_tool` 
+
+The OpenVINO™ Deployment Manager is a Python command-line tool that creates a deployment package by assembling the model, OpenVINO IR files, your application, and associated dependencies into a runtime package for your target device. This tool is delivered within the Intel® Distribution of OpenVINO™ toolkit for Linux, Windows and macOS release packages. It is available in the ``<INSTALL_DIR>/tools/deployment_manager`` directory after installation.
 
 This article provides instructions on how to create a package with Deployment Manager and then deploy the package to your target systems.
 

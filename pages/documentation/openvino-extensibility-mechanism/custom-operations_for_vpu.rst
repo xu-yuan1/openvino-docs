@@ -1,15 +1,26 @@
 .. index:: pair: page; How to Implement Custom Layers for VPU (Intel® Neural Compute Stick 2)
-.. _doxid-openvino_docs__extensibility__u_g__v_p_u__kernel:
+.. _extensibility__vpu:
+
+.. meta::
+   :description: Description of custom kernel support for the VPU device to 
+                 enable operations not supported by OpenVINO.
+   :keywords: custom vpu operations, custom nGraph, custom kernel, custom extensions, OpenCL,
+              ComputeAorta, toolchain, compiler, custom layers, topology IR, OpenVINO Runtime,
+              OpenVINO IR, optimizing kernels, tensor node, scalar node, data node, WGV,
+              work-group based vectorizer, SLP, superword level parallelism, LLVM vectorizer, GRN kernel
 
 
 How to Implement Custom Operations for VPU (Intel® Neural Compute Stick 2)
 =======================================================================
 
-:target:`doxid-openvino_docs__extensibility__u_g__v_p_u__kernel_1md_openvino_docs_extensibility_ug_vpu_extensibility` To enable operations not supported by OpenVINO™ out of the box, you need a custom extension for Model Optimizer, a custom nGraph operation set, and a custom kernel for the device you will target. This page describes custom kernel support for one the VPU, the Intel® Neural Compute Stick 2 device, which uses the MYRIAD device plugin.
+:target:`extensibility__vpu_1md_openvino_docs_extensibility_ug_vpu_extensibility` To enable operations not supported by OpenVINO™ 
+out of the box, you need a custom extension for Model Optimizer, a custom nGraph operation set, and a custom kernel for 
+the device you will target. This page describes custom kernel support for one the VPU, the Intel® Neural Compute Stick 2 device, 
+which uses the MYRIAD device plugin.
 
 **NOTES:**
 
-* OpenCL\* custom layer support is available in the preview mode.
+* OpenCL custom layer support is available in the preview mode.
 
 * This section assumes you are familiar with developing kernels using OpenCL.
 
@@ -24,13 +35,18 @@ To customize your topology with an OpenCL layer, carry out the tasks described o
 Compile OpenCL code for VPU (Intel® Neural Compute Stick 2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: OpenCL compiler, targeting Intel® Neural Compute Stick 2 for the SHAVE\* processor only, is redistributed with OpenVINO.
+.. note::
+   OpenCL compiler, targeting Intel® Neural Compute Stick 2 for the SHAVE processor only, is redistributed with OpenVINO.
 
 
 
-OpenCL support is provided by ComputeAorta\* and is distributed under a license agreement between Intel® and Codeplay\* Software Ltd. The OpenCL toolchain for the Intel® Neural Compute Stick 2 supports offline compilation only, so first compile OpenCL C code using the standalone ``clc`` compiler. You can find the compiler binary at ``<INSTALL_DIR>/tools/cl_compiler``.
+OpenCL support is provided by ComputeAorta and is distributed under a license agreement between Intel® and Codeplay Software Ltd. 
+The OpenCL toolchain for the Intel® Neural Compute Stick 2 supports offline compilation only, so first compile OpenCL C code 
+using the standalone ``clc`` compiler. You can find the compiler binary at ``<INSTALL_DIR>/tools/cl_compiler``.
 
-.. note:: By design, custom OpenCL layers support any OpenCL kernels written assuming OpenCL version 1.2. It also supports half float extension and is optimized for this type, because it is a native type for Intel® Movidius™ VPUs.
+.. note::
+   By design, custom OpenCL layers support any OpenCL kernels written assuming OpenCL version 1.2. It also supports 
+   half float extension and is optimized for this type, because it is a native type for Intel® Movidius™ VPUs.
 
 
 
@@ -44,7 +60,8 @@ OpenCL support is provided by ComputeAorta\* and is distributed under a license 
 
 * ``SHAVE_MOVIASM_DIR=<INSTALL_DIR>/tools/cl_compiler/bin/``
 
-Run the compilation with the command below. You should use ``--strip-binary-header`` to make an OpenCL runtime-agnostic binary runnable with the OpenVINO™ Runtime.
+Run the compilation with the command below. You should use ``--strip-binary-header`` to make an OpenCL runtime-agnostic 
+binary runnable with the OpenVINO™ Runtime.
 
 .. ref-code-block:: cpp
 
@@ -54,7 +71,9 @@ Run the compilation with the command below. You should use ``--strip-binary-head
 Write a Configuration File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To tie the topology IR for a layer you customize, prepare a configuration file, so that the OpenVINO™ Runtime can find parameters for your kernel and the execution work grid is described. For example, consider the following OpenCL kernel signature:
+To tie the topology IR for a layer you customize, prepare a configuration file, so that the OpenVINO™ Runtime 
+can find parameters for your kernel and the execution work grid is described. For example, consider the following 
+OpenCL kernel signature:
 
 .. ref-code-block:: cpp
 
@@ -216,11 +235,15 @@ Parameter description supports ``Tensor`` of one of tensor types such as ``input
 Pass Configuration File to OpenVINO™ Runtime
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: If both native and custom layer implementations are present, the custom kernel has a priority over the native one.
+.. note::
+   If both native and custom layer implementations are present, the custom kernel has a priority over the native one.
 
 
 
-Before loading the network that features the custom layers, provide a separate configuration file and load it using the :ref:`ov::Core::set_property() <doxid-classov_1_1_core_1aa953cb0a1601dbc9a34ef6ba82b8476e>` method with the "CONFIG_KEY" key and the configuration file name as a value before loading the network that uses custom operations to the plugin:
+Before loading the network that features the custom layers, provide a separate configuration file and load it 
+using the :ref:`ov::Core::set_property() <doxid-classov_1_1_core_1aa953cb0a1601dbc9a34ef6ba82b8476e>` method with 
+the "CONFIG_KEY" key and the configuration file name as a value before loading the network that uses custom operations 
+to the plugin:
 
 .. ref-code-block:: cpp
 
@@ -231,7 +254,9 @@ Before loading the network that features the custom layers, provide a separate c
 Optimizing Kernels with OpenCL for VPU (Intel® Neural Compute Stick 2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section provides optimization guidelines on writing custom layers with OpenCL for VPU devices. Knowledge about general OpenCL programming model and OpenCL kernel language is assumed and not a subject of this section. The OpenCL model mapping to VPU is described in the table below.
+This section provides optimization guidelines on writing custom layers with OpenCL for VPU devices. Knowledge about general 
+OpenCL programming model and OpenCL kernel language is assumed and not a subject of this section. The OpenCL model mapping 
+to VPU is described in the table below.
 
 .. list-table::
     :header-rows: 1
@@ -249,7 +274,11 @@ This section provides optimization guidelines on writing custom layers with Open
     * - Work group
       - Executed on a single SHAVE core iterating over multiple work items
 
-Note that by the OpenCL specification, the work group execution order is not specified. This means that it is your responsibility to ensure that race conditions among work groups are not introduced. Custom layer runtime spits evenly work grid among available compute resources and executes them in an arbitrary order. This static scheduling approach works best if the load is evenly spread out across work groups, which is a typical case for Deep Learning kernels. The following guidelines are recommended to use for work group partitioning:
+Note that by the OpenCL specification, the work group execution order is not specified. This means that it is your responsibility 
+to ensure that race conditions among work groups are not introduced. Custom layer runtime spits evenly work grid among available 
+compute resources and executes them in an arbitrary order. This static scheduling approach works best if the load is evenly 
+spread out across work groups, which is a typical case for Deep Learning kernels. The following guidelines are recommended 
+to use for work group partitioning:
 
 #. Split work evenly across work groups.
 
@@ -259,7 +288,8 @@ Note that by the OpenCL specification, the work group execution order is not spe
 
 #. Try an alternate data layout (``BFXY`` / ``BYXF``) for the kernel if it improves work group partitioning or data access patterns. Consider not just specific layer boost, but full topology performance because data conversion layers would be automatically inserted as appropriate.
 
-Offline OpenCL compiler (``clc``) features automatic vectorization over ``get_global_id(0)`` usage, if uniform access is detected. For example, the kernel below could be automatically vectorized:
+Offline OpenCL compiler (``clc``) features automatic vectorization over ``get_global_id(0)`` usage, if uniform access is detected. 
+For example, the kernel below could be automatically vectorized:
 
 .. ref-code-block:: cpp
 
@@ -270,7 +300,9 @@ Offline OpenCL compiler (``clc``) features automatic vectorization over ``get_gl
 	    outImage[idx] = convert_half(inImage[idx]\*scale+bais);
 	}
 
-However, this work-group based vectorizer (WGV) conflicts with the default LLVM vectorizer based on superword level parallelism (SLP) for the current compiler version. Manual vectorization is recommended to provide the best performance for non-uniform code patterns. WGV works if and only if vector types are not used in the code.
+However, this work-group based vectorizer (WGV) conflicts with the default LLVM vectorizer based on superword level 
+parallelism (SLP) for the current compiler version. Manual vectorization is recommended to provide the best performance 
+for non-uniform code patterns. WGV works if and only if vector types are not used in the code.
 
 Here is a short list of optimization tips:
 
@@ -473,7 +505,13 @@ Here is a short list of optimization tips:
    	  }
    	}
 
-This kernel can be rewritten to introduce special data binding ``__dma_preload`` and ``__dma_postwrite intrinsics``. This means that instead of one kernel, a group of three kernels should be implemented: ``kernelName``, ``__dma_preload_kernelName``, and ``__dma_postwrite_kernelName``. ``__dma_preload_kernelName`` for a particular work group ``n`` is guaranteed to be executed before the ``n`` -th work group itself, while ``__dma_postwrite_kernelName`` is guaranteed to be executed after a corresponding work group. You can define one of those functions that are intended to be used to copy data from-to ``__global`` and ``__local`` memory. The syntactics requires exact functional signature match. The example below illustrates how to prepare your kernel for manual-DMA.
+This kernel can be rewritten to introduce special data binding ``__dma_preload`` and ``__dma_postwrite intrinsics``. This means 
+that instead of one kernel, a group of three kernels should be implemented: ``kernelName``, ``__dma_preload_kernelName``, 
+and ``__dma_postwrite_kernelName``. ``__dma_preload_kernelName`` for a particular work group ``n`` is guaranteed to be executed 
+before the ``n`` -th work group itself, while ``__dma_postwrite_kernelName`` is guaranteed to be executed after a corresponding 
+work group. You can define one of those functions that are intended to be used to copy data from-to ``__global`` and ``__local`` 
+memory. The syntactics requires exact functional signature match. The example below illustrates how to prepare your kernel 
+lfor manual-DMA.
 
 .. ref-code-block:: cpp
 
@@ -510,7 +548,9 @@ This kernel can be rewritten to introduce special data binding ``__dma_preload``
 	  // same as the example above
 	}
 
-The GRN kernel operates on channel-major tensors to compute average over full channel range and then normalizes input elements to produce the output. As a part of the manual DMA extension, a group of work group copy functions are introduced in addition to ``async_work_group_copy``, which is also mapped to a DMA call.
+The GRN kernel operates on channel-major tensors to compute average over full channel range and then normalizes input 
+elements to produce the output. As a part of the manual DMA extension, a group of work group copy functions are introduced 
+in addition to ``async_work_group_copy``, which is also mapped to a DMA call.
 
 Here is the list of supported functions:
 
@@ -635,9 +675,11 @@ Modified version of the GRN kernel could be the following:
 	    }
 	}
 
-Note the ``get_local_size`` and ``get_local_id`` usage inside the kernel. 21x speedup is expected for a kernel on enet-curbs setup because it was completely limited by memory usage.
+Note the ``get_local_size`` and ``get_local_id`` usage inside the kernel. 21x speedup is expected for a kernel on enet-curbs 
+setup because it was completely limited by memory usage.
 
-An alternative method to using DMA is to use work item copy extension. Those functions are executed inside a kernel and requires work groups equal to single work item.
+An alternative method to using DMA is to use work item copy extension. Those functions are executed inside a kernel and requires 
+work groups equal to single work item.
 
 Here is the list of supported work item functions:
 

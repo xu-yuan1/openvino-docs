@@ -106,12 +106,12 @@ With Model Downloader and :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__
 Optimization and Performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this section you will find resources on :ref:`how to test inference performance <doxid-openvino_docs__m_o__d_g__getting__performance__numbers>` and :ref:`how to increase it <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`. It can be achieved by :ref:`optimizing the model <doxid-openvino_docs_model_optimization_guide>` or :ref:`optimizing inference at runtime <doxid-openvino_docs_deployment_optimization_guide_dldt_optimization_guide>`.
+In this section you will find resources on :ref:`how to test inference performance <getting_performance_numbers>` and :ref:`how to increase it <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`. It can be achieved by :ref:`optimizing the model <model_optimization_guide>` or :ref:`optimizing inference at runtime <runtime_inference_optimizations>`.
 
 Deploying Inference
 ~~~~~~~~~~~~~~~~~~~
 
-This section explains the process of creating your own inference application using :ref:`OpenVINO™ Runtime <doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide>` and documents the `OpenVINO Runtime API <./api_references.html>`__ for both Python and C++. It also provides a :ref:`guide on deploying applications with OpenVINO <doxid-openvino_deployment_guide>` and directs you to other sources on this topic.
+This section explains the process of creating your own inference application using :ref:`OpenVINO™ Runtime <deploy_infer__openvino_runtime_user_guide>` and documents the `OpenVINO Runtime API <./api_references.html>`__ for both Python and C++. It also provides a :ref:`guide on deploying applications with OpenVINO <deploy_infer__deploy_app_intro>` and directs you to other sources on this topic.
 
 OpenVINO Ecosystem
 ~~~~~~~~~~~~~~~~~~
@@ -123,7 +123,7 @@ Media Processing and Computer Vision Libraries
 
 The OpenVINO™ toolkit also works with the following media processing frameworks and libraries:
 
-* :ref:`Intel® Deep Learning Streamer (Intel® DL Streamer) <doxid-openvino_docs_dlstreamer>` — A streaming media analytics framework based on GStreamer, for creating complex media analytics pipelines optimized for Intel hardware platforms. Go to the Intel® DL Streamer `documentation <https://dlstreamer.github.io/>`__ website to learn more.
+* :ref:`Intel® Deep Learning Streamer (Intel® DL Streamer) <media_processing__dl_streamer>` — A streaming media analytics framework based on GStreamer, for creating complex media analytics pipelines optimized for Intel hardware platforms. Go to the Intel® DL Streamer `documentation <https://dlstreamer.github.io/>`__ website to learn more.
 
 * `Intel® oneAPI Video Processing Library (oneVPL) <https://www.intel.com/content/www/us/en/develop/documentation/oneapi-programming-guide/top/api-based-programming/intel-oneapi-video-processing-library-onevpl.html>`__ — A programming interface for video decoding, encoding, and processing to build portable media pipelines on CPUs, GPUs, and other accelerators.
 

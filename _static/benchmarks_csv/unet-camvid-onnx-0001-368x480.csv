@@ -1,0 +1,35 @@
+﻿Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
+unet-camvid-onnx-0001 [368x480],atom,Intel® Atom™ x5-E3940,,0.04,0.13,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],atom,Intel® Atom™ x6425E CPU-only,,,,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],atom,Intel® Atom™ x6425E iGPU-only,,,,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],atom,Intel® Atom™ x6425E CPU+iGPU,,,,#VALUE!,#VALUE!,
+unet-camvid-onnx-0001 [368x480],atom,Intel® Celeron 6305E CPU-only,,,,0,0,
+unet-camvid-onnx-0001 [368x480],atom,Intel® Celeron 6305E iGPU-only,,,,0,0,
+unet-camvid-onnx-0001 [368x480],atom,Intel® Celeron 6305E CPU+iGPU,,,,0,0,
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i3-8100,,1.55,1.55,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i5-8500,,2.37,2.44,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i7-8700T,,1.83,1.84,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i9-10900TE,,1.95,1.98,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i9-12900HK CPU-only,,2.97,3,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i9-12900HK iGPU-only,,5.59,3.5,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i9-12900HK CPU+iGPU,,6.7,5.43,#VALUE!,#VALUE!,
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i9-12900K CPU-only,,4.87,5.2,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i9-12900K iGPU-only,,2.2,1.9,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i9-12900K CPU+iGPU,,5.2,4.81,#VALUE!,#VALUE!,
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i7-11800H CPU-only,,2.64,2.99,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i7-11800H iGPU-only,,1.98,1.76,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i7-11800H CPU+iGPU,,3.38,3.6,#VALUE!,#VALUE!,
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i7-1185G7 CPU-only,,1.47,1.65,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i7-1185G7 iGPU-only,,5.01,3.31,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i7-1185G7 CPU+iGPU,,,4.21,#VALUE!,#VALUE!,
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i7-1185GRE CPU-only,,1.03,1.21,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],core,Intel® Core™ i5-10500TE ,,1.95,1.98,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],xeon,Intel® Xeon® W1290P,,4.63,4.69,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],xeon,Intel® Xeon® E-2124G,,1.5,1.5,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],xeon,Intel® Xeon® Silver 4216R,,4.96,6.94,#VALUE!,#VALUE!,15320
+unet-camvid-onnx-0001 [368x480],xeon,Intel® Xeon® Silver 4316,,,,0,0,
+unet-camvid-onnx-0001 [368x480],xeon,Intel® Xeon® Gold 5218T,,5.2,7.27,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],xeon,Intel® Xeon® Platinum 8270,,13.08,21.76,#VALUE!,#VALUE!,0
+unet-camvid-onnx-0001 [368x480],xeon,Intel® Xeon® Platinum 8380,,,,0,0,
+unet-camvid-onnx-0001 [368x480],accel,Intel® Neural Compute Stick 2,,,0.78,0.011,0.312,
+unet-camvid-onnx-0001 [368x480],accel,Intel® Movidius™ VPUs (Uzel* UI-AR8),,,,0,0,

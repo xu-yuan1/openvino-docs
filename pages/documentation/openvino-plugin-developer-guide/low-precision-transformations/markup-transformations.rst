@@ -1,25 +1,32 @@
 .. index:: pair: page; Step 2. Markup Transformations
-.. _doxid-openvino_docs__o_v__u_g_lpt_step2_markup:
+.. _plugin_lpt__step2_markup:
+
+.. meta::
+   :description: Step 2 of low precision transformations. Feature a list of transforamtions used to 
+                 create runtime attributes for operations.
+   :keywords: low precision transformations, lpt, Markup Transformations, MarkupCanBeQuantized,
+              MarkupPrecisions, MarkupPerTensorQuantization, MarkupAvgPoolPrecisionPreserved,
+              PropagatePrecisions, AlignQuantizationIntervals, AlignQuantizationParameters
 
 
 Step 2. Markup Transformations
 ==============================
 
-:target:`doxid-openvino_docs__o_v__u_g_lpt_step2_markup_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_pipeline_step2_markup` This step defines the optimal ``FakeQuantize`` decomposition precisions for the best inference performance via operations markup with runtime attribute instances. Attributes are created for input and output ports and operations. Transformations do not change the operation output port precisions. A model markup low precision logic is decomposed and implemented into the following common markup transformations. The order of transformations is important:
+:target:`plugin_lpt__step2_markup_1md_openvino_docs_ie_plugin_dg_plugin_transformation_pipeline_low_precision_transformations_pipeline_step2_markup` This step defines the optimal ``FakeQuantize`` decomposition precisions for the best inference performance via operations markup with runtime attribute instances. Attributes are created for input and output ports and operations. Transformations do not change the operation output port precisions. A model markup low precision logic is decomposed and implemented into the following common markup transformations. The order of transformations is important:
 
-#. :ref:`MarkupCanBeQuantized <doxid-openvino_docs__o_v__u_g_lpt__markup_can_be_quantized>`
+#. :ref:`MarkupCanBeQuantized <lpt_transformations__markup_can_be_quantized>`
 
-#. :ref:`MarkupPrecisions <doxid-openvino_docs__o_v__u_g_lpt__markup_precisions>`
+#. :ref:`MarkupPrecisions <lpt_transformations__markup_precisions>`
 
-#. :ref:`MarkupPerTensorQuantization <doxid-openvino_docs__o_v__u_g_lpt__markup_per_tensor_quantization>`
+#. :ref:`MarkupPerTensorQuantization <lpt_transformations__markup_per_tensor_quantization>`
 
-#. :ref:`MarkupAvgPoolPrecisionPreserved <doxid-openvino_docs__o_v__u_g_lpt__markup_avg_pool_precision_preserved>`
+#. :ref:`MarkupAvgPoolPrecisionPreserved <lpt_transformations__markup_avg_pool_precision_preserved>`
 
-#. :ref:`PropagatePrecisions <doxid-openvino_docs__o_v__u_g_lpt__propagate_precisions>`
+#. :ref:`PropagatePrecisions <lpt_transformations__propagate_precisions>`
 
-#. :ref:`AlignQuantizationIntervals <doxid-openvino_docs__o_v__u_g_lpt__align_quantization_intervals>`
+#. :ref:`AlignQuantizationIntervals <lpt_transformations__align_quantization_intervals>`
 
-#. :ref:`AlignQuantizationParameters <doxid-openvino_docs__o_v__u_g_lpt__align_quantization_parameters>`
+#. :ref:`AlignQuantizationParameters <lpt_transformations__align_quantization_parameters>`
 
 The table of transformations and used attributes:
 
@@ -51,23 +58,27 @@ The table of transformations and used attributes:
       - QuantizationAlignment
       - PrecisionPreserved, PerTensorQuantization
 
-**Note:** the same type of attribute instances can be created in different transformations. This approach is the result of the transformation single-responsibility principle. For example, ``Precision`` attribute instances are created in ``MarkupCanBeQuantized`` and ``MarkupPrecisions`` transformations, but the reasons for their creation are different
+.. note::
+   The same type of attribute instances can be created in different transformations. This approach is the result 
+   of the transformation single-responsibility principle. For example, ``Precision`` attribute instances are created 
+   in ``MarkupCanBeQuantized`` and ``MarkupPrecisions`` transformations, but the reasons for their creation are different.
 
-Common markup transformations can be decomposed into simpler utility markup transformations. The order of Markup utility transformations is not important:
+Common markup transformations can be decomposed into simpler utility markup transformations. The order of Markup 
+utility transformations is not important:
 
-* :ref:`CreateAttribute <doxid-openvino_docs__o_v__u_g_lpt__create_attribute>`
+* :ref:`CreateAttribute <lpt_transformations__create_attribute>`
 
-* :ref:`CreatePrecisionsDependentAttribute <doxid-openvino_docs__o_v__u_g_lpt__create_precisions_dependent_attribute>`
+* :ref:`CreatePrecisionsDependentAttribute <lpt_transformations__create_precisions_dependent_attribute>`
 
-* :ref:`PropagateThroughPrecisionPreserved <doxid-openvino_docs__o_v__u_g_lpt__propagate_through_precision_preserved>`
+* :ref:`PropagateThroughPrecisionPreserved <lpt_transformations__propagate_through_precision_preserved>`
 
-* :ref:`PropagateToInput <doxid-openvino_docs__o_v__u_g_lpt__propagate_to_input>`
+* :ref:`PropagateToInput <lpt_transformations__propagate_to_input>`
 
-* :ref:`UpdateSharedPrecisionPreserved <doxid-openvino_docs__o_v__u_g_lpt__update_shared_precision_preserved>`
+* :ref:`UpdateSharedPrecisionPreserved <lpt_transformations__update_shared_precision_preserved>`
 
 Let's explore all transformations and their relations in detail, using one and the same model:
 
-.. image:: step2_markup_original.png
+.. image:: ./_assets/step2_markup_original.png
 
 The original model key features:
 
@@ -111,7 +122,7 @@ Changes in the example model after ``MarkupCanBeQuantized`` transformation:
 
 Result model:
 
-.. image:: step2_markup1.png
+.. image:: ./_assets/step2_markup1.png
 	:alt: MarkupCanBeQuantized
 
 Model display features (here and below):
@@ -137,13 +148,14 @@ No attributes are required before the transformation. Changes in the example mod
 
 Result model:
 
-.. image:: step2_markup2.png
+.. image:: ./_assets/step2_markup2.png
 	:alt: MarkupPrecisions result
 
 3. MarkupPerTensorQuantization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The transformation is required and marks operations (create ``PerTensorQuantization`` attribute instance) by provided restrictions: an operation that requires per-tensor quantization. No attributes are required before the transformation.
+The transformation is required and marks operations (create ``PerTensorQuantization`` attribute instance) by provided 
+restrictions: an operation that requires per-tensor quantization. No attributes are required before the transformation.
 
 Changes in the example model after ``MarkupPerTensorQuantization`` transformation:
 
@@ -151,13 +163,17 @@ Changes in the example model after ``MarkupPerTensorQuantization`` transformatio
 
 Result model:
 
-.. image:: step2_markup3.png
+.. image:: ./_assets/step2_markup3.png
 	:alt: MarkupPerTensorQuantization result
 
 4. MarkupAvgPoolPrecisionPreserved
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The transformation is optional. ``MarkupAvgPoolPrecisionPreserved`` marks ``AvgPool`` operations as precision preserved or not precision preserved. ``AvgPool`` operation is precision preserved if next not precision preserved operation can be inferred in low precision. In other words, ``AvgPool`` operations become precision preserved operations to speed up model inference. The transformation uses ``PrecisionPreserved`` attributes created before. The transformation is combined and uses:
+The transformation is optional. ``MarkupAvgPoolPrecisionPreserved`` marks ``AvgPool`` operations as precision preserved 
+or not precision preserved. ``AvgPool`` operation is precision preserved if next not precision preserved operation 
+can be inferred in low precision. In other words, ``AvgPool`` operations become precision preserved operations 
+to speed up model inference. The transformation uses ``PrecisionPreserved`` attributes created before. The transformation 
+is combined and uses:
 
 * CreatePrecisionsDependentAttribute
 
@@ -171,13 +187,15 @@ Changes in the example model after ``MarkupAvgPoolPrecisionPreserved`` transform
 
 Result model:
 
-.. image:: step2_markup4.png
+.. image:: ./_assets/step2_markup4.png
 	:alt: MarkupAvgPoolPrecisionPreserved
 
 5. PropagatePrecisions
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The transformation is required. ``PropagatePrecision`` is a key transformation in the markup pipeline, which marks ``FakeQuantize`` output port precisions. The transformation uses ``PrecisionPreserved`` attribute instances created before. The transformation is combined and uses:
+The transformation is required. ``PropagatePrecision`` is a key transformation in the markup pipeline, which marks 
+``FakeQuantize`` output port precisions. The transformation uses ``PrecisionPreserved`` attribute instances created before. 
+The transformation is combined and uses:
 
 * CreateAttribute
 
@@ -193,19 +211,20 @@ Changes in the example model after ``PropagatePrecisions`` transformation:
 
 Result model:
 
-.. image:: step2_markup5.png
+.. image:: ./_assets/step2_markup5.png
 	:alt: PropagatePrecisions
 
-.. note:: ``AlignQuantizationIntervals`` and ``AlignQuantizationParameters`` transformations are required if the model has quantized concatenation operations.
-
-
-
+.. note::
+   ``AlignQuantizationIntervals`` and ``AlignQuantizationParameters`` transformations are required if the model has 
+   quantized concatenation operations.
 
 
 6. AlignQuantizationIntervals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The transformation is required for models with the quantized operation. The transformation marks ``FakeQuantize`` operation and precision preserved consumers to combine quantization information from different ``FakeQuantize`` operations for future quantization intervals alignment. The transformation is combined and uses:
+The transformation is required for models with the quantized operation. The transformation marks ``FakeQuantize`` operation 
+and precision preserved consumers to combine quantization information from different ``FakeQuantize`` operations 
+for future quantization intervals alignment. The transformation is combined and uses:
 
 * CreateAttribute
 
@@ -217,13 +236,14 @@ Changes in the example model after ``AlignQuantizationIntervals`` transformation
 
 Result model:
 
-.. image:: step2_markup6.png
+.. image:: ./_assets/step2_markup6.png
 	:alt: AlignQuantizationIntervals
 
 7. AlignQuantizationParameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The transformation is required for models with quantized concatenation operation. The transformation marks ``FakeQuantize`` precision preserved consumers to align quantization intervals. The transformation is combined and uses:
+The transformation is required for models with quantized concatenation operation. The transformation marks ``FakeQuantize`` 
+precision preserved consumers to align quantization intervals. The transformation is combined and uses:
 
 * CreateAttribute
 
@@ -237,6 +257,6 @@ Changes in the example model after ``AlignQuantizationParameters`` transformatio
 
 Final model:
 
-.. image:: step2_markup7.png
+.. image:: ./_assets/step2_markup7.png
 	:alt: AlignQuantizationParameters
 

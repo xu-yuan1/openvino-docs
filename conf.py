@@ -95,7 +95,7 @@ html_theme_options = {
 
 html_context = {
     'current_language': 'English',
-    'languages': (('English', '/latest'), ('Chinese', '/cn/latest')),
+    'languages': (('English', '/openvino-docs'), ('Chinese', '/cn/openvino-docs')),
     'doxygen_mapping_file': '/home/kputnam/openvino-docs/openvino/build/docs/mapping.json',
     'doxygen_snippet_root': '/home/kputnam/openvino-docs/openvino'
 }

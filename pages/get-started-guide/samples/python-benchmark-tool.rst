@@ -67,7 +67,7 @@ Notice that the benchmark_app usually produces optimal performance for any devic
 
 	benchmark_app -m <model> -i <input> -d CPU
 
-But it is still may be sub-optimal for some cases, especially for very small networks. More details can read in :ref:`Performance Optimization Guide <doxid-openvino_docs_optimization_guide_dldt_optimization_guide>`.
+But it is still may be sub-optimal for some cases, especially for very small networks. More details can read in :ref:`Performance Optimization Guide <performance_optimization_guide_introduction>`.
 
 Running the application with the ``-h`` or ``--help`` ' option yields the following usage message:
 

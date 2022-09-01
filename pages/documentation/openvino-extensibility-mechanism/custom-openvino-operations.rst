@@ -1,11 +1,17 @@
 .. index:: pair: page; Custom OpenVINO™ Operations
-.. _doxid-openvino_docs__extensibility__u_g_add_openvino_ops:
+.. _extensibility__custom_operations:
+
+.. meta::
+   :description: Extension API allows registering custom operations to support models with operations
+                 not supported by OpenVINO.
+   :keywords: extensibility, extension api, custom operations, operation class,
+              inference, operation outputs, operation constructors, operation attributes
 
 
 Custom OpenVINO™ Operations
 =============================
 
-:target:`doxid-openvino_docs__extensibility__u_g_add_openvino_ops_1md_openvino_docs_extensibility_ug_add_openvino_ops` OpenVINO™ Extension API allows you to register custom operations to support models with operations which OpenVINO™ does not support out-of-the-box.
+:target:`extensibility__custom_operations_1md_openvino_docs_extensibility_ug_add_openvino_ops` OpenVINO™ Extension API allows you to register custom operations to support models with operations which OpenVINO™ does not support out-of-the-box.
 
 Operation Class
 ~~~~~~~~~~~~~~~

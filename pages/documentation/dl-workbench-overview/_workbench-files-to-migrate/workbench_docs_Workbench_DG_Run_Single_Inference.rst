@@ -37,7 +37,7 @@ During the baseline inference with Batch 1 Stream 1 configurations, DL Workbench
 
 .. image:: autobenchmarking.png
 
-.. note:: For details about inference processes, see the :ref:`OpenVINO™ Runtime documentation <doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide>`.
+.. note:: For details about inference processes, see the :ref:`OpenVINO™ Runtime documentation <deploy_infer__openvino_runtime_user_guide>`.
 
 
 
@@ -99,7 +99,7 @@ During the baseline inference with Batch 1 Stream 1 configurations, DL Workbench
 
 .. image:: autobenchmarking.png
 
-.. note:: For details about inference processes, see the :ref:`OpenVINO™ Runtime documentation <doxid-openvino_docs__o_v__u_g__o_v__runtime__user__guide>`.
+.. note:: For details about inference processes, see the :ref:`OpenVINO™ Runtime documentation <deploy_infer__openvino_runtime_user_guide>`.
 
 
 

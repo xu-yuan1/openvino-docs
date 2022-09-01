@@ -1,0 +1,35 @@
+﻿Network model,IE-Type,Platform name,Throughput-INT8,Throughput-FP32,Throughput-FP16,Value,Efficiency,Latency
+resnet-50-TF [224x224],atom,Intel® Atom™ x5-E3940,9.54,3.79,3.8,0.28,1.004,9240
+resnet-50-TF [224x224],atom,Intel® Atom™ x6425E CPU-only,,,,#VALUE!,#VALUE!,0
+resnet-50-TF [224x224],atom,Intel® Atom™ x6425E iGPU-only,,,,#VALUE!,#VALUE!,0
+resnet-50-TF [224x224],atom,Intel® Atom™ x6425E CPU+iGPU,,,,#VALUE!,#VALUE!,
+resnet-50-TF [224x224],atom,Intel® Celeron 6305E CPU-only,,,,0,0,
+resnet-50-TF [224x224],atom,Intel® Celeron 6305E iGPU-only,,,,0,0,
+resnet-50-TF [224x224],atom,Intel® Celeron 6305E CPU+iGPU,,,,0,0,
+resnet-50-TF [224x224],core,Intel® Core™ i3-8100,88.23,46.27,45.97,0.754,1.357,81940
+resnet-50-TF [224x224],core,Intel® Core™ i5-8500,132.77,68.57,69.68,0.691,2.042,120610
+resnet-50-TF [224x224],core,Intel® Core™ i7-8700T,106.84,53.93,54.62,0.352,3.052,97880
+resnet-50-TF [224x224],core,Intel® Core™ i9-10900TE,114.24,55.47,56.28,0.257,3.263,90890
+resnet-50-TF [224x224],core,Intel® Core™ i9-12900HK CPU-only,322,90.46,90.38,0.507,7.155,217770
+resnet-50-TF [224x224],core,Intel® Core™ i9-12900HK iGPU-only,555.97,132.72,224.31,0.875,12.354,231200
+resnet-50-TF [224x224],core,Intel® Core™ i9-12900HK CPU+iGPU,722.17,179.55,266.37,1.137,16.048,
+resnet-50-TF [224x224],core,Intel® Core™ i9-12900K CPU-only,467.33,147.3,149.73,0.793,3.738,217770
+resnet-50-TF [224x224],core,Intel® Core™ i9-12900K iGPU-only,208.12,57.54,126.01,0.353,1.664,171620
+resnet-50-TF [224x224],core,Intel® Core™ i9-12900K CPU+iGPU,660.45,147.51,213.65,1.121,5.283,
+resnet-50-TF [224x224],core,Intel® Core™ i7-11800H CPU-only,408.58,108.73,109.31,1.034,11.673,326600
+resnet-50-TF [224x224],core,Intel® Core™ i7-11800H iGPU-only,191.64,52.79,114.88,0.485,5.475,149370
+resnet-50-TF [224x224],core,Intel® Core™ i7-11800H CPU+iGPU,535.8,141.58,196.36,1.356,15.308,
+resnet-50-TF [224x224],core,Intel® Core™ i7-1185G7 CPU-only,207.03,54.46,55.43,0.485,7.393,192670
+resnet-50-TF [224x224],core,Intel® Core™ i7-1185G7 iGPU-only,544.71,116.66,255.3,1.278,19.453,112830
+resnet-50-TF [224x224],core,Intel® Core™ i7-1185G7 CPU+iGPU,616.53,136.4,252.85,1.447,22.018,
+resnet-50-TF [224x224],core,Intel® Core™ i7-1185GRE CPU-only,159.16,37.19,36.77,0.324,5.684,109790
+resnet-50-TF [224x224],core,Intel® Core™ i5-10500TE ,114.24,55.47,56.28,0.585,3.263,107550
+resnet-50-TF [224x224],xeon,Intel® Xeon® W1290P,273.24,128.64,128.74,0.506,2.185,233250
+resnet-50-TF [224x224],xeon,Intel® Xeon® E-2124G,83.79,45.07,45.05,0.393,1.18,78530
+resnet-50-TF [224x224],xeon,Intel® Xeon® Silver 4216R,830.36,215.46,215.57,0.414,3.321,590640
+resnet-50-TF [224x224],xeon,Intel® Xeon® Silver 4316,,,,0,0,
+resnet-50-TF [224x224],xeon,Intel® Xeon® Gold 5218T,868.28,225.47,225.87,0.321,4.134,617960
+resnet-50-TF [224x224],xeon,Intel® Xeon® Platinum 8270,2628.33,616.83,613.59,0.177,6.41,1217160
+resnet-50-TF [224x224],xeon,Intel® Xeon® Platinum 8380,,,,0,0,
+resnet-50-TF [224x224],accel,Intel® Neural Compute Stick 2,,,28.68,0.415,11.472,
+resnet-50-TF [224x224],accel,Intel® Movidius™ VPUs (Uzel* UI-AR8),,,,0,0,

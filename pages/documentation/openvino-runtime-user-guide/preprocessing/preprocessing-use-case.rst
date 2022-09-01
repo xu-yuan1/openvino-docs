@@ -1,13 +1,24 @@
 .. index:: pair: page; Use Case - Integrate and Save Preprocessing Steps Into IR
-.. _doxid-openvino_docs__o_v__u_g__preprocess__usecase_save:
+.. _deploy_infer__preprocessing_use_case:
 
+.. meta::
+   :description: Once a model is read, the preprocessing/ postprocessing steps 
+                 can be added and then the resulting model can be saved to 
+                 OpenVINO Intermediate Representation.
+   :keywords: OpenVINO, OpenVINO Intermediate Representation, OpenVINO IR, 
+              preprocessing, preprocessing steps, postprocessing, Model 
+              Optimizer, command-line options, YUV to RGB, FP32, float32, 
+              model caching, model shape, inference, model inference, 
+              ov::runtime::Core::read_model, read_model, batch size, change 
+              batch size, throughput, increase throughput, model layout, 
+              layout conversion, PrePostProcessor
 
-Use Case - Integrate and Save Preprocessing Steps Into IR
-=========================================================
+Preprocessing - Use Case
+========================
 
-:target:`doxid-openvino_docs__o_v__u_g__preprocess__usecase_save_1md_openvino_docs_ov_runtime_ug_preprocessing_usecase_save`
+:target:`deploy_infer__preprocessing_use_case_1md_openvino_docs_ov_runtime_ug_preprocessing_usecase_save`
 
-Previous sections covered the topic of the :ref:`preprocessing steps <doxid-openvino_docs__o_v__u_g__preprocessing__details>` and the overview of :ref:`Layout <doxid-openvino_docs__o_v__u_g__layout__overview>` API.
+Previous sections covered the topic of the :ref:`preprocessing steps <deploy_infer__preprocessing_api>` and the overview of :ref:`Layout <deploy_infer__layout_api_overview>` API.
 
 For many applications, it is also important to minimize read/load time of a model. Therefore, performing integration of preprocessing steps every time on application startup, after ``ov::runtime::Core::read_model``, may seem inconvenient. In such cases, once pre and postprocessing steps have been added, it can be useful to store new execution model to OpenVINO Intermediate Representation (OpenVINO IR, ``.xml`` format).
 
@@ -223,7 +234,7 @@ Consider the example, where an original ONNX model takes one ``float32`` input w
 Application Code - Load Model to Target Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After this, the application code can load a saved file and stop preprocessing. In this case, enable :ref:`model caching <doxid-openvino_docs__o_v__u_g__model_caching_overview>` to minimize load time when the cached model is available.
+After this, the application code can load a saved file and stop preprocessing. In this case, enable :ref:`model caching <model_caching_overview>` to minimize load time when the cached model is available.
 
 .. raw:: html
 
@@ -296,13 +307,13 @@ After this, the application code can load a saved file and stop preprocessing. I
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Preprocessing Details <doxid-openvino_docs__o_v__u_g__preprocessing__details>`
+* :ref:`Preprocessing Details <deploy_infer__preprocessing_api>`
 
-* :ref:`Layout API overview <doxid-openvino_docs__o_v__u_g__layout__overview>`
+* :ref:`Layout API overview <deploy_infer__layout_api_overview>`
 
 * :ref:`Model Optimizer - Optimize Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`
 
-* :ref:`Model Caching Overview <doxid-openvino_docs__o_v__u_g__model_caching_overview>`
+* :ref:`Model Caching Overview <model_caching_overview>`
 
 * The ``:ref:`ov::preprocess::PrePostProcessor <doxid-classov_1_1preprocess_1_1_pre_post_processor>``` C++ class documentation
 

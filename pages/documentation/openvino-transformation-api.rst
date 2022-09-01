@@ -1,11 +1,18 @@
 .. index:: pair: page; Overview of Transformations API
-.. _doxid-openvino_docs_transformations:
+.. _extensibility_transformations__overview:
+
+.. meta::
+   :description: Description of all necessary information required to start implementing 
+                 OpenVINO™ transformations. 
+   :keywords: transformation mechanism, model, transformations, node, input ports, output ports,
+              node replacement, helper function, port methods, node elimination, model pass,
+              matcher pass, graph rewrite pass, transformation rules, debug transformations
 
 
 Overview of Transformations API
 ===============================
 
-:target:`doxid-openvino_docs_transformations_1md_openvino_docs_extensibility_ug_ov_transformations`
+:target:`extensibility_transformations__overview_1md_openvino_docs_extensibility_ug_ov_transformations`
 
 
 
@@ -19,19 +26,28 @@ Overview of Transformations API
    ./openvino-transformation-api/transformation-api-matcher-pass
    ./openvino-transformation-api/transformation-api-graph-rewrite-pass
 
-OpenVINO Transformation mechanism allows to develop transformation passes to modify ``:ref:`ov::Model <doxid-classov_1_1_model>```. You can use this mechanism to apply additional optimizations to the original Model or transform unsupported subgraphs and operations to new operations which are supported by the plugin. This guide contains all necessary information that you need to start implementing OpenVINO™ transformations.
+OpenVINO Transformation mechanism allows to develop transformation passes to 
+modify ``:ref:`ov::Model <doxid-classov_1_1_model>```. You can use this mechanism to apply additional optimizations to 
+the original Model or transform unsupported subgraphs and operations to new operations which are supported by the plugin. 
+This guide contains all necessary information that you need to start implementing OpenVINO™ transformations.
 
 Working with Model
 ~~~~~~~~~~~~~~~~~~
 
-Before moving to the transformation part,  several words need to be said about functions that allow to modify ``:ref:`ov::Model <doxid-classov_1_1_model>```. This chapter extends the :ref:`model representation guide <doxid-openvino_docs__o_v__u_g__model__representation>` and shows an API that allows us to manipulate with ``:ref:`ov::Model <doxid-classov_1_1_model>```.
+Before the moving to transformation part it is needed to say several words about functions which allow 
+to modify ``:ref:`ov::Model <doxid-classov_1_1_model>```. This chapter extends 
+the :ref:`model representation guide <deploy_infer__model_representation>` and shows an API that 
+allows us to manipulate with ``:ref:`ov::Model <doxid-classov_1_1_model>```.
 
 Working with node input and output ports
 ----------------------------------------
 
-First of all let's talk about ``:ref:`ov::Node <doxid-classov_1_1_node>``` input/output ports. Each OpenVINO™ operation has input and output ports except cases when operation has ``Parameter`` or ``Constant`` type.
+First of all let's talk about ``:ref:`ov::Node <doxid-classov_1_1_node>``` input/output ports. Each OpenVINO™ operation has 
+input and output ports except cases when operation has ``Parameter`` or ``Constant`` type.
 
-Every port belongs to its node, so using a port we can access parent node, get shape and type for particular input/output, get all consumers in case of output port, and get producer node in case of input port. With output port we can set inputs for newly created operations.
+Every port belongs to its node, so using a port we can access parent node, get shape and type for particular input/output, 
+get all consumers in case of output port, and get producer node in case of input port. With output port we can set inputs 
+for newly created operations.
 
 Lets look at the code example.
 
@@ -60,7 +76,8 @@ Lets look at the code example.
 Node replacement
 ----------------
 
-OpenVINO™ provides two ways for node replacement: via OpenVINO™ helper function and directly via port methods. We are going to review both of them.
+OpenVINO™ provides two ways for node replacement: via OpenVINO™ helper function and directly via port methods. 
+We are going to review both of them.
 
 Let's start with OpenVINO™ helper functions. The most popular function is ``ov::replace_node(old_node, new_node)``.
 
@@ -91,7 +108,8 @@ We will review real replacement case where Negative operation is replaced with M
 	    // Step 4. Negative operation will be removed automatically because all consumers was moved to Multiply operation
 	}
 
-``:ref:`ov::replace_node <doxid-namespaceov_1a75d84ee654edb73fe4fb18936a5dca6d>``` has a constraint that number of output ports for both of ops must be the same; otherwise, it raises an exception.
+``:ref:`ov::replace_node <doxid-namespaceov_1a75d84ee654edb73fe4fb18936a5dca6d>``` has a constraint that number of output ports 
+for both of ops must be the same; otherwise, it raises an exception.
 
 The alternative way to do the same replacement is the following:
 
@@ -144,7 +162,8 @@ To eliminate operation, OpenVINO™ has special method that considers all limita
 	// Suppose we have a node that we want to remove
 	bool success = :ref:`ov::replace_output_update_name <doxid-namespaceov_1a75ba2120e573883bd96bb19c887c6a1d>`(node->output(0), node->input_value(0));
 
-``:ref:`ov::replace_output_update_name() <doxid-namespaceov_1a75ba2120e573883bd96bb19c887c6a1d>``` in case of successful replacement it automatically preserves friendly name and runtime info.
+``:ref:`ov::replace_output_update_name() <doxid-namespaceov_1a75ba2120e573883bd96bb19c887c6a1d>``` in case of successful 
+replacement it automatically preserves friendly name and runtime info.
 
 .. _transformations_types:
 
@@ -153,13 +172,13 @@ Transformations types
 
 OpenVINO™ Runtime has three main transformation types:
 
-* :ref:`Model pass <doxid-openvino_docs__extensibility__u_g_model_pass>` - straightforward way to work with ``:ref:`ov::Model <doxid-classov_1_1_model>``` directly
+* :ref:`Model pass <extensibility_transformations__model_pass>` - straightforward way to work with ``:ref:`ov::Model <doxid-classov_1_1_model>``` directly
 
-* :ref:`Matcher pass <doxid-openvino_docs__extensibility__u_g_matcher_pass>` - pattern-based transformation approach
+* :ref:`Matcher pass <extensibility_transformations__matcher_pass>` - pattern-based transformation approach
 
-* :ref:`Graph rewrite pass <doxid-openvino_docs__extensibility__u_g_graph_rewrite_pass>` - container for matcher passes needed for efficient execution
+* :ref:`Graph rewrite pass <extensibility_transformations__graph_rewrite_pass>` - container for matcher passes needed for efficient execution
 
-.. image:: transformations_structure.png
+.. image:: ./_assets/transformations_structure.png
 
 Transformation conditional compilation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,7 +199,9 @@ When developing a transformation, you need to follow these transformation rules:
 1. Friendly Names
 -----------------
 
-Each ``:ref:`ov::Node <doxid-classov_1_1_node>``` has an unique name and a friendly name. In transformations we care only about friendly name because it represents the name from the model. To avoid losing friendly name when replacing node with other node or subgraph, set the original friendly name to the latest node in replacing subgraph. See the example below.
+Each ``:ref:`ov::Node <doxid-classov_1_1_node>``` has an unique name and a friendly name. In transformations we care 
+only about friendly name because it represents the name from the model. To avoid losing friendly name when replacing node 
+with other node or subgraph, set the original friendly name to the latest node in replacing subgraph. See the example below.
 
 .. ref-code-block:: cpp
 
@@ -191,12 +212,20 @@ Each ``:ref:`ov::Node <doxid-classov_1_1_node>``` has an unique name and a frien
 	mul->set_friendly_name(div->get_friendly_name());
 	:ref:`ngraph::replace_node <doxid-namespaceov_1a75d84ee654edb73fe4fb18936a5dca6d>`(div, mul);
 
-In more advanced cases, when replaced operation has several outputs and we add additional consumers to its outputs, we make a decision how to set friendly name by arrangement.
+In more advanced cases, when replaced operation has several outputs and we add additional consumers to its outputs, 
+we make a decision how to set friendly name by arrangement.
 
 2. Runtime Info
 ---------------
 
-Runtime info is a map ``std::map<std::string, :ref:`ov::Any <doxid-classov_1_1_any>`>`` located inside ``:ref:`ov::Node <doxid-classov_1_1_node>``` class. It represents additional attributes in ``:ref:`ov::Node <doxid-classov_1_1_node>```. These attributes can be set by users or by plugins and when executing transformation that changes ``:ref:`ov::Model <doxid-classov_1_1_model>``` we need to preserve these attributes as they will not be automatically propagated. In most cases, transformations have the following types: 1:1 (replace node with another node), 1:N (replace node with a sub-graph), N:1 (fuse sub-graph into a single node), N:M (any other transformation). Currently, there is no mechanism that automatically detects transformation types, so we need to propagate this runtime information manually. See the examples below.
+Runtime info is a map ``std::map<std::string, :ref:`ov::Any <doxid-classov_1_1_any>`>`` located inside 
+``:ref:`ov::Node <doxid-classov_1_1_node>``` class. It represents additional attributes in 
+``:ref:`ov::Node <doxid-classov_1_1_node>```. These attributes can be set by users or by plugins and when executing 
+transformation that changes ``:ref:`ov::Model <doxid-classov_1_1_model>``` we need to preserve these attributes 
+as they will not be automatically propagated. In most cases, transformations have the following types: 
+1:1 (replace node with another node), 1:N (replace node with a sub-graph), N:1 (fuse sub-graph into a single node), 
+N:M (any other transformation). Currently, there is no mechanism that automatically detects transformation types, 
+so we need to propagate this runtime information manually. See the examples below.
 
 .. ref-code-block:: cpp
 
@@ -212,14 +241,19 @@ Runtime info is a map ``std::map<std::string, :ref:`ov::Any <doxid-classov_1_1_a
 	// Any other transformation that replaces one sub-graph with another sub-graph (N:M)
 	:ref:`ov::copy_runtime_info <doxid-namespaceov_1a3bb5969a95703b4b4fd77f6f58837207>`({a, b, c}, {e, :ref:`f <doxid-namespacengraph_1_1runtime_1_1reference_1a4582949bb0b6082a5159f90c43a71ca9>`});
 
-When transformation has multiple fusions or decompositions, ``:ref:`ov::copy_runtime_info <doxid-namespaceov_1a3bb5969a95703b4b4fd77f6f58837207>``` must be called multiple times for each case.
+When transformation has multiple fusions or decompositions, 
+``:ref:`ov::copy_runtime_info <doxid-namespaceov_1a3bb5969a95703b4b4fd77f6f58837207>``` must be called multiple times 
+for each case.
 
-**Note** : copy_runtime_info removes rt_info from destination nodes. If you want to keep it, you need to specify them in source nodes like this: copy_runtime_info({a, b, c}, {a, b})
+**Note** : copy_runtime_info removes rt_info from destination nodes. If you want to keep it, you need to specify them 
+in source nodes like this: copy_runtime_info({a, b, c}, {a, b})
 
 3. Constant Folding
 -------------------
 
-If your transformation inserts constant sub-graphs that need to be folded, do not forget to use ``:ref:`ov::pass::ConstantFolding() <doxid-classov_1_1pass_1_1_constant_folding>``` after your transformation or call constant folding directly for operation. The example below shows how constant subgraph can be constructed.
+If your transformation inserts constant sub-graphs that need to be folded, do not forget to use 
+``:ref:`ov::pass::ConstantFolding() <doxid-classov_1_1pass_1_1_constant_folding>``` after your transformation or call 
+constant folding directly for operation. The example below shows how constant subgraph can be constructed.
 
 .. ref-code-block:: cpp
 
@@ -229,7 +263,8 @@ If your transformation inserts constant sub-graphs that need to be folded, do no
 	                                               ov::opset8::Constant::create(:ref:`ov::element::f32 <doxid-group__ov__element__cpp__api_1gadc8a5dda3244028a5c0b024897215d43>`, :ref:`ov::Shape <doxid-classov_1_1_shape>`{1}, {3}));
 	auto mul = std::make_shared<ov::opset8::Multiply>(input /\* not constant input \*/, pow);
 
-Manual constant folding is more preferable than ``:ref:`ov::pass::ConstantFolding() <doxid-classov_1_1pass_1_1_constant_folding>``` because it is much faster.
+Manual constant folding is more preferable than ``:ref:`ov::pass::ConstantFolding() <doxid-classov_1_1pass_1_1_constant_folding>``` 
+because it is much faster.
 
 Below you can find an example of manual constant folding:
 
@@ -270,7 +305,11 @@ In transformation development process:
 Using pass manager
 ~~~~~~~~~~~~~~~~~~
 
-``:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>``` is a container class that can store the list of transformations and execute them. The main idea of this class is to have high-level representation for grouped list of transformations. It can register and apply any `transformation pass <#transformations_types>`__ on model. In addition, ``:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>``` has extended debug capabilities (find more information in the `how to debug transformations <#how_to_debug_transformations>`__ section).
+``:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>``` is a container class that can store the list of transformations 
+and execute them. The main idea of this class is to have high-level representation for grouped list of transformations. It can 
+register and apply any `transformation pass <#transformations_types>`__ on model. In addition, 
+``:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>``` has extended debug capabilities (find more information in 
+the `how to debug transformations <#how_to_debug_transformations>`__ section).
 
 The example below shows basic usage of ``:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>```
 
@@ -300,21 +339,22 @@ Another example shows how multiple matcher passes can be united into single Grap
 How to debug transformations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are using ``ngraph::pass::Manager`` to run sequence of transformations, you can get additional debug capabilities by using the following environment variables:
+If you are using ``ngraph::pass::Manager`` to run sequence of transformations, you can get additional debug capabilities 
+by using the following environment variables:
 
 .. ref-code-block:: cpp
 
 	OV_PROFILE_PASS_ENABLE=1 - enables performance measurement for each transformation and prints execution status
 	OV_ENABLE_VISUALIZE_TRACING=1 -  enables visualization after each transformation. By default, it saves dot and svg files.
 
-**Note** : Make sure that you have dot installed on your machine; otherwise, it will silently save only dot file without svg file.
-
+.. note:: 
+   Make sure that you have dot installed on your machine; otherwise, it will silently save only dot file without svg file.
 
 
 See Also
 ~~~~~~~~
 
-* :ref:`OpenVINO™ Model Representation <doxid-openvino_docs__o_v__u_g__model__representation>`
+* :ref:`OpenVINO™ Model Representation <deploy_infer__model_representation>`
 
-* :ref:`OpenVINO™ Extensions <doxid-openvino_docs__extensibility__u_g__intro>`
+* :ref:`OpenVINO™ Extensions <extensibility__api_introduction>`
 

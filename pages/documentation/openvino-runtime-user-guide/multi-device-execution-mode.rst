@@ -1,15 +1,21 @@
 .. index:: pair: page; Running on Multiple Devices Simultaneously
-.. _doxid-openvino_docs__o_v__u_g__running_on_multiple_devices:
+.. _deploy_infer__multi_plugin:
 
+.. meta::
+   :description: The Multi-Device execution mode in OpenVINO Runtime assigns 
+                 multiple available computing devices to particular inference 
+                 requests to execute in parallel.
+   :keywords: inference, model inference, OpenVINO Runtime, Multi-Device, 
+              Multi-Device execution mode, MULTI device, MULTI plugin, MULTI, 
+              cumulative_throughput, GPU, Intel GPU, GPU 2.0, device priorities, 
+              inference request, configure device, HDDL device, Myriad device, 
+              benchmark_app, compiled_model, inference performance, improve 
+              throughput, performance stability, increase performance
 
 Running on Multiple Devices Simultaneously
 ==========================================
 
-:target:`doxid-openvino_docs__o_v__u_g__running_on_multiple_devices_1md_openvino_docs_ov_runtime_ug_multi_device`
-
-
-
-
+:target:`deploy_infer__multi_plugin_1md_openvino_docs_ov_runtime_ug_multi_device`
 
 To run inference on multiple devices, you can choose either of the following ways:
 
@@ -48,7 +54,7 @@ Following the OpenVINO™ naming convention, the Multi-Device mode is assigned t
 
 Specifying the device list explicitly is required by MULTI, as it defines the devices available for inference and sets their priorities. Importantly, the list may also specify the number of requests for MULTI to keep for each device, as described below.
 
-Note that OpenVINO™ Runtime enables you to use “GPU” as an alias for “GPU.0” in function calls. More details on enumerating devices can be found in :ref:`Working with devices <doxid-openvino_docs__o_v__u_g__working_with_devices>`.
+Note that OpenVINO™ Runtime enables you to use “GPU” as an alias for “GPU.0” in function calls. More details on enumerating devices can be found in :ref:`Working with devices <deploy_infer__working_with_devices>`.
 
 The following commands are accepted by the API:
 
@@ -80,7 +86,7 @@ Notice that MULTI allows you to **change device priorities on the fly**. You can
 
 One more thing you can define is the **number of requests to allocate for each device**. You can do it simply by adding the number to each device in parentheses, like this: ``"MULTI:CPU(2),GPU(2)"``. However, this method is not recommended as it is not performance-portable. The suggested approach is to configure individual devices and query the resulting number of requests to be used at the application level, as described in `Configuring Individual Devices and Creating MULTI On Top <#configuring-the-individual-devices-and-creating-the-multi-device-on-top>`__.
 
-To check what devices are present in the system, you can use the Device API. For information on how to do it, check :ref:`Query device properties and configuration <doxid-openvino_docs__o_v__u_g_query_api>`.
+To check what devices are present in the system, you can use the Device API. For information on how to do it, check :ref:`Query device properties and configuration <deploy_infer__query_device_properties>`.
 
 Configuring Individual Devices and Creating the Multi-Device On Top
 -------------------------------------------------------------------
@@ -104,7 +110,7 @@ Alternatively, you can combine all the individual device settings into a single 
 Querying the Optimal Number of Inference Requests
 -------------------------------------------------
 
-When using MULTI, you don't need to sum over included devices yourself, you can query the optimal number of requests directly, using the :ref:`configure devices <doxid-openvino_docs__o_v__u_g_query_api>` property:
+When using MULTI, you don't need to sum over included devices yourself, you can query the optimal number of requests directly, using the :ref:`configure devices <deploy_infer__query_device_properties>` property:
 
 .. tab:: C++
 
@@ -149,7 +155,7 @@ See Also
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 
-* :ref:`Automatic Device Selection <doxid-openvino_docs__o_v__u_g_supported_plugins__a_u_t_o>`
+* :ref:`Automatic Device Selection <deploy_infer__auto_plugin>`
 
 .. raw:: html
 

@@ -1,11 +1,23 @@
 .. index:: pair: page; Automatic Batching
-.. _doxid-openvino_docs__o_v__u_g__automatic__batching:
+.. _deploy_infer__automatic_batching:
+
+.. meta::
+   :description: The Automatic Batching Execution mode in OpenVINO Runtime 
+                 performs automatic batching to improve device utilization 
+                 by grouping inference requests.
+   :keywords: OpenVINO Runtime, automatic batching, Automatic Batching 
+              Execution mode, Auto-Batching, inference request, enable 
+              Automatic Batching, batch size, simultaneous inference 
+              requests, Intel GPU, GPU device, performance hint, throughput, 
+              performance mode, compile_model, set_property, AUTO_BATCH_DEVICE, 
+              inference performance, benchmark_app, disable automatic batching, 
+              optimize performance, AUTO_BATCH_DEVICE
 
 
 Automatic Batching
 ==================
 
-:target:`doxid-openvino_docs__o_v__u_g__automatic__batching_1md_openvino_docs_ov_runtime_ug_automatic_batching` 
+:target:`deploy_infer__automatic_batching_1md_openvino_docs_ov_runtime_ug_automatic_batching` 
 
 The Automatic Batching Execution mode (or Auto-batching for short) performs automatic 
 batching on-the-fly to improve device utilization by grouping inference requests 
@@ -19,7 +31,7 @@ how it works, its configurations, and testing performance.
 Enabling/Disabling Automatic Batching
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Auto-batching primarily targets the existing code written for inferencing many 
+Auto-batching primarily targets the existing code written for inferring many 
 requests, each instance with the batch size 1. To obtain corresponding performance 
 improvements, the application **must be running many inference requests simultaneously**. 
 Auto-batching can also be used via a particular *virtual* device.
@@ -179,27 +191,52 @@ Other Performance Considerations
 
 To achieve the best performance with Automatic Batching, the application should:
 
-* Operate inference requests of the number that represents the multiple of the batch size. In the example above, for batch size 4, the application should operate 4, 8, 12, 16, etc. requests.
+* Operate inference requests of the number that represents the multiple of the 
+  batch size. In the example above, for batch size 4, the application should 
+  operate 4, 8, 12, 16, etc. requests.
 
-* Use the requests that are grouped by the batch size together. For example, the first 4 requests are inferred, while the second group of the requests is being populated. Essentially, Automatic Batching shifts the asynchronicity from the individual requests to the groups of requests that constitute the batches.
-  
-  * Balance the ``timeout`` value vs. the batch size. For example, in many cases, having a smaller ``timeout`` value/batch size may yield better performance than having a larger batch size with a ``timeout`` value that is not large enough to accommodate the full number of the required requests.
-  
-  * When Automatic Batching is enabled, the ``timeout`` property of ``:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>``` can be changed anytime, even after the loading/compilation of the model. For example, setting the value to 0 disables Auto-batching effectively, as the collection of requests would be omitted.
-  
-  * Carefully apply Auto-batching to the pipelines. For example, in the conventional "video-sources -> detection -> classification" flow, it is most beneficial to do Auto-batching over the inputs to the detection stage. The resulting number of detections is usually fluent, which makes Auto-batching less applicable for the classification stage.
+* Use the requests that are grouped by the batch size together. For example, 
+  the first 4 requests are inferred, while the second group of the requests is 
+  being populated. Essentially, Automatic Batching shifts the asynchronicity 
+  from the individual requests to the groups of requests that constitute the batches.
+
+  * Balance the ``timeout`` value vs. the batch size. For example, in many 
+    cases, having a smaller ``timeout`` value/batch size may yield better 
+    performance than having a larger batch size with a ``timeout`` value that 
+    is not large enough to accommodate the full number of the required requests.
+
+  * When Automatic Batching is enabled, the ``timeout`` property of 
+    ``:ref:`ov::CompiledModel <doxid-classov_1_1_compiled_model>``` can be 
+    changed anytime, even after the loading/compilation of the model. For 
+    example, setting the value to 0 disables Auto-batching effectively, as the 
+    collection of requests would be omitted.
+
+  * Carefully apply Auto-batching to the pipelines. For example, in the 
+    conventional "video-sources -> detection -> classification" flow, it is 
+    most beneficial to do Auto-batching over the inputs to the detection stage. 
+    The resulting number of detections is usually fluent, which makes 
+    Auto-batching less applicable for the classification stage.
 
 The following are limitations of the current implementations:
 
-* Although it is less critical for the throughput-oriented scenarios, the load time with Auto-batching increases by almost double.
-  
-  * Certain networks are not safely reshapable by the "batching" dimension (specified as ``N`` in the layout terms). Besides, if the batching dimension is not zeroth, Auto-batching will not be triggered "implicitly" by the throughput hint.
-  
-  * The "explicit" notion, for example, ``BATCH:GPU``, using the relaxed dimensions tracking, often makes Auto-batching possible. For example, this method unlocks most **detection networks**.
-  
-  * When *forcing* Auto-batching via the "explicit" device notion, make sure that you validate the results for correctness.
-  
-  * Performance improvements happen at the cost of the growth of memory footprint. However, Auto-batching queries the available memory (especially for dGPU) and limits the selected batch size accordingly.
+* Although it is less critical for the throughput-oriented scenarios, the load 
+  time with Auto-batching increases by almost double.
+
+  * Certain networks are not safely reshapable by the "batching" dimension 
+    (specified as ``N`` in the layout terms). Besides, if the batching 
+    dimension is not zeroth, Auto-batching will not be triggered "implicitly" 
+    by the throughput hint.
+
+  * The "explicit" notion, for example, ``BATCH:GPU``, using the relaxed 
+    dimensions tracking, often makes Auto-batching possible. For example, this 
+    method unlocks most **detection networks**.
+
+  * When *forcing* Auto-batching via the "explicit" device notion, make sure 
+    that you validate the results for correctness.
+
+  * Performance improvements happen at the cost of the growth of memory 
+    footprint. However, Auto-batching queries the available memory (especially 
+    for dGPU) and limits the selected batch size accordingly.
 
 Testing Performance with Benchmark_app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -210,20 +247,25 @@ and :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_
 versions, is the best way to evaluate the performance of Automatic Batching:
 
 * The most straightforward way is using the performance hints:
-  
+
   * benchmark_app **-hint tput** -d GPU -m 'path to your favorite model'
 
-* You can also use the "explicit" device notion to override the strict rules of the implicit reshaping by the batch dimension:
-  
+* You can also use the "explicit" device notion to override the strict rules of 
+  the implicit reshaping by the batch dimension:
+
   * benchmark_app **-hint none -d BATCH:GPU** -m 'path to your favorite model'
 
 * or override the automatically deduced batch size as well:
-  
-  * $benchmark_app -hint none -d **BATCH:GPU(16)** -m 'path to your favorite model'
-  
-  * This example also applies to CPU or any other device that generally supports batch execution.
-  
-  * Keep in mind that some shell versions (e.g. ``bash``) may require adding quotes around complex device names, i.e. ``-d "BATCH:GPU(16)"`` in this example.
+
+  * $benchmark_app -hint none -d **BATCH:GPU(16)** -m 'path to your 
+    favorite model'
+
+  * This example also applies to CPU or any other device that generally 
+    supports batch execution.
+
+  * Keep in mind that some shell versions (e.g. ``bash``) may require adding 
+    quotes around complex device names, i.e. ``-d "BATCH:GPU(16)"`` in 
+    this example.
 
 Note that Benchmark_app performs a warm-up run of a *single* request. As Auto-Batching 
 requires significantly more requests to execute in batch, this warm-up run hits the 
@@ -231,14 +273,14 @@ default timeout value (1000 ms), as reported in the following example:
 
 .. ref-code-block:: cpp
 
-	[ INFO ] First inference took 1000.18ms
+   [ INFO ] First inference took 1000.18ms
 
 This value also exposed as the final execution statistics on the ``benchmark_app`` exit:
 
 .. ref-code-block:: cpp
 
-	[ INFO ] Latency: 
-	[ INFO ]  Max:      1000.18 ms
+   [ INFO ] Latency: 
+   [ INFO ]  Max:      1000.18 ms
 
 This is NOT the actual latency of the batched execution, so you are recommended to 
 refer to other metrics in the same log, for example, "Median" or "Average" execution.
@@ -247,4 +289,3 @@ Additional Resources
 --------------------
 
 :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
-

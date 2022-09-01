@@ -1,11 +1,20 @@
 .. index:: pair: page; MYRIAD Device
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d:
+.. _deploy_infer__vpu_myriad_device:
+
+.. meta::
+   :description: The MYRIAD plugin in OpenVINO™ has been developed for 
+                 inference of neural networks on Intel® Neural Compute Stick 2. 
+   :keywords: OpenVINO™, OpenVINO™ Runtime plugin, inference, deep learning 
+              model, model inference, VPU plugin, MYRIAD plugin, MYRIAD device, 
+              Intel® Vision Accelerator Design, Intel® Movidius™, VPU configuration, 
+              IExecutableNetwork, device allocation, KEY_VPU_MYRIAD_PROTOCOL, 
+              Intel Movidius™ Vision Processing Units, VPU
 
 
 MYRIAD Device
 =============
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__m_y_r_i_a_d_1md_openvino_docs_ov_runtime_ug_supported_plugins_myriad`
+:target:`deploy_infer__vpu_myriad_device_1md_openvino_docs_ov_runtime_ug_supported_plugins_myriad`
 
 The OpenVINO Runtime MYRIAD plugin has been developed for inference of neural networks on Intel® Neural Compute Stick 2.
 
@@ -28,7 +37,7 @@ To configure your Intel® Vision Accelerator Design With Intel® Movidius™ on 
 Supported Configuration Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For information on the VPU common configuration parameters, see the :ref:`VPU Plugins <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>`. When specifying key values as raw strings (when using the Python API), omit the ``KEY_`` prefix.
+For information on the VPU common configuration parameters, see the :ref:`VPU Plugins <deploy_infer__vpu_device>`. When specifying key values as raw strings (when using the Python API), omit the ``KEY_`` prefix.
 
 In addition to common parameters, the MYRIAD plugin accepts the following options:
 
@@ -68,7 +77,7 @@ See Also
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 
-* :ref:`VPU Plugins <doxid-openvino_docs__o_v__u_g_supported_plugins__v_p_u>`
+* :ref:`VPU Plugins <deploy_infer__vpu_device>`
 
 * `Intel Neural Compute Stick 2 Get Started <https://software.intel.com/en-us/neural-compute-stick/get-started>`__
 
