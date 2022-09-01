@@ -147,7 +147,7 @@ More Information
 
 See the following pages to understand how to migrate Inference Engine-based applications to API 2.0:
 
-* :ref:`Installation & Deployment <doxid-openvino_2_0_deployment>`
+* :ref:`Installation & Deployment <api_2_0__deployment>`
 
 * :ref:`OpenVINO™ Common Inference pipeline <doxid-openvino_2_0_inference_pipeline>`
 
