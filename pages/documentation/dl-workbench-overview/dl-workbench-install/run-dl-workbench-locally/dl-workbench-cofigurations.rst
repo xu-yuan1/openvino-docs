@@ -176,7 +176,7 @@ Disable JupyterLab inside DL Workbench
 See Also
 ~~~~~~~~
 
-* :ref:`Next Step: Get Started with DL Workbench <doxid-workbench_docs__workbench__d_g__work_with__models_and__sample__datasets>`
+* :ref:`Next Step: Get Started with DL Workbench <dl_workbench__get_started>`
 
 * :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
 

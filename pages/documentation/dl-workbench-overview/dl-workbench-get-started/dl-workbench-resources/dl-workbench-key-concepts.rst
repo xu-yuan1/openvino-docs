@@ -10,7 +10,7 @@ DL Workbench Key Concepts
 Project
 ~~~~~~~
 
-Project is a combination of an OpenVINO IR model, a dataset, and a target device you use to perform experiments in the DL Workbench. You can work with multiple projects during one session. When :ref:`creating a project <doxid-workbench_docs__workbench__d_g__work_with__models_and__sample__datasets>`, you can:
+Project is a combination of an OpenVINO IR model, a dataset, and a target device you use to perform experiments in the DL Workbench. You can work with multiple projects during one session. When :ref:`creating a project <dl_workbench__get_started>`, you can:
 
 * Upload your own model or download one from the Intel® [Open Model Zoo](omz_models_group_intel) directly in the DL Workbench.
 

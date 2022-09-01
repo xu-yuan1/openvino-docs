@@ -1,11 +1,19 @@
 .. index:: pair: page; OpenVINO™ Deep Learning Workbench Overview
-.. _doxid-workbench_docs__workbench__d_g__introduction:
+.. _dl_workbench__introduction:
+
+.. meta::
+   :description: Introduction to Deep Learning Workbench, an official OpenVINO™ graphical interface designed 
+                 to make the production of pretrained deep learning Computer Vision and Natural Language  
+                 Processing models easier.
+   :keywords: deep learning workbench, graphical interface, computer vision, natural language processing, 
+              dl workbench, inference-to-deployment workflow timing, OpenVINO, JupyterLab, DL Workbench workflow, 
+              OpenVINO Toolkit Components, web-based interface
 
 
 OpenVINO™ Deep Learning Workbench Overview
 ============================================
 
-:target:`doxid-workbench_docs__workbench__d_g__introduction_1md_openvino_docs_documentation_dl_workbench_overview`
+:target:`dl_workbench__introduction_1md_openvino_docs_documentation_dl_workbench_overview`
 
 
 
@@ -20,9 +28,13 @@ OpenVINO™ Deep Learning Workbench Overview
    User Guide <./dl-workbench-overview/dl-workbench-user-guide>
    ./dl-workbench-overview/dl-workbench-troubleshooting
 
-Deep Learning Workbench (DL Workbench) is an official OpenVINO™ graphical interface designed to make the production of pretrained deep learning Computer Vision and Natural Language Processing models significantly easier.
+Deep Learning Workbench (DL Workbench) is an official OpenVINO™ graphical interface designed to make the production 
+of pretrained deep learning Computer Vision and Natural Language Processing models significantly easier.
 
-Minimize the inference-to-deployment workflow timing for neural models right in your browser: import a model, analyze its performance and accuracy, visualize the outputs, optimize and make the final model deployment-ready in a matter of minutes. DL Workbench takes you through the full OpenVINO™ workflow, providing the opportunity to learn about various toolkit components.
+Minimize the inference-to-deployment workflow timing for neural models right in your browser: import a model, analyze 
+its performance and accuracy, visualize the outputs, optimize and make the final model deployment-ready 
+in a matter of minutes. DL Workbench takes you through the full OpenVINO™ workflow, providing the opportunity to learn 
+about various toolkit components.
 
 .. image:: ./_assets/openvino_dl_wb.png
 
@@ -31,9 +43,15 @@ Minimize the inference-to-deployment workflow timing for neural models right in 
     :text: Run DL Workbench in Intel® DevCloud
     :classes: btn-primary btn-block
 
-DL Workbench enables you to get a detailed performance assessment, explore inference configurations, and obtain an optimized model ready to be deployed on various Intel® configurations, such as client and server CPU, Intel® Processor Graphics (GPU), Intel® Movidius™ Neural Compute Stick 2 (NCS 2), and Intel® Vision Accelerator Design with Intel® Movidius™ VPUs.
+DL Workbench enables you to get a detailed performance assessment, explore inference configurations, and obtain 
+an optimized model ready to be deployed on various Intel® configurations, such as client and server CPU, Intel® 
+Processor Graphics (GPU), Intel® Movidius™ Neural Compute Stick 2 (NCS 2), and Intel® Vision Accelerator Design 
+with Intel® Movidius™ VPUs.
 
-DL Workbench also provides the `JupyterLab environment <https://docs.openvino.ai/latest/workbench_docs_Workbench_DG_Jupyter_Notebooks.html#doxid-workbench-docs-workbench-d-g-jupyter-notebooks>`__ that helps you quick start with OpenVINO™ API and command-line interface (CLI). Follow the full OpenVINO workflow created for your model and learn about different toolkit components.
+DL Workbench also provides the 
+`JupyterLab environment <https://docs.openvino.ai/latest/workbench_docs_Workbench_DG_Jupyter_Notebooks.html#doxid-workbench-docs-workbench-d-g-jupyter-notebooks>`__ 
+that helps you quick start with OpenVINO™ API and command-line interface (CLI). Follow the full OpenVINO workflow 
+created for your model and learn about different toolkit components.
 
 Video
 ~~~~~
@@ -60,7 +78,8 @@ If you are a beginner in the deep learning field, the DL Workbench provides you 
 
 * Get familiar with the OpenVINO™ ecosystem and its main components without installing it on your system.
 
-If you have enough experience with neural networks, DL Workbench provides you with a convenient web interface to optimize your model and prepare it for production:
+If you have enough experience with neural networks, DL Workbench provides you with a convenient web interface 
+to optimize your model and prepare it for production:
 
 * Measure and interpret model performance.
 
@@ -114,9 +133,12 @@ Contact Us
 
 * `DL Workbench Gitter Chat <https://gitter.im/dl-workbench/general?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&content=body>`__
   
-  :target:`doxid-workbench_docs__workbench__d_g__introduction_1md_openvino_workbench_docs_workbench_dg_overview` Deep Learning Workbench (DL Workbench) is an official OpenVINO™ graphical interface designed to make the production of pretrained deep learning Computer Vision and Natural Language Processing models significantly easier.
+  :target:`dl_workbench__introduction_1md_openvino_workbench_docs_workbench_dg_overview` Deep Learning Workbench (DL Workbench) is an official OpenVINO™ graphical interface designed to make the production of pretrained deep learning Computer Vision and Natural Language Processing models significantly easier.
 
-Minimize the inference-to-deployment workflow timing for neural models right in your browser: import a model, analyze its performance and accuracy, visualize the outputs, optimize and make the final model deployment-ready in a matter of minutes. DL Workbench takes you through the full OpenVINO™ workflow, providing the opportunity to learn about various toolkit components.
+Minimize the inference-to-deployment workflow timing for neural models right in your browser: import a model, analyze 
+its performance and accuracy, visualize the outputs, optimize and make the final model deployment-ready in a matter 
+of minutes. DL Workbench takes you through the full OpenVINO™ workflow, providing the opportunity to learn about various 
+toolkit components.
 
 .. image:: ./_assets/openvino_dl_wb.png
 
@@ -125,9 +147,14 @@ Minimize the inference-to-deployment workflow timing for neural models right in 
     :text: Install DL Workbench 
     :classes: btn-primary btn-block
 
-DL Workbench enables you to get a detailed performance assessment, explore inference configurations, and obtain an optimized model ready to be deployed on various Intel® configurations, such as client and server CPU, Intel® Processor Graphics (GPU), Intel® Movidius™ Neural Compute Stick 2 (NCS 2), and Intel® Vision Accelerator Design with Intel® Movidius™ VPUs.
+DL Workbench enables you to get a detailed performance assessment, explore inference configurations, and obtain 
+an optimized model ready to be deployed on various Intel® configurations, such as client and server CPU, Intel® 
+Processor Graphics (GPU), Intel® Movidius™ Neural Compute Stick 2 (NCS 2), and Intel® Vision Accelerator Design 
+with Intel® Movidius™ VPUs.
 
-DL Workbench also provides the :ref:`JupyterLab environment <doxid-workbench_docs__workbench__d_g__jupyter__notebooks>` that helps you quick start with OpenVINO™ API and command-line interface (CLI). Follow the full OpenVINO workflow created for your model and learn about different toolkit components.
+DL Workbench also provides the :ref:`JupyterLab environment <doxid-workbench_docs__workbench__d_g__jupyter__notebooks>` 
+that helps you quick start with OpenVINO™ API and command-line interface (CLI). Follow the full OpenVINO workflow created 
+for your model and learn about different toolkit components.
 
 Video
 ~~~~~
@@ -154,7 +181,8 @@ If you are a beginner in the deep learning field, the DL Workbench provides you 
 
 * Get familiar with the OpenVINO™ ecosystem and its main components without installing it on your system.
 
-If you have enough experience with neural networks, DL Workbench provides you with a convenient web interface to optimize your model and prepare it for production:
+If you have enough experience with neural networks, DL Workbench provides you with a convenient web interface 
+to optimize your model and prepare it for production:
 
 * Measure and interpret model performance.
 

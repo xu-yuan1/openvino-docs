@@ -55,12 +55,12 @@ Video
      - **Run DL Workbench on MacOS**
      - **Run DL Workbench on Windows**
 
-Congratulations, you have installed the DL Workbench. Learn how to :ref:`Get Started <doxid-workbench_docs__workbench__d_g__work_with__models_and__sample__datasets>` with DL Workbench and create your first project.
+Congratulations, you have installed the DL Workbench. Learn how to :ref:`Get Started <dl_workbench__get_started>` with DL Workbench and create your first project.
 
 See Also
 ~~~~~~~~
 
-* :ref:`Next Step: Get Started <doxid-workbench_docs__workbench__d_g__work_with__models_and__sample__datasets>`
+* :ref:`Next Step: Get Started <dl_workbench__get_started>`
 
 * :ref:`Advanced DL Workbench Configurations <doxid-workbench_docs__workbench__d_g__advanced__configurations>`
 

@@ -21,7 +21,7 @@ Object Detection Model Tutorial
       - `Open Model Zoo <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/mobilenet-ssd>`__
       - `2017 Val images <http://cocodataset.org>`__
 
-Refer to the :ref:`Get Started with DL Workbench <doxid-workbench_docs__workbench__d_g__work_with__models_and__sample__datasets>` to learn how to import the model and dataset.
+Refer to the :ref:`Get Started with DL Workbench <dl_workbench__get_started>` to learn how to import the model and dataset.
 
 .. tip:: If you have optimized the model using :ref:`INT8 Calibration <doxid-workbench_docs__workbench__d_g__int_8__quantization>`, you can use a Not Annotated dataset to compare original and optimized model predictions.
 

@@ -109,7 +109,7 @@ different devices require a different number of execution streams to saturate.
 In some cases, combination of streams and batching may be required to 
 maximize the throughput.
 
-One possible throughput optimization strategy is to **set an upper bound for latency and then increase the batch size and/or number of the streams until that tail latency is met (or the throughput is not growing anymore)**. Consider :ref:`OpenVINO Deep Learning Workbench <doxid-workbench_docs__workbench__d_g__introduction>` that builds handy latency vs throughput charts, iterating over possible values of the batch size and number of streams.
+One possible throughput optimization strategy is to **set an upper bound for latency and then increase the batch size and/or number of the streams until that tail latency is met (or the throughput is not growing anymore)**. Consider :ref:`OpenVINO Deep Learning Workbench <dl_workbench__introduction>` that builds handy latency vs throughput charts, iterating over possible values of the batch size and number of streams.
 
 .. note:: When playing with :ref:`dynamically-shaped inputs <deploy_infer__dynamic_shapes>`, 
    use only the streams (no batching), as they tolerate individual requests 

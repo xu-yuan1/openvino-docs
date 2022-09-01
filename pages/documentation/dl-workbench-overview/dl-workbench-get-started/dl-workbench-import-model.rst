@@ -5,7 +5,7 @@
 Import Model
 ============
 
-:target:`doxid-workbench_docs__workbench__d_g__select__model_1md_openvino_workbench_docs_workbench_dg_select_model` This document describes the first part of :ref:`Get Started with DL Workbench <doxid-workbench_docs__workbench__d_g__work_with__models_and__sample__datasets>` workflow, following the model import steps from the Create Project video.
+:target:`doxid-workbench_docs__workbench__d_g__select__model_1md_openvino_workbench_docs_workbench_dg_select_model` This document describes the first part of :ref:`Get Started with DL Workbench <dl_workbench__get_started>` workflow, following the model import steps from the Create Project video.
 
 .. list-table::
 
@@ -50,7 +50,7 @@ You will be redirected to the **Create Project** page, where you can check the i
 
 .. image:: ./_assets/mobilenet_imported.png
 
-You have completed the first part of :ref:`Get Started with DL Workbench <doxid-workbench_docs__workbench__d_g__work_with__models_and__sample__datasets>` guide. The next step is to :ref:`create a project <doxid-workbench_docs__workbench__create__project>`. Before creating a project, you can find out how your model works on test images.
+You have completed the first part of :ref:`Get Started with DL Workbench <dl_workbench__get_started>` guide. The next step is to :ref:`create a project <doxid-workbench_docs__workbench__create__project>`. Before creating a project, you can find out how your model works on test images.
 
 Optional. Visualize Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~
