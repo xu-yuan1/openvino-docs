@@ -1,11 +1,20 @@
 .. index:: pair: page; Implementing a Face Beautification Algorithm
-.. _doxid-openvino_docs_gapi_face_beautification:
+.. _media_graphapi__face_beautification:
+
+.. meta::
+   :description: Information about implementation of face beautification 
+                 algorithm and how to infer different networks inside a pipeline 
+                 and run a G-API pipeline on a video stream.
+   :keywords: face beautification algorithm, g-api, OpenVINO, network inference, pipeline, 
+              video stream, Open Model Zoo, OpenCV, deep learning, computer vision, 
+              g-api pipeline, Face detector post-processing, custom operations, 
+              Facial Landmarks Post-Processing
 
 
 Implementing a Face Beautification Algorithm
 ============================================
 
-:target:`doxid-openvino_docs_gapi_face_beautification_1md_openvino_docs_gapi_face_beautification`
+:target:`media_graphapi__face_beautification_1md_openvino_docs_gapi_face_beautification`
 
 Introduction
 ~~~~~~~~~~~~
@@ -23,7 +32,7 @@ Prerequisites
 
 This sample requires:
 
-* PC with GNU/Linux\* or Microsoft Windows\* (Apple macOS\* is supported but was not tested)
+* PC with GNU/Linux or Microsoft Windows (Apple macOS is supported but was not tested)
 
 * OpenCV 4.2 or higher built with `Intel® Distribution of OpenVINO™ Toolkit <https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html>`__ (building with `Intel® TBB <https://www.threadingbuildingblocks.org/intel-tbb-tutorial>`__ is a plus)
 
@@ -38,12 +47,13 @@ To download the models from the Open Model Zoo, use the Model Downloader tool.
 Face Beautification Algorithm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We will implement a simple face beautification algorithm using a combination of modern Deep Learning techniques and traditional Computer Vision. The general idea behind the algorithm is to make face skin smoother while preserving face features like eyes or a mouth contrast. The algorithm identifies parts of the face using a DNN inference, applies different filters to the parts found, and then combines it into the final result using basic image arithmetics:
+We will implement a simple face beautification algorithm using a combination of modern Deep Learning techniques 
+and traditional Computer Vision. The general idea behind the algorithm is to make face skin smoother while preserving 
+face features like eyes or a mouth contrast. The algorithm identifies parts of the face using a DNN inference, applies 
+different filters to the parts found, and then combines it into the final result using basic image arithmetics:
 
 .. image:: ./_assets/gapi_face_beautification_algorithm.png
 	:alt: Face Beautification Algorithm
-
-Briefly the algorithm is described as follows:
 
 Briefly the algorithm is described as follows:
 
@@ -65,7 +75,8 @@ Briefly the algorithm is described as follows:
 
 * The final result :math:`O` is a composition of features above calculated as :math:`O = b\*I + p\*U + s\*L`.
 
-Generating face element masks based on a limited set of features (just 35 per face, including all its parts) is not very trivial and is described in the sections below.
+Generating face element masks based on a limited set of features (just 35 per face, including all its parts) is not very 
+trivial and is described in the sections below.
 
 Constructing a G-API Pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -73,7 +84,8 @@ Constructing a G-API Pipeline
 Declare Deep Learning Topologies
 --------------------------------
 
-This sample is using two DNN detectors. Every network takes one input and produces one output. In G-API, networks are defined with macro G_API_NET():
+This sample is using two DNN detectors. Every network takes one input and produces one output. In G-API, networks 
+are defined with macro G_API_NET():
 
 .. ref-code-block:: cpp
 
@@ -131,11 +143,13 @@ The code below generates a graph for the algorithm above:
 	                                                      garRects));
 	});
 
-The resulting graph is a mixture of G-API's standard operations, user-defined operations (namespace custom::), and DNN inference. The generic function ``cv::gapi::infer<>()`` allows you to trigger inference within the pipeline; networks to infer are specified as template parameters. The sample code is using two versions of ``cv::gapi::infer<>()`` :
+The resulting graph is a mixture of G-API's standard operations, user-defined operations (namespace custom::), and DNN 
+inference. The generic function ``cv::gapi::infer<>()`` allows you to trigger inference within the pipeline; networks 
+to infer are specified as template parameters. The sample code is using two versions of ``cv::gapi::infer<>()`` :
 
 * A frame-oriented one is used to detect faces on the input frame.
 
-* An ROI-list oriented one is used to run landmarks inference on a list of faces – this version produces an array of landmarks per every face. More on this in "Face Analytics pipeline" (:ref:`Building a GComputation <doxid-openvino_docs_gapi_gapi_face_analytics_pipeline_1gapi_ifd_gcomputation>` section).
+* An ROI-list oriented one is used to run landmarks inference on a list of faces – this version produces an array of landmarks per every face. More on this in "Face Analytics pipeline" (:ref:`Building a GComputation <media_graphapi__face_analytics_pipeline__gcomputation>` section).
 
 Unsharp mask in G-API
 ---------------------
@@ -146,7 +160,9 @@ The unsharp mask :math:`U` for image :math:`I` is defined as:
 
 	U = I - s \* L(M(I)),
 
-where :math:`M()` is a median filter, :math:`L()` is the Laplace operator, and :math:`s` is a strength coefficient. While G-API doesn't provide this function out-of-the-box, it is expressed naturally with the existing G-API operations:
+
+where :math:`M()` is a median filter, :math:`L()` is the Laplace operator, and :math:`s` is a strength coefficient. 
+While G-API doesn't provide this function out-of-the-box, it is expressed naturally with the existing G-API operations:
 
 .. ref-code-block:: cpp
 
@@ -159,12 +175,14 @@ where :math:`M()` is a median filter, :math:`L()` is the Laplace operator, and :
 	    return (src - (laplacian \* strength));
 	}
 
-Note that the code snipped above is a regular C++ function defined with G-API types. Users can write functions like this to simplify graph construction; when called, this function just puts the relevant nodes to the pipeline it is used in.
+Note that the code snipped above is a regular C++ function defined with G-API types. Users can write functions like this 
+to simplify graph construction; when called, this function just puts the relevant nodes to the pipeline it is used in.
 
 Custom Operations
 ~~~~~~~~~~~~~~~~~
 
-The face beautification graph is using custom operations extensively. This chapter focuses on the most interesting kernels, refer to G-API Kernel API for general information on defining operations and implementing kernels in G-API.
+The face beautification graph is using custom operations extensively. This chapter focuses on the most interesting kernels, 
+refer to G-API Kernel API for general information on defining operations and implementing kernels in G-API.
 
 Face detector post-processing
 -----------------------------
@@ -220,7 +238,10 @@ A face detector output is converted to an array of faces with the following kern
 Facial Landmarks Post-Processing
 --------------------------------
 
-The algorithm infers locations of face elements (like the eyes, the mouth and the head contour itself) using a generic facial landmarks detector (details) from OpenVINO™ Open Model Zoo. However, the detected landmarks as-is are not enough to generate masks — this operation requires regions of interest on the face represented by closed contours, so some interpolation is applied to get them. This landmarks processing and interpolation is performed by the following kernel:
+The algorithm infers locations of face elements (like the eyes, the mouth and the head contour itself) using a generic 
+facial landmarks detector (details) from OpenVINO™ Open Model Zoo. However, the detected landmarks as-is are not enough 
+to generate masks — this operation requires regions of interest on the face represented by closed contours, so some 
+interpolation is applied to get them. This landmarks processing and interpolation is performed by the following kernel:
 
 .. ref-code-block:: cpp
 
@@ -280,7 +301,9 @@ The algorithm infers locations of face elements (like the eyes, the mouth and th
 	    }
 	};
 
-The kernel takes two arrays of denormalized landmarks coordinates and returns an array of elements' closed contours and an array of faces' closed contours; in other words, outputs are, the first, an array of contours of image areas to be sharpened and, the second, another one to be smoothed.
+The kernel takes two arrays of denormalized landmarks coordinates and returns an array of elements' closed contours 
+and an array of faces' closed contours; in other words, outputs are, the first, an array of contours of image areas 
+to be sharpened and, the second, another one to be smoothed.
 
 Here and below ``Contour`` is a vector of points.
 
@@ -316,7 +339,9 @@ Eye contours are estimated with the following function:
 	    return cntEyeBottom;
 	}
 
-Briefly, this function restores the bottom side of an eye by a half-ellipse based on two points in left and right eye corners. In fact, ``cv::ellipse2Poly()`` is used to approximate the eye region, and the function only defines ellipse parameters based on just two points:
+Briefly, this function restores the bottom side of an eye by a half-ellipse based on two points in left and right eye 
+corners. In fact, ``cv::ellipse2Poly()`` is used to approximate the eye region, and the function only defines ellipse 
+parameters based on just two points:
 
 * The ellipse center and the :math:`X` half-axis calculated by two eye Points.
 
@@ -328,7 +353,11 @@ Briefly, this function restores the bottom side of an eye by a half-ellipse base
 
 * The inclination angle of the axes.
 
-The use of the ``:ref:`atan2() <doxid-namespacengraph_1_1runtime_1_1reference_1a0fe523fcc10ffde40ad189c4c0acfcbb>``` instead of just ``:ref:`atan() <doxid-namespacengraph_1_1runtime_1_1reference_1a26928b5ccc0b0e9418e7eaad39df5a39>``` in function ``custom::getLineInclinationAngleDegrees()`` is essential as it allows to return a negative value depending on the ``x`` and the ``y`` signs so we can get the right angle even in case of upside-down face arrangement (if we put the points in the right order, of course).
+The use of the ``:ref:`atan2() <doxid-namespacengraph_1_1runtime_1_1reference_1a0fe523fcc10ffde40ad189c4c0acfcbb>``` instead 
+of just ``:ref:`atan() <doxid-namespacengraph_1_1runtime_1_1reference_1a26928b5ccc0b0e9418e7eaad39df5a39>``` in function 
+``custom::getLineInclinationAngleDegrees()`` is essential as it allows to return a negative value depending on the ``x`` 
+and the ``y`` signs so we can get the right angle even in case of upside-down face arrangement (if we put the points 
+in the right order, of course).
 
 Get a Forehead Contour
 ++++++++++++++++++++++
@@ -364,7 +393,11 @@ The function approximates the forehead contour:
 	    return cntForehead;
 	}
 
-As we have only jaw points in our detected landmarks, we have to get a half-ellipse based on three points of a jaw: the leftmost, the rightmost and the lowest one. The jaw width is assumed to be equal to the forehead width and the latter is calculated using the left and the right points. Speaking of the :math:`Y` axis, we have no points to get it directly, and instead assume that the forehead height is about :math:`2/3` of the jaw height, which can be figured out from the face center (the middle between the left and right points) and the lowest jaw point.
+As we have only jaw points in our detected landmarks, we have to get a half-ellipse based on three points of a jaw: 
+the leftmost, the rightmost and the lowest one. The jaw width is assumed to be equal to the forehead width and the latter 
+is calculated using the left and the right points. Speaking of the :math:`Y` axis, we have no points to get it directly, 
+and instead assume that the forehead height is about :math:`2/3` of the jaw height, which can be figured out from the face 
+center (the middle between the left and right points) and the lowest jaw point.
 
 Draw Masks
 ----------
@@ -413,7 +446,9 @@ The steps to get the masks are:
 Configuring and Running the Pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the graph is fully expressed, we can finally compile it and run on real data. G-API graph compilation is the stage where the G-API framework actually understands which kernels and networks to use. This configuration happens via G-API compilation arguments.
+Once the graph is fully expressed, we can finally compile it and run on real data. G-API graph compilation is the stage 
+where the G-API framework actually understands which kernels and networks to use. This configuration happens via G-API 
+compilation arguments.
 
 DNN Parameters
 --------------
@@ -435,7 +470,8 @@ This sample is using OpenVINO™ Toolkit OpenVINO Runtime backend for DL inferen
 	    /\*std::string\*/ landmDevice
 	};
 
-Every ``cv::gapi::ie::Params<>`` object is related to the network specified in its template argument. We should pass there the network type we have defined in ``G_API_NET()`` in the early beginning of the tutorial.
+Every ``cv::gapi::ie::Params<>`` object is related to the network specified in its template argument. We should pass there 
+the network type we have defined in ``G_API_NET()`` in the early beginning of the tutorial.
 
 Network parameters are then wrapped in ``cv::gapi::NetworkPackage`` :
 
@@ -443,12 +479,13 @@ Network parameters are then wrapped in ``cv::gapi::NetworkPackage`` :
 
 	auto networks      = cv::gapi::networks(faceParams, landmParams);
 
-More details in "Face Analytics Pipeline" (:ref:`Configuring the Pipeline <doxid-openvino_docs_gapi_gapi_face_analytics_pipeline_1gapi_ifd_configuration>` section).
+More details in "Face Analytics Pipeline" (:ref:`Configuring the Pipeline <media_graphapi__face_analytics_pipeline__configuration>` section).
 
 Kernel Packages
 ---------------
 
-In this example we use a lot of custom kernels, in addition to that we use Fluid backend to optimize out memory for G-API's standard kernels where applicable. The resulting kernel package is formed like this:
+In this example we use a lot of custom kernels, in addition to that we use Fluid backend to optimize out memory for G-API's 
+standard kernels where applicable. The resulting kernel package is formed like this:
 
 .. ref-code-block:: cpp
 
@@ -472,12 +509,14 @@ G-API optimizes execution for video streams when compiled in the "Streaming" mod
 
 	cv::GStreamingCompiled stream = pipeline.compileStreaming(cv::compile_args(kernels, networks));
 
-More on this in "Face Analytics Pipeline" (:ref:`Configuring the pipeline <doxid-openvino_docs_gapi_gapi_face_analytics_pipeline_1gapi_ifd_configuration>` section).
+More on this in "Face Analytics Pipeline" 
+(:ref:`Configuring the pipeline <media_graphapi__face_analytics_pipeline__configuration>` section).
 
 Running the streaming pipeline
 ------------------------------
 
-In order to run the G-API streaming pipeline, all we need is to specify the input video source, call ``cv::GStreamingCompiled::start()``, and then fetch the pipeline processing results:
+In order to run the G-API streaming pipeline, all we need is to specify the input video source, 
+call ``cv::GStreamingCompiled::start()``, and then fetch the pipeline processing results:
 
 .. ref-code-block:: cpp
 
@@ -516,17 +555,21 @@ In order to run the G-API streaming pipeline, all we need is to specify the inpu
 
 Once results are ready and can be pulled from the pipeline we display it on the screen and handle GUI events.
 
-See :ref:`Running the pipeline <doxid-openvino_docs_gapi_gapi_face_analytics_pipeline_1gapi_ifd_running>` section in the "Face Analytics Pipeline" tutorial for more details.
+See :ref:`Running the pipeline <media_graphapi__face_analytics_pipeline__running_pipeline>` section 
+in the "Face Analytics Pipeline" tutorial for more details.
 
 Conclusion
 ~~~~~~~~~~
 
-The tutorial has two goals: to show the use of brand new features of G-API introduced in OpenCV 4.2, and give a basic understanding on a sample face beautification algorithm.
+The tutorial has two goals: to show the use of brand new features of G-API introduced in OpenCV 4.2, and give a basic 
+understanding on a sample face beautification algorithm.
 
 The result of the algorithm application:
 
 .. image:: ./_assets/gapi_face_beautification_example.jpg
 	:alt: Face Beautification example
 
-On the test machine (Intel® Core™ i7-8700) the G-API-optimized video pipeline outperforms its serial (non-pipelined) version by a factor of 2.7 – meaning that for such a non-trivial graph, the proper pipelining can bring almost 3x increase in performance.
+On the test machine (Intel® Core™ i7-8700) the G-API-optimized video pipeline outperforms its serial (non-pipelined) version 
+by a factor of 2.7 – meaning that for such a non-trivial graph, the proper pipelining can bring almost 3x increase 
+in performance.
 

@@ -34,7 +34,7 @@ and run the operations for a particular backend.
 
 The idea behind G-API is that if an algorithm can be expressed in a special embedded language (currently in C++), 
 the framework can catch its sense and apply a number of optimizations to the whole thing automatically. Particular 
-optimizations are selected based on which :ref:`kernels <doxid-openvino_docs_gapi_kernel_api>` and 
+optimizations are selected based on which :ref:`kernels <media_graphapi__kernel_api>` and 
 `backends <https://docs.opencv.org/4.5.0/dc/d1c/group__gapi__std__backends.html>`__ are involved in the graph 
 compilation process, for example, the graph can be offloaded to GPU via the OpenCL backend, or optimized 
 for memory consumption with the Fluid backend. Kernels, backends, and their settings are parameters to the graph 
@@ -71,7 +71,7 @@ Programming Model
 Building graphs is easy with G-API. In fact, there is no notion of graphs exposed in the API, so the user doesn’t 
 need to operate in terms of “nodes” and “edges” — instead, graphs are constructed implicitly via expressions .
 in a "functional" way. Expression-based graphs are built using two major concepts: 
-:ref:`operations <doxid-openvino_docs_gapi_kernel_api>` and 
+:ref:`operations <media_graphapi__kernel_api>` and 
 `data objects <https://docs.opencv.org/4.2.0/db/df1/group__gapi__data__objects.html>`__.
 
 In G-API, every graph begins and ends with data objects; data objects are passed to operations which produce ,

@@ -1,11 +1,19 @@
 .. index:: pair: page; Building a Face Analytics Pipeline
-.. _doxid-openvino_docs_gapi_gapi_face_analytics_pipeline:
+.. _media_graphapi__face_analytics_pipeline:
+
+.. meta::
+   :description: Overview of information on how to integrate Deep Learning inference 
+                 in a G-API graph, run a G-API graph on a video stream and obtain data from it
+   :keywords: g-api graph, deel learning infernece integration, video stream, 
+              faca analytics pipeline, OpenCV, Open Model Zoo, vision algorithms,
+              stream processing, video analytics, computer vision, GComputation,
+              Post-Processing Kernel
 
 
 Building a Face Analytics Pipeline
 ==================================
 
-:target:`doxid-openvino_docs_gapi_gapi_face_analytics_pipeline_1md_openvino_docs_gapi_gapi_face_analytics_pipeline`
+:target:`media_graphapi__face_analytics_pipeline_1md_openvino_docs_gapi_gapi_face_analytics_pipeline`
 
 Overview
 ~~~~~~~~
@@ -38,16 +46,27 @@ To download the models from the Open Model Zoo, use the Model Downloader tool.
 Introduction: Why G-API
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Many computer vision algorithms run on a video stream rather than on individual images. Stream processing usually consists of multiple steps – like decode, preprocessing, detection, tracking, classification (on detected objects), and visualization – forming a *video processing pipeline*. Moreover, many these steps of such pipeline can run in parallel – modern platforms have different hardware blocks on the same chip like decoders and GPUs, and extra accelerators can be plugged in as extensions, like Intel® Movidius™ Neural Compute Stick for deep learning offload.
+Many computer vision algorithms run on a video stream rather than on individual images. Stream processing usually consists 
+of multiple steps – like decode, preprocessing, detection, tracking, classification (on detected objects), 
+and visualization – forming a *video processing pipeline*. Moreover, many these steps of such pipeline can run 
+in parallel – modern platforms have different hardware blocks on the same chip like decoders and GPUs, and extra 
+accelerators can be plugged in as extensions, like Intel® Movidius™ Neural Compute Stick for deep learning offload.
 
-Given all this manifold of options and a variety in video analytics algorithms, managing such pipelines effectively quickly becomes a problem. For sure it can be done manually, but this approach doesn't scale: if a change is required in the algorithm (e.g. a new pipeline step is added), or if it is ported on a new platform with different capabilities, the whole pipeline needs to be re-optimized.
+Given all this manifold of options and a variety in video analytics algorithms, managing such pipelines effectively quickly 
+becomes a problem. For sure it can be done manually, but this approach doesn't scale: if a change is required in the algorithm 
+(e.g. a new pipeline step is added), or if it is ported on a new platform with different capabilities, the whole pipeline 
+needs to be re-optimized.
 
-Starting with version 4.2, OpenCV offers a solution to this problem. OpenCV G-API now can manage Deep Learning inference (a cornerstone of any modern analytics pipeline) with a traditional Computer Vision as well as video capturing/decoding, all in a single pipeline. G-API takes care of pipelining itself – so if the algorithm or platform changes, the execution model adapts to it automatically.
+Starting with version 4.2, OpenCV offers a solution to this problem. OpenCV G-API now can manage Deep Learning inference 
+(a cornerstone of any modern analytics pipeline) with a traditional Computer Vision as well as video capturing/decoding, 
+all in a single pipeline. G-API takes care of pipelining itself – so if the algorithm or platform changes, the execution 
+model adapts to it automatically.
 
 Pipeline Overview
 ~~~~~~~~~~~~~~~~~
 
-Our sample application is based on Interactive Face Detection demo from Open Model Zoo. A simplified pipeline consists of the following steps:
+Our sample application is based on Interactive Face Detection demo from Open Model Zoo. A simplified pipeline consists 
+of the following steps:
 
 #. Image acquisition and decode
 
@@ -62,23 +81,31 @@ Our sample application is based on Interactive Face Detection demo from Open Mod
 
 
 
-.. _doxid-openvino_docs_gapi_gapi_face_analytics_pipeline_1gapi_ifd_constructing:
+.. _media_graphapi__face_analytics_pipeline__constructing:
 
 Construct a pipeline
 ~~~~~~~~~~~~~~~~~~~~
 
-Constructing a G-API graph for a video streaming case does not differ much from a `regular usage <https://docs.opencv.org/4.5.0/d0/d1e/gapi.html#gapi_example>`__ of G-API it is still about defining graph *data* (with cv::GMat, ``cv::GScalar``, and ``cv::GArray``) and *operations* over it. Inference also becomes an operation in the graph, but is defined in a little bit different way.
+Constructing a G-API graph for a video streaming case does not differ much from a 
+`regular usage <https://docs.opencv.org/4.5.0/d0/d1e/gapi.html#gapi_example>`__ of G-API it is still about defining graph 
+*data* (with cv::GMat, ``cv::GScalar``, and ``cv::GArray``) and *operations* over it. Inference also becomes an operation 
+in the graph, but is defined in a little bit different way.
 
 
 
-.. _doxid-openvino_docs_gapi_gapi_face_analytics_pipeline_1gapi_ifd_declaring_nets:
+.. _media_graphapi__face_analytics_pipeline__declaring_topologies:
 
 Declare Deep Learning topologies
 --------------------------------
 
-In contrast with traditional CV functions (see `core <https://docs.opencv.org/4.5.0/df/d1f/group__gapi__core.html>`__ and `imgproc <https://docs.opencv.org/4.5.0/d2/d00/group__gapi__imgproc.html>`__) where G-API declares distinct operations for every function, inference in G-API is a single generic operation ``cv::gapi::infer<>``. As usual, it is just an interface and it can be implemented in a number of ways under the hood. In OpenCV 4.2, only OpenVINO™ Runtime-based backend is available, and OpenCV's own DNN module-based backend is to come.
+In contrast with traditional CV functions (see `core <https://docs.opencv.org/4.5.0/df/d1f/group__gapi__core.html>`__ 
+and `imgproc <https://docs.opencv.org/4.5.0/d2/d00/group__gapi__imgproc.html>`__) where G-API declares distinct operations 
+for every function, inference in G-API is a single generic operation ``cv::gapi::infer<>``. As usual, it is just an interface 
+and it can be implemented in a number of ways under the hood. In OpenCV 4.2, only OpenVINO™ Runtime-based backend 
+is available, and OpenCV's own DNN module-based backend is to come.
 
-``cv::gapi::infer<>`` is *parametrized* by the details of a topology we are going to execute. Like operations, topologies in G-API are strongly typed and are defined with a special macro ``G_API_NET()`` :
+``cv::gapi::infer<>`` is *parametrized* by the details of a topology we are going to execute. Like operations, topologies 
+in G-API are strongly typed and are defined with a special macro ``G_API_NET()`` :
 
 .. ref-code-block:: cpp
 
@@ -101,12 +128,7 @@ Similar to how operations are defined with ``G_API_OP()``, network description r
 #. A topology name can be any non-empty string, G-API is using these names to distinguish networks inside. Names should be unique in the scope of a single graph.
 
 
-
-
-
-
-
-.. _doxid-openvino_docs_gapi_gapi_face_analytics_pipeline_1gapi_ifd_gcomputation:
+.. _media_graphapi__face_analytics_pipeline__gcomputation:
 
 Building a GComputation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -155,32 +177,52 @@ Now the above pipeline is expressed in G-API like this:
 	                            cv::GOut(frame, faces, ages, genders, emotions));
 	});
 
-Every pipeline starts with declaring empty data objects – which act as inputs to the pipeline. Then we call a generic ``cv::gapi::infer<>`` specialized to Faces detection network. ``cv::gapi::infer<>`` inherits its signature from its template parameter – and in this case it expects one input cv::GMat and produces one output cv::GMat.
+Every pipeline starts with declaring empty data objects – which act as inputs to the pipeline. Then we call a generic 
+``cv::gapi::infer<>`` specialized to Faces detection network. ``cv::gapi::infer<>`` inherits its signature from its template 
+parameter – and in this case it expects one input cv::GMat and produces one output cv::GMat.
 
-In this sample we use a pre-trained SSD-based network and its output needs to be parsed to an array of detections (object regions of interest, ROIs). It is done by a custom operation custom::PostProc, which returns an array of rectangles (of type ``cv::GArray<cv::Rect>``) back to the pipeline. This operation also filters out results by a confidence threshold – and these details are hidden in the kernel itself. Still, at the moment of graph construction we operate with interfaces only and don't need actual kernels to express the pipeline – so the implementation of this post-processing will be listed later.
+In this sample we use a pre-trained SSD-based network and its output needs to be parsed to an array of detections 
+(object regions of interest, ROIs). It is done by a custom operation custom::PostProc, which returns an array of rectangles 
+(of type ``cv::GArray<cv::Rect>``) back to the pipeline. This operation also filters out results by a confidence 
+threshold – and these details are hidden in the kernel itself. Still, at the moment of graph construction we operate 
+with interfaces only and don't need actual kernels to express the pipeline – so the implementation of this post-processing 
+will be listed later.
 
-After detection result output is parsed to an array of objects, we can run classification on any of those. G-API doesn't support syntax for in-graph loops like ``for_each()`` yet, but instead ``cv::gapi::infer<>`` comes with a special list-oriented overload.
+After detection result output is parsed to an array of objects, we can run classification on any of those. G-API doesn't 
+support syntax for in-graph loops like ``for_each()`` yet, but instead ``cv::gapi::infer<>`` comes with a special 
+list-oriented overload.
 
-User can call ``cv::gapi::infer<>`` with a ``cv::GArray`` as the first argument, so then G-API assumes it needs to run the associated network on every rectangle from the given list of the given frame (second argument). Result of such operation is also a list – a cv::GArray of ``cv::GMat``.
+User can call ``cv::gapi::infer<>`` with a ``cv::GArray`` as the first argument, so then G-API assumes it needs to run 
+the associated network on every rectangle from the given list of the given frame (second argument). Result of such operation 
+is also a list – a cv::GArray of ``cv::GMat``.
 
-Since AgeGender network itself produces two outputs, it's output type for a list-based version of ``cv::gapi::infer`` is a tuple of arrays. We use ``std::tie()`` to decompose this input into two distinct objects.
+Since AgeGender network itself produces two outputs, it's output type for a list-based version of ``cv::gapi::infer`` 
+is a tuple of arrays. We use ``std::tie()`` to decompose this input into two distinct objects.
 
 Emotions network produces a single output so its list-based inference's return type is ``cv::GArray<cv::GMat>``.
 
 
 
-
-
-.. _doxid-openvino_docs_gapi_gapi_face_analytics_pipeline_1gapi_ifd_configuration:
+.. _media_graphapi__face_analytics_pipeline__configuration:
 
 Configure the Pipeline
 ~~~~~~~~~~~~~~~~~~~~~~
 
-G-API strictly separates construction from configuration with the idea to keep algorithm code itself platform-neutral. In the above listings we only declared our operations and expressed the overall data flow, but didn't even mention that we use OpenVINO™. We only described *what* we do, but not *how* we do it. Keeping these two aspects clearly separated is the design goal for G-API.
+G-API strictly separates construction from configuration with the idea to keep algorithm code itself platform-neutral. 
+In the above listings we only declared our operations and expressed the overall data flow, but didn't even mention that 
+we use OpenVINO™. We only described *what* we do, but not *how* we do it. Keeping these two aspects clearly separated 
+is the design goal for G-API.
 
-Platform-specific details arise when the pipeline is *compiled* i.e. is turned from a declarative to an executable form. The way *how* to run stuff is specified via compilation arguments, and new inference/streaming features are no exception from this rule.
+Platform-specific details arise when the pipeline is *compiled* i.e. is turned from a declarative to an executable form. 
+The way *how* to run stuff is specified via compilation arguments, and new inference/streaming features are no exception 
+from this rule.
 
-G-API is built on backends which implement interfaces (see `Architecture <https://docs.opencv.org/4.5.0/de/d4d/gapi_hld.html>`__ and :ref:`Kernels <doxid-openvino_docs_gapi_kernel_api>` for details) thus ``cv::gapi::infer<>`` is a function which can be implemented by different backends. In OpenCV 4.2, only OpenVINO™ Runtime backend for inference is available. Every inference backend in G-API has to provide a special parameterizable structure to express *backend-specific* neural network parameters and in this case, it is ``cv::gapi::ie::Params`` :
+G-API is built on backends which implement interfaces 
+(see `Architecture <https://docs.opencv.org/4.5.0/de/d4d/gapi_hld.html>`__ and 
+:ref:`Kernels <media_graphapi__kernel_api>` for details) thus ``cv::gapi::infer<>`` is a function which can be 
+implemented by different backends. In OpenCV 4.2, only OpenVINO™ Runtime backend for inference is available. Every inference 
+backend in G-API has to provide a special parameterizable structure to express *backend-specific* neural network parameters 
+and in this case, it is ``cv::gapi::ie::Params`` :
 
 .. ref-code-block:: cpp
 
@@ -200,7 +242,9 @@ G-API is built on backends which implement interfaces (see `Architecture <https:
 	    cmd.get<std::string>("emod"),   // read cmd args: device specifier
 	};
 
-Here we define three parameter objects: ``det_net``, ``age_net``, and ``emo_net``. Every object is a ``cv::gapi::ie::Params`` structure parametrization for each particular network we use. On a compilation stage, G-API automatically matches network parameters with their ``cv::gapi::infer<>`` calls in graph using this information.
+Here we define three parameter objects: ``det_net``, ``age_net``, and ``emo_net``. Every object is a ``cv::gapi::ie::Params`` 
+structure parametrization for each particular network we use. On a compilation stage, G-API automatically matches network 
+parameters with their ``cv::gapi::infer<>`` calls in graph using this information.
 
 Regardless of the topology, every parameter structure is constructed with three string arguments – specific to the OpenVINO™ Runtime:
 
@@ -224,27 +268,37 @@ Once networks are defined and custom kernels are implemented, the pipeline is co
 	// description itself known nothing about that).
 	auto cc = pp.compileStreaming(cv::compile_args(kernels, networks));
 
-``cv::GComputation::compileStreaming()`` triggers a special video-oriented form of graph compilation where G-API is trying to optimize throughput. Result of this compilation is an object of special type ``cv::GStreamingCompiled`` – in contrast to a traditional callable ``cv::GCompiled``, these objects are closer to media players in their semantics.
+``cv::GComputation::compileStreaming()`` triggers a special video-oriented form of graph compilation where G-API is trying 
+to optimize throughput. Result of this compilation is an object of special type ``cv::GStreamingCompiled`` – in contrast 
+to a traditional callable ``cv::GCompiled``, these objects are closer to media players in their semantics.
 
-.. note:: There is no need to pass metadata arguments describing the format of 
+.. note:: 
+   There is no need to pass metadata arguments describing the format of 
    the input video stream in ``cv::GComputation::compileStreaming()`` – G-API 
    figures automatically what are the formats of the input vector and adjusts 
    the pipeline to these formats on-the-fly. User still can pass metadata there 
    as with regular ``cv::GComputation::compile()`` in order to fix the pipeline 
    to the specific input format.
 
-.. _doxid-openvino_docs_gapi_gapi_face_analytics_pipeline_1gapi_ifd_running:
+.. _media_graphapi__face_analytics_pipeline__running_pipeline:
 
 Running the Pipeline
 ~~~~~~~~~~~~~~~~~~~~
 
-Pipelining optimization is based on processing multiple input video frames simultaneously, running different steps of the pipeline in parallel. This is why it works best when the framework takes full control over the video stream.
+Pipelining optimization is based on processing multiple input video frames simultaneously, running different steps of 
+the pipeline in parallel. This is why it works best when the framework takes full control over the video stream.
 
-The idea behind streaming API is that user specifies an *input source* to the pipeline and then G-API manages its execution automatically until the source ends or user interrupts the execution. G-API pulls new image data from the source and passes it to the pipeline for processing.
+The idea behind streaming API is that user specifies an *input source* to the pipeline and then G-API manages its execution 
+automatically until the source ends or user interrupts the execution. G-API pulls new image data from the source 
+and passes it to the pipeline for processing.
 
-Streaming sources are represented by the interface ``cv::gapi::wip::IStreamSource``. Objects implementing this interface may be passed to ``GStreamingCompiled`` as regular inputs via ``cv::gin()`` helper function. In OpenCV 4.2, only one streaming source is allowed per pipeline this requirement will be relaxed in the future.
+Streaming sources are represented by the interface ``cv::gapi::wip::IStreamSource``. Objects implementing this interface 
+may be passed to ``GStreamingCompiled`` as regular inputs via ``cv::gin()`` helper function. In OpenCV 4.2, only one 
+streaming source is allowed per pipeline this requirement will be relaxed in the future.
 
-OpenCV comes with a great class cv::VideoCapture and by default G-API ships with a stream source class based on it ``cv::gapi::wip::GCaptureSource``. Users can implement their own streaming sources e.g. using `VAAPI <https://01.org/vaapi>`__ or other Media or Networking APIs.
+OpenCV comes with a great class cv::VideoCapture and by default G-API ships with a stream source class based on it 
+``cv::gapi::wip::GCaptureSource``. Users can implement their own streaming sources e.g. using 
+`VAAPI <https://01.org/vaapi>`__ or other Media or Networking APIs.
 
 Sample application specifies the input source as follows:
 
@@ -253,9 +307,13 @@ Sample application specifies the input source as follows:
 	auto in_src = cv::gapi::wip::make_src<cv::gapi::wip::GCaptureSource>(input);
 	cc.setSource(cv::gin(in_src));
 
-Please note that a GComputation may still have multiple inputs like ``cv::GMat``, ``cv::GScalar``, or ``cv::GArray`` objects. User can pass their respective host-side types (``cv::Mat``, ``cv::Scalar``, ``std::vector<>``) in the input vector as well, but in Streaming mode these objects will create "endless" constant streams. Mixing a real video source stream and a const data stream is allowed.
+Please note that a GComputation may still have multiple inputs like ``cv::GMat``, ``cv::GScalar``, or ``cv::GArray`` objects. 
+User can pass their respective host-side types (``cv::Mat``, ``cv::Scalar``, ``std::vector<>``) in the input vector 
+as well, but in Streaming mode these objects will create "endless" constant streams. Mixing a real video source stream 
+and a const data stream is allowed.
 
-Running a pipeline is easy – just call ``cv::GStreamingCompiled::start()`` and fetch your data with blocking ``cv::GStreamingCompiled::pull()`` or non-blocking ``cv::GStreamingCompiled::try_pull()``; repeat until the stream ends:
+Running a pipeline is easy – just call ``cv::GStreamingCompiled::start()`` and fetch your data with blocking 
+``cv::GStreamingCompiled::pull()`` or non-blocking ``cv::GStreamingCompiled::try_pull()``; repeat until the stream ends:
 
 .. ref-code-block:: cpp
 
@@ -300,7 +358,10 @@ The above code may look complex but in fact it handles two modes – with and wi
 Comparison with Serial Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The sample can also run in a serial mode for a reference and benchmarking purposes. In this case, a regular ``cv::GComputation::compile()`` is used and a regular single-frame ``cv::GCompiled`` object is produced; the pipelining optimization is not applied within G-API; it is the user responsibility to acquire image frames from ``cv::VideoCapture`` object and pass those to G-API.
+The sample can also run in a serial mode for a reference and benchmarking purposes. In this case, a regular 
+``cv::GComputation::compile()`` is used and a regular single-frame ``cv::GCompiled`` object is produced; the pipelining 
+optimization is not applied within G-API; it is the user responsibility to acquire image frames from ``cv::VideoCapture`` 
+object and pass those to G-API.
 
 .. ref-code-block:: cpp
 
@@ -330,17 +391,23 @@ The sample can also run in a serial mode for a reference and benchmarking purpos
 	    }
 	}
 
-On a test machine (Intel® Core™ i5-6600), with OpenCV built with `Intel® TBB <https://www.threadingbuildingblocks.org/intel-tbb-tutorial>`__ support, detector network assigned to CPU, and classifiers to iGPU, the pipelined sample outperformes the serial one by the factor of 1.36x (thus adding +36% in overall throughput).
+On a test machine (Intel® Core™ i5-6600), with OpenCV built with 
+`Intel® TBB <https://www.threadingbuildingblocks.org/intel-tbb-tutorial>`__ support, detector network assigned to CPU, 
+and classifiers to iGPU, the pipelined sample outperformes the serial one by the factor of 1.36x (thus adding +36% 
+in overall throughput).
 
 Conclusion
 ~~~~~~~~~~
 
-G-API introduces a technological way to build and optimize hybrid pipelines. Switching to a new execution model does not require changes in the algorithm code expressed with G-API – only the way how graph is triggered differs.
+G-API introduces a technological way to build and optimize hybrid pipelines. Switching to a new execution model does not 
+require changes in the algorithm code expressed with G-API – only the way how graph is triggered differs.
 
 Listing: Post-Processing Kernel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-G-API gives an easy way to plug custom code into the pipeline even if it is running in a streaming mode and processing tensor data. Inference results are represented by multi-dimensional ``cv::Mat`` objects so accessing those is as easy as with a regular DNN module.
+G-API gives an easy way to plug custom code into the pipeline even if it is running in a streaming mode and processing 
+tensor data. Inference results are represented by multi-dimensional ``cv::Mat`` objects so accessing those 
+is as easy as with a regular DNN module.
 
 The OpenCV-based SSD post-processing kernel is defined and implemented in this sample as follows:
 
