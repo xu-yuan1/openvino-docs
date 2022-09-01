@@ -123,7 +123,7 @@ Media Processing and Computer Vision Libraries
 
 The OpenVINO™ toolkit also works with the following media processing frameworks and libraries:
 
-* :ref:`Intel® Deep Learning Streamer (Intel® DL Streamer) <doxid-openvino_docs_dlstreamer>` — A streaming media analytics framework based on GStreamer, for creating complex media analytics pipelines optimized for Intel hardware platforms. Go to the Intel® DL Streamer `documentation <https://dlstreamer.github.io/>`__ website to learn more.
+* :ref:`Intel® Deep Learning Streamer (Intel® DL Streamer) <media_processing__dl_streamer>` — A streaming media analytics framework based on GStreamer, for creating complex media analytics pipelines optimized for Intel hardware platforms. Go to the Intel® DL Streamer `documentation <https://dlstreamer.github.io/>`__ website to learn more.
 
 * `Intel® oneAPI Video Processing Library (oneVPL) <https://www.intel.com/content/www/us/en/develop/documentation/oneapi-programming-guide/top/api-based-programming/intel-oneapi-video-processing-library-onevpl.html>`__ — A programming interface for video decoding, encoding, and processing to build portable media pipelines on CPUs, GPUs, and other accelerators.
 
