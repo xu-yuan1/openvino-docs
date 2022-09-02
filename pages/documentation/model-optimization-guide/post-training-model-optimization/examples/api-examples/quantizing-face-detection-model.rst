@@ -1,5 +1,5 @@
 .. index:: pair: page; Quantizing Cascaded Face detection Model
-.. _pot_api_example_face_detection:
+.. _optim_perf__pot_api_example_face_detect:
 
 .. meta::
    :description: The example demonstrates how to infer a cascaded model and
@@ -15,9 +15,9 @@
 Quantizing Face Detection Model
 ===============================
 
-:target:`pot_api_example_face_detection_1md_openvino_tools_pot_openvino_tools_pot_api_samples_face_detection_readme` 
+:target:`optim_perf__pot_api_example_face_detect_1md_openvino_tools_pot_openvino_tools_pot_api_samples_face_detection_readme` 
 
-This example demonstrates the use of the :ref:`Post-training Optimization Tool API <pot_api_reference>` 
+This example demonstrates the use of the :ref:`Post-training Optimization Tool API <optim_perf__pot_api>` 
 for the task of quantizing a face detection model. 
 The `MTCNN <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/mtcnn/mtcnn.md>`__ 
 model from Caffe is used for this purpose. A custom ``DataLoader`` is created 

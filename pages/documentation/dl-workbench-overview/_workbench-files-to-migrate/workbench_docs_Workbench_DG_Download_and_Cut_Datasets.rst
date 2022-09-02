@@ -239,5 +239,5 @@ See Also
 
 * :ref:`Import Datasets <doxid-workbench_docs__workbench__d_g__generate__datasets>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

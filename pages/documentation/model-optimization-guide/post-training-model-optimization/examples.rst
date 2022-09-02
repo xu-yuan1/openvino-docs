@@ -1,5 +1,5 @@
 .. index:: pair: page; Examples
-.. _pot_examples:
+.. _optim_perf__pot_examples:
 
 .. meta::
    :description: Examples demonstrating implementation of post-training optimization methods for various models.
@@ -9,7 +9,7 @@
 Examples
 ========
 
-:target:`pot_examples_1md_openvino_tools_pot_docs_examples`
+:target:`optim_perf__pot_examples_1md_openvino_tools_pot_docs_examples`
 
 .. toctree::
    :maxdepth: 1
@@ -24,6 +24,6 @@ domains. It contains optimization methods for specific models, that
 unnecessarily cover your case. However, they should be sufficient to reuse the 
 methods to optimize custom models:
 
-* :ref:`API Examples <pot_api_examples>`
+* :ref:`API Examples <optim_perf__pot_api_examples>`
 
-* :ref:`Command-line Example <pot_cli_example>`
+* :ref:`Command-line Example <optim_perf__pot_cli_example>`

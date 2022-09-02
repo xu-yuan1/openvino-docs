@@ -1,5 +1,5 @@
 .. index:: pair: page; Model Accuracy for INT8 and FP32 Precision
-.. _performance_int8_vs_fp32:
+.. _optim_perf__performance_int8_vs_fp32:
 
 .. meta::
    :description: The article presents accuracy difference between INT8 and FP32 representations of a model.
@@ -15,7 +15,7 @@
 Model Accuracy for INT8 and FP32 Precision
 ==========================================
 
-:target:`performance_int8_vs_fp32_1md_openvino_docs_benchmarks_performance_int8_vs_fp32` 
+:target:`optim_perf__performance_int8_vs_fp32_1md_openvino_docs_benchmarks_optim_perf__performance_int8_vs_fp32` 
 
 The following table presents the absolute accuracy drop calculated as the 
 accuracy difference between FP32 and INT8 representations of a model:

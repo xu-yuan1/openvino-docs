@@ -173,7 +173,7 @@ Supported Inference Data Types
 
 Intel® GNA essentially operates in the low-precision mode which represents a mix of 8-bit (``i8``), 16-bit (``i16``), and 32-bit (``i32``) integer computations.
 
-GNA plugin users are encouraged to use the :ref:`Post-Training Optimization Tool <pot_tool_introduction>` to get a model with quantization hints based on statistics for the provided dataset.
+GNA plugin users are encouraged to use the :ref:`Post-Training Optimization Tool <optim_perf__pot_intro>` to get a model with quantization hints based on statistics for the provided dataset.
 
 Unlike other plugins supporting low-precision execution, the GNA plugin can calculate quantization factors at the model loading time. Therefore, a model can be run without calibration. However, this mode may not provide satisfactory accuracy because the internal quantization algorithm is based on heuristics, the efficiency of which depends on the model and dynamic range of input data. This mode is going to be deprecated soon.
 
@@ -181,7 +181,7 @@ GNA plugin supports the ``i16`` and ``i8`` quantized data types as inference pre
 
 :ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>` can be used to print out supported data types for all detected devices.
 
-:ref:`POT API Usage sample for GNA <pot_api_example_gna>` demonstrates how a model can be quantized for GNA, using POT API in two modes:
+:ref:`POT API Usage sample for GNA <optim_perf__pot_api_example_gna>` demonstrates how a model can be quantized for GNA, using POT API in two modes:
 
 * Accuracy (i16 weights)
 
@@ -199,7 +199,7 @@ Models Caching
 
 Due to import/export functionality support (see below), cache for GNA plugin may be enabled via common ``:ref:`ov::cache_dir <doxid-group__ov__runtime__cpp__prop__api_1ga3276fc4ed7cc7d0bbdcf0ae12063728d>``` property of OpenVINO™.
 
-For more details, see the :ref:`Model caching overview <model_caching_overview>`.
+For more details, see the :ref:`Model caching overview <optim_perf__model_caching>`.
 
 Import/Export
 -------------

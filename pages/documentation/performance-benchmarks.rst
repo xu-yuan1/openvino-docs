@@ -1,5 +1,5 @@
 .. index:: pair: page; Performance Benchmarks
-.. _performance_benchmarks:
+.. _optim_perf__performance_benchmarks:
 
 .. meta::
    :description: The benchmark results demonstrate performance on multiple 
@@ -14,7 +14,7 @@
 Performance Benchmarks
 ======================
 
-:target:`performance_benchmarks_1md_openvino_docs_benchmarks_performance_benchmarks`
+:target:`optim_perf__performance_benchmarks_1md_openvino_docs_benchmarks_optim_perf__performance_benchmarks`
 
 .. toctree::
    :maxdepth: 1
@@ -34,9 +34,9 @@ the AI workload for the Intel hardware you already have.
 
 The following benchmarks are available:
 
-* :ref:`Intel® Distribution of OpenVINO™ toolkit Benchmark Results <openvino_benchmarks>`.
+* :ref:`Intel® Distribution of OpenVINO™ toolkit Benchmark Results <optim_perf__openvino_benchmarks>`.
 
-* :ref:`OpenVINO™ Model Server Benchmark Results <ovms_benchmarks>`.
+* :ref:`OpenVINO™ Model Server Benchmark Results <optim_perf__ovms_benchmarks>`.
 
 You can also download the full :download:`Performance Data Spreadsheet (XLSX) <./_assets/OVbenchmark_summary_2022.1.xlsx>`. 
 

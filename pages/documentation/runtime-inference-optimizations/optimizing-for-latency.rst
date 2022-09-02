@@ -1,5 +1,5 @@
 .. index:: pair: page; Optimizing for the Latency
-.. _deployment_optimizing_for_latency:
+.. _optim_perf__deploy_optim_latency:
 
 .. meta::
    :description: OpenVINO provides methods that help to preserve minimal 
@@ -14,7 +14,7 @@
 Optimizing for the Latency
 ==========================
 
-:target:`deployment_optimizing_for_latency_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_latency`
+:target:`optim_perf__deploy_optim_latency_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_latency`
 
 .. toctree::
    :maxdepth: 1
@@ -25,7 +25,7 @@ Optimizing for the Latency
 A significant portion of deep learning use cases involve applications loading 
 a single model and using a single input at a time, which is the of typical 
 "consumer" scenario. While an application can create more than one request if 
-needed, for example to support :ref:`asynchronous inputs population <deployment_general_optimizations_1async_api>`, 
+needed, for example to support :ref:`asynchronous inputs population <optim_perf__deploy_general_optim_1async_api>`, 
 its **inference performance depends on how many requests are being inferred in parallel** 
 on a device.
 
@@ -73,7 +73,7 @@ inference due to on-device memory limitations.
 Such a "first-inference latency" scenario may pose an additional limitation on 
 the model load\compilation time, as inference accelerators (other than the CPU) 
 usually require a certain level of model compilation upon loading. The 
-:ref:`model caching <model_caching_overview>` 
+:ref:`model caching <optim_perf__model_caching>` 
 option is a way to lessen the impact over multiple application runs. If model 
 caching is not possible, for example, it may require write permissions for the 
 application, the CPU offers the fastest model load time almost every time.
@@ -83,5 +83,5 @@ Another way of dealing with first-inference latency is using the
 It starts inference on the CPU, while waiting for the actual accelerator to 
 load the model. At that point, it shifts to the new device seamlessly.
 
-Finally, note that any :ref:`throughput-oriented options <deployment_optimizing_for_throughput>` 
+Finally, note that any :ref:`throughput-oriented options <optim_perf__deploy_optim_throughput>` 
 may significantly increase the model uptime.

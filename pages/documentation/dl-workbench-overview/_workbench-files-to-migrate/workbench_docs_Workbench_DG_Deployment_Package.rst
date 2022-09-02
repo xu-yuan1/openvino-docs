@@ -275,7 +275,7 @@ Install dependencies by running the ``install_openvino_dependencies.sh`` script:
 
 * Replace ``<path>`` and ``<model>`` with the path to your model and its name.
 
-* In the command above, the application is run on a CPU device. See the **Supported Inference Devices** section of :ref:`Install DL Workbench <doxid-workbench_docs__workbench__d_g__install>` for code names of other devices.
+* In the command above, the application is run on a CPU device. See the **Supported Inference Devices** section of :ref:`Install DL Workbench <dl_workbench__install>` for code names of other devices.
 
 **Step 8.** If you run the application created in the `Create Binary Sample <#sample>`__, you get the following output:
 
@@ -292,5 +292,5 @@ See Also
 
 * :ref:`Integrate the OpenVINO™ Runtime with Your Application <deploy_infer__integrate_application>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

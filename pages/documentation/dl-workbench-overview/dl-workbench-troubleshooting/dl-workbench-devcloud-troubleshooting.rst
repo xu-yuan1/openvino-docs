@@ -131,7 +131,7 @@ To report an issue that occurred when you run the DL Workbench in the DevCloud:
 See Also
 ~~~~~~~~
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 
 * :ref:`Run DL Workbench in the Intel® DevCloud for the Edge <doxid-workbench_docs__workbench__d_g__start__d_l__workbench_in__dev_cloud>`
 

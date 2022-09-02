@@ -1,5 +1,5 @@
 .. index:: pair: page; Quantizing Model with Accuracy Control
-.. _accuracy_aware_model_quantization:
+.. _optim_perf__accuracy_quantization:
 
 .. meta::
    :description: Models can be quantized in POT with Accuracy-aware Quantization 
@@ -13,7 +13,7 @@
 Quantizing Model with Accuracy Control
 ======================================
 
-:target:`accuracy_aware_model_quantization_1md_openvino_tools_pot_docs_accuracyawarequantizationusage`
+:target:`optim_perf__accuracy_quantization_1md_openvino_tools_pot_docs_accuracyawarequantizationusage`
 
 .. toctree::
    :maxdepth: 1
@@ -23,13 +23,13 @@ Quantizing Model with Accuracy Control
 
 The Accuracy-aware Quantization algorithm allows to perform quantization while 
 maintaining accuracy within a pre-defined range. Note that it should be used 
-only if the :ref:`Default Quantization <default_model_quantization>` 
+only if the :ref:`Default Quantization <optim_perf__def_quantization>` 
 introduces a significant accuracy degradation. The reason for it not being the 
 primary choice is its potential for performance degradation, due to some layers 
 getting reverted to the original precision.
 
 To proceed with this article, make sure you have read how to use 
-:ref:`Default Quantization <default_model_quantization>`.
+:ref:`Default Quantization <optim_perf__def_quantization>`.
 
 .. note:: The Accuracy-aware Quantization algorithm's behavior is different for 
    the GNA ``target_device``. In this case it searches for the best configuration 
@@ -50,7 +50,7 @@ A script for Accuracy-aware Quantization includes four steps:
 Prepare data and dataset interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This step is the same as in :ref:`Default Quantization <default_model_quantization>`. 
+This step is the same as in :ref:`Default Quantization <optim_perf__def_quantization>`. 
 The only difference is that ``__getitem__()`` should return ``(data, annotation)`` 
 or ``(data, annotation, metadata)``. The ``annotation`` is required and its format 
 should correspond to the expectations of the ``Metric`` class. The ``metadata`` 
@@ -242,7 +242,7 @@ on demand is also available in the ``Pipeline`` object.
 
 In case when Accuracy-aware Quantization does not allow achieving the desired 
 accuracy-performance trade-off, it is recommended to try Quantization-aware 
-Training from :ref:`NNCF <nncf_introduction>`.
+Training from :ref:`NNCF <optim_perf__nncf_introduction>`.
 
 Examples
 ~~~~~~~~

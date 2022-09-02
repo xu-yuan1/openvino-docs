@@ -1,5 +1,5 @@
 .. index:: pair: page; Performance Information Frequently Asked Questions
-.. _performance_benchmarks_faq:
+.. _optim_perf__perform_benchmarks_faq:
 
 .. meta::
    :description: This page presents frequently asked questions and answers regarding performance benchmarks in OpenVINO.
@@ -11,10 +11,10 @@
 Performance Information Frequently Asked Questions
 ==================================================
 
-:target:`performance_benchmarks_faq_1md_openvino_docs_benchmarks_performance_benchmarks_faq` 
+:target:`optim_perf__perform_benchmarks_faq_1md_openvino_docs_benchmarks_optim_perf__perform_benchmarks_faq` 
 
 The following questions (Q#) and answers (A) are related to published 
-:ref:`performance benchmarks <performance_benchmarks>`.
+:ref:`performance benchmarks <optim_perf__performance_benchmarks>`.
 
 Q1: How often do performance benchmarks get updated?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -203,7 +203,7 @@ Q8: How can I optimize my models for better performance or accuracy?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 **A** : Set of guidelines and recommendations to optimize models are available 
-in the :ref:`optimization guide <performance_optimization_guide_introduction>`. 
+in the :ref:`optimization guide <optim_perf__introduction>`. 
 Join the conversation in the `Community Forum <https://software.intel.com/en-us/forums/intel-distribution-of-openvino-toolkit>`__ 
 for further support.
 
@@ -218,7 +218,7 @@ converted model, regardless of the intrinsically supported low-precision
 optimizations within Intel® hardware. For comparison on boost factors for 
 different network models and a selection of Intel® CPU architectures, including 
 AVX-2 with Intel® Core™ i7-8700T, and AVX-512 (VNNI) with Intel® Xeon® 5218T 
-and Intel® Xeon® 8270, refer to the :ref:`Model Accuracy for INT8 and FP32 Precision <performance_int8_vs_fp32>` 
+and Intel® Xeon® 8270, refer to the :ref:`Model Accuracy for INT8 and FP32 Precision <optim_perf__performance_int8_vs_fp32>` 
 article.
 
 Q10: Where can I search for OpenVINO™ performance results based on HW-platforms?

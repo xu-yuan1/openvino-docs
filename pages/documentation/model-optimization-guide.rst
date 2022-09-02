@@ -1,5 +1,5 @@
 .. index:: pair: page; Model Optimization Guide
-.. _model_optimization_guide:
+.. _optim_perf__model_optim_guide:
 
 .. meta::
    :description: Model optimization improves final model performance by applying 
@@ -15,7 +15,7 @@
 Model Optimization Guide
 ========================
 
-:target:`model_optimization_guide_1md_openvino_docs_optimization_guide_model_optimization_guide`
+:target:`optim_perf__model_optim_guide_1md_openvino_docs_optimization_guide_optim_perf__model_optim_guide`
 
 .. toctree::
    :maxdepth: 1
@@ -35,12 +35,12 @@ optimize models at different steps of model development:
   vs BGR input channels, and other parameters to speed up preprocess of a model 
   (:ref:`Embedding Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`).
 
-* **Post-training Optimization tool** :ref:`(POT) <pot_tool_introduction>` is 
+* **Post-training Optimization tool** :ref:`(POT) <optim_perf__pot_intro>` is 
   designed to optimize inference of deep learning models by applying post-training 
   methods that do not require model retraining or fine-tuning, for example, 
   post-training 8-bit quantization.
 
-* **Neural Network Compression Framework** :ref:`(NNCF) <nncf_introduction>` 
+* **Neural Network Compression Framework** :ref:`(NNCF) <optim_perf__nncf_introduction>` 
   provides a suite of advanced methods for training-time model optimization within 
   the DL framework, such as PyTorch and TensorFlow. It supports methods, like 
   Quantization-aware Training and Filter Pruning. NNCF-optimized models can be 
@@ -65,9 +65,9 @@ for inference using the regular OpenVINO inference workflow. No changes to the
 code are required.
 
 If you are not familiar with model optimization methods, refer to 
-:ref:`post-training methods <pot_tool_introduction>`.
+:ref:`post-training methods <optim_perf__pot_intro>`.
 
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Deployment optimization <runtime_inference_optimizations>`
+* :ref:`Deployment optimization <optim_perf__runtime_inference_optim>`

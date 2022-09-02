@@ -1,5 +1,5 @@
 .. index:: pair: page; Quantizing for GNA Device
-.. _pot_api_example_gna:
+.. _optim_perf__pot_api_example_gna:
 
 .. meta::
    :description: The example demonstrates how to use DefaultQuantization algorithm
@@ -16,10 +16,10 @@ Quantizing for GNA Device
 =========================
 
 
-:target:`pot_api_example_gna_1md_openvino_tools_pot_openvino_tools_pot_api_samples_speech_readme` 
+:target:`optim_perf__pot_api_example_gna_1md_openvino_tools_pot_openvino_tools_pot_api_samples_speech_readme` 
 
 This example demonstrates the use of the 
-:ref:`Post-training Optimization Tool API <pot_api_reference>` 
+:ref:`Post-training Optimization Tool API <optim_perf__pot_api>` 
 for the task of quantizing a speech model for :ref:`GNA <deploy_infer__gna_device>` 
 device. Quantization for GNA is different from CPU quantization due to device 
 specific: GNA supports quantized inputs in INT16 and INT32 (for activations) 

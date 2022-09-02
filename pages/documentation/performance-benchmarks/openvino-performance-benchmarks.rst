@@ -1,5 +1,5 @@
 .. index:: pair: page; Intel® Distribution of OpenVINO™ toolkit Benchmark Results
-.. _openvino_benchmarks:
+.. _optim_perf__openvino_benchmarks:
 
 .. meta::
    :description: The benchmark application loads OpenVINO™ Runtime and does 
@@ -15,7 +15,7 @@
 Intel® Distribution of OpenVINO™ toolkit Benchmark Results
 =============================================================
 
-:target:`openvino_benchmarks_1md_openvino_docs_benchmarks_performance_benchmarks_openvino`
+:target:`optim_perf__openvino_benchmarks_1md_openvino_docs_benchmarks_optim_perf__performance_benchmarks_openvino`
 
 
 .. toctree::
@@ -43,7 +43,7 @@ on the specified hardware (CPU, GPU or VPU). It measures the time spent on
 actual inference (excluding any pre or post processing) and then reports on 
 the inferences per second (or Frames Per Second - FPS). For additional 
 information on the benchmark application, refer to the entry 5 in the 
-:ref:`FAQ section <performance_benchmarks_faq>`.
+:ref:`FAQ section <optim_perf__perform_benchmarks_faq>`.
 
 Measuring inference performance involves many variables and is extremely use 
 case and application dependent. Below are four parameters used for measurements, 

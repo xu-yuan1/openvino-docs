@@ -7,7 +7,7 @@ INT8 Calibration
 
 :target:`doxid-workbench_docs__workbench__d_g__int_8__quantization_1md_openvino_workbench_docs_workbench_dg_int_8_quantization` DL Workbench can lower the precision of a model from FP32 to INT8 with a process called calibration. Calibration accelerates the performance of certain models on hardware that supports INT8. A model in INT8 precision takes up less memory and has higher throughput capacity. Often this performance boost is achieved at the cost of a small accuracy reduction. With the DL Workbench, you can calibrate your model locally, on a `remote target <#remote-calibration>`__, or in the `Intel® DevCloud for the Edge <#devcloud-calibration>`__.
 
-To read more about INT8 inference, see :ref:`Using Low-Precision INT8 Integer Inference <model_optimization_guide>` and :ref:`Post-Training Optimization Toolkit <pot_tool_introduction>`.
+To read more about INT8 inference, see :ref:`Using Low-Precision INT8 Integer Inference <optim_perf__model_optim_guide>` and :ref:`Post-Training Optimization Toolkit <optim_perf__pot_intro>`.
 
 .. note:: INT8 calibration is **not** available in the following cases:
 
@@ -171,7 +171,7 @@ For the AccuracyAware option, specify the **Maximum Accuracy Drop** to instruct 
 Select Calibration Scheme (Advanced)
 ------------------------------------
 
-Calibration scheme is a collection of optimization algorithm parameters that improve a certain metric of an algorithm. See :ref:`optimization parameters <default_quantization_algorithm>` for details.
+Calibration scheme is a collection of optimization algorithm parameters that improve a certain metric of an algorithm. See :ref:`optimization parameters <optim_perf__def_quant_algorithm>` for details.
 
 .. image:: calibration_scheme.png
 
@@ -228,9 +228,9 @@ See Also
 
 * :ref:`Compare Performance between Two Versions of a Model <doxid-workbench_docs__workbench__d_g__compare__performance_between__two__versions_of__models>`
 
-* :ref:`Optimization Guide <performance_optimization_guide_introduction>`
+* :ref:`Optimization Guide <optim_perf__introduction>`
 
-* :ref:`Post-Training Optimization Tool <pot_tool_introduction>`
+* :ref:`Post-Training Optimization Tool <optim_perf__pot_intro>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

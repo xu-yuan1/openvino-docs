@@ -1,5 +1,5 @@
 .. index:: pair: page; Post-training Optimization Tool Frequently Asked Questions
-.. _pot_faq:
+.. _optim_perf__pot_faq:
 
 .. meta::
    :description: This FAQ section covers the key issues regarding the use of 
@@ -15,7 +15,7 @@
 Post-training Optimization Tool FAQ
 ===================================
 
-:target:`pot_faq_1md_openvino_tools_pot_docs_frequentlyaskedquestions` 
+:target:`optim_perf__pot_faq_1md_openvino_tools_pot_docs_frequentlyaskedquestions` 
 
 If your question is not covered below, use the 
 `OpenVINO™ Community Forum page <https://community.intel.com/t5/Intel-Distribution-of-OpenVINO/bd-p/distribution-openvino-toolkit>`__, 
@@ -65,8 +65,8 @@ Can I quantize my model without a dataset?
 
 In general, you should have a dataset. The dataset should be annotated if you 
 want to validate the accuracy. If your dataset is not annotated, you can use 
-:ref:`Default Quantization <default_model_quantization>` to quantize 
-the model or command-line interface with :ref:`Simplified mode <pot_simplified_mode>`.
+:ref:`Default Quantization <optim_perf__def_quantization>` to quantize 
+the model or command-line interface with :ref:`Simplified mode <optim_perf__pot_simplified>`.
 
 .. _framework:
 
@@ -83,7 +83,7 @@ I'd like to quantize a model and I've converted it to IR but I don't have the Ac
 ---------------------------------------------------------------------------------------------------------------------
 
 #. Try quantization using Python API of the Post-training Optimization Tool. For 
-   more details see :ref:`Quantizing Model <default_model_quantization>`.
+   more details see :ref:`Quantizing Model <optim_perf__def_quantization>`.
 
 #. If you consider command-line usage only refer to Accuracy Checker documentation 
    to create the Accuracy Checker configuration file, and try to find the 
@@ -99,7 +99,7 @@ I'd like to quantize a model and I've converted it to IR but I don't have the Ac
 What is a tradeoff when you go to low precision?
 ------------------------------------------------
 
-The tradeoff is between the accuracy drop and performance. When a model is in low precision, it is usually performed compared to the same model in full precision but the accuracy might be worse. You can find some benchmarking results in :ref:`INT8 vs FP32 Comparison on Select Networks and Platforms <performance_int8_vs_fp32>`. The other benefit of having a model in low precision is its smaller size.
+The tradeoff is between the accuracy drop and performance. When a model is in low precision, it is usually performed compared to the same model in full precision but the accuracy might be worse. You can find some benchmarking results in :ref:`INT8 vs FP32 Comparison on Select Networks and Platforms <optim_perf__performance_int8_vs_fp32>`. The other benefit of having a model in low precision is its smaller size.
 
 .. _nncf:
 
@@ -115,8 +115,8 @@ which can be done with the following steps:
    value with your reference.
 
 #. Run your compression pipeline with a single compression algorithm 
-   (:ref:`Default Quantization <default_model_quantization>` 
-   or :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>`) 
+   (:ref:`Default Quantization <optim_perf__def_quantization>` 
+   or :ref:`Accuracy-aware Quantization <optim_perf__accuracy_quantization>`) 
    without any parameter values specified in the config (except for ``preset`` 
    and ``stat_subset_size``). Make sure you get the desirable accuracy 
    drop/performance gain in this case.
@@ -126,7 +126,7 @@ try to compress your model using the
 `Neural Network Compression Framework (NNCF) <https://github.com/openvinotoolkit/nncf_pytorch>`__. 
 Note that NNCF usage requires you to have a PyTorch or TensorFlow 2 based 
 training pipeline of your model to perform Quantization-aware Training. 
-See :ref:`Model Optimization Guide <model_optimization_guide>` 
+See :ref:`Model Optimization Guide <optim_perf__model_optim_guide>` 
 for more details.
 
 .. _memory:
@@ -150,7 +150,7 @@ a possibility to increase your RAM size, one of the following options can help:
 * Set ``use_fast_bias`` parameter to ``false``. In that case the POT will switch 
   from the FastBiasCorrection algorithm to the full BiasCorrection algorithm 
   which is usually more accurate and takes more time but requires less memory. 
-  See :ref:`Post-Training Optimization Best Practices <pot_quantization_best_practices>` 
+  See :ref:`Post-Training Optimization Best Practices <optim_perf__pot_best_practices>` 
   for more details.
 
 * Reshape your model to a lower resolution and resize the size of images in the 
@@ -171,8 +171,8 @@ It can happen due to the following reasons:
   Checker configuration file could lead to this problem. Refer to Accuracy 
   Checker documentation for more information.
 
-* If :ref:`Default Quantization <default_model_quantization>` was 
-  used for quantization you can also try :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>` 
+* If :ref:`Default Quantization <optim_perf__def_quantization>` was 
+  used for quantization you can also try :ref:`Accuracy-aware Quantization <optim_perf__accuracy_quantization>` 
   method that allows controlling maximum accuracy deviation.
 
 .. _longtime:
@@ -182,10 +182,10 @@ The quantization process of my model takes a lot of time. Can it be decreased so
 
 Quantization time depends on multiple factors such as the size of the model 
 and the dataset. It also depends on the algorithm: the 
-:ref:`Default Quantization <default_model_quantization>` algorithm 
-takes less time than the :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>` 
+:ref:`Default Quantization <optim_perf__def_quantization>` algorithm 
+takes less time than the :ref:`Accuracy-aware Quantization <optim_perf__accuracy_quantization>` 
 algorithm. The following configuration parameters also impact the quantization 
-time duration (see details in :ref:`Post-Training Optimization Best Practices <pot_quantization_best_practices>`):
+time duration (see details in :ref:`Post-Training Optimization Best Practices <optim_perf__pot_best_practices>`):
 
 * ``use_fast_bias`` : when set to ``false``, it increases the quantization time
 

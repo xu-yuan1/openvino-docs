@@ -1,5 +1,5 @@
 .. index:: pair: page; Saturation (overflow) Issue Workaround
-.. _pot_saturation_issue:
+.. _optim_perf__pot_saturation:
 
 .. meta::
    :description: The saturation (overflow) issue may occur during inference of 8-bit 
@@ -12,7 +12,7 @@
 Saturation Issue
 ================
 
-:target:`pot_saturation_issue_1md_openvino_tools_pot_docs_saturationissue`
+:target:`optim_perf__pot_saturation_1md_openvino_tools_pot_docs_saturationissue`
 
 Introduction
 ~~~~~~~~~~~~
@@ -86,5 +86,5 @@ Additional Resources
 
 * `Lower Numerical Precision Deep Learning Inference and Training blogpost <https://www.intel.com/content/www/us/en/developer/articles/technical/lower-numerical-precision-deep-learning-inference-and-training.html>`__
 
-* :ref:`Configuration file description <pot_configuration_file>`
+* :ref:`Configuration file description <optim_perf__pot_config_file>`
 

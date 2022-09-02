@@ -82,7 +82,7 @@ Python Starter arguments:
 
 
 
-#. Make sure the directory you pass as a value of ``--assets-directory`` has read, write, and execute permissions set for **all** users. See :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>` for details.
+#. Make sure the directory you pass as a value of ``--assets-directory`` has read, write, and execute permissions set for **all** users. See :ref:`Troubleshooting <dl_workbench__troubleshooting>` for details.
 
 #. Linux only. Create a group called ``workbench`` and add the current user ``<USERNAME>`` to it. Use the commands below:
    
@@ -178,5 +178,5 @@ See Also
 
 * :ref:`Next Step: Get Started with DL Workbench <dl_workbench__get_started>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

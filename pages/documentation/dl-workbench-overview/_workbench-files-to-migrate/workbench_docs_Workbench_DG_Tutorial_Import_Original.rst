@@ -93,5 +93,5 @@ See Also
 
 * :ref:`Import Darknet\* YOLOv4 model <doxid-workbench_docs__workbench__d_g__tutorial__import__y_o_l_o>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

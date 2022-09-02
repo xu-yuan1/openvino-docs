@@ -127,5 +127,5 @@ See Also
 
 * :ref:`View Inference Results <doxid-workbench_docs__workbench__d_g__view__inference__results>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

@@ -91,5 +91,5 @@ See Also
 
 * `JupyterLab documentation <https://jupyter-notebook.readthedocs.io/en/stable/ui_components.html>`__
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

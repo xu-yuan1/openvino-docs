@@ -1,5 +1,5 @@
 .. index:: pair: page; Using Advanced Throughput Options: Streams and Batching
-.. _deployment_throughput_advanced:
+.. _optim_perf__deploy_throughput_adv:
 
 .. meta::
    :description: With OpenVINO streams a device may handle processing multiple 
@@ -14,12 +14,12 @@
 Advanced Throughput Options
 ===========================
 
-:target:`deployment_throughput_advanced_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_tput_advanced`
+:target:`optim_perf__deploy_throughput_adv_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_tput_advanced`
 
 OpenVINO Streams
 ~~~~~~~~~~~~~~~~
 
-As explained in the :ref:`common-optimizations section <deployment_general_optimizations>`, 
+As explained in the :ref:`common-optimizations section <optim_perf__deploy_general_optim>`, 
 running multiple inference requests asynchronously is important for general 
 application efficiency. Internally, every device implements a queue, which acts 
 as a buffer, storing the inference requests until retrieved by the device at 
@@ -34,7 +34,7 @@ This configurable method of this device-side parallelism is commonly referred as
 
 .. note:: Most OpenVINO devices (including CPU, GPU and VPU) support the streams, yet the 
    *optimal* number of the streams is deduced very differently. More information on this topic 
-   can be found in the section :ref:`below <deployment_throughput_advanced_1stream_considerations>`.
+   can be found in the section :ref:`below <optim_perf__deploy_throughput_adv_1stream_considerations>`.
 
 A few general considerations:
 
@@ -44,7 +44,7 @@ A few general considerations:
     minimum of streams (usually, just one), as the latency-oriented case is default.
 
   * See further tips for the optimal number of the streams 
-    :ref:`below <deployment_throughput_advanced_1throughput_advanced>`.
+    :ref:`below <optim_perf__deploy_throughput_adv_1throughput_advanced>`.
 
 * Streams are memory-intensive, as every stream duplicates the intermediate 
   buffers to do inference in parallel to the rest of the streams:
@@ -62,7 +62,7 @@ they are actually muxed into an inference queue of the particular
 ``ov:Compiled_Model``. If there is a vacant stream, it pulls the request from 
 the queue and actually expedites that to the on-device execution. There are 
 further device-specific details, like for the CPU, in the 
-:ref:`internals <deployment_low_level_implementation>` 
+:ref:`internals <optim_perf__deploy_low_level_implement>` 
 section.
 
 Batching
@@ -93,7 +93,7 @@ In both cases, the optimal batch size is very device-specific. As explained
 below, the optimal batch size also depends on the model, inference 
 precision and other factors.
 
-:target:`deployment_throughput_advanced_1throughput_advanced`
+:target:`optim_perf__deploy_throughput_adv_1throughput_advanced`
 
 Choosing the Number of Streams and/or Batch Size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,7 +120,7 @@ One possible throughput optimization strategy is to **set an upper bound for lat
    the best combination of streams and batching for a given scenario and a model.
 
 
-:target:`deployment_throughput_advanced_1stream_considerations`
+:target:`optim_perf__deploy_throughput_adv_1stream_considerations`
 
 Number of Streams Considerations
 --------------------------------

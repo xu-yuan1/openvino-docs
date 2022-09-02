@@ -160,7 +160,7 @@ quantization primitives, and available hardware capabilities. The ``u1`` /
 ``u8`` / ``i8`` data types are used for quantized operations only, which means 
 that they are not selected automatically for non-quantized operations. For more 
 details on how to get a quantized model, refer to the 
-:ref:`Model Optimization guide <model_optimization_guide>`.
+:ref:`Model Optimization guide <optim_perf__model_optim_guide>`.
 
 Floating-point precision of a GPU primitive is selected based on operation 
 precision in the OpenVINO IR, except for the 
@@ -279,7 +279,7 @@ application. The reason for this is that the implementation of streams in the
 GPU plugin supports weight memory sharing across streams, thus, memory 
 consumption may be lower, compared to the other approaches.
 
-For more details, see the :ref:`optimization guide <runtime_inference_optimizations>`.
+For more details, see the :ref:`optimization guide <optim_perf__runtime_inference_optim>`.
 
 Dynamic Shapes
 --------------
@@ -414,7 +414,7 @@ is a bottleneck in the model loading process, a significant load time reduction
 can be achieved with the ``:ref:`ov::cache_dir <doxid-group__ov__runtime__cpp__prop__api_1ga3276fc4ed7cc7d0bbdcf0ae12063728d>``` 
 property enabled.
 
-For more details, see the :ref:`Model caching overview <model_caching_overview>`.
+For more details, see the :ref:`Model caching overview <optim_perf__model_caching>`.
 
 Extensibility
 -------------
@@ -528,7 +528,7 @@ general OpenCL tips apply:
 * Try to group individual infer jobs by using 
   :ref:`automatic batching <deploy_infer__automatic_batching>`.
 
-* Consider :ref:`caching <model_caching_overview>` 
+* Consider :ref:`caching <optim_perf__model_caching>` 
   to minimize model load time.
 
 * If your application performs inference on the CPU alongside the GPU, or otherwise 
@@ -550,6 +550,6 @@ Additional Resources
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 
-* :ref:`Optimization guide <performance_optimization_guide_introduction>`
+* :ref:`Optimization guide <optim_perf__introduction>`
 
 * `GPU plugin developers documentation <https://github.com/openvinotoolkit/openvino/wiki/GPUPluginDevelopersDocs>`__

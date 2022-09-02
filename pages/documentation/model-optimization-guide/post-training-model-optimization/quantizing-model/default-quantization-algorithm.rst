@@ -1,5 +1,5 @@
 .. index:: pair: page; DefaultQuantization Algorithm
-.. _default_quantization_algorithm:
+.. _optim_perf__def_quant_algorithm:
 
 .. meta::
    :description: The DefaultQuantization Algorithm used in Post-Training 
@@ -15,7 +15,7 @@
 DefaultQuantization Algorithm
 =============================
 
-:target:`default_quantization_algorithm_1md_openvino_tools_pot_openvino_tools_pot_algorithms_quantization_default_readme` 
+:target:`optim_perf__def_quant_algorithm_1md_openvino_tools_pot_openvino_tools_pot_algorithms_quantization_default_readme` 
 
 The DefaultQuantization Algorithm is designed to perform fast and accurate 
 quantization. It does not offer direct control over the accuracy metric itself 
@@ -26,7 +26,7 @@ Parameters
 
 DefaultQuantization Algorithm has mandatory and optional parameters. For more 
 details on how to use these parameters, refer to 
-:ref:`Best Practices <pot_quantization_best_practices>` article. Below is an 
+:ref:`Best Practices <optim_perf__pot_best_practices>` article. Below is an 
 example of the DefaultQuantization method and its parameters:
 
 .. ref-code-block:: cpp

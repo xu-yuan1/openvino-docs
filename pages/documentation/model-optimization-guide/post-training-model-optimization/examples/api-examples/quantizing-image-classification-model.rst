@@ -1,5 +1,5 @@
 .. index:: pair: page; Quantizing Image Classification Model
-.. _pot_api_example_classification:
+.. _optim_perf__pot_api_example_classification:
 
 .. meta::
    :description: The example demonstrates how to use Post-training Optimization 
@@ -15,10 +15,10 @@
 Quantizing Image Classification Model
 =====================================
 
-:target:`pot_api_example_classification_1md_openvino_tools_pot_openvino_tools_pot_api_samples_classification_readme` 
+:target:`optim_perf__pot_api_example_classification_1md_openvino_tools_pot_openvino_tools_pot_api_samples_classification_readme` 
 
 This example demonstrates the use of the 
-:ref:`Post-training Optimization Tool API <pot_api_reference>` 
+:ref:`Post-training Optimization Tool API <optim_perf__pot_api>` 
 for the task of quantizing a classification model. The 
 `MobilenetV2 <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/mobilenet-v2-1.0-224/mobilenet-v2-1.0-224.md>`__ 
 model from TensorFlow is used for this purpose. A custom ``DataLoader`` is 

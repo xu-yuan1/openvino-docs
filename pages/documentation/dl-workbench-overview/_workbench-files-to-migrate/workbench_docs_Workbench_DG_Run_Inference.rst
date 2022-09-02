@@ -61,5 +61,5 @@ See Also
 
 * :ref:`Benchmark Tool <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

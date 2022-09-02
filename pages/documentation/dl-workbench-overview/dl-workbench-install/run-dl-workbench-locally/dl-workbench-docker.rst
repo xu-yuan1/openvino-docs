@@ -209,7 +209,7 @@ See Also
 
 * :ref:`Advanced Configurations <doxid-workbench_docs__workbench__d_g__advanced__configurations>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 
 * :ref:`Deep Learning Workbench Security <security__dl_workbench>`
 

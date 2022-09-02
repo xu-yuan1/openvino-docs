@@ -1,5 +1,5 @@
 .. index:: pair: page; Quantizing Object Detection Model with Accuracy Control
-.. _pot_api_example_accuracy:
+.. _optim_perf__pot_api_example_accuracy:
 
 .. meta::
    :description: The example demonstrates how to use Post-training Optimization 
@@ -14,12 +14,12 @@
 Quantizing with Accuracy Control
 ================================
 
-:target:`pot_api_example_accuracy_1md_openvino_tools_pot_openvino_tools_pot_api_samples_object_detection_readme` 
+:target:`optim_perf__pot_api_example_accuracy_1md_openvino_tools_pot_openvino_tools_pot_api_samples_object_detection_readme` 
 
 This example demonstrates the use of the 
-:ref:`Post-training Optimization Toolkit API <pot_api_reference>` 
+:ref:`Post-training Optimization Toolkit API <optim_perf__pot_api>` 
 to quantize an object detection model in the 
-:ref:`accuracy-aware mode <accuracy_aware_quantization_algorithm>`. 
+:ref:`accuracy-aware mode <optim_perf__accuracy_quant_algorithm>`. 
 
 The `MobileNetV1 FPN <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/ssd_mobilenet_v1_fpn_coco/ssd_mobilenet_v1_fpn_coco.md>`__ 
 model from TensorFlow for object detection task is used for this purpose. A custom 

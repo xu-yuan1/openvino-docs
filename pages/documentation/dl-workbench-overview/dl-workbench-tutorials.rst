@@ -1,11 +1,20 @@
 .. index:: pair: page; OpenVINO™ Deep Learning Workbench Tutorials
-.. _doxid-workbench_docs__workbench__d_g__tutorials:
+.. _dl_workbench__tutorials:
+
+.. meta::
+   :description: Step-by-step tutorials for OpenVINO Deep Learning Workbench 
+                 to enhance model performance.
+   :keywords: Deep Learning Workbench, DL Workbench, DL Workbench tutorials, model performance, 
+              Computer Vision Tutorials, Open Object Detection Tutorial, Open Classification Tutorial, 
+              Open Instance Segmentation Tutorial, Open Semantic Segmentation Tutorial, 
+              Open Style Transfer Tutorial, Open Object Detection Tutorial, Open Classification Tutorial, 
+              Natural Language Processing Tutorials, Open NLP Tutorial
 
 
 OpenVINO™ Deep Learning Workbench Tutorials
 =============================================
 
-:target:`doxid-workbench_docs__workbench__d_g__tutorials_1md_openvino_workbench_docs_workbench_dg_tutorials`
+:target:`dl_workbench__tutorials_1md_openvino_workbench_docs_workbench_dg_tutorials`
 
 
 

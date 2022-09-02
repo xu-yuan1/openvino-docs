@@ -137,7 +137,7 @@ in `Quantization approaches <#quantization-approaches>`__ section below. In demo
 Low precision tools
 -------------------
 
-For more details on how to get a quantized model, refer to :ref:`Model Optimization <model_optimization_guide>` document.
+For more details on how to get a quantized model, refer to :ref:`Model Optimization <optim_perf__model_optim_guide>` document.
 
 Quantization approaches
 ~~~~~~~~~~~~~~~~~~~~~~~

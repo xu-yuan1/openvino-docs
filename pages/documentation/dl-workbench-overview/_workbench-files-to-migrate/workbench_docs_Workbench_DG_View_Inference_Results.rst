@@ -135,5 +135,5 @@ See Also
 
 * :ref:`INT8 Calibration <doxid-workbench_docs__workbench__d_g__int_8__quantization>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

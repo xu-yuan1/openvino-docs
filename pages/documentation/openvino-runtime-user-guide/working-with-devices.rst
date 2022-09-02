@@ -113,12 +113,12 @@ The table below demonstrates support of key features by OpenVINO device plugins.
       - Yes
       - No
       - No
-    * - :ref:`Multi-stream execution <deployment_optimizing_for_throughput>`
+    * - :ref:`Multi-stream execution <optim_perf__deploy_optim_throughput>`
       - Yes
       - Yes
       - No
       - Yes
-    * - :ref:`Models caching <model_caching_overview>`
+    * - :ref:`Models caching <optim_perf__model_caching>`
       - Yes
       - Partial
       - Yes
