@@ -486,7 +486,7 @@ To load a model with custom operations, you need to add extensions for these ope
 
 
 
-Reading a model has the same structure as the example in the :ref:`model creation migration guide <doxid-openvino_2_0_model_creation>`.
+Reading a model has the same structure as the example in the :ref:`model creation migration guide <api_2_0__model_creation>`.
 
 You can combine reading and compiling a model into a single call ``ov::Core::compile_model(filename, devicename)``.
 

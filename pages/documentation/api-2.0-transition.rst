@@ -155,5 +155,5 @@ See the following pages to understand how to migrate Inference Engine-based appl
 
 * :ref:`Configure device <api_2_0__config_devices>`
 
-* :ref:`OpenVINO™ Model Creation <doxid-openvino_2_0_model_creation>`
+* :ref:`OpenVINO™ Model Creation <api_2_0__model_creation>`
 
