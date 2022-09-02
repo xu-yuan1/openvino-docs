@@ -1,13 +1,13 @@
 .. index:: pair: page; Configurations for IEI Mustang-V100-MX8-R10 Card
-.. _doxid-openvino_docs_install_guides_movidius_setup_guide:
+.. _install__config_vpu_iei:
 
 
 Configurations for IEI Mustang-V100-MX8-R10 Card
 ================================================
 
-:target:`doxid-openvino_docs_install_guides_movidius_setup_guide_1md_openvino_docs_install_guides_configurations_for_iei_card`
+:target:`install__config_vpu_iei_1md_openvino_docs_install_guides_configurations_for_iei_card`
 
-.. note:: These steps are only required for **IEI Mustang-V100-MX8-R10** card. **IEI Mustang-V100-MX8-R11** card doesn't require any additional steps and it's completely configured using the :ref:`general guidance <doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu>`.
+.. note:: These steps are only required for **IEI Mustang-V100-MX8-R10** card. **IEI Mustang-V100-MX8-R11** card doesn't require any additional steps and it's completely configured using the :ref:`general guidance <install__config_vpu>`.
 
 The IEI Mustang-V100-MX8 is an OEM version of the Intel® Vision Accelerator Design with Intel® Movidius™ VPUs. This guide assumes you have installed the `Mustang-V100-MX8 <https://download.ieiworld.com/>`__ and Intel® Distribution of OpenVINO™ toolkit.
 

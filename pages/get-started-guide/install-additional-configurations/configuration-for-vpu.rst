@@ -1,11 +1,11 @@
 .. index:: pair: page; Configurations for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs
-.. _doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu:
+.. _install__config_vpu:
 
 
 Configurations for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs
 ==================================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu_1md_openvino_docs_install_guides_configurations_for_ivad_vpu`
+:target:`install__config_vpu_1md_openvino_docs_install_guides_configurations_for_ivad_vpu`
 
 
 
@@ -67,7 +67,7 @@ For Intel® Vision Accelerator Design with Intel® Movidius™ VPUs, the followi
 Optional Steps
 --------------
 
-For advanced configuration steps for your **IEI Mustang-V100-MX8-R10** accelerator, see :ref:`Configurations for IEI Mustang-V100-MX8-R10 card <doxid-openvino_docs_install_guides_movidius_setup_guide>`. **IEI Mustang-V100-MX8-R11** accelerator doesn't require any additional steps.
+For advanced configuration steps for your **IEI Mustang-V100-MX8-R10** accelerator, see :ref:`Configurations for IEI Mustang-V100-MX8-R10 card <install__config_vpu_iei>`. **IEI Mustang-V100-MX8-R11** accelerator doesn't require any additional steps.
 
 .. _vpu guide windows:
 
@@ -86,7 +86,7 @@ To enable inference on Intel® Vision Accelerator Design with Intel® Movidius�
 
 You are done installing your device driver and are ready to use your Intel® Vision Accelerator Design with Intel® Movidius™ VPUs.
 
-For advanced configuration steps for your IEI Mustang-V100-MX8 accelerator, see :ref:`Configurations for IEI Mustang-V100-MX8-R10 card <doxid-openvino_docs_install_guides_movidius_setup_guide>`.
+For advanced configuration steps for your IEI Mustang-V100-MX8 accelerator, see :ref:`Configurations for IEI Mustang-V100-MX8-R10 card <install__config_vpu_iei>`.
 
 After configuration is done, you are ready to go to `Start Using the Toolkit <openvino_docs_install_guides_installing_openvino_windows.html#get-started>`__ section to learn the basic OpenVINO™ toolkit workflow and run code samples and demo applications.
 

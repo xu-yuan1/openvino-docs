@@ -33,13 +33,13 @@ To use the Deployment Manager tool, the following requirements need to be met:
 
 * To run inference on a target device other than CPU, device drivers must be pre-installed:
   
-  * **For GPU**, see :ref:`Configurations for Intel® Processor Graphics (GPU) <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`.
+  * **For GPU**, see :ref:`Configurations for Intel® Processor Graphics (GPU) <install__config_gpu>`.
   
-  * **For NCS2**, see :ref:`Intel® Neural Compute Stick 2 section <doxid-openvino_docs_install_guides_configurations_for_ncs2>`
+  * **For NCS2**, see :ref:`Intel® Neural Compute Stick 2 section <install__config_ncs2>`
   
-  * **For VPU**, see :ref:`Configurations for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs <doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu>`.
+  * **For VPU**, see :ref:`Configurations for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs <install__config_vpu>`.
   
-  * **For GNA**, see :ref:`Intel® Gaussian & Neural Accelerator (GNA) <doxid-openvino_docs_install_guides_configurations_for_intel_gna>`
+  * **For GNA**, see :ref:`Intel® Gaussian & Neural Accelerator (GNA) <install__config_gna>`
 
 .. warning:: The target operating system must be the same as the development system on which you are creating the package. For example, if the target system is Ubuntu 18.04, the deployment package must be created from the OpenVINO™ toolkit installed on Ubuntu 18.04.
 

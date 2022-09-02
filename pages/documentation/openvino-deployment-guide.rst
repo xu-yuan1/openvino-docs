@@ -84,8 +84,8 @@ Here the term "optional" means that if the application does not use the capabili
 Building a local distribution will require more detailed information, and you will find it in the dedicated :ref:`Libraries for Local Distribution <doxid-openvino_docs_deploy_local_distribution>` article.
 
 .. note:: Depending on your target OpenVINO devices, the following configurations 
-   might be needed for deployed machines: :ref:`Configurations for GPU <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`, 
-   :ref:`Configurations for GNA <doxid-openvino_docs_install_guides_configurations_for_intel_gna>`, 
-   :ref:`Configurations for NCS2 <doxid-openvino_docs_install_guides_configurations_for_ncs2>`, 
-   :ref:`Configurations for VPU <doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu>`.
+   might be needed for deployed machines: :ref:`Configurations for GPU <install__config_gpu>`, 
+   :ref:`Configurations for GNA <install__config_gna>`, 
+   :ref:`Configurations for NCS2 <install__config_ncs2>`, 
+   :ref:`Configurations for VPU <install__config_vpu>`.
 

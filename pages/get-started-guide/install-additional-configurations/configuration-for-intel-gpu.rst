@@ -1,11 +1,11 @@
 .. index:: pair: page; Configurations for Intel® Processor Graphics (GPU) with Intel® Distribution of OpenVINO™ toolkit
-.. _doxid-openvino_docs_install_guides_configurations_for_intel_gpu:
+.. _install__config_gpu:
 
 
 Configurations for Intel® Processor Graphics (GPU) with Intel® Distribution of OpenVINO™ toolkit
 ====================================================================================================
 
-:target:`doxid-openvino_docs_install_guides_configurations_for_intel_gpu_1md_openvino_docs_install_guides_configurations_for_intel_gpu`
+:target:`install__config_gpu_1md_openvino_docs_install_guides_configurations_for_intel_gpu`
 
 .. _gpu guide:
 
