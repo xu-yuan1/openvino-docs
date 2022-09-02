@@ -1,11 +1,11 @@
 .. index:: pair: page; Issues & Solutions for OpenVINO™ Installation & Configuration
-.. _doxid-openvino_docs_get_started_guide_troubleshooting_issues:
+.. _get_started__troubleshooting_issues:
 
 
 Issues & Solutions for OpenVINO™ Installation & Configuration
 ===============================================================
 
-:target:`doxid-openvino_docs_get_started_guide_troubleshooting_issues_1md_openvino_docs_install_guides_troubleshooting_issues` This page lists issues that you may encounter during the installation and configuration of OpenVINO™, as well as their possible solutions.
+:target:`get_started__troubleshooting_issues_1md_openvino_docs_install_guides_troubleshooting_issues` This page lists issues that you may encounter during the installation and configuration of OpenVINO™, as well as their possible solutions.
 
 .. _install-for-prc:
 
