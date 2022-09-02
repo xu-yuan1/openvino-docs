@@ -7,7 +7,7 @@ Install Intel® Distribution of OpenVINO™ Toolkit from PyPI Repository
 
 :target:`doxid-openvino_docs_install_guides_installing_openvino_pip_1md_openvino_docs_install_guides_installing_openvino_pip` You can install both OpenVINO™ Runtime and OpenVINO Development Tools through the PyPI repository. This page provides the main steps for installing OpenVINO Runtime.
 
-.. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI. See :ref:`Install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>` for detailed steps.
+.. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI. See :ref:`Install OpenVINO Development Tools <install_openvino_dev_tools>` for detailed steps.
 
 
 
@@ -86,7 +86,7 @@ Installing OpenVINO Development Tools
 
 OpenVINO Development Tools include Model Optimizer, Benchmark Tool, Accuracy Checker, Post-Training Optimization Tool and Open Model Zoo tools including Model Downloader. If you want to install OpenVINO Development Tools, OpenVINO Runtime will also be installed as a dependency, so you don't need to install OpenVINO Runtime separately.
 
-See :ref:`Install OpenVINO™ Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>` for detailed steps.
+See :ref:`Install OpenVINO™ Development Tools <install_openvino_dev_tools>` for detailed steps.
 
 What's Next?
 ~~~~~~~~~~~~

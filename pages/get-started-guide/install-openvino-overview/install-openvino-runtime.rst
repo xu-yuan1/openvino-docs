@@ -1,11 +1,11 @@
 .. index:: pair: page; Install OpenVINO™ Runtime
-.. _doxid-openvino_docs_install_guides_install_runtime:
+.. _install_openvino_runtime:
 
 
 Install OpenVINO™ Runtime
 ===========================
 
-:target:`doxid-openvino_docs_install_guides_install_runtime_1md_openvino_docs_install_guides_installing_openvino_runtime`
+:target:`install_openvino_runtime_1md_openvino_docs_install_guides_installing_openvino_runtime`
 
 
 

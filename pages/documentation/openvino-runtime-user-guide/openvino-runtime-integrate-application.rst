@@ -27,7 +27,7 @@ Integrate OpenVINO™ with Your Application
 
 Following these steps, you can implement a typical OpenVINO™ Runtime inference 
 pipeline in your application. Before proceeding, make sure you have 
-:ref:`installed OpenVINO Runtime <doxid-openvino_docs_install_guides_install_runtime>` 
+:ref:`installed OpenVINO Runtime <install_openvino_runtime>` 
 and set environment variables (run ``<INSTALL_DIR>/setupvars.sh`` for Linux or 
 ``setupvars.bat`` for Windows, otherwise, the ``OpenVINO_DIR`` variable won't 
 be configured properly to pass ``find_package`` calls).

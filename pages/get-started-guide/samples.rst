@@ -111,7 +111,7 @@ The applications include:
   * :ref:`Benchmark C++ Tool <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`
 
   Note that the Python version of the benchmark tool is currently available only 
-  through the :ref:`OpenVINO Development Tools installation <doxid-openvino_docs_install_guides_install_dev_tools>`. 
+  through the :ref:`OpenVINO Development Tools installation <install_openvino_dev_tools>`. 
   It is not created in the samples directory but can be launched with the following 
   command: ``benchmark_app -m <model> -i <input> -d <device>`` For more information, 
   check the :ref:`Benchmark Python Tool <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` 

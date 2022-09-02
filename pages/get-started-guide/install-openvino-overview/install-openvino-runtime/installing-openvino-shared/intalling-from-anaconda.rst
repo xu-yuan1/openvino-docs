@@ -7,7 +7,7 @@ Install Intel® Distribution of OpenVINO™ toolkit from Anaconda Cloud
 
 :target:`doxid-openvino_docs_install_guides_installing_openvino_conda_1md_openvino_docs_install_guides_installing_openvino_conda` This guide provides installation steps for Intel® Distribution of OpenVINO™ toolkit for Linux distributed through the Anaconda Cloud.
 
-.. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI. If you want to develop or optimize your models with OpenVINO, see :ref:`Install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>` for detailed steps.
+.. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI. If you want to develop or optimize your models with OpenVINO, see :ref:`Install OpenVINO Development Tools <install_openvino_dev_tools>` for detailed steps.
 
 
 
