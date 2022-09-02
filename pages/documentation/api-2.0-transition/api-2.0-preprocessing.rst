@@ -1,11 +1,25 @@
 .. index:: pair: page; Preprocessing
-.. _doxid-openvino_2_0_preprocessing:
+.. _api_2_0__preprocessing:
 
+.. meta::
+   :description: In OpenVINO™ API 2.0 each preprocessing or post-processing 
+                 operation is integrated directly into the model and compiled 
+                 together with the inference graph.
+   :keywords: OpenVINO™, OpenVINO API 2.0, API 2.0, Inference Engine API, 
+              inference plugin, preprocessing capabilities, inference graph, 
+              inference device, CPU device, Intel CPU, preprocessing operations, 
+              PrePostProcessor, model inference, compile model, compile_model, 
+              OpenVINO opset, opset, OpenVINO IR, OpenVINO Intermediate Representation, 
+              migrate preprocessing, migrate to API 2.0, model input, convert precision, 
+              convert layout, tensor_name, model caching, NCHW layout, setPrecision, 
+              setLayout, setResizeAlgorithm, setColorFormat, NCHW
 
 Preprocessing
 =============
 
-:target:`doxid-openvino_2_0_preprocessing_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_preprocessing` This guide introduces how preprocessing works in API 2.0 by a comparison with preprocessing in the previous Inference Engine API. It also demonstrates how to migrate preprocessing scenarios from Inference Engine to API 2.0 via code samples.
+:target:`api_2_0__preprocessing_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_preprocessing` 
+
+This guide introduces how preprocessing works in API 2.0 by a comparison with preprocessing in the previous Inference Engine API. It also demonstrates how to migrate preprocessing scenarios from Inference Engine to API 2.0 via code samples.
 
 How Preprocessing Works in API 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

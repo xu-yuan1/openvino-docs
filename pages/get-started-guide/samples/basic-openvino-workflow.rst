@@ -432,7 +432,7 @@ IR model:
    **GPU:**
    
    .. note:: Running inference on Intel® Processor Graphics (GPU) requires 
-      :ref:`additional hardware configuration steps <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`, 
+      :ref:`additional hardware configuration steps <install__config_gpu>`, 
       as described earlier on this page. Running on GPU is not compatible with macOS.
    
    
@@ -452,7 +452,7 @@ IR model:
    
    .. note:: Running inference on VPU devices (Intel® Movidius™ Neural Compute Stick 
       or Intel® Neural Compute Stick 2) with the MYRIAD plugin requires 
-      :ref:`additional hardware configuration steps <doxid-openvino_docs_install_guides_configurations_for_ncs2>`, 
+      :ref:`additional hardware configuration steps <install__config_ncs2>`, 
       as described earlier on this page.
    
    

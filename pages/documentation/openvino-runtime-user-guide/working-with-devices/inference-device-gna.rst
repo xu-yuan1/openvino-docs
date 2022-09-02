@@ -23,7 +23,7 @@ Intel® GNA is not intended to replace typical inference devices such as the CPU
 
 The GNA plugin provides a way to run inference on Intel® GNA, as well as in the software execution mode on CPU.
 
-For more details on how to configure a machine to use GNA plugin, see the :ref:`GNA configuration page <doxid-openvino_docs_install_guides_configurations_for_intel_gna>`.
+For more details on how to configure a machine to use GNA plugin, see the :ref:`GNA configuration page <install__config_gna>`.
 
 Intel® GNA Generational Differences
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

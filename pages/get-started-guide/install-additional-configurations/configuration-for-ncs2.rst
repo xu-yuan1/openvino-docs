@@ -1,11 +1,11 @@
 .. index:: pair: page; Configurations for Intel® Neural Compute Stick 2
-.. _doxid-openvino_docs_install_guides_configurations_for_ncs2:
+.. _install__config_ncs2:
 
 
 Configurations for Intel® Neural Compute Stick 2
 =================================================
 
-:target:`doxid-openvino_docs_install_guides_configurations_for_ncs2_1md_openvino_docs_install_guides_configurations_for_ncs2`
+:target:`install__config_ncs2_1md_openvino_docs_install_guides_configurations_for_ncs2`
 
 
 

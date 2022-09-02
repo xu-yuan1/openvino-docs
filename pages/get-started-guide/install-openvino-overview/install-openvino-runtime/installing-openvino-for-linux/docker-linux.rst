@@ -151,7 +151,7 @@ Configuring Docker Image for Intel® Vision Accelerator Design with Intel® Movi
 
 To use the Docker container for inference on Intel® Vision Accelerator Design with Intel® Movidius™ VPUs, do the following steps:
 
-#. Set up the environment on the host machine to be used for running Docker. It is required to execute ``hddldaemon``, which is responsible for communication between the HDDL plugin and the board. To learn how to set up the environment (the OpenVINO package or HDDL package must be pre-installed), see `Configuration guide for HDDL device <https://github.com/openvinotoolkit/docker_ci/blob/master/install_guide_vpu_hddl.md>`__ or :ref:`Configurations for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs on Linux <doxid-openvino_docs_install_guides_installing_openvino_ivad_vpu>`.
+#. Set up the environment on the host machine to be used for running Docker. It is required to execute ``hddldaemon``, which is responsible for communication between the HDDL plugin and the board. To learn how to set up the environment (the OpenVINO package or HDDL package must be pre-installed), see `Configuration guide for HDDL device <https://github.com/openvinotoolkit/docker_ci/blob/master/install_guide_vpu_hddl.md>`__ or :ref:`Configurations for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs on Linux <install__config_vpu>`.
 
 #. Run ``hddldaemon`` on the host in a separate terminal session using the following command:
    

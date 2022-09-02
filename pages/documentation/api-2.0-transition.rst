@@ -151,9 +151,9 @@ See the following pages to understand how to migrate Inference Engine-based appl
 
 * :ref:`OpenVINO™ Common Inference pipeline <api_2_0__inference_pipeline>`
 
-* :ref:`Preprocess your model <doxid-openvino_2_0_preprocessing>`
+* :ref:`Preprocess your model <api_2_0__preprocessing>`
 
-* :ref:`Configure device <doxid-openvino_2_0_configure_devices>`
+* :ref:`Configure device <api_2_0__config_devices>`
 
 * :ref:`OpenVINO™ Model Creation <doxid-openvino_2_0_model_creation>`
 

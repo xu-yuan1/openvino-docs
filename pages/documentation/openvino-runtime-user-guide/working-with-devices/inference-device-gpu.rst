@@ -38,7 +38,7 @@ of the GPU plugin, see:
 
 The GPU plugin is a part of the Intel® Distribution of OpenVINO™ toolkit. For 
 more information on how to configure a system to use it, see the 
-:ref:`GPU configuration <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`.
+:ref:`GPU configuration <install__config_gpu>`.
 
 Device Naming Convention
 ~~~~~~~~~~~~~~~~~~~~~~~~
