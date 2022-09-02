@@ -1,14 +1,15 @@
 .. index:: pair: page; Installation
-.. _doxid-workbench_docs__workbench__d_g__install:
+.. _dl_workbench__install:
+
+.. meta::
+   :description: OpenVINO Deep Learning Workbench installation methods.
+   :keywords: Deep Learning Workbench, DL Workbench, installation, devcloud, OpenVINO
 
 
 Installation
 ============
 
-:target:`doxid-workbench_docs__workbench__d_g__install_1md_openvino_workbench_docs_workbench_dg_installation`
-
-
-
+:target:`dl_workbench__install_1md_openvino_workbench_docs_workbench_dg_installation`
 
 
 .. toctree::

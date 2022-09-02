@@ -105,5 +105,5 @@ See Also
 
 * :ref:`Set Accuracy Configuration <doxid-workbench_docs__workbench__d_g__configure__accuracy__settings>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

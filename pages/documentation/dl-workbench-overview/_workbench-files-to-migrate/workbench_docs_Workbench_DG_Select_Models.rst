@@ -83,5 +83,5 @@ See Also
 
 * :ref:`Open Model Zoo <doxid-model_zoo>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

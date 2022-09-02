@@ -23,7 +23,7 @@ Once you click **Review**, you get to the **Target Machines** page with the deta
 
 .. image:: available-001.png
 
-To remove a configuration, click the bin icon in the **Action** column. To edit the configuration, click the pencil icon in the **Action** column of the **Machines Table** and edit parameters on the **Edit Remote Target** page that will open. Refer to :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>` to fix an issue.
+To remove a configuration, click the bin icon in the **Action** column. To edit the configuration, click the pencil icon in the **Action** column of the **Machines Table** and edit parameters on the **Edit Remote Target** page that will open. Refer to :ref:`Troubleshooting <dl_workbench__troubleshooting>` to fix an issue.
 
 Click **Refresh** to update remote machine parameters. The **Configuration Status**, **Connection Status** tables and the **System Resources** field will get configured again:
 
@@ -38,5 +38,5 @@ See Also
 
 * `Set Up Remote Target <workbench_docs_Workbench_DG_Setup_Remote_Target.html>`__
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

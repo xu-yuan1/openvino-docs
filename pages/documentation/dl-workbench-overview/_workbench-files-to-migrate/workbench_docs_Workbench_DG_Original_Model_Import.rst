@@ -154,7 +154,7 @@ Click **Import Model** and Select the Model Domain: Computer Vision (CV) or Natu
 2. Prepare Environment
 ~~~~~~~~~~~~~~~~~~~~~~
 
-At the **Prepare Environment** stage, the DL Workbench installs the necessary packages to work with the model framework. For each framework, the download happens only once and takes from two to five minutes. If the environment setup is successful, you will automatically proceed to the next step. Otherwise, look for a solution in :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`.
+At the **Prepare Environment** stage, the DL Workbench installs the necessary packages to work with the model framework. For each framework, the download happens only once and takes from two to five minutes. If the environment setup is successful, you will automatically proceed to the next step. Otherwise, look for a solution in :ref:`Troubleshooting <dl_workbench__troubleshooting>`.
 
 3. Convert Models to Intermediate Representation (IR)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -325,5 +325,5 @@ See Also
 
 * `Model Downloader <https://docs.openvinotoolkit.org/latest/omz_tools_downloader.html>`__
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

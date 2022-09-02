@@ -133,5 +133,5 @@ See Also
 
 * :ref:`Create Accuracy Report <doxid-workbench_docs__workbench__d_g__measure__accuracy>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

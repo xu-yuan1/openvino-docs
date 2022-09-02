@@ -47,13 +47,13 @@ The **Configuration Status** and **Connection Status** tables show you the confi
 
 .. image:: success-001.png
 
-See :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>` to address a **Warning** or **Failure** :
+See :ref:`Troubleshooting <dl_workbench__troubleshooting>` to address a **Warning** or **Failure** :
 
-* **Warning** indicates issues that might limit your actions. Warnings do not prevent work with remote targets. Refer to :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>` to fix an issue:
+* **Warning** indicates issues that might limit your actions. Warnings do not prevent work with remote targets. Refer to :ref:`Troubleshooting <dl_workbench__troubleshooting>` to fix an issue:
   
   .. image:: warning-001.png
 
-**Failure** indicates issues that prevent using the remote target. Refer to :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>` to fix an issue:
+**Failure** indicates issues that prevent using the remote target. Refer to :ref:`Troubleshooting <dl_workbench__troubleshooting>` to fix an issue:
 
 .. image:: failure-001.png
 
@@ -66,5 +66,5 @@ See Also
 
 * :ref:`Profile on a Remote Machine <doxid-workbench_docs__workbench__d_g__profile_on__remote__machine>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

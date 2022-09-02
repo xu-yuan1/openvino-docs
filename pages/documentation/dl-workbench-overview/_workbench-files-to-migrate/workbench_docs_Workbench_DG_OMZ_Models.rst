@@ -38,5 +38,5 @@ See Also
 
 * `Pretrained Open Model Zoo Intel Models <https://docs.openvinotoolkit.org/latest/omz_models_group_intel.html>`__
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

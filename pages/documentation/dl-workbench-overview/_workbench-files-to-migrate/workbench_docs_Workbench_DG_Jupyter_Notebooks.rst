@@ -106,7 +106,7 @@ To use a model, sample image, and/or device other than those specified in a tuto
      
      .. image:: image_path.png
    
-   * Find the device name in the cell under the **Optional Parameters** section in the **Configure an Inference** step as in the image above. Replace it with the name of the device that you want to use. See the **Supported Inference Devices** of :ref:`Install DL Workbench <doxid-workbench_docs__workbench__d_g__install>` for reference.
+   * Find the device name in the cell under the **Optional Parameters** section in the **Configure an Inference** step as in the image above. Replace it with the name of the device that you want to use. See the **Supported Inference Devices** of :ref:`Install DL Workbench <dl_workbench__install>` for reference.
 
 #. Run all code cells.
 
@@ -136,5 +136,5 @@ See Also
 
 * `JupyterLab documentation <https://jupyter-notebook.readthedocs.io/en/stable/ui_components.html>`__
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

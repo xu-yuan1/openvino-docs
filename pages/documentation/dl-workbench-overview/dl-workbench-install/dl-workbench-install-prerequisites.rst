@@ -90,7 +90,7 @@ Set proxy for macOS and Windows
 See Also
 ~~~~~~~~
 
-* :ref:`Next Step: Install DL Workbench <doxid-workbench_docs__workbench__d_g__install>`
+* :ref:`Next Step: Install DL Workbench <dl_workbench__install>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

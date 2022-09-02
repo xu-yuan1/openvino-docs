@@ -82,5 +82,5 @@ See Also
 
 * :ref:`Set Up Remote Target <doxid-workbench_docs__workbench__d_g__setup__remote__target>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

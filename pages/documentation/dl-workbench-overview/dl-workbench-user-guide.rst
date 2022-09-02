@@ -1,11 +1,15 @@
 .. index:: pair: page; OpenVINO™ Deep Learning Workbench User Guide
-.. _doxid-workbench_docs__workbench__d_g__user__guide:
+.. _dl_workbench__user_guide:
+
+.. meta::
+   :description: User guide for OpenVINO Deep Learning Workbench.
+   :keywords: Deep Learning Workbench, DL Workbench, OpenVINO, user guide
 
 
 OpenVINO™ Deep Learning Workbench User Guide
 ==============================================
 
-:target:`doxid-workbench_docs__workbench__d_g__user__guide_1md_openvino_workbench_docs_workbench_dg_user_guide`
+:target:`dl_workbench__user_guide_1md_openvino_workbench_docs_workbench_dg_user_guide`
 
 
 

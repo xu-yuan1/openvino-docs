@@ -88,5 +88,5 @@ See Also
 
 * :ref:`Deploy and Integrate Performance Criteria into Application <doxid-workbench_docs__workbench__d_g__deploy_and__integrate__performance__criteria_into__application>`
 
-* :ref:`Troubleshooting <doxid-workbench_docs__workbench__d_g__troubleshooting>`
+* :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 
