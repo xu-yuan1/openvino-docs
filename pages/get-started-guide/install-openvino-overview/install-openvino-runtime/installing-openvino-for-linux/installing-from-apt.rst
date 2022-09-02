@@ -7,7 +7,7 @@ Install Intel® Distribution of OpenVINO™ Toolkit for Linux Using APT Reposito
 
 :target:`doxid-openvino_docs_install_guides_installing_openvino_apt_1md_openvino_docs_install_guides_installing_openvino_apt` This guide provides installation steps for Intel® Distribution of OpenVINO™ toolkit for Linux distributed through the APT repository.
 
-.. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI. If you want to develop or optimize your models with OpenVINO, see :ref:`Install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>` for detailed steps.
+.. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI. If you want to develop or optimize your models with OpenVINO, see :ref:`Install OpenVINO Development Tools <install_openvino_dev_tools>` for detailed steps.
 
 
 
@@ -182,7 +182,7 @@ Run the following command:
 Step 4 (Optional): Install Software Dependencies
 ------------------------------------------------
 
-After you have installed OpenVINO Runtime, if you decided to :ref:`install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`, make sure that you install external software dependencies first.
+After you have installed OpenVINO Runtime, if you decided to :ref:`install OpenVINO Development Tools <install_openvino_dev_tools>`, make sure that you install external software dependencies first.
 
 Refer to `Install External Software Dependencies <openvino_docs_install_guides_installing_openvino_linux.html#install-external-dependencies>`__ for detailed steps.
 

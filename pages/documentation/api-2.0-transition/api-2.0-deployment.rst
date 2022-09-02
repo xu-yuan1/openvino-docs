@@ -83,7 +83,7 @@ Then, the tools can be used by commands like:
 	$ mo -h
 	$ pot -h
 
-Installation of any other dependencies is not required. For more details on the installation steps, see the :ref:`Install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`.
+Installation of any other dependencies is not required. For more details on the installation steps, see the :ref:`Install OpenVINO Development Tools <install_openvino_dev_tools>`.
 
 Interface Changes for Building C/C++ Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,11 +1,11 @@
 .. index:: pair: page; Create a Yocto Image with Intel® Distribution of OpenVINO™ toolkit
-.. _doxid-openvino_docs_install_guides_installing_openvino_yocto:
+.. _install__create_yocto_image:
 
 
 Create a Yocto Image with Intel® Distribution of OpenVINO™ toolkit
 =====================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_yocto_1md_openvino_docs_install_guides_installing_openvino_yocto` This document provides instructions for creating a Yocto image with Intel® Distribution of OpenVINO™ toolkit.
+:target:`install__create_yocto_image_1md_openvino_docs_install_guides_installing_openvino_yocto` This document provides instructions for creating a Yocto image with Intel® Distribution of OpenVINO™ toolkit.
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~

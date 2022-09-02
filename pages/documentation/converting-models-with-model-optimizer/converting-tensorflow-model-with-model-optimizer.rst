@@ -7,7 +7,7 @@ Converting a TensorFlow Model
 
 :target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_tensorflow` This page provides general instructions on how to convert a model from a TensorFlow format to the OpenVINO IR format using Model Optimizer. The instructions are different depending on whether your model was created with TensorFlow v1.X or TensorFlow v2.X.
 
-To use Model Optimizer, install OpenVINO Development Tools by following the :ref:`installation instructions <doxid-openvino_docs_install_guides_install_dev_tools>`.
+To use Model Optimizer, install OpenVINO Development Tools by following the :ref:`installation instructions <install_openvino_dev_tools>`.
 
 .. _Convert_From_TF2X:
 

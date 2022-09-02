@@ -1,11 +1,11 @@
 .. index:: pair: page; Install OpenVINO™ Development Tools
-.. _doxid-openvino_docs_install_guides_install_dev_tools:
+.. _install_openvino_dev_tools:
 
 
 Install OpenVINO™ Development Tools
 =====================================
 
-:target:`doxid-openvino_docs_install_guides_install_dev_tools_1md_openvino_docs_install_guides_installing_model_dev_tools` If you want to download, convert, optimize and tune pre-trained deep learning models, install OpenVINO™ Development Tools, which provides the following tools:
+:target:`install_openvino_dev_tools_1md_openvino_docs_install_guides_installing_model_dev_tools` If you want to download, convert, optimize and tune pre-trained deep learning models, install OpenVINO™ Development Tools, which provides the following tools:
 
 * Model Optimizer
 

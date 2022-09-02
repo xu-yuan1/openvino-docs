@@ -36,9 +36,9 @@ Since the 2022.1 release, the OpenVINO installation package has been distributed
 Decide What to Install
 ----------------------
 
-If you have already finished developing your models and converting them to the OpenVINO model format, you can :ref:`install OpenVINO Runtime <doxid-openvino_docs_install_guides_install_runtime>` to deploy your applications on various devices. OpenVINO Runtime contains a set of libraries for easy inference integration with your products.
+If you have already finished developing your models and converting them to the OpenVINO model format, you can :ref:`install OpenVINO Runtime <install_openvino_runtime>` to deploy your applications on various devices. OpenVINO Runtime contains a set of libraries for easy inference integration with your products.
 
-If you want to download models from :ref:`Open Model Zoo <doxid-model_zoo>`, :ref:`convert your own models to OpenVINO IR <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`, or :ref:`optimize and tune pre-trained deep learning models <model_optimization_guide>`, :ref:`install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`, which provides the following tools:
+If you want to download models from :ref:`Open Model Zoo <doxid-model_zoo>`, :ref:`convert your own models to OpenVINO IR <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`, or :ref:`optimize and tune pre-trained deep learning models <model_optimization_guide>`, :ref:`install OpenVINO Development Tools <install_openvino_dev_tools>`, which provides the following tools:
 
 * Model Optimizer
 
@@ -53,7 +53,7 @@ If you want to download models from :ref:`Open Model Zoo <doxid-model_zoo>`, :re
 Choose Your Installation Method
 -------------------------------
 
-For Python developers, the easiest way is to :ref:`install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`, which will install both OpenVINO Runtime and OpenVINO Development Tools with a few steps. If you want to install OpenVINO Runtime only, see :ref:`Install OpenVINO Runtime from PyPI <doxid-openvino_docs_install_guides_installing_openvino_pip>`.
+For Python developers, the easiest way is to :ref:`install OpenVINO Development Tools <install_openvino_dev_tools>`, which will install both OpenVINO Runtime and OpenVINO Development Tools with a few steps. If you want to install OpenVINO Runtime only, see :ref:`Install OpenVINO Runtime from PyPI <doxid-openvino_docs_install_guides_installing_openvino_pip>`.
 
 For C++ developers, you may choose one of the following installation options for OpenVINO Runtime on your specific operating system:
 
@@ -65,7 +65,7 @@ For C++ developers, you may choose one of the following installation options for
 
 * :ref:`Raspbian OS <doxid-openvino_docs_install_guides_installing_openvino_raspbian>`.
 
-.. note:: With the introduction of the 2022.1 release, the OpenVINO Development Tools can be installed **only** via PyPI. See :ref:`Install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>` for detailed steps.
+.. note:: With the introduction of the 2022.1 release, the OpenVINO Development Tools can be installed **only** via PyPI. See :ref:`Install OpenVINO Development Tools <install_openvino_dev_tools>` for detailed steps.
 
 
 
@@ -74,11 +74,11 @@ Source files are also available in the `OpenVINO toolkit GitHub repository <http
 Next Steps
 ~~~~~~~~~~
 
-* :ref:`Install OpenVINO Runtime <doxid-openvino_docs_install_guides_install_runtime>`
+* :ref:`Install OpenVINO Runtime <install_openvino_runtime>`
 
-* :ref:`Install OpenVINO Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`
+* :ref:`Install OpenVINO Development Tools <install_openvino_dev_tools>`
 
 * `Build from Source <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>`__
 
-* :ref:`Create a Yocto Image <doxid-openvino_docs_install_guides_installing_openvino_yocto>`
+* :ref:`Create a Yocto Image <install__create_yocto_image>`
 

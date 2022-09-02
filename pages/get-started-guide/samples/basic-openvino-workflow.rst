@@ -60,7 +60,7 @@ following command:
 
 	pip install openvino-dev[caffe]
 
-For more detailed steps, see :ref:`Install OpenVINO™ Development Tools <doxid-openvino_docs_install_guides_install_dev_tools>`
+For more detailed steps, see :ref:`Install OpenVINO™ Development Tools <install_openvino_dev_tools>`
 
 Build Samples and Demos
 -----------------------
