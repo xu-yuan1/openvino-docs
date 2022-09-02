@@ -5,7 +5,7 @@
 Create Project
 ==============
 
-:target:`doxid-workbench_docs__workbench__create__project_1md_openvino_workbench_docs_workbench_dg_create_project` This is the second part of :ref:`Get Started with DL Workbench <doxid-workbench_docs__workbench__d_g__work_with__models_and__sample__datasets>` guide. Create a project to get the most out of DL Workbench functionality: evaluate model performance and accuracy, optimize the model and prepare it for deployment. A project is a combination of a model, dataset, target machine, and device that you use to run experiments in the DL Workbench.
+:target:`doxid-workbench_docs__workbench__create__project_1md_openvino_workbench_docs_workbench_dg_create_project` This is the second part of :ref:`Get Started with DL Workbench <dl_workbench__get_started>` guide. Create a project to get the most out of DL Workbench functionality: evaluate model performance and accuracy, optimize the model and prepare it for deployment. A project is a combination of a model, dataset, target machine, and device that you use to run experiments in the DL Workbench.
 
 Import Model
 ~~~~~~~~~~~~

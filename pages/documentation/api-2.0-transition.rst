@@ -1,15 +1,28 @@
 .. index:: pair: page; OpenVINO™ API 2.0 Transition Guide
-.. _doxid-openvino_2_0_transition_guide:
+.. _api_2_0__transition_guide:
 
+.. meta::
+   :description: 
+   :keywords: 
 
 OpenVINO™ API 2.0 Transition Guide
 ====================================
 
-:target:`doxid-openvino_2_0_transition_guide_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_intro`
+:target:`api_2_0__transition_guide_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_intro`
 
-
-
-
+.. meta::
+   :description: A detailed information on a new version of OpenVINO™ API 2.0, 
+                 as well as the new OpenVINO IR model format: IR v11.
+   :keywords: OpenVINO™ API 2.0, OpenVINO IR, OpenVINO IR v11, OpenVINO 
+              Intermediate Representation, backward compatibility, I64 input, 
+              I32 input, TensorFlow models, Inference Engine API, input precision, 
+              output precision, input shape, model conversion, Model Optimizer, 
+              OpenVINO™ 2022.1, OpenVINO API v2, API 2.0, nGraph API, OpenVINO IR v10, 
+              accuracy checker, compile tool, quantize model, quantization, 
+              inference, model inference, dynamic shapes, model preprocessing, 
+              preprocessing, ONNX, PaddlePaddle, tensor, tensor name, migrate 
+              to API 2.0, migration to API 2.0, transition, API 2.0 transition, 
+              transition to API 2.0, transition guide
 
 .. toctree::
    :maxdepth: 1
@@ -20,7 +33,7 @@ OpenVINO™ API 2.0 Transition Guide
    ./api-2.0-transition/api-2.0-configure-devices
    ./api-2.0-transition/api-2.0-preprocessing
    ./api-2.0-transition/api-2.0-model-creation
-   
+
 
 This guide introduces the new OpenVINO™ API: API 2.0, as well as the new OpenVINO IR model format: IR v11. Here, you will find comparisons of their "old" and "new" versions.
 
@@ -134,7 +147,7 @@ More Information
 
 See the following pages to understand how to migrate Inference Engine-based applications to API 2.0:
 
-* :ref:`Installation & Deployment <doxid-openvino_2_0_deployment>`
+* :ref:`Installation & Deployment <api_2_0__deployment>`
 
 * :ref:`OpenVINO™ Common Inference pipeline <doxid-openvino_2_0_inference_pipeline>`
 

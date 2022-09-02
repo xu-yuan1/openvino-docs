@@ -1,11 +1,28 @@
 .. index:: pair: page; Installation & Deployment
-.. _doxid-openvino_2_0_deployment:
+.. _api_2_0__deployment:
 
+.. meta::
+   :description: OpenVINO™ API 2.0 focuses on the use of development tools and 
+                 deployment of applications, it also simplifies migration from 
+                 different frameworks to OpenVINO.
+   :keywords: OpenVINO™ API 2.0, OpenVINO IR, OpenVINO IR v11, OpenVINO 
+              Intermediate Representation, backward compatibility, OpenVINO™ 
+              Runtime, development tools, dev tools, migration of application, 
+              migration to API 2.0, PyPI, distribution via PyPI, simplify user 
+              experience, PIP package manager, virtual environment, installer 
+              package, installation, installation process, CMake interfaces, 
+              compile tool, Python version, TensorFlow, native interface, 
+              deployment, OpenVINO deployment, application deployment, inference, 
+              inference on CPU, C++ Runtime, openvino_c, openvino_intel_cpu_plugin, 
+              openvino_intel_gpu_plugin, openvino_auto_plugin, openvino_ir_frontend, 
+              openvino_onnx_frontend, openvino_paddle_frontend, ONNX, PaddlePaddle
 
 Installation & Deployment
 =========================
 
-:target:`doxid-openvino_2_0_deployment_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_deployment_migration` One of the main concepts for OpenVINO™ API 2.0 is being "easy to use", which includes:
+:target:`api_2_0__deployment_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_deployment_migration` 
+
+One of the main concepts for OpenVINO™ API 2.0 is being "easy to use", which includes:
 
 * Simplification of migration from different frameworks to OpenVINO.
 

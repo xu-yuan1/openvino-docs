@@ -91,7 +91,7 @@ Overall flow for converting a model from FP32 to INT8:
 
 #. :ref:`Select an appropriate dataset <doxid-workbench_docs__workbench__d_g__generate__datasets>`
 
-#. :ref:`Run a baseline inference <doxid-workbench_docs__workbench__d_g__work_with__models_and__sample__datasets>`
+#. :ref:`Run a baseline inference <dl_workbench__get_started>`
 
 #. `Configure INT8 calibration settings and select a calibration dataset <#8-bit-config>`__
 
