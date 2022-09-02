@@ -495,7 +495,7 @@ You can combine reading and compiling a model into a single call ``ov::Core::com
 2.1 (Optional) Perform Model Preprocessing
 ------------------------------------------
 
-When the application input data does not perfectly match the model input format, preprocessing may be necessary. See :ref:`preprocessing in API 2.0 <doxid-openvino_2_0_preprocessing>` for more details.
+When the application input data does not perfectly match the model input format, preprocessing may be necessary. See :ref:`preprocessing in API 2.0 <api_2_0__preprocessing>` for more details.
 
 .. _load-model-to-device:
 

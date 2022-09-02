@@ -192,7 +192,7 @@ Below are detailed comparisons of the library structure between OpenVINO 2022.1 
 
 * Starting with 2022.1 release, a single core library with all the functionalities (``openvino`` for C++ Runtime, ``openvino_c`` for Inference Engine API C interface) is used, instead of the previous core libraries which contained ``inference_engine``, ``ngraph``, ``inference_engine_transformations`` and ``inference_engine_lp_transformations``.
 
-* The optional ``inference_engine_preproc`` preprocessing library (if ``:ref:`InferenceEngine::PreProcessInfo::setColorFormat <doxid-class_inference_engine_1_1_pre_process_info_1a3a10ba0d562a2268fe584d4d2db94cac>``` or ``:ref:`InferenceEngine::PreProcessInfo::setResizeAlgorithm <doxid-class_inference_engine_1_1_pre_process_info_1a0c083c43d01c53c327f09095e3e3f004>``` is used) has been renamed to ``openvino_gapi_preproc`` and deprecated in 2022.1. For more details, see the :ref:`Preprocessing capabilities of OpenVINO API 2.0 <doxid-openvino_2_0_preprocessing>`.
+* The optional ``inference_engine_preproc`` preprocessing library (if ``:ref:`InferenceEngine::PreProcessInfo::setColorFormat <doxid-class_inference_engine_1_1_pre_process_info_1a3a10ba0d562a2268fe584d4d2db94cac>``` or ``:ref:`InferenceEngine::PreProcessInfo::setResizeAlgorithm <doxid-class_inference_engine_1_1_pre_process_info_1a0c083c43d01c53c327f09095e3e3f004>``` is used) has been renamed to ``openvino_gapi_preproc`` and deprecated in 2022.1. For more details, see the :ref:`Preprocessing capabilities of OpenVINO API 2.0 <api_2_0__preprocessing>`.
 
 * The libraries of plugins have been renamed as follows:
   
