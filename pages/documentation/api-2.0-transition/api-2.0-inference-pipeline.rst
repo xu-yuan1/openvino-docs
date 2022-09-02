@@ -643,7 +643,7 @@ When the application input data does not perfectly match the model input format,
 
 
 
-If you need to configure devices with additional parameters for OpenVINO Runtime, refer to :ref:`Configuring Devices <doxid-openvino_2_0_configure_devices>`.
+If you need to configure devices with additional parameters for OpenVINO Runtime, refer to :ref:`Configuring Devices <api_2_0__config_devices>`.
 
 .. _create-inference-request:
 

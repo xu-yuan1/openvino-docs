@@ -1,11 +1,25 @@
 .. index:: pair: page; Configuring Devices
-.. _doxid-openvino_2_0_configure_devices:
+.. _api_2_0__config_devices:
 
+.. meta::
+   :description: Openvino Runtime API 2.0 has introduced properties that unify 
+                 metrics and configuration key concepts, which simplifies the 
+                 configuration of inference devices.
+   :keywords: Openvino Runtime, Openvino Runtime API 2.0, API 2.0, inference, 
+              model inference, inference device, configure inference device, 
+              device configuration, inference device configuration, properties, 
+              migrate to API 2.0, configuration values, set configuration values, 
+              Inference Engine API, device metrics, execution configuration, 
+              execution metrics, set_property, get_metric, get_config, get_metric, 
+              GetMetric, GetConfig, GetMetric, GetConfig, Intel CPU, Intel GPU, 
+              MULTI-device, performance hint, inference precision, throughput
 
 Configuring Devices
 ===================
 
-:target:`doxid-openvino_2_0_configure_devices_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_configure_devices` Inference Engine API provides the `ability to configure devices <https://docs.openvino.ai/2021.4/openvino_docs_IE_DG_InferenceEngine_QueryAPI.html>`__ via configuration keys and `get device specific metrics <https://docs.openvino.ai/2021.4/openvino_docs_IE_DG_InferenceEngine_QueryAPI.html#getmetric>`__. The values taken from ``:ref:`InferenceEngine::Core::GetConfig <doxid-class_inference_engine_1_1_core_1a415077386694f95b57e4cccb0d334a55>``` are requested by the string name, while the return type is ``:ref:`InferenceEngine::Parameter <doxid-namespace_inference_engine_1aff2231f886c9f8fc9c226fd343026789>```, making users lost on what the actual type is stored in this parameter.
+:target:`api_2_0__config_devices_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_configure_devices` 
+
+Inference Engine API provides the `ability to configure devices <https://docs.openvino.ai/2021.4/openvino_docs_IE_DG_InferenceEngine_QueryAPI.html>`__ via configuration keys and `get device specific metrics <https://docs.openvino.ai/2021.4/openvino_docs_IE_DG_InferenceEngine_QueryAPI.html#getmetric>`__. The values taken from ``:ref:`InferenceEngine::Core::GetConfig <doxid-class_inference_engine_1_1_core_1a415077386694f95b57e4cccb0d334a55>``` are requested by the string name, while the return type is ``:ref:`InferenceEngine::Parameter <doxid-namespace_inference_engine_1aff2231f886c9f8fc9c226fd343026789>```, making users lost on what the actual type is stored in this parameter.
 
 API 2.0 solves these issues by introducing :ref:`properties <deploy_infer__query_device_properties>`, which unify metrics and configuration key concepts. The main advantage is that they have the C++ type:
 
@@ -21,7 +35,7 @@ where the property can be requested from an inference device as:
 	// since the type is stored in the property
 	auto full_device_name = core.get_property("CPU", :ref:`ov::device::full_name <doxid-group__ov__runtime__cpp__prop__api_1gaabacd9ea113b966be7b53b1d70fd6f42>`);
 
-The snippets in the following sections demostrate the device configurations for migrating from Inference Engine to API 2.0.
+The snippets in the following sections demonstrate the device configurations for migrating from Inference Engine to API 2.0.
 
 Setting Configuration Values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
