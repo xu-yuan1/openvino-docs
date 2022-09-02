@@ -347,6 +347,8 @@ For the release configuration, the sample application binaries are in
 ``<path_to_build_directory>/intel64/Release/``; for the debug configuration — in 
 ``<path_to_build_directory>/intel64/Debug/``.
 
+.. _get_ready_for_running_sample_applications:
+
 Get Ready for Running the Sample Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

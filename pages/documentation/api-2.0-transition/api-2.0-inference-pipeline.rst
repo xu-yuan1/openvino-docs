@@ -1,11 +1,26 @@
 .. index:: pair: page; Inference Pipeline
-.. _doxid-openvino_2_0_inference_pipeline:
+.. _api_2_0__inference_pipeline:
+
+.. meta::
+   :description: The inference pipeline consists of a series of steps to be 
+                 performed in a specific order to infer models with OpenVINO™ 
+                 Runtime.
+   :keywords: OpenVINO™ Runtime, inference, model inference, infer models, 
+              inference pipeline, migrate to API 2.0, API 2.0, core object, 
+              create core object, load extensions, read a model, preprocessing, 
+              model preprocessing, load a model, inference request, create an 
+              inference request, tensor, input tensor, output tensor, fill 
+              input tensors, start inference, inference results, Inference 
+              Engine API, I32 precision, I64 precision, OpenVINO IR v11, 
+              compile model, compile_model, infer_request
 
 
 Inference Pipeline
 ==================
 
-:target:`doxid-openvino_2_0_inference_pipeline_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_common_inference_pipeline` To infer models with OpenVINO™ Runtime, you usually need to perform the following steps in the application pipeline:
+:target:`api_2_0__inference_pipeline_1md_openvino_docs_ov_runtime_ug_migration_ov_2_0_common_inference_pipeline` 
+
+To infer models with OpenVINO™ Runtime, you usually need to perform the following steps in the application pipeline:
 
 #. `Create a Core object. <#create-core>`__
    
@@ -25,7 +40,7 @@ Inference Pipeline
 
 #. `Process the inference results. <#process-results>`__
 
-Based on the steps, the following code demostrates how to change the application code to migrate to API 2.0.
+Based on the steps, the following code demonstrates how to change the application code to migrate to API 2.0.
 
 .. _create-core:
 

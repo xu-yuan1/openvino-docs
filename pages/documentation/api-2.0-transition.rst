@@ -52,7 +52,7 @@ Versions of OpenVINO prior to 2022.1 required changes in the application logic w
 
 * Users needed to specify input shapes during model conversions in Model Optimizer, and work with static shapes in the application.
 
-OpenVINO™ 2022.1 has introduced API 2.0 (also called OpenVINO API v2) to align the logic of working with models as it is done in their origin frameworks - no layout and precision changes, operating with tensor names and indices to address inputs and outputs. OpenVINO Runtime has combined Inference Engine API used for inference and nGraph API targeted to work with models and operations. API 2.0 has a common structure, naming convention styles, namespaces, and removes duplicated structures. For more details, see the :ref:`Changes to Inference Pipeline in OpenVINO API v2 <doxid-openvino_2_0_inference_pipeline>`.
+OpenVINO™ 2022.1 has introduced API 2.0 (also called OpenVINO API v2) to align the logic of working with models as it is done in their origin frameworks - no layout and precision changes, operating with tensor names and indices to address inputs and outputs. OpenVINO Runtime has combined Inference Engine API used for inference and nGraph API targeted to work with models and operations. API 2.0 has a common structure, naming convention styles, namespaces, and removes duplicated structures. For more details, see the :ref:`Changes to Inference Pipeline in OpenVINO API v2 <api_2_0__inference_pipeline>`.
 
 .. note:: Your existing applications will continue to work with OpenVINO Runtime 2022.1, as normal. Although, migration to API 2.0 is strongly recommended. This will allow you to use additional features, such as :ref:`Preprocessing <deploy_infer__preprocessing_overview>` and :ref:`Dynamic shapes support <deploy_infer__dynamic_shapes>`.
 
@@ -72,7 +72,7 @@ OpenVINO IR v11 is supported by all OpenVINO Development tools including Post-Tr
 Backward Compatibility for OpenVINO IR v10
 ------------------------------------------
 
-API 2.0 also supports backward compatibility for models of OpenVINO IR v10. If you have OpenVINO IR v10 files, they can also be fed to OpenVINO Runtime. For more details, see the :ref:`migration steps <doxid-openvino_2_0_inference_pipeline>`.
+API 2.0 also supports backward compatibility for models of OpenVINO IR v10. If you have OpenVINO IR v10 files, they can also be fed to OpenVINO Runtime. For more details, see the :ref:`migration steps <api_2_0__inference_pipeline>`.
 
 Some of the OpenVINO Development Tools also support both OpenVINO IR v10 and v11 as an input:
 
@@ -149,7 +149,7 @@ See the following pages to understand how to migrate Inference Engine-based appl
 
 * :ref:`Installation & Deployment <api_2_0__deployment>`
 
-* :ref:`OpenVINO™ Common Inference pipeline <doxid-openvino_2_0_inference_pipeline>`
+* :ref:`OpenVINO™ Common Inference pipeline <api_2_0__inference_pipeline>`
 
 * :ref:`Preprocess your model <doxid-openvino_2_0_preprocessing>`
 
