@@ -106,5 +106,5 @@ The application prints all available devices with their supported metrics and de
 See Also
 ~~~~~~~~
 
-* :ref:`Using OpenVINO™ Toolkit Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
+* :ref:`Using OpenVINO™ Toolkit Samples <get_started__samples_overview>`
 

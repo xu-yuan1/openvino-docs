@@ -34,7 +34,7 @@ Once you have your Intel® Distribution of OpenVINO™ toolkit installed, follow
 
 #. You may need to reboot your machine for this to take effect.
 
-You've completed all required configuration steps to perform inference on Intel® Neural Compute Stick 2. Proceed to the :ref:`Get Started Guide <doxid-get_started>` section to learn the basic OpenVINO™ toolkit workflow and run code samples and demo applications.
+You've completed all required configuration steps to perform inference on Intel® Neural Compute Stick 2. Proceed to the :ref:`Get Started Guide <get_started>` section to learn the basic OpenVINO™ toolkit workflow and run code samples and demo applications.
 
 .. _ncs guide raspbianos:
 

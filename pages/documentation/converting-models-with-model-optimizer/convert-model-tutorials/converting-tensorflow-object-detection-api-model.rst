@@ -117,7 +117,7 @@ OpenVINO™ Toolkit Samples and Open Model Zoo Demos
 
 OpenVINO comes with a number of samples to demonstrate use of OpenVINO Runtime API. Additionally, Open Model Zoo provides set of demo applications to show implementation of close to real life applications, based on deep learning in various tasks, including Image Classification, Visual Object Detection, Text Recognition, Speech Recognition, Natural Language Processing and others. Refer to the links below for more details.
 
-* :ref:`OpenVINO Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
+* :ref:`OpenVINO Samples <get_started__samples_overview>`
 
 * Open Model Zoo Demos
 

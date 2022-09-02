@@ -1,11 +1,11 @@
 .. index:: pair: page; OpenVINO Samples
-.. _doxid-openvino_docs__o_v__u_g__samples__overview:
+.. _get_started__samples_overview:
 
 
 Samples
 =======
 
-:target:`doxid-openvino_docs__o_v__u_g__samples__overview_1md_openvino_docs_ov_runtime_ug_samples_overview`
+:target:`get_started__samples_overview_1md_openvino_docs_ov_runtime_ug_samples_overview`
 
 .. _code samples:
 

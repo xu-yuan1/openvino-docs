@@ -82,7 +82,7 @@ Additional Resources
 
 * :ref:`OpenVINO™ Runtime User Guide <deploy_infer__openvino_runtime_user_guide>`.
 
-* For more information on Sample Applications, see the :ref:`OpenVINO Samples Overview <doxid-openvino_docs__o_v__u_g__samples__overview>`
+* For more information on Sample Applications, see the :ref:`OpenVINO Samples Overview <get_started__samples_overview>`
 
 * For information on a set of pre-trained models, see the Overview of OpenVINO™ Toolkit Pre-Trained Models.
 

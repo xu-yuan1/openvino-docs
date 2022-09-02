@@ -505,7 +505,7 @@ For more samples and demos, you can visit the samples and demos pages below.
 You can review samples and demos by complexity or by usage, run the relevant 
 application, and adapt the code for your use.
 
-:ref:`Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
+:ref:`Samples <get_started__samples_overview>`
 
 `Demos <https://github.com/openvinotoolkit/open_model_zoo/blob/master/demos/README.md>`__
 

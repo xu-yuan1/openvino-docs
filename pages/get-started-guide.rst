@@ -1,11 +1,11 @@
 .. index:: pair: page; Get Started
-.. _doxid-get_started:
+.. _get_started:
 
 
 Get Started
 ===========
 
-:target:`doxid-get_started_1md_openvino_docs_get_started`
+:target:`get_started_1md_openvino_docs_get_started`
 
 
 .. toctree::
