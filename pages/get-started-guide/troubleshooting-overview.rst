@@ -21,6 +21,6 @@ This guide will provide general troubleshooting steps and possible issues relate
 to the installation and configuration of OpenVINO™.
 
 If you met any issues, you are encouraged to run some 
-:ref:`Troubleshooting Steps <doxid-openvino_docs_get_started_guide_troubleshooting_steps>` 
-first, or look for information on the :ref:`Issues & Solutions <doxid-openvino_docs_get_started_guide_troubleshooting_issues>` 
+:ref:`Troubleshooting Steps <get_started__troubleshooting_steps>` 
+first, or look for information on the :ref:`Issues & Solutions <get_started__troubleshooting_issues>` 
 page.

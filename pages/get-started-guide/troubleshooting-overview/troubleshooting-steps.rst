@@ -1,11 +1,11 @@
 .. index:: pair: page; Troubleshooting Steps for OpenVINO™ Installation and Configurations
-.. _doxid-openvino_docs_get_started_guide_troubleshooting_steps:
+.. _get_started__troubleshooting_steps:
 
 
 Troubleshooting Steps for OpenVINO™ Installation and Configurations
 =====================================================================
 
-:target:`doxid-openvino_docs_get_started_guide_troubleshooting_steps_1md_openvino_docs_install_guides_troubleshooting_steps` If you run into issues while installing or configuring OpenVINO™, you can try the following methods to do some quick checks first.
+:target:`get_started__troubleshooting_steps_1md_openvino_docs_install_guides_troubleshooting_steps` If you run into issues while installing or configuring OpenVINO™, you can try the following methods to do some quick checks first.
 
 Check the versions of OpenVINO Runtime and Developement Tools
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
