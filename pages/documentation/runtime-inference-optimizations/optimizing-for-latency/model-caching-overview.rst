@@ -1,5 +1,5 @@
 .. index:: pair: page; Model Caching Overview
-.. _model_caching_overview:
+.. _optim_perf__model_caching:
 
 .. meta::
    :description: Enabling model caching to export compiled model 
@@ -12,7 +12,7 @@
 Model Caching Overview
 ======================
 
-:target:`model_caching_overview_1md_openvino_docs_ov_runtime_ug_model_caching_overview`
+:target:`optim_perf__model_caching_1md_openvino_docs_ov_runtime_ug_optim_perf__model_caching`
 
 Introduction
 ~~~~~~~~~~~~

@@ -1,5 +1,5 @@
 .. index:: pair: page; Getting Performance Numbers
-.. _getting_performance_numbers:
+.. _optim_perf__get_perf_numbers:
 
 .. meta::
    :description: Using the benchmark_app tool to test inference performance. Detailed insights 
@@ -13,7 +13,7 @@
 Getting Performance Numbers
 ===========================
 
-:target:`getting_performance_numbers_1md_openvino_docs_mo_dg_prepare_model_getting_performance_numbers` 
+:target:`optim_perf__get_perf_numbers_1md_openvino_docs_mo_dg_prepare_model_optim_perf__get_perf_numbers` 
 
 This guide introduces things to notice and how to use the benchmark_app to get 
 performance numbers. It also explains how the performance numbers are reflected 
@@ -207,12 +207,12 @@ but in the form of plugin-specific `Netron-viewable <https://netron.app/>`__
 graph to the specified file.
 
 Especially when performance-debugging the 
-:ref:`latency <deployment_optimizing_for_latency>`, 
+:ref:`latency <optim_perf__deploy_optim_latency>`, 
 note that the counters do not reflect the time spent in the 
 ``plugin/device/driver/etc`` queues. If the sum of the counters is too different 
 from the latency of an inference request, consider testing with less inference 
 requests. For example, running single 
-:ref:`OpenVINO stream <deployment_optimizing_for_throughput>` 
+:ref:`OpenVINO stream <optim_perf__deploy_optim_throughput>` 
 with multiple requests would produce nearly identical counters as running a 
 single inference request, while the actual latency can be quite different.
 

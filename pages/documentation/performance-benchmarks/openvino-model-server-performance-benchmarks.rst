@@ -1,5 +1,5 @@
 .. index:: pair: page; OpenVINO™ Model Server Benchmark Results
-.. _ovms_benchmarks:
+.. _optim_perf__ovms_benchmarks:
 
 .. meta::
    :description: Benchmarks on OpenVINO™ Model Server are run in a 
@@ -17,7 +17,7 @@
 OpenVINO™ Model Server Benchmark Results
 ==========================================
 
-:target:`ovms_benchmarks_1md_openvino_docs_benchmarks_performance_benchmarks_ovms` 
+:target:`optim_perf__ovms_benchmarks_1md_openvino_docs_benchmarks_optim_perf__performance_benchmarks_ovms` 
 
 OpenVINO™ Model Server is an open-source, production-grade inference platform 
 that exposes a set of models via a convenient inference API over gRPC or 
@@ -25,7 +25,7 @@ HTTP/REST. It employs the OpenVINO™ Runtime libraries from the Intel®
 Distribution of OpenVINO™ toolkit to extend workloads across Intel® hardware 
 including CPU, GPU and others.
 
-.. image:: ./_assets/performance_benchmarks_ovms_01.png
+.. image:: ./_assets/optim_perf__performance_benchmarks_ovms_01.png
 	:alt: OpenVINO™ Model Server
 
 Measurement Methodology
@@ -38,7 +38,7 @@ investigation, and it is set not to be a bottleneck for workload intensity.
 This connection is dedicated only to the performance measurements. The 
 benchmark setup consists of four main parts:
 
-.. image:: ./_assets/performance_benchmarks_ovms_02.png
+.. image:: ./_assets/optim_perf__performance_benchmarks_ovms_02.png
    :alt: OVMS Benchmark Setup Diagram
 
 * **OpenVINO™ Model Server** It is launched as a docker container on the 

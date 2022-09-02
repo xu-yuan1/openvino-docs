@@ -122,7 +122,7 @@ For more information on performance hints, see the
 :ref:`High-level Performance Hints <deploy_infer__performance_hints>` 
 page. For more details on optimal runtime configurations and how they are 
 automatically determined using performance hints, see 
-:ref:`Runtime Inference Optimizations <runtime_inference_optimizations>`.
+:ref:`Runtime Inference Optimizations <optim_perf__runtime_inference_optim>`.
 
 
 Device

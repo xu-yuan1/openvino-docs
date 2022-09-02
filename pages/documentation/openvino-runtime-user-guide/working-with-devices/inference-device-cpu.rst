@@ -92,14 +92,14 @@ quantization primitives, and available hardware capabilities. The ``u1/u8/i8`` d
 types are used for quantized operations only, i.e., those are not selected 
 automatically for non-quantized operations.
 
-See the :ref:`low-precision optimization guide <model_optimization_guide>` 
+See the :ref:`low-precision optimization guide <optim_perf__model_optim_guide>` 
 for more details on how to get a quantized model.
 
 .. note:: 
 
    Platforms that do not support Intel® AVX512-VNNI have a known "saturation issue" 
    that may lead to reduced computational accuracy for ``u8/i8`` precision calculations. 
-   See the :ref:`saturation (overflow) issue section <pot_saturation_issue>` to 
+   See the :ref:`saturation (overflow) issue section <optim_perf__pot_saturation>` to 
    get more information on how to detect such issues and possible workarounds.
 
 
@@ -230,7 +230,7 @@ Multi-stream Execution
 
 If either ``ov::num_streams(n_streams)`` with ``n_streams > 1`` or ``ov::hint::performance_mode(ov::hint::PerformanceMode::THROUGHPUT)`` property is set for CPU plugin, then multiple streams are created for the model. In case of CPU plugin, each stream has its own host thread, which means that incoming infer requests can be processed simultaneously. Each stream is pinned to its own group of physical cores with respect to NUMA nodes physical memory usage to minimize overhead on data transfer between NUMA nodes.
 
-For more details, see the :ref:`optimization guide <runtime_inference_optimizations>`.
+For more details, see the :ref:`optimization guide <optim_perf__runtime_inference_optim>`.
 
 .. note:: 
 
@@ -354,7 +354,7 @@ will be skipped. These transformations take a significant amount of time during 
 compilation, so caching this representation reduces time spent for subsequent compilations 
 of the model, thereby reducing first inference latency (FIL).
 
-For more details, see the :ref:`model caching <model_caching_overview>` overview.
+For more details, see the :ref:`model caching <optim_perf__model_caching>` overview.
 
 Extensibility
 -------------
@@ -506,6 +506,6 @@ Additional Resources
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 
-* :ref:`Optimization guide <performance_optimization_guide_introduction>`
+* :ref:`Optimization guide <optim_perf__introduction>`
 
 * `СPU plugin developers documentation <https://github.com/openvinotoolkit/openvino/wiki/CPUPluginDevelopersDocs>`__

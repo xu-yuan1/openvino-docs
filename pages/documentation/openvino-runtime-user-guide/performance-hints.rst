@@ -28,7 +28,7 @@ Previously, a certain level of automatic configuration was the result of the *de
 Performance Hints: Latency and Throughput
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As discussed in the :ref:`Optimization Guide <performance_optimization_guide_introduction>` there are a few different metrics associated with inference speed. Throughput and latency are some of the most widely used metrics that measure the overall performance of an application.
+As discussed in the :ref:`Optimization Guide <optim_perf__introduction>` there are a few different metrics associated with inference speed. Throughput and latency are some of the most widely used metrics that measure the overall performance of an application.
 
 Therefore, in order to ease the configuration of the device, OpenVINO offers two dedicated hints, namely ``:ref:`ov::hint::PerformanceMode::THROUGHPUT <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a50f9b1f40c078d242af7ec323ace44b3>``` and ``:ref:`ov::hint::PerformanceMode::LATENCY <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a501069dd75f76384ba18f133fdce99c2>```. A special ``:ref:`ov::hint::PerformanceMode::UNDEFINED <doxid-group__ov__runtime__cpp__prop__api_1gga032aa530efa40760b79af14913d48d73a0db45d2a4141101bdfe48e3314cfbca3>``` hint acts the same as specifying no hint.
 

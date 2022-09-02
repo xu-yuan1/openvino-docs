@@ -1,5 +1,5 @@
 .. index:: pair: page; Optimization with Simplified Mode
-.. _pot_simplified_mode:
+.. _optim_perf__pot_simplified:
 
 .. meta::
    :description: Running optimization in Simplified Mode involves implementation 
@@ -12,7 +12,7 @@
 Optimization in Simplified Mode
 ===============================
 
-:target:`pot_simplified_mode_1md_openvino_tools_pot_docs_simplifiedmode`
+:target:`optim_perf__pot_simplified_1md_openvino_tools_pot_docs_simplifiedmode`
 
 Introduction
 ~~~~~~~~~~~~
@@ -21,7 +21,7 @@ Simplified mode is designed to make data preparation for the model
 optimization process easier. The mode is represented by an implementation of 
 Engine interface from the POT API. It allows reading the data from an arbitrary 
 folder specified by the user. For more details about POT API, refer to the 
-corresponding :ref:`description <pot_api_reference>`. Currently, Simplified 
+corresponding :ref:`description <optim_perf__pot_api>`. Currently, Simplified 
 mode is available only for image data in PNG or JPEG formats, stored in a single folder.
 
 .. note:: This mode cannot be used with accuracy-aware methods. There is no 
@@ -56,9 +56,9 @@ run POT in the Simplified mode:
 A template of configuration file for 8-bit quantization using Simplified mode 
 can be found `at the following link <https://github.com/openvinotoolkit/openvino/blob/master/tools/pot/configs/simplified_mode_template.json>`__.
 
-For more details about POT usage via CLI, refer to this :ref:`CLI document <pot_cli>`.
+For more details about POT usage via CLI, refer to this :ref:`CLI document <optim_perf__pot_cli>`.
 
 See Also
 ~~~~~~~~
 
-* :ref:`Configuration File Description <pot_configuration_file>`
+* :ref:`Configuration File Description <optim_perf__pot_config_file>`

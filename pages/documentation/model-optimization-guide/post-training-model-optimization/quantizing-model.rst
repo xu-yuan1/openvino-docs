@@ -1,5 +1,5 @@
 .. index:: pair: page; Quantizing Model
-.. _default_model_quantization:
+.. _optim_perf__def_quantization:
 
 .. meta::
    :description: Post-Training Optimization Tool (POT) in OpenVINO can be used to 
@@ -15,7 +15,7 @@
 Quantizing Model
 ================
 
-:target:`default_model_quantization_1md_openvino_tools_pot_docs_defaultquantizationusage`
+:target:`optim_perf__def_quantization_1md_openvino_tools_pot_docs_defaultquantizationusage`
 
 .. toctree::
    :maxdepth: 1
@@ -27,7 +27,7 @@ This guide describes how to apply model quantization with the Default Quantizati
 method without accuracy control, using an unannotated dataset. To use this method, 
 you need to create a Python script using an API of Post-Training Optimization Tool 
 (POT) and implement data preparation logic and quantization pipeline. If you are 
-not familiar with Python, try :ref:`command-line interface <pot_cli>` 
+not familiar with Python, try :ref:`command-line interface <optim_perf__pot_cli>` 
 of POT which is designed to quantize models from OpenVINO `Model Zoo <https://github.com/openvinotoolkit/open_model_zoo>`__. 
 The figure below shows the common workflow of the quantization script implemented 
 with POT API.
@@ -234,7 +234,7 @@ defined as a dictionary:
 * ``"stat_batch_size"`` - size of batch to calculate activations statistics used 
   for quantization. 1 if no parameter specified.
 
-For full specification, see the the :ref:`Default Quantization method <default_quantization_algorithm>`.
+For full specification, see the the :ref:`Default Quantization method <optim_perf__def_quant_algorithm>`.
 
 Run quantization
 ~~~~~~~~~~~~~~~~
@@ -304,8 +304,8 @@ in the same way as the original full-precision model.
 
 If high degradation of accuracy occurs after applying the Default Quantization 
 method, it is recommended to follow the tips from 
-:ref:`Quantization Best Practices <pot_quantization_best_practices>` article or 
-use :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>` method.
+:ref:`Quantization Best Practices <optim_perf__pot_best_practices>` article or 
+use :ref:`Accuracy-aware Quantization <optim_perf__accuracy_quantization>` method.
 
 Quantizing cascaded models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -317,7 +317,7 @@ them. POT API provides the ``Engine`` interface for this purpose, which allows
 customization of the inference logic. However, it is recommended to inherit from 
 ``IEEngine`` helper class that already contains all the logic required to do the 
 inference based on OpenVINO Python API. For more details, see the following 
-:ref:`example <pot_api_example_face_detection>`.
+:ref:`example <optim_perf__pot_api_example_face_detect>`.
 
 Examples
 ~~~~~~~~

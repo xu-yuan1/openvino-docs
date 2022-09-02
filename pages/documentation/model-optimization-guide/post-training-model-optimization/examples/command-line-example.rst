@@ -1,5 +1,5 @@
 .. index:: pair: page; End-to-end Command-line Interface Example
-.. _pot_cli_example:
+.. _optim_perf__pot_cli_example:
 
 .. meta::
    :description: The example of post-training quantization with DefaultQuantization 
@@ -16,7 +16,7 @@
 Command-line Interface Example
 ==============================
 
-:target:`pot_cli_example_1md_openvino_tools_pot_docs_e2eexample` 
+:target:`optim_perf__pot_cli_example_1md_openvino_tools_pot_docs_e2eexample` 
 
 This tutorial describes an example of running post-training quantization for 
 **MobileNet v2 model from PyTorch** framework, particularly by the 
@@ -45,7 +45,7 @@ The example has been verified in Ubuntu 18.04 Operating System with
 Python 3.6 installed.
 
 In case of issues while running the example, refer to 
-:ref:`POT Frequently Asked Questions <pot_faq>` 
+:ref:`POT Frequently Asked Questions <optim_perf__pot_faq>` 
 for help.
 
 Model Preparation

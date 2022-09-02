@@ -1,5 +1,5 @@
 .. index:: pair: page; Tuning Utilities
-.. _tuning_utilities:
+.. _optim_perf__tuning_utils:
 
 .. meta::
    :description: Tuning Utilities
@@ -8,7 +8,7 @@
 Tuning Utilities
 ================
 
-:target:`tuning_utilities_1md_openvino_docs_tuning_utilities`
+:target:`optim_perf__tuning_utils_1md_openvino_docs_optim_perf__tuning_utils`
 
 .. toctree::
    :maxdepth: 1

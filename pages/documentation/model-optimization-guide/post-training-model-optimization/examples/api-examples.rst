@@ -1,5 +1,5 @@
 .. index:: pair: page; Post-training Optimization Tool API Examples
-.. _pot_api_examples:
+.. _optim_perf__pot_api_examples:
 
 .. meta::
    :description: The examples demonstrate how to use Post-training Optimization 
@@ -16,7 +16,7 @@
 POT API Examples
 ================
 
-:target:`pot_api_examples_1md_openvino_tools_pot_openvino_tools_pot_api_samples_readme`
+:target:`optim_perf__pot_api_examples_1md_openvino_tools_pot_openvino_tools_pot_api_samples_readme`
 
 
 .. toctree::
@@ -31,14 +31,14 @@ POT API Examples
    ./api-examples/quantizing-for-gna-device
 
 The Post-training Optimization Tool contains multiple examples that demonstrate 
-how to use its :ref:`API <pot_api_reference>` to optimize 
+how to use its :ref:`API <optim_perf__pot_api>` to optimize 
 DL models. All available examples can be found on 
 `GitHub <https://github.com/openvinotoolkit/openvino/tree/master/tools/pot/openvino/tools/pot/api/samples>`__.
 
 The following examples demonstrate the implementation of ``Engine``, 
 ``Metric``, and ``DataLoader`` interfaces for various use cases:
 
-#. :ref:`Quantizing Image Classification model <pot_api_example_classification>`
+#. :ref:`Quantizing Image Classification model <optim_perf__pot_api_example_classification>`
 
    * Uses single ``MobilenetV2`` model from TensorFlow
 
@@ -49,7 +49,7 @@ The following examples demonstrate the implementation of ``Engine``,
 
    * Uses DefaultQuantization algorithm for quantization model
 
-#. :ref:`Quantizing Object Detection Model with Accuracy Control <pot_api_example_accuracy>`
+#. :ref:`Quantizing Object Detection Model with Accuracy Control <optim_perf__pot_api_example_accuracy>`
 
    * Uses single ``MobileNetV1 FPN`` model from TensorFlow
 
@@ -59,7 +59,7 @@ The following examples demonstrate the implementation of ``Engine``,
 
    * Uses ``AccuracyAwareQuantization`` algorithm for quantization model
 
-#. :ref:`Quantizing Semantic Segmentation Model <pot_api_example_segmentation>`
+#. :ref:`Quantizing Semantic Segmentation Model <optim_perf__pot_api_example_segment>`
 
    * Uses single ``DeepLabV3`` model from TensorFlow
 
@@ -70,7 +70,7 @@ The following examples demonstrate the implementation of ``Engine``,
 
    * Uses DefaultQuantization algorithm for quantization model
 
-#. :ref:`Quantizing 3D Segmentation Model <pot_api_example_3d_segmentation>`
+#. :ref:`Quantizing 3D Segmentation Model <optim_perf__pot_api_example_3d_segment>`
 
    * Uses single ``Brain Tumor Segmentation`` model from PyTorch
 
@@ -84,7 +84,7 @@ The following examples demonstrate the implementation of ``Engine``,
 
    * Uses DefaultQuantization algorithm for quantization model
 
-#. :ref:`Quantizing Cascaded model <pot_api_example_face_detection>`
+#. :ref:`Quantizing Cascaded model <optim_perf__pot_api_example_face_detect>`
 
    * Uses cascaded (composite) ``MTCNN`` model from Caffe that consists of 
      three separate models in an OpenVino Intermediate Representation (IR)
@@ -101,7 +101,7 @@ The following examples demonstrate the implementation of ``Engine``,
 
    * Uses DefaultQuantization algorithm for quantization model
 
-#. :ref:`Quantizing for GNA Device <pot_api_example_gna>`
+#. :ref:`Quantizing for GNA Device <optim_perf__pot_api_example_gna>`
 
    * Uses models from Kaldi
 

@@ -1,5 +1,5 @@
 .. index:: pair: page; Configuration File Description
-.. _pot_configuration_file:
+.. _optim_perf__pot_config_file:
 
 .. meta::
    :description: Post-training Optimization Tool requires a configuration JSON 
@@ -15,7 +15,7 @@
 Configuration File Description
 ==============================
 
-:target:`pot_configuration_file_1md_openvino_tools_pot_configs_readme` 
+:target:`optim_perf__pot_config_file_1md_openvino_tools_pot_configs_readme` 
 
 The tool is designed to work with the configuration file where all the 
 parameters required for the optimization are specified. These parameters are 
@@ -104,8 +104,8 @@ Compression Parameters
 ~~~~~~~~~~~~~~~~~~~~~~
 
 For more details about parameters of the concrete optimization algorithm, see 
-descriptions of :ref:`Default Quantization <default_quantization_algorithm>` 
-and :ref:`Accuracy-aware Quantizatoin <accuracy_aware_quantization_algorithm>` 
+descriptions of :ref:`Default Quantization <optim_perf__def_quant_algorithm>` 
+and :ref:`Accuracy-aware Quantizatoin <optim_perf__accuracy_quant_algorithm>` 
 methods.
 
 Examples of the Configuration File
@@ -114,9 +114,9 @@ Examples of the Configuration File
 For a quick start, many examples of configuration files are provided 
 `here <https://github.com/openvinotoolkit/openvino/blob/master/tools/pot/configs/examples>`__. There you can find ready-to-use configurations for the models from various domains: Computer Vision (Image Classification, Object Detection, Segmentation), Natural Language Processing, Recommendation Systems. We put configuration files for the models which require non-default configuration settings to get accurate results.
 
-For details on how to run the Post-Training Optimization Tool with a sample configuration file, see the :ref:`example <pot_cli_example>`.
+For details on how to run the Post-Training Optimization Tool with a sample configuration file, see the :ref:`example <optim_perf__pot_cli_example>`.
 
 See Also
 ~~~~~~~~
 
-* :ref:`Optimization with Simplified mode <pot_simplified_mode>`
+* :ref:`Optimization with Simplified mode <optim_perf__pot_simplified>`

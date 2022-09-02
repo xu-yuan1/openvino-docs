@@ -1,5 +1,5 @@
 .. index:: pair: page; Post-Training Quantization Best Practices
-.. _pot_quantization_best_practices:
+.. _optim_perf__pot_best_practices:
 
 .. meta::
    :description: Best practices in post-training quantization involve improving 
@@ -12,7 +12,7 @@
 Post-Training Quantization Best Practices
 =========================================
 
-:target:`pot_quantization_best_practices_1md_openvino_tools_pot_docs_bestpractices`
+:target:`optim_perf__pot_best_practices_1md_openvino_tools_pot_docs_bestpractices`
 
 
 .. toctree::
@@ -21,7 +21,7 @@ Post-Training Quantization Best Practices
 
    ./best-practices/saturation-issue
 
-The :ref:`Default Quantization <default_model_quantization>` of the 
+The :ref:`Default Quantization <optim_perf__def_quantization>` of the 
 Post-training Optimization Tool (POT) is the fastest and easiest way to get a 
 quantized model. It requires only some unannotated representative dataset to 
 be provided in most cases. Therefore, it is recommended to use it as a 
@@ -34,7 +34,7 @@ to provide tips to address this issue.
    optimization. It is also worth mentioning that in case of the 8-bit quantization, 
    it is recommended to run POT on the same CPU architecture when optimizing for 
    CPU or VNNI-based CPU when quantizing for a non-CPU device, such as GPU, VPU, 
-   or GNA. It should help to avoid the impact of the :ref:`saturation issue <pot_saturation_issue>` 
+   or GNA. It should help to avoid the impact of the :ref:`saturation issue <optim_perf__pot_saturation>` 
    that occurs on AVX and SSE based CPU devices.
 
 Improving accuracy after the Default Quantization
@@ -131,7 +131,7 @@ Accuracy-aware Quantization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the steps above do not result in an accurate quantized model, you may use 
-the so-called :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>` 
+the so-called :ref:`Accuracy-aware Quantization <optim_perf__accuracy_quantization>` 
 algorithm, which produces mixed-precision models. Here is a fragment of 
 Accuracy-aware Quantization configuration with default settings:
 
@@ -165,4 +165,4 @@ precision. Note that this may impact the overall quantization time, though.
 
 If the Accuracy-aware Quantization algorithm does not provide the desired 
 accuracy and performance or you need an accurate, fully-quantized model, use 
-:ref:`NNCF <nncf_introduction>` for Quantization-Aware Training.
+:ref:`NNCF <optim_perf__nncf_introduction>` for Quantization-Aware Training.

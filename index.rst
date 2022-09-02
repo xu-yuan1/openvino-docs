@@ -30,7 +30,7 @@ OpenVINO™ Documentation
       <div style="clear:both;"> </div>
       <p>Check the full range of supported hardware in the 
          <a href="openvino_docs_OV_UG_Working_with_devices.html"> Supported Devices page</a> and see how it stacks up in our
-         <a href="openvino_docs_performance_benchmarks.html"> Performance Benchmarks page.</a> <br />
+         <a href="openvino_docs_optim_perf__performance_benchmarks.html"> Performance Benchmarks page.</a> <br />
 	 Supports deployment on Windows, Linux, and macOS.
       </p>      
       <div class="HP_separator-header">
@@ -91,7 +91,7 @@ OpenVINO™ Documentation
 	    <h3>Tune & Optimize </h3>
 	    <p> Model-level (e.g. quantization) and Runtime (i.e. application) -level  optimizations to make your inference as fast as possible. </p> 
 	 </a>
-	 <a href="pages/openvino_docs_performance_benchmarks.html" >
+	 <a href="pages/openvino_docs_optim_perf__performance_benchmarks.html" >
 	    <h3>Performance<br /> Benchmarks </h3>
 	    <p> View performance benchmark results for various models on Intel platforms. </p>  
 	 </a>

@@ -1,5 +1,5 @@
 .. index:: pair: page; General Optimizations
-.. _deployment_general_optimizations:
+.. _optim_perf__deploy_general_optim:
 
 .. meta::
    :description: General optimizations include application-level optimization 
@@ -15,7 +15,7 @@
 General Optimizations
 =====================
 
-:target:`deployment_general_optimizations_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_common` 
+:target:`optim_perf__deploy_general_optim_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_common` 
 
 This article covers application-level optimization techniques, such as 
 asynchronous execution, to improve data pipelining, pre-processing acceleration 
@@ -23,7 +23,7 @@ and so on. While the techniques (e.g. pre-processing) can be specific to
 end-user applications, the associated performance improvements are general and 
 shall improve any target scenario both latency and throughput.
 
-:target:`deployment_general_optimizations_1inputs_pre_processing`
+:target:`optim_perf__deploy_general_optim_1inputs_pre_processing`
 
 Inputs Pre-Processing with OpenVINO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,7 +42,7 @@ perform any unnecessary steps in the code:
 * Data which is already in the "on-device" memory can be input directly by 
   using the :ref:`remote tensors API of the GPU Plugin <deploy_infer__gpu_device_remote_tensor>`.
 
-:target:`deployment_general_optimizations_1async_api`
+:target:`optim_perf__deploy_general_optim_1async_api`
 
 Prefer OpenVINO Async API
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -126,7 +126,7 @@ Python Demo(latency-oriented Async API showcase) and
 for complete examples of the Async API in action.
 
 .. note:: Using the Asynchronous API is a must for 
-   :ref:`throughput-oriented scenarios <deployment_optimizing_for_throughput>`.
+   :ref:`throughput-oriented scenarios <optim_perf__deploy_optim_throughput>`.
 
 Notes on Callbacks
 ------------------
@@ -151,7 +151,7 @@ A few important points on the callbacks:
   should NOT include heavy operations (e.g. I/O) and/or blocking calls. 
   Work done by any callback should be kept to a minimum.
 
-:target:`deployment_general_optimizations_1tensor_idiom`
+:target:`optim_perf__deploy_general_optim_1tensor_idiom`
 
 The "get_tensor" Idiom
 ~~~~~~~~~~~~~~~~~~~~~~

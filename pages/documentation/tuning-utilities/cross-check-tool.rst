@@ -1,5 +1,5 @@
 .. index:: pair: page; Cross Check Tool
-.. _inference_cross_check_tool:
+.. _optim_perf__infer_cross_check_tool:
 
 .. meta::
    :description: Cross Check Tool is a Python module in OpenVINO and is used to 
@@ -15,7 +15,7 @@
 Cross Check Tool
 ================
 
-:target:`inference_cross_check_tool_1md_openvino_tools_cross_check_tool_readme` 
+:target:`optim_perf__infer_cross_check_tool_1md_openvino_tools_cross_check_tool_readme` 
 
 Cross Check Tool is a console application that enables comparing accuracy and 
 performance metrics for two successive model inferences that are performed on 

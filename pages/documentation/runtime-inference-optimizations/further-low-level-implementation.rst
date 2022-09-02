@@ -1,5 +1,5 @@
 .. index:: pair: page; Further Low-Level Implementation Details
-.. _deployment_low_level_implementation:
+.. _optim_perf__deploy_low_level_implement:
 
 .. meta::
    :description: Automatic Batching moves asynchronicity from individual 
@@ -15,12 +15,12 @@
 Further Low-Level Implementation
 ================================
 
-:target:`deployment_low_level_implementation_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_internals`
+:target:`optim_perf__deploy_low_level_implement_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_internals`
 
 Throughput on the CPU: Internals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As explained in the :ref:`throughput-related section <deployment_optimizing_for_throughput>`, 
+As explained in the :ref:`throughput-related section <optim_perf__deploy_optim_throughput>`, 
 the OpenVINO streams is a mean of running multiple requests in parallel. In 
 order to best serve multiple inference requests executed simultaneously, the 
 inference threads are grouped/pinned to the particular CPU cores, constituting 
@@ -36,7 +36,7 @@ performed over inputs with much less synchronization within CNN ops):
 
 Keep in mind that :ref:`high-level performance hints <deploy_infer__performance_hints>` 
 allow the implementation to select the optimal number of streams depending on 
-model's compute demands and CPU capabilities, including :ref:`int8 inference <model_optimization_guide>` 
+model's compute demands and CPU capabilities, including :ref:`int8 inference <optim_perf__model_optim_guide>` 
 hardware acceleration, number of cores, etc.
 
 Automatic Batching Internals
@@ -65,6 +65,6 @@ better results than a large batch size coupled with a timeout value that
 cannot guarantee accommodating all the required requests.
 
 Finally, following the ``get_tensor`` idiom section from the 
-:ref:`general optimizations <deployment_general_optimizations>` helps Automatic 
+:ref:`general optimizations <optim_perf__deploy_general_optim>` helps Automatic 
 Batching to save on inputs/outputs copies. According to that you should always 
 prefer the "get" versions of the tensors' data access APIs in your applications.

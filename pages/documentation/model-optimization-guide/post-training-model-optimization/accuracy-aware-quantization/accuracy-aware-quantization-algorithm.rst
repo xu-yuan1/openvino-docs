@@ -1,5 +1,5 @@
 .. index:: pair: page; AccuracyAwareQuantization Algorithm
-.. _accuracy_aware_quantization_algorithm:
+.. _optim_perf__accuracy_quant_algorithm:
 
 .. meta::
    :description: The AccuracyAwareQuantization Algorithm provides precise model 
@@ -13,21 +13,21 @@
 AccuracyAwareQuantization Algorithm
 ===================================
 
-:target:`accuracy_aware_quantization_algorithm_1md_openvino_tools_pot_openvino_tools_pot_algorithms_quantization_accuracy_aware_readme`
+:target:`optim_perf__accuracy_quant_algorithm_1md_openvino_tools_pot_openvino_tools_pot_algorithms_quantization_accuracy_aware_readme`
 
 Introduction
 ~~~~~~~~~~~~
 
 The purpose of AccuracyAwareQuantization Algorithm is performing precise 
 quantization, while keeping model accuracy within a pre-defined range. In 
-comparison to :ref:`DefaultQuantization <default_quantization_algorithm>` 
+comparison to :ref:`DefaultQuantization <optim_perf__def_quant_algorithm>` 
 algorithm this may cause a degradation in performance because some layers 
 can be reverted back to the original precision.
 
 Parameters
 ~~~~~~~~~~
 
-Since the :ref:`DefaultQuantization <default_quantization_algorithm>` 
+Since the :ref:`DefaultQuantization <optim_perf__def_quant_algorithm>` 
 algorithm is used as an initialization, all its parameters are also valid and can 
 be specified. Below is an example of the ``AccuracyAwareQuantization`` method 
 and its parameters:

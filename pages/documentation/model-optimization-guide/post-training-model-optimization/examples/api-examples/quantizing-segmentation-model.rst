@@ -1,5 +1,5 @@
 .. index:: pair: page; Quantizing Semantic Segmentation Model
-.. _pot_api_example_segmentation:
+.. _optim_perf__pot_api_example_segment:
 
 .. meta::
    :description: The example demonstrates how to use Post-training Optimization 
@@ -15,10 +15,10 @@
 Quantizing Semantic Segmentation Model
 ======================================
 
-:target:`pot_api_example_segmentation_1md_openvino_tools_pot_openvino_tools_pot_api_samples_segmentation_readme` 
+:target:`optim_perf__pot_api_example_segment_1md_openvino_tools_pot_openvino_tools_pot_api_samples_segmentation_readme` 
 
 This example demonstrates the use of the 
-:ref:`Post-training Optimization Tool API <pot_api_reference>` 
+:ref:`Post-training Optimization Tool API <optim_perf__pot_api>` 
 for the task of quantizing a segmentation model. The 
 `DeepLabV3 <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/deeplabv3/deeplabv3.md>`__ 
 model from TensorFlow is used for this purpose. A custom ``DataLoader`` is 

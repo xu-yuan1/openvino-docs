@@ -1,5 +1,5 @@
 .. index:: pair: page; API Reference
-.. _pot_api_reference:
+.. _optim_perf__pot_api:
 
 .. meta::
    :description: Post-training Optimization Tool API includes interfaces and 
@@ -16,7 +16,7 @@
 Post-training Optimization Tool API
 ===================================
 
-:target:`pot_api_reference_1md_openvino_tools_pot_openvino_tools_pot_api_readme` 
+:target:`optim_perf__pot_api_1md_openvino_tools_pot_openvino_tools_pot_api_readme` 
 
 Post-training Optimization Tool API provides a full set of interfaces and helpers 
 that allow users to implement a custom optimization pipeline for various types 

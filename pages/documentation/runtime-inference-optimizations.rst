@@ -1,5 +1,5 @@
 .. index:: pair: page; Runtime Inference Optimizations
-.. _runtime_inference_optimizations:
+.. _optim_perf__runtime_inference_optim:
 
 .. meta::
    :description: Runtime optimizations are highly device-specific and improve 
@@ -14,7 +14,7 @@
 Runtime Inference Optimizations
 ===============================
 
-:target:`runtime_inference_optimizations_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_guide`
+:target:`optim_perf__runtime_inference_optim_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_guide`
 
 .. toctree::
    :maxdepth: 1
@@ -50,16 +50,16 @@ For more information on this topic, see the following articles:
 
 * :ref:`feature support by device <deploy_infer__working_with_devices_1features_support_matrix>`,
 
-* :ref:`Inputs Pre-processing with the OpenVINO <deployment_general_optimizations_1inputs_pre_processing>`.
+* :ref:`Inputs Pre-processing with the OpenVINO <optim_perf__deploy_general_optim_1inputs_pre_processing>`.
 
-* :ref:`Async API <deployment_general_optimizations_1async_api>`.
+* :ref:`Async API <optim_perf__deploy_general_optim_1async_api>`.
 
-* :ref:`The 'get_tensor' Idiom <deployment_general_optimizations_1tensor_idiom>`.
+* :ref:`The 'get_tensor' Idiom <optim_perf__deploy_general_optim_1tensor_idiom>`.
 
 * For variably-sized inputs, consider :ref:`dynamic shapes <deploy_infer__dynamic_shapes>`.
 
-See the :ref:`latency <deployment_optimizing_for_latency>` 
-and :ref:`throughput <deployment_optimizing_for_throughput>` optimization guides, for **use-case-specific optimizations**
+See the :ref:`latency <optim_perf__deploy_optim_latency>` 
+and :ref:`throughput <optim_perf__deploy_optim_throughput>` optimization guides, for **use-case-specific optimizations**
 
 Writing Performance-Portable Inference Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +75,7 @@ result in different performance when used under different conditions.
 For example:
 
 * both the CPU and GPU support the notion of 
-  :ref:`streams <deployment_throughput_advanced>`, 
+  :ref:`streams <optim_perf__deploy_throughput_adv>`, 
   yet they deduce their optimal number very differently.
 
 * Even among devices of the same type, different execution configurations can 
@@ -89,7 +89,7 @@ For example:
 * Execution "scheduling" impacts performance strongly and is highly 
   device-specific, for example, GPU-oriented optimizations like batching, 
   combining multiple inputs to achieve the optimal throughput, 
-  :ref:`do not always map well to the CPU <deployment_low_level_implementation>`.
+  :ref:`do not always map well to the CPU <optim_perf__deploy_low_level_implement>`.
 
 To make the configuration process much easier and its performance optimization 
 more portable, the option of :ref:`Performance Hints <deploy_infer__performance_hints>` 
@@ -104,12 +104,12 @@ requests for different input sources
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Using Async API and running multiple inference requests in parallel to leverage throughput <deployment_optimizing_for_throughput_1throughput_app_design>`.
+* :ref:`Using Async API and running multiple inference requests in parallel to leverage throughput <optim_perf__deploy_optim_throughput_1throughput_app_design>`.
 
-* :ref:`The throughput approach implementation details for specific devices <deployment_low_level_implementation>`
+* :ref:`The throughput approach implementation details for specific devices <optim_perf__deploy_low_level_implement>`
 
-* :ref:`Details on throughput <deployment_optimizing_for_throughput>`
+* :ref:`Details on throughput <optim_perf__deploy_optim_throughput>`
 
-* :ref:`Details on latency <deployment_optimizing_for_latency>`
+* :ref:`Details on latency <optim_perf__deploy_optim_latency>`
 
 * :ref:`API examples and details <deploy_infer__performance_hints>`.

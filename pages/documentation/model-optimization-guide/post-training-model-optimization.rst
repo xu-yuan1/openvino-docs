@@ -1,5 +1,5 @@
 .. index:: pair: page; Optimizing models post-training
-.. _pot_tool_introduction: 
+.. _optim_perf__pot_intro: 
 
 .. meta::
    :description: Post-training Optimization Tool (POT) in OpenVINO provides two 
@@ -15,7 +15,7 @@
 Optimizing models post-training
 ===============================
 
-:target:`pot_tool_introduction_1md_openvino_tools_pot_docs_introduction`
+:target:`optim_perf__pot_intro_1md_openvino_tools_pot_docs_introduction`
 
 .. toctree::
    :maxdepth: 1
@@ -57,18 +57,18 @@ Quantizing models with POT
 Depending on your needs and requirements, POT provides two main quantization 
 methods that can be used:
 
-* :ref:`Default Quantization <default_model_quantization>` a recommended 
+* :ref:`Default Quantization <optim_perf__def_quantization>` a recommended 
   method that provides fast and accurate results in most cases. It requires only 
   an unannotated dataset for quantization. For more details, see the 
-  :ref:`Default Quantization algorithm <default_quantization_algorithm>` 
+  :ref:`Default Quantization algorithm <optim_perf__def_quant_algorithm>` 
   documentation.
 
-* :ref:`Accuracy-aware Quantization <accuracy_aware_model_quantization>` an advanced 
+* :ref:`Accuracy-aware Quantization <optim_perf__accuracy_quantization>` an advanced 
   method that allows keeping accuracy at a predefined range, at the cost of 
   performance improvement, when ``Default Quantization`` cannot guarantee it. 
   This method requires an annotated representative dataset and may require more 
   time for quantization. For more details, see the 
-  :ref:`Accuracy-aware Quantization algorithm <accuracy_aware_quantization_algorithm>` 
+  :ref:`Accuracy-aware Quantization algorithm <optim_perf__accuracy_quant_algorithm>` 
   documentation.
 
 Different hardware platforms support different integer precisions and quantization 
@@ -81,11 +81,11 @@ to set quantization settings, specific to the device.
    models are compatible only with CPU.
 
 For benchmarking results collected for the models optimized with the POT tool, 
-refer to the :ref:`INT8 vs FP32 Comparison on Select Networks and Platforms <performance_int8_vs_fp32>`.
+refer to the :ref:`INT8 vs FP32 Comparison on Select Networks and Platforms <optim_perf__performance_int8_vs_fp32>`.
 
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* `Performance Benchmarks <https://docs.openvino.ai/latest/openvino_docs_performance_benchmarks_openvino.html>`__
+* `Performance Benchmarks <https://docs.openvino.ai/latest/openvino_docs_optim_perf__performance_benchmarks_openvino.html>`__
 
 * `INT8 Quantization by Using Web-Based Interface of the DL Workbench <https://docs.openvino.ai/latest/workbench_docs_Workbench_DG_Int_8_Quantization.html>`__

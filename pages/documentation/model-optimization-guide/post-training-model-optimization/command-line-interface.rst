@@ -1,5 +1,5 @@
 .. index:: pair: page; Use Post-Training Optimization Tool Command-Line Interface (Model Zoo flow)
-.. _pot_cli:
+.. _optim_perf__pot_cli:
 
 .. meta::
    :description: In Post-Training Optimization Tool Command-line Interface 
@@ -15,7 +15,7 @@
 POT Command-line Interface
 ==========================
 
-:target:`pot_cli_1md_openvino_tools_pot_docs_cli`
+:target:`optim_perf__pot_cli_1md_openvino_tools_pot_docs_cli`
 
 
 .. toctree::
@@ -36,7 +36,7 @@ Examples of AccuracyChecker configuration files can be found on
 `GitHub <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public>`__. 
 Each model folder contains YAML configuration file that can be used with POT as is.
 
-.. note:: There is also the so-called :ref:`Simplified mode <pot_simplified_mode>` 
+.. note:: There is also the so-called :ref:`Simplified mode <optim_perf__pot_simplified>` 
    aimed at optimization of models from the Computer Vision domain and has a simple 
    dataset preprocessing, like image resize and crop. In this case, you can also 
    use POT CLI for optimization. However, the accuracy results are not guaranteed 
@@ -50,7 +50,7 @@ There are two ways how to run POT via command line:
 
 * **Basic usage for DefaultQuantization**. In this case you can run POT with 
   basic setting just specifying all the options via command line. ``-q default`` 
-  stands for :ref:`DefaultQuantization <default_quantization_algorithm>` 
+  stands for :ref:`DefaultQuantization <optim_perf__def_quant_algorithm>` 
   algorithm:
 
   .. ref-code-block:: cpp
@@ -58,7 +58,7 @@ There are two ways how to run POT via command line:
      pot -q default -m <path_to_xml> -w <path_to_bin> --ac-config <path_to_AC_config_yml>
 
 * **Basic usage for AccuracyAwareQuantization**. You can also run 
-  :ref:`AccuracyAwareQuantization <accuracy_aware_quantization_algorithm>` method 
+  :ref:`AccuracyAwareQuantization <optim_perf__accuracy_quant_algorithm>` method 
   with basic options. ``--max-drop 0.01`` option defines maximum accuracy 
   deviation to 1 absolute percent from the original model:
 
@@ -68,7 +68,7 @@ There are two ways how to run POT via command line:
 
 * **Advanced usage**. In this case you should prepare a configuration file for 
   the POT where you can specify advanced options for the optimization methods 
-  available. See :ref:`POT configuration file description <pot_configuration_file>` 
+  available. See :ref:`POT configuration file description <optim_perf__pot_config_file>` 
   for more details. To launch the command-line tool with the configuration 
   file run:
 
@@ -83,7 +83,7 @@ By default, the results are dumped into the separate output subfolder inside
 the ``./results`` folder that is created in the same directory where the tool 
 is run from. Use the ``-e`` option to evaluate the accuracy directly from the tool.
 
-See also the :ref:`End-to-end example <pot_cli_example>` 
+See also the :ref:`End-to-end example <optim_perf__pot_cli_example>` 
 about how to run a particular example of 8-bit quantization with the POT.
 
 Command-Line Arguments
@@ -150,6 +150,6 @@ The following command-line options are available to run the tool:
 See Also
 ~~~~~~~~
 
-* :ref:`Optimization with Simplified mode <pot_simplified_mode>`
+* :ref:`Optimization with Simplified mode <optim_perf__pot_simplified>`
 
-* :ref:`Post-Training Optimization Best Practices <pot_quantization_best_practices>`
+* :ref:`Post-Training Optimization Best Practices <optim_perf__pot_best_practices>`

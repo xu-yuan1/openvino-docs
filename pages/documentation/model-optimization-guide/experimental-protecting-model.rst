@@ -1,5 +1,5 @@
 .. index:: pair: page; Experimental: Protecting Deep Learning Model through Range Supervision ("RangeSupervision")
-.. _range_supervision_protecting_model:
+.. _optim_perf__protect_model:
 
 .. meta:: 
    :description: Implementing the Range Supervision algorithm protects deep 
@@ -14,7 +14,7 @@
 Experimental: Protecting Model
 ==============================
 
-:target:`range_supervision_protecting_model_1md_openvino_tools_pot_openvino_tools_pot_algorithms_quantization_range_supervision_readme`
+:target:`optim_perf__protect_model_1md_openvino_tools_pot_openvino_tools_pot_algorithms_quantization_range_supervision_readme`
 
 Introduction
 ~~~~~~~~~~~
@@ -93,7 +93,7 @@ Usage
 
 RangeSupervision protection can be used the same way as 
 
-:ref:`DefaultQuantization <default_model_quantization>` method.
+:ref:`DefaultQuantization <optim_perf__def_quantization>` method.
 
 Algorithm configuration
 -----------------------

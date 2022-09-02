@@ -1,5 +1,5 @@
 .. index:: pair: page; Neural Network Compression Framework
-.. _nncf_introduction:
+.. _optim_perf__nncf_introduction:
 
 .. meta::
    :description: Neural Network Compression Framework optimizes Deep Neural 
@@ -15,7 +15,7 @@
 Neural Network Compression Framework
 ====================================
 
-:target:`nncf_introduction_1md_openvino_docs_optimization_guide_nncf_introduction` 
+:target:`optim_perf__nncf_introduction_1md_openvino_docs_optimization_guide_optim_perf__nncf_introduction` 
 
 The Neural Network Compression Framework (NNCF) aims at optimizing Deep Neural 
 Networks (DNN) by means of methods such as quantization and pruning. It provides 
@@ -131,4 +131,4 @@ Additional Resources
 
 * `NNCF in HuggingFace Optimum <https://github.com/openvinotoolkit/openvino_contrib/tree/master/modules/optimum>`__
 
-* :ref:`Post-training optimization <pot_tool_introduction>`
+* :ref:`Post-training optimization <optim_perf__pot_intro>`

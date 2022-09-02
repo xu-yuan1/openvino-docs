@@ -1,5 +1,5 @@
-.. index:: pair: page; Quantizatiing 3D Segmentation Model
-.. _pot_api_example_3d_segmentation:
+.. index:: pair: page; Quantizing 3D Segmentation Model
+.. _optim_perf__pot_api_example_3d_segment:
 
 .. meta::
    :description: The example demonstrates how to use Post-training Optimization 
@@ -16,10 +16,10 @@ Quantizing 3D Segmentation Model
 ================================
 
 
-:target:`pot_api_example_3d_segmentation_1md_openvino_tools_pot_openvino_tools_pot_api_samples_3d_segmentation_readme` 
+:target:`optim_perf__pot_api_example_3d_segment_1md_openvino_tools_pot_openvino_tools_pot_api_samples_3d_segmentation_readme` 
 
 This example demonstrates the use of the 
-:ref:`Post-training Optimization Tool API <pot_api_reference>` 
+:ref:`Post-training Optimization Tool API <optim_perf__pot_api>` 
 for the task of quantizing a 3D segmentation model. The 
 `Brain Tumor Segmentation <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/brain-tumor-segmentation-0002/brain-tumor-segmentation-0002.md>`__ 
 model from PyTorch is used for this purpose. A custom ``DataLoader`` is created 

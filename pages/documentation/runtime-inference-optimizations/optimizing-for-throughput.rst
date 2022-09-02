@@ -1,5 +1,5 @@
 .. index:: pair: page; Optimizing for Throughput
-.. _deployment_optimizing_for_throughput:
+.. _optim_perf__deploy_optim_throughput:
 
 .. meta::
    :description: Throughput-oriented approaches in OpenVINO involve 
@@ -14,9 +14,9 @@
 Optimizing for Throughput
 =========================
 
-:target:`deployment_optimizing_for_throughput_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_tput` 
+:target:`optim_perf__deploy_optim_throughput_1md_openvino_docs_optimization_guide_dldt_deployment_optimization_tput` 
 
-As described in the section on the :ref:`latency-specific considerations <deployment_optimizing_for_latency>`, 
+As described in the section on the :ref:`latency-specific considerations <optim_perf__deploy_optim_latency>`, 
 one of the possible use cases is *delivering every single request at the 
 minimal delay*. Throughput, on the other hand, is about inference scenarios in 
 which potentially **large number of inference requests are served 
@@ -36,12 +36,12 @@ There are two ways of leveraging throughput with individual devices:
   which is inherently **portable and future-proof**.
 
 * **Advanced (low-level)** approach of explicit **batching** and **streams**. 
-  For more details, see the :ref:`runtime inference optimizations <deployment_throughput_advanced>`.
+  For more details, see the :ref:`runtime inference optimizations <optim_perf__deploy_throughput_adv>`.
 
 In both cases, the application should be designed to execute multiple inference 
 requests in parallel, as described in the following section.
 
-:target:`deployment_optimizing_for_throughput_1throughput_app_design`
+:target:`optim_perf__deploy_optim_throughput_1throughput_app_design`
 
 Throughput-Oriented Application Design
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,7 +56,7 @@ In general, most throughput-oriented inference applications should:
   
   * Setup the configuration for the *device* (for example, as parameters of 
     the ``:ref:`ov::Core::compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>```) 
-    via either previously introduced :ref:`low-level explicit options <deployment_throughput_advanced>` 
+    via either previously introduced :ref:`low-level explicit options <optim_perf__deploy_throughput_adv>` 
     or :ref:`OpenVINO performance hints <deploy_infer__performance_hints>` (**preferable**):
 
     .. tab:: C++
@@ -78,7 +78,7 @@ In general, most throughput-oriented inference applications should:
 
 * Use the Async API with callbacks, to avoid any dependency on the completion 
   order of the requests and possible device starvation, as explained in the 
-  :ref:`common-optimizations section <deployment_general_optimizations>`.
+  :ref:`common-optimizations section <optim_perf__deploy_general_optim>`.
 
 Multi-Device Execution
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -92,7 +92,7 @@ application using it, multi-device is like any other device, as it manages all
 processes internally. Just like with other throughput-oriented scenarios, there 
 are several major pre-requisites for optimal multi-device performance:
 
-* Using the :ref:`Asynchronous API <deployment_general_optimizations_1async_api>` 
+* Using the :ref:`Asynchronous API <optim_perf__deploy_general_optim_1async_api>` 
   and :ref:`callbacks <deploy_infer__inference_request>` in particular.
 
 * Providing the multi-device (and hence the underlying devices) with enough 
