@@ -155,7 +155,7 @@ See Also
 
 * :ref:`Integrate the OpenVINO™ Runtime with Your Application <deploy_infer__integrate_application>`
 
-* :ref:`Using OpenVINO™ Toolkit Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
+* :ref:`Using OpenVINO™ Toolkit Samples <get_started__samples_overview>`
 
 * Model Downloader
 

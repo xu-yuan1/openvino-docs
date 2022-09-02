@@ -301,7 +301,7 @@ infer request manually (using the ``IVariableState::SetState`` method).
 
 More elaborate examples demonstrating how to work with networks with states can 
 be found in a speech sample and a demo. Refer to the 
-:ref:`Samples Overview <doxid-openvino_docs__o_v__u_g__samples__overview>`.
+:ref:`Samples Overview <get_started__samples_overview>`.
 
 LowLatency Transformations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

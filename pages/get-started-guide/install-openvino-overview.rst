@@ -1,11 +1,11 @@
 .. index:: pair: page; Installing Intel® Distribution of OpenVINO™ Toolkit
-.. _doxid-openvino_docs_install_guides_overview:
+.. _install__overview:
 
 
 Installing Intel® Distribution of OpenVINO™ Toolkit
 ======================================================
 
-:target:`doxid-openvino_docs_install_guides_overview_1md_openvino_docs_install_guides_installing_openvino_overview`
+:target:`install__overview_1md_openvino_docs_install_guides_installing_openvino_overview`
 
 
 

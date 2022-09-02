@@ -304,7 +304,7 @@ available on your machine, execute the following commands:
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* See the :ref:`OpenVINO Samples <doxid-openvino_docs__o_v__u_g__samples__overview>` 
+* See the :ref:`OpenVINO Samples <get_started__samples_overview>` 
   page or the `Open Model Zoo Demos <https://docs.openvino.ai/latest/omz_demos.html>`__ 
   page for specific examples of how OpenVINO pipelines are implemented for 
   applications like image classification, text prediction, and many others.
@@ -313,6 +313,6 @@ Additional Resources
 
 * :ref:`Using Encrypted Models with OpenVINO <security__encrypted_models>`
 
-* :ref:`OpenVINO Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
+* :ref:`OpenVINO Samples <get_started__samples_overview>`
 
 * `Open Model Zoo Demos <https://docs.openvino.ai/latest/omz_demos.html>`__

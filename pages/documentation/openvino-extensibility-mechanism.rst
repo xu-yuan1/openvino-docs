@@ -303,7 +303,7 @@ See Also
 
 * :ref:`OpenVINO Transformations <extensibility_transformations__overview>`
 
-* :ref:`Using OpenVINO Runtime Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
+* :ref:`Using OpenVINO Runtime Samples <get_started__samples_overview>`
 
 * :ref:`Hello Shape Infer SSD sample <doxid-openvino_inference_engine_samples_hello_reshape_ssd__r_e_a_d_m_e>`
 

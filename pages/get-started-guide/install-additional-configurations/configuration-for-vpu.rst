@@ -21,7 +21,7 @@ Configurations for Intel® Vision Accelerator Design with Intel® Movidius™ VP
 
 The steps in this guide are only required if you want to perform inference on Intel® Vision Accelerator Design with Intel® Movidius™ VPUs with OpenVINO™ on Linux or Windows.
 
-For troubleshooting issues, please see the :ref:`Troubleshooting Guide <doxid-openvino_docs_get_started_guide_troubleshooting>` for more information.
+For troubleshooting issues, please see the :ref:`Troubleshooting Guide <get_started__troubleshooting>` for more information.
 
 Linux
 ~~~~~

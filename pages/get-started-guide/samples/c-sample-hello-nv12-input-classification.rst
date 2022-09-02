@@ -50,7 +50,7 @@ You can see the explicit description of each sample step at :ref:`Integration St
 Building
 ~~~~~~~~
 
-To build the sample, please use instructions available at :ref:`Build the Sample Applications <doxid-openvino_docs__o_v__u_g__samples__overview>` section in Inference Engine Samples guide.
+To build the sample, please use instructions available at :ref:`Build the Sample Applications <get_started__samples_overview>` section in Inference Engine Samples guide.
 
 Running
 ~~~~~~~
@@ -131,7 +131,7 @@ See Also
 
 * :ref:`Integrate the OpenVINO™ into Your Application <deploy_infer__integrate_application>`
 
-* :ref:`Using OpenVINO™ Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
+* :ref:`Using OpenVINO™ Samples <get_started__samples_overview>`
 
 * Model Downloader
 

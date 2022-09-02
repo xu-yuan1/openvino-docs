@@ -1,11 +1,11 @@
 .. index:: pair: page; Additional Configurations For Hardware
-.. _doxid-openvino_docs_install_guides_configurations_header:
+.. _install__additional_config:
 
 
 Additional Configurations For Hardware
 ======================================
 
-:target:`doxid-openvino_docs_install_guides_configurations_header_1md_openvino_docs_install_guides_configurations_header`
+:target:`install__additional_config_1md_openvino_docs_install_guides_configurations_header`
 
 
 

@@ -29,7 +29,7 @@ Prerequisites
 
 To use the Deployment Manager tool, the following requirements need to be met:
 
-* Intel® Distribution of OpenVINO™ toolkit is installed. See the :ref:`Installation Guide <doxid-openvino_docs_install_guides_overview>` for instructions on different operating systems.
+* Intel® Distribution of OpenVINO™ toolkit is installed. See the :ref:`Installation Guide <install__overview>` for instructions on different operating systems.
 
 * To run inference on a target device other than CPU, device drivers must be pre-installed:
   

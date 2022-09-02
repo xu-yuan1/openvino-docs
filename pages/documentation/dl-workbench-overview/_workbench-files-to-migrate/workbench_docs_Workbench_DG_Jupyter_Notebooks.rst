@@ -130,7 +130,7 @@ See Also
 
 * :ref:`Learn Model Workflow with OpenVINO API <doxid-workbench_docs__workbench__d_g__jupyter__notebooks__c_l_i>`
 
-* OpenVINO™ :ref:`samples <doxid-openvino_docs__o_v__u_g__samples__overview>` and `application demos <https://docs.openvino.ai/latest/omz_demos.html>`__
+* OpenVINO™ :ref:`samples <get_started__samples_overview>` and `application demos <https://docs.openvino.ai/latest/omz_demos.html>`__
 
 * `OpenVINO™ Python API Reference <https://docs.openvinotoolkit.org/latest/ie_python_api/annotated.html>`__
 

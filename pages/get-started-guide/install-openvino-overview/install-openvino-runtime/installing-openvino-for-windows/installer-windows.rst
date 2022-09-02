@@ -216,7 +216,7 @@ Developing in C++:
 Uninstalling the Intel® Distribution of OpenVINO™ Toolkit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To uninstall the toolkit, follow the steps on the :ref:`Uninstalling page <doxid-openvino_docs_install_guides_uninstalling_openvino>`.
+To uninstall the toolkit, follow the steps on the :ref:`Uninstalling page <uninstall_openvino>`.
 
 .. dropdown:: Additional Resources
 

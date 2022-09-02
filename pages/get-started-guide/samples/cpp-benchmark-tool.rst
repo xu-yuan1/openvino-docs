@@ -321,7 +321,7 @@ Below are fragments of sample output static and dynamic networks:
 See Also
 ~~~~~~~~
 
-* :ref:`Using OpenVINO Runtime Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`
+* :ref:`Using OpenVINO Runtime Samples <get_started__samples_overview>`
 
 * :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`
 

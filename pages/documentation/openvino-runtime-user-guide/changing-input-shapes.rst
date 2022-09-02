@@ -101,7 +101,7 @@ To do the opposite - resize input image to the input shapes of the model, use th
        :language: cpp
        :fragment: [name_to_shape]
 
-The usage scenarios of the ``reshape`` feature can be found in :ref:`OpenVINO Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`, starting with the :ref:`Hello Reshape Sample <doxid-openvino_inference_engine_samples_hello_reshape_ssd__r_e_a_d_m_e>`.
+The usage scenarios of the ``reshape`` feature can be found in :ref:`OpenVINO Samples <get_started__samples_overview>`, starting with the :ref:`Hello Reshape Sample <doxid-openvino_inference_engine_samples_hello_reshape_ssd__r_e_a_d_m_e>`.
 
 In practice, some models are not ready to be reshaped. In such cases, a new input shape cannot be set with Model Optimizer or the ``:ref:`ov::Model::reshape <doxid-classov_1_1_model_1aa21aff80598d5089d591888a4c7f33ae>``` method.
 
@@ -245,7 +245,7 @@ Dictionary values (representing new shapes) could be:
        :language: python
        :fragment: [name_to_shape]
 
-The usage scenarios of the ``reshape`` feature can be found in :ref:`OpenVINO Samples <doxid-openvino_docs__o_v__u_g__samples__overview>`, starting with the :ref:`Hello Reshape Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_reshape_ssd__r_e_a_d_m_e>`.
+The usage scenarios of the ``reshape`` feature can be found in :ref:`OpenVINO Samples <get_started__samples_overview>`, starting with the :ref:`Hello Reshape Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_reshape_ssd__r_e_a_d_m_e>`.
 
 In practice, some models are not ready to be reshaped. In such cases, a new input shape cannot be set with Model Optimizer or the ``Model.reshape`` method.
 

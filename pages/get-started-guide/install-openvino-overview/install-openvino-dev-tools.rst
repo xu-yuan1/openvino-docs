@@ -169,7 +169,7 @@ Now you may continue with the following tasks:
 
 * To write your own OpenVINO™ applications, see :ref:`OpenVINO Runtime User Guide <deploy_infer__openvino_runtime_user_guide>`.
 
-* See sample applications in :ref:`OpenVINO™ Toolkit Samples Overview <doxid-openvino_docs__o_v__u_g__samples__overview>`.
+* See sample applications in :ref:`OpenVINO™ Toolkit Samples Overview <get_started__samples_overview>`.
 
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~

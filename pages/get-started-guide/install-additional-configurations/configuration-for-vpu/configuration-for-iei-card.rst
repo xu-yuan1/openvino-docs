@@ -188,7 +188,7 @@ Additional Resources
 
 * `Intel Distribution of OpenVINO Toolkit home page <https://software.intel.com/en-us/openvino-toolkit>`__
 
-* :ref:`Troubleshooting Guide <doxid-openvino_docs_get_started_guide_troubleshooting>`
+* :ref:`Troubleshooting Guide <get_started__troubleshooting>`
 
 * `Intel® Vision Accelerator Design with Intel® Movidius™ VPUs HAL Configuration Guide </downloads/595850_Intel_Vision_Accelerator_Design_with_Intel_Movidius_VPUs-HAL Configuration Guide_rev1.3.pdf>`__
 

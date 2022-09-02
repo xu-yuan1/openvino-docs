@@ -1,11 +1,11 @@
 .. index:: pair: page; Get Started
-.. _doxid-get_started:
+.. _get_started:
 
 
 Get Started
 ===========
 
-:target:`doxid-get_started_1md_openvino_docs_get_started`
+:target:`get_started_1md_openvino_docs_get_started`
 
 
 .. toctree::
@@ -28,7 +28,7 @@ Get Started
 
 .. raw:: html
 
-   <link rel="stylesheet" type="text/css" href="_static/css/getstarted_style.css">
+   <link rel="stylesheet" type="text/css" href="../_static/css/getstarted_style.css">
 
    <p id="GSG_introtext">This guide introduces the installation, configuration, and get started guides of Intel® Distribution of OpenVINO™ toolkit. Check the following steps from left to right:<br />
      <a href="../openvino_docs_install_guides_overview.html" >Install Intel® Distribution<br/>of OpenVINO™ toolkit</a>

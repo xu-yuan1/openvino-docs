@@ -83,7 +83,7 @@ Verify that OpenVINO is correctly installed
 Check if GPU drvier is installed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`Additional configurations <doxid-openvino_docs_install_guides_configurations_header>` may be required in order to use OpenVINO with different hardware such as Intel® GPUs.
+:ref:`Additional configurations <install__additional_config>` may be required in order to use OpenVINO with different hardware such as Intel® GPUs.
 
 To run inference on an Intel® GPU, make sure that you have installed the correct GPU driver. To check that, see :ref:`additional configurations for GPU <doxid-openvino_docs_install_guides_configurations_for_intel_gpu>`.
 

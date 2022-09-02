@@ -1,11 +1,11 @@
 .. index:: pair: page; Troubleshooting Guide for OpenVINO™ Installation & Configuration
-.. _doxid-openvino_docs_get_started_guide_troubleshooting:
+.. _get_started__troubleshooting:
 
 
 Troubleshooting Guide for OpenVINO™ Installation & Configuration
 ==================================================================
 
-:target:`doxid-openvino_docs_get_started_guide_troubleshooting_1md_openvino_docs_install_guides_troubleshooting`
+:target:`get_started__troubleshooting_1md_openvino_docs_install_guides_troubleshooting`
 
 
 .. toctree::
