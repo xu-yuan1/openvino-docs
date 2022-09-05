@@ -89,7 +89,7 @@ After importing your model in the DL Workbench, you can download the IR model an
 See Also
 ~~~~~~~~
 
-* :ref:`Next Step: Create Project <doxid-workbench_docs__workbench__create__project>`
+* :ref:`Next Step: Create Project <workbench_start__create_project>`
 
 * :ref:`Import Darknet\* YOLOv4 model <doxid-workbench_docs__workbench__d_g__tutorial__import__y_o_l_o>`
 
