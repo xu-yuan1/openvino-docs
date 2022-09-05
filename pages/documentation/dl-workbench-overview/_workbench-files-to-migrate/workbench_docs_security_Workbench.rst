@@ -25,7 +25,7 @@ Run DL Workbench
 
 Unless necessary, limit the connections to the DL Workbench to ``localhost`` (127.0.0.1), so that it is only accessible from the machine the Docker container is built on:
 
-* When using ``docker run`` to :ref:`start the DL Workbench from Docker Hub <doxid-workbench_docs__workbench__d_g__run__locally>`, limit connections for the host IP 127.0.0.1. For example, limit the connections for the host IP to the port ``5665`` with the ``-p 127.0.0.1:5665:5665`` command . Refer to `Container networking <https://docs.docker.com/config/containers container-networking/#published-ports>`__ for details.
+* When using ``docker run`` to :ref:`start the DL Workbench from Docker Hub <workbench_install__run_locally>`, limit connections for the host IP 127.0.0.1. For example, limit the connections for the host IP to the port ``5665`` with the ``-p 127.0.0.1:5665:5665`` command . Refer to `Container networking <https://docs.docker.com/config/containers container-networking/#published-ports>`__ for details.
 
 Authentication Security
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,7 +34,7 @@ DL Workbench uses :ref:`authentication tokens <doxid-workbench_docs__workbench__
 
 When you finish working with the DL Workbench, log out to prevent the use of the DL Workbench from the same browser session without authentication.
 
-To invalidate the authentication token completely, :ref:`restart the DL Workbench <doxid-workbench_docs__workbench__d_g__docker__container>`.
+To invalidate the authentication token completely, :ref:`restart the DL Workbench <workbench_run__docker_container>`.
 
 Use TLS to Protect Communications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

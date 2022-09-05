@@ -3,7 +3,7 @@
 
 .. meta::
    :description: Introduction to basics of OpenVINO Deep Learning Workbench workflow. Walkthrough thorugh 
-                  the process of importing model, creating project and evaluating the initial performance.
+                 the process of importing model, creating project and evaluating the initial performance.
    :keywords: Deep Learning Workbench, DL Workbench, dl workbench workflow, importing model, 
               project creation, initial performance evaluation, OpenVINO
 

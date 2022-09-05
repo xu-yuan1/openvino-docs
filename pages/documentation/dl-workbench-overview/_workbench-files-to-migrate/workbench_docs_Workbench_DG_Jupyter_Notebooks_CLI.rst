@@ -61,7 +61,7 @@ Each step describes the motivation behind the process, OpenVINO tools used to pe
 Access the JupyterLab
 ~~~~~~~~~~~~~~~~~~~~~
 
-The `JupyterLab\* <https://jupyter-notebook.readthedocs.io/en/stable/>`__ environment works only if you have created a project. It is built in the same Docker\* image as the DL Workbench. Refer to :ref:`Run DL Workbench instructions <doxid-workbench_docs__workbench__d_g__run__locally>`, to start DL Workbench.
+The `JupyterLab\* <https://jupyter-notebook.readthedocs.io/en/stable/>`__ environment works only if you have created a project. It is built in the same Docker\* image as the DL Workbench. Refer to :ref:`Run DL Workbench instructions <workbench_install__run_locally>`, to start DL Workbench.
 
 * Open the **Learn OpenVINO** tab on the **Projects** page. Click **Open**, a new browser tab with the Jupyter notebook for your model opens.
 

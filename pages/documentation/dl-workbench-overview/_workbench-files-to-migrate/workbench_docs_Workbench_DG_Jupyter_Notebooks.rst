@@ -12,7 +12,7 @@ Learn Model Inference with OpenVINO™ API in JupyterLab\* Environment
 Access the JupyterLab
 ~~~~~~~~~~~~~~~~~~~~~
 
-The `JupyterLab\* <https://jupyter-notebook.readthedocs.io/en/stable/>`__ notebooks are running in the same environment as the DL Workbench. Refer to :ref:`Run DL Workbench instructions <doxid-workbench_docs__workbench__d_g__run__locally>`, to start DL Workbench.
+The `JupyterLab\* <https://jupyter-notebook.readthedocs.io/en/stable/>`__ notebooks are running in the same environment as the DL Workbench. Refer to :ref:`Run DL Workbench instructions <workbench_install__run_locally>`, to start DL Workbench.
 
 Go to the JupyterLab\* Environment
 ----------------------------------

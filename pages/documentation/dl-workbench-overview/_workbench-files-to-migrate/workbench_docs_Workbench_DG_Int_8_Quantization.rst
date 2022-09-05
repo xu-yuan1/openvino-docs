@@ -215,7 +215,7 @@ When you calibrate on a remote system, the progress bar first shows the progress
 Calibration in the Intel® DevCloud for the Edge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To calibrate on a platform from the :ref:`Intel® DevCloud for the Edge <doxid-workbench_docs__workbench__d_g__start__d_l__workbench_in__dev_cloud>`, follow the same workflow as for local calibration. However, calibration in the DevCloud usually takes some more time due to data exchange between a host machine and a remote machine.
+To calibrate on a platform from the :ref:`Intel® DevCloud for the Edge <workbench_install__dev_cloud>`, follow the same workflow as for local calibration. However, calibration in the DevCloud usually takes some more time due to data exchange between a host machine and a remote machine.
 
 When you calibrate in the DevCloud, the progress bar first shows the progress for asset preparation and upload, and then for calibration and inference:
 

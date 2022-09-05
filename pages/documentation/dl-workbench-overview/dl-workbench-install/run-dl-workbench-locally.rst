@@ -1,13 +1,16 @@
 .. index:: pair: page; Run the DL Workbench Locally
-.. _doxid-workbench_docs__workbench__d_g__run__locally:
+.. _workbench_install__run_locally:
+
+.. meta::
+   :description: Information on how to run OpenVINO Deep Learning Workbench locally.
+   :keywords: OpenVINO, Deep Learning Workbench, DL workbench, run dl workbench locally, 
+              run deep learning workbench locally
 
 
 Run the DL Workbench Locally
 ============================
 
-:target:`doxid-workbench_docs__workbench__d_g__run__locally_1md_openvino_workbench_docs_workbench_dg_run_workbench_locally`
-
-
+:target:`workbench_install__run_locally_1md_openvino_workbench_docs_workbench_dg_run_workbench_locally`
 
 
 
@@ -18,13 +21,15 @@ Run the DL Workbench Locally
    ./run-dl-workbench-locally/dl-workbench-cofigurations
    ./run-dl-workbench-locally/dl-workbench-docker
 
-This section contains instructions on how to run DL Workbench. Select your options and run the commands on your local machine. Ensure that you have met the :ref:`prerequisites <doxid-workbench_docs__workbench__d_g__prerequisites>`.
+This section contains instructions on how to run DL Workbench. Select your options and run the commands on your local 
+machine. Ensure that you have met the :ref:`prerequisites <workbench_install__prerequisites>`.
 
 .. raw:: html
 
    <iframe style="width: 100%; height: 920px;" src="https://openvinotoolkit.github.io/workbench_aux/"  frameborder="0" allow="clipboard-write;"></iframe>
 
-Wait for the DL Workbench to set up for about a minute. Once it is done, open the `http://127.0.0.1:5665 <http://127.0.0.1:5665>`__ link.
+Wait for the DL Workbench to set up for about a minute. Once it is done, open the 
+`http://127.0.0.1:5665 <http://127.0.0.1:5665>`__ link.
 
 .. image:: ./_assets/start_page_crop.png
 
@@ -55,14 +60,15 @@ Video
      - **Run DL Workbench on MacOS**
      - **Run DL Workbench on Windows**
 
-Congratulations, you have installed the DL Workbench. Learn how to :ref:`Get Started <dl_workbench__get_started>` with DL Workbench and create your first project.
+Congratulations, you have installed the DL Workbench. Learn how to :ref:`Get Started <dl_workbench__get_started>` 
+with DL Workbench and create your first project.
 
 See Also
 ~~~~~~~~
 
 * :ref:`Next Step: Get Started <dl_workbench__get_started>`
 
-* :ref:`Advanced DL Workbench Configurations <doxid-workbench_docs__workbench__d_g__advanced__configurations>`
+* :ref:`Advanced DL Workbench Configurations <workbench_run__advanced_configurations>`
 
 * :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 
