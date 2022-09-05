@@ -29,7 +29,7 @@ is located.
 
 The benchmarking application works with models in the OpenVINO IR 
 (``model.xml`` and ``model.bin``) and ONNX (``model.onnx``) formats. Make sure to 
-:ref:`convert your models <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>` 
+:ref:`convert your models <conv_prep__conv_with_model_optimizer>` 
 if necessary. 
 
 To run benchmarking with default options on a model, use the following command:
@@ -461,6 +461,6 @@ See Also
 
 * :ref:`Using OpenVINO Samples <get_started__samples_overview>`
 
-* :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`
+* :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`
 
 * `Model Downloader <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md>`__

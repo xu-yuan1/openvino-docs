@@ -28,7 +28,7 @@ In this tutorial, you will learn how to optimize your model using INT8 Calibrati
       - `Open Model Zoo <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/deeplabv3>`__
       - :ref:`Pascal Visual Object Classes (Pascal VOC) <doxid-workbench_docs__workbench__d_g__dataset__types>`
 
-.. tip:: You can learn how to :ref:`import a model <doxid-workbench_docs__workbench__d_g__select__model>` and :ref:`a dataset <doxid-workbench_docs__workbench__create__project>` in the DL Workbench :ref:`Get Started Guide <dl_workbench__get_started>`.
+.. tip:: You can learn how to :ref:`import a model <workbench_start__import_model>` and :ref:`a dataset <workbench_start__create_project>` in the DL Workbench :ref:`Get Started Guide <dl_workbench__get_started>`.
 
 
 

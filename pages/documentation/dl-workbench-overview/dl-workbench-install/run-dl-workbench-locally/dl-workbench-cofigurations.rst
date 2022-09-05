@@ -1,11 +1,21 @@
 .. index:: pair: page; Advanced DL Workbench Configurations
-.. _doxid-workbench_docs__workbench__d_g__advanced__configurations:
+.. _workbench_run__advanced_configurations:
+
+.. meta::
+   :description: Advanced information on running Deep Learning Workbench in more secure mode, 
+                 full list of command-line interface for Pythone Starter, and additional docker 
+                 run command-line options.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, advanced configuration, 
+              Python Starter Command-Line Interface, Python Starter arguments, 
+              Docker Run Command-Line Interface, enable authentication, Disable JupyterLab
 
 
 Advanced DL Workbench Configurations
 ====================================
 
-:target:`doxid-workbench_docs__workbench__d_g__advanced__configurations_1md_openvino_workbench_docs_workbench_dg_advanced_config` This document contains information on how to run DL Workbench in a more secure mode, the complete list of command-line interface arguments for Python Starter, and additional docker run command-line options.
+:target:`workbench_run__advanced_configurations_1md_openvino_workbench_docs_workbench_dg_advanced_config` This document 
+contains information on how to run DL Workbench in a more secure mode, the complete list of command-line interface 
+arguments for Python Starter, and additional docker run command-line options.
 
 Python Starter Command-Line Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,7 +88,8 @@ Python Starter arguments:
 | ``--base-prefix``                 | Specifies the base prefix of the DL Workbench web application.                                                                                                                                                                                                                                             | '/'             |
 +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
-.. warning:: Before using the ``--assets-directory`` argument:
+.. warning::
+   Before using the ``--assets-directory`` argument:
 
 
 
@@ -145,7 +156,8 @@ You can run Docker containers with the following arguments:
     * - ``-e BASE_PREFIX=<base-prefix>``
       - Specifies the base prefix of the DL Workbench web application. Default value is '/'.
 
-For other options, like launching the DL Workbench container or restarting the container, see :ref:`Docker Container section <doxid-workbench_docs__workbench__d_g__docker__container>`.
+For other options, like launching the DL Workbench container or restarting the container, see 
+:ref:`Docker Container section <workbench_run__docker_container>`.
 
 .. raw:: html
 
@@ -154,7 +166,9 @@ For other options, like launching the DL Workbench container or restarting the c
 Run DL Workbench Securely
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, the DL Workbench is started without authentication settings. If you want to protect your sensitive data, like the model details or performance information, you can `enable authentication <https://docs.openvinotoolkit.org/latest/workbench_docs_Workbench_DG_Authentication.html>`__ in DL Workbench and use a `self-signed certificate <https://docs.openvinotoolkit.org/latest/workbench_docs_Workbench_DG_Configure_TLS.html>`__.
+By default, the DL Workbench is started without authentication settings. If you want to protect your sensitive data, 
+like the model details or performance information, you can `enable authentication <https://docs.openvinotoolkit.org/latest/workbench_docs_Workbench_DG_Authentication.html>`__ 
+in DL Workbench and use a `self-signed certificate <https://docs.openvinotoolkit.org/latest/workbench_docs_Workbench_DG_Configure_TLS.html>`__.
 
 Disable JupyterLab inside DL Workbench
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -12,7 +12,7 @@ Learn Model Inference with OpenVINO™ API in JupyterLab\* Environment
 Access the JupyterLab
 ~~~~~~~~~~~~~~~~~~~~~
 
-The `JupyterLab\* <https://jupyter-notebook.readthedocs.io/en/stable/>`__ notebooks are running in the same environment as the DL Workbench. Refer to :ref:`Run DL Workbench instructions <doxid-workbench_docs__workbench__d_g__run__locally>`, to start DL Workbench.
+The `JupyterLab\* <https://jupyter-notebook.readthedocs.io/en/stable/>`__ notebooks are running in the same environment as the DL Workbench. Refer to :ref:`Run DL Workbench instructions <workbench_install__run_locally>`, to start DL Workbench.
 
 Go to the JupyterLab\* Environment
 ----------------------------------
@@ -88,7 +88,7 @@ You Have a Model on Your Machine
 
 To use a model, sample image, and/or device other than those specified in a tutorial, follow the steps below.
 
-.. note:: OpenVINO™ works with Intermediate Representation (IR) and ONNX\* formats. IR is a preferred format. If you upload an original model, convert it into the IR format. To do that, create a new cell in the notebook, and call the OpenVINO™ :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`. Your command should start with ``!python3 /opt/intel/openvino/tools/model_optimizer/mo.py ...``.
+.. note:: OpenVINO™ works with Intermediate Representation (IR) and ONNX\* formats. IR is a preferred format. If you upload an original model, convert it into the IR format. To do that, create a new cell in the notebook, and call the OpenVINO™ :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`. Your command should start with ``!python3 /opt/intel/openvino/tools/model_optimizer/mo.py ...``.
 
 
 

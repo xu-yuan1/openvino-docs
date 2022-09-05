@@ -31,7 +31,7 @@ To profile on a remote machine, follow the steps below:
 
 #. :ref:`Add a dataset <doxid-workbench_docs__workbench__d_g__generate__datasets>` to the project.
 
-#. :ref:`Create a project <doxid-workbench_docs__workbench__create__project>`.
+#. :ref:`Create a project <workbench_start__create_project>`.
 
 After these steps, you can run single and group inference and compare performance between models on local and remote machines. Features like accuracy measurements are disabled for remote machines:
 

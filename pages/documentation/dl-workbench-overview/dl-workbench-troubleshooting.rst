@@ -35,7 +35,7 @@ If you encounter an issue when running the DL Workbench, follow the steps below:
 #. If you could not find the issue on this page or the proposed solution did not work for you, `download logs <#download-logs>`__ and post a question at the `Intel Community Forum <https://community.intel.com/t5/Intel-Distribution-of-OpenVINO/bd-p/distribution-openvino-toolkit>`__. Describe your issue providing the details necessary to reproduce it and attach screenshots, if possible.
 
 If you run the DL Workbench in the Intel® DevCloud for the Edge, see 
-:ref:`Troubleshooting for DL Workbench in the DevCloud <doxid-workbench_docs__workbench__d_g__d_c__troubleshooting>`.
+:ref:`Troubleshooting for DL Workbench in the DevCloud <workbench_troubleshooting__devcloud>`.
 
 .. _download-logs:
 
@@ -64,7 +64,7 @@ If you cannot copy the logs from the DL Workbench UI, use the following command 
 If the issue persists, 
 `post a question on Intel Community Forum <https://community.intel.com/t5/Intel-Distribution-of-OpenVINO/bd-p/distribution-openvino-toolkit>`__ and attach the server logs. If the issue is not reproduced in the container, feel free to `post a question <https://community.intel.com/t5/Intel-Distribution-of-OpenVINO/bd-p/distribution-openvino-toolkit>`__ 
 as well. For more information, go to the **Enter Docker Container** section of the 
-:ref:`Work with Docker Container <doxid-workbench_docs__workbench__d_g__docker__container>` page.
+:ref:`Work with Docker Container <workbench_run__docker_container>` page.
 
 Most Frequent Issues
 ~~~~~~~~~~~~~~~~~~~~
@@ -178,7 +178,7 @@ Open Model Zoo Models Do Not Get Imported
 -----------------------------------------
 
 If you cannot import models from the Open Model Zoo, you may need to specify your proxy settings when running 
-a Docker container. To do that, refer to :ref:`Advanced Configurations <doxid-workbench_docs__workbench__d_g__advanced__configurations>`.
+a Docker container. To do that, refer to :ref:`Advanced Configurations <workbench_run__advanced_configurations>`.
 
 If you cannot download a model from the Open Model Zoo because its source is not available, you can select a different model 
 of the same use case from another source. If you have a problem with connectivity, you may need to check the internet 
@@ -215,7 +215,7 @@ Unable to Upgrade the DL Workbench to the Highest Version
 ---------------------------------------------------------
 
 When the DL Workbench is unable to 
-:ref:`upgrade to the highest version <doxid-workbench_docs__workbench__d_g__docker__container>`, you can run the highest 
+:ref:`upgrade to the highest version <workbench_run__docker_container>`, you can run the highest 
 DL Workbench version without your data or use the previous DL Workbench version to keep your data in the tool. Choose 
 the solution that suits you best:
 
@@ -352,7 +352,7 @@ remote machine information, see
 See Also
 ~~~~~~~~
 
-* :ref:`Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge <doxid-workbench_docs__workbench__d_g__d_c__troubleshooting>`
+* :ref:`Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge <workbench_troubleshooting__devcloud>`
 
-* :ref:`Work with Docker Container <doxid-workbench_docs__workbench__d_g__docker__container>`
+* :ref:`Work with Docker Container <workbench_run__docker_container>`
 

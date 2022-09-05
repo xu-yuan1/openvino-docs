@@ -1,11 +1,19 @@
 .. index:: pair: page; Prerequisites
-.. _doxid-workbench_docs__workbench__d_g__prerequisites:
+.. _workbench_install__prerequisites:
+
+.. meta::
+   :description: Prerequisites and recommended requirmenets for OpenVINO 
+                 Deep Learning Workbench.
+   :keywords: Deep Learning Workbench, DL workbench, OpenVINO, DL workbench installation, 
+              installation prerequisites, recommended requirements, proxy, set proxy, windows, 
+              linux, macos
 
 
 Prerequisites
 =============
 
-:target:`doxid-workbench_docs__workbench__d_g__prerequisites_1md_openvino_workbench_docs_workbench_dg_prerequisites` Follow these steps before running DL Workbench:
+:target:`workbench_install__prerequisites_1md_openvino_workbench_docs_workbench_dg_prerequisites` Follow 
+these steps before running DL Workbench:
 
 #. Make sure you have met the `recommended requirements <#recommended>`__.
 
@@ -52,12 +60,12 @@ Use these requirements to make sure all features are available.
 
 .. _proxy:
 
-\*\* You need more space if you optimize or measure accuracy of computationally expensive models, such as mask_rcnn_inception_v2_coco or faster-rcnn-resnet101-coco-sparse-60-0001.
+\*\* You need more space if you optimize or measure accuracy of computationally expensive models, such 
+as mask_rcnn_inception_v2_coco or faster-rcnn-resnet101-coco-sparse-60-0001.
 
 
 
 .. note::
-
    Windows, Linux and MacOS support CPU targets. GPU, Intel® Neural Compute Stick 2 and 
    Intel® Vision Accelerator Design with Intel® Movidius™ VPUs are supported only for Linux.
 
@@ -65,9 +73,13 @@ Use these requirements to make sure all features are available.
 Set Proxy
 ~~~~~~~~~
 
-If you are behind a firewall, Docker Desktop allows you to configure HTTP/HTTPS Proxy Settings, which are then automatically passed to Docker. If you `specify proxy settings <https://docs.docker.com/network/proxy>`__, Docker will use them when pulling images.
+If you are behind a firewall, Docker Desktop allows you to configure HTTP/HTTPS Proxy Settings, which are then automatically 
+passed to Docker. If you `specify proxy settings <https://docs.docker.com/network/proxy>`__, Docker will use them when 
+pulling images.
 
-However, your proxy settings will not be automatically passed to the containers you want to start. You must specify your proxy parameters when creating each container if you want to set proxy settings for them. Use the :ref:`installation form <doxid-workbench_docs__workbench__d_g__run__locally>` to specify proxy for containers.
+However, your proxy settings will not be automatically passed to the containers you want to start. You must specify your 
+proxy parameters when creating each container if you want to set proxy settings for them. Use the 
+:ref:`installation form <workbench_install__run_locally>` to specify proxy for containers.
 
 Set proxy for Linux
 -------------------

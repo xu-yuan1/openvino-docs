@@ -30,7 +30,7 @@ Below is a list of cases where input/output layout is important:
   
   * Setting/getting a batch for a model.
 
-* Doing the same operations as used during the model conversion phase. For more information, refer to the :ref:`Model Optimizer Embedding Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>` guide.
+* Doing the same operations as used during the model conversion phase. For more information, refer to the :ref:`Model Optimizer Embedding Preprocessing Computation <conv_prep__add_optim_preprocess>` guide.
 
 * Improving the readability of a model input and output.
 

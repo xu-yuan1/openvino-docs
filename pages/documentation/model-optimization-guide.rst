@@ -33,7 +33,7 @@ optimize models at different steps of model development:
 * **Model Optimizer** implements most of the optimization parameters to a model 
   by default. Yet, you are free to configure mean/scale values, batch size, RGB 
   vs BGR input channels, and other parameters to speed up preprocess of a model 
-  (:ref:`Embedding Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`).
+  (:ref:`Embedding Preprocessing Computation <conv_prep__add_optim_preprocess>`).
 
 * **Post-training Optimization tool** :ref:`(POT) <optim_perf__pot_intro>` is 
   designed to optimize inference of deep learning models by applying post-training 

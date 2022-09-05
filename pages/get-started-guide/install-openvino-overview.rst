@@ -38,7 +38,7 @@ Decide What to Install
 
 If you have already finished developing your models and converting them to the OpenVINO model format, you can :ref:`install OpenVINO Runtime <install_openvino_runtime>` to deploy your applications on various devices. OpenVINO Runtime contains a set of libraries for easy inference integration with your products.
 
-If you want to download models from :ref:`Open Model Zoo <doxid-model_zoo>`, :ref:`convert your own models to OpenVINO IR <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`, or :ref:`optimize and tune pre-trained deep learning models <optim_perf__model_optim_guide>`, :ref:`install OpenVINO Development Tools <install_openvino_dev_tools>`, which provides the following tools:
+If you want to download models from :ref:`Open Model Zoo <doxid-model_zoo>`, :ref:`convert your own models to OpenVINO IR <conv_prep__conv_with_model_optimizer>`, or :ref:`optimize and tune pre-trained deep learning models <optim_perf__model_optim_guide>`, :ref:`install OpenVINO Development Tools <install_openvino_dev_tools>`, which provides the following tools:
 
 * Model Optimizer
 

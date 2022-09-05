@@ -1,11 +1,25 @@
 .. index:: pair: page; Cutting Off Parts of a Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__cutting__model:
+.. _conv_prep__cut_model:
 
+.. meta::
+   :description: Model cutting occurs during conversion to OpenVINO IR when a 
+                 model is too complex to be converted at once and there are a 
+                 lot of unsupported operations.
+   :keywords: OpenVINO IR, OpenVINO Intermediate Representation, model conversion, 
+              convert a model, convert a model to IR, cutting model, Model Optimizer, 
+              OpenVINO™ Runtime, model inference, inference, command-line options, 
+              --input option, --output option, Reshape method, TensorFlow, TensorFlow 
+              models, custom layers, Input layer, model_optimizer, --output_dir 
+              argument, model input, model output, TensorBoard, ReLU layer, 
+              input shape, --input_shape, shape override, input tensor, multiple 
+              input ports, convolution, convolution weights, node, input port index
 
 Cutting Off Parts of a Model
 ============================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__cutting__model_1md_openvino_docs_mo_dg_prepare_model_convert_model_cutting_model` Sometimes, it is necessary to remove parts of a model when converting it to OpenVINO IR. This chapter describes how to do it, using Model Optimizer command-line options. Model cutting applies mostly to TensorFlow models, which is why TensorFlow will be used in this chapter's examples, but it may be also useful for other frameworks.
+:target:`conv_prep__cut_model_1md_openvino_docs_mo_dg_prepare_model_convert_model_cutting_model` 
+
+Sometimes, it is necessary to remove parts of a model when converting it to OpenVINO IR. This chapter describes how to do it, using Model Optimizer command-line options. Model cutting applies mostly to TensorFlow models, which is why TensorFlow will be used in this chapter's examples, but it may be also useful for other frameworks.
 
 Purpose of Model Cutting
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,7 +47,7 @@ Model Optimizer provides command line options ``--input`` and ``--output`` to sp
 
 The ``--input`` option is required for cases unrelated to model cutting. For example, when the model contains several inputs and ``--input_shape`` or ``--mean_values`` options are used, the ``--input`` option specifies the order of input nodes for correct mapping between multiple items provided in ``--input_shape`` and ``--mean_values`` and the inputs in the model.
 
-Model cutting is illustrated with the Inception V1 model, found in the ``models/research/slim`` repository. To proceed with this chapter, make sure you do the necessary steps to :ref:`prepare the model for Model Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`.
+Model cutting is illustrated with the Inception V1 model, found in the ``models/research/slim`` repository. To proceed with this chapter, make sure you do the necessary steps to :ref:`prepare the model for Model Optimizer <conv_prep__set_input_shapes>`.
 
 Default Behavior without input and output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

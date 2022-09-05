@@ -75,7 +75,7 @@ Can a model in any framework be quantized by the POT?
 
 The POT accepts models in the OpenVINO Intermediate Representation (IR) format 
 only. For that you need to convert your model to the IR format using 
-:ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
+:ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`.
 
 .. _noac:
 

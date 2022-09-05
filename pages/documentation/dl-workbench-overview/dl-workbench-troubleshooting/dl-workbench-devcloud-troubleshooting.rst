@@ -1,17 +1,25 @@
 .. index:: pair: page; Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge
-.. _doxid-workbench_docs__workbench__d_g__d_c__troubleshooting:
+.. _workbench_troubleshooting__devcloud:
+
+.. meta::
+   :description: Troubleshooting guide for OpenVINO Deep Learning Workbench in the 
+                 DevCloud for the Edge. 
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, troubleshooting, DevCloud, Edge, 
+              not responding, hanging, session in the DevCloud is over, blocked tab, login issue, 
+              tab issues
 
 
 Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge
 =====================================================================
 
-:target:`doxid-workbench_docs__workbench__d_g__d_c__troubleshooting_1md_openvino_workbench_docs_workbench_dg_dc_troubleshooting` If you encounter an issue when running the DL Workbench, follow the steps below:
+:target:`workbench_troubleshooting__devcloud_1md_openvino_workbench_docs_workbench_dg_dc_troubleshooting` If you encounter an issue when running the DL Workbench, follow the steps below:
 
 #. Refresh the page.
 
 #. If it does not help, search for the solution among the issues listed on this page.
 
-#. If you could not find the issue on this page or the proposed solution did not work for you, `report the issue to the DevCloud forum <#report-devcloud>`__.
+#. If you could not find the issue on this page or the proposed solution did not work for you, 
+`report the issue to the DevCloud forum <#report-devcloud>`__.
 
 Most Frequent Issues
 ~~~~~~~~~~~~~~~~~~~~
@@ -39,7 +47,7 @@ When you see the message as in the image below:
 
 #. Refresh the page.
 
-#. If it does not help, start a new DL Workbench session as described in the **Start a New DL Workbench Session in the Intel® DevCloud for the Edge** section of :ref:`Run DL Workbench in the DevCloud <doxid-workbench_docs__workbench__d_g__start__d_l__workbench_in__dev_cloud>`.
+#. If it does not help, start a new DL Workbench session as described in the **Start a New DL Workbench Session in the Intel® DevCloud for the Edge** section of :ref:`Run DL Workbench in the DevCloud <workbench_install__dev_cloud>`.
 
 #. If the issue persists, `report the issue on the DevCloud forum <#report-devcloud>`__.
 
@@ -54,7 +62,7 @@ When the **Server is Collecting Performance Data** banner is hanging on the page
 
 #. Refresh the page.
 
-#. If it does not help, start a new DL Workbench session as described in the **Start a New DL Workbench Session in the Intel® DevCloud for the Edge** section of :ref:`Run DL Workbench in the DevCloud <doxid-workbench_docs__workbench__d_g__start__d_l__workbench_in__dev_cloud>`.
+#. If it does not help, start a new DL Workbench session as described in the **Start a New DL Workbench Session in the Intel® DevCloud for the Edge** section of :ref:`Run DL Workbench in the DevCloud <workbench_install__dev_cloud>`.
 
 #. If the issue persists, `report the issue on the Intel® DevCloud for the Edge forum <#report-devcloud>`__.
 
@@ -69,21 +77,21 @@ A DL Workbench session in the DevCloud is limited to four hours. Remaining sessi
 
 .. image:: ./_assets/devcloud_time.png
 
-All data is autosaved in the DevCloud. To use the DL Workbench again, start a new session as described in the **Start a New DL Workbench Session in the Intel® DevCloud for the Edge** section of :ref:`Run DL Workbench in the DevCloud <doxid-workbench_docs__workbench__d_g__start__d_l__workbench_in__dev_cloud>`.
+All data is autosaved in the DevCloud. To use the DL Workbench again, start a new session as described in the **Start a New DL Workbench Session in the Intel® DevCloud for the Edge** section of :ref:`Run DL Workbench in the DevCloud <workbench_install__dev_cloud>`.
 
 .. _blocked-tab:
 
 Cannot Open the DL Workbench Tab from the DevCloud Menu
 -------------------------------------------------------
 
-If you tried to run the DL Workbench as described in :ref:`Run DL Workbench in the DevCloud <doxid-workbench_docs__workbench__d_g__start__d_l__workbench_in__dev_cloud>`, but nothing happens when you press **Deep Learning Workbench** from the **Advanced** tab, make sure your browser does not block pop-up windows as it prevents the tab from opening.
+If you tried to run the DL Workbench as described in :ref:`Run DL Workbench in the DevCloud <workbench_install__dev_cloud>`, but nothing happens when you press **Deep Learning Workbench** from the **Advanced** tab, make sure your browser does not block pop-up windows as it prevents the tab from opening.
 
 .. _login:
 
 Cannot Log In to the DL Workbench in the DevCloud after a Logout
 ----------------------------------------------------------------
 
-Once you log out of the DL Workbench in the DevCloud from the **Settings** panel, you can no longer log in to the same DL Workbench session and should start a new one as described in the **Start a New DL Workbench Session in the Intel® DevCloud for the Edge** section of :ref:`Run DL Workbench in the DevCloud <doxid-workbench_docs__workbench__d_g__start__d_l__workbench_in__dev_cloud>`.
+Once you log out of the DL Workbench in the DevCloud from the **Settings** panel, you can no longer log in to the same DL Workbench session and should start a new one as described in the **Start a New DL Workbench Session in the Intel® DevCloud for the Edge** section of :ref:`Run DL Workbench in the DevCloud <workbench_install__dev_cloud>`.
 
 .. _closed-tab:
 
@@ -133,5 +141,5 @@ See Also
 
 * :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 
-* :ref:`Run DL Workbench in the Intel® DevCloud for the Edge <doxid-workbench_docs__workbench__d_g__start__d_l__workbench_in__dev_cloud>`
+* :ref:`Run DL Workbench in the Intel® DevCloud for the Edge <workbench_install__dev_cloud>`
 

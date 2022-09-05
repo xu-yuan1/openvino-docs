@@ -7,7 +7,7 @@ Restore DL Workbench State
 
 :target:`doxid-workbench_docs__workbench__d_g__persist__database_1md_openvino_workbench_docs_workbench_dg_persist_database`
 
-DL Workbench enables performing multiple experiments to analyze performance and accuracy data. To always have access to your data in the DL Workbench, use additional parameters when you :ref:`run the DL Workbench <doxid-workbench_docs__workbench__d_g__run__locally>` that enable DL Workbench state preservation.
+DL Workbench enables performing multiple experiments to analyze performance and accuracy data. To always have access to your data in the DL Workbench, use additional parameters when you :ref:`run the DL Workbench <workbench_install__run_locally>` that enable DL Workbench state preservation.
 
 .. note:: It is highly recommended to enable DL Workbench state preservation.
 
@@ -31,7 +31,7 @@ Ignore state preservation if:
 
 * You just want to get acquainted with the DL Workbench and understand its key offerings.
 
-Even if you do not enable state preservation, your data is secured as long as there is a container on your machine. When you stop a container, you still have access to your data when you resume the container as described in the *Pause and Resume Docker Container* section of :ref:`Work with Docker Container <doxid-workbench_docs__workbench__d_g__docker__container>`. However, if you remove a container that you ran without enabling state preservation, all your data is lost with that removed container.
+Even if you do not enable state preservation, your data is secured as long as there is a container on your machine. When you stop a container, you still have access to your data when you resume the container as described in the *Pause and Resume Docker Container* section of :ref:`Work with Docker Container <workbench_run__docker_container>`. However, if you remove a container that you ran without enabling state preservation, all your data is lost with that removed container.
 
 To restore the DL Workbench data:
 
@@ -48,9 +48,9 @@ To restore the DL Workbench data:
 Preserve DL Workbench State on Linux and macOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To enable DL Workbench state preservation, mount a host directory to a Docker container. The example below shows how to mount a local folder while running a Docker container on Linux\* with a CPU enabled as a profiling target and in detached mode. To learn how to run the application on different targets, operating system, or in a different mode, see :ref:`Advanced Configurations <doxid-workbench_docs__workbench__d_g__advanced__configurations>` page.
+To enable DL Workbench state preservation, mount a host directory to a Docker container. The example below shows how to mount a local folder while running a Docker container on Linux\* with a CPU enabled as a profiling target and in detached mode. To learn how to run the application on different targets, operating system, or in a different mode, see :ref:`Advanced Configurations <workbench_run__advanced_configurations>` page.
 
-#. To run DL Workbench with Python Starter on your OS, use the first command from :ref:`installation form <doxid-workbench_docs__workbench__d_g__run__locally>` :
+#. To run DL Workbench with Python Starter on your OS, use the first command from :ref:`installation form <workbench_install__run_locally>` :
    
    .. ref-code-block:: cpp
    
@@ -88,7 +88,7 @@ Preserve DL Workbench State on Windows
 
 Due to `problems of mounting a local folder to a Docker container on Windows <https://github.com/docker/for-win/issues/77>`__, the best way to preserve the state on Windows is to use Docker `volumes <https://docs.docker.com/storage/volumes/>`__ :
 
-#. Get a Docker image as described in the **Install DL Workbench** section of :ref:`Install DL Workbench <doxid-workbench_docs__workbench__d_g__run__locally>`.
+#. Get a Docker image as described in the **Install DL Workbench** section of :ref:`Install DL Workbench <workbench_install__run_locally>`.
 
 #. Create a Docker volume:
    

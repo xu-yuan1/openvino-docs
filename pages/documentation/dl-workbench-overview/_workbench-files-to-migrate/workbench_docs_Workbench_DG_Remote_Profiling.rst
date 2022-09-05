@@ -48,7 +48,7 @@ Follow the steps below to profile your model on a remote target:
 
 #. :ref:`Profile on the remote machine <doxid-workbench_docs__workbench__d_g__profile_on__remote__machine>`
 
-.. note:: Working with machines in your local network is not available when you run the DL Workbench in the :ref:`Intel® DevCloud for the Edge <doxid-workbench_docs__workbench__d_g__start__d_l__workbench_in__dev_cloud>`.
+.. note:: Working with machines in your local network is not available when you run the DL Workbench in the :ref:`Intel® DevCloud for the Edge <workbench_install__dev_cloud>`.
 
 See Also
 ~~~~~~~~

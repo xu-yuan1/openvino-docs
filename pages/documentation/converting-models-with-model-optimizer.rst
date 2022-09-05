@@ -1,15 +1,22 @@
 .. index:: pair: page; Converting Models with Model Optimizer
-.. _doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide:
+.. _conv_prep__conv_with_model_optimizer:
 
+.. meta:: 
+   :description: Model Optimizer furthers the transition between training and 
+                 deployment environments, it adjusts deep learning models for 
+                 optimal execution on target devices.
+   :keywords: Model Optimizer, convert models, deep learning model, TensorFlow, 
+              PaddlePaddle, PyTorch, MXNet, Caffe, Kaldi, ONNX, OpenVINO Intermediate 
+              Representation, OpenVINO IR, cross-platform tool, command-line 
+              tool, post-training optimization, convert a model to IR, 
+              mean-scale normalization, RGB format, model conversion, 
+              --input parameter, --input_shape parameter, set input shape, 
+              --data_type compression parameter, compress a model to FP16
 
 Converting Models with Model Optimizer
 ======================================
 
-:target:`doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide_1md_openvino_docs_mo_dg_deep_learning_model_optimizer_devguide`
-
-
-
-
+:target:`conv_prep__conv_with_model_optimizer_1md_openvino_docs_mo_dg_deep_learning_model_optimizer_devguide`
 
 .. _deep learning model optimizer:
 
@@ -68,11 +75,11 @@ To convert a model to IR, you can run Model Optimizer by using the following com
 
 If the out-of-the-box conversion (only the ``--input_model`` parameter is specified) is not successful, use the parameters mentioned below to override input shapes and cut the model:
 
-* Model Optimizer provides two parameters to override original input shapes for model conversion: ``--input`` and ``--input_shape``. For more information about these parameters, refer to the :ref:`Setting Input Shapes <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
+* Model Optimizer provides two parameters to override original input shapes for model conversion: ``--input`` and ``--input_shape``. For more information about these parameters, refer to the :ref:`Setting Input Shapes <conv_prep__set_input_shapes>` guide.
 
-* To cut off unwanted parts of a model (such as unsupported operations and training sub-graphs), use the ``--input`` and ``--output`` parameters to define new inputs and outputs of the converted model. For a more detailed description, refer to the :ref:`Cutting Off Parts of a Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__cutting__model>` guide.
+* To cut off unwanted parts of a model (such as unsupported operations and training sub-graphs), use the ``--input`` and ``--output`` parameters to define new inputs and outputs of the converted model. For a more detailed description, refer to the :ref:`Cutting Off Parts of a Model <conv_prep__cut_model>` guide.
 
-You can also insert additional input pre-processing sub-graphs into the converted model by using the ``--mean_values``, ``scales_values``, ``--layout``, and other parameters described in the :ref:`Embedding Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>` article.
+You can also insert additional input pre-processing sub-graphs into the converted model by using the ``--mean_values``, ``scales_values``, ``--layout``, and other parameters described in the :ref:`Embedding Preprocessing Computation <conv_prep__add_optim_preprocess>` article.
 
 The ``--data_type`` compression parameter in Model Optimizer allows generating IR of the ``FP16`` data type. For more details, refer to the :ref:`Compression of a Model to FP16 <doxid-openvino_docs__m_o__d_g__f_p16__compression>` guide.
 

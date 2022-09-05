@@ -47,9 +47,9 @@ Installation
 See Also
 ~~~~~~~~
 
-* :ref:`Check the Prerequisites <doxid-workbench_docs__workbench__d_g__prerequisites>`
+* :ref:`Check the Prerequisites <workbench_install__prerequisites>`
 
-* :ref:`Run DL Workbench Locally <doxid-workbench_docs__workbench__d_g__run__locally>`
+* :ref:`Run DL Workbench Locally <workbench_install__run_locally>`
 
-* :ref:`Run DL Workbench in Intel® DevCloud <doxid-workbench_docs__workbench__d_g__start__d_l__workbench_in__dev_cloud>`
+* :ref:`Run DL Workbench in Intel® DevCloud <workbench_install__dev_cloud>`
 

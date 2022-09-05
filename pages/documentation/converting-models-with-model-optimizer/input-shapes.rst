@@ -1,13 +1,27 @@
 .. index:: pair: page; Setting Input Shapes
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model:
+.. _conv_prep__set_input_shapes:
+
+.. meta:: 
+   :description: When provided an additional shape definition with --input_shape 
+                 and --static_shape parameters, Model Optimizer can increase 
+                 efficiency of a model.
+   :keywords: Model Optimizer, deep learning model, convert a model, set input shape, 
+              --input_shape parameter, --static_shape parameter, dynamic input shapes, 
+              undefined dimensions, infer a model, model inference, --input_model 
+              parameter, TensorFlow, input shape, dynamic shapes, boundaries of 
+              dimensions, non-reshape-able models, reshape method, OpenVINO, 
+              OpenVINO Intermediate Representation, OpenVINO IR, static shapes, 
+              command-line parameter, OpenVINO Runtime API
 
 
 Setting Input Shapes
 ====================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1md_openvino_docs_mo_dg_prepare_model_convert_model_converting_model` With Model Optimizer you can increase your model's efficiency by providing an additional shape definition, with these two parameters: ``--input_shape`` and ``--static_shape``.
+:target:`conv_prep__set_input_shapes_1md_openvino_docs_mo_dg_prepare_model_convert_model_converting_model` 
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model_1when_to_specify_input_shapes`
+With Model Optimizer you can increase your model's efficiency by providing an additional shape definition, with these two parameters: ``--input_shape`` and ``--static_shape``.
+
+:target:`conv_prep__set_input_shapes_when_to_specify_input_shapes`
 
 Specifying input_shape Command-line Parameter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,7 +78,7 @@ For example, launch Model Optimizer for the ONNX OCR model using ``--static_shap
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Introduction to converting models with Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`
+* :ref:`Introduction to converting models with Model Optimizer <conv_prep__conv_with_model_optimizer>`
 
-* :ref:`Cutting Off Parts of a Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__cutting__model>`
+* :ref:`Cutting Off Parts of a Model <conv_prep__cut_model>`
 

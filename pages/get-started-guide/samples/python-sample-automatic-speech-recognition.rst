@@ -225,7 +225,7 @@ You can do inference on Intel® Processors with the GNA co-processor (or emulati
 
 **NOTES** :
 
-* Before running the sample with a trained model, make sure the model is converted to the intermediate representation (IR) format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
+* Before running the sample with a trained model, make sure the model is converted to the intermediate representation (IR) format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <conv_prep__conv_with_model_optimizer>`.
 
 * The sample supports input and output in numpy file format (.npz)
 
@@ -388,5 +388,5 @@ See Also
 
 * Model Downloader
 
-* :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`
+* :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`
 

@@ -3,7 +3,7 @@
 
 .. meta::
    :description: Introduction to basics of OpenVINO Deep Learning Workbench workflow. Walkthrough thorugh 
-                  the process of importing model, creating project and evaluating the initial performance.
+                 the process of importing model, creating project and evaluating the initial performance.
    :keywords: Deep Learning Workbench, DL Workbench, dl workbench workflow, importing model, 
               project creation, initial performance evaluation, OpenVINO
 
@@ -32,9 +32,9 @@ with `TensorFlow <https://www.tensorflow.org/>`__ framework.
 
 To start exploring DL Workbench capabilities right away, complete the following steps:
 
-#. :ref:`Import Model <doxid-workbench_docs__workbench__d_g__select__model>`
+#. :ref:`Import Model <workbench_start__import_model>`
 
-#. :ref:`Create Project <doxid-workbench_docs__workbench__create__project>`
+#. :ref:`Create Project <workbench_start__create_project>`
 
 This guide goes step-by-step through the workflow described in the Create Project video. Watch it to learn how to get 
 started with DL Workbench:
@@ -54,5 +54,5 @@ Get Started Video
 See Also
 ~~~~~~~~
 
-* :ref:`Next Step: Import Model <doxid-workbench_docs__workbench__d_g__select__model>`
+* :ref:`Next Step: Import Model <>`
 

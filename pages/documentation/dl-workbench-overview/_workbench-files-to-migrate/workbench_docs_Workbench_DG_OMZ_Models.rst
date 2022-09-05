@@ -23,7 +23,7 @@ On the **Convert Model to IR** step, you can specify the precision:
 
 .. image:: _static/images/convert_omz_to_IR.png
 
-.. note:: * If you are behind a corporate proxy, set environment variables during the :ref:`Installation <doxid-workbench_docs__workbench__d_g__run__locally>` step. To learn about the import process, see the Model Downloader documentation.
+.. note:: * If you are behind a corporate proxy, set environment variables during the :ref:`Installation <workbench_install__run_locally>` step. To learn about the import process, see the Model Downloader documentation.
 
 
 

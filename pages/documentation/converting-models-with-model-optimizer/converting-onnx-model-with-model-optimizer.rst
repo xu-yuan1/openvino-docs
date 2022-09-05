@@ -27,7 +27,7 @@ To convert an ONNX model, run Model Optimizer with the path to the input model `
 
 	mo --input_model <INPUT_MODEL>.onnx
 
-There are no ONNX specific parameters, so only framework-agnostic parameters are available to convert your model. For details, see the *General Conversion Parameters* section in the :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
+There are no ONNX specific parameters, so only framework-agnostic parameters are available to convert your model. For details, see the *General Conversion Parameters* section in the :ref:`Converting a Model to Intermediate Representation (IR) <conv_prep__set_input_shapes>` guide.
 
 Supported ONNX Layers
 ~~~~~~~~~~~~~~~~~~~~~

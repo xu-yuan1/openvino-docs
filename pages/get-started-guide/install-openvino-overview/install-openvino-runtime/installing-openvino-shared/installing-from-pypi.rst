@@ -93,7 +93,7 @@ What's Next?
 
 Now you may continue with the following tasks:
 
-* To convert models for use with OpenVINO, see :ref:`Model Optimizer Developer Guide <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
+* To convert models for use with OpenVINO, see :ref:`Model Optimizer Developer Guide <conv_prep__conv_with_model_optimizer>`.
 
 * See pre-trained deep learning models in our :ref:`Open Model Zoo <doxid-model_zoo>`.
 
