@@ -164,7 +164,7 @@ details on how to get a quantized model, refer to the
 
 Floating-point precision of a GPU primitive is selected based on operation 
 precision in the OpenVINO IR, except for the 
-:ref:`compressed f16 OpenVINO IR form <doxid-openvino_docs__m_o__d_g__f_p16__compression>`, 
+:ref:`compressed f16 OpenVINO IR form <conv_prep__fp16_compression>`, 
 which is executed in the ``f16`` precision.
 
 .. note:: Hardware acceleration for ``i8`` / ``u8`` precision may be unavailable 

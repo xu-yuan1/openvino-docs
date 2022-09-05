@@ -1,11 +1,18 @@
 .. index:: pair: page; Converting an ONNX Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__o_n_n_x:
+.. _conv_prep__conv_from_onnx:
 
+.. meta:: 
+   :description: Detailed instructions on how to convert a model from the 
+                 ONNX format to the OpenVINO IR by using Model Optimizer. 
+   :keywords: Model Optimizer, OpenVINO IR, OpenVINO Intermediate Representation, 
+              OpenVINO Development Tools, convert model, model conversion, convert 
+              from ONNX, convert an ONNX model, deep learning model, --input_model, 
+              supported ONNX layers, ONNX layers
 
 Converting an ONNX Model
 ========================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__o_n_n_x_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_onnx`
+:target:`conv_prep__conv_from_onnx_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_onnx`
 
 Introduction to ONNX
 ~~~~~~~~~~~~~~~~~~~~

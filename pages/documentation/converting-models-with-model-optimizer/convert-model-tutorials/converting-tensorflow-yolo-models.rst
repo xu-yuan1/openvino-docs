@@ -338,7 +338,7 @@ where:
 
 * ``--scale`` specifies scale factor that input values will be divided by. The model was trained with input values in the range ``[0,1]``. OpenVINO toolkit samples read input images as values in ``[0,255]`` range, so the scale 255 must be applied.
 
-* ``--transformations_config`` adds missing ``Region`` layers to the model. In the IR, the ``Region`` layer has name ``RegionYolo``. For other applicable parameters, refer to the :ref:`Convert Model from TensorFlow <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>` guide.
+* ``--transformations_config`` adds missing ``Region`` layers to the model. In the IR, the ``Region`` layer has name ``RegionYolo``. For other applicable parameters, refer to the :ref:`Convert Model from TensorFlow <conv_prep__conv_from_tensorflow>` guide.
 
 .. note::
    The color channel order (RGB or BGR) of an input data should match the channel 

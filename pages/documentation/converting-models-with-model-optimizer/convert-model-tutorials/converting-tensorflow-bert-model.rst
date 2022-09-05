@@ -164,7 +164,7 @@ Run Model Optimizer with the following command line parameters to generate resha
 	--input_model inference_graph.pb \
 	--input "IteratorGetNext:0{i32}[1 128],IteratorGetNext:1{i32}[1 128],IteratorGetNext:4{i32}[1 128]"
 
-For other applicable parameters, refer to the :ref:`Convert Model from TensorFlow <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>` guide.
+For other applicable parameters, refer to the :ref:`Convert Model from TensorFlow <conv_prep__conv_from_tensorflow>` guide.
 
 For more information about reshape abilities, refer to the :ref:`Using Shape Inference <deploy_infer__shape_inference>` guide.
 

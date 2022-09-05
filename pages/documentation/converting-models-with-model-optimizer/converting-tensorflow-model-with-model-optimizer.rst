@@ -1,11 +1,25 @@
 .. index:: pair: page; Converting a TensorFlow Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow:
+.. _conv_prep__conv_from_tensorflow:
 
+.. meta::
+   :description: Detailed instructions on how to convert a model from a 
+                 TensorFlow format to the OpenVINO IR by using 
+                 Model Optimizer
+   :keywords: Model Optimizer, OpenVINO IR, OpenVINO Intermediate Representation, 
+              OpenVINO Development Tools, TensorFlow, TensorFlow 1, TensorFlow 2,
+              convert model, frozen model format, non-frozen model format, 
+              MetaGraph, SavedModel format, freeze custom models, freeze models 
+              in Python, freeze a TensorFlow model, Keras H5, command-line interface,
+              --input_model, --input_meta_graph, --input_shape, HDF5 format, 
+              serialize a model, model serialization, model conversion, convert 
+              from TensorFlow
 
 Converting a TensorFlow Model
 =============================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_tensorflow` This page provides general instructions on how to convert a model from a TensorFlow format to the OpenVINO IR format using Model Optimizer. The instructions are different depending on whether your model was created with TensorFlow v1.X or TensorFlow v2.X.
+:target:`conv_prep__conv_from_tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_tensorflow` 
+
+This page provides general instructions on how to convert a model from a TensorFlow format to the OpenVINO IR format using Model Optimizer. The instructions are different depending on whether your model was created with TensorFlow v1.X or TensorFlow v2.X.
 
 To use Model Optimizer, install OpenVINO Development Tools by following the :ref:`installation instructions <install_openvino_dev_tools>`.
 

@@ -1,11 +1,19 @@
 .. index:: pair: page; Compressing a Model to FP16
-.. _doxid-openvino_docs__m_o__d_g__f_p16__compression:
+.. _conv_prep__fp16_compression:
 
+.. meta:: 
+   :description: Model Optimizer can convert all floating-point weights to FP16 
+                 data type and the resulting IR will be a compressed FP16 model.
+   :keywords: Model Optimizer, FP16, floating-point weights, compression to FP16, 
+              accuracy drop, FP16 precision, OpenVINO IR, OpenVINO Intermediate 
+              Representation, FP16 compression
 
 Compressing a Model to FP16
 ===========================
 
-:target:`doxid-openvino_docs__m_o__d_g__f_p16__compression_1md_openvino_docs_mo_dg_prepare_model_fp16_compression` Model Optimizer can convert all floating-point weights to ``FP16`` data type. The resulting IR is called compressed ``FP16`` model.
+:target:`conv_prep__fp16_compression_1md_openvino_docs_mo_dg_prepare_model_fp16_compression` 
+
+Model Optimizer can convert all floating-point weights to ``FP16`` data type. The resulting IR is called compressed ``FP16`` model.
 
 To compress the model, use the ``--data_type`` option:
 

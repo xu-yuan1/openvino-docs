@@ -42,7 +42,7 @@ How to Run the example
 
 #. Launch :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>` 
    with the necessary options (for details follow the 
-   :ref:`instructions for Kaldi <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__kaldi>` 
+   :ref:`instructions for Kaldi <conv_prep__conv_from_kaldi>` 
    to generate Intermediate Representation (IR) files for the model:
 
    .. ref-code-block:: cpp

@@ -81,7 +81,7 @@ If the out-of-the-box conversion (only the ``--input_model`` parameter is specif
 
 You can also insert additional input pre-processing sub-graphs into the converted model by using the ``--mean_values``, ``scales_values``, ``--layout``, and other parameters described in the :ref:`Embedding Preprocessing Computation <conv_prep__add_optim_preprocess>` article.
 
-The ``--data_type`` compression parameter in Model Optimizer allows generating IR of the ``FP16`` data type. For more details, refer to the :ref:`Compression of a Model to FP16 <doxid-openvino_docs__m_o__d_g__f_p16__compression>` guide.
+The ``--data_type`` compression parameter in Model Optimizer allows generating IR of the ``FP16`` data type. For more details, refer to the :ref:`Compression of a Model to FP16 <conv_prep__fp16_compression>` guide.
 
 To get the full list of conversion parameters available in Model Optimizer, run the following command:
 
@@ -106,7 +106,7 @@ Below is a list of separate examples for different frameworks and Model Optimize
    
    	mo --saved_model_dir BERT --input mask,word_ids,type_ids --input_shape [2,30],[2,30],[2,30]
    
-   For more information, refer to the :ref:`Converting a TensorFlow Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>` guide.
+   For more information, refer to the :ref:`Converting a TensorFlow Model <conv_prep__conv_from_tensorflow>` guide.
 
 #. Launch Model Optimizer for an ONNX OCR model and specify new output explicitly:
    
@@ -116,7 +116,7 @@ Below is a list of separate examples for different frameworks and Model Optimize
    
    For more information, refer to the [Converting an ONNX Model (``prepare_model/convert_model/Convert_Model_From_ONNX.md``) guide.
 
-.. note:: PyTorch models must be exported to the ONNX format before conversion into IR. More information can be found in :ref:`Converting a PyTorch Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__py_torch>`.
+.. note:: PyTorch models must be exported to the ONNX format before conversion into IR. More information can be found in :ref:`Converting a PyTorch Model <conv_prep__conv_from_pytorch>`.
 
 
 
@@ -128,7 +128,7 @@ Below is a list of separate examples for different frameworks and Model Optimize
    
    	mo --input_model unet.pdmodel --mean_values [123,117,104] --scale 255
    
-   For more information, refer to the :ref:`Converting a PaddlePaddle Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__paddle>` guide.
+   For more information, refer to the :ref:`Converting a PaddlePaddle Model <conv_prep__conv_from_paddle>` guide.
 
 #. Launch Model Optimizer for an Apache MXNet SSD Inception V3 model and specify first-channel layout for the input:
    
@@ -136,7 +136,7 @@ Below is a list of separate examples for different frameworks and Model Optimize
    
    	mo --input_model ssd_inception_v3-0000.params --layout NCHW
    
-   For more information, refer to the :ref:`Converting an Apache MXNet Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__mx_net>` guide.
+   For more information, refer to the :ref:`Converting an Apache MXNet Model <conv_prep__conv_from_mxnet>` guide.
 
 #. Launch Model Optimizer for a Caffe AlexNet model with input channels in the RGB format which needs to be reversed:
    
@@ -144,7 +144,7 @@ Below is a list of separate examples for different frameworks and Model Optimize
    
    	mo --input_model alexnet.caffemodel --reverse_input_channels
    
-   For more information, refer to the :ref:`Converting a Caffe Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__caffe>` guide.
+   For more information, refer to the :ref:`Converting a Caffe Model <conv_prep__conv_from_caffe>` guide.
 
 #. Launch Model Optimizer for a Kaldi LibriSpeech nnet2 model:
    
@@ -152,7 +152,7 @@ Below is a list of separate examples for different frameworks and Model Optimize
    
    	mo --input_model librispeech_nnet2.mdl --input_shape [1,140]
    
-   For more information, refer to the :ref:`Converting a Kaldi Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__kaldi>` guide.
+   For more information, refer to the :ref:`Converting a Kaldi Model <conv_prep__conv_from_kaldi>` guide.
 
 
 

@@ -278,7 +278,7 @@ Representation (IR).
       mkdir ~/ir
 
 The OpenVINO Runtime can infer models where floating-point weights are 
-:ref:`compressed to FP16 <doxid-openvino_docs__m_o__d_g__f_p16__compression>`. 
+:ref:`compressed to FP16 <conv_prep__fp16_compression>`. 
 To generate an IR with a specific precision, run the Model Optimizer with the 
 appropriate ``--data_type`` option.
 

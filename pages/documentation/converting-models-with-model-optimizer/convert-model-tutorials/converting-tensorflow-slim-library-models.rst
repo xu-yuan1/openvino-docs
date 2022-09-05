@@ -113,5 +113,5 @@ OpenVINO classification sample reads an input image as a three-dimensional array
 
 Similarly, the mean/scale values can be determined for other Slim models.
 
-The exact mean/scale values are defined in the table with list of supported TensorFlow-Slim models at the :ref:`Converting a TensorFlow Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>` guide.
+The exact mean/scale values are defined in the table with list of supported TensorFlow-Slim models at the :ref:`Converting a TensorFlow Model <conv_prep__conv_from_tensorflow>` guide.
 

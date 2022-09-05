@@ -550,7 +550,7 @@ Keep in mind that there is no space between and inside the brackets for input sh
 57. What does the message "Please provide input layer names for input layer shapes" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-When specifying input shapes for several layers, you must provide names for inputs, whose shapes will be overwritten. For usage examples, see the :ref:`Converting a Caffe Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__caffe>`. Additional information for ``--input_shape`` is in FAQ `#56 <#question-56>`__.
+When specifying input shapes for several layers, you must provide names for inputs, whose shapes will be overwritten. For usage examples, see the :ref:`Converting a Caffe Model <conv_prep__conv_from_caffe>`. Additional information for ``--input_shape`` is in FAQ `#56 <#question-56>`__.
 
 .. _question-58:
 
@@ -585,14 +585,14 @@ Most likely, you didn't specify inputs using ``--scale_values``. Specify inputs 
 62. What does the message "Number of inputs and mean values does not match" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The number of specified mean values and the number of inputs must be equal. For a usage example, refer to the :ref:`Converting a Caffe Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__caffe>` guide.
+The number of specified mean values and the number of inputs must be equal. For a usage example, refer to the :ref:`Converting a Caffe Model <conv_prep__conv_from_caffe>` guide.
 
 .. _question-63:
 
 63. What does the message "Number of inputs and scale values does not match" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The number of specified scale values and the number of inputs must be equal. For a usage example, refer to the :ref:`Converting a Caffe Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__caffe>` guide.
+The number of specified scale values and the number of inputs must be equal. For a usage example, refer to the :ref:`Converting a Caffe Model <conv_prep__conv_from_caffe>` guide.
 
 .. _question-64:
 
@@ -713,7 +713,7 @@ You are using an unsupported Python version. Use only versions 3.4 - 3.6 for the
 
 This error occurs if you did not provide the ``--nd_prefix_name``, ``--pretrained_model_name``, and ``--input_symbol`` parameters. Model Optimizer requires both ``.params`` and ``.nd`` model files to merge into the result file (``.params``). Topology description (``.json`` file) should be prepared (merged) in advance and provided with the ``--input_symbol`` parameter.
 
-If you add additional layers and weights that are in ``.nd`` files to your model, Model Optimizer can build a model from one ``.params`` file and two additional ``.nd`` files (``\*_args.nd``, ``\*_auxs.nd``). To do that, provide both CLI options or do not pass them if you want to convert an MXNet model without additional weights. For more information, refer to the :ref:`Converting an MXNet Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__mx_net>` guide.
+If you add additional layers and weights that are in ``.nd`` files to your model, Model Optimizer can build a model from one ``.params`` file and two additional ``.nd`` files (``\*_args.nd``, ``\*_auxs.nd``). To do that, provide both CLI options or do not pass them if you want to convert an MXNet model without additional weights. For more information, refer to the :ref:`Converting an MXNet Model <conv_prep__conv_from_mxnet>` guide.
 
 .. _question-81:
 
@@ -734,14 +734,14 @@ When you passed the mean/scale values and specify names of input layers of the m
 83. What does the message "Specified input json ... does not exist" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Most likely, ``.json`` file does not exist or has a name that does not match the notation of Apache MXNet. Make sure the file exists and has a correct name. For more information, refer to the :ref:`Converting an MXNet Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__mx_net>` guide.
+Most likely, ``.json`` file does not exist or has a name that does not match the notation of Apache MXNet. Make sure the file exists and has a correct name. For more information, refer to the :ref:`Converting an MXNet Model <conv_prep__conv_from_mxnet>` guide.
 
 .. _question-84:
 
 84. What does the message "Unsupported Input model file type ... Model Optimizer support only .params and .nd files format" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Model Optimizer for Apache MXNet supports only ``.params`` and ``.nd`` files formats. Most likely, you specified an unsupported file format in ``--input_model``. For more information, refer to :ref:`Converting an MXNet Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__mx_net>`.
+Model Optimizer for Apache MXNet supports only ``.params`` and ``.nd`` files formats. Most likely, you specified an unsupported file format in ``--input_model``. For more information, refer to :ref:`Converting an MXNet Model <conv_prep__conv_from_mxnet>`.
 
 .. _question-85:
 
