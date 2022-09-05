@@ -227,7 +227,7 @@ Follow the command-line instructions to exit and save the changes.
 
 The user ``USERNAME`` received sudo permissions if you are not asked for a sudo password during the execution of the command above.
 
-If you do not have the rights to perform these steps, contact your system administrator or set up the devices manually by following the **Steps for Intel® Processor Graphics (GPU)** and **Steps for Intel® Movidius™ Neural Compute Stick and Intel® Neural Compute Stick 2** sections of :ref:`Install Intel® Distribution of OpenVINO™ toolkit for Linux <doxid-openvino_docs_install_guides_installing_openvino_linux>`.
+If you do not have the rights to perform these steps, contact your system administrator or set up the devices manually by following the **Steps for Intel® Processor Graphics (GPU)** and **Steps for Intel® Movidius™ Neural Compute Stick and Intel® Neural Compute Stick 2** sections of :ref:`Install Intel® Distribution of OpenVINO™ toolkit for Linux <install__linux_installer>`.
 
 See Also
 ~~~~~~~~

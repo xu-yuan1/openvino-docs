@@ -18,7 +18,7 @@ Installing Intel® Distribution of OpenVINO™ Toolkit
    OpenVINO Runtime <./install-openvino-overview/install-openvino-runtime>
    OpenVINO Development Tools <./install-openvino-overview/install-openvino-dev-tools>
    Build from Source <https://github.com/openvinotoolkit/openvino/wiki/BuildingCode>
-   Creating a Yocto Image <./install-openvino-overview/creating-yocto-image>
+   Creating a Yocto Image <./install-openvino-overview/install-create-yocto-image>
 
 Intel® Distribution of OpenVINO™ toolkit is a comprehensive toolkit for developing applications and solutions based on deep learning tasks, such as: emulation of human vision, automatic speech recognition, natural language processing, recommendation systems, etc. It provides high-performance and rich deployment options, from edge to cloud. Some of its advantages are:
 
@@ -57,7 +57,7 @@ For Python developers, the easiest way is to :ref:`install OpenVINO Development 
 
 For C++ developers, you may choose one of the following installation options for OpenVINO Runtime on your specific operating system:
 
-* Linux: You can install OpenVINO Runtime using an :ref:`Installer <doxid-openvino_docs_install_guides_installing_openvino_linux>`, :ref:`APT <doxid-openvino_docs_install_guides_installing_openvino_apt>`, :ref:`YUM <doxid-openvino_docs_install_guides_installing_openvino_yum>`, :ref:`Anaconda Cloud <doxid-openvino_docs_install_guides_installing_openvino_conda>`, or :ref:`Docker <doxid-openvino_docs_install_guides_installing_openvino_docker_linux>`.
+* Linux: You can install OpenVINO Runtime using an :ref:`Installer <install__linux_installer>`, :ref:`APT <install__linux_apt>`, :ref:`YUM <install__linux_yum>`, :ref:`Anaconda Cloud <doxid-openvino_docs_install_guides_installing_openvino_conda>`, or :ref:`Docker <install__on_linux_from_docker>`.
 
 * Windows: You can install OpenVINO Runtime using an :ref:`Installer <doxid-openvino_docs_install_guides_installing_openvino_windows>`, :ref:`Anaconda Cloud <doxid-openvino_docs_install_guides_installing_openvino_conda>`, or :ref:`Docker <doxid-openvino_docs_install_guides_installing_openvino_docker_windows>`.
 

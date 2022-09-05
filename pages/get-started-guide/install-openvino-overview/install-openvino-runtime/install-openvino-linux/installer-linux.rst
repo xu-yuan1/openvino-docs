@@ -1,11 +1,11 @@
 .. index:: pair: page; Install and Configure Intel® Distribution of OpenVINO™ Toolkit for Linux
-.. _doxid-openvino_docs_install_guides_installing_openvino_linux:
+.. _install__linux_installer:
 
 
 Install and Configure Intel® Distribution of OpenVINO™ Toolkit for Linux
 ===========================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_linux_1md_openvino_docs_install_guides_installing_openvino_linux`
+:target:`install__linux_installer_1md_openvino_docs_install_guides_installing_openvino_linux`
 
 .. note:: Since the OpenVINO™ 2022.1 release, the following development tools: Model Optimizer, Post-Training Optimization Tool, Model Downloader and other Open Model Zoo tools, Accuracy Checker, and Annotation Converter are not part of the installer. These tools are now only available on `pypi.org <https://pypi.org/project/openvino-dev/>`__.
 

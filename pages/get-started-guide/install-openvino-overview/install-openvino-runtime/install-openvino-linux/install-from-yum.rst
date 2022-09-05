@@ -1,11 +1,11 @@
 .. index:: pair: page; Install Intel® Distribution of OpenVINO™ Toolkit for Linux Using YUM Repository
-.. _doxid-openvino_docs_install_guides_installing_openvino_yum:
+.. _install__linux_yum:
 
 
 Install Intel® Distribution of OpenVINO™ Toolkit for Linux Using YUM Repository
 ==================================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_yum_1md_openvino_docs_install_guides_installing_openvino_yum` This guide provides installation steps for Intel® Distribution of OpenVINO™ toolkit for Linux distributed through the YUM repository.
+:target:`install__linux_yum_1md_openvino_docs_install_guides_installing_openvino_yum` This guide provides installation steps for Intel® Distribution of OpenVINO™ toolkit for Linux distributed through the YUM repository.
 
 .. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI. If you want to develop or optimize your models with OpenVINO, see :ref:`Install OpenVINO Development Tools <install_openvino_dev_tools>` for detailed steps.
 
