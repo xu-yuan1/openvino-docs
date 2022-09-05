@@ -165,7 +165,7 @@ To work with OpenVINO tools, you need to obtain a model in the Intermediate Repr
 
 * BIN file containing weights and biases
 
-.. note:: For details on converting process, refer to :ref:`Converting a Model to Intermediate Representation document <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`.
+.. note:: For details on converting process, refer to :ref:`Converting a Model to Intermediate Representation document <conv_prep__set_input_shapes>`.
 
 General Parameters
 ------------------

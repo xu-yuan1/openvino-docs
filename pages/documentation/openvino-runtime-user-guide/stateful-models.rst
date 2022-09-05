@@ -493,7 +493,7 @@ Known Limitations
    :alt: low_latency_limitation_2
 
 **Current solution:** Trim non-reshapable layers via 
-:ref:`ModelOptimizer CLI <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` : 
+:ref:`ModelOptimizer CLI <conv_prep__set_input_shapes>` : 
 the ``--input`` and ``--output`` parameters. For example, the parameter and the 
 problematic constant in the picture above can be trimmed using the 
 ``--input Reshape_layer_name`` command-line option. The problematic constant 
@@ -632,7 +632,7 @@ Known Limitations for the LowLatency [DEPRECATED]
 **Current solutions:**
 
 * Replace a parameter with a constant (freeze) with the ``[0, 0, 0 … 0]`` value 
-  via :ref:`ModelOptimizer CLI <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` : 
+  via :ref:`ModelOptimizer CLI <conv_prep__set_input_shapes>` : 
   the ``--input`` or ``--freeze_placeholder_with_value`` parameters.
 
 * Use nGraph API to replace a parameter with a constant, as shown in the 
@@ -664,7 +664,7 @@ shapes is hardcoded in the constant somewhere in the network.
 
 **Current solutions:**
 
-* Trim non-reshapable layers via :ref:`ModelOptimizer CLI <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` : 
+* Trim non-reshapable layers via :ref:`ModelOptimizer CLI <conv_prep__set_input_shapes>` : 
   the ``--input`` and ``--output`` parameters. For example, the parameter and 
   the problematic constant (as shown in the picture above) can be trimmed using 
   the ``--input Reshape_layer_name`` command-line option.

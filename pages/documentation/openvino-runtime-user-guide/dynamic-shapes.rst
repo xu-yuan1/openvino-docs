@@ -166,7 +166,7 @@ Dynamic dimensions may appear in the input model without calling the ``reshape``
 
 If the input model has undefined dimensions that will not change during inference. It is recommended to set them to static values, using the same ``reshape`` method of the model. From the API perspective, any combination of dynamic and static dimensions can be configured.
 
-Model Optimizer provides identical capability to reshape the model during the conversion, including specifying dynamic dimensions. Use this capability to save time on calling ``reshape`` method in the end application. To get information about setting input shapes using Model Optimizer, refer to :ref:`Setting Input Shapes <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`.
+Model Optimizer provides identical capability to reshape the model during the conversion, including specifying dynamic dimensions. Use this capability to save time on calling ``reshape`` method in the end application. To get information about setting input shapes using Model Optimizer, refer to :ref:`Setting Input Shapes <conv_prep__set_input_shapes>`.
 
 Dimension Bounds
 ----------------

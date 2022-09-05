@@ -226,7 +226,7 @@ where:
    conversion specifying the command-line parameter: ``--reverse_input_channels``. 
    Otherwise, inference results may be incorrect. For more information about the parameter, 
    refer to the **When to Reverse Input Channels** section of the 
-   :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
+   :ref:`Converting a Model to Intermediate Representation (IR) <conv_prep__set_input_shapes>` guide.
 
 
 
@@ -346,5 +346,5 @@ where:
    conversion specifying the command-line parameter: ``--reverse_input_channels``. 
    Otherwise, inference results may be incorrect. For more information about the parameter, 
    refer to the **When to Reverse Input Channels** section of the 
-   :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
+   :ref:`Converting a Model to Intermediate Representation (IR) <conv_prep__set_input_shapes>` guide.
 

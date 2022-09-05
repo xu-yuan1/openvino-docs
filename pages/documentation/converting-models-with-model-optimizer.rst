@@ -75,7 +75,7 @@ To convert a model to IR, you can run Model Optimizer by using the following com
 
 If the out-of-the-box conversion (only the ``--input_model`` parameter is specified) is not successful, use the parameters mentioned below to override input shapes and cut the model:
 
-* Model Optimizer provides two parameters to override original input shapes for model conversion: ``--input`` and ``--input_shape``. For more information about these parameters, refer to the :ref:`Setting Input Shapes <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
+* Model Optimizer provides two parameters to override original input shapes for model conversion: ``--input`` and ``--input_shape``. For more information about these parameters, refer to the :ref:`Setting Input Shapes <conv_prep__set_input_shapes>` guide.
 
 * To cut off unwanted parts of a model (such as unsupported operations and training sub-graphs), use the ``--input`` and ``--output`` parameters to define new inputs and outputs of the converted model. For a more detailed description, refer to the :ref:`Cutting Off Parts of a Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__cutting__model>` guide.
 

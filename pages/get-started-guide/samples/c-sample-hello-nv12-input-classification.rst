@@ -71,7 +71,7 @@ The sample accepts an uncompressed image in the NV12 color format. To run the sa
 
 * Because the sample reads raw image files, you should provide a correct image size along with the image path. The sample expects the logical size of the image, not the buffer size. For example, for 640x480 BGR/RGB image the corresponding NV12 logical image size is also 640x480, whereas the buffer size is 640x720.
 
-* By default, this sample expects that network input has BGR channels order. If you trained your model to work with RGB order, you need to reconvert your model using the Model Optimizer tool with ``--reverse_input_channels`` argument specified. For more information about the argument, refer to **When to Reverse Input Channels** section of :ref:`Embedding Preprocessing Computation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`.
+* By default, this sample expects that network input has BGR channels order. If you trained your model to work with RGB order, you need to reconvert your model using the Model Optimizer tool with ``--reverse_input_channels`` argument specified. For more information about the argument, refer to **When to Reverse Input Channels** section of :ref:`Embedding Preprocessing Computation <conv_prep__set_input_shapes>`.
 
 * Before running the sample with a trained model, make sure the model is converted to the Inference Engine format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <conv_prep__conv_with_model_optimizer>`.
 

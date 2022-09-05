@@ -720,14 +720,14 @@ If you add additional layers and weights that are in ``.nd`` files to your model
 81. What does the message "You should specify input for mean/scale values" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-When the model has multiple inputs and you want to provide mean/scale values, you need to pass those values for each input. More specifically, the number of passed values should be the same as the number of inputs of the model. For more information, refer to the :ref:`Converting a Model to Intermediate Representation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
+When the model has multiple inputs and you want to provide mean/scale values, you need to pass those values for each input. More specifically, the number of passed values should be the same as the number of inputs of the model. For more information, refer to the :ref:`Converting a Model to Intermediate Representation <conv_prep__set_input_shapes>` guide.
 
 .. _question-82:
 
 82. What does the message "Input with name ... not found!" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-When you passed the mean/scale values and specify names of input layers of the model, you might have used the name that does not correspond to any input layer. Make sure that you list only names of the input layers of your model when passing values with the ``--input`` option. For more information, refer to the :ref:`Converting a Model to Intermediate Representation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
+When you passed the mean/scale values and specify names of input layers of the model, you might have used the name that does not correspond to any input layer. Make sure that you list only names of the input layers of your model when passing values with the ``--input`` option. For more information, refer to the :ref:`Converting a Model to Intermediate Representation <conv_prep__set_input_shapes>` guide.
 
 .. _question-83:
 
@@ -893,7 +893,7 @@ There are many flavors of Caffe framework, and most layers in them are implement
 97. What does the message "Mean/scale values should ..." mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-It means that your mean/scale values have a wrong format. Specify mean/scale values in the form of ``layer_name(val1,val2,val3)``. You need to specify values for each input of the model. For more information, refer to the :ref:`Converting a Model to Intermediate Representation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>` guide.
+It means that your mean/scale values have a wrong format. Specify mean/scale values in the form of ``layer_name(val1,val2,val3)``. You need to specify values for each input of the model. For more information, refer to the :ref:`Converting a Model to Intermediate Representation <conv_prep__set_input_shapes>` guide.
 
 .. _question-98:
 

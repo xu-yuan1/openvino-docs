@@ -33,7 +33,7 @@ Model Optimizer provides command line options ``--input`` and ``--output`` to sp
 
 The ``--input`` option is required for cases unrelated to model cutting. For example, when the model contains several inputs and ``--input_shape`` or ``--mean_values`` options are used, the ``--input`` option specifies the order of input nodes for correct mapping between multiple items provided in ``--input_shape`` and ``--mean_values`` and the inputs in the model.
 
-Model cutting is illustrated with the Inception V1 model, found in the ``models/research/slim`` repository. To proceed with this chapter, make sure you do the necessary steps to :ref:`prepare the model for Model Optimizer <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`.
+Model cutting is illustrated with the Inception V1 model, found in the ``models/research/slim`` repository. To proceed with this chapter, make sure you do the necessary steps to :ref:`prepare the model for Model Optimizer <conv_prep__set_input_shapes>`.
 
 Default Behavior without input and output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

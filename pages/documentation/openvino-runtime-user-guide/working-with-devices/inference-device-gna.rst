@@ -671,7 +671,7 @@ See Also
 
 * :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
 
-* :ref:`Converting Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`
+* :ref:`Converting Model <conv_prep__set_input_shapes>`
 
 * :ref:`Convert model from Kaldi <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__kaldi>`
 

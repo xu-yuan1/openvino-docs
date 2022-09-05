@@ -1443,7 +1443,7 @@ See Also
 
 * :ref:`Deep Learning Network Intermediate Representation and Operation Sets in OpenVINO™ <doxid-openvino_docs__m_o__d_g__i_r_and_opsets>`
 
-* :ref:`Converting a Model to Intermediate Representation (IR) <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`
+* :ref:`Converting a Model to Intermediate Representation (IR) <conv_prep__set_input_shapes>`
 
 * :ref:`OpenVINO Model Representation <deploy_infer__model_representation>`
 
