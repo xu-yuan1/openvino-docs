@@ -1,11 +1,25 @@
 .. index:: pair: page; Embedding Preprocessing Computation
-.. _doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases:
+.. _conv_prep__add_optim_preprocess:
 
+.. meta::
+   :description: Mean-scale normalization of input data, reverting data along 
+                 channel dimension, and changing data layout can be additionally 
+                 performed with Model Optimizer.
+   :keywords: Model Optimizer, OpenVINO IR, OpenVINO Intermediate Representation, 
+              preprocessing, inference, model inference, infer a model, sub-graphs, 
+              --scale_values, --reverse_input_channels, --layout, specify layout, 
+              mean-scale normalization, model input, input data, reverse input 
+              channels, NHWC layout, TensorFlow, BGR to RGB, RGB to BGR, change 
+              model layout, --source_layout, --target_layout, specify mean values, 
+              specify scale values, input preprocessing operations, command-line 
+              parameters
 
 Embedding Preprocessing Computation
 ===================================
 
-:target:`doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases_1md_openvino_docs_mo_dg_prepare_model_additional_optimizations` Input data for inference can be different from the training dataset and requires additional preprocessing before inference. To accelerate the whole pipeline including preprocessing and inference, Model Optimizer provides special parameters such as ``--mean_values``,
+:target:`conv_prep__add_optim_preprocess_1md_openvino_docs_mo_dg_prepare_model_additional_optimizations` 
+
+Input data for inference can be different from the training dataset and requires additional preprocessing before inference. To accelerate the whole pipeline including preprocessing and inference, Model Optimizer provides special parameters such as ``--mean_values``,
 
 ``--scale_values``, ``--reverse_input_channels``, and ``--layout``. Based on these parameters, Model Optimizer generates OpenVINO IR with additionally inserted sub-graphs to perform the defined preprocessing. This preprocessing block can perform mean-scale normalization of input data, reverting data along channel dimension, and changing the data layout. See the following sections for details on the parameters, or the :ref:`Overview of Preprocessing API <deploy_infer__preprocessing_overview>` for the same functionality in OpenVINO Runtime.
 

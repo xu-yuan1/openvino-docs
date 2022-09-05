@@ -79,7 +79,7 @@ If the out-of-the-box conversion (only the ``--input_model`` parameter is specif
 
 * To cut off unwanted parts of a model (such as unsupported operations and training sub-graphs), use the ``--input`` and ``--output`` parameters to define new inputs and outputs of the converted model. For a more detailed description, refer to the :ref:`Cutting Off Parts of a Model <conv_prep__cut_model>` guide.
 
-You can also insert additional input pre-processing sub-graphs into the converted model by using the ``--mean_values``, ``scales_values``, ``--layout``, and other parameters described in the :ref:`Embedding Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>` article.
+You can also insert additional input pre-processing sub-graphs into the converted model by using the ``--mean_values``, ``scales_values``, ``--layout``, and other parameters described in the :ref:`Embedding Preprocessing Computation <conv_prep__add_optim_preprocess>` article.
 
 The ``--data_type`` compression parameter in Model Optimizer allows generating IR of the ``FP16`` data type. For more details, refer to the :ref:`Compression of a Model to FP16 <doxid-openvino_docs__m_o__d_g__f_p16__compression>` guide.
 

@@ -34,7 +34,7 @@ perform any unnecessary steps in the code:
 * Model Optimizer can efficiently incorporate the mean and normalization 
   (scale) values into a model (for example, to the weights of the first 
   convolution). For more details, see the 
-  :ref:`relevant Model Optimizer command-line options <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`.
+  :ref:`relevant Model Optimizer command-line options <conv_prep__add_optim_preprocess>`.
 
 * Let OpenVINO accelerate other means of 
   :ref:`Image Pre-processing and Conversion <deploy_infer__preprocessing_overview>`.

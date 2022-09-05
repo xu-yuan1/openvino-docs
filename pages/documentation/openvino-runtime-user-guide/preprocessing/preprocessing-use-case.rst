@@ -22,7 +22,7 @@ Previous sections covered the topic of the :ref:`preprocessing steps <deploy_inf
 
 For many applications, it is also important to minimize read/load time of a model. Therefore, performing integration of preprocessing steps every time on application startup, after ``ov::runtime::Core::read_model``, may seem inconvenient. In such cases, once pre and postprocessing steps have been added, it can be useful to store new execution model to OpenVINO Intermediate Representation (OpenVINO IR, ``.xml`` format).
 
-Most available preprocessing steps can also be performed via command-line options, using Model Optimizer. For details on such command-line options, refer to the :ref:`Optimizing Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`.
+Most available preprocessing steps can also be performed via command-line options, using Model Optimizer. For details on such command-line options, refer to the :ref:`Optimizing Preprocessing Computation <conv_prep__add_optim_preprocess>`.
 
 Code example - Saving Model with Preprocessing to OpenVINO IR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -311,7 +311,7 @@ Additional Resources
 
 * :ref:`Layout API overview <deploy_infer__layout_api_overview>`
 
-* :ref:`Model Optimizer - Optimize Preprocessing Computation <doxid-openvino_docs__m_o__d_g__additional__optimization__use__cases>`
+* :ref:`Model Optimizer - Optimize Preprocessing Computation <conv_prep__add_optim_preprocess>`
 
 * :ref:`Model Caching Overview <optim_perf__model_caching>`
 
