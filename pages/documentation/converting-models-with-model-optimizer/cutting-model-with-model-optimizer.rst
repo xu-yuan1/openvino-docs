@@ -1,11 +1,25 @@
 .. index:: pair: page; Cutting Off Parts of a Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__cutting__model:
+.. _conv_prep__cut_model:
 
+.. meta::
+   :description: Model cutting occurs during conversion to OpenVINO IR when a 
+                 model is too complex to be converted at once and there are a 
+                 lot of unsupported operations.
+   :keywords: OpenVINO IR, OpenVINO Intermediate Representation, model conversion, 
+              convert a model, convert a model to IR, cutting model, Model Optimizer, 
+              OpenVINO™ Runtime, model inference, inference, command-line options, 
+              --input option, --output option, Reshape method, TensorFlow, TensorFlow 
+              models, custom layers, Input layer, model_optimizer, --output_dir 
+              argument, model input, model output, TensorBoard, ReLU layer, 
+              input shape, --input_shape, shape override, input tensor, multiple 
+              input ports, convolution, convolution weights, node, input port index
 
 Cutting Off Parts of a Model
 ============================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__cutting__model_1md_openvino_docs_mo_dg_prepare_model_convert_model_cutting_model` Sometimes, it is necessary to remove parts of a model when converting it to OpenVINO IR. This chapter describes how to do it, using Model Optimizer command-line options. Model cutting applies mostly to TensorFlow models, which is why TensorFlow will be used in this chapter's examples, but it may be also useful for other frameworks.
+:target:`conv_prep__cut_model_1md_openvino_docs_mo_dg_prepare_model_convert_model_cutting_model` 
+
+Sometimes, it is necessary to remove parts of a model when converting it to OpenVINO IR. This chapter describes how to do it, using Model Optimizer command-line options. Model cutting applies mostly to TensorFlow models, which is why TensorFlow will be used in this chapter's examples, but it may be also useful for other frameworks.
 
 Purpose of Model Cutting
 ~~~~~~~~~~~~~~~~~~~~~~~~

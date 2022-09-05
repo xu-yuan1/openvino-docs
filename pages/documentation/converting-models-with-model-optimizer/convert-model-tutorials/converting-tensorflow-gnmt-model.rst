@@ -234,7 +234,7 @@ Output cutting:
 
 * ``LookupTableFindV2`` operation is cut from the output and the ``dynamic_seq2seq/decoder/decoder/GatherTree`` node is treated as a new exit point.
 
-For more information about model cutting, refer to the :ref:`Cutting Off Parts of a Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__cutting__model>` guide.
+For more information about model cutting, refer to the :ref:`Cutting Off Parts of a Model <conv_prep__cut_model>` guide.
 
 .. _run_GNMT:
 

@@ -80,5 +80,5 @@ Additional Resources
 
 * :ref:`Introduction to converting models with Model Optimizer <conv_prep__conv_with_model_optimizer>`
 
-* :ref:`Cutting Off Parts of a Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__cutting__model>`
+* :ref:`Cutting Off Parts of a Model <conv_prep__cut_model>`
 

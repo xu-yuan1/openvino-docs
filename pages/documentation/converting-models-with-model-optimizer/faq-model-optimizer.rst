@@ -870,7 +870,7 @@ or
 
 This message means that the model is not supported. It may be caused by using shapes larger than 4-D. There are two ways to avoid such message:
 
-* :ref:`Cut off parts of the model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__cutting__model>`.
+* :ref:`Cut off parts of the model <conv_prep__cut_model>`.
 
 * Edit the network in its original framework to exclude such layers.
 
