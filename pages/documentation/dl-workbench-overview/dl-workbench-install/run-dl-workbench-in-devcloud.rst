@@ -109,5 +109,5 @@ See Also
 
 * :ref:`Next Step: Get Started with the DL Workbench <dl_workbench__get_started>`
 
-* :ref:`Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge <doxid-workbench_docs__workbench__d_g__d_c__troubleshooting>`
+* :ref:`Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge <workbench_troubleshooting__devcloud>`
 

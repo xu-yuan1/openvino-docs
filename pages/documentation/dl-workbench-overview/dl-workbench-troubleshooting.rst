@@ -35,7 +35,7 @@ If you encounter an issue when running the DL Workbench, follow the steps below:
 #. If you could not find the issue on this page or the proposed solution did not work for you, `download logs <#download-logs>`__ and post a question at the `Intel Community Forum <https://community.intel.com/t5/Intel-Distribution-of-OpenVINO/bd-p/distribution-openvino-toolkit>`__. Describe your issue providing the details necessary to reproduce it and attach screenshots, if possible.
 
 If you run the DL Workbench in the Intel® DevCloud for the Edge, see 
-:ref:`Troubleshooting for DL Workbench in the DevCloud <doxid-workbench_docs__workbench__d_g__d_c__troubleshooting>`.
+:ref:`Troubleshooting for DL Workbench in the DevCloud <workbench_troubleshooting__devcloud>`.
 
 .. _download-logs:
 
@@ -352,7 +352,7 @@ remote machine information, see
 See Also
 ~~~~~~~~
 
-* :ref:`Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge <doxid-workbench_docs__workbench__d_g__d_c__troubleshooting>`
+* :ref:`Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge <workbench_troubleshooting__devcloud>`
 
 * :ref:`Work with Docker Container <workbench_run__docker_container>`
 

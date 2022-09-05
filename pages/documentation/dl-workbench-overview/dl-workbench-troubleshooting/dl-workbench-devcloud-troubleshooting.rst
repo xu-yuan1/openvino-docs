@@ -1,17 +1,25 @@
 .. index:: pair: page; Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge
-.. _doxid-workbench_docs__workbench__d_g__d_c__troubleshooting:
+.. _workbench_troubleshooting__devcloud:
+
+.. meta::
+   :description: Troubleshooting guide for OpenVINO Deep Learning Workbench in the 
+                 DevCloud for the Edge. 
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, troubleshooting, DevCloud, Edge, 
+              not responding, hanging, session in the DevCloud is over, blocked tab, login issue, 
+              tab issues
 
 
 Troubleshooting for DL Workbench in the Intel® DevCloud for the Edge
 =====================================================================
 
-:target:`doxid-workbench_docs__workbench__d_g__d_c__troubleshooting_1md_openvino_workbench_docs_workbench_dg_dc_troubleshooting` If you encounter an issue when running the DL Workbench, follow the steps below:
+:target:`workbench_troubleshooting__devcloud_1md_openvino_workbench_docs_workbench_dg_dc_troubleshooting` If you encounter an issue when running the DL Workbench, follow the steps below:
 
 #. Refresh the page.
 
 #. If it does not help, search for the solution among the issues listed on this page.
 
-#. If you could not find the issue on this page or the proposed solution did not work for you, `report the issue to the DevCloud forum <#report-devcloud>`__.
+#. If you could not find the issue on this page or the proposed solution did not work for you, 
+`report the issue to the DevCloud forum <#report-devcloud>`__.
 
 Most Frequent Issues
 ~~~~~~~~~~~~~~~~~~~~

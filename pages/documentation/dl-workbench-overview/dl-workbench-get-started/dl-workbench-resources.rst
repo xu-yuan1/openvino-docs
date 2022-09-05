@@ -1,13 +1,16 @@
 .. index:: pair: page; Educational Resources about DL Workbench
-.. _doxid-workbench_docs__workbench__d_g__additional__resources:
+.. _workbench_start__additional_resources:
+
+.. meta::
+   :description: List of educational resources about OpenVINO Deep Learning Workbench.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, educationl resources, 
+              resources
 
 
 Educational Resources about DL Workbench
 ========================================
 
-:target:`doxid-workbench_docs__workbench__d_g__additional__resources_1md_openvino_workbench_docs_workbench_dg_additional_resources`
-
-
+:target:`workbench_start__additional_resources_1md_openvino_workbench_docs_workbench_dg_additional_resources`
 
 
 
