@@ -1,5 +1,5 @@
 .. index:: pair: page; Introduction to OpenVINO™ Deployment
-.. _openvino_deployment_introduction:
+.. _deploy_infer__deployment_introduction:
 
 .. meta::
    :description: There are several methods of deploying models: developing an 
@@ -11,7 +11,7 @@
 Introduction to OpenVINO™ Deployment
 ======================================
 
-:target:`openvino_deployment_introduction_1md_openvino_docs_documentation_deployment_guide_introduction`
+:target:`deploy_infer__deployment_introduction_1md_openvino_docs_documentation_deployment_guide_introduction`
 
 Once you have a model that meets both OpenVINO™ and your requirements, you can choose among several ways of deploying it with your application:
 
