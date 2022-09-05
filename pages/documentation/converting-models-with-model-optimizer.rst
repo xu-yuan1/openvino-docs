@@ -1,15 +1,22 @@
 .. index:: pair: page; Converting Models with Model Optimizer
-.. _doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide:
+.. _conv_prep__conv_with_model_optimizer:
 
+.. meta:: 
+   :description: Model Optimizer furthers the transition between training and 
+                 deployment environments, it adjusts deep learning models for 
+                 optimal execution on target devices.
+   :keywords: Model Optimizer, convert models, deep learning model, TensorFlow, 
+              PaddlePaddle, PyTorch, MXNet, Caffe, Kaldi, ONNX, OpenVINO Intermediate 
+              Representation, OpenVINO IR, cross-platform tool, command-line 
+              tool, post-training optimization, convert a model to IR, 
+              mean-scale normalization, RGB format, model conversion, 
+              --input parameter, --input_shape parameter, set input shape, 
+              --data_type compression parameter, compress a model to FP16
 
 Converting Models with Model Optimizer
 ======================================
 
-:target:`doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide_1md_openvino_docs_mo_dg_deep_learning_model_optimizer_devguide`
-
-
-
-
+:target:`conv_prep__conv_with_model_optimizer_1md_openvino_docs_mo_dg_deep_learning_model_optimizer_devguide`
 
 .. _deep learning model optimizer:
 

@@ -78,7 +78,7 @@ Additional Resources
 
 * Intel® Distribution of OpenVINO™ toolkit `home page <https://software.intel.com/en-us/openvino-toolkit>`__.
 
-* Model Optimizer :ref:`Developer Guide <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
+* Model Optimizer :ref:`Developer Guide <conv_prep__conv_with_model_optimizer>`.
 
 * :ref:`OpenVINO™ Runtime User Guide <deploy_infer__openvino_runtime_user_guide>`.
 

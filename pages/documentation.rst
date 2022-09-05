@@ -101,7 +101,7 @@ This section provides reference documents that guide you through the OpenVINO to
 Converting and Preparing Models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-With Model Downloader and :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>` guides, you will learn to download pre-trained models and convert them for use with OpenVINO™. You can use your own models or choose some from a broad selection provided in the :ref:`Open Model Zoo <doxid-model_zoo>`.
+With Model Downloader and :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>` guides, you will learn to download pre-trained models and convert them for use with OpenVINO™. You can use your own models or choose some from a broad selection provided in the :ref:`Open Model Zoo <doxid-model_zoo>`.
 
 Optimization and Performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -24,7 +24,7 @@ You can download TensorFlow Object Detection API models from the `TensorFlow 1 D
 
    Before converting, make sure you have configured Model Optimizer. 
    For configuration steps, refer to the 
-   :ref:`Configuring Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
+   :ref:`Configuring Model Optimizer <conv_prep__conv_with_model_optimizer>`.
 
 
 

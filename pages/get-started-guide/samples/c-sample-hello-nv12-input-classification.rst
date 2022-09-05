@@ -73,7 +73,7 @@ The sample accepts an uncompressed image in the NV12 color format. To run the sa
 
 * By default, this sample expects that network input has BGR channels order. If you trained your model to work with RGB order, you need to reconvert your model using the Model Optimizer tool with ``--reverse_input_channels`` argument specified. For more information about the argument, refer to **When to Reverse Input Channels** section of :ref:`Embedding Preprocessing Computation <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__converting__model>`.
 
-* Before running the sample with a trained model, make sure the model is converted to the Inference Engine format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
+* Before running the sample with a trained model, make sure the model is converted to the Inference Engine format (\*.xml + \*.bin) using the :ref:`Model Optimizer tool <conv_prep__conv_with_model_optimizer>`.
 
 * The sample accepts models in ONNX format (.onnx) that do not require preprocessing.
 
@@ -135,5 +135,5 @@ See Also
 
 * Model Downloader
 
-* :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`
+* :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`
 

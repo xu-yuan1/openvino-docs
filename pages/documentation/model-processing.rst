@@ -25,6 +25,6 @@ OpenVINO to get the best inference results:
 
 * :ref:`Browse a database of models for use in your projects <doxid-model_zoo>`.
 
-* :ref:`Convert different model formats to the OpenVINO IR format <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
+* :ref:`Convert different model formats to the OpenVINO IR format <conv_prep__conv_with_model_optimizer>`.
 
 * `Automate model-related tasks with Model Downloader and additional OMZ Tools <https://docs.openvino.ai/latest/omz_tools_downloader.html>`__.

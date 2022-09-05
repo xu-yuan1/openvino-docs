@@ -75,7 +75,7 @@ Model Preparation
    ``<EXAMPLE_DIR>/public/mobilenet-v2-pytorch/FP32/``.
 
 For more information about the Model Optimizer, refer to its 
-:ref:`documentation <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`.
+:ref:`documentation <conv_prep__conv_with_model_optimizer>`.
 
 Performance Benchmarking of Full-Precision Models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

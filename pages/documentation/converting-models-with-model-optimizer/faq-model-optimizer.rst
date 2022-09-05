@@ -422,7 +422,7 @@ This error occurs when the ``--input`` command-line option is used to cut a mode
 41. What does the message "Module TensorFlow was not found. Please install TensorFlow 1.2 or higher" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-To convert TensorFlow models with Model Optimizer, TensorFlow 1.2 or newer must be installed. For more information on prerequisites, see the :ref:`Configuring Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>` guide.
+To convert TensorFlow models with Model Optimizer, TensorFlow 1.2 or newer must be installed. For more information on prerequisites, see the :ref:`Configuring Model Optimizer <conv_prep__conv_with_model_optimizer>` guide.
 
 .. _question-42:
 
@@ -492,7 +492,7 @@ Model Optimizer tried to access a node that does not exist. This could happen if
 51. What does the message "Module MXNet was not found. Please install MXNet 1.0.0" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-To convert MXNet models with Model Optimizer, Apache MXNet 1.0.0 must be installed. For more information about prerequisites, see the :ref:`Configuring Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>` guide.
+To convert MXNet models with Model Optimizer, Apache MXNet 1.0.0 must be installed. For more information about prerequisites, see the :ref:`Configuring Model Optimizer <conv_prep__conv_with_model_optimizer>` guide.
 
 .. _question-52:
 
@@ -704,7 +704,7 @@ Your Caffe topology ``.prototxt`` file is intended for training. Model Optimizer
 79. What does the message "Warning: please expect that Model Optimizer conversion might be slow" mean?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-You are using an unsupported Python version. Use only versions 3.4 - 3.6 for the C++ ``protobuf`` implementation that is supplied with OpenVINO toolkit. You can still boost the conversion speed by building the protobuf library from sources. For complete instructions about building ``protobuf`` from sources, see the appropriate section in the :ref:`Converting a Model to Intermediate Representation <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>` guide.
+You are using an unsupported Python version. Use only versions 3.4 - 3.6 for the C++ ``protobuf`` implementation that is supplied with OpenVINO toolkit. You can still boost the conversion speed by building the protobuf library from sources. For complete instructions about building ``protobuf`` from sources, see the appropriate section in the :ref:`Converting a Model to Intermediate Representation <conv_prep__conv_with_model_optimizer>` guide.
 
 .. _question-80:
 
@@ -907,7 +907,7 @@ It means that you are trying to convert a topology contains the ``_contrib_box_n
 99. What does the message "ModelOptimizer is not able to parse \*.caffemodel" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-If a ``\*.caffemodel`` file exists and is correct, the error occurred possibly because of the use of Python protobuf implementation. In some cases, error messages may appear during model parsing, for example: "`utf-8` codec can't decode byte 0xe0 in position 4: invalid continuation byte in field: mo_caffe.SpatialTransformerParameter.transform_type". You can either use Python 3.6/3.7 or build the ``cpp`` implementation of ``protobuf`` yourself for your version of Python. For the complete instructions about building ``protobuf`` from sources, see the appropriate section in the :ref:`Converting Models with Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>` guide.
+If a ``\*.caffemodel`` file exists and is correct, the error occurred possibly because of the use of Python protobuf implementation. In some cases, error messages may appear during model parsing, for example: "`utf-8` codec can't decode byte 0xe0 in position 4: invalid continuation byte in field: mo_caffe.SpatialTransformerParameter.transform_type". You can either use Python 3.6/3.7 or build the ``cpp`` implementation of ``protobuf`` yourself for your version of Python. For the complete instructions about building ``protobuf`` from sources, see the appropriate section in the :ref:`Converting Models with Model Optimizer <conv_prep__conv_with_model_optimizer>` guide.
 
 .. _question-100:
 

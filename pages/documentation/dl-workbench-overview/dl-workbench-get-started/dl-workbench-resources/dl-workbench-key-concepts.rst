@@ -27,7 +27,7 @@ Intermediate Representation (IR) is the OpenVINO™ format of pretrained model r
 
 * BIN file containing weights and biases
   
-  OpenVINO™ Runtime operates with models in the IR format. You can convert your model of a supported format into the IR format with the :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>` directly in the DL Workbench.
+  OpenVINO™ Runtime operates with models in the IR format. You can convert your model of a supported format into the IR format with the :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>` directly in the DL Workbench.
 
 Original Model
 ~~~~~~~~~~~~~~

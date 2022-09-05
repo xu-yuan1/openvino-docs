@@ -194,7 +194,7 @@ Depending on the model format types that are used in the application in ``:ref:`
 
 .. note:: To optimize the size of final distribution package, you are recommended 
    to convert models to OpenVINO IR by using 
-   :ref:`Model Optimizer <doxid-openvino_docs__m_o__d_g__deep__learning__model__optimizer__dev_guide>`. 
+   :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`. 
    This way you don't have to keep ONNX, PaddlePaddle, and other frontend libraries in the distribution package.
 
 
