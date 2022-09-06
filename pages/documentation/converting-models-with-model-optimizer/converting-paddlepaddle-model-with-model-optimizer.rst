@@ -1,11 +1,19 @@
 .. index:: pair: page; Converting a PaddlePaddle Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__paddle:
+.. _conv_prep__conv_from_paddle:
 
+.. meta:: 
+   :description: Detailed instructions on how to convert a model from the 
+                 PaddlePaddle format to the OpenVINO IR by using Model Optimizer. 
+   :keywords: Model Optimizer, OpenVINO IR, OpenVINO Intermediate Representation, 
+              OpenVINO Development Tools, convert model, model conversion, convert 
+              from PaddlePaddle, convert a PaddlePaddle model, --input_model, 
+              supported PaddlePaddle layers, --reverse_input_channels, convert to 
+              OpenVINO IR
 
 Converting a PaddlePaddle Model
 ===============================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__paddle_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_paddle` To convert a PaddlePaddle model, use the ``mo`` script and specify the path to the input ``.pdmodel`` model file:
+:target:`conv_prep__conv_from_paddle_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_paddle` To convert a PaddlePaddle model, use the ``mo`` script and specify the path to the input ``.pdmodel`` model file:
 
 .. ref-code-block:: cpp
 

@@ -91,7 +91,7 @@ See Also
 
 * :ref:`Next Step: Create Project <workbench_start__create_project>`
 
-* :ref:`Import Darknet\* YOLOv4 model <doxid-workbench_docs__workbench__d_g__tutorial__import__y_o_l_o>`
+* :ref:`Import Darknet YOLOv4 model <workbench_tutorial__yolov4>`
 
 * :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

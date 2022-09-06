@@ -1,11 +1,22 @@
 .. index:: pair: page; Converting a Caffe Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__caffe:
+.. _conv_prep__conv_from_caffe:
 
+.. meta:: 
+   :description: Detailed instructions on how to convert a model from the 
+                 Caffe format to the OpenVINO IR by using Model Optimizer. 
+   :keywords: Model Optimizer, OpenVINO IR, OpenVINO Intermediate Representation, 
+              OpenVINO Development Tools, convert model, model conversion, convert 
+              from Caffe, convert a Caffe model, --input_model, convert to 
+              OpenVINO IR, Caffe-specific parameters, --input_proto, --caffe_parser_path 
+              --disable_omitting_optional, --enable_flattening_nested_params, 
+              supported Caffe layers
 
 Converting a Caffe Model
 ========================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__caffe_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_caffe` :target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__caffe_1convert_from_caffe` To convert a Caffe model, run Model Optimizer with the path to the input model ``.caffemodel`` file:
+:target:`conv_prep__conv_from_caffe_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_caffe` :target:`conv_prep__conv_from_caffe_1convert_from_caffe` 
+
+To convert a Caffe model, run Model Optimizer with the path to the input model ``.caffemodel`` file:
 
 .. ref-code-block:: cpp
 

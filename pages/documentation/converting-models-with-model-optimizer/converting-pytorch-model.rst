@@ -1,15 +1,26 @@
 .. index:: pair: page; Converting a PyTorch Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__py_torch:
+.. _conv_prep__conv_from_pytorch:
 
+.. meta:: 
+   :description: Detailed instructions on how to convert a model from the 
+                 PyTorch format to the OpenVINO IR by using Model Optimizer. 
+   :keywords: Model Optimizer, OpenVINO IR, OpenVINO Intermediate Representation, 
+              OpenVINO Development Tools, convert model, model conversion, convert 
+              from PyTorch, convert a PyTorch model, deep learning model, export to 
+              ONNX format, export a PyTorch model to ONNX, ONNX opset, opset 9, 
+              opset 11, export function, torch.onnx.export, convert ONNX to 
+              OpenVINO IR
 
 Converting a PyTorch Model
 ==========================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__py_torch_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_pytorch` The PyTorch framework is supported through export to the ONNX format. In order to optimize and deploy a model that was trained with it:
+:target:`conv_prep__conv_from_pytorch_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_pytorch` 
+
+The PyTorch framework is supported through export to the ONNX format. In order to optimize and deploy a model that was trained with it:
 
 #. `Export a PyTorch model to ONNX <#export-to-onnx>`__.
 
-#. :ref:`Convert the ONNX model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__o_n_n_x>` to produce an optimized :ref:`Intermediate Representation <doxid-openvino_docs__m_o__d_g__i_r_and_opsets>` of the model based on the trained network topology, weights, and biases values.
+#. :ref:`Convert the ONNX model <conv_prep__conv_from_onnx>` to produce an optimized :ref:`Intermediate Representation <doxid-openvino_docs__m_o__d_g__i_r_and_opsets>` of the model based on the trained network topology, weights, and biases values.
 
 .. _export-to-onnx:
 

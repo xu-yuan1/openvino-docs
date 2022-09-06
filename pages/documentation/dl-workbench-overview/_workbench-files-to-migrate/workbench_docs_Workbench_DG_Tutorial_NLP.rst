@@ -1,11 +1,19 @@
 .. index:: pair: page; Tutorial Natural Language Processing Model
-.. _doxid-workbench_docs__workbench__d_g__tutorial__n_l_p:
+.. _workbench_tutorial__nlp:
+
+.. meta::
+   :description: Tutorial on how to import, analyze and benchmark BERT Natural Language Processing 
+                 model with OpenVINO Deep Learning Workbench.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, tutorial, BERT, Natural Language Processing, 
+              model, import, analyze, benchmark, nlp, Intermediate Representation, tokenizer, deployment package
 
 
 Tutorial Natural Language Processing Model
 ==========================================
 
-:target:`doxid-workbench_docs__workbench__d_g__tutorial__n_l_p_1md_openvino_workbench_docs_workbench_dg_import_nlp` The tutorial shows how to import an original `Bert model <https://huggingface.co/bhadresh-savani/distilbert-base-uncased-emotion>`__ of text classification use case, and `ONNX <https://onnx.ai>`__ framework.
+:target:`workbench_tutorial__nlp_1md_openvino_workbench_docs_workbench_dg_import_nlp` The tutorial shows how to import 
+an original `Bert model <https://huggingface.co/bhadresh-savani/distilbert-base-uncased-emotion>`__ of text classification 
+use case, and `ONNX <https://onnx.ai>`__ framework.
 
 .. list-table::
     :header-rows: 1

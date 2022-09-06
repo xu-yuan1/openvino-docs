@@ -1,11 +1,22 @@
-.. index:: pair: page; Tutorial Darknet\* YOLOv4 Model
-.. _doxid-workbench_docs__workbench__d_g__tutorial__import__y_o_l_o:
+.. index:: pair: page; Tutorial Darknet YOLOv4 Model
+.. _workbench_tutorial__yolov4:
+
+.. meta::
+   :description: Tutorial on how to import, optimize and analyze original YOLOv4 object detection model 
+                 with OpenVINO Deep Learning Workbench.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, Darkent YOLOv4, tutorial, object detection model, 
+              import model, optimize model, analyze model, model accuracy performance, creating model package, 
+              darknet
 
 
-Tutorial Darknet\* YOLOv4 Model
+Tutorial Darknet YOLOv4 Model
 ===============================
 
-:target:`doxid-workbench_docs__workbench__d_g__tutorial__import__y_o_l_o_1md_openvino_workbench_docs_workbench_dg_import_yolo` The tutorial follows the :ref:`recommendations on importing an original model <doxid-workbench_docs__workbench__d_g__tutorial__import__original>` and shows how to import an original `Darknet\* YOLOv4 model <https://github.com/AlexeyAB/darknet/releases/tag/yolov4>`__ of `object detection <https://machinelearningmastery.com/object-recognition-with-deep-learning/>`__ use case, and `Darknet\* <https://pjreddie.com/darknet/>`__ framework.
+:target:`workbench_tutorial__yolov4_1md_openvino_workbench_docs_workbench_dg_import_yolo` The tutorial follows 
+the :ref:`recommendations on importing an original model <doxid-workbench_docs__workbench__d_g__tutorial__import__original>` 
+and shows how to import an original `Darknet YOLOv4 model <https://github.com/AlexeyAB/darknet/releases/tag/yolov4>`__ of 
+`object detection <https://machinelearningmastery.com/object-recognition-with-deep-learning/>`__ use case, and 
+`Darknet <https://pjreddie.com/darknet/>`__ framework.
 
 .. list-table::
     :header-rows: 1

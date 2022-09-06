@@ -104,7 +104,7 @@ To convert a TensorFlow Object Detection API model, run the ``mo`` command with 
 
 
 
-Additionally to the mandatory parameters listed above you can use optional conversion parameters if needed. A full list of parameters is available in the :ref:`Converting a TensorFlow Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>` guide.
+Additionally to the mandatory parameters listed above you can use optional conversion parameters if needed. A full list of parameters is available in the :ref:`Converting a TensorFlow Model <conv_prep__conv_from_tensorflow>` guide.
 
 For example, if you downloaded the pre-trained `SSD InceptionV2 topology <http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2018_01_28.tar.gz>`__ and extracted archive to the directory ``/tmp/ssd_inception_v2_coco_2018_01_28``, the sample command line to convert the model looks as follows:
 

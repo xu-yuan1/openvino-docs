@@ -67,34 +67,34 @@ In the DL Workbench, you can create the following reports:
 Accuracy Evaluation on Validation Dataset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Accuracy Evaluation on Validation Dataset report provides information for evaluating model quality and allows you to compare the model output and validation dataset annotations. This type of report is explained in details in the :ref:`Object Detection <doxid-workbench_docs__workbench__d_g__measure__accuracy__object_detection>` and :ref:`Classification <doxid-workbench_docs__workbench__d_g__measure__accuracy__classification>` model tutorials.
+Accuracy Evaluation on Validation Dataset report provides information for evaluating model quality and allows you to compare the model output and validation dataset annotations. This type of report is explained in details in the :ref:`Object Detection <workbench_tutorial__object_detection>` and :ref:`Classification <workbench_tutorial__classification_squeezenet>` model tutorials.
 
 .. _model-predictions:
 
 Comparison of Optimized and Parent Model Predictions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To get other types of Accuracy Report, you need to [optimize the model](Int-8_Quantization). Comparison of Optimized and Parent Model Predictions Report allows you to find out on which validation dataset images the predictions of the model became different after optimization. This type of report is explained in details in the :ref:`Optimize Object Detection <doxid-workbench_docs__workbench__d_g__tutorial__import__y_o_l_o>` model and :ref:`Optimize Classification <doxid-workbench_docs__workbench__d_g__tutorial__classification>` model tutorials.
+To get other types of Accuracy Report, you need to [optimize the model](Int-8_Quantization). Comparison of Optimized and Parent Model Predictions Report allows you to find out on which validation dataset images the predictions of the model became different after optimization. This type of report is explained in details in the :ref:`Optimize Object Detection <workbench_tutorial__yolov4>` model and :ref:`Optimize Classification <workbench_tutorial__classification>` model tutorials.
 
 .. _tensor-distance:
 
 Calculation of Tensor Distance to Parent Model Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Tensor Distance Calculation Report allows to evaluate the mean squared error (MSE) between Optimized and Parent models output on tensor level for each image in the validation dataset. Mean Squared Error (MSE) is an average of the square of the difference between actual and estimated values. MSE evaluation enables you to identify significant differences between Parent and Optimized model predictions for a wider set of use cases besides classification and object detection. This type of report is explained in details in the :ref:`Optimize Style Transfer <doxid-workbench_docs__workbench__d_g__tutorial__style__transfer>` model tutorial.
+Tensor Distance Calculation Report allows to evaluate the mean squared error (MSE) between Optimized and Parent models output on tensor level for each image in the validation dataset. Mean Squared Error (MSE) is an average of the square of the difference between actual and estimated values. MSE evaluation enables you to identify significant differences between Parent and Optimized model predictions for a wider set of use cases besides classification and object detection. This type of report is explained in details in the :ref:`Optimize Style Transfer <workbench_tutorial__style_transfer>` model tutorial.
 
 See Also
 ~~~~~~~~
 
-* :ref:`Object Detection model tutorial <doxid-workbench_docs__workbench__d_g__measure__accuracy__object_detection>`
+* :ref:`Object Detection model tutorial <workbench_tutorial__object_detection>`
 
-* :ref:`Classification model tutorial <doxid-workbench_docs__workbench__d_g__measure__accuracy__classification>`
+* :ref:`Classification model tutorial <workbench_tutorial__classification_squeezenet>`
 
-* :ref:`Optimize Object Detection model tutorial <doxid-workbench_docs__workbench__d_g__tutorial__import__y_o_l_o>`
+* :ref:`Optimize Object Detection model tutorial <workbench_tutorial__yolov4>`
 
-* :ref:`Optimize Classification model tutorial <doxid-workbench_docs__workbench__d_g__tutorial__classification>`
+* :ref:`Optimize Classification model tutorial <workbench_tutorial__classification>`
 
-* :ref:`Optimize Style Transfer model tutorial <doxid-workbench_docs__workbench__d_g__tutorial__style__transfer>`
+* :ref:`Optimize Style Transfer model tutorial <workbench_tutorial__style_transfer>`
 
 * `Accuracy Checker <https://docs.openvinotoolkit.org/latest/omz_tools_accuracy_checker.html>`__
 

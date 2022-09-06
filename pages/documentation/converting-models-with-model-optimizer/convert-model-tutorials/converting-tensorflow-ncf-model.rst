@@ -11,7 +11,7 @@ Converting a TensorFlow Neural Collaborative Filtering Model
 
 #. Use `the instructions <https://github.com/tensorflow/models/tree/master/official/recommendation#train-and-evaluate-model>`__ from this repository to train the model.
 
-#. Freeze the inference graph you get in the previous step in ``model_dir``, following the instructions from the **Freezing Custom Models in Python** section of the :ref:`Converting a TensorFlow Model <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__tensor_flow>` guide. Run the following commands:
+#. Freeze the inference graph you get in the previous step in ``model_dir``, following the instructions from the **Freezing Custom Models in Python** section of the :ref:`Converting a TensorFlow Model <conv_prep__conv_from_tensorflow>` guide. Run the following commands:
    
    .. ref-code-block:: cpp
    

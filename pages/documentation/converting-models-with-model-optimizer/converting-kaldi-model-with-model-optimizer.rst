@@ -1,17 +1,26 @@
 .. index:: pair: page; Converting a Kaldi Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__kaldi:
+.. _conv_prep__conv_from_kaldi:
 
+.. meta:: 
+   :description: Detailed instructions on how to convert a model from the 
+                 Kaldi format to the OpenVINO IR by using Model Optimizer. 
+   :keywords: Model Optimizer, OpenVINO IR, OpenVINO Intermediate Representation, 
+              OpenVINO Development Tools, convert model, model conversion, convert 
+              from Kaldi, convert a Kaldi model, --input_model, convert to 
+              OpenVINO IR, nnet1 model format, nnet2 model format, Kaldi-specific 
+              parameters, --counts, --remove_output_softmax, --remove_memory, 
+              Intel® Movidius™ Myriad™ VPU, inference device, CLI commands
 
 Converting a Kaldi Model
 ========================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__kaldi_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_kaldi`
+:target:`conv_prep__conv_from_kaldi_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_from_kaldi`
 
 .. note:: Model Optimizer supports the `nnet1 <http://kaldi-asr.org/doc/dnn1.html>`__ and `nnet2 <http://kaldi-asr.org/doc/dnn2.html>`__ formats of Kaldi models. The support of the `nnet3 <http://kaldi-asr.org/doc/dnn3.html>`__ format is limited.
 
 
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model__convert__model__from__kaldi_1convert_from_kaldi` To convert a Kaldi model, run Model Optimizer with the path to the input model ``.nnet`` or ``.mdl`` file:
+:target:`conv_prep__conv_from_kaldi_1convert_from_kaldi` To convert a Kaldi model, run Model Optimizer with the path to the input model ``.nnet`` or ``.mdl`` file:
 
 .. ref-code-block:: cpp
 
@@ -26,11 +35,11 @@ The following list provides the Kaldi-specific parameters.
 
 .. ref-code-block:: cpp
 
-	Kaldi-specific parameters:
-	  --counts COUNTS       A file name with full path to the counts file or empty string to utilize count values from the model file
-	  --remove_output_softmax
-	                        Removes the Softmax that is the output layer
-	  --remove_memory       Remove the Memory layer and add new inputs and outputs instead
+   Kaldi-specific parameters:
+     --counts COUNTS       A file name with full path to the counts file or empty string to utilize count values from the model file
+     --remove_output_softmax
+                           Removes the Softmax that is the output layer
+     --remove_memory       Remove the Memory layer and add new inputs and outputs instead
 
 Examples of CLI Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,27 +48,27 @@ Examples of CLI Commands
   
   .. ref-code-block:: cpp
   
-  	mo --input_model wsj_dnn5b_smbr.nnet
+     mo --input_model wsj_dnn5b_smbr.nnet
 
 * To launch Model Optimizer for the ``wsj_dnn5b_smbr`` model with the existing file that contains counts for the last layer with biases:
   
   .. ref-code-block:: cpp
   
-  	mo --input_model wsj_dnn5b_smbr.nnet --counts wsj_dnn5b_smbr.counts
+     mo --input_model wsj_dnn5b_smbr.nnet --counts wsj_dnn5b_smbr.counts
   
   
   
-  * The Model Optimizer normalizes сounts in the following way:
+  * The Model Optimizer normalizes counts in the following way:
     
     .. math::
     
-    	S = \frac{1}{\sum_{j = 0}^{|C|}C_{j}}
+       S = \frac{1}{\sum_{j = 0}^{|C|}C_{j}}
     
     
     
     .. math::
     
-    	C_{i}=log(S\*C_{i})
+       C_{i}=log(S\*C_{i})
     
     where :math:`C` - the counts array, :math:`C_{i} - i^{th}` element of the counts array, :math:`|C|` - number of elements in the counts array;
   
