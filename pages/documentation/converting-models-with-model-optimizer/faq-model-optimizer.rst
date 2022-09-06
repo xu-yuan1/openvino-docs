@@ -1,11 +1,28 @@
 .. index:: pair: page; Model Optimizer Frequently Asked Questions
-.. _doxid-openvino_docs__m_o__d_g_prepare_model__model__optimizer__f_a_q:
+.. _conv_prep__faq:
+
+.. meta::
+   :description: This page presents frequently asked questions and answers 
+                 regarding the use of Model Optimizer in OpenVINO™.
+   :keywords: frequently asked questions, Model Optimizer, OpenVINO, 
+              FAQ, converting models, input shape, output shape, deep 
+              learning model, caffe.proto, caffemodel, prototxt, CustomReshape, 
+              custom layers, --mean_file, mean file, model input shape, 
+              proto file, cannot infer shapes, --input_shape, Caffe, TensorFlow, 
+              MXNet, -mean_values, --scale option, --scale_values option, 
+              node without inputs, input nodes, TensorBoard, model output 
+              shape, TensorFlow 1.2, cannot pre-process, MXNet 1.0.0, 
+              MXNet module, layer shape inference, ONNX format, conversion to IR, 
+              conversion to OpenVINO IR
+
 
 
 Model Optimizer Frequently Asked Questions
 ==========================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model__model__optimizer__f_a_q_1md_openvino_docs_mo_dg_prepare_model_model_optimizer_faq` If your question is not covered by the topics below, use the `OpenVINO Support page <https://software.intel.com/en-us/openvino-toolkit/documentation/get-started>`__, where you can participate on a free forum.
+:target:`conv_prep__faq_1md_openvino_docs_mo_dg_prepare_model_model_optimizer_faq` 
+
+If your question is not covered by the topics below, use the `OpenVINO Support page <https://software.intel.com/en-us/openvino-toolkit/documentation/get-started>`__, where you can participate on a free forum.
 
 .. _question-1:
 

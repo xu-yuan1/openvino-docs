@@ -110,7 +110,7 @@ There is a separate loader for each supported framework. These loaders are imple
    Model Optimizer uses a special parser for Caffe models built on top of the ``caffe.proto`` file. In the case 
    of a model loading failure, Model Optimizer throws an error and requests preparation of the parser that can read 
    the model. For more information on how to prepare the custom Caffe parser, refer to the 
-   :ref:`Model Optimizer Frequently Asked Questions #1 <doxid-openvino_docs__m_o__d_g_prepare_model__model__optimizer__f_a_q>`.
+   :ref:`Model Optimizer Frequently Asked Questions #1 <conv_prep__faq>`.
 
 
 
