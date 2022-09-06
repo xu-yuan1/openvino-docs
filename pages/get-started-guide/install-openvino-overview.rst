@@ -59,7 +59,7 @@ For C++ developers, you may choose one of the following installation options for
 
 * Linux: You can install OpenVINO Runtime using an :ref:`Installer <install__linux_installer>`, :ref:`APT <install__linux_apt>`, :ref:`YUM <install__linux_yum>`, :ref:`Anaconda Cloud <doxid-openvino_docs_install_guides_installing_openvino_conda>`, or :ref:`Docker <install__on_linux_from_docker>`.
 
-* Windows: You can install OpenVINO Runtime using an :ref:`Installer <doxid-openvino_docs_install_guides_installing_openvino_windows>`, :ref:`Anaconda Cloud <doxid-openvino_docs_install_guides_installing_openvino_conda>`, or :ref:`Docker <doxid-openvino_docs_install_guides_installing_openvino_docker_windows>`.
+* Windows: You can install OpenVINO Runtime using an :ref:`Installer <install__windows_installer>`, :ref:`Anaconda Cloud <doxid-openvino_docs_install_guides_installing_openvino_conda>`, or :ref:`Docker <install__on_windows_from_docker>`.
 
 * macOS: You can install OpenVINO Runtime using an :ref:`Installer <doxid-openvino_docs_install_guides_installing_openvino_macos>` or :ref:`Anaconda Cloud <doxid-openvino_docs_install_guides_installing_openvino_conda>`.
 

@@ -16,7 +16,7 @@ Install OpenVINO™ Runtime
    :hidden:
 
    Linux <./install-openvino-runtime/install-openvino-linux>
-   Windows <./install-openvino-runtime/installing-openvino-for-windows>
+   Windows <./install-openvino-runtime/install-openvino-windows>
    macOS <./install-openvino-runtime/installing-openvino-for-macos>
    Raspbian OS <./install-openvino-runtime/installing-openvino-for-raspbian>
 
@@ -24,7 +24,7 @@ You can choose how to install OpenVINO™ Runtime according to your operating sy
 
 * :ref:`Install OpenVINO Runtime on Linux <install__openvino_linux>`
 
-* :ref:`Install OpenVINO Runtime on Windows <doxid-openvino_docs_install_guides_installing_openvino_windows_header>`
+* :ref:`Install OpenVINO Runtime on Windows <install__openvino_windows>`
 
 * :ref:`Install OpenVINO Runtime on macOS <doxid-openvino_docs_install_guides_installing_openvino_macos_header>`
 
