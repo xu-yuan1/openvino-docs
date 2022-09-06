@@ -34,7 +34,7 @@ Once the :ref:`OpenVINO™ application development <deploy_infer__integrate_appl
   
   * using PIP package manager on PyPI - the default approach for Python-based applications;
   
-  * using Docker images - if the application should be deployed as a Docker image, use a pre-built OpenVINO™ Runtime Docker image as a base image in the Dockerfile for the application container image. For more information about OpenVINO Docker images, refer to :ref:`Installing OpenVINO on Linux from Docker <doxid-openvino_docs_install_guides_installing_openvino_docker_linux>` and :ref:`Installing OpenVINO on Windows from Docker <doxid-openvino_docs_install_guides_installing_openvino_docker_windows>`. Furthermore, to customize your OpenVINO Docker image, use the `Docker CI Framework <https://github.com/openvinotoolkit/docker_ci>`__ to generate a Dockerfile and built the image.
+  * using Docker images - if the application should be deployed as a Docker image, use a pre-built OpenVINO™ Runtime Docker image as a base image in the Dockerfile for the application container image. For more information about OpenVINO Docker images, refer to :ref:`Installing OpenVINO on Linux from Docker <install__on_linux_from_docker>` and :ref:`Installing OpenVINO on Windows from Docker <install__on_windows_from_docker>`. Furthermore, to customize your OpenVINO Docker image, use the `Docker CI Framework <https://github.com/openvinotoolkit/docker_ci>`__ to generate a Dockerfile and built the image.
 
 * Grab a necessary functionality of OpenVINO together with your application, also called "local distribution":
   

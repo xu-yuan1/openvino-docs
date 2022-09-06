@@ -108,7 +108,7 @@ For C++ Developers
 
 Note the following things:
 
-* To install OpenVINO Development Tools, you must have OpenVINO Runtime installed first. You can install OpenVINO Runtime through an installer (:ref:`Linux <doxid-openvino_docs_install_guides_installing_openvino_linux>`, :ref:`Windows <doxid-openvino_docs_install_guides_installing_openvino_windows>`, or :ref:`macOS <doxid-openvino_docs_install_guides_installing_openvino_macos>`), :ref:`APT for Linux <doxid-openvino_docs_install_guides_installing_openvino_apt>` or :ref:`YUM for Linux <doxid-openvino_docs_install_guides_installing_openvino_yum>`.
+* To install OpenVINO Development Tools, you must have OpenVINO Runtime installed first. You can install OpenVINO Runtime through an installer (:ref:`Linux <install__linux_installer>`, :ref:`Windows <install__windows_installer>`, or :ref:`macOS <doxid-openvino_docs_install_guides_installing_openvino_macos>`), :ref:`APT for Linux <install__linux_apt>` or :ref:`YUM for Linux <install__linux_yum>`.
 
 * Ensure that the version of OpenVINO Development Tools you are installing matches that of OpenVINO Runtime.
 

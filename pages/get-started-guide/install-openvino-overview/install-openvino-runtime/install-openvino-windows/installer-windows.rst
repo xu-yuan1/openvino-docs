@@ -1,11 +1,11 @@
 .. index:: pair: page; Install and Configure Intel® Distribution of OpenVINO™ toolkit for Windows 10
-.. _doxid-openvino_docs_install_guides_installing_openvino_windows:
+.. _install__windows_installer:
 
 
 Install and Configure Intel® Distribution of OpenVINO™ toolkit for Windows 10
 ================================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_windows_1md_openvino_docs_install_guides_installing_openvino_windows`
+:target:`install__windows_installer_1md_openvino_docs_install_guides_installing_openvino_windows`
 
 .. note:: Since the OpenVINO™ 2022.1 release, the following development tools: Model Optimizer, Post-Training Optimization Tool, Model Downloader and other Open Model Zoo tools, Accuracy Checker, and Annotation Converter are not part of the installer. These tools are now only available on `pypi.org <https://pypi.org/project/openvino-dev/>`__.
 

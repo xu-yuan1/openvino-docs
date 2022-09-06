@@ -1,11 +1,11 @@
-.. index:: pair: page; Install Intel® Distribution of OpenVINO™ Toolkit for Linux Using APT Repository
-.. _doxid-openvino_docs_install_guides_installing_openvino_apt:
+.. index:: pair: page; Install Intel® Distribution of OpenVINO™ Toolkit for Linux Using YUM Repository
+.. _install__linux_yum:
 
 
-Install Intel® Distribution of OpenVINO™ Toolkit for Linux Using APT Repository
+Install Intel® Distribution of OpenVINO™ Toolkit for Linux Using YUM Repository
 ==================================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_apt_1md_openvino_docs_install_guides_installing_openvino_apt` This guide provides installation steps for Intel® Distribution of OpenVINO™ toolkit for Linux distributed through the APT repository.
+:target:`install__linux_yum_1md_openvino_docs_install_guides_installing_openvino_yum` This guide provides installation steps for Intel® Distribution of OpenVINO™ toolkit for Linux distributed through the YUM repository.
 
 .. note:: From the 2022.1 release, the OpenVINO™ Development Tools can only be installed via PyPI. If you want to develop or optimize your models with OpenVINO, see :ref:`Install OpenVINO Development Tools <install_openvino_dev_tools>` for detailed steps.
 
@@ -24,80 +24,66 @@ System Requirements
 
 The complete list of supported hardware is available in the `Release Notes <https://software.intel.com/content/www/us/en/develop/articles/openvino-relnotes.html>`__.
 
-**Operating Systems**
+**Operating systems**
 
-* Ubuntu 18.04 long-term support (LTS), 64-bit
-
-* Ubuntu 20.04 long-term support (LTS), 64-bit
+* Red Hat Enterprise Linux 8, 64-bit
 
 **Software**
 
 * `CMake 3.13 or higher, 64-bit <https://cmake.org/download/>`__
 
-* GCC 7.5.0 (for Ubuntu 18.04) or GCC 9.3.0 (for Ubuntu 20.04)
+* GCC 8.2.0
 
 * `Python 3.6 - 3.9, 64-bit <https://www.python.org/downloads/windows/>`__
 
 Install OpenVINO Runtime
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 1: Set Up the OpenVINO Toolkit APT Repository
---------------------------------------------------
+Step 1: Set Up the Repository
+-----------------------------
 
-#. Install the GPG key for the repository
-   
-   a. Download the `GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB <https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB>`__. You can also use the following command:
+#. Create the YUM repo file in the ``/tmp`` directory as a normal user:
    
    .. ref-code-block:: cpp
    
-   	wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
-   
-   b. Add this key to the system keyring:
+   	tee > /tmp/openvino-2022.repo << EOF
+   	[OpenVINO]
+   	name=Intel(R) Distribution of OpenVINO 2022
+   	baseurl=https://yum.repos.intel.com/openvino/2022
+   	enabled=1
+   	gpgcheck=1
+   	repo_gpgcheck=1
+   	gpgkey=https://yum.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+   	EOF
+
+#. Move the new openvino-2022.repo file to the YUM configuration directory ``/etc/yum.repos.d`` :
    
    .. ref-code-block:: cpp
    
-   	sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
-   
-   
-   
-   .. note:: You might need to install GnuPG: ``sudo apt-get install gnupg``
+   	sudo mv /tmp/openvino-2022.repo /etc/yum.repos.d
 
-#. Add the repository via the following command:
-   
-   
-   
-   
-   
-   .. tab:: Ubuntu 18
-   
-      .. code-block:: sh
-   
-         echo "deb https://apt.repos.intel.com/openvino/2022 bionic main" | sudo tee /etc/apt/sources.list.d/intel-openvino-2022.list
-   
-   .. tab:: Ubuntu 20
-   
-      .. code-block:: sh
-   
-         echo "deb https://apt.repos.intel.com/openvino/2022 focal main" | sudo tee /etc/apt/sources.list.d/intel-openvino-2022.list
-
-#. Update the list of packages via the update command:
+#. Verify that the new repo is properly setup by running the following command:
    
    .. ref-code-block:: cpp
    
-   	sudo apt update
-
-#. Verify that the APT repository is properly set up. Run the apt-cache command to see a list of all available OpenVINO packages and components:
+   	yum repolist | grep -i openvino
    
-   .. ref-code-block:: cpp
-   
-   	apt-cache search openvino
+   You will see the available list of packages.
 
-Step 2: Install OpenVINO Runtime Using the APT Package Manager
+To list available OpenVINO packages, use the following command:
+
+.. code-block:: sh
+
+      yum list 'openvino*'
+
+Step 2: Install OpenVINO Runtime Using the YUM Package Manager
 --------------------------------------------------------------
 
-OpenVINO will be installed in: ``/opt/intel/openvino_<VERSION>.<UPDATE>.<PATCH>``
+Intel® Distribution of OpenVINO™ toolkit will be installed in: ``/opt/intel/openvino_<VERSION>.<UPDATE>.<PATCH>``
 
 A symlink will be created: ``/opt/intel/openvino_<VERSION>``
+
+You can select one of the following procedures according to your need:
 
 To Install the Latest Version
 +++++++++++++++++++++++++++++
@@ -106,37 +92,31 @@ Run the following command:
 
 .. ref-code-block:: cpp
 
-	sudo apt install openvino
+	sudo yum install openvino
 
 To Install a Specific Version
 +++++++++++++++++++++++++++++
-
-#. Get a list of OpenVINO packages available for installation:
-   
-   .. ref-code-block:: cpp
-   
-   	sudo apt-cache search openvino
-
-#. Install a specific version of an OpenVINO package:
-   
-   .. ref-code-block:: cpp
-   
-   	sudo apt install openvino-<VERSION>.<UPDATE>.<PATCH>
-   
-   For example:
-   
-   .. ref-code-block:: cpp
-   
-   	sudo apt install openvino-2022.1.0
-
-To Check for Installed Packages and Versions
-++++++++++++++++++++++++++++++++++++++++++++
 
 Run the following command:
 
 .. ref-code-block:: cpp
 
-	apt list --installed | grep openvino
+	sudo yum install openvino-<VERSION>.<UPDATE>.<PATCH>
+
+For example:
+
+.. ref-code-block:: cpp
+
+	sudo yum install openvino-2022.1.0
+
+To Check for Installed Packages and Version
++++++++++++++++++++++++++++++++++++++++++++
+
+Run the following command:
+
+.. code-block:: sh
+
+      yum list installed 'openvino*'
 
 To Uninstall the Latest Version
 +++++++++++++++++++++++++++++++
@@ -145,7 +125,7 @@ Run the following command:
 
 .. ref-code-block:: cpp
 
-	sudo apt autoremove openvino
+	sudo yum autoremove openvino
 
 To Uninstall a Specific Version
 +++++++++++++++++++++++++++++++
@@ -154,12 +134,12 @@ Run the following command:
 
 .. ref-code-block:: cpp
 
-	sudo apt autoremove openvino-<VERSION>.<UPDATE>.<PATCH>
+	sudo yum autoremove openvino-<VERSION>.<UPDATE>.<PATCH>
 
-Step 3 (Optional): Install OpenCV from APT
+Step 3 (Optional): Install OpenCV from YUM
 ------------------------------------------
 
-OpenCV is necessary to run C++ demos from Open Model Zoo. Some OpenVINO samples can also extend their capabilities when compiled with OpenCV as a dependency. OpenVINO provides a package to install OpenCV from APT:
+OpenCV is necessary to run C++ demos from Open Model Zoo. Some OpenVINO samples can also extend their capabilities when compiled with OpenCV as a dependency. OpenVINO provides a package to install OpenCV from YUM:
 
 To Install the Latest Version of OpenCV
 +++++++++++++++++++++++++++++++++++++++
@@ -168,7 +148,7 @@ Run the following command:
 
 .. ref-code-block:: cpp
 
-	sudo apt install openvino-opencv
+	sudo yum install openvino-opencv
 
 To Install a Specific Version of OpenCV
 +++++++++++++++++++++++++++++++++++++++
@@ -177,7 +157,7 @@ Run the following command:
 
 .. ref-code-block:: cpp
 
-	sudo apt install openvino-opencv-<VERSION>.<UPDATE>.<PATCH>
+	sudo yum install openvino-opencv-<VERSION>.<UPDATE>.<PATCH>
 
 Step 4 (Optional): Install Software Dependencies
 ------------------------------------------------
@@ -228,7 +208,7 @@ Now you may continue with the following tasks:
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* Intel® Distribution of OpenVINO™ toolkit home page: `https://software.intel.com/en-us/openvino-toolkit <https://software.intel.com/en-us/openvino-toolkit>`__.
+* Intel® Distribution of OpenVINO™ toolkit home page: `https://software.intel.com/en-us/openvino-toolkit <https://software.intel.com/en-us/openvino-toolkit>`__
 
-* For IoT Libraries & Code Samples see the `Intel® IoT Developer Kit <https://github.com/intel-iot-devkit>`__.
+* For IoT Libraries & Code Samples, see `Intel® IoT Developer Kit <https://github.com/intel-iot-devkit>`__.
 
