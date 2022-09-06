@@ -1,11 +1,11 @@
 .. index:: pair: page; Install and Configure Intel® Distribution of OpenVINO™ toolkit for macOS
-.. _doxid-openvino_docs_install_guides_installing_openvino_macos:
+.. _install__macos_installer:
 
 
 Install and Configure Intel® Distribution of OpenVINO™ toolkit for macOS
 ===========================================================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_macos_1md_openvino_docs_install_guides_installing_openvino_macos`
+:target:`install__macos_installer_1md_openvino_docs_install_guides_installing_openvino_macos`
 
 .. note:: Since the OpenVINO™ 2022.1 release, the following development tools: Model Optimizer, Post-Training Optimization Tool, Model Downloader and other Open Model Zoo tools, Accuracy Checker, and Annotation Converter are not part of the installer. These tools are now only available on `pypi.org <https://pypi.org/project/openvino-dev/>`__.
 

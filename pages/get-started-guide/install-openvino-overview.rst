@@ -53,17 +53,17 @@ If you want to download models from :ref:`Open Model Zoo <doxid-model_zoo>`, :re
 Choose Your Installation Method
 -------------------------------
 
-For Python developers, the easiest way is to :ref:`install OpenVINO Development Tools <install_openvino_dev_tools>`, which will install both OpenVINO Runtime and OpenVINO Development Tools with a few steps. If you want to install OpenVINO Runtime only, see :ref:`Install OpenVINO Runtime from PyPI <doxid-openvino_docs_install_guides_installing_openvino_pip>`.
+For Python developers, the easiest way is to :ref:`install OpenVINO Development Tools <install_openvino_dev_tools>`, which will install both OpenVINO Runtime and OpenVINO Development Tools with a few steps. If you want to install OpenVINO Runtime only, see :ref:`Install OpenVINO Runtime from PyPI <install__from_pypi>`.
 
 For C++ developers, you may choose one of the following installation options for OpenVINO Runtime on your specific operating system:
 
-* Linux: You can install OpenVINO Runtime using an :ref:`Installer <install__linux_installer>`, :ref:`APT <install__linux_apt>`, :ref:`YUM <install__linux_yum>`, :ref:`Anaconda Cloud <doxid-openvino_docs_install_guides_installing_openvino_conda>`, or :ref:`Docker <install__on_linux_from_docker>`.
+* Linux: You can install OpenVINO Runtime using an :ref:`Installer <install__linux_installer>`, :ref:`APT <install__linux_apt>`, :ref:`YUM <install__linux_yum>`, :ref:`Anaconda Cloud <install__from_conda>`, or :ref:`Docker <install__on_linux_from_docker>`.
 
-* Windows: You can install OpenVINO Runtime using an :ref:`Installer <install__windows_installer>`, :ref:`Anaconda Cloud <doxid-openvino_docs_install_guides_installing_openvino_conda>`, or :ref:`Docker <install__on_windows_from_docker>`.
+* Windows: You can install OpenVINO Runtime using an :ref:`Installer <install__windows_installer>`, :ref:`Anaconda Cloud <install__from_conda>`, or :ref:`Docker <install__on_windows_from_docker>`.
 
-* macOS: You can install OpenVINO Runtime using an :ref:`Installer <doxid-openvino_docs_install_guides_installing_openvino_macos>` or :ref:`Anaconda Cloud <doxid-openvino_docs_install_guides_installing_openvino_conda>`.
+* macOS: You can install OpenVINO Runtime using an :ref:`Installer <install__macos_installer>` or :ref:`Anaconda Cloud <install__from_conda>`.
 
-* :ref:`Raspbian OS <doxid-openvino_docs_install_guides_installing_openvino_raspbian>`.
+* :ref:`Raspbian OS <install__openvino_raspbian>`.
 
 .. note:: With the introduction of the 2022.1 release, the OpenVINO Development Tools can be installed **only** via PyPI. See :ref:`Install OpenVINO Development Tools <install_openvino_dev_tools>` for detailed steps.
 

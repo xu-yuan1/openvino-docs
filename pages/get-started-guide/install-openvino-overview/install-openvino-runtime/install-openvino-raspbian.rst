@@ -1,11 +1,11 @@
 .. index:: pair: page; Install OpenVINO™ toolkit for Raspbian OS
-.. _doxid-openvino_docs_install_guides_installing_openvino_raspbian:
+.. _install__openvino_raspbian:
 
 
 Install OpenVINO™ toolkit for Raspbian OS
 ===========================================
 
-:target:`doxid-openvino_docs_install_guides_installing_openvino_raspbian_1md_openvino_docs_install_guides_installing_openvino_raspbian`
+:target:`install__openvino_raspbian_1md_openvino_docs_install_guides_installing_openvino_raspbian`
 
 
 

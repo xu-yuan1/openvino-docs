@@ -22,7 +22,7 @@ Basic Usage
 ~~~~~~~~~~~
 
 The Python benchmark_app is automatically installed when you install OpenVINO 
-Developer Tools using :ref:`PyPI <doxid-openvino_docs_install_guides_installing_openvino_pip>`. 
+Developer Tools using :ref:`PyPI <install__from_pypi>`. 
 Before running ``benchmark_app``, make sure the ``openvino_env`` virtual 
 environment is activated, and navigate to the directory where your model 
 is located.
