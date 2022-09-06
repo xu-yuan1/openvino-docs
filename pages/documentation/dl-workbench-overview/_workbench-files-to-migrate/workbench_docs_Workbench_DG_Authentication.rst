@@ -103,7 +103,7 @@ Accept or block cookies in the pop-up window. You can change your decision later
 JupyterLab Token
 ----------------
 
-Use this token when you access the :ref:`JupyterLab Environment <doxid-workbench_docs__workbench__d_g__jupyter__notebooks>` delivered by the DL Workbench. This token is valid as long as you do not remove the current Docker container.
+Use this token when you access the :ref:`JupyterLab Environment <workbench_jupyter__api>` delivered by the DL Workbench. This token is valid as long as you do not remove the current Docker container.
 
 .. image:: auth4.png
 

@@ -1,20 +1,30 @@
-.. index:: pair: page; Learn Model Inference with OpenVINO™ API in JupyterLab\* Environment
-.. _doxid-workbench_docs__workbench__d_g__jupyter__notebooks:
+.. index:: pair: page; Learn Model Inference with OpenVINO™ API in JupyterLab Environment
+.. _workbench_jupyter__api:
+
+.. meta::
+   :description: Guide on how to use JupyterLab Environment and information on its Python APi, 
+                 essential to analyze components and optimize models.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, tutorial, JupyterLab Environment, 
+              python api, optimize models, access jupyter, OpenVINO api, model, inference, 
+              Classification, Object detection, Semantic segmentation, Style transfer
 
 
-Learn Model Inference with OpenVINO™ API in JupyterLab\* Environment
+Learn Model Inference with OpenVINO™ API in JupyterLab Environment
 ======================================================================
 
-:target:`doxid-workbench_docs__workbench__d_g__jupyter__notebooks_1md_openvino_workbench_docs_workbench_dg_jupyter_notebooks` JupyterLab\* Environment delivered by the DL Workbench helps you learn how to use OpenVINO™, its Python\* API, and its components essential to analyze and optimize models. The environment enables you to quick start with OpenVINO™ by providing a preconfigured OpenVINO™ environment.
+:target:`workbench_jupyter__api_1md_openvino_workbench_docs_workbench_dg_jupyter_notebooks` JupyterLab Environment delivered 
+by the DL Workbench helps you learn how to use OpenVINO™, its Python API, and its components essential to analyze and 
+optimize models. The environment enables you to quick start with OpenVINO™ by providing a preconfigured OpenVINO™ environment.
 
 .. image:: diagram.png
 
 Access the JupyterLab
 ~~~~~~~~~~~~~~~~~~~~~
 
-The `JupyterLab\* <https://jupyter-notebook.readthedocs.io/en/stable/>`__ notebooks are running in the same environment as the DL Workbench. Refer to :ref:`Run DL Workbench instructions <workbench_install__run_locally>`, to start DL Workbench.
+The `JupyterLab <https://jupyter-notebook.readthedocs.io/en/stable/>`__ notebooks are running in the same environment as 
+the DL Workbench. Refer to :ref:`Run DL Workbench instructions <workbench_install__run_locally>`, to start DL Workbench.
 
-Go to the JupyterLab\* Environment
+Go to the JupyterLab Environment
 ----------------------------------
 
 Choose one of the ways to access the notebooks:
@@ -31,12 +41,11 @@ Choose one of the ways to access the notebooks:
 
 
 
-
-
 Learn Model Inference with OpenVINO API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The JupyterLab\* provides you with tutorials that show how to infer a model using OpenVINO™ Python interface. The tutorials are listed below. Decide on what use case you want to work with and open the notebook with the relevant tutorial:
+The JupyterLab provides you with tutorials that show how to infer a model using OpenVINO™ Python interface. The tutorials 
+are listed below. Decide on what use case you want to work with and open the notebook with the relevant tutorial:
 
 * Classification: ``tutorials/classification/tutorial_classification.ipynb``
 
@@ -48,8 +57,10 @@ The JupyterLab\* provides you with tutorials that show how to infer a model usin
 
 If you could not find your use case in the list above, open the Generic tutorial: ``tutorials/generic/tutorial_generic.ipynb``.
 
-.. note:: If you opened the playground from the **Learn OpenVINO** tab and the DL Workbench recognized the task of your model, you go directly to the associated tutorial. See `You Have a Model Imported into the DL Workbench <#model-from-dl-workbench>`__ for next steps.
-
+.. note::
+   If you opened the playground from the **Learn OpenVINO** tab and the DL Workbench recognized the task of your model, 
+   you go directly to the associated tutorial. See 
+   `You Have a Model Imported into the DL Workbench <#model-from-dl-workbench>`__ for next steps.
 
 
 Decide on the model you want to work with:
@@ -63,7 +74,8 @@ Decide on the model you want to work with:
 You Have a Model Imported into the DL Workbench
 -----------------------------------------------
 
-To use the same model, sample image, and/or the device that you imported into or used in the DL Workbench, follow the steps below.
+To use the same model, sample image, and/or the device that you imported into or used in the DL Workbench, follow the 
+steps below.
 
 #. Create a project in the DL Workbench.
 
@@ -88,7 +100,11 @@ You Have a Model on Your Machine
 
 To use a model, sample image, and/or device other than those specified in a tutorial, follow the steps below.
 
-.. note:: OpenVINO™ works with Intermediate Representation (IR) and ONNX\* formats. IR is a preferred format. If you upload an original model, convert it into the IR format. To do that, create a new cell in the notebook, and call the OpenVINO™ :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`. Your command should start with ``!python3 /opt/intel/openvino/tools/model_optimizer/mo.py ...``.
+.. note::
+   OpenVINO™ works with Intermediate Representation (IR) and ONNX formats. IR is a preferred format. If you upload an 
+   original model, convert it into the IR format. To do that, create a new cell in the notebook, and call the OpenVINO™ 
+   :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`. Your command should start with 
+   ``!python3 /opt/intel/openvino/tools/model_optimizer/mo.py ...``.
 
 
 
@@ -113,9 +129,14 @@ To use a model, sample image, and/or device other than those specified in a tuto
 You Do Not Have a Model
 -----------------------
 
-If you do not have a model, you still can use the tutorials. `Intel® Open Model Zoo <https://docs.openvino.ai/latest/omz_models_group_intel.html>`__ provides pretrained models for various use cases. Also, each notebook already has a selected model in it, so simply run all the cells to see how the model works in the OpenVINO™ environment. Feel free to change the model and experiment with another one.
+If you do not have a model, you still can use the tutorials. 
+`Intel® Open Model Zoo <https://docs.openvino.ai/latest/omz_models_group_intel.html>`__ provides pretrained models for 
+various use cases. Also, each notebook already has a selected model in it, so simply run all the cells to see how the model 
+works in the OpenVINO™ environment. Feel free to change the model and experiment with another one.
 
-**WARNING** : Be cautious when working with files and folders available in JupyterLab. It is recommended to work with a limited set of folders to ensure that the DL Workbench and JupyterLab continue working:
+.. warning::
+   Be cautious when working with files and folders available in JupyterLab. It is recommended to work with a limited 
+   set of folders to ensure that the DL Workbench and JupyterLab continue working:
 
 * ``datasets``. Contains all datasets imported in the DL Workbench. Feel free to open and use images from the folder, however, do not change the content.
 
@@ -128,7 +149,7 @@ If you do not have a model, you still can use the tutorials. `Intel® Open Model
 See Also
 ~~~~~~~~
 
-* :ref:`Learn Model Workflow with OpenVINO API <doxid-workbench_docs__workbench__d_g__jupyter__notebooks__c_l_i>`
+* :ref:`Learn Model Workflow with OpenVINO API <workbench_guide__jupyter_cli>`
 
 * OpenVINO™ :ref:`samples <get_started__samples_overview>` and `application demos <https://docs.openvino.ai/latest/omz_demos.html>`__
 

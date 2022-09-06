@@ -173,7 +173,7 @@ in DL Workbench and use a `self-signed certificate <https://docs.openvinotoolkit
 Disable JupyterLab inside DL Workbench
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`Jupyter notebooks <doxid-workbench_docs__workbench__d_g__jupyter__notebooks>` running in the same Docker container as the DL Workbench can impact inference results of experiments inside the DL Workbench. To get more accurate performance information, you might want to disable JupyterLab Environment. Use the ``DISABLE_JUPYTER`` or ``--no-jupyter`` argument when starting the DL Workbench. For example:
+:ref:`Jupyter notebooks <workbench_jupyter__api>` running in the same Docker container as the DL Workbench can impact inference results of experiments inside the DL Workbench. To get more accurate performance information, you might want to disable JupyterLab Environment. Use the ``DISABLE_JUPYTER`` or ``--no-jupyter`` argument when starting the DL Workbench. For example:
 
 .. tab:: `docker run` command
 

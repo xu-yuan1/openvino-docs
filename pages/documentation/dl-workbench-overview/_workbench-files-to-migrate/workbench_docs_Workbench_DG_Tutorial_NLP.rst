@@ -154,7 +154,7 @@ See Also
 
 Congratulations! You have completed the DL Workbench workflow for NLP model. Additionally, you can try the following capabilities:
 
-* :ref:`Learn OpenVINO CLI and API in Jupyter Notebooks <doxid-workbench_docs__workbench__d_g__jupyter__notebooks__c_l_i>`
+* :ref:`Learn OpenVINO CLI and API in Jupyter Notebooks <workbench_guide__jupyter_cli>`
 
 * :ref:`Explore inference configurations <doxid-workbench_docs__workbench__d_g__run__single__inference>`
 
