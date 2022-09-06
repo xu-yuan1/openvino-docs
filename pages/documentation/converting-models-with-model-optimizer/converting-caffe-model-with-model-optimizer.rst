@@ -117,7 +117,7 @@ For the list of supported standard layers, refer to the :ref:`Supported Framewor
 Frequently Asked Questions (FAQ)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Model Optimizer provides explanatory messages when it is unable to complete conversions due to typographical errors, incorrectly used options, or other issues. A message describes the potential cause of the problem and gives a link to :ref:`Model Optimizer FAQ <doxid-openvino_docs__m_o__d_g_prepare_model__model__optimizer__f_a_q>` which provides instructions on how to resolve most issues. The FAQ also includes links to relevant sections to help you understand what went wrong.
+Model Optimizer provides explanatory messages when it is unable to complete conversions due to typographical errors, incorrectly used options, or other issues. A message describes the potential cause of the problem and gives a link to :ref:`Model Optimizer FAQ <conv_prep__faq>` which provides instructions on how to resolve most issues. The FAQ also includes links to relevant sections to help you understand what went wrong.
 
 Summary
 ~~~~~~~
